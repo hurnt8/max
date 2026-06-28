@@ -2,7 +2,7 @@
 
 return [
     'banner_title' => 'Kreditanfrage',
-    'banner_description' => 'Wir besprechen gerne, wie wir das können helfen Ihnen, die Finanzierung zu bekommen, die Sie brauchen.',
+    'banner_description' => 'Wir besprechen gerne, wie wir Ihnen helfen können, die Finanzierung zu bekommen, die Sie brauchen.',
     'form_title' => 'Darlehen anfordern',
     'form_description' => 'Verwenden Sie das Formular unten, um Ihr Darlehen anzufordern.',
     'label_name' => 'Vor- und Nachname',
@@ -17,7 +17,7 @@ return [
     'label_npi' => 'Persönliche Identifikationsnummer',
     'label_file' => 'Doppelseitiges Ausweisdokument',
     'label_objet' => 'Gegenstand des Darlehens',
-    'details' => 'Darlehens Details',
+    'détails' => 'Darlehens Details',
 
     'placeholder_name' => 'Ihr Vor- und Nachname',
     'placeholder_email' => 'Geben Sie Ihre E-Mail-Adresse ein',
@@ -29,9 +29,39 @@ return [
     'placeholder_objet' => 'Beschreiben Sie kurz den Zweck Ihres Darlehens',
     'button' => 'Anfrage senden',
 
+    'quote_title'    => 'Ihr Kostenvoranschlag',
+    'quote_monthly'  => 'Geschätzte monatliche Rate',
+    'quote_total'    => 'Gesamtrückzahlungsbetrag',
+    'quote_interest' => 'Gesamtkreditkosten',
+    'quote_hint'     => 'Unverbindlicher Kostenvoranschlag basierend auf einem festen Jahreszins von 5 %. Der endgültige Zinssatz wird nach Prüfung Ihrer Unterlagen bestätigt.',
+    'label_rate'     => 'Fester Jahreszins',
+    'complete_title' => 'Ihre Unterlagen vervollständigen',
+    'complete_desc'  => 'Bitte geben Sie Ihre vollständige Adresse und ein Foto Ihres Ausweisdokuments an, um Ihre Unterlagen abzuschließen.',
+    'complete_btn'   => 'Meine Dokumente senden',
+    'label_choose'     => 'Diesen Kostenvoranschlag wählen',
+    'label_other'      => 'Genauen Betrag eingeben',
+    'label_pick'       => 'Betrag und Laufzeit auswählen',
+    'label_currency'      => 'In welcher Währung möchten Sie leihen?',
+    'currency_hint'       => 'Wählen Sie die Währung, in der Sie Ihr Darlehen erhalten möchten.',
+    'preset_label'        => 'Wählen Sie den passenden Kostenvoranschlag',
+    'preset_hint'         => 'Klicken Sie auf einen Betrag, um ihn auszuwählen — oder überspringen Sie diese Vorschläge und geben Sie direkt den genauen Betrag ein, den Sie im Feld unten wünschen.',
+    'custom_show'         => 'Anderen Betrag eingeben',
+    'custom_hide'         => 'Benutzerdefinierte Optionen ausblenden',
+    'quote_summary_title' => 'Ihr Kostenvoranschlag:',
+    'quote_summary_hint'  => 'Überprüfen Sie die Details unten und klicken Sie dann auf die Schaltfläche, um zum nächsten Schritt zu gelangen.',
+    'form_hint'           => 'Alle mit * markierten Felder sind Pflichtfelder. Ihre Daten sind geschützt.',
+    'form_security'       => 'Ihre Angaben werden sicher übermittelt.',
+    'or_custom'        => 'Klicken Sie auf eine Laufzeit, um sie auszuwählen — oder geben Sie direkt die Anzahl der gewünschten Monate im Feld unten ein.',
+    'quote_step_label' => 'Schritt 1',
+    'quote_step_title' => 'Wählen Sie Ihren Kostenvoranschlag',
+    'quote_step_desc'  => 'Klicken Sie auf einen beliebten Kostenvoranschlag oder geben Sie Ihre eigenen Parameter ein.',
+    'back_to_quote'    => 'Mein Angebot ändern',
+    'sidebar_hours'    => 'Mo – Sa: 8:00 – 18:00 Uhr',
+
+    // Personal Loan
     'personal_loan' => [
         'section_title' => 'Privatkredit',
-        'description' => 'Ein Privatkredit ist ein Darlehen, das nicht für einen bestimmten Kauf bestimmt ist. In diesem Zusammenhang kann der über diese Finanzierungsform geliehene Betrag für verschiedene Anschaffungen verwendet werden (Auto, Motorrad, Immobilien, Renovierung, Reise usw.). 
+        'description' => 'Ein Privatkredit ist ein Darlehen, das nicht für einen bestimmten Kauf bestimmt ist. In diesem Zusammenhang kann der über diese Finanzierungsform geliehene Betrag für verschiedene Anschaffungen verwendet werden (Auto, Motorrad, Immobilien, Renovierung, Reise usw.).
                     Es ist daher nicht notwendig, den Zweck der Ausgaben mit dem gesamten Geldbetrag zu rechtfertigen, im Gegensatz zu zweckgebundenen Krediten. Ein zweckgebundener Kredit ist ein Darlehen, das ausschließlich für ein spezifisches Projekt verwendet werden kann: Autokauf, Renovierungsprojekt usw.
                     Ein ungebundener Kredit ist besonders sinnvoll, wenn schnell Bargeld benötigt wird. Zudem kann der Kreditnehmer frei über die Mittel verfügen. Derzeit haben viele Haushalte ein unzureichendes Budget, um neue Projekte zu finanzieren.',
         'details' => [
@@ -54,6 +84,7 @@ return [
         ]
     ],
 
+    // Home Loan
     'home_loan' => [
         'section_title' => 'Hypothekendarlehen',
         'description' => 'Ein Hypothekendarlehen bietet Finanzierungen speziell für den Kauf oder die Renovierung einer Immobilie. Dieses Darlehen ermöglicht es den Kreditnehmern, beträchtliche Mittel für Projekte wie den Kauf eines neuen Hauses, die Erweiterung von Wohnräumen oder die Verbesserung der Immobilieneigenschaften zu erhalten. Hypothekendarlehen sind in der Regel langfristig und bieten wettbewerbsfähige Zinssätze, was sie zu einem wesentlichen Finanzierungsinstrument zur Erreichung von Wohneigentumszielen macht.',
@@ -77,9 +108,10 @@ return [
         ]
     ],
 
+    // Auto Loan
     'auto_loan' => [
         'section_title' => 'Autokredit',
-        'description' => 'Ein Autokredit ist eine Finanzierungsoption, die speziell dafür konzipiert ist, Ihnen beim Kauf eines neuen oder gebrauchten Fahrzeugs zu helfen. Dieser Kredittyp bietet flexible Rückzahlungsbedingungen und wettbewerbsfähige Zinssätze, sodass Sie das Auto Ihrer Wahl ohne große Vorauszahlung fahren können. Mit einem Autokredit können Sie die gesamten oder teilweisen Fahrzeugkosten abdecken und diese im Laufe der Zeit zurückzahlen, was ihn zu einer erschwinglichen Lösung für die meisten Budgets macht. Autokredite bieten einen unkomplizierten Antragsprozess und eine schnelle Genehmigung, damit Sie schnell auf die Straße kommen.',
+        'description' => 'Ein Autokredit ist eine Finanzierungsoption, die speziell dafür konzipiert ist, Ihnen beim Kauf eines neuen oder gebrauchten Fahrzeugs zu helfen. Dieser Kredittyp bietet flexible Rückzahlungsbedingungen und wettbewerbsfähige Zinssätze, sodass Sie das Auto Ihrer Wahl ohne große Vorauszahlung fahren können.',
         'details' => [
             'introduction' => 'Erleben Sie die Vorteile eines Autokredits, der darauf ausgelegt ist, den Fahrzeugkauf einfach und erschwinglich zu gestalten.',
             'more_info_title' => 'Warum einen Autokredit wählen?',
@@ -100,9 +132,10 @@ return [
         ]
     ],
 
+    // Business Loan
     'business_loan' => [
         'section_title' => 'Geschäftskredit',
-        'description' => 'Ein Geschäftskredit ist eine Finanzlösung, die darauf abzielt, das Wachstum und die operativen Bedürfnisse Ihres Unternehmens zu unterstützen. Ob Sie Mittel für Expansion, den Kauf von Ausrüstung oder Betriebskapital benötigen – ein Geschäftskredit kann Ihrem Unternehmen den nötigen finanziellen Schub geben. Mit flexiblen Rückzahlungsbedingungen und wettbewerbsfähigen Zinssätzen ermöglicht dieser Kredittyp Geschäftsinhabern, den Cashflow effektiv zu steuern, in neue Möglichkeiten zu investieren und langfristigen Erfolg zu fördern.',
+        'description' => 'Ein Geschäftskredit ist eine Finanzlösung, die darauf abzielt, das Wachstum und die operativen Bedürfnisse Ihres Unternehmens zu unterstützen. Ob Sie Mittel für Expansion, den Kauf von Ausrüstung oder Betriebskapital benötigen – ein Geschäftskredit kann Ihrem Unternehmen den nötigen finanziellen Schub geben.',
         'details' => [
             'introduction' => 'Entdecken Sie, wie ein Geschäftskredit Ihr Unternehmen in einem wettbewerbsorientierten Markt wachsen und gedeihen lassen kann.',
             'more_info_title' => 'Warum einen Geschäftskredit wählen?',
@@ -123,9 +156,10 @@ return [
         ]
     ],
 
+    // Bike Loan
     'bike_loan' => [
         'section_title' => 'Motorradkredit',
-        'description' => 'Ein Motorradkredit ist eine Finanzierungsoption, die für Personen entwickelt wurde, die ein neues oder gebrauchtes Motorrad oder Fahrrad kaufen möchten. Dieser Kredit ermöglicht es Ihnen, das Motorrad Ihrer Wahl mit erschwinglichen Rückzahlungsbedingungen und wettbewerbsfähigen Zinssätzen zu fahren. Mit einem Motorradkredit können Sie eine große Vorauszahlung vermeiden und das Motorrad im Laufe der Zeit bezahlen, was es einfacher macht, Ihr Budget zu verwalten. Dieser Kredittyp ist ideal für sowohl Anfänger als auch erfahrene Fahrer, die finanzielle Flexibilität wünschen.',
+        'description' => 'Ein Motorradkredit ist eine Finanzierungsoption, die für Personen entwickelt wurde, die ein neues oder gebrauchtes Motorrad kaufen möchten. Dieser Kredit ermöglicht es Ihnen, das Motorrad Ihrer Wahl mit erschwinglichen Rückzahlungsbedingungen und wettbewerbsfähigen Zinssätzen zu fahren.',
         'details' => [
             'introduction' => 'Kommen Sie mit unserem Motorradkredit schnell und einfach auf die Straße, gestaltet um den Motorradbesitz zugänglich und erschwinglich zu machen.',
             'more_info_title' => 'Warum einen Motorradkredit wählen?',
@@ -146,13 +180,14 @@ return [
         ]
     ],
 
+    // Study Loan
     'study_loan' => [
         'section_title' => 'Studienkredit',
-        'description' => 'Ein Studienkredit ist eine spezielle Finanzierungsoption, die dazu dient, Studenten bei der Deckung der Ausbildungskosten wie Studiengebühren, Bücher, Unterkunft und anderen studienbezogenen Ausgaben zu unterstützen. Diese Art von Kredit bietet Studenten und ihren Familien finanzielle Unterstützung, um eine höhere Ausbildung ohne unmittelbare finanzielle Belastung zu ermöglichen. Mit flexiblen Rückzahlungsoptionen und wettbewerbsfähigen Zinssätzen kann ein Studienkredit das Erreichen akademischer Ziele erleichtern.',
+        'description' => 'Ein Studienkredit ist eine spezielle Finanzierungsoption, die dazu dient, Studenten bei der Deckung der Ausbildungskosten wie Studiengebühren, Bücher, Unterkunft und anderen studienbezogenen Ausgaben zu unterstützen.',
         'details' => [
             'introduction' => 'Fördern Sie Ihre Bildungsreise mit einem Studienkredit, der darauf ausgelegt ist, höhere Bildung zugänglich und erschwinglich zu machen.',
             'more_info_title' => 'Warum einen Studienkredit wählen?',
-            'more_info_text' => 'Ein Studienkredit bietet notwendige finanzielle Unterstützung für Studenten, mit überschaubaren Zinssätzen und flexiblen Rückzahlungsbedingungen, damit Sie sich auf Ihr Studium konzentrieren können, ohne sich finanziell sorgen zu müssen.',
+            'more_info_text' => 'Ein Studienkredit bietet notwendige finanzielle Unterstützung für Studenten, mit überschaubaren Zinssätzen und flexiblen Rückzahlungsbedingungen, damit Sie sich auf Ihr Studium konzentrieren können.',
             'advantage1' => 'Flexible Rückzahlungsoptionen',
             'advantage2' => 'Wettbewerbsfähige Zinssätze',
             'advantage3' => 'Deckt verschiedene Ausbildungskosten ab',
@@ -164,10 +199,9 @@ return [
                 'question2' => 'Wie beantrage ich einen Studienkredit?',
                 'answer2' => 'Sie können sich bewerben, indem Sie unser Online-Bewerbungsformular ausfüllen. Unser Team unterstützt Sie bei jedem Schritt des Prozesses.',
                 'question3' => 'Wann beginne ich mit der Rückzahlung des Studienkredits?',
-                'answer3' => 'Die Rückzahlungsbedingungen variieren, aber viele Studienkredite bieten aufgeschobene Rückzahlungsoptionen, sodass Sie erst nach Abschluss Ihres Studiums mit der Rückzahlung beginnen können.'
+                'answer3' => 'Die Rückzahlungsbedingungen variieren, aber viele Studienkredite bieten aufgeschobene Rückzahlungsoptionen, sodass Sie erst nach Abschluss Ihres Studiums beginnen können.'
             ]
         ]
     ],
-
 
 ];

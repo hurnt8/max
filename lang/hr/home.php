@@ -6,16 +6,7 @@ return [
     'banner_text' => 'Milijuni ljudi koriste Credixa za realizaciju svojih projekata.',
     'get_loan_now' => 'Dobijte zajam sada',
     'popular_loans' => 'Popularne vrste kredita:',
-    'personal_loan' => 'Osobni zajam',
-    'mortgage_loan' => 'Hipotekarni zajam',
-    'auto_loan' => 'Auto kredit',
-    'student_loan' => 'Studentski kredit',
-    'business_loan' => 'Profesionalni zajam',
-    'consumer_loan' => "Potrošački kredit",
-    'bridge_loan' => 'Potrošački kredit',
-    'microcredit' => 'Mikrokredit',
 
-    // Novi prijevodi za odjeljak
     'discover_our_loan_services' => 'Otkrijte naše usluge zajma',
     'find_the_right_loan' => 'Pronađite zajam koji odgovara vašim potrebama među našim različitim opcijama',
     'personal_loan' => 'Osobni zajam',
@@ -73,48 +64,43 @@ return [
     'testimonials_description' => 'Saznajte što naši kupci kažu o nama.',
     'testimonial_1' => [
         'quote' => '"Vrlo sam zadovoljan uslugom. Proces podnošenja zahtjeva za kredit bio je brz i jednostavan. Dobio sam odobrenje za samo nekoliko dana, a cijene su bile konkurentne. Hvala vam puno!"',
-        'name' => 'Julie B.',
+        'name' => 'Ivan Horvat',
+        'location' => 'Zagreb, Hrvatska',
     ],
     'testimonial_2' => [
         'quote' => '"Toplo preporučujem ovu uslugu zajma. Tim je bio vrlo profesionalan i uslužan. Odgovorili su na sva moja pitanja i olakšali proces. Hvala vam na izvrsnoj usluzi!"',
-        'name' => 'Pierre L.',
+        'name' => 'Maja Kovač',
+        'location' => 'Split, Hrvatska',
     ],
     'testimonial_3' => [
-        'quote' => '"Proces prijave za kredit bio je transparentan
-          i učinkovito. Cijelo vrijeme sam dobivao stručne i personalizirane savjete
-          tijekom cijelog procesa. Hvala cijelom timu na izvrsnosti
-          raditi!"',
-        'name' => 'Sophie D.',
+        'quote' => '"Proces prijave za kredit bio je transparentan i učinkovit. Cijelo vrijeme sam dobivao stručne i personalizirane savjete. Hvala cijelom timu na izvrsnom radu!"',
+        'name' => 'Tomislav Perić',
+        'location' => 'Rijeka, Hrvatska',
     ],
     'testimonial_4' => [
-        'quote' => '"Dobijanje zajma kod ove tvrtke bilo je
-          Iskustvo bez muke. Osoblje je bilo ljubazno i obrazovano, a
-          proces je bio brz i učinkovit. Toplo ga preporučujem!"',
-        'name' => 'Marc F.',
+        'quote' => '"Dobivanje zajma kod ove tvrtke bilo je iskustvo bez muke. Osoblje je bilo ljubazno i obrazovano, a proces je bio brz i učinkovit. Toplo ga preporučujem!"',
+        'name' => 'Ana Babić',
+        'location' => 'Osijek, Hrvatska',
     ],
     'testimonial_5' => [
-        'quote' => '"Izvrsna korisnička služba! Vodili su me kroz sve
-          svaki korak procesa zajma i odgovoreno je na moja pitanja
-          brzo. Vrlo sam zadovoljan krajnjim rezultatom."',
-        'name' => 'Nathalie P.',
+        'quote' => '"Izvrsna korisnička služba! Vodili su me kroz svaki korak procesa zajma i odgovorili na moja pitanja brzo. Vrlo sam zadovoljan krajnjim rezultatom."',
+        'name' => 'Marko Jurić',
+        'location' => 'Dubrovnik, Hrvatska',
     ],
     'testimonial_6' => [
-        'quote' => '"Vrlo dobra kamata i brz proces. I
-          preporučujemo ovu uslugu svima koji trebaju zajam
-          brz i pouzdan."',
-        'name' => 'Luc M.',
+        'quote' => '"Vrlo dobra kamata i brz proces. Preporučujemo ovu uslugu svima koji trebaju brz i pouzdan zajam."',
+        'name' => 'Petra Blažević',
+        'location' => 'Zadar, Hrvatska',
     ],
     'testimonial_7' => [
-        'quote' => '"Jednostavan i učinkovit postupak zajma. Bio sam
-          ugodno iznenađen brzinom odobravanja. Hvala svima
-          Tim!"',
-        'name' => 'Marie C.',
+        'quote' => '"Jednostavan i učinkovit postupak zajma. Bio sam ugodno iznenađen brzinom odobravanja. Hvala svim članovima tima!"',
+        'name' => 'Stjepan Novak',
+        'location' => 'Slavonski Brod, Hrvatska',
     ],
     'testimonial_8' => [
-        'quote' => '"Imao sam izvrsno iskustvo s ovom uslugom
-          zajam. Osoblje je bilo pažljivo i profesionalno. preporučam
-          jedva čekam!"',
-        'name' => 'Jean L.',
+        'quote' => '"Imao sam izvrsno iskustvo s ovom uslugom zajma. Osoblje je bilo pažljivo i profesionalno. Toplo preporučujem!"',
+        'name' => 'Ivana Tomljanović',
+        'location' => 'Pula, Hrvatska',
     ],
 
     'about_title' => 'Pridružite se najboljoj svjetskoj tržnici za radnike',
@@ -136,7 +122,7 @@ return [
     'terms' => 'Opći uvjeti',
     'privacy_policy' => 'Pravila privatnosti',
     'site_map' => 'Mapa web stranice',
-    'about' => [
+    'about_nav' => [
         'title' => 'O',
         'who_we_are' => 'Tko smo mi?',
         'faq' => 'FAQ',

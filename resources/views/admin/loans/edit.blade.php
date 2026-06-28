@@ -101,7 +101,7 @@
           <div class="col-sm-6">
             <label class="form-label-pro">Langue du contrat</label>
             <select name="contract_language" class="form-control-pro">
-              @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español'] as $lc => $llabel)
+              @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','de'=>'Deutsch','pt'=>'Português','it'=>'Italiano','hr'=>'Hrvatski','bg'=>'Български','hu'=>'Magyar','sl'=>'Slovenščina','lt'=>'Lietuvių','mt'=>'Malti','el'=>'Ελληνικά'] as $lc => $llabel)
               <option value="{{ $lc }}" {{ old('contract_language', $loan->contract_language ?? 'fr') === $lc ? 'selected' : '' }}>
                 {{ $llabel }}
               </option>

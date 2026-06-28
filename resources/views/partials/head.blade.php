@@ -6,7 +6,7 @@
     <title>@yield('title', __('menu.home')) | Credixa</title>
     <meta name="description" content="Credixa — solutions de financement rapides, flexibles et personnalisées à travers l'Europe.">
     <link rel="canonical" href="{{ url()->current() }}">
-    @foreach (['fr', 'en', 'pl', 'es'] as $l)
+    @foreach (['fr', 'en', 'pl', 'es', 'bg', 'hu', 'el', 'de', 'pt', 'hr', 'it', 'lt', 'mt', 'sl'] as $l)
     <link rel="alternate" hreflang="{{ $l }}" href="{{ url($l) }}">
     @endforeach
     <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">

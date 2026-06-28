@@ -6,16 +6,8 @@ return [
     'banner_text' => 'Emberek milliói használják a Credixa-ot projektjeik megvalósítására.',
     'get_loan_now' => 'Kölcsön kérése most',
     'popular_loans' => 'Népszerű hiteltípusok:',
-    'personal_loan' => 'Személyi kölcsön',
-    'mortgage_loan' => 'Jelzálogkölcsön',
-    'auto_loan' => 'Gépjármű kölcsön',
-    'student_loan' => 'Diákhitel',
-    'business_loan' => 'Szakmai kölcsön',
-    'consumer_loan' => "Fogyasztói kölcsön",
-    'bridge_loan' => 'Fogyasztói kölcsön',
-    'microcredit' => 'Mikrohitel',
 
-    // Új fordítások a szakaszhoz
+    // Loan types
     'discover_our_loan_services' => 'Fedezze fel hitelszolgáltatásainkat',
     'find_the_right_loan' => 'Keresse meg az igényeinek megfelelő kölcsönt a különböző lehetőségek közül',
     'personal_loan' => 'Személyi kölcsön',
@@ -42,14 +34,14 @@ return [
     'microcredit' => 'Mikrohitel',
     'microcredit_description' => 'Kis hitelek',
     'microcredit_details' => 'Kis hitelek azonnali pénzügyi szükségletekre.',
-    'loan' => 'Kész',
+    'loan' => 'Kölcsön',
 
-    'notice' => 'notice',
-    'from' => 'From',
+    'notice' => 'megjegyzés',
+    'from' => 'Tól',
     'popular_loan_title' => 'Népszerű kölcsönök',
     'personal_loan_subtitle' => 'A legnézettebb és legkeresettebb kölcsönök',
 
-    'title4' => 'Kölcsönhez gyorsan és biztonságosan.',
+    'title4' => 'Kölcsönhöz gyorsan és biztonságosan.',
     'text4' => 'Hitelszolgáltatásaink választásának előnyei.',
     'competitive_rates' => 'Versenyképes árak',
     'competitive_rates_description' => 'Használja ki kölcsönének versenyképes kamatait.',
@@ -69,53 +61,37 @@ return [
     'optimal_security_description' => 'Személyes adatai biztonságban vannak nálunk. A Credixa fejlett biztonsági protokollokat használ az Ön adatainak védelme érdekében. Támogatásunk a hét minden napján, a nap 24 órájában rendelkezésre áll bármilyen segítségre.',
     'apply_loan' => 'Kölcsön kérése',
 
-
-    'testimonials_title' => 'Testimonials',
+    'testimonials_title' => 'Ügyfélvélemények',
     'testimonials_description' => 'Nézze meg, mit mondanak rólunk ügyfeleink.',
     'testimonial_1' => [
-        'quote' => '"Nagyon elégedett vagyok a szolgáltatással. A hiteligénylési folyamat gyors és egyszerű volt. Néhány napon belül megkaptam a jóváhagyást, a kamatlábak pedig versenyképesek voltak. Köszönöm szépen!"',
-        'name' => 'Julie B.',
+        'quote' => '„Kevesebb mint egy hét alatt megkaptam a jelzáloghitelemet. A tanácsadó figyelemreméltóan elérhető volt, a javasolt feltételek pedig jóval kedvezőbbek voltak, mint máshol. Habozás nélkül ajánlom."',
+        'name'  => 'Nagy Péter',
+        'location' => 'Budapest, Magyarország',
     ],
     'testimonial_2' => [
-        'quote' => '"Nagyon ajánlom ezt a hitelszolgáltatást. A csapat nagyon profi és segítőkész volt. Minden kérdésemre válaszoltak, és stresszmentessé tették a folyamatot. Köszönjük a kiváló szolgáltatást!"',
-        'name' => 'Pierre L.',
+        'quote' => '„Két hagyományos banki elutasítást követően a Credixa 48 órán belül személyi kölcsönt nyújtott nekem. A csapat komolyan és jóindulattal vizsgálta meg az ügyemet. Nagyon köszönöm!"',
+        'name'  => 'Kovács Éva',
+        'location' => 'Debrecen, Magyarország',
     ],
     'testimonial_3' => [
-        'quote' => '"A hiteligénylési folyamat átlátható volt
-          és hatékony. Szakszerű és személyre szabott tanácsokat kaptam mindvégig
-          az egész folyamat során. Köszönöm az egész csapatnak a kiváló teljesítményt
-          munka!"',
-        'name' => 'Sophie D.',
+        'quote' => '„100%-ban online ügyintézés, gyors válasz, versenyképes kamatláb. Anélkül finanszíroztam az autómat, hogy egyszer is fiókot kellett volna látogatnom. Modern és hatékony szolgáltatás."',
+        'name'  => 'Szabó András',
+        'location' => 'Miskolc, Magyarország',
     ],
     'testimonial_4' => [
-        'quote' => '"A kölcsön felvétele ennél a cégnél a
-          Problémamentes élmény. A személyzet barátságos és hozzáértő volt, és a
-          a folyamat gyors és hatékony volt. Nagyon ajánlom!"',
-        'name' => 'Marc F.',
+        'quote' => '„A személyes kísérés valóban lenyűgözött. A tanácsadóm minden lépésnél felhívott, hogy elmagyarázza az ügyem előrehaladását. Az ember úgy érzi, kísérik, nem egyedül áll a nyomtatványokkal."',
+        'name'  => 'Tóth Katalin',
+        'location' => 'Pécs, Magyarország',
     ],
     'testimonial_5' => [
-        'quote' => '"Kiváló ügyfélszolgálat! Végigvezettek
-          a hitelezési folyamat minden lépésére és kérdéseimre választ kaptak
-          gyorsan. Nagyon elégedett vagyok a végeredménnyel."',
-        'name' => 'Nathalie P.',
+        'quote' => '„Egyértelmű szimulátort, egyszerű dokumentációt, háromnapos munkarenden belüli átutalást. Sürgős felújítási munkákat kellett finanszíroznom, és a Credixa a megfelelő pillanatban jött."',
+        'name'  => 'Varga László',
+        'location' => 'Győr, Magyarország',
     ],
     'testimonial_6' => [
-        'quote' => '"Nagyon jó kamat és gyors folyamat. I
-          erősen ajánlom ezt a szolgáltatást mindenkinek, akinek hitelre van szüksége
-          gyors és megbízható."',
-        'name' => 'Luc M.',
-    ],
-    'testimonial_7' => [
-        'quote' => '"Egyszerű és hatékony kölcsönfolyamat. Az voltam
-          kellemesen meglepte a jóváhagyás gyorsasága. Köszönet mindenkinek
-          a csapat!"',
-        'name' => 'Marie C.',
-    ],
-    'testimonial_8' => [
-        'quote' => '"Kiváló tapasztalataim voltak ezzel a szolgáltatással
-          hitel. A személyzet figyelmes és profi volt. ajánlom
-          alig várom!"',
-        'name' => 'Jean L.',
+        'quote' => '„A kamatlábak és díjak átláthatósága már az első kapcsolatfelvételkor meggyőzött. Semmilyen kellemetlen meglepetés az úton. Ez ritka és értékes ebben az ágazatban."',
+        'name'  => 'Molnár Zsuzsa',
+        'location' => 'Szeged, Magyarország',
     ],
 
     'about_title' => 'Csatlakozzon a világ legjobb munkavállalói piacteréhez',
@@ -137,12 +113,6 @@ return [
     'terms' => 'Általános feltételek',
     'privacy_policy' => 'Adatvédelmi szabályzat',
     'site_map' => 'Webhelytérkép',
-    'about' => [
-        'title' => 'Névjegy',
-        'who_we_are' => 'Kik vagyunk mi?',
-        'faq' => 'GYIK',
-        'contact' => 'Kapcsolat',
-    ],
     'loan_types' => [
         'title' => 'Hitelek típusai',
         'personal_loans' => 'Személyi kölcsönök',
@@ -175,61 +145,72 @@ return [
     'sl' => 'szlovén',
 
     // Hero subtitle
-    'hero_subtitle' => 'Nincs bonyolult folyamat, nincsenek rejtett díjak. 1990 óta finanszírozzuk személyes, ingatlan-, autó- és üzleti projektjeit átláthatóan és gyorsan.',
+    'hero_subtitle' => 'Nincs bonyolult folyamat, nincsenek rejtett díjak. 5 éve finanszírozzuk személyes, ingatlan-, autó- és üzleti projektjeit átláthatóan és gyorsan.',
 
     // Slide
     'slide_1' => [
-        'title' => ' 1990 óta · Engedélyes · Válasz 24 órán belül',
+        'title' => ' 5 éve · Engedélyes · Válasz garantált',
         'text1' => 'Finanszírozza összes projektjét,',
         'text2' => 'akár 95 000 € 24 órán belül.',
     ],
     'slide_2' => [
-        'title' => 'Okos Hitelek a Világos Jövőért',
+        'title' => 'Okos Hitelek a Fényes Jövőért',
         'text1' => 'Hiteleink segítenek',
-        'text2' => 'Valóra váltani az álmaidat',
+        'text2' => 'valóra váltani az álmait',
     ],
     'slide_3' => [
-        'title' => 'Okos Hitelek a Világos Jövőért',
+        'title' => 'Okos Hitelek a Fényes Jövőért',
         'text1' => 'Mi biztosítjuk a legjobb',
-        'text2' => 'szolgáltatásokat a hiteledhez',
+        'text2' => 'szolgáltatásokat a hiteléhez',
     ],
     'slide_4' => [
-        'title' => 'Okos Hitelek a Világos Jövőért',
+        'title' => 'Okos Hitelek a Fényes Jövőért',
         'text1' => 'A legjobb',
-        'text2' => 'Hitelvállalat vezetője',
+        'text2' => 'hitelvállalatot irányítjuk',
     ],
 
+    // Infos
     'infos' => [
         'item1' => 'gyors jóváhagyás',
         'item2' => '500k+ ügyfél',
-        'item3' => 'nincs kezelési díj',
+        'item3' => '6 elfogadott pénznem',
         'item4' => 'rugalmas törlesztés',
     ],
 
+    // About
     'about' => [
         'exptitle' => 'év tapasztalat',
-        'sectagline' => 'Üdvözlünk a Credixa-nél',
-        'sectitle' => 'Személyi hitelek, hogy valóra váltsd az álmaidat',
+        'sectagline' => 'Üdvözlünk a Credixa-nál',
+        'sectitle' => 'Személyi hitelek, hogy valóra váltsa álmait',
         'text1' => '1990 óta vagyunk jelen az üzletben, és a legjobb szolgáltatásokat kínáljuk.',
-        'text2' => 'A Credixa a megbízható platformod hitelekhez, kivételes ügyfélszolgálattal. Elkötelezettek vagyunk abban, hogy egyszerű, biztonságos és gyors pénzügyi megoldásokat kínáljunk.',
+        'text2' => 'A Credixa a megbízható platformja hitelekhez, kivételes ügyfélszolgálattal. Elkötelezettek vagyunk abban, hogy egyszerű, biztonságos és gyors pénzügyi megoldásokat kínáljunk.',
         'check1' => 'kisvállalkozói hitel',
         'check2' => 'külföldi tanulmányi hitel',
         'check3' => 'gyors hitelfolyamat',
         'check4' => 'nagyon alacsony kamatok',
+        'engage1_title' => 'Engedélyezett és szabályozott',
+        'engage1_desc'  => 'Tanúsított hitelintézet, amely megfelel az európai szabványoknak. Adatai és ügyirata minden lépésben védett.',
+        'engage2_title' => 'Garantált válasz 24 órán belül',
+        'engage2_desc'  => '100%-ban online, utazás és papírmunka nélkül. Döntés 24 órán belül.',
+        'engage3_title' => 'Több pénznem és több ország',
+        'engage3_desc'  => 'Hitelek elérhetők euróban, zlotiban, US-dollárban, mexikói pesóban, brazil reálban és costa ricai colonban a projektjétől függően.',
     ],
 
+    // Services
     'services' => [
         'sectagline' => 'mit kínálunk',
-        'sectitle' => 'A legjobb szolgáltatásokat biztosítjuk hiteledhez',
+        'sectitle' => 'A legjobb szolgáltatásokat biztosítjuk hiteléhez',
     ],
 
+    // Simulate
     'simulate' => [
-        'sectitle' => 'Mennyi pénzre van szükséged?',
+        'sectitle' => 'Mennyi pénzre van szüksége?',
     ],
 
+    // Chooses
     'chooses' => [
         'sectagline' => 'előnyeink',
-        'sectitle' => 'Miért válassz minket',
+        'sectitle' => 'Miért válasszon minket',
         'text1' => '1990 óta vagyunk jelen az üzletben, és a legjobb szolgáltatásokat kínáljuk.',
         'item1' => 'alacsonyabb kamatok',
         'item2' => 'gyors és egyszerű',
@@ -238,55 +219,72 @@ return [
         'progress3' => 'törlesztési előnyök',
     ],
 
+    // Works
     'works' => [
         'sectagline' => 'Hogyan működik',
         'sectitle' => 'Munkafolyamatunk',
         'step' => 'Lépés',
         'step1' => [
             'title' => 'Jelentkezés benyújtása',
-            'desc' => 'Töltsd ki és nyújtsd be a jelentkezésed online néhány perc alatt. Nincs szükség fiók látogatásra.',
+            'desc' => 'Töltse ki és nyújtsa be a jelentkezését online néhány perc alatt. Nincs szükség fiók látogatásra.',
         ],
         'step2' => [
             'title' => 'Átvizsgálás és Ellenőrzés',
-            'desc' => 'Csapatunk átnézi a dokumentumokat, és ellenőrzi az adatokat, hogy biztosítsa az alkalmasságot.',
+            'desc' => 'Csapatunk átnézi az Ön dokumentumait és ellenőrzi az adatokat, hogy biztosítsa az alkalmasságot.',
         ],
         'step3' => [
             'title' => 'Hitel jóváhagyása',
-            'desc' => 'Miután jóváhagyjuk, értesítést kapsz a hitel jóváhagyásáról, valamint a feltételek részleteiről.',
+            'desc' => 'Miután jóváhagyjuk, értesítést kap a hitel jóváhagyásáról, valamint a feltételek részleteiről.',
         ],
         'step4' => [
             'title' => 'A pénz kifizetése',
-            'desc' => 'A pénz közvetlenül a bankszámládra kerül átutalásra a jóváhagyás után rövid időn belül.',
+            'desc' => 'A pénz közvetlenül a bankszámlájára kerül átutalásra a jóváhagyás után rövid időn belül.',
         ],
     ],
 
+    // Loan Reasons
     'loan_reasons' => [
         'sectagline' => 'hitel okai',
         'sectitle' => 'Népszerű okok a hitel felvételére',
         'reasons' => [
-            'title1' => 'Új autóra van szükséged?',
-            'desc1' => 'Vedd kézbe a pénzügyeidet, és vezesd az álmaid autóját egy olyan hitellel, amely a te igényeidhez igazodik.',
+            'title1' => 'Új autóra van szüksége?',
+            'desc1' => 'Vegye kézbe a pénzügyeit, és vezesse az álmai autóját egy olyan hitellel, amely az Ön igényeihez igazodik.',
             'title2' => 'Adósságok konszolidálása',
-            'desc2' => 'Kombináld a több adósságot egy könnyen kezelhető havi törlesztésbe, segítve, hogy egyszerűsítsd és jobban kezeld a pénzügyeidet.',
+            'desc2' => 'Kombinálja több adósságát egy könnyen kezelhető havi törlesztésbe, segítve, hogy egyszerűsítse és jobban kezelje pénzügyeit.',
             'title3' => 'Otthoni felújítás',
-            'desc3' => 'Újítsd fel vagy renováld otthonodat, növelve az értékét és kényelmét anélkül, hogy pénzügyi terhet róna rád.',
+            'desc3' => 'Újítsa fel vagy renoválja otthonát, növelve annak értékét és kényelmét anélkül, hogy pénzügyi terhet róna rá.',
+            'title4' => 'Finanszírozza tanulmányait',
+            'desc4' => 'Fektessen be a jövőjébe: tandíjak, szakképzések vagy átképzések, anélkül, hogy veszélyeztetné a mindennapi életét.',
+            'title5' => 'Utazás és nyaralás',
+            'desc5' => 'Utazzon nyugodtan és fedezze fel a világot. Finanszírozza álomutazását anélkül, hogy meritené a megtakarításait.',
+            'title6' => 'Esküvő és családi rendezvények',
+            'desc6' => 'Ünnepelje az élet fontos pillanatait pénzügyi stressz nélkül. Szervezze meg álomrendezvényét a saját tempójában.',
+            'title7' => 'Orvosi kiadások és egészség',
+            'desc7' => 'Szembesüljön nyugodtan váratlan egészségügyi helyzetekkel. Gyorsan fedezze a kezeléseket, műtéteket vagy orvosi berendezéseket.',
+            'title8' => 'Vállalkozás alapítása és befektetés',
+            'desc8' => 'Valósítsa meg vállalkozói projektjét vagy fejlessze tevékenységét gyors és rugalmas finanszírozással.',
         ],
-        'btn_text' => 'Tudd meg többet',
-        'btn_icon' => 'ikon-következő',
+        'btn_text' => 'Tudjon meg többet',
+        'btn_icon' => 'icon-next',
     ],
 
-    'total_loans_granted' => 'Összes Jóváhagyott Hitel',
-    'customer_satisfaction_rate' => 'Boldog Ügyfelek',
-    'total_loan_amount_granted' => 'Elérhető összeg',
-    'average_approval_time' => 'Garantált válasz',
-    'member' => 'Finanszírozott ügyfelek',
-    'day' => 'Napok',
+    // Others
+    'total_loans_granted' => 'Összes jóváhagyott hitel',
+    'customer_satisfaction_rate' => 'Elégedett ügyfelek',
+    'total_loan_amount_granted' => 'Max. hitel / ügyirat',
+    'average_approval_time'     => 'Garantált válasz',
+    'member'                    => 'Finanszírozott ügyfelek',
+    'years_experience'          => 'Év tapasztalat',
+    'day' => 'Nap',
 
-    'cta_title2' => 'Szerezd meg a szükséges hitelt gyorsan.',
-    'cta_text2' => 'Szerezd meg a Vállalkozói Hitel gyorsan',
-    'cta_button2' => 'Kezd el most',
+    'partners_label' => 'Partnereink',
+    'partners_title' => 'Partnerbankok',
 
-    'about_text' => 'Testreszabott hitelmegoldásokat kínálunk, hogy elérd pénzügyi céljaidat. Gyors, biztonságos és rugalmas lehetőségek, amelyek megfelelnek az egyedi igényeidnek.',
-    'get' => 'Lépj kapcsolatba velünk'
+    'cta_title2' => 'Szerezze meg a szükséges hitelt gyorsan.',
+    'cta_text2' => 'Szerezzen gyorsan üzleti hitelt',
+    'cta_button2' => 'Kezdje el most',
+
+    'about_text' => 'Testreszabott hitelmegoldásokat kínálunk, hogy elérje pénzügyi céljait. Gyors, biztonságos és rugalmas lehetőségek, amelyek megfelelnek az egyedi igényeinek.',
+    'get' => 'Lépjen kapcsolatba velünk',
 
 ];

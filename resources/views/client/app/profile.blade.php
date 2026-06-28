@@ -163,14 +163,14 @@
       </div>
       <div class="ca-settings-item__text">
         <div class="ca-settings-item__label">{{ __('app.language_pref') }}</div>
-        <div class="ca-settings-item__sub">{{ ['fr'=>'Francais','en'=>'English','pl'=>'Polski','es'=>'Espanol'][app()->getLocale()] ?? app()->getLocale() }}</div>
+        <div class="ca-settings-item__sub">{{ ['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','de'=>'Deutsch','pt'=>'Português','it'=>'Italiano','hr'=>'Hrvatski','bg'=>'Български','hu'=>'Magyar','sl'=>'Slovenščina','lt'=>'Lietuvių','mt'=>'Malti','el'=>'Ελληνικά'][app()->getLocale()] ?? app()->getLocale() }}</div>
       </div>
       <div class="ca-settings-item__right" @click="toggle()">
         <i class="fas fa-chevron-right"></i>
       </div>
       <div x-show="open" @click.outside="close()" x-transition
            style="position:fixed;bottom:calc(var(--ca-nav-h) + 1rem);left:1.25rem;right:1.25rem;background:var(--ca-bg4);border:1px solid var(--ca-border);border-radius:var(--ca-radius-md);overflow:hidden;z-index:600;box-shadow:0 -8px 32px rgba(0,0,0,.4)">
-        @foreach(['fr'=>'Francais','en'=>'English','pl'=>'Polski','es'=>'Espanol'] as $lc => $label)
+        @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','de'=>'Deutsch','pt'=>'Português','it'=>'Italiano','hr'=>'Hrvatski','bg'=>'Български','hu'=>'Magyar','sl'=>'Slovenščina','lt'=>'Lietuvių','mt'=>'Malti','el'=>'Ελληνικά'] as $lc => $label)
         <form method="POST" action="{{ route('client.app.locale') }}">
           @csrf
           <input type="hidden" name="locale" value="{{ $lc }}">

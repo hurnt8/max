@@ -6,16 +6,8 @@ return [
     'banner_text' => 'Millionen Menschen nutzen Credixa, um ihre Projekte zu realisieren.',
     'get_loan_now' => 'Jetzt einen Kredit aufnehmen',
     'popular_loans' => 'Beliebte Kreditarten:',
-    'personal_loan' => 'Privatkredit',
-    'mortgage_loan' => 'Hypothekendarlehen',
-    'auto_loan' => 'Autokredit',
-    'student_loan' => 'Studentendarlehen',
-    'business_loan' => 'Berufskredit',
-    'consumer_loan' => "Verbraucherkredit",
-    'bridge_loan' => 'Verbraucherkredit',
-    'microcredit' => 'Microcredit',
 
-    // Neue Übersetzungen für den Abschnitt
+    // Loan types
     'discover_our_loan_services' => 'Entdecken Sie unsere Kreditdienstleistungen',
     'find_the_right_loan' => 'Finden Sie unter unseren verschiedenen Optionen den Kredit, der Ihren Bedürfnissen entspricht',
     'personal_loan' => 'Privatkredit',
@@ -39,12 +31,12 @@ return [
     'bridge_loan' => 'Überbrückungskredit',
     'bridge_loan_description' => 'Zwischen zwei Verkäufen',
     'bridge_loan_details' => 'Kreditlösungen zur Deckung des Bedarfs zwischen zwei Immobilientransaktionen.',
-    'microcredit' => 'Microcredit',
+    'microcredit' => 'Mikrocredit',
     'microcredit_description' => 'Kleinkredite',
     'microcredit_details' => 'Kleinkredite für den unmittelbaren Finanzbedarf.',
-    'loan' => 'Ready',
+    'loan' => 'Kredit',
 
-    'notice' => 'notice',
+    'notice' => 'Hinweis',
     'from' => 'Von',
     'popular_loan_title' => 'Beliebte Kredite',
     'personal_loan_subtitle' => 'Die am häufigsten angezeigten und nachgefragten Kredite',
@@ -69,53 +61,37 @@ return [
     'optimal_security_description' => 'Ihre persönlichen Daten sind bei uns sicher. Credixa verwendet fortschrittliche Sicherheitsprotokolle, um Ihre Privatsphäre zu schützen. Unser Support steht Ihnen rund um die Uhr für jede Hilfe zur Verfügung.',
     'apply_loan' => 'Darlehen beantragen',
 
-
-    'testimonials_title' => 'Testimonials',
+    'testimonials_title' => 'Kundenstimmen',
     'testimonials_description' => 'Finden Sie heraus, was unsere Kunden über uns sagen.',
     'testimonial_1' => [
-        'quote' => '"Ich bin mit dem Service sehr zufrieden. Der Kreditantragsprozess verlief schnell und einfach. Ich erhielt die Genehmigung innerhalb weniger Tage und die Zinssätze waren wettbewerbsfähig. Vielen Dank!"',
-        'name' => 'Julie B.',
+        'quote' => '„Ich habe mein Hypothekendarlehen in weniger als einer Woche erhalten. Der Berater war außerordentlich erreichbar und die angebotenen Konditionen waren deutlich besser als anderswo. Ich empfehle es ohne Zögern."',
+        'name'  => 'Markus Weber',
+        'location' => 'Berlin, Deutschland',
     ],
     'testimonial_2' => [
-        'quote' => '"Ich kann diesen Kreditservice wärmstens empfehlen. Das Team war sehr professionell und hilfsbereit. Sie haben alle meine Fragen beantwortet und den Prozess stressfrei gestaltet. Vielen Dank für Ihren hervorragenden Service!"',
-        'name' => 'Pierre L.',
+        'quote' => '„Nach zwei Ablehnungen bei traditionellen Banken hat mir Credixa innerhalb von 48 Stunden einen Privatkredit gewährt. Das Team hat meine Unterlagen sorgfältig und wohlwollend geprüft. Herzlichen Dank!"',
+        'name'  => 'Sandra Fischer',
+        'location' => 'München, Deutschland',
     ],
     'testimonial_3' => [
-        'quote' => '"Der Kreditantragsprozess war transparent
-          und effizient. Ich wurde durchgehend professionell und individuell beraten
-          während des gesamten Prozesses. Vielen Dank an das gesamte Team für Ihre hervorragende Arbeit
-          arbeiten!"',
-        'name' => 'Sophie D.',
+        'quote' => '„100 % online, schnelle Antwort, wettbewerbsfähiger Zinssatz. Ich habe mein Auto finanziert, ohne ein einziges Mal eine Filiale besuchen zu müssen. Ein moderner und effizienter Service."',
+        'name'  => 'Thomas Bauer',
+        'location' => 'Hamburg, Deutschland',
     ],
     'testimonial_4' => [
-        'quote' => '"Einen Kredit bei dieser Firma zu bekommen war eine
-          Problemloses Erlebnis. Das Personal war freundlich und kompetent, und das
-          Der Prozess war schnell und effizient. Ich empfehle es sehr!"',
-        'name' => 'Marc F.',
+        'quote' => '„Die persönliche Begleitung hat mich wirklich beeindruckt. Mein Berater hat mich bei jedem Schritt angerufen, um mir den Fortschritt meiner Akte zu erklären. Man fühlt sich begleitet, nicht allein mit den Formularen."',
+        'name'  => 'Julia Hoffmann',
+        'location' => 'Frankfurt, Deutschland',
     ],
     'testimonial_5' => [
-        'quote' => '"Ausgezeichneter Kundenservice! Ich wurde durch die Beratung geführt
-          Jeder Schritt des Kreditprozesses und meine Fragen wurden beantwortet
-          schnell. „Ich bin mit dem Endergebnis sehr zufrieden.“"',
-        'name' => 'Nathalie P.',
+        'quote' => '„Klarer Simulator, einfache Unterlagen, Überweisung innerhalb von drei Werktagen erhalten. Ich musste dringende Renovierungsarbeiten finanzieren und Credixa war zum richtigen Zeitpunkt da."',
+        'name'  => 'Andreas Müller',
+        'location' => 'Stuttgart, Deutschland',
     ],
     'testimonial_6' => [
-        'quote' => '"Sehr guter Zinssatz und schnelle Abwicklung. I
-          Ich kann diesen Service jedem wärmstens empfehlen, der einen Kredit benötigt
-          schnell und zuverlässig."',
-        'name' => 'Luc M.',
-    ],
-    'testimonial_7' => [
-        'quote' => '"Einfacher und effizienter Kreditprozess. Ich war
-          angenehm überrascht von der Geschwindigkeit der Genehmigung. Dank an alle
-          Das Team!"',
-        'name' => 'Marie C.',
-    ],
-    'testimonial_8' => [
-        'quote' => '"Ich hatte eine ausgezeichnete Erfahrung mit diesem Service
-          Darlehen. Das Personal war aufmerksam und professionell. Ich empfehle
-          kann es kaum erwarten!"',
-        'name' => 'Jean L.',
+        'quote' => '„Die Transparenz bei den Zinssätzen und Gebühren hat mich beim ersten Kontakt überzeugt. Keinerlei böse Überraschungen unterwegs. Das ist selten und wertvoll in diesem Sektor."',
+        'name'  => 'Christine Schmitt',
+        'location' => 'Köln, Deutschland',
     ],
 
     'about_title' => 'Treten Sie dem weltbesten Marktplatz für Arbeitskräfte bei',
@@ -137,12 +113,6 @@ return [
     'terms' => 'Allgemeine Geschäftsbedingungen',
     'privacy_policy' => 'Datenschutzerklärung',
     'site_map' => 'Sitemap',
-    'about' => [
-        'title' => 'Über',
-        'who_we_are' => 'Wer sind wir?',
-        'faq' => 'FAQ',
-        'contact' => 'Kontakt',
-    ],
     'loan_types' => [
         'title' => 'Darlehensarten',
         'personal_loans' => 'Privatkredite',
@@ -175,12 +145,12 @@ return [
     'sl' => 'Slowenisch',
 
     // Hero subtitle
-    'hero_subtitle' => 'Kein aufwändiges Verfahren, keine versteckten Gebühren. Wir finanzieren Ihre persönlichen, Immobilien-, Auto- und Geschäftsprojekte seit 1990 transparent und schnell.',
+    'hero_subtitle' => 'Kein aufwändiges Verfahren, keine versteckten Gebühren. Seit 5 Jahren finanzieren wir Ihre persönlichen, Immobilien-, Auto- und Geschäftsprojekte mit Transparenz und Schnelligkeit.',
 
     // Slide
     'slide_1' => [
-        'title' => ' Seit 1990 · Lizenziert · Antwort in 24h',
-        'text1' => 'Finanzieren Sie alle Projekte,',
+        'title' => ' Seit 5 Jahren · Lizenziert · Antwort garantiert',
+        'text1' => 'Finanzieren Sie alle Ihre Projekte,',
         'text2' => 'bis zu 95.000 € in 24h.',
     ],
     'slide_2' => [
@@ -199,13 +169,15 @@ return [
         'text2' => 'Kreditunternehmen',
     ],
 
+    // Infos
     'infos' => [
         'item1' => 'schnelle Genehmigungen',
         'item2' => 'über 500.000 Kunden',
-        'item3' => 'keine Zahlungsgebühren',
+        'item3' => '6 akzeptierte Währungen',
         'item4' => 'flexible Zahlungen',
     ],
 
+    // About
     'about' => [
         'exptitle' => 'Jahre Erfahrung',
         'sectagline' => 'Willkommen bei Credixa',
@@ -216,17 +188,26 @@ return [
         'check2' => 'Kredit für Auslandsstudium',
         'check3' => 'schneller Kreditprozess',
         'check4' => 'sehr niedrige Zinsen',
+        'engage1_title' => 'Zugelassen & reguliert',
+        'engage1_desc'  => 'Zertifiziertes Kreditinstitut, das den europäischen Standards entspricht. Ihre Daten und Unterlagen sind in jedem Schritt geschützt.',
+        'engage2_title' => 'Antwort garantiert innerhalb von 24h',
+        'engage2_desc'  => '100 % online, ohne Reise und Papierkram. Entscheidung innerhalb von 24 Stunden.',
+        'engage3_title' => 'Mehrwährungs- & mehrländerfähig',
+        'engage3_desc'  => 'Kredite in Euro, Złoty, US-Dollar, Mexikanischem Peso, Brasilianischem Real und Costa-ricanischem Colón je nach Ihrem Projekt verfügbar.',
     ],
 
+    // Services
     'services' => [
         'sectagline' => 'was wir anbieten',
         'sectitle' => 'Wir bieten die besten Dienstleistungen für Ihren Kredit',
     ],
 
+    // Simulate
     'simulate' => [
         'sectitle' => 'Wie viel benötigen Sie?',
     ],
 
+    // Chooses
     'chooses' => [
         'sectagline' => 'unsere Vorteile',
         'sectitle' => 'warum uns wählen',
@@ -238,6 +219,7 @@ return [
         'progress3' => 'Zahlungsvorteile',
     ],
 
+    // Works
     'works' => [
         'sectagline' => 'So funktioniert es',
         'sectitle' => 'Unser Arbeitsablauf',
@@ -248,7 +230,7 @@ return [
         ],
         'step2' => [
             'title' => 'Überprüfung & Verifizierung',
-            'desc' => 'Unser Team überprüft Ihre Daten und bestätigt Ihre Berechtigung.',
+            'desc' => 'Unser Team überprüft Ihre Unterlagen und bestätigt Ihre Berechtigung.',
         ],
         'step3' => [
             'title' => 'Kreditgenehmigung',
@@ -260,6 +242,7 @@ return [
         ],
     ],
 
+    // Loan Reasons
     'loan_reasons' => [
         'sectagline' => 'Kreditgründe',
         'sectitle' => 'Beliebte Gründe für Kredite',
@@ -270,23 +253,38 @@ return [
             'desc2' => 'Kombinieren Sie mehrere Schulden zu einer einfachen monatlichen Zahlung und verbessern Sie Ihr Finanzmanagement.',
             'title3' => 'Hausrenovierung',
             'desc3' => 'Renovieren oder verbessern Sie Ihr Zuhause und steigern Sie dessen Wert und Komfort, ohne finanziellen Druck.',
+            'title4' => 'Finanzieren Sie Ihr Studium',
+            'desc4' => 'Investieren Sie in Ihre Zukunft: Studiengebühren, Berufsausbildungen oder Umschulungen, ohne Ihren Alltag zu beeinträchtigen.',
+            'title5' => 'Reise & Urlaub',
+            'desc5' => 'Reisen Sie entspannt und entdecken Sie die Welt. Finanzieren Sie Ihre Traumreise, ohne Ihre Ersparnisse anzutasten.',
+            'title6' => 'Hochzeit & Familienfeiern',
+            'desc6' => 'Feiern Sie wichtige Lebensmomente ohne finanziellen Stress. Organisieren Sie die Veranstaltung Ihrer Träume in Ihrem eigenen Tempo.',
+            'title7' => 'Medizinische Ausgaben & Gesundheit',
+            'desc7' => 'Begegnen Sie unvorhergesehenen Gesundheitssituationen gelassen. Decken Sie schnell Behandlungen, Operationen oder medizinische Geräte ab.',
+            'title8' => 'Unternehmensgründung & Investitionen',
+            'desc8' => 'Verwirklichen Sie Ihr unternehmerisches Projekt oder entwickeln Sie Ihre Aktivität mit schneller und flexibler Finanzierung.',
         ],
         'btn_text' => 'Mehr erfahren',
-        'btn_icon' => 'icon-next'
+        'btn_icon' => 'icon-next',
     ],
 
+    // Others
     'total_loans_granted' => 'Gesamtzahl der vergebenen Kredite',
     'customer_satisfaction_rate' => 'Zufriedene Kunden',
-    'total_loan_amount_granted' => 'Verfügbarer Betrag',
-    'average_approval_time' => 'Garantierte Antwort',
-    'member' => 'Finanzierte Kunden',
+    'total_loan_amount_granted' => 'Max. Kredit / Akte',
+    'average_approval_time'     => 'Garantierte Antwort',
+    'member'                    => 'Finanzierte Kunden',
+    'years_experience'          => 'Jahre Erfahrung',
     'day' => 'Tage',
+
+    'partners_label' => 'Unsere Partner',
+    'partners_title' => 'Partnerbanken',
 
     'cta_title2' => 'Erhalten Sie den Kredit, den Sie schnell benötigen.',
     'cta_text2' => 'Erhalten Sie schnell einen Geschäftskredit',
     'cta_button2' => 'Jetzt starten',
 
     'about_text' => 'Wir bieten maßgeschneiderte Kreditlösungen, um Ihre finanziellen Ziele zu erreichen. Schnelle, sichere und flexible Optionen, die auf Ihre Bedürfnisse zugeschnitten sind.',
-    'get' => 'Kontakt aufnehmen'
+    'get' => 'Kontakt aufnehmen',
 
 ];

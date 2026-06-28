@@ -41,7 +41,7 @@ class NotificationApiController extends Controller
             ->whereNull('read_at')
             ->update(['read_at' => now()]);
 
-        return response()->json(['message' => 'Toutes les notifications marquées comme lues.']);
+        return response()->json(['message' => __('api.notification.all_read')]);
     }
 
     // POST /api/notifications/{id}/read

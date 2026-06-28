@@ -6,16 +6,7 @@ return [
     'banner_text' => 'Milhões de pessoas usam a Credixa para realizar seus projetos.',
     'get_loan_now' => 'Obtenha um empréstimo agora',
     'popular_loans' => 'Tipos de empréstimos populares:',
-    'personal_loan' => 'Empréstimo pessoal',
-    'mortgage_loan' => 'Empréstimo hipotecário',
-    'auto_loan' => 'Empréstimo para automóvel',
-    'student_loan' => 'Empréstimo estudantil',
-    'business_loan' => 'Empréstimo profissional',
-    'consumer_loan' => 'Empréstimo ao consumidor',
-    'bridge_loan' => 'Empréstimo ponte',
-    'microcredit' => 'Microcrédito',
 
-    // Novas traduções para a seção
     'discover_our_loan_services' => 'Descubra nossos serviços de empréstimo',
     'find_the_right_loan' => 'Encontre o empréstimo adequado às suas necessidades entre nossas diferentes opções',
     'personal_loan' => 'Empréstimo pessoal',
@@ -74,36 +65,44 @@ return [
     'testimonials_description' => 'Descubra o que nossos clientes dizem sobre nós.',
     'testimonial_1' => [
         'quote' => '"Estou muito satisfeita com o serviço. O processo de solicitação de empréstimo foi rápido e fácil. Recebi a aprovação em apenas alguns dias, e as taxas eram competitivas. Muito obrigada!"',
-        'name' => 'Julie B.',
+        'name' => 'João Ferreira',
+        'location' => 'Lisboa, Portugal',
     ],
     'testimonial_2' => [
         'quote' => '"Recomendo muito este serviço de empréstimo. A equipe foi muito profissional e prestativa. Eles responderam todas as minhas perguntas e tornaram o processo sem estresse. Obrigada pelo excelente serviço!"',
-        'name' => 'Pierre L.',
+        'name' => 'Maria Santos',
+        'location' => 'Porto, Portugal',
     ],
     'testimonial_3' => [
         'quote' => '"O processo de solicitação de empréstimo foi transparente e eficiente. Recebi conselhos profissionais e personalizados durante todo o processo. Agradeço a toda a equipe pelo excelente trabalho!"',
-        'name' => 'Sophie D.',
+        'name' => 'Pedro Oliveira',
+        'location' => 'Braga, Portugal',
     ],
     'testimonial_4' => [
         'quote' => '"Obter um empréstimo com esta empresa foi uma experiência sem complicações. A equipe foi amigável e conhecedora, e o processo foi rápido e eficiente. Recomendo muito!"',
-        'name' => 'Marc F.',
+        'name' => 'Ana Costa',
+        'location' => 'Coimbra, Portugal',
     ],
     'testimonial_5' => [
         'quote' => '"Excelente atendimento ao cliente! Fui guiada em cada etapa do processo de empréstimo e minhas perguntas foram respondidas rapidamente. Estou muito satisfeita com o resultado final."',
-        'name' => 'Nathalie P.',
+        'name' => 'Carlos Pereira',
+        'location' => 'Faro, Portugal',
     ],
 
     'testimonial_6' => [
         'quote' => '"Taxa de juros muito boa e processo rápido. Eu recomendo muito este serviço para quem precisa de um empréstimo rápido e confiável."',
-        'name' => 'Luc M.',
+        'name' => 'Inês Martins',
+        'location' => 'Setúbal, Portugal',
     ],
     'testimonial_7' => [
         'quote' => '"Processo de empréstimo simples e eficiente. Fui agradavelmente surpreendida pela rapidez da aprovação. Obrigada a toda a equipe!"',
-        'name' => 'Marie C.',
+        'name' => 'Rui Gonçalves',
+        'location' => 'Évora, Portugal',
     ],
     'testimonial_8' => [
         'quote' => '"Tive uma experiência excelente com este serviço de empréstimo. A equipe foi atenta e profissional. Recomendo sem hesitação!"',
-        'name' => 'Jean L.',
+        'name' => 'Sofia Rodrigues',
+        'location' => 'Aveiro, Portugal',
     ],
 
     'about_title' => 'Junte-se ao melhor marketplace do mundo para trabalhadores',
@@ -125,7 +124,7 @@ return [
     'terms' => 'Condições gerais',
     'privacy_policy' => 'Política de privacidade',
     'site_map' => 'Mapa do site',
-    'about' => [
+    'about_nav' => [
         'title' => 'Sobre',
         'who_we_are' => 'Quem somos?',
         'faq' => 'Perguntas Frequentes',

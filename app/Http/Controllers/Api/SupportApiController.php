@@ -27,10 +27,6 @@ class SupportApiController extends Controller
             ->when($after > 0, fn ($q) => $q->where('id', '>', $after))
             ->oldest()->get();
 
-        // Marquer les messages admin comme lus
-        $messages->where('sender_type', 'admin')
-            ->each(fn ($m) => $m->whereNull('read_at') && $m->update(['read_at' => now()]));
-
         SupportMessage::where('client_id', $user->id)
             ->where('sender_type', 'admin')
             ->whereNull('read_at')
@@ -43,7 +39,6 @@ class SupportApiController extends Controller
     }
 
     // POST /api/support/messages
-    // Body: { body?, file? (multipart) }
     public function store(Request $request): JsonResponse
     {
         $request->validate([
@@ -52,7 +47,7 @@ class SupportApiController extends Controller
         ]);
 
         if (!$request->filled('body') && !$request->hasFile('file')) {
-            return response()->json(['message' => 'Message vide.'], 422);
+            return response()->json(['message' => __('api.support.empty_message')], 422);
         }
 
         $user     = $request->user();
@@ -76,14 +71,13 @@ class SupportApiController extends Controller
 
         $this->notifyAdmin($user, $msg);
 
-        // Réponse IA (texte uniquement)
         $aiMessage = null;
         if ($request->filled('body')) {
             try {
-                $history  = SupportMessage::where('client_id', $user->id)->where('id', '<', $msg->id)->oldest()->get();
-                $aiReply  = $this->ai->generateReply($user, $history);
+                $history = SupportMessage::where('client_id', $user->id)->where('id', '<', $msg->id)->oldest()->get();
+                $aiReply = $this->ai->generateReply($user, $history);
                 if ($aiReply) {
-                    $aiMsg = SupportMessage::create([
+                    $aiMsg     = SupportMessage::create([
                         'client_id'   => $user->id,
                         'sender_type' => 'admin',
                         'is_bot'      => true,

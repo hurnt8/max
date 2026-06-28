@@ -43,7 +43,9 @@ class ClientApiController extends Controller
                 'type'       => $m->type,
                 'amount'     => (float) $m->amount,
                 'currency'   => $m->currency,
-                'label'      => $m->type === 'credit' ? 'Crédit reçu' : 'Débit effectué',
+                'label'      => $m->type === 'credit'
+                    ? __('api.movement.credit_received')
+                    : __('api.movement.debit_done'),
                 'sub'        => $m->note ?? '',
                 'status'     => 'completed',
                 'created_at' => $m->created_at?->toISOString(),
@@ -62,7 +64,9 @@ class ClientApiController extends Controller
                 'type'       => $t->type === 'send' ? 'debit' : 'credit',
                 'amount'     => (float) $t->amount,
                 'currency'   => $t->currency,
-                'label'      => $t->type === 'send' ? 'Virement vers ' . $t->beneficiary_name : 'Virement reçu',
+                'label'      => $t->type === 'send'
+                    ? __('api.movement.transfer_to', ['name' => $t->beneficiary_name])
+                    : __('api.movement.transfer_received'),
                 'sub'        => $t->reference,
                 'status'     => $t->status,
                 'created_at' => $t->created_at?->toISOString(),
@@ -80,10 +84,10 @@ class ClientApiController extends Controller
                 'currency' => $user->currency ?? 'EUR',
                 'avatar'   => strtoupper(substr($user->name, 0, 1)),
             ],
-            'active_loans'   => $activeLoans->count(),
-            'pending_loans'  => $pendingLoans->count(),
-            'unread_notifs'  => $unreadCount,
-            'recent_activity'=> $recentActivity,
+            'active_loans'    => $activeLoans->count(),
+            'pending_loans'   => $pendingLoans->count(),
+            'unread_notifs'   => $unreadCount,
+            'recent_activity' => $recentActivity,
         ]);
     }
 
@@ -132,8 +136,10 @@ class ClientApiController extends Controller
                 'type'          => $m->type,
                 'amount'        => (float) $m->amount,
                 'currency'      => $m->currency,
-                'label'         => $m->type === 'credit' ? 'Crédit reçu' : 'Débit effectué',
-                'sub'           => $m->note ?? 'Système',
+                'label'         => $m->type === 'credit'
+                    ? __('api.movement.credit_received')
+                    : __('api.movement.debit_done'),
+                'sub'           => $m->note ?? __('api.movement.system'),
                 'balance_after' => (float) $m->balance_after,
                 'status'        => 'completed',
                 'created_at'    => $m->created_at?->toISOString(),
@@ -152,7 +158,9 @@ class ClientApiController extends Controller
                 'type'          => $t->type === 'send' ? 'debit' : 'credit',
                 'amount'        => (float) $t->amount,
                 'currency'      => $t->currency,
-                'label'         => $t->type === 'send' ? 'Virement vers ' . $t->beneficiary_name : 'Virement reçu',
+                'label'         => $t->type === 'send'
+                    ? __('api.movement.transfer_to', ['name' => $t->beneficiary_name])
+                    : __('api.movement.transfer_received'),
                 'sub'           => $t->reference . ($t->note ? ' — ' . $t->note : ''),
                 'balance_after' => null,
                 'status'        => $t->status,

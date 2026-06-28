@@ -398,12 +398,15 @@ a{text-decoration:none;color:inherit}
     {{-- Language switcher --}}
     @php
       $cur   = app()->getLocale();
-      $langs = ['fr'=>['Français','png'],'en'=>['English','png'],'pl'=>['Polski','svg'],'es'=>['Español','png']];
+      $langs = ['fr'=>['Français','png'],'en'=>['English','png'],'pl'=>['Polski','svg'],'es'=>['Español','png'],'de'=>['Deutsch','png'],'pt'=>['Português','png'],'it'=>['Italiano','png'],'hr'=>['Hrvatski','png'],'bg'=>['Български','png'],'hu'=>['Magyar','png'],'sl'=>['Slovenščina','png'],'lt'=>['Lietuvių','png'],'mt'=>['Malti','png'],'el'=>['Ελληνικά','png']];
     @endphp
     <div class="ls" x-data="{open:false}">
+      @php $flagFile = fn($c,$e) => file_exists(public_path('images/'.$c.'.'.$e)); @endphp
       <button class="ls__btn" type="button"
               @click="open=!open" @click.outside="open=false">
+        @if($flagFile($cur,$langs[$cur][1]))
         <img src="{{ asset('images/'.$cur.'.'.$langs[$cur][1]) }}" alt="{{ strtoupper($cur) }}">
+        @endif
         <span>{{ strtoupper($cur) }}</span>
         <i class="fas fa-chevron-down ls__chevron" :style="open?'transform:rotate(180deg)':''"></i>
       </button>
@@ -411,7 +414,9 @@ a{text-decoration:none;color:inherit}
         @foreach($langs as $code=>[$label,$ext])
         <a href="{{ route('lang.switch',$code) }}"
            class="ls__opt {{ $cur===$code ? 'cur' : '' }}">
+          @if($flagFile($code,$ext))
           <img src="{{ asset('images/'.$code.'.'.$ext) }}" alt="{{ $code }}">
+          @endif
           {{ $label }}
           @if($cur===$code)
           <i class="fas fa-check" style="margin-left:auto;font-size:.55rem"></i>

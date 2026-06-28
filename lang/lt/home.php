@@ -6,23 +6,15 @@ return [
     'banner_text' => 'Milijonai žmonių naudoja Credixa savo projektams įgyvendinti.',
     'get_loan_now' => 'Gaukite paskolą dabar',
     'popular_loans' => 'Populiarūs paskolų tipai:',
-    'personal_loan' => 'Asmeninė paskola',
-    'mortgage_loan' => 'Hipotekos paskola',
-    'auto_loan' => 'Automobilio paskola',
-    'student_loan' => 'Studento paskola',
-    'business_loan' => 'Profesionali paskola',
-    'consumer_loan' => "Vartojimo paskola",
-    'bridge_loan' => 'Vartojimo paskola',
-    'microcredit' => 'Mikrokreditas',
 
-    // Nauji skyrelio vertimai
+    // Loan types
     'discover_our_loan_services' => 'Atraskite mūsų paskolų paslaugas',
     'find_the_right_loan' => 'Raskite savo poreikius atitinkančią paskolą tarp mūsų skirtingų variantų',
     'personal_loan' => 'Asmeninė paskola',
     'personal_loan_description' => 'Jūsų asmeniniams projektams',
     'personal_loan_details' => 'Greitas ir lankstus finansavimas visiems jūsų asmeniniams poreikiams.',
     'mortgage_loan' => 'Hipotekos paskola',
-    'mortgage_loan_description' => 'Pirk savo namą',
+    'mortgage_loan_description' => 'Pirkite savo namą',
     'mortgage_loan_details' => 'Raskite tobulą hipoteką savo naujiems namams.',
     'auto_loan' => 'Paskola automobiliui',
     'auto_loan_description' => 'Finansuokite savo transporto priemonę',
@@ -30,19 +22,19 @@ return [
     'student_loan' => 'Studento paskola',
     'student_loan_description' => 'Jūsų studijoms',
     'student_loan_details' => 'Paskolos, skirtos finansuoti jūsų išsilavinimą ir akademinius poreikius.',
-    'business_loan' => 'Profesionali paskola',
+    'business_loan' => 'Verslo paskola',
     'business_loan_description' => 'Jūsų verslui',
     'business_loan_details' => 'Finansavimas jūsų verslui palaikyti ir plėsti.',
     'consumer_loan' => 'Vartojimo paskola',
     'consumer_loan_description' => 'Jūsų pirkiniams',
     'consumer_loan_details' => 'Paskolos jūsų pirkiniams ir vartojimo išlaidoms finansuoti.',
-    'bridge_loan' => 'Tiltas paskola',
+    'bridge_loan' => 'Tarpinė paskola',
     'bridge_loan_description' => 'Tarp dviejų pardavimų',
     'bridge_loan_details' => 'Paskolų sprendimai, skirti patenkinti poreikius tarp dviejų nekilnojamojo turto sandorių.',
     'microcredit' => 'Mikrokreditas',
-    'microcredit_description' => 'Mažosios paskolos',
+    'microcredit_description' => 'Mažos paskolos',
     'microcredit_details' => 'Nedidelės paskolos neatidėliotiniems finansiniams poreikiams tenkinti.',
-    'loan' => 'Pasiruošęs',
+    'loan' => 'Paskola',
 
     'notice' => 'pastaba',
     'from' => 'Nuo',
@@ -66,56 +58,40 @@ return [
     'financial_transparency' => 'Jokių paslėptų išlaidų',
     'financial_transparency_description' => 'Peržiūrėkite mūsų sąlygas, aptarkite įkainius ir mokėkite tik patvirtinus paskolą.',
     'optimal_security' => 'Sauga ir privatumas',
-    'optimal_security_description' => 'Jūsų asmeniniai duomenys yra saugūs pas mus. „Credixa“ naudoja pažangius saugos protokolus, kad apsaugotų jūsų privatumą. Mūsų pagalba teikiama 24 valandas per parą, 7 dienas per savaitę.',
+    'optimal_security_description' => 'Jūsų asmeniniai duomenys yra saugūs pas mus. Credixa naudoja pažangius saugos protokolus, kad apsaugotų jūsų privatumą. Mūsų pagalba teikiama 24 valandas per parą, 7 dienas per savaitę.',
     'apply_loan' => 'Prašyti paskolos',
-
 
     'testimonials_title' => 'Atsiliepimai',
     'testimonials_description' => 'Sužinokite, ką apie mus sako mūsų klientai.',
     'testimonial_1' => [
-        'quote' => '"Esu labai patenkinta paslauga. Paskolos paraiškos pateikimas buvo greitas ir paprastas. Patvirtinimą gavau vos per kelias dienas, o įkainiai buvo konkurencingi. Labai ačiū!"',
-        'name' => 'Julie B.',
+        'quote' => '„Per mažiau nei savaitę gavau savo būsto paskolą. Konsultantas buvo išskirtinai prieinamas, o siūlomos sąlygos buvo daug geresnės nei kitur. Rekomenduoju be dvejonių."',
+        'name'  => 'Tomas Janulis',
+        'location' => 'Vilnius, Lietuva',
     ],
     'testimonial_2' => [
-        'quote' => '"Labai rekomenduoju šią paskolų paslaugą. Komanda buvo labai profesionali ir paslaugi. Jie atsakė į visus mano klausimus ir padarė procesą be streso. Dėkojame už puikų aptarnavimą!"',
-        'name' => 'Pierre L.',
+        'quote' => '„Po dviejų atmetimų tradiciniame banke Credixa suteikė man asmeninę paskolą per 48 val. Komanda atsidėjusi ir maloniai išnagrinėjo mano bylą. Labai ačiū!"',
+        'name'  => 'Lina Kazlauskienė',
+        'location' => 'Kaunas, Lietuva',
     ],
     'testimonial_3' => [
-        'quote' => '"Paskolos paraiškos pateikimo procesas buvo skaidrus
-          ir efektyvus. Visą laiką gavau profesionalius ir asmeninius patarimus
-          viso proceso metu. Ačiū visai komandai už puikų darbą
-          dirbti!"',
-        'name' => 'Sophie D.',
+        'quote' => '„100 % internetu, greitas atsakymas, konkurencinga palūkanų norma. Savo automobilį finansavau nė karto nesilankęs biure. Moderni ir efektyvi paslauga."',
+        'name'  => 'Mindaugas Petraitis',
+        'location' => 'Klaipėda, Lietuva',
     ],
     'testimonial_4' => [
-        'quote' => '"Paskolos gavimas iš šios įmonės buvo a
-          Patirtis be rūpesčių. Personalas buvo draugiškas ir išmanantis, o
-          procesas buvo greitas ir efektyvus. Labai rekomenduoju!"',
-        'name' => 'Marc F.',
+        'quote' => '„Asmeninis palydėjimas mane tikrai sužavėjo. Mano konsultantas paskambindavo kiekviename etape, paaiškindamas proceso eigą. Jauti, kad esi lydimas, o ne vienas prieš formas."',
+        'name'  => 'Rūta Stankevičiūtė',
+        'location' => 'Šiauliai, Lietuva',
     ],
     'testimonial_5' => [
-        'quote' => '"Puikus klientų aptarnavimas! Buvau nukreiptas
-          buvo atsakyta į kiekvieną paskolos proceso žingsnį ir į mano klausimus
-          greitai. Esu labai patenkinta galutiniu rezultatu."',
-        'name' => 'Nathalie P.',
+        'quote' => '„Aiškus simuliatorius, paprastas dokumentų paketas, pervedimas per tris darbo dienas. Man reikėjo finansuoti skubius remonto darbus ir Credixa atsiliepu tinkamu metu."',
+        'name'  => 'Darius Žukauskas',
+        'location' => 'Panevėžys, Lietuva',
     ],
     'testimonial_6' => [
-        'quote' => '"Labai gera palūkanų norma ir greitas procesas. I
-          labai rekomenduoju šią paslaugą visiems, kuriems reikia paskolos
-          greitas ir patikimas."',
-        'name' => 'Luc M.',
-    ],
-    'testimonial_7' => [
-        'quote' => '"Paprastas ir efektyvus paskolos procesas. Buvau
-          maloniai nustebino patvirtinimo greitis. Ačiū visiems
-          komanda!"',
-        'name' => 'Marie C.',
-    ],
-    'testimonial_8' => [
-        'quote' => '"Su šia paslauga turėjau puikią patirtį
-          paskola. Personalas buvo dėmesingas ir profesionalus. Rekomenduoju
-          negaliu laukti!"',
-        'name' => 'Jean L.',
+        'quote' => '„Palūkanų normų ir mokesčių skaidrumas mane įtikino nuo pirmojo kontakto. Jokių nemalonių staigmenų pakeliui. Tai reta ir vertinga šiame sektoriuje."',
+        'name'  => 'Eglė Mockevičiūtė',
+        'location' => 'Alytus, Lietuva',
     ],
 
     'about_title' => 'Prisijunkite prie geriausios pasaulyje darbuotojų rinkos',
@@ -137,12 +113,6 @@ return [
     'terms' => 'Bendrosios sąlygos',
     'privacy_policy' => 'Privatumo politika',
     'site_map' => 'Svetainės struktūra',
-    'about' => [
-        'title' => 'Apie',
-        'who_we_are' => 'Kas mes tokie?',
-        'faq' => 'DUK',
-        'contact' => 'Susisiekti',
-    ],
     'loan_types' => [
         'title' => 'Paskolų tipai',
         'personal_loans' => 'Asmeninės paskolos',
@@ -164,15 +134,15 @@ return [
     'rights_reserved' => '© Credixa. 2024. Visos teisės saugomos.',
 
     'en' => 'anglų k.',
-    'fr' => 'prancūzų',
-    'es' => 'ispanų',
+    'fr' => 'prancūzų k.',
+    'es' => 'ispanų k.',
     'hu' => 'Vengrija',
     'lt' => 'Lietuva',
-    'de' => 'vokiečių kalba',
+    'de' => 'vokiečių k.',
     'hr' => 'Kroatija',
-    'mt' => 'maltese',
-    'pt' => 'portoghese',
-    'sl' => 'sloveno',
+    'mt' => 'maltiečių k.',
+    'pt' => 'portugalų k.',
+    'sl' => 'slovėnų k.',
 
     // Hero subtitle
     'hero_subtitle' => 'Jokių sudėtingų procedūrų, jokių paslėptų mokesčių. Nuo 1990 m. finansuojame asmeninius, nekilnojamojo turto, automobilių ir verslo projektus skaidriai ir greitai.',
@@ -184,109 +154,137 @@ return [
         'text2' => 'iki 95 000 € per 24h.',
     ],
     'slide_2' => [
-        'title' => 'Prestiti intelligenti per un futuro brillante',
-        'text1' => 'I nostri prestiti renderanno',
-        'text2' => 'i tuoi sogni realtà',
+        'title' => 'Išmanomos paskolos šviesiai ateičiai',
+        'text1' => 'Mūsų paskolos padės',
+        'text2' => 'įgyvendinti jūsų svajones',
     ],
     'slide_3' => [
-        'title' => 'Prestiti intelligenti per un futuro brillante',
-        'text1' => 'Offriamo i migliori',
-        'text2' => 'servizi per il tuo prestito',
+        'title' => 'Išmanomos paskolos šviesiai ateičiai',
+        'text1' => 'Siūlome geriausias',
+        'text2' => 'paslaugas jūsų paskolai',
     ],
     'slide_4' => [
-        'title' => 'Prestiti intelligenti per un futuro brillante',
-        'text1' => 'Leader nella migliore',
-        'text2' => 'società di prestiti',
+        'title' => 'Išmanomos paskolos šviesiai ateičiai',
+        'text1' => 'Vadovaujame geriausia',
+        'text2' => 'paskolų bendrove',
     ],
 
+    // Infos
     'infos' => [
-        'item1' => 'approvazioni rapide',
-        'item2' => '500k+ clienti',
-        'item3' => 'senza commissioni di pagamento',
-        'item4' => 'pagamenti flessibili',
+        'item1' => 'greiti patvirtinimai',
+        'item2' => '500k+ klientų',
+        'item3' => '6 priimamos valiutos',
+        'item4' => 'lankstūs mokėjimai',
     ],
 
+    // About
     'about' => [
-        'exptitle' => 'Anni di esperienza',
-        'sectagline' => 'Benvenuti in Credixa',
-        'sectitle' => 'Prestiti personali per realizzare i tuoi sogni',
-        'text1' => 'Siamo in questo settore dal 1990 e offriamo i migliori servizi.',
-        'text2' => "Credixa è la tua piattaforma di fiducia per prestiti con un'esperienza cliente eccezionale. Siamo impegnati a fornirti soluzioni finanziarie semplici, sicure e veloci.",
-        'check1' => 'prestito per piccole imprese',
-        'check2' => 'prestito per studio all\'estero',
-        'check3' => 'processo di prestito rapido',
-        'check4' => 'tassi molto bassi',
+        'exptitle' => 'metų patirties',
+        'sectagline' => 'sveiki atvykę į Credixa',
+        'sectitle' => 'Asmeninės paskolos jūsų svajonėms įgyvendinti',
+        'text1' => 'Esame šioje srityje nuo 1990 m. ir teikiame geriausias paslaugas.',
+        'text2' => 'Credixa yra jūsų patikima platforma paskoloms su išskirtine klientų patirtimi. Esame įsipareigoję teikti jums paprastus, saugius ir greitus finansinius sprendimus.',
+        'check1' => 'paskola mažoms įmonėms',
+        'check2' => 'paskola studijoms užsienyje',
+        'check3' => 'greitas paskolos procesas',
+        'check4' => 'labai žemos palūkanos',
+        'engage1_title' => 'Licencijuota ir reguliuojama',
+        'engage1_desc'  => 'Sertifikuota kredito įstaiga, atitinkanti Europos standartus. Jūsų duomenys ir byla yra apsaugoti kiekviename etape.',
+        'engage2_title' => 'Garantuotas atsakymas per 24 val.',
+        'engage2_desc'  => 'Visiškai internetu, be kelionių ir popierizmų. Sprendimas priimamas per 24 valandas.',
+        'engage3_title' => 'Daugiavaliutinis ir daugiašalinis',
+        'engage3_desc'  => 'Paskolos teikiamos eurais, zlotais, JAV doleriais, Meksikos peso, Brazilijos realais ir Kosta Rikos kolonais pagal jūsų projektą.',
     ],
 
+    // Services
     'services' => [
-        'sectagline' => 'cosa offriamo',
-        'sectitle' => 'Offriamo i migliori servizi per il tuo prestito',
+        'sectagline' => 'ką mes siūlome',
+        'sectitle' => 'Teikiame geriausias paslaugas jūsų paskolai',
     ],
 
+    // Simulate
     'simulate' => [
-        'sectitle' => 'Quanto hai bisogno?',
+        'sectitle' => 'Kiek jums reikia?',
     ],
 
+    // Chooses
     'chooses' => [
-        'sectagline' => 'i nostri vantaggi',
-        'sectitle' => 'perché sceglierci',
-        'text1' => 'Siamo in questo settore dal 1990 e offriamo i migliori servizi.',
-        'item1' => 'tassi più bassi',
-        'item2' => 'rapido e facile',
-        'progress1' => 'processo di prestito',
-        'progress2' => 'consulenza aziendale',
-        'progress3' => 'vantaggi nei pagamenti',
+        'sectagline' => 'mūsų pranašumai',
+        'sectitle' => 'kodėl mus rinktis',
+        'text1' => 'Esame šioje srityje nuo 1990 m. ir teikiame geriausias paslaugas.',
+        'item1' => 'žemos palūkanos',
+        'item2' => 'greita ir paprasta',
+        'progress1' => 'paskolos procesas',
+        'progress2' => 'verslo konsultacijos',
+        'progress3' => 'mokėjimo pranašumai',
     ],
 
+    // Works
     'works' => [
-        'sectagline' => 'Come funziona',
-        'sectitle' => 'Il nostro flusso di lavoro',
-        'step' => 'Passo',
+        'sectagline' => 'Kaip tai veikia',
+        'sectitle' => 'Mūsų darbo procesas',
+        'step' => 'Žingsnis',
         'step1' => [
-            'title' => 'Invio della domanda',
-            'desc' => 'Compila e invia la tua domanda online in pochi minuti. Non è necessaria alcuna visita in filiale.',
+            'title' => 'Paraiškos pateikimas',
+            'desc' => 'Užpildykite ir pateikite savo paraišką internetu per kelias minutes. Nereikia lankytis biure.',
         ],
         'step2' => [
-            'title' => 'Revisione e verifica',
-            'desc' => 'Il nostro team esamina il tuo fascicolo e verifica le informazioni per garantire la tua idoneità.',
+            'title' => 'Peržiūra ir tikrinimas',
+            'desc' => 'Mūsų komanda peržiūri jūsų bylą ir tikrina informaciją, kad įsitikintų jūsų tinkamumu.',
         ],
         'step3' => [
-            'title' => 'Approvazione del prestito',
-            'desc' => 'Una volta approvato, riceverai una conferma dell\'approvazione del prestito e i dettagli delle condizioni.',
+            'title' => 'Paskolos patvirtinimas',
+            'desc' => 'Patvirtinus gausite patvirtinimą bei paskolos sąlygų detales.',
         ],
         'step4' => [
-            'title' => 'Pagamento dei fondi',
-            'desc' => 'I fondi vengono trasferiti direttamente al tuo conto bancario in breve tempo dopo l\'approvazione.',
+            'title' => 'Lėšų pervedimas',
+            'desc' => 'Lėšos pervedamos tiesiai į jūsų banko sąskaitą netrukus po patvirtinimo.',
         ],
     ],
 
+    // Loan Reasons
     'loan_reasons' => [
-        'sectagline' => 'ragioni del prestito',
-        'sectitle' => 'Motivi più comuni per un prestito',
+        'sectagline' => 'paskolos priežastys',
+        'sectitle' => 'Populiarios paskolų priežastys',
         'reasons' => [
-            'title1' => 'Hai bisogno di una nuova auto?',
-            'desc1' => 'Prendi il controllo delle tue finanze e guida l\'auto dei tuoi sogni con un prestito su misura per le tue esigenze.',
-            'title2' => 'Consolida i tuoi debiti',
-            'desc2' => 'Unisci più debiti in un unico pagamento mensile, semplificando e gestendo meglio le tue finanze.',
-            'title3' => 'Ristrutturazione della casa',
-            'desc3' => 'Rinnova o ristruttura la tua casa, aggiungendo valore e comfort alla tua abitazione senza oneri finanziari.',
+            'title1' => 'Reikia naujo automobilio?',
+            'desc1' => 'Perimkite savo finansų kontrolę ir išvažiuokite su savo svajonių automobiliu naudodami paskolą, pritaikytą jūsų poreikiams.',
+            'title2' => 'Konsoliduokite savo skolas',
+            'desc2' => 'Sujunkite kelias skolas į vieną paprastą mėnesinį mokėjimą, padedantį supaprastinti ir geriau valdyti savo finansus.',
+            'title3' => 'Būsto gerinimas',
+            'desc3' => 'Patobulinkite ar renovuokite savo namus, padidindami jų vertę ir komfortą be finansinės naštos.',
+            'title4' => 'Finansuokite savo studijas',
+            'desc4' => 'Investuokite į savo ateitį: mokesčiai už mokslą, profesiniai mokymai ar persikvalifikavimas, nepažeidžiant kasdienio gyvenimo.',
+            'title5' => 'Kelionės ir atostogos',
+            'desc5' => 'Išvykite ramiai atrasti pasaulio. Finansuokite savo svajonių kelionę nenaudodami santaupų.',
+            'title6' => 'Vestuvės ir šeimos renginiai',
+            'desc6' => 'Švęskite svarbius gyvenimo momentus be finansinio streso. Organizuokite savo svajonių renginį savo tempu.',
+            'title7' => 'Medicinos išlaidos ir sveikata',
+            'desc7' => 'Susidorokite su netikėtomis sveikatos situacijomis ramiai. Greitai padenkite gydymą, operacijas ar medicinos įrangą.',
+            'title8' => 'Verslo kūrimas ir investicijos',
+            'desc8' => 'Įgyvendinkite savo verslininkystės projektą arba plėtokite savo veiklą naudodami greitą ir lankstų finansavimą.',
         ],
-        'btn_text' => 'Scopri di più',
-        'btn_icon' => 'icona-next'
+        'btn_text' => 'Sužinoti daugiau',
+        'btn_icon' => 'icon-next',
     ],
 
-    'total_loans_granted' => 'Totale prestiti concessi',
-    'customer_satisfaction_rate' => 'Clienti soddisfatti',
-    'total_loan_amount_granted' => 'Prieinama suma',
-    'average_approval_time' => 'Garantuotas atsakymas',
-    'member' => 'Finansuoti klientai',
-    'day' => 'Giorni',
+    // Others
+    'total_loans_granted' => 'Iš viso suteiktų paskolų',
+    'customer_satisfaction_rate' => 'Patenkinti klientai',
+    'total_loan_amount_granted' => 'Maks. paskola / byla',
+    'average_approval_time'     => 'Garantuotas atsakymas',
+    'member'                    => 'Finansuoti klientai',
+    'years_experience'          => 'Metų patirties',
+    'day' => 'Dienos',
 
-    'cta_title2' => 'Ottieni il prestito di cui hai bisogno rapidamente.',
-    'cta_text2' => 'Ottieni prestiti aziendali rapidamente',
-    'cta_button2' => 'Inizia ora',
+    'partners_label' => 'Mūsų partneriai',
+    'partners_title' => 'Partnerių bankai',
 
-    'about_text' => 'Offriamo soluzioni di prestito su misura per aiutarti a raggiungere i tuoi obiettivi finanziari. Opzioni veloci, sicure e flessibili progettate per soddisfare le tue esigenze uniche.',
-    'get' => 'Contattaci'
+    'cta_title2' => 'Greitai gaukite reikalingą paskolą.',
+    'cta_text2' => 'Greitai gaukite verslo paskolą',
+    'cta_button2' => 'Pradėti dabar',
+
+    'about_text' => 'Siūlome pritaikytas paskolų sprendimus, padedančius pasiekti jūsų finansinius tikslus. Greiti, saugūs ir lankstūs variantai, sukurti jūsų unikaliems poreikiams.',
+    'get' => 'Susisiekite su mumis',
 
 ];

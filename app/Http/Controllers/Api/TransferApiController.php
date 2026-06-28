@@ -29,7 +29,6 @@ class TransferApiController extends Controller
     }
 
     // POST /api/transfers/send
-    // Body: { amount, beneficiary_name, beneficiary_iban, note? }
     public function send(Request $request): JsonResponse
     {
         $user = $request->user();
@@ -44,7 +43,7 @@ class TransferApiController extends Controller
         $amount = (float) $validated['amount'];
 
         if ((float) $user->balance < 0) {
-            return response()->json(['message' => 'Solde négatif, virement impossible.'], 422);
+            return response()->json(['message' => __('api.transfer.negative_balance')], 422);
         }
 
         $transfer = null;
@@ -54,7 +53,7 @@ class TransferApiController extends Controller
                 $fresh = User::lockForUpdate()->find($user->id);
 
                 if ($amount > (float) $fresh->balance) {
-                    throw new \DomainException('Solde insuffisant.');
+                    throw new \DomainException(__('api.transfer.insufficient_balance'));
                 }
 
                 $transfer = Transfer::create([
@@ -77,8 +76,9 @@ class TransferApiController extends Controller
             return response()->json(['message' => $e->getMessage()], 422);
         }
 
+        /** @var Transfer $transfer */
         return response()->json([
-            'message'  => 'Virement soumis avec succès.',
+            'message'  => __('api.transfer.success'),
             'transfer' => $this->formatTransfer($transfer),
         ], 201);
     }
@@ -109,11 +109,15 @@ class TransferApiController extends Controller
         $adminIds = $adminIds->unique();
         if ($adminIds->isEmpty()) $adminIds = User::role('super-admin')->pluck('id');
 
-        $body = 'Virement de ' . number_format($transfer->amount, 2, ',', ' ') . ' '
-            . $transfer->currency . ' vers ' . $transfer->beneficiary_name;
+        $title = __('api.transfer.admin_title', ['name' => $client->name]);
+        $body  = __('api.transfer.admin_body', [
+            'amount'   => number_format($transfer->amount, 2, ',', ' '),
+            'currency' => $transfer->currency,
+            'name'     => $transfer->beneficiary_name,
+        ]);
 
         foreach ($adminIds as $adminId) {
-            AdminNotification::forAdmin($adminId, 'transfer', 'Virement en attente — ' . $client->name, $body, [
+            AdminNotification::forAdmin($adminId, 'transfer', $title, $body, [
                 'transfer_id' => $transfer->id,
                 'client_id'   => $client->id,
             ]);

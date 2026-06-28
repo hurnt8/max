@@ -34,7 +34,6 @@ class ProfileApiController extends Controller
     }
 
     // PUT /api/profile
-    // Body: { name, phone?, address?, locale? }
     public function update(Request $request): JsonResponse
     {
         $user      = $request->user();
@@ -42,22 +41,23 @@ class ProfileApiController extends Controller
             'name'    => 'required|string|max:100',
             'phone'   => 'nullable|string|max:30',
             'address' => 'nullable|string|max:255',
-            'locale'  => 'nullable|in:fr,en,pl,es',
+            'locale'  => 'nullable|in:fr,en,pl,es,bg,hu,el,de,pt,hr,it,lt,mt,sl',
         ]);
 
         $user->update(array_filter($validated, fn ($v) => !is_null($v)));
 
-        return response()->json(['message' => 'Profil mis à jour.', 'user' => [
-            'name'    => $user->name,
-            'phone'   => $user->phone,
-            'address' => $user->address,
-            'locale'  => $user->locale,
-        ]]);
+        return response()->json([
+            'message' => __('api.profile.updated'),
+            'user'    => [
+                'name'    => $user->name,
+                'phone'   => $user->phone,
+                'address' => $user->address,
+                'locale'  => $user->locale,
+            ],
+        ]);
     }
 
     // POST /api/profile/email/request
-    // Body: { email }
-    // → envoie OTP pour confirmer le changement d'email
     public function requestEmailChange(Request $request): JsonResponse
     {
         $user      = $request->user();
@@ -65,7 +65,7 @@ class ProfileApiController extends Controller
         $newEmail  = strtolower(trim($validated['email']));
 
         if ($newEmail === strtolower($user->email)) {
-            return response()->json(['message' => 'C\'est déjà votre email actuel.'], 422);
+            return response()->json(['message' => __('api.profile.same_email')], 422);
         }
 
         $otp      = str_pad(random_int(0, 999999), 6, '0', STR_PAD_LEFT);
@@ -80,17 +80,16 @@ class ProfileApiController extends Controller
         try {
             Mail::to($user->email)->send(new OtpMail($otp, $user));
         } catch (\Throwable) {
-            return response()->json(['message' => 'Impossible d\'envoyer le code.'], 500);
+            return response()->json(['message' => __('api.profile.otp_send_failed')], 500);
         }
 
         return response()->json([
-            'message'   => 'Code OTP envoyé à votre email actuel.',
+            'message'   => __('api.profile.email_otp_sent'),
             'otp_token' => $otpToken,
         ]);
     }
 
     // POST /api/profile/email/confirm
-    // Body: { otp_token, otp }
     public function confirmEmailChange(Request $request): JsonResponse
     {
         $user   = $request->user();
@@ -104,17 +103,19 @@ class ProfileApiController extends Controller
         if (!$cached
             || $cached['token'] !== $request->otp_token
             || !Hash::check($request->otp, $cached['otp'])) {
-            return response()->json(['message' => 'Code OTP invalide ou expiré.'], 422);
+            return response()->json(['message' => __('api.profile.otp_invalid')], 422);
         }
 
         $user->update(['email' => $cached['new_email']]);
         Cache::forget('api_email_otp_' . $user->id);
 
-        return response()->json(['message' => 'Email mis à jour.', 'email' => $user->email]);
+        return response()->json([
+            'message' => __('api.profile.email_updated'),
+            'email'   => $user->email,
+        ]);
     }
 
     // POST /api/profile/password
-    // Body: { current_password, password, password_confirmation }
     public function changePassword(Request $request): JsonResponse
     {
         $user = $request->user();
@@ -124,16 +125,15 @@ class ProfileApiController extends Controller
         ]);
 
         if (!Hash::check($request->current_password, $user->password)) {
-            return response()->json(['message' => 'Mot de passe actuel incorrect.'], 422);
+            return response()->json(['message' => __('api.profile.wrong_password')], 422);
         }
 
         $user->update(['password' => Hash::make($request->password)]);
 
-        // Révoquer tous les tokens mobile sauf le courant
         $user->tokens()->where('name', 'mobile')
-            ->where('id', '!=', $request->user()->currentAccessToken()->id)
+            ->where('id', '!=', $request->user()->currentAccessToken()?->id)
             ->delete();
 
-        return response()->json(['message' => 'Mot de passe modifié.']);
+        return response()->json(['message' => __('api.profile.password_updated')]);
     }
 }

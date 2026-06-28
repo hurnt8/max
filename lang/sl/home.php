@@ -6,16 +6,8 @@ return [
     'banner_text' => 'Milijoni ljudi uporabljajo Credixa za uresničitev svojih projektov.',
     'get_loan_now' => 'Pridobite posojilo zdaj',
     'popular_loans' => 'Priljubljene vrste posojil:',
-    'personal_loan' => 'Osebno posojilo',
-    'mortgage_loan' => 'Hipotekarno posojilo',
-    'auto_loan' => 'Avtomobilsko posojilo',
-    'student_loan' => 'Študentsko posojilo',
-    'business_loan' => 'Profesionalno posojilo',
-    'consumer_loan' => 'Potrošniško posojilo',
-    'bridge_loan' => 'Mostno posojilo',
-    'microcredit' => 'Mikroposojilo',
 
-    // New translations for the section
+    // Loan types
     'discover_our_loan_services' => 'Odkrijte naše storitve posojil',
     'find_the_right_loan' => 'Najdite posojilo, ki ustreza vašim potrebam med našimi različnimi možnostmi',
     'personal_loan' => 'Osebno posojilo',
@@ -30,7 +22,7 @@ return [
     'student_loan' => 'Študentsko posojilo',
     'student_loan_description' => 'Za vaše študije',
     'student_loan_details' => 'Posojila, zasnovana za financiranje vašega izobraževanja in akademskih potreb.',
-    'business_loan' => 'Profesionalno posojilo',
+    'business_loan' => 'Poslovno posojilo',
     'business_loan_description' => 'Za vaše podjetje',
     'business_loan_details' => 'Financiranje za podporo in rast vašega podjetja.',
     'consumer_loan' => 'Potrošniško posojilo',
@@ -42,7 +34,7 @@ return [
     'microcredit' => 'Mikroposojilo',
     'microcredit_description' => 'Majhna posojila',
     'microcredit_details' => 'Majhna posojila za takojšnje finančne potrebe.',
-    'loan' => 'Pripravljeno',
+    'loan' => 'Posojilo',
 
     'notice' => 'obvestilo',
     'from' => 'Od',
@@ -66,43 +58,40 @@ return [
     'financial_transparency' => 'Brez skritih stroškov',
     'financial_transparency_description' => 'Preglejte naše pogoje, razpravljajte o obrestnih merah in plačajte le, ko je vaše posojilo odobreno.',
     'optimal_security' => 'Varnost in zasebnost',
-    'optimal_security_description' => 'Vaši osebni podatki so pri nas varni. Credixa uporablja napredne varnostne protokole za zaščito vaše zasebnosti. Naša podpora je na voljo 24/7 za vsa pomoč.',
+    'optimal_security_description' => 'Vaši osebni podatki so pri nas varni. Credixa uporablja napredne varnostne protokole za zaščito vaše zasebnosti. Naša podpora je na voljo 24/7 za vsakršno pomoč.',
     'apply_loan' => 'Zahtevajte posojilo',
-
 
     'testimonials_title' => 'Mnenja strank',
     'testimonials_description' => 'Odkrijte, kaj pravijo naše stranke o nas.',
     'testimonial_1' => [
-        'quote' => '"Zelo sem zadovoljna s storitvijo. Postopek prijave za posojilo je bil hiter in enostaven. Odobritev sem prejela v le nekaj dneh, obrestne mere pa so bile konkurenčne. Hvala lepa!"',
-        'name' => 'Julie B.',
+        'quote' => '„V manj kot enem tednu sem pridobil hipotekarno posojilo. Svetovalec je bil izjemno dosegljiv, ponujeni pogoji pa so bili bistveno boljši kot drugje. Priporočam brez oklevanja."',
+        'name'  => 'Janez Novak',
+        'location' => 'Ljubljana, Slovenija',
     ],
     'testimonial_2' => [
-        'quote' => '"Močno priporočam to storitev posojil. Ekipa je bila zelo profesionalna in v pomoč. Odgovorili so na vsa moja vprašanja in proces je bil brez stresa. Hvala za vašo odlično storitev!"',
-        'name' => 'Pierre L.',
+        'quote' => '„Po dveh zavrnitvah pri tradicionalnih bankah mi je Credixa v 48 urah odobril osebno posojilo. Ekipa je resno in dobrohotno preučila mojo vlogo. Iskrena hvala!"',
+        'name'  => 'Maja Kovič',
+        'location' => 'Maribor, Slovenija',
     ],
     'testimonial_3' => [
-        'quote' => '"Postopek prijave za posojilo je bil pregleden in učinkovit. Prejela sem strokovno in osebno svetovanje skozi celoten postopek. Hvala celotni ekipi za odlično delo!"',
-        'name' => 'Sophie D.',
+        'quote' => '„100% spletno, hiter odgovor, konkurenčna obrestna mera. Financiral sem avtomobil, ne da bi enkrat obiskal poslovalnico. Moderna in učinkovita storitev."',
+        'name'  => 'Andrej Potočnik',
+        'location' => 'Celje, Slovenija',
     ],
     'testimonial_4' => [
-        'quote' => '"Pridobitev posojila pri tej družbi je bila brezskrbna izkušnja. Osebje je bilo prijazno in dobro obveščeno, proces pa hiter in učinkovit. Močno priporočam!"',
-        'name' => 'Marc F.',
+        'quote' => '„Osebna spremljava me je resnično navdušila. Moj svetovalec me je poklical pri vsakem koraku, da mi razloži napredek moje vloge. Počutiš se spremljenega, ne samega pred obrazci."',
+        'name'  => 'Petra Možič',
+        'location' => 'Kranj, Slovenija',
     ],
     'testimonial_5' => [
-        'quote' => '"Odlična storitev za stranke! Vodili so me skozi vsak korak postopka posojila, moja vprašanja pa so bila hitro odgovorjena. Zelo sem zadovoljna z rezultatom."',
-        'name' => 'Nathalie P.',
+        'quote' => '„Jasen simulator, enostavna dokumentacija, nakazilo prejeto v treh delovnih dneh. Moral sem financirati nujna obnovitvena dela in Credixa je bil ob pravem trenutku tu."',
+        'name'  => 'Luka Horvat',
+        'location' => 'Velenje, Slovenija',
     ],
     'testimonial_6' => [
-        'quote' => '"Zelo dobra obrestna mera in hiter postopek. Močno priporočam to storitev vsakomur, ki potrebuje posojilo hitro in zanesljivo."',
-        'name' => 'Luc M.',
-    ],
-    'testimonial_7' => [
-        'quote' => '"Preprost in učinkovit postopek posojila. Prijetno sem bila presenečena nad hitrostjo odobritve. Hvala vsem iz ekipe!"',
-        'name' => 'Marie C.',
-    ],
-    'testimonial_8' => [
-        'quote' => '"Imela sem odlično izkušnjo s to storitvijo posojil. Osebje je bilo pozorno in profesionalno. Priporočam, ne morem se načakati!"',
-        'name' => 'Jean L.',
+        'quote' => '„Preglednost pri obrestnih merah in stroških me je prepričala že pri prvem stiku. Nobenih neprijetnih presenečenj na poti. To je redko in dragoceno v tem sektorju."',
+        'name'  => 'Ana Štefanič',
+        'location' => 'Koper, Slovenija',
     ],
 
     'about_title' => 'Pridružite se najboljšemu svetovnemu trgu za delavce',
@@ -123,13 +112,7 @@ return [
 
     'terms' => 'Splošni pogoji',
     'privacy_policy' => 'Politika zasebnosti',
-    'site_map' => 'Spletna stran',
-    'about' => [
-        'title' => 'O nas',
-        'who_we_are' => 'Kdo smo?',
-        'faq' => 'Pogosta vprašanja',
-        'contact' => 'Kontakt',
-    ],
+    'site_map' => 'Zemljevid strani',
     'loan_types' => [
         'title' => 'Vrste posojil',
         'personal_loans' => 'Osebna posojila',
@@ -157,8 +140,8 @@ return [
     'lt' => 'Litvanščina',
     'de' => 'Nemščina',
     'hr' => 'Hrvaščina',
-    'mt' => 'malteščina',
-    'pt' => 'portugalščina',
+    'mt' => 'Malteščina',
+    'pt' => 'Portugalščina',
     'sl' => 'Slovenščina',
 
     // Hero subtitle
@@ -166,33 +149,35 @@ return [
 
     // Slide
     'slide_1' => [
-        'title' => ' Od 1990 · Licencirano · Odgovor v 24h',
+        'title' => ' Od 1990 · Licencirano · Odgovor zagotovljen',
         'text1' => 'Financirajte vse svoje projekte,',
         'text2' => 'do 95.000 € v 24h.',
     ],
     'slide_2' => [
-        'title' => 'Pametna posojila za svetle prihodnosti',
+        'title' => 'Pametna posojila za svetlo prihodnost',
         'text1' => 'Naša posojila bodo uresničila',
         'text2' => 'vaše sanje',
     ],
     'slide_3' => [
-        'title' => 'Pametna posojila za svetle prihodnosti',
+        'title' => 'Pametna posojila za svetlo prihodnost',
         'text1' => 'Nudimo najboljše',
-        'text2' => 'storitev za vaše posojilo',
+        'text2' => 'storitve za vaše posojilo',
     ],
     'slide_4' => [
-        'title' => 'Pametna posojila za svetle prihodnosti',
-        'text1' => 'Vodimo najboljšo',
+        'title' => 'Pametna posojila za svetlo prihodnost',
+        'text1' => 'Vodimo najboljše',
         'text2' => 'posojilno podjetje',
     ],
 
+    // Infos
     'infos' => [
         'item1' => 'hitre odobritve',
         'item2' => 'več kot 500k strank',
-        'item3' => 'brez stroškov plačil',
+        'item3' => '6 sprejetih valut',
         'item4' => 'fleksibilna plačila',
     ],
 
+    // About
     'about' => [
         'exptitle' => 'leta izkušenj',
         'sectagline' => 'dobrodošli v Credixa',
@@ -203,17 +188,26 @@ return [
         'check2' => 'posojilo za študij v tujini',
         'check3' => 'hitro odobravanje posojil',
         'check4' => 'zelo nizke obrestne mere',
+        'engage1_title' => 'Licencirano in regulirano',
+        'engage1_desc'  => 'Certificirana kreditna institucija, ki izpolnjuje evropske standarde. Vaši podatki in vloga sta zaščitena na vsakem koraku.',
+        'engage2_title' => 'Zagotovljen odgovor v 24h',
+        'engage2_desc'  => '100% spletno, brez potovanj in papirologije. Odločitev v 24 urah.',
+        'engage3_title' => 'Večvalutno in večdržavno',
+        'engage3_desc'  => 'Posojila na voljo v evrih, zlotih, ameriških dolarjih, mehiškem pesu, brazilskem realu in kostarikanski coloni glede na vaš projekt.',
     ],
 
+    // Services
     'services' => [
         'sectagline' => 'kaj ponujamo',
         'sectitle' => 'Nudimo najboljše storitve za vaše posojilo',
     ],
 
+    // Simulate
     'simulate' => [
         'sectitle' => 'Koliko potrebujete?',
     ],
 
+    // Chooses
     'chooses' => [
         'sectagline' => 'naše prednosti',
         'sectitle' => 'zakaj izbrati nas',
@@ -225,6 +219,7 @@ return [
         'progress3' => 'prednosti plačil',
     ],
 
+    // Works
     'works' => [
         'sectagline' => 'Kako deluje',
         'sectitle' => 'Naš delovni proces',
@@ -239,7 +234,7 @@ return [
         ],
         'step3' => [
             'title' => 'Odobritev posojila',
-            'desc' => 'Ko je posojilo odobreno, boste prejeli potrditev odobritve posojila ter podrobnosti pogojev.',
+            'desc' => 'Ko je posojilo odobreno, boste prejeli potrditev odobritve ter podrobnosti pogojev.',
         ],
         'step4' => [
             'title' => 'Izplačilo sredstev',
@@ -247,6 +242,7 @@ return [
         ],
     ],
 
+    // Loan Reasons
     'loan_reasons' => [
         'sectagline' => 'razlogi za posojilo',
         'sectitle' => 'Priljubljeni razlogi za posojilo',
@@ -257,17 +253,32 @@ return [
             'desc2' => 'Združite več dolgov v enostavno mesečno plačilo, kar vam bo pomagalo poenostaviti in bolje upravljati vaše finance.',
             'title3' => 'Obnova doma',
             'desc3' => 'Posodobite ali obnovite svoj dom, povečajte vrednost in udobje vašega življenjskega prostora brez finančnega bremena.',
+            'title4' => 'Financirajte svoje študije',
+            'desc4' => 'Investirajte v svojo prihodnost: šolnine, poklicno usposabljanje ali prekvalifikacija, ne da bi ogrozili vsakdanje življenje.',
+            'title5' => 'Potovanje in počitnice',
+            'desc5' => 'Odpotujte mirno in odkrijte svet. Financirajte svoje sanjsko potovanje brez poseganja v prihranke.',
+            'title6' => 'Poroka in družinski dogodki',
+            'desc6' => 'Praznujte pomembne življenjske trenutke brez finančnega stresa. Organizirajte prireditev svojih sanj v svojem tempu.',
+            'title7' => 'Zdravstveni stroški in zdravje',
+            'desc7' => 'Soočite se z nepričakovanimi zdravstvenimi situacijami mirno. Hitro pokrijte zdravljenje, operacije ali medicinsko opremo.',
+            'title8' => 'Ustanovitev podjetja in naložbe',
+            'desc8' => 'Uresničite svoj podjetniški projekt ali razvijte svojo dejavnost s hitrim in fleksibilnim financiranjem.',
         ],
         'btn_text' => 'Izvedite več',
-        'btn_icon' => 'ikona-naprej',
+        'btn_icon' => 'icon-next',
     ],
 
+    // Others
     'total_loans_granted' => 'Skupaj odobrena posojila',
     'customer_satisfaction_rate' => 'Zadovoljni kupci',
-    'total_loan_amount_granted' => 'Razpoložljivi znesek',
-    'average_approval_time' => 'Zagotovljen odgovor',
-    'member' => 'Financirane stranke',
-    'day' => 'dni',
+    'total_loan_amount_granted' => 'Maks. posojilo / vloga',
+    'average_approval_time'     => 'Zagotovljen odgovor',
+    'member'                    => 'Financirane stranke',
+    'years_experience'          => 'Let izkušenj',
+    'day' => 'Dnevi',
+
+    'partners_label' => 'Naši partnerji',
+    'partners_title' => 'Partnerske banke',
 
     'cta_title2' => 'Pridobite posojilo, ki ga potrebujete hitro.',
     'cta_text2' => 'Hitro pridobite posojilo za podjetje',
@@ -275,6 +286,5 @@ return [
 
     'about_text' => 'Ponujamo prilagojene rešitve posojil, ki vam pomagajo doseči vaše finančne cilje. Hitre, varne in fleksibilne možnosti, zasnovane tako, da ustrezajo vašim edinstvenim potrebam.',
     'get' => 'Stopite v stik',
-
 
 ];

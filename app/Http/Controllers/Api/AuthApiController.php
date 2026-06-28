@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Mail;
 class AuthApiController extends Controller
 {
     // POST /api/auth/login
-    // Body: { identifier, password }
-    // → envoie un OTP par email, retourne un otp_token temporaire
     public function login(Request $request): JsonResponse
     {
         $request->validate([
@@ -28,15 +26,15 @@ class AuthApiController extends Controller
                     ->first();
 
         if (!$user || !Hash::check($request->password, $user->password)) {
-            return response()->json(['message' => 'Identifiants incorrects.'], 401);
+            return response()->json(['message' => __('api.auth.invalid_credentials')], 401);
         }
 
         if ($user->type !== 'client') {
-            return response()->json(['message' => 'Accès réservé aux clients.'], 403);
+            return response()->json(['message' => __('api.auth.clients_only')], 403);
         }
 
         if ($user->is_blocked) {
-            return response()->json(['message' => 'Compte bloqué. Contactez le support.'], 403);
+            return response()->json(['message' => __('api.auth.account_blocked')], 403);
         }
 
         $otp      = str_pad(random_int(0, 999999), 6, '0', STR_PAD_LEFT);
@@ -45,24 +43,24 @@ class AuthApiController extends Controller
         Cache::put('api_otp_' . $otpToken, [
             'user_id' => $user->id,
             'otp'     => Hash::make($otp),
-        ], 600); // 10 minutes
+        ], 600);
 
         try {
             Mail::to($user->email)->send(new OtpMail($otp, $user));
         } catch (\Throwable) {
-            return response()->json(['message' => 'Impossible d\'envoyer l\'OTP.'], 500);
+            return response()->json(['message' => __('api.auth.otp_send_failed')], 500);
         }
 
+        $masked = substr($user->email, 0, 3) . '***@' . explode('@', $user->email)[1];
+
         return response()->json([
-            'message'   => 'Code OTP envoyé à ' . $user->email,
+            'message'   => __('api.auth.otp_sent', ['email' => $masked]),
             'otp_token' => $otpToken,
-            'email'     => substr($user->email, 0, 3) . '***@' . explode('@', $user->email)[1],
+            'email'     => $masked,
         ]);
     }
 
     // POST /api/auth/otp
-    // Body: { otp_token, otp }
-    // → vérifie l'OTP, retourne le token Sanctum
     public function verifyOtp(Request $request): JsonResponse
     {
         $request->validate([
@@ -73,18 +71,17 @@ class AuthApiController extends Controller
         $cached = Cache::get('api_otp_' . $request->otp_token);
 
         if (!$cached || !Hash::check($request->otp, $cached['otp'])) {
-            return response()->json(['message' => 'Code OTP invalide ou expiré.'], 422);
+            return response()->json(['message' => __('api.auth.otp_invalid')], 422);
         }
 
         $user = User::find($cached['user_id']);
 
         if (!$user) {
-            return response()->json(['message' => 'Utilisateur introuvable.'], 404);
+            return response()->json(['message' => __('api.auth.user_not_found')], 404);
         }
 
         Cache::forget('api_otp_' . $request->otp_token);
 
-        // Révoquer les anciens tokens mobile pour cet appareil
         $user->tokens()->where('name', 'mobile')->delete();
 
         $token = $user->createToken('mobile')->plainTextToken;
@@ -107,8 +104,8 @@ class AuthApiController extends Controller
     // POST /api/auth/logout
     public function logout(Request $request): JsonResponse
     {
-        $request->user()->currentAccessToken()->delete();
+        $request->user()->currentAccessToken()?->delete();
 
-        return response()->json(['message' => 'Déconnecté.']);
+        return response()->json(['message' => __('api.auth.logged_out')]);
     }
 }

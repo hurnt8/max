@@ -2,8 +2,7 @@
 
 return [
     'banner_title' => 'Zahtjev za zajam',
-    'banner_description' => 'Rado ćemo razgovarati o tome kako možemo
- pomoći vam da dobijete financiranje koje vam je potrebno.',
+    'banner_description' => 'Rado ćemo razgovarati o tome kako možemo pomoći vam da dobijete financiranje koje vam je potrebno.',
     'form_title' => 'Zahtjev za zajam',
     'form_description' => 'Koristite donji obrazac da zatražite svoj zajam.',
     'label_name' => 'Ime i prezime',
@@ -18,7 +17,7 @@ return [
     'label_npi' => 'Osobni identifikacijski broj',
     'label_file' => 'Dvostrani identifikacijski dokument',
     'label_objet' => 'Predmet kredita',
-    'details' => 'Detalji o kreditu',
+    'détails' => 'Detalji o kreditu',
 
     'placeholder_name' => 'Vaše ime i prezime',
     'placeholder_email' => 'Unesite svoju e-poštu',
@@ -30,19 +29,47 @@ return [
     'placeholder_objet' => 'Ukratko opišite svrhu vašeg kredita',
     'button' => 'Pošalji svoj zahtjev',
 
+    'quote_title'    => 'Vaša procjena',
+    'quote_monthly'  => 'Procijenjeni mjesečni obrok',
+    'quote_total'    => 'Ukupan iznos za otplatu',
+    'quote_interest' => 'Ukupni troškovi kredita',
+    'quote_hint'     => 'Okvirna procjena bazirana na fiksnoj godišnjoj kamatnoj stopi od 5 %. Konačna kamatna stopa bit će potvrđena nakon analize vašeg predmeta.',
+    'label_rate'     => 'Fiksna godišnja kamatna stopa',
+    'complete_title' => 'Dopunite vaš predmet',
+    'complete_desc'  => 'Molimo navedite svoju punu adresu i fotografiju osobne iskaznice kako biste dovršili vaš predmet.',
+    'complete_btn'   => 'Pošalji moje dokumente',
+    'label_choose'     => 'Odaberi ovu procjenu',
+    'label_other'      => 'Unesite točan iznos',
+    'label_pick'       => 'Odaberite iznos i trajanje',
+    'label_currency'      => 'U kojoj valuti želite posuditi?',
+    'currency_hint'       => 'Odaberite valutu u kojoj želite primiti kredit.',
+    'preset_label'        => 'Odaberite procjenu koja vam odgovara',
+    'preset_hint'         => 'Kliknite na iznos da ga odaberete — ili preskočite ove prijedloge i unesite direktno točan iznos koji želite u polje ispod.',
+    'custom_show'         => 'Unesi drugi iznos',
+    'custom_hide'         => 'Sakrij prilagođene opcije',
+    'quote_summary_title' => 'Vaša procjena:',
+    'quote_summary_hint'  => 'Provjerite detalje u nastavku, a zatim kliknite na gumb za prelazak na sljedeći korak.',
+    'form_hint'           => 'Sva polja označena s * su obavezna. Vaši podaci su zaštićeni.',
+    'form_security'       => 'Vaši podaci se prenose na siguran način.',
+    'or_custom'        => 'Kliknite na trajanje da ga odaberete — ili unesite direktno broj mjeseci koji želite u polje ispod.',
+    'quote_step_label' => 'Korak 1',
+    'quote_step_title' => 'Odaberite svoju procjenu',
+    'quote_step_desc'  => 'Kliknite na popularnu procjenu ili unesite vlastite parametre.',
+    'back_to_quote'    => 'Promijeni moju procjenu',
+    'sidebar_hours'    => 'Pon – Sub: 8:00 – 18:00',
+
+    // Personal Loan
     'personal_loan' => [
         'section_title' => 'Osobni Kredit',
-        'description' => 'Osobni kredit je kredit koji nije dodijeljen za specifičnu kupovinu. U tom kontekstu, iznos koji se posuđuje putem ovog tipa financiranja može se koristiti za financiranje više kupovina (automobil, motocikl, nekretnina, radovi, putovanja itd.). 
-                      S obzirom na to, nije potrebno opravdati prirodu troškova koji nastaju s ukupnim iznosom novca, za razliku od dodijeljenih kredita. Kao što ime sugerira, dodijeljeni kredit je kredit koji vam omogućuje da isključivo realizirate specifičan projekt: kupovina automobila, radni projekt itd. 
-                      Objektivno, cijela svrha korištenja nealokiranog kredita jest potreba za brzim gotovinskim sredstvima. Nadalje, korisnik je slobodan koristiti sredstva prema vlastitoj volji. Trenutno mnogi kućanstva imaju nedovoljno proračuna za financiranje novih projekata.',
+        'description' => 'Osobni kredit je kredit koji nije dodijeljen za specifičnu kupovinu. U tom kontekstu, iznos koji se posuđuje putem ovog tipa financiranja može se koristiti za financiranje više kupovina (automobil, motocikl, nekretnina, radovi, putovanja itd.).',
         'details' => [
             'introduction' => 'Otkrijte prednosti osobnog kredita, dizajniranog kako bi vam omogućio financijsku slobodu s lakoćom i sigurnošću.',
             'more_info_title' => 'Zašto odabrati osobni kredit?',
             'more_info_text' => 'Osobni kredit može vam pomoći da se nosite s troškovima uz minimalan stres, nudeći konkurentne kamate i fleksibilne uvjete otplate.',
-            'advantage1' =>  'Trenutni postupak odobrenja',
-            'advantage2' =>  '24/7 korisnička podrška',
-            'advantage3' =>  'Fleksibilne opcije otplate',
-            'advantage4' =>  'Transparentna struktura troškova',
+            'advantage1' => 'Trenutni postupak odobrenja',
+            'advantage2' => '24/7 korisnička podrška',
+            'advantage3' => 'Fleksibilne opcije otplate',
+            'advantage4' => 'Transparentna struktura troškova',
             'faq_title' => 'Često postavljana pitanja',
             'faqs' => [
                 'question1' => 'Kako mogu koristiti osobni kredit?',
@@ -50,18 +77,19 @@ return [
                 'question2' => 'Kako se prijaviti za osobni kredit?',
                 'answer2' => 'Jednostavno ispunite naš online obrazac, a naš tim će vas voditi kroz proces korak po korak.',
                 'question3' => 'Koja je kamatna stopa na osobni kredit?',
-                'answer3' => 'Kamatne stope variraju ovisno o faktoru kao što su iznos kredita i kreditna povijest. Kontaktirajte nas za personaliziranu stopu.'
+                'answer3' => 'Kamatne stope variraju ovisno o iznosu kredita i kreditnoj povijesti. Kontaktirajte nas za personaliziranu stopu.'
             ]
         ]
     ],
 
+    // Home Loan
     'home_loan' => [
         'section_title' => 'Kredit za Kupovinu Doma',
-        'description' => 'Kredit za kupovinu doma omogućuje financiranje specifično za kupovinu ili renovaciju nekretnine. Ovaj tip kredita omogućuje posuditelju pristup značajnim sredstvima za projekte poput kupovine nove kuće, proširenja postojećih stambenih prostora ili poboljšanja značajki imovine. Krediti za dom obično su dugoročni i dolaze s konkurentnim kamatnim stopama, što ih čini ključnim financijskim alatom za ostvarenje ciljeva vlasništva nad domom. Fleksibilnost u uvjetima otplate i prilagođeni pristup financiranju imovine čine kredite za kupovinu doma atraktivnim rješenjem za buduće vlasnike.',
+        'description' => 'Kredit za kupovinu doma omogućuje financiranje specifično za kupovinu ili renovaciju nekretnine. Ovaj tip kredita omogućuje posuditelju pristup značajnim sredstvima za projekte poput kupovine nove kuće, proširenja postojećih stambenih prostora ili poboljšanja značajki imovine.',
         'details' => [
             'introduction' => 'Otkrijte prednosti kredita za kupovinu doma, prilagođenog kako bi vaši snovi o vlasništvu doma postali stvarnost.',
             'more_info_title' => 'Zašto odabrati kredit za kupovinu doma?',
-            'more_info_text' => 'Kredit za kupovinu doma specifično je dizajniran kako bi vam pomogao financirati kupovinu nekretnine ili renovaciju, pružajući konkurentne kamatne stope i fleksibilne uvjete koji odgovaraju vašoj financijskoj situaciji.',
+            'more_info_text' => 'Kredit za kupovinu doma specifično je dizajniran kako bi vam pomogao financirati kupovinu nekretnine ili renovaciju, pružajući konkurentne kamatne stope i fleksibilne uvjete.',
             'advantage1' => 'Konkurentne kamatne stope',
             'advantage2' => 'Fleksibilni planovi otplate',
             'advantage3' => 'Brzi postupak odobrenja',
@@ -78,9 +106,10 @@ return [
         ]
     ],
 
+    // Auto Loan
     'auto_loan' => [
         'section_title' => 'Kredit za Kupovinu Automobila',
-        'description' => 'Kredit za kupovinu automobila je financijska opcija specifično dizajnirana da vam pomogne pri kupovini novog ili rabljenog vozila. Ovaj tip kredita nudi fleksibilne uvjete otplate i konkurentne kamatne stope, omogućujući vam da vozite automobil koji želite bez potrebe za velikom uplatom unaprijed. S kreditom za automobil možete pokriti puni ili djelomični iznos vozila i otplatiti ga tijekom vremena, što ga čini dostupnim rješenjem za većinu proračuna. Krediti za automobil nude jednostavan postupak prijave i brzi postupak odobrenja kako biste brzo počeli voziti.',
+        'description' => 'Kredit za kupovinu automobila je financijska opcija specifično dizajnirana da vam pomogne pri kupovini novog ili rabljenog vozila. Ovaj tip kredita nudi fleksibilne uvjete otplate i konkurentne kamatne stope.',
         'details' => [
             'introduction' => 'Iskusite pogodnosti kredita za automobil, osmišljenog kako bi vam olakšao kupovinu vozila i učinio je pristupačnom.',
             'more_info_title' => 'Zašto odabrati kredit za automobil?',
@@ -94,16 +123,17 @@ return [
                 'question1' => 'Koje vrste vozila mogu financirati kreditom za automobil?',
                 'answer1' => 'Kreditom za automobil možete financirati različite vrste vozila, uključujući nova i rabljena vozila, motocikle pa čak i neka vozila za slobodno vrijeme.',
                 'question2' => 'Kako se prijaviti za kredit za automobil?',
-                'answer2' => 'Jednostavno ispunite naš online obrazac, a naš tim će vam pomoći kroz proces odobrenja kredita kako biste brzo dobili svoje novo vozilo.',
+                'answer2' => 'Jednostavno ispunite naš online obrazac, a naš tim će vam pomoći kroz proces odobrenja kredita.',
                 'question3' => 'Koji faktori utječu na kamatnu stopu za kredit za automobil?',
-                'answer3' => 'Kamatne stope ovise o faktorima kao što su tip vozila, iznos kredita i vaša kreditna povijest. Kontaktirajte nas za prilagođenu kamatnu stopu prema vašim potrebama.'
+                'answer3' => 'Kamatne stope ovise o faktorima kao što su tip vozila, iznos kredita i vaša kreditna povijest. Kontaktirajte nas za prilagođenu kamatnu stopu.'
             ]
         ]
     ],
 
+    // Business Loan
     'business_loan' => [
         'section_title' => 'Poslovni Kredit',
-        'description' => 'Poslovni kredit je financijsko rješenje dizajnirano za podršku rastu i operativnim potrebama vašeg poslovanja. Bilo da trebate sredstva za širenje, kupovinu opreme ili radni kapital, poslovni kredit može pružiti financijsku potporu vašoj tvrtki. S fleksibilnim uvjetima otplate i konkurentnim kamatnim stopama, ovaj tip kredita omogućuje vlasnicima tvrtki učinkovito upravljanje novčanim tokom, ulaganje u nove prilike i poticanje dugoročnog uspjeha.',
+        'description' => 'Poslovni kredit je financijsko rješenje dizajnirano za podršku rastu i operativnim potrebama vašeg poslovanja. Bilo da trebate sredstva za širenje, kupovinu opreme ili radni kapital, poslovni kredit može pružiti financijsku potporu vašoj tvrtki.',
         'details' => [
             'introduction' => 'Otkrijte kako poslovni kredit može osnažiti vašu tvrtku da raste i uspijeva na konkurentnom tržištu.',
             'more_info_title' => 'Zašto odabrati poslovni kredit?',
@@ -124,9 +154,10 @@ return [
         ]
     ],
 
+    // Bike Loan
     'bike_loan' => [
         'section_title' => 'Kredit za Kupovinu Motocikla',
-        'description' => 'Kredit za kupovinu motocikla je financijska opcija prilagođena pojedincima koji žele kupiti novi ili rabljeni motocikl. Ovaj kredit vam omogućuje da vozite motocikl po svom izboru uz pristupačne uvjete otplate i konkurentne kamatne stope. S kreditom za motocikl možete izbjeći veliku uplatu unaprijed i otplatiti svoj motocikl tijekom vremena, što olakšava upravljanje unutar vašeg proračuna. Ovaj tip kredita je idealan za početnike i iskusne vozače koji žele financijsku fleksibilnost.',
+        'description' => 'Kredit za kupovinu motocikla je financijska opcija prilagođena pojedincima koji žele kupiti novi ili rabljeni motocikl. Ovaj kredit vam omogućuje da vozite motocikl po svom izboru uz pristupačne uvjete otplate i konkurentne kamatne stope.',
         'details' => [
             'introduction' => 'Krenite na cestu s lakoćom uz naš kredit za motocikl, dizajniran kako bi vam omogućio pristup motociklu uz povoljne uvjete.',
             'more_info_title' => 'Zašto odabrati kredit za motocikl?',
@@ -147,16 +178,17 @@ return [
         ]
     ],
 
+    // Study Loan
     'study_loan' => [
         'section_title' => 'Kredit za Studije',
-        'description' => 'Kredit za studije je specifična financijska opcija dizajnirana kako bi pomogla studentima pokriti obrazovne troškove, uključujući školarine, knjige, smještaj i druge studijske troškove. Ovaj tip kredita pruža financijsku podršku studentima i njihovim obiteljima kako bi nastavili visoko obrazovanje bez neposrednog financijskog opterećenja. S fleksibilnim uvjetima otplate i konkurentnim kamatnim stopama, kredit za studije može učiniti ostvarenje akademskih ciljeva lakšim.',
+        'description' => 'Kredit za studije je specifična financijska opcija dizajnirana kako bi pomogla studentima pokriti obrazovne troškove, uključujući školarine, knjige, smještaj i druge studijske troškove.',
         'details' => [
             'introduction' => 'Osnažite svoje obrazovno putovanje s kreditom za studije, dizajniranim kako bi visoko obrazovanje bilo pristupačno i povoljno.',
             'more_info_title' => 'Zašto odabrati kredit za studije?',
             'more_info_text' => 'Kredit za studije pruža ključnu financijsku podršku studentima, nudeći prihvatljive kamatne stope i fleksibilne uvjete otplate kako biste se mogli posvetiti studijama bez financijskih briga.',
             'advantage1' => 'Fleksibilni uvjeti otplate',
             'advantage2' => 'Konkurentne kamatne stope',
-            'advantage3' => 'Pokreće razne obrazovne troškove',
+            'advantage3' => 'Pokriva razne obrazovne troškove',
             'advantage4' => 'Brz i jednostavan postupak prijave',
             'faq_title' => 'Često postavljana pitanja',
             'faqs' => [
@@ -169,6 +201,5 @@ return [
             ]
         ]
     ],
-
 
 ];

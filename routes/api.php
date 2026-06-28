@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ── Authentification (public) ─────────────────────────────────────────────
-Route::prefix('auth')->group(function () {
+Route::prefix('auth')->middleware('setLocale')->group(function () {
     Route::post('/login',  [AuthApiController::class, 'login']);      // Étape 1 : identifiant + mdp → OTP email
     Route::post('/otp',    [AuthApiController::class, 'verifyOtp']);  // Étape 2 : OTP → token Sanctum
 });
 
 // ── Routes protégées (Bearer token requis) ────────────────────────────────
-Route::middleware(['auth:sanctum', 'throttle:120,1'])->group(function () {
+Route::middleware(['auth:sanctum', 'throttle:120,1', 'setLocale'])->group(function () {
 
     // Déconnexion
     Route::post('/auth/logout', [AuthApiController::class, 'logout']);

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
   'general_title' => 'Credixa - I migliori prestatori online in Germania, Spagna, Ungheria, ecc.',
@@ -6,16 +6,7 @@ return [
 'banner_text' => 'Milioni di persone usano Credixa per realizzare i loro progetti.',
 'get_loan_now' => 'Ottieni un prestito ora',
 'popular_loans' => 'Tipi di prestiti popolari:',
-'personal_loan' => 'Prestito personale',
-'mortgage_loan' => 'Prestito ipotecario',
-'auto_loan' => 'Prestito auto',
-'student_loan' => 'Prestito studentesco',
-'business_loan' => 'Prestito professionale',
-'consumer_loan' => 'Prestito al consumo',
-'bridge_loan' => 'Prestito ponte',
-'microcredit' => 'Microcredito',
 
-// Nuove traduzioni per la sezione
 'discover_our_loan_services' => 'Scopri i nostri servizi di prestito',
 'find_the_right_loan' => 'Trova il prestito adatto alle tue esigenze tra le nostre opzioni',
 'personal_loan' => 'Prestito personale',
@@ -26,7 +17,7 @@ return [
 'mortgage_loan_details' => 'Trova il mutuo perfetto per la tua nuova casa.',
 'auto_loan' => 'Prestito auto',
 'auto_loan_description' => 'Finanzia il tuo veicolo',
-'auto_loan_details' => 'Opzioni di prestito per acquistare l’auto dei tuoi sogni.',
+'auto_loan_details' => "Opzioni di prestito per acquistare l'auto dei tuoi sogni.",
 'student_loan' => 'Prestito studentesco',
 'student_loan_description' => 'Per i tuoi studi',
 'student_loan_details' => 'Prestiti progettati per finanziare la tua istruzione e i tuoi bisogni accademici.',
@@ -72,41 +63,49 @@ return [
 'testimonials_title' => 'Le nostre testimonianze',
 'testimonials_description' => 'Scopri cosa dicono i nostri clienti di noi.',
 'testimonial_1' => [
-    'quote' => '"Sono molto soddisfatta del servizio. Il processo di richiesta del prestito è stato rapido e semplice. Ho ricevuto l’approvazione in pochi giorni e i tassi erano competitivi. Grazie mille!"',
-    'name' => 'Julie B.',
+    'quote' => '"Sono molto soddisfatta del servizio. Il processo di richiesta del prestito è stato rapido e semplice. Ho ricevuto l\'approvazione in pochi giorni e i tassi erano competitivi. Grazie mille!"',
+    'name' => 'Marco Rossi',
+    'location' => 'Roma, Italia',
 ],
 'testimonial_2' => [
-    'quote' => '"Raccomando vivamente questo servizio di prestito. Il team è stato molto professionale e disponibile. Hanno risposto a tutte le mie domande rendendo il processo senza stress. Grazie per l’ottimo servizio!"',
-    'name' => 'Pierre L.',
+    'quote' => '"Raccomando vivamente questo servizio di prestito. Il team è stato molto professionale e disponibile. Hanno risposto a tutte le mie domande rendendo il processo senza stress. Grazie per l\'ottimo servizio!"',
+    'name' => 'Giulia Ferrari',
+    'location' => 'Milano, Italia',
 ],
 'testimonial_3' => [
-    'quote' => '"Il processo di richiesta del prestito è stato trasparente ed efficiente. Ho ricevuto consulenze professionali e personalizzate durante tutto il processo. Grazie a tutto il team per l’ottimo lavoro!"',
-    'name' => 'Sophie D.',
+    'quote' => '"Il processo di richiesta del prestito è stato trasparente ed efficiente. Ho ricevuto consulenze professionali e personalizzate durante tutto il processo. Grazie a tutto il team per l\'ottimo lavoro!"',
+    'name' => 'Luca Russo',
+    'location' => 'Napoli, Italia',
 ],
 'testimonial_4' => [
-    'quote' => '"Ottenere un prestito con questa azienda è stata un’esperienza senza problemi. Il personale era cordiale e competente e il processo è stato rapido ed efficiente. Lo consiglio vivamente!"',
-    'name' => 'Marc F.',
+    'quote' => '"Ottenere un prestito con questa azienda è stata un\'esperienza senza problemi. Il personale era cordiale e competente e il processo è stato rapido ed efficiente. Lo consiglio vivamente!"',
+    'name' => 'Valentina Esposito',
+    'location' => 'Torino, Italia',
 ],
 'testimonial_5' => [
     'quote' => '"Servizio clienti eccellente! Sono stato guidato in ogni fase del processo di prestito e le mie domande hanno ricevuto risposta rapidamente. Sono molto soddisfatto del risultato finale."',
-    'name' => 'Nathalie P.',
+    'name' => 'Francesco Bianchi',
+    'location' => 'Firenze, Italia',
 ],
 'testimonial_6' => [
     'quote' => '"Ottimo tasso di interesse e processo veloce. Raccomando vivamente questo servizio a chiunque abbia bisogno di un prestito rapido e affidabile."',
-    'name' => 'Luc M.',
+    'name' => 'Chiara Conti',
+    'location' => 'Bologna, Italia',
 ],
 'testimonial_7' => [
     'quote' => '"Processo di prestito semplice ed efficiente. Sono rimasta piacevolmente sorpresa dalla velocità di approvazione. Grazie a tutto il team!"',
-    'name' => 'Marie C.',
+    'name' => 'Antonio Mancini',
+    'location' => 'Venezia, Italia',
 ],
 'testimonial_8' => [
-    'quote' => '"Ho avuto un’esperienza eccellente con questo servizio di prestito. Il personale è stato attento e professionale. Non vedo l’ora di raccomandarlo!"',
-    'name' => 'Jean L.',
+    'quote' => '"Ho avuto un\'esperienza eccellente con questo servizio di prestito. Il personale è stato attento e professionale. Non vedo l\'ora di raccomandarlo!"',
+    'name' => 'Laura Barbieri',
+    'location' => 'Genova, Italia',
 ],
 
 
     'about_title' => 'Unisciti al miglior marketplace mondiale per lavoratori',
-'about_description' => 'Credixa è la tua piattaforma di fiducia per ottenere prestiti con un’esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.',
+'about_description' => "Credixa è la tua piattaforma di fiducia per ottenere prestiti con un'esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.",
 'rating' => '4.9/5',
 'rating_description' => 'I clienti valutano i professionisti',
 'projects_completed' => '+12M',
@@ -124,7 +123,7 @@ return [
 'terms' => 'Condizioni generali',
 'privacy_policy' => 'Politica sulla privacy',
 'site_map' => 'Mappa del sito',
-'about' => [
+'about_nav' => [
     'title' => 'Chi siamo',
     'who_we_are' => 'Chi siamo?',
     'faq' => 'FAQ',
@@ -198,9 +197,9 @@ return [
     'sectagline' => 'benvenuto in Credixa',
     'sectitle' => 'Prestiti personali per realizzare i tuoi sogni',
     'text1' => 'Siamo in questo settore dal 1990 e forniamo i migliori servizi.',
-    'text2' => 'Credixa è la tua piattaforma di fiducia per prestiti con un’esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.',
+    'text2' => "Credixa è la tua piattaforma di fiducia per prestiti con un'esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.",
     'check1' => 'prestito per piccole imprese',
-    'check2' => 'prestito per studiare all’estero',
+    'check2' => "prestito per studiare all'estero",
     'check3' => 'processo di prestito rapido',
     'check4' => 'tassi molto bassi',
 ],
@@ -261,11 +260,11 @@ return [
     ],
     'step3' => [
         'title' => 'Approvazione del prestito',
-        'desc' => 'Una volta approvato, riceverai una conferma dell’approvazione del prestito insieme ai dettagli delle condizioni.'
+        'desc' => "Una volta approvato, riceverai una conferma dell'approvazione del prestito insieme ai dettagli delle condizioni."
     ],
     'step4' => [
         'title' => 'Erogazione dei fondi',
-        'desc' => 'I fondi vengono trasferiti direttamente sul tuo conto bancario in breve tempo dopo l’approvazione.'
+        'desc' => "I fondi vengono trasferiti direttamente sul tuo conto bancario in breve tempo dopo l'approvazione."
     ],
 ],
 
@@ -274,9 +273,9 @@ return [
     'sectitle' => 'Motivi popolari per richiedere un prestito',
     'reasons' => [
         'title1' => 'Hai bisogno di una nuova auto?',
-        'desc1' => 'Prendi il controllo delle tue finanze e guida l’auto dei tuoi sogni con un prestito su misura per le tue esigenze.',
+        'desc1' => "Prendi il controllo delle tue finanze e guida l'auto dei tuoi sogni con un prestito su misura per le tue esigenze.",
         'title2' => 'Consolida i tuoi debiti',
-        'desc2' => 'Combina più debiti in un’unica rata mensile semplice, aiutandoti a semplificare e gestire meglio le tue finanze.',
+        'desc2' => "Combina più debiti in un'unica rata mensile semplice, aiutandoti a semplificare e gestire meglio le tue finanze.",
         'title3' => 'Ristrutturazione della casa',
         'desc3' => 'Migliora o rinnova la tua casa, aggiungendo valore e comfort al tuo spazio abitativo senza stress finanziari.',
     ],

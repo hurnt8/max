@@ -38,7 +38,7 @@
           <label class="form-label-pro">Langue</label>
           <select name="locale" class="form-control-pro">
             <option value="">Automatique</option>
-            @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español'] as $code=>$lbl)
+            @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','de'=>'Deutsch','pt'=>'Português','it'=>'Italiano','hr'=>'Hrvatski','bg'=>'Български','hu'=>'Magyar','sl'=>'Slovenščina','lt'=>'Lietuvių','mt'=>'Malti','el'=>'Ελληνικά'] as $code=>$lbl)
             <option value="{{ $code }}" {{ old('locale')==$code?'selected':'' }}>{{ $lbl }}</option>
             @endforeach
           </select>
