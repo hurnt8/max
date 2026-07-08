@@ -6,8 +6,8 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Credixa">
-  <meta name="theme-color" content="#0A1628">
+  <meta name="apple-mobile-web-app-title" content="Solberg Grupo">
+  <meta name="theme-color" content="#04203D">
   <meta name="description" content="Credixa — Espace client mobile">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -27,10 +27,12 @@
 
   @vite(['resources/css/client-app.css', 'resources/js/client-app.js'])
 
-  {{-- Init theme AVANT le rendu pour éviter le flash blanc/noir --}}
+  {{-- Init theme AVANT le rendu pour éviter le flash blanc/noir.
+       Clé renommée (v2) pour ignorer un ancien 'dark' déjà stocké côté client
+       et repartir sur le nouveau thème clair par défaut (charte Solberg Grupo). --}}
   <script>
     (function(){
-      var t = localStorage.getItem('credixa-theme') || 'dark';
+      var t = localStorage.getItem('credixa-theme-v2') || 'light';
       document.documentElement.dataset.theme = t;
     })();
   </script>
@@ -42,12 +44,12 @@
 
 {{-- ══ SPLASH SCREEN ══ --}}
 <div id="cxa-splash" aria-hidden="true">
-  <img src="/assets/images/logo%20new.png" alt="Credixa" id="cxa-splash-logo">
+  <img src="/assets/images/logo-white.png" alt="Solberg Grupo" id="cxa-splash-logo">
 </div>
 <style>
 #cxa-splash{
   position:fixed;inset:0;z-index:9999;
-  background:#0A1628;
+  background:#04203D;
   display:flex;align-items:center;justify-content:center;
   animation:splashFade 0.4s ease 1.4s forwards;
   pointer-events:none;
@@ -180,7 +182,7 @@
 
 {{-- ══ BANNIERE PWA ══ --}}
 <div class="ca-install-banner" id="ca-install-banner" role="complementary">
-  <div style="width:42px;height:42px;border-radius:14px;background:rgba(200,169,81,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+  <div style="width:42px;height:42px;border-radius:14px;background:rgba(184,136,62,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
     <i class="fas fa-mobile-screen" style="color:var(--ca-gold-l);font-size:1.25rem"></i>
   </div>
   <div style="flex:1;min-width:0">
@@ -191,7 +193,7 @@
   </div>
   <div style="display:flex;gap:.5rem;flex-shrink:0">
     <button id="ca-install-btn"
-            style="background:linear-gradient(135deg,var(--ca-teal-l),var(--ca-teal));color:#fff;border:none;padding:.45rem .9rem;border-radius:var(--ca-radius-sm);font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap">
+            style="background:linear-gradient(135deg,var(--ca-teal-l),var(--ca-teal));color:var(--ca-navy);border:none;padding:.45rem .9rem;border-radius:var(--ca-radius-sm);font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap">
       {{ __('app.install_btn') }}
     </button>
     <button onclick="document.getElementById('ca-install-banner').style.display='none'"
@@ -205,16 +207,16 @@
 @stack('scripts')
 
 {{-- ══ Push Notifications ══ --}}
-<div id="cxa-push-banner" style="display:none;position:fixed;bottom:calc(62px + env(safe-area-inset-bottom,0px) + .75rem);left:.875rem;right:.875rem;z-index:9000;background:#0E1A2E;border:1px solid rgba(27,138,122,.35);border-radius:16px;padding:.875rem 1rem;box-shadow:0 8px 32px rgba(0,0,0,.5);display:none;align-items:center;gap:.875rem">
-  <div style="width:42px;height:42px;border-radius:13px;background:rgba(27,138,122,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-    <i class="fas fa-bell" style="color:var(--ca-teal-l);font-size:1.1rem"></i>
+<div id="cxa-push-banner" style="display:none;position:fixed;bottom:calc(62px + env(safe-area-inset-bottom,0px) + .75rem);left:.875rem;right:.875rem;z-index:9000;background:#04203D;border:1px solid rgba(184,136,62,.35);border-radius:16px;padding:.875rem 1rem;box-shadow:0 8px 32px rgba(4,32,61,.5);display:none;align-items:center;gap:.875rem">
+  <div style="width:42px;height:42px;border-radius:13px;background:rgba(184,136,62,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+    <i class="fas fa-bell" style="color:#D2B789;font-size:1.1rem"></i>
   </div>
   <div style="flex:1;min-width:0">
     <div style="font-size:.84rem;font-weight:700;color:#fff;margin-bottom:.15rem">Activer les notifications</div>
     <div style="font-size:.72rem;color:rgba(255,255,255,.45);line-height:1.4">Recevez vos virements, factures et mises à jour en temps réel.</div>
   </div>
   <div style="display:flex;flex-direction:column;gap:.4rem;flex-shrink:0">
-    <button id="cxa-push-allow" style="background:linear-gradient(90deg,var(--ca-teal-l),var(--ca-teal));color:#fff;border:none;padding:.42rem .875rem;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap">Activer</button>
+    <button id="cxa-push-allow" style="background:linear-gradient(90deg,#D2B789,#B8883E);color:#04203D;border:none;padding:.42rem .875rem;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap">Activer</button>
     <button id="cxa-push-later" style="background:none;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.45);padding:.38rem .875rem;border-radius:8px;font-size:.72rem;cursor:pointer;white-space:nowrap">Plus tard</button>
   </div>
 </div>

@@ -21,7 +21,7 @@
       </button>
       <div x-show="open" @click.outside="close()" x-transition
            style="position:absolute;right:0;top:48px;background:var(--ca-bg4);border:1px solid var(--ca-border);border-radius:14px;min-width:144px;overflow:hidden;z-index:500;box-shadow:0 12px 40px rgba(0,0,0,.45)">
-        @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español'] as $lc => $label)
+        @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','bg'=>'Български','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuvių','ro'=>'Română','lv'=>'Latviešu'] as $lc => $label)
         <form method="POST" action="{{ route('client.app.locale') }}">
           @csrf<input type="hidden" name="locale" value="{{ $lc }}">
           <button type="submit" style="width:100%;padding:.6rem 1rem;background:none;border:none;color:{{ app()->getLocale()===$lc?'var(--ca-teal-l)':'var(--ca-text-2)' }};font-size:.82rem;text-align:left;cursor:pointer;font-family:inherit;font-weight:{{ app()->getLocale()===$lc?'700':'400' }}">
@@ -54,9 +54,9 @@
 .h-header__actions{ display:flex;gap:.5rem }
 .h-avatar{
   width:46px;height:46px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--ca-teal),#0A2040);
-  border:2.5px solid rgba(27,138,122,.45);
-  box-shadow:0 0 0 4px rgba(27,138,122,.1);
+  background:linear-gradient(135deg,var(--ca-teal),#04203D);
+  border:2.5px solid rgba(184,136,62,.45);
+  box-shadow:0 0 0 4px rgba(184,136,62,.1);
   display:flex;align-items:center;justify-content:center;
   font-weight:800;font-size:1.1rem;color:#fff;
 }
@@ -81,21 +81,21 @@
 .h-card{
   margin:.625rem 1.25rem 0;
   border-radius:24px;
-  background:linear-gradient(145deg,#1B527A 0%,#0D2E54 40%,#071828 100%);
+  background:linear-gradient(145deg,var(--ca-navy-3) 0%,var(--ca-navy-2) 40%,var(--ca-navy) 100%);
   padding:1.375rem 1.5rem 1.25rem;
   position:relative;overflow:hidden;
-  box-shadow:0 20px 56px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.07);
+  box-shadow:0 20px 56px rgba(4,32,61,.4),0 0 0 1px rgba(255,255,255,.07);
 }
 .h-card::before{
   content:'';position:absolute;top:-80px;right:-80px;
   width:260px;height:260px;border-radius:50%;
-  background:radial-gradient(circle,rgba(13,207,220,.1) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(184,136,62,.12) 0%,transparent 65%);
   pointer-events:none;
 }
 .h-card::after{
   content:'';position:absolute;bottom:-80px;left:-50px;
   width:220px;height:220px;border-radius:50%;
-  background:radial-gradient(circle,rgba(200,169,81,.09) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(184,136,62,.09) 0%,transparent 65%);
   pointer-events:none;
 }
 /* Card top row */
@@ -104,14 +104,14 @@
   margin-bottom:1.125rem;
 }
 .h-card__brand{
-  font-family:'Space Grotesk',sans-serif;
+  font-family:'Montserrat',sans-serif;
   font-size:.65rem;font-weight:800;
   letter-spacing:.14em;text-transform:uppercase;
   color:rgba(255,255,255,.5);
 }
 .h-card__chip{
   width:34px;height:26px;border-radius:5px;
-  background:linear-gradient(135deg,#D4B96A,#C8A951,#A88830);
+  background:linear-gradient(135deg,#D2B789,#B8883E,#96702F);
   box-shadow:0 2px 8px rgba(0,0,0,.35);
   position:relative;overflow:hidden;
 }
@@ -139,7 +139,7 @@
 }
 .h-eye:hover{color:rgba(255,255,255,.75)}
 .h-balance{
-  font-family:'Space Grotesk',sans-serif;
+  font-family:'Montserrat',sans-serif;
   font-size:2.125rem;font-weight:800;
   color:#fff;letter-spacing:-.03em;line-height:1;
   margin-bottom:1.125rem;
@@ -159,7 +159,7 @@
   position:relative;z-index:1;
 }
 .h-card__name{
-  font-family:'Space Grotesk',sans-serif;
+  font-family:'Montserrat',sans-serif;
   font-size:.78rem;font-weight:700;
   color:rgba(255,255,255,.75);
   text-transform:uppercase;letter-spacing:.06em;
@@ -170,8 +170,8 @@
   color:rgba(255,255,255,.38);letter-spacing:.15em;
 }
 .h-card__badge{
-  background:rgba(200,169,81,.18);
-  border:1px solid rgba(200,169,81,.38);
+  background:rgba(184,136,62,.18);
+  border:1px solid rgba(184,136,62,.38);
   border-radius:999px;
   padding:.28rem .75rem;
   font-size:.65rem;font-weight:700;
@@ -206,7 +206,7 @@
   transition:transform .14s,box-shadow .14s;
 }
 .h-action:active .h-action__ico{ transform:scale(.91) }
-.h-action__ico--teal  { background:rgba(27,138,122,.2);  border:1px solid rgba(27,138,122,.35);  color:var(--ca-teal-l);    box-shadow:0 4px 14px rgba(27,138,122,.18) }
+.h-action__ico--teal  { background:rgba(184,136,62,.2);  border:1px solid rgba(184,136,62,.35);  color:var(--ca-teal-l);    box-shadow:0 4px 14px rgba(184,136,62,.18) }
 .h-action__ico--green { background:rgba(0,200,150,.15);  border:1px solid rgba(0,200,150,.3);    color:var(--ca-positive);  box-shadow:0 4px 14px rgba(0,200,150,.16) }
 .h-action__ico--blue  { background:rgba(74,158,255,.15); border:1px solid rgba(74,158,255,.3);   color:var(--ca-blue);      box-shadow:0 4px 14px rgba(74,158,255,.14) }
 .h-action__ico--purple{ background:rgba(139,92,246,.15); border:1px solid rgba(139,92,246,.3);   color:var(--ca-purple);    box-shadow:0 4px 14px rgba(139,92,246,.14) }
@@ -233,10 +233,10 @@
   height:3px;border-radius:16px 16px 0 0;
 }
 .h-stat--def::before { background:linear-gradient(90deg,var(--ca-text-3),var(--ca-bg4)) }
-.h-stat--teal::before{ background:linear-gradient(90deg,var(--ca-teal-l),#0D8A7A) }
+.h-stat--teal::before{ background:linear-gradient(90deg,var(--ca-teal-l),#96702F) }
 .h-stat--amb::before { background:linear-gradient(90deg,var(--ca-amber),#C87800) }
 .h-stat__num{
-  font-family:'Space Grotesk',sans-serif;
+  font-family:'Montserrat',sans-serif;
   font-size:1.75rem;font-weight:800;
   line-height:1;margin-bottom:.3rem;
 }
@@ -291,7 +291,7 @@
 }
 .h-txn__right{ text-align:right;flex-shrink:0 }
 .h-txn__amount{
-  font-family:'Space Grotesk',sans-serif;
+  font-family:'Montserrat',sans-serif;
   font-size:.95rem;font-weight:700;
 }
 .h-txn__amount--pos{ color:var(--ca-positive) }
@@ -306,10 +306,10 @@
   font-size:.62rem;font-weight:700;
   text-transform:uppercase;letter-spacing:.04em;
 }
-.h-badge--loan   { background:rgba(27,138,122,.18); color:var(--ca-teal-l) }
+.h-badge--loan   { background:rgba(184,136,62,.18); color:var(--ca-teal-l) }
 .h-badge--pending{ background:rgba(245,158,11,.15); color:var(--ca-amber) }
 .h-badge--signed { background:rgba(74,158,255,.15); color:var(--ca-blue) }
-.h-badge--final  { background:rgba(200,169,81,.15); color:var(--ca-gold-l) }
+.h-badge--final  { background:rgba(184,136,62,.15); color:var(--ca-gold-l) }
 
 /* ── Empty state ── */
 .h-empty{
@@ -365,7 +365,7 @@
   <div class="h-card__top">
     <div class="h-card__brand">
       <i class="fas fa-landmark" style="font-size:.6rem;margin-right:.3rem"></i>
-      CREDIXA &nbsp;·&nbsp; {{ __('app.account_num') }}
+     Solberg Grupo &nbsp;·&nbsp; {{ __('app.account_num') }}
     </div>
     <div class="h-card__chip" aria-hidden="true"></div>
   </div>
@@ -426,7 +426,7 @@
     <span class="h-action__lbl">{{ __('app.action_analytics') }}</span>
   </a>
   <a href="{{ route('client.app.movements') }}" class="h-action">
-    <div class="h-action__ico" style="background:rgba(200,169,81,.15);border:1px solid rgba(200,169,81,.3);color:var(--ca-gold-l)">
+    <div class="h-action__ico" style="background:rgba(184,136,62,.15);border:1px solid rgba(184,136,62,.3);color:var(--ca-gold-l)">
       <i class="fas fa-list-ul"></i>
     </div>
     <span class="h-action__lbl">{{ __('app.movements_title') }}</span>

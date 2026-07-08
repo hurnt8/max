@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SetLocale
 {
-    private const SUPPORTED = ['fr', 'en', 'pl', 'es'];
+    private const SUPPORTED = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv'];
 
     public function handle(Request $request, Closure $next): Response
     {
@@ -20,23 +20,30 @@ class SetLocale
 
     private function resolve(Request $request): string
     {
-        // 1. Choix explicite : paramètre URL / query string / session
-        $explicit = $request->route('locale')
-            ?? $request->query('lang')
-            ?? session('locale');
-
+        // 1. Choix explicite dans CETTE requête (segment d'URL {locale} ou ?lang=)
+        //    — un changement de langue volontaire prime toujours sur le reste.
+        $explicit = $request->route('locale') ?? $request->query('lang');
         if (in_array($explicit, self::SUPPORTED, true)) {
             session(['locale' => $explicit]);
             return $explicit;
         }
 
-        // 2. Locale enregistrée en base (utilisateur connecté)
+        // 2. Utilisateur connecté : sa préférence enregistrée fait autorité.
+        //    Prioritaire sur la session pour éviter qu'une langue restée en
+        //    session depuis une navigation anonyme n'écrase le profil du client.
         $user = $request->user();
         if ($user && in_array($user->locale, self::SUPPORTED, true)) {
+            session(['locale' => $user->locale]);
             return $user->locale;
         }
 
-        // 3. Langue préférée du navigateur / appareil (Accept-Language)
+        // 3. Session (visiteur anonyme ayant déjà choisi une langue)
+        $sessionLocale = session('locale');
+        if (in_array($sessionLocale, self::SUPPORTED, true)) {
+            return $sessionLocale;
+        }
+
+        // 4. Langue préférée du navigateur / appareil (Accept-Language)
         $header = $request->header('Accept-Language', '');
         foreach (explode(',', $header) as $part) {
             $tag  = trim(explode(';', $part)[0]);       // ex: "fr-FR" ou "en"
@@ -46,7 +53,7 @@ class SetLocale
             }
         }
 
-        // 4. Défaut
+        // 5. Défaut
         return 'fr';
     }
 }

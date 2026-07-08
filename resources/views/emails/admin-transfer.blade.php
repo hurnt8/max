@@ -21,5 +21,5 @@ Valider le virement
 @endcomponent
 
 Cordialement,<br>
-**Credixa**
+**Solberg Grupo**
 @endcomponent

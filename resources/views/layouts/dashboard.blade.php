@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<meta name="theme-color" content="#0B1A2E">
+<meta name="theme-color" content="#04203D">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Credixa Admin">
+<meta name="apple-mobile-web-app-title" content="Solberg Admin">
 <meta name="mobile-web-app-capable" content="yes">
 @auth
   @if(Auth::user()->hasAnyRole(['admin','super-admin']))
@@ -20,29 +20,29 @@
 @endauth
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
-<title>@yield('title','Dashboard') — Credixa Invest</title>
+<title>@yield('title','Dashboard') —Solberg Grupo Invest</title>
 <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/vendors/fontawesome/css/all.min.css') }}">
 <style>
 /* ═══════════════════════════════════════════════
-   CREDIXA INVEST — DESIGN SYSTEM v2
+  Solberg Grupo INVEST — DESIGN SYSTEM v2
    ═══════════════════════════════════════════════ */
 :root {
-  --c-navy:       #0B1A2E;
-  --c-navy-2:     #112240;
-  --c-navy-3:     #1a3a5c;
-  --c-gold:       #C8A951;
-  --c-gold-d:     #A88830;
-  --c-gold-l:     #f0e0a0;
-  --c-bg:         #F1F4F9;
+  --c-navy:       #04203D;
+  --c-navy-2:     #0A3559;
+  --c-navy-3:     #12446E;
+  --c-gold:       #B8883E;
+  --c-gold-d:     #96702F;
+  --c-gold-l:     #D2B789;
+  --c-bg:         #F7F8F9;
   --c-surface:    #FFFFFF;
-  --c-border:     #E4E8F0;
-  --c-text:       #1A2332;
-  --c-muted:      #6B7280;
+  --c-border:     #DBDDDE;
+  --c-text:       #04203D;
+  --c-muted:      #95A3B1;
   --c-green:      #059669;
   --c-green-l:    #D1FAE5;
   --c-red:        #DC2626;
@@ -57,13 +57,13 @@
   --topbar-h:     64px;
   --radius:       12px;
   --radius-sm:    8px;
-  --shadow:       0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.07);
-  --shadow-sm:    0 1px 2px rgba(0,0,0,.05);
+  --shadow:       0 1px 3px rgba(4,32,61,.06), 0 4px 16px rgba(4,32,61,.07);
+  --shadow-sm:    0 1px 2px rgba(4,32,61,.05);
   --transition:   all .2s ease;
 }
 
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:'Inter',sans-serif; background:var(--c-bg); color:var(--c-text); font-size:.875rem; line-height:1.6; min-height:100vh; -webkit-font-smoothing:antialiased; }
+body { font-family:'Montserrat',sans-serif; font-weight:400; background:var(--c-bg); color:var(--c-text); font-size:.875rem; line-height:1.6; min-height:100vh; -webkit-font-smoothing:antialiased; }
 a { text-decoration:none; }
 
 /* ─── SCROLLBAR ─── */
@@ -160,7 +160,7 @@ a { text-decoration:none; }
 }
 .topbar-left { display:flex; align-items:center; gap:1rem; }
 .topbar-toggle { background:none; border:none; color:var(--c-muted); font-size:1rem; cursor:pointer; display:none; padding:.25rem; }
-.topbar-title { font-size:.9375rem; font-weight:700; color:var(--c-navy); }
+.topbar-title { font-size:.9375rem; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:var(--c-navy); }
 .topbar-right { display:flex; align-items:center; gap:1rem; }
 .topbar-badge {
   width:36px; height:36px; border-radius:var(--radius-sm);
@@ -186,7 +186,7 @@ a { text-decoration:none; }
    ══════════════════ */
 .page-hdr { margin-bottom:1.75rem; }
 .page-hdr h1, .page-hdr h2, .page-hdr h3, .page-hdr h4 {
-  font-size:1.125rem; font-weight:800; color:var(--c-navy); margin:0 0 .25rem;
+  font-size:1.125rem; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--c-navy); margin:0 0 .25rem;
 }
 .page-hdr p { font-size:.8125rem; color:var(--c-muted); margin:0; }
 
@@ -206,7 +206,7 @@ a { text-decoration:none; }
   display:flex; align-items:center; justify-content:space-between;
 }
 .card-pro-title {
-  font-size:.8125rem; font-weight:700; color:var(--c-navy);
+  font-size:.8125rem; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:var(--c-navy);
   display:flex; align-items:center; gap:.5rem;
 }
 .card-pro-title .icon-dot {
@@ -689,7 +689,7 @@ a { text-decoration:none; }
 
   <div class="sidebar-brand">
     <a href="{{ route('home',['locale'=>app()->getLocale()]) }}">
-      <img src="{{ asset('assets/images/logo new.png') }}" alt="Credixa Invest">
+      <img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="Solberg Grupo">
     </a>
   </div>
 

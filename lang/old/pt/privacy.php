@@ -3,7 +3,7 @@
 return [
     'title' => 'Política de privacidade',
     'introduction_title' => '1. Introdução',
-    'introduction_text' => 'Na Credixa, estamos comprometidos em proteger e respeitar sua privacidade. Esta política de privacidade explica como coletamos, usamos, divulgamos e protegemos suas informações pessoais quando você utiliza nosso site e serviços de empréstimo online. Ao usar nosso site, você aceita as práticas descritas nesta política.',
+    'introduction_text' => 'NaSolberg Grupo, estamos comprometidos em proteger e respeitar sua privacidade. Esta política de privacidade explica como coletamos, usamos, divulgamos e protegemos suas informações pessoais quando você utiliza nosso site e serviços de empréstimo online. Ao usar nosso site, você aceita as práticas descritas nesta política.',
     'information_collection_title' => '2. Informações que coletamos',
     'information_collection_text' => 'Podemos coletar e processar as seguintes informações sobre você:',
     'information_collection_list' => [

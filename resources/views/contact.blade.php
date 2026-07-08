@@ -54,7 +54,7 @@
             <div class="col-lg-5 wow fadeInLeft" data-wow-duration="900ms">
                 <div class="contact-image-panel">
                     <img src="{{ asset('assets/images/resources/contact-1-1.jpg') }}"
-                         alt="Contact Credixa" class="contact-image-panel__img">
+                         alt="ContactSolberg Grupo" class="contact-image-panel__img">
                     <div class="contact-image-panel__info">
                         <div class="contact-panel__company">
                             <h3>Credixa</h3>

@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Credixa – geriausi internetiniai skolintojai Vokietijoje, Ispanijoje, Vengrijoje ir kt.',
+    'general_title' => 'Solberg Grupo – geriausi internetiniai skolintojai Vokietijoje, Ispanijoje, Vengrijoje ir kt.',
     'banner_title' => 'Gaukite tobulą paskolą visiems savo interneto poreikiams.',
-    'banner_text' => 'Milijonai žmonių naudoja Credixa savo projektams įgyvendinti.',
+    'banner_text' => 'Milijonai žmonių naudoja Solberg Grupo savo projektams įgyvendinti.',
     'get_loan_now' => 'Gaukite paskolą dabar',
     'popular_loans' => 'Populiarūs paskolų tipai:',
     'personal_loan' => 'Asmeninė paskola',
@@ -62,48 +62,63 @@ return [
 
     'custom_loan_services' => 'Pasinaudokite mūsų pritaikytomis paskolų paslaugomis',
     'reliability_quality' => 'Skaidrumas ir patikimumas',
-    'reliability_quality_description' => 'Credixa siūlome aiškius ir patikimus skolinimo sprendimus, paremtus teigiamais klientų atsiliepimais ir visišku skaidrumu.',
+    'reliability_quality_description' => 'Solberg Grupo siūlome aiškius ir patikimus skolinimo sprendimus, paremtus teigiamais klientų atsiliepimais ir visišku skaidrumu.',
     'financial_transparency' => 'Jokių paslėptų išlaidų',
     'financial_transparency_description' => 'Peržiūrėkite mūsų sąlygas, aptarkite įkainius ir mokėkite tik patvirtinus paskolą.',
     'optimal_security' => 'Sauga ir privatumas',
-    'optimal_security_description' => 'Jūsų asmeniniai duomenys yra saugūs pas mus. „Credixa“ naudoja pažangius saugos protokolus, kad apsaugotų jūsų privatumą. Mūsų pagalba teikiama 24 valandas per parą, 7 dienas per savaitę.',
+    'optimal_security_description' => 'Jūsų asmeniniai duomenys yra saugūs pas mus. „Solberg Grupo“ naudoja pažangius saugos protokolus, kad apsaugotų jūsų privatumą. Mūsų pagalba teikiama 24 valandas per parą, 7 dienas per savaitę.',
     'apply_loan' => 'Prašyti paskolos',
 
 
     'testimonials_title' => 'Atsiliepimai',
     'testimonials_description' => 'Sužinokite, ką apie mus sako mūsų klientai.',
+    'testimonials_rating_badge' => '4.9 | Geriausiai vertinamas teikėjas 2026 m.',
+    'testimonials_certified_by' => 'Sertifikavo: Trustindex',
+    'testimonials_months_ago' => '{1} prieš 1 mėnesį|[2,9] prieš :count mėnesius|[10,*] prieš :count mėnesių',
     'testimonial_1' => [
         'quote' => '"Esu labai patenkinta paslauga. Paskolos paraiškos pateikimas buvo greitas ir paprastas. Patvirtinimą gavau vos per kelias dienas, o įkainiai buvo konkurencingi. Labai ačiū!"',
-        'name' => 'Julie B.',
+        'name' => 'Julija Kazlauskienė',
+        'location' => 'Vilnius, Lietuva',
+        'months_ago' => 1,
     ],
     'testimonial_2' => [
         'quote' => '"Labai rekomenduoju šią paskolų paslaugą. Komanda buvo labai profesionali ir paslaugi. Jie atsakė į visus mano klausimus ir padarė procesą be streso. Dėkojame už puikų aptarnavimą!"',
-        'name' => 'Pierre L.',
+        'name' => 'Petras Jankauskas',
+        'location' => 'Kaunas, Lietuva',
+        'months_ago' => 2,
     ],
     'testimonial_3' => [
         'quote' => '"Paskolos paraiškos pateikimo procesas buvo skaidrus
           ir efektyvus. Visą laiką gavau profesionalius ir asmeninius patarimus
           viso proceso metu. Ačiū visai komandai už puikų darbą
           dirbti!"',
-        'name' => 'Sophie D.',
+        'name' => 'Sofija Petrauskienė',
+        'location' => 'Klaipėda, Lietuva',
+        'months_ago' => 2,
     ],
     'testimonial_4' => [
         'quote' => '"Paskolos gavimas iš šios įmonės buvo a
           Patirtis be rūpesčių. Personalas buvo draugiškas ir išmanantis, o
           procesas buvo greitas ir efektyvus. Labai rekomenduoju!"',
-        'name' => 'Marc F.',
+        'name' => 'Mantas Butkus',
+        'location' => 'Šiauliai, Lietuva',
+        'months_ago' => 3,
     ],
     'testimonial_5' => [
         'quote' => '"Puikus klientų aptarnavimas! Buvau nukreiptas
           buvo atsakyta į kiekvieną paskolos proceso žingsnį ir į mano klausimus
           greitai. Esu labai patenkinta galutiniu rezultatu."',
-        'name' => 'Nathalie P.',
+        'name' => 'Neringa Vasiliauskienė',
+        'location' => 'Panevėžys, Lietuva',
+        'months_ago' => 4,
     ],
     'testimonial_6' => [
         'quote' => '"Labai gera palūkanų norma ir greitas procesas. I
           labai rekomenduoju šią paslaugą visiems, kuriems reikia paskolos
           greitas ir patikimas."',
-        'name' => 'Luc M.',
+        'name' => 'Lukas Urbonas',
+        'location' => 'Alytus, Lietuva',
+        'months_ago' => 5,
     ],
     'testimonial_7' => [
         'quote' => '"Paprastas ir efektyvus paskolos procesas. Buvau
@@ -119,7 +134,7 @@ return [
     ],
 
     'about_title' => 'Prisijunkite prie geriausios pasaulyje darbuotojų rinkos',
-    'about_description' => 'Credixa yra jūsų patikima platforma paskoloms gauti su išskirtine klientų patirtimi. Esame įsipareigoję teikti jums paprastus, saugius ir greitus finansinius sprendimus.',
+    'about_description' => 'Solberg Grupo yra jūsų patikima platforma paskoloms gauti su išskirtine klientų patirtimi. Esame įsipareigoję teikti jums paprastus, saugius ir greitus finansinius sprendimus.',
     'rating' => '4,9/5',
     'rating_description' => 'Klientai vertina profesionalus',
     'projects_completed' => '+12 mln.',
@@ -161,7 +176,7 @@ return [
         'placeholder' => 'Jūsų el. pašto adresas',
         'button' => 'Siųsti',
     ],
-    'rights_reserved' => '© Credixa. 2024. Visos teisės saugomos.',
+    'rights_reserved' => '© Solberg Grupo. 2024. Visos teisės saugomos.',
 
     'en' => 'anglų k.',
     'fr' => 'prancūzų',
@@ -184,109 +199,139 @@ return [
         'text2' => 'iki 95 000 € per 24h.',
     ],
     'slide_2' => [
-        'title' => 'Prestiti intelligenti per un futuro brillante',
-        'text1' => 'I nostri prestiti renderanno',
-        'text2' => 'i tuoi sogni realtà',
+        'title' => 'Išmanios paskolos šviesiai ateičiai',
+        'text1' => 'Mūsų paskolos padarys',
+        'text2' => 'jūsų svajones tikrove',
     ],
     'slide_3' => [
-        'title' => 'Prestiti intelligenti per un futuro brillante',
-        'text1' => 'Offriamo i migliori',
-        'text2' => 'servizi per il tuo prestito',
+        'title' => 'Išmanios paskolos šviesiai ateičiai',
+        'text1' => 'Siūlome geriausias',
+        'text2' => 'paslaugas jūsų paskolai',
     ],
     'slide_4' => [
-        'title' => 'Prestiti intelligenti per un futuro brillante',
-        'text1' => 'Leader nella migliore',
-        'text2' => 'società di prestiti',
+        'title' => 'Išmanios paskolos šviesiai ateičiai',
+        'text1' => 'Pirmaujanti',
+        'text2' => 'paskolų bendrovė',
     ],
 
     'infos' => [
-        'item1' => 'approvazioni rapide',
-        'item2' => '500k+ clienti',
-        'item3' => 'senza commissioni di pagamento',
-        'item4' => 'pagamenti flessibili',
+        'item1' => 'greiti patvirtinimai',
+        'item2' => '500 tūkst.+ klientų',
+        'item3' => 'be mokėjimo mokesčių',
+        'item4' => 'lankstūs mokėjimai',
     ],
 
     'about' => [
-        'exptitle' => 'Anni di esperienza',
-        'sectagline' => 'Benvenuti in Credixa',
-        'sectitle' => 'Prestiti personali per realizzare i tuoi sogni',
-        'text1' => 'Siamo in questo settore dal 1990 e offriamo i migliori servizi.',
-        'text2' => "Credixa è la tua piattaforma di fiducia per prestiti con un'esperienza cliente eccezionale. Siamo impegnati a fornirti soluzioni finanziarie semplici, sicure e veloci.",
-        'check1' => 'prestito per piccole imprese',
-        'check2' => 'prestito per studio all\'estero',
-        'check3' => 'processo di prestito rapido',
-        'check4' => 'tassi molto bassi',
+        'exptitle' => 'metų patirtis',
+        'sectagline' => 'sveiki atvykę į Solberg Grupo',
+        'sectitle' => 'Asmeninės paskolos jūsų svajonėms įgyvendinti',
+        'text1' => 'Šioje srityje dirbame nuo 1990 m. ir siūlome geriausias paslaugas.',
+        'text2' => 'Solberg Grupo yra jūsų patikima platforma paskoloms gauti su išskirtine klientų patirtimi. Esame įsipareigoję pasiūlyti jums paprastus, saugius ir greitus finansinius sprendimus.',
+        'check1' => 'paskola smulkiajam verslui',
+        'check2' => 'paskola studijoms užsienyje',
+        'check3' => 'greitas paskolos procesas',
+        'check4' => 'labai žemos palūkanos',
+        'engage1_title' => 'Licencijuoti & reguliuojami',
+        'engage1_desc' => 'Sertifikuota kredito įstaiga, atitinkanti Europos standartus. Jūsų duomenys ir byla saugomi kiekviename etape.',
+        'engage2_title' => 'Garantuotas atsakymas per 24 val.',
+        'engage2_desc' => '100 % apdorojimas internetu, be kelionių ir popierizmo. Sprendimas priimamas per 24 valandas.',
+        'engage3_title' => 'Kelios valiutos & šalys',
+        'engage3_desc' => 'Paskolos galimos eurais, Lenkijos zlotais, JAV doleriais, Meksikos pesais, Brazilijos realais ir Kosta Rikos kolonais, priklausomai nuo jūsų projekto.',
     ],
 
     'services' => [
-        'sectagline' => 'cosa offriamo',
-        'sectitle' => 'Offriamo i migliori servizi per il tuo prestito',
+        'sectagline' => 'ką siūlome',
+        'sectitle' => 'Siūlome geriausias paslaugas jūsų paskolai',
+        'cta_title' => 'Pasiruošę pradėti savo finansinį projektą?',
+        'cta_text' => 'Mūsų komanda pasirengusi padėti jums pateikti finansavimo paraišką.',
+    ],
+
+    // DUK puslapio CTA
+    'faq_cta' => [
+        'label' => 'Pagalba',
+        'title' => 'Neradote atsakymo?',
+        'text' => 'Mūsų komanda pasiekiama nuo pirmadienio iki šeštadienio, kad jums padėtų.',
     ],
 
     'simulate' => [
-        'sectitle' => 'Quanto hai bisogno?',
+        'sectitle' => 'Kiek jums reikia?',
     ],
 
     'chooses' => [
-        'sectagline' => 'i nostri vantaggi',
-        'sectitle' => 'perché sceglierci',
-        'text1' => 'Siamo in questo settore dal 1990 e offriamo i migliori servizi.',
-        'item1' => 'tassi più bassi',
-        'item2' => 'rapido e facile',
-        'progress1' => 'processo di prestito',
-        'progress2' => 'consulenza aziendale',
-        'progress3' => 'vantaggi nei pagamenti',
+        'sectagline' => 'mūsų privalumai',
+        'sectitle' => 'kodėl rinktis mus',
+        'text1' => 'Šioje srityje dirbame nuo 1990 m. ir siūlome geriausias paslaugas.',
+        'item1' => 'mažesnės palūkanos',
+        'item2' => 'greita ir paprasta',
+        'progress1' => 'paskolos procesas',
+        'progress2' => 'verslo konsultacijos',
+        'progress3' => 'mokėjimų privalumai',
     ],
 
     'works' => [
-        'sectagline' => 'Come funziona',
-        'sectitle' => 'Il nostro flusso di lavoro',
-        'step' => 'Passo',
+        'sectagline' => 'Kaip tai veikia',
+        'sectitle' => 'Mūsų darbo eiga',
+        'step' => 'Žingsnis',
         'step1' => [
-            'title' => 'Invio della domanda',
-            'desc' => 'Compila e invia la tua domanda online in pochi minuti. Non è necessaria alcuna visita in filiale.',
+            'title' => 'Paraiškos pateikimas',
+            'desc' => 'Užpildykite ir pateikite paraišką internetu per kelias minutes. Apsilankyti skyriuje nereikia.',
         ],
         'step2' => [
-            'title' => 'Revisione e verifica',
-            'desc' => 'Il nostro team esamina il tuo fascicolo e verifica le informazioni per garantire la tua idoneità.',
+            'title' => 'Peržiūra ir patikra',
+            'desc' => 'Mūsų komanda peržiūri jūsų dokumentus ir patikrina informaciją, kad įsitikintų jūsų tinkamumu.',
         ],
         'step3' => [
-            'title' => 'Approvazione del prestito',
-            'desc' => 'Una volta approvato, riceverai una conferma dell\'approvazione del prestito e i dettagli delle condizioni.',
+            'title' => 'Paskolos patvirtinimas',
+            'desc' => 'Patvirtinus paskolą, gausite patvirtinimą bei sąlygų informaciją.',
         ],
         'step4' => [
-            'title' => 'Pagamento dei fondi',
-            'desc' => 'I fondi vengono trasferiti direttamente al tuo conto bancario in breve tempo dopo l\'approvazione.',
+            'title' => 'Lėšų išmokėjimas',
+            'desc' => 'Lėšos pervedamos tiesiai į jūsų banko sąskaitą netrukus po patvirtinimo.',
         ],
     ],
 
     'loan_reasons' => [
-        'sectagline' => 'ragioni del prestito',
-        'sectitle' => 'Motivi più comuni per un prestito',
+        'sectagline' => 'paskolos priežastys',
+        'sectitle' => 'Populiariausios paskolos priežastys',
         'reasons' => [
-            'title1' => 'Hai bisogno di una nuova auto?',
-            'desc1' => 'Prendi il controllo delle tue finanze e guida l\'auto dei tuoi sogni con un prestito su misura per le tue esigenze.',
-            'title2' => 'Consolida i tuoi debiti',
-            'desc2' => 'Unisci più debiti in un unico pagamento mensile, semplificando e gestendo meglio le tue finanze.',
-            'title3' => 'Ristrutturazione della casa',
-            'desc3' => 'Rinnova o ristruttura la tua casa, aggiungendo valore e comfort alla tua abitazione senza oneri finanziari.',
+            'title1' => 'Reikia naujo automobilio?',
+            'desc1' => 'Perimkite savo finansų kontrolę ir važiuokite savo svajonių automobiliu su jūsų poreikius atitinkančia paskola.',
+            'title2' => 'Konsoliduokite skolas',
+            'desc2' => 'Sujunkite kelias skolas į vieną paprastą mėnesinę įmoką ir lengviau valdykite savo finansus.',
+            'title3' => 'Namų atnaujinimas',
+            'desc3' => 'Atnaujinkite ar suremontuokite savo namus, pridėdami vertės ir jaukumo be finansinės naštos.',
+            'title4' => 'Finansuokite savo studijas',
+            'desc4' => 'Investuokite į savo ateitį: mokslo mokestis, profesinis mokymas ar perkvalifikavimas, nepakenkiant kasdienybei.',
+            'title5' => 'Kelionės & atostogos',
+            'desc5' => 'Ramiai keliaukite ir pažinkite pasaulį. Finansuokite savo svajonių kelionę nesinaudodami santaupomis.',
+            'title6' => 'Vestuvės & šeimos šventės',
+            'desc6' => 'Švęskite svarbias gyvenimo akimirkas be finansinio streso. Suorganizuokite savo svajonių šventę savo tempu.',
+            'title7' => 'Medicininės išlaidos & sveikata',
+            'desc7' => 'Ramiai susitvarkykite su netikėtomis sveikatos problemomis. Greitai padenkite gydymo, operacijų ar medicininės įrangos išlaidas.',
+            'title8' => 'Verslo kūrimas & investicijos',
+            'desc8' => 'Įgyvendinkite savo verslo projektą arba plėtokite savo veiklą greitos ir lanksčios finansavimo dėka.',
         ],
-        'btn_text' => 'Scopri di più',
-        'btn_icon' => 'icona-next'
+        'btn_text' => 'Sužinoti daugiau',
+        'btn_icon' => 'icon-next'
     ],
 
-    'total_loans_granted' => 'Totale prestiti concessi',
-    'customer_satisfaction_rate' => 'Clienti soddisfatti',
+    'total_loans_granted' => 'Iš viso suteiktų paskolų',
+    'customer_satisfaction_rate' => 'Patenkinti klientai',
     'total_loan_amount_granted' => 'Prieinama suma',
     'average_approval_time' => 'Garantuotas atsakymas',
     'member' => 'Finansuoti klientai',
-    'day' => 'Giorni',
+    'years_experience' => 'Metų patirtis',
+    'day' => 'Dienos',
 
-    'cta_title2' => 'Ottieni il prestito di cui hai bisogno rapidamente.',
-    'cta_text2' => 'Ottieni prestiti aziendali rapidamente',
-    'cta_button2' => 'Inizia ora',
+    'partners_label' => 'Mūsų partneriai',
+    'partners_title' => 'Partnerių bankai',
+    'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
-    'about_text' => 'Offriamo soluzioni di prestito su misura per aiutarti a raggiungere i tuoi obiettivi finanziari. Opzioni veloci, sicure e flessibili progettate per soddisfare le tue esigenze uniche.',
-    'get' => 'Contattaci'
+    'cta_title2' => 'Gaukite reikiamą paskolą greitai.',
+    'cta_text2' => 'Gaukite verslo paskolą greitai',
+    'cta_button2' => 'Pradėti dabar',
+
+    'about_text' => 'Siūlome pritaikytus paskolų sprendimus, padedančius pasiekti jūsų finansinius tikslus. Greiti, saugūs ir lankstūs sprendimai, pritaikyti jūsų unikaliems poreikiams.',
+    'get' => 'Susisiekite su mumis'
 
 ];

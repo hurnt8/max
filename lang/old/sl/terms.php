@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Uvod',
-            'content' => 'Dobrodošli pri Credixa. Z uporabo naše spletne strani in storitev se strinjate, da se boste držali in bili vezani na naslednje pogoje in določila. Prosimo, natančno preberite te pogoje, preden uporabite našo spletno stran ali sklenete posojilo z nami.'
+            'content' => 'Dobrodošli priSolberg Grupo. Z uporabo naše spletne strani in storitev se strinjate, da se boste držali in bili vezani na naslednje pogoje in določila. Prosimo, natančno preberite te pogoje, preden uporabite našo spletno stran ali sklenete posojilo z nami.'
         ],
         [
             'title' => '2. Uporaba spletne strani',
@@ -17,7 +17,7 @@ return [
         ],
         [
             'title' => '4. Stroški pogodbe in zavarovanja',
-            'content' => 'Ob sklenitvi posojila pri Credixa se lahko zaračunajo stroški pogodbe in zavarovanja. Ta pristojbina pokriva upravne stroške, povezane s postavitvijo in upravljanjem vašega posojila. Specifične podrobnosti o teh stroških bodo jasno navedene v vaši posojilni pogodbi. Te stroške morate plačati v skladu s predpisi.'
+            'content' => 'Ob sklenitvi posojila priSolberg Grupo se lahko zaračunajo stroški pogodbe in zavarovanja. Ta pristojbina pokriva upravne stroške, povezane s postavitvijo in upravljanjem vašega posojila. Specifične podrobnosti o teh stroških bodo jasno navedene v vaši posojilni pogodbi. Te stroške morate plačati v skladu s predpisi.'
         ],
         [
             'title' => '5. Zaupnost',

@@ -1,9 +1,9 @@
 <?php
 
 return [
-  'general_title' => 'Credixa - I migliori prestatori online in Germania, Spagna, Ungheria, ecc.',
+  'general_title' => 'Solberg Grupo - I migliori prestatori online in Germania, Spagna, Ungheria, ecc.',
 'banner_title' => 'Ottieni il prestito perfetto per tutte le tue esigenze online.',
-'banner_text' => 'Milioni di persone usano Credixa per realizzare i loro progetti.',
+'banner_text' => 'Milioni di persone usano Solberg Grupo per realizzare i loro progetti.',
 'get_loan_now' => 'Ottieni un prestito ora',
 'popular_loans' => 'Tipi di prestiti popolari:',
 'personal_loan' => 'Prestito personale',
@@ -62,38 +62,53 @@ return [
 
 'custom_loan_services' => 'Approfitta dei nostri servizi di prestito su misura',
 'reliability_quality' => 'Trasparenza e Affidabilità',
-'reliability_quality_description' => 'In Credixa offriamo soluzioni di prestito chiare e affidabili, supportate da recensioni positive dei clienti e completa trasparenza.',
+'reliability_quality_description' => 'In Solberg Grupo offriamo soluzioni di prestito chiare e affidabili, supportate da recensioni positive dei clienti e completa trasparenza.',
 'financial_transparency' => 'Nessun Costo Nascosto',
 'financial_transparency_description' => 'Rivedi i nostri termini, discuti i tassi e paga solo una volta approvato il tuo prestito.',
 'optimal_security' => 'Sicurezza e Privacy',
-'optimal_security_description' => 'I tuoi dati personali sono al sicuro con noi. Credixa utilizza protocolli di sicurezza avanzati per proteggere la tua privacy. Il nostro supporto è disponibile 24/7 per qualsiasi assistenza.',
+'optimal_security_description' => 'I tuoi dati personali sono al sicuro con noi. Solberg Grupo utilizza protocolli di sicurezza avanzati per proteggere la tua privacy. Il nostro supporto è disponibile 24/7 per qualsiasi assistenza.',
 'apply_loan' => 'Richiedi un prestito',
 
-'testimonials_title' => 'Le nostre testimonianze',
+'testimonials_title' => 'Si fidano di noi',
 'testimonials_description' => 'Scopri cosa dicono i nostri clienti di noi.',
+'testimonials_rating_badge' => '4.9 | Fornitore più votato nel 2026',
+'testimonials_certified_by' => 'Certificato da: Trustindex',
+'testimonials_months_ago' => '{1} 1 mese fa|[2,*] :count mesi fa',
 'testimonial_1' => [
     'quote' => '"Sono molto soddisfatta del servizio. Il processo di richiesta del prestito è stato rapido e semplice. Ho ricevuto l’approvazione in pochi giorni e i tassi erano competitivi. Grazie mille!"',
-    'name' => 'Julie B.',
+    'name' => 'Giulia Bianchi',
+    'location' => 'Milano, Italia',
+    'months_ago' => 1,
 ],
 'testimonial_2' => [
     'quote' => '"Raccomando vivamente questo servizio di prestito. Il team è stato molto professionale e disponibile. Hanno risposto a tutte le mie domande rendendo il processo senza stress. Grazie per l’ottimo servizio!"',
-    'name' => 'Pierre L.',
+    'name' => 'Marco Rossi',
+    'location' => 'Roma, Italia',
+    'months_ago' => 2,
 ],
 'testimonial_3' => [
     'quote' => '"Il processo di richiesta del prestito è stato trasparente ed efficiente. Ho ricevuto consulenze professionali e personalizzate durante tutto il processo. Grazie a tutto il team per l’ottimo lavoro!"',
-    'name' => 'Sophie D.',
+    'name' => 'Francesca Romano',
+    'location' => 'Torino, Italia',
+    'months_ago' => 2,
 ],
 'testimonial_4' => [
     'quote' => '"Ottenere un prestito con questa azienda è stata un’esperienza senza problemi. Il personale era cordiale e competente e il processo è stato rapido ed efficiente. Lo consiglio vivamente!"',
-    'name' => 'Marc F.',
+    'name' => 'Alessandro Ferrari',
+    'location' => 'Napoli, Italia',
+    'months_ago' => 3,
 ],
 'testimonial_5' => [
     'quote' => '"Servizio clienti eccellente! Sono stato guidato in ogni fase del processo di prestito e le mie domande hanno ricevuto risposta rapidamente. Sono molto soddisfatto del risultato finale."',
-    'name' => 'Nathalie P.',
+    'name' => 'Chiara Esposito',
+    'location' => 'Bologna, Italia',
+    'months_ago' => 4,
 ],
 'testimonial_6' => [
     'quote' => '"Ottimo tasso di interesse e processo veloce. Raccomando vivamente questo servizio a chiunque abbia bisogno di un prestito rapido e affidabile."',
-    'name' => 'Luc M.',
+    'name' => 'Luca Conti',
+    'location' => 'Firenze, Italia',
+    'months_ago' => 5,
 ],
 'testimonial_7' => [
     'quote' => '"Processo di prestito semplice ed efficiente. Sono rimasta piacevolmente sorpresa dalla velocità di approvazione. Grazie a tutto il team!"',
@@ -106,7 +121,7 @@ return [
 
 
     'about_title' => 'Unisciti al miglior marketplace mondiale per lavoratori',
-'about_description' => 'Credixa è la tua piattaforma di fiducia per ottenere prestiti con un’esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.',
+'about_description' => 'Solberg Grupo è la tua piattaforma di fiducia per ottenere prestiti con un’esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.',
 'rating' => '4.9/5',
 'rating_description' => 'I clienti valutano i professionisti',
 'projects_completed' => '+12M',
@@ -148,7 +163,7 @@ return [
     'placeholder' => 'Il tuo indirizzo email',
     'button' => 'Invia',
 ],
-'rights_reserved' => '© Credixa. 2024. Tutti i diritti riservati.',
+'rights_reserved' => '©Solberg Grupo. 2024. Tutti i diritti riservati.',
 
 'en' => 'Inglese',
 'fr' => 'Francese',
@@ -195,19 +210,34 @@ return [
 
 'about' => [
     'exptitle' => 'anni di esperienza',
-    'sectagline' => 'benvenuto in Credixa',
+    'sectagline' => 'benvenuto in Solberg Grupo',
     'sectitle' => 'Prestiti personali per realizzare i tuoi sogni',
     'text1' => 'Siamo in questo settore dal 1990 e forniamo i migliori servizi.',
-    'text2' => 'Credixa è la tua piattaforma di fiducia per prestiti con un’esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.',
+    'text2' => 'Solberg Grupo è la tua piattaforma di fiducia per prestiti con un’esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.',
     'check1' => 'prestito per piccole imprese',
     'check2' => 'prestito per studiare all’estero',
     'check3' => 'processo di prestito rapido',
     'check4' => 'tassi molto bassi',
+    'engage1_title' => 'Autorizzati & regolamentati',
+    'engage1_desc' => 'Istituto di credito certificato, soggetto agli standard europei. I tuoi dati e la tua pratica sono protetti in ogni fase.',
+    'engage2_title' => 'Risposta garantita entro 24 ore',
+    'engage2_desc' => 'Gestione 100% online, senza spostamenti né pratiche cartacee. Decisione entro 24 ore.',
+    'engage3_title' => 'Multi-valuta & multi-paese',
+    'engage3_desc' => 'Prestiti disponibili in euro, zloty, dollaro USA, peso messicano, real brasiliano e colón costaricano, in base al tuo progetto.',
 ],
 
 'services' => [
     'sectagline' => 'cosa offriamo',
     'sectitle' => 'Offriamo i migliori servizi per il tuo prestito',
+    'cta_title' => 'Pronto a lanciare il tuo progetto finanziario?',
+    'cta_text' => 'Il nostro team è a disposizione per assisterti nella tua richiesta di finanziamento.',
+],
+
+// CTA pagina FAQ
+'faq_cta' => [
+    'label' => 'Assistenza',
+    'title' => 'Non hai trovato la tua risposta?',
+    'text' => 'Il nostro team è disponibile dal lunedì al sabato per assisterti.',
 ],
 
 'simulate' => [
@@ -279,6 +309,16 @@ return [
         'desc2' => 'Combina più debiti in un’unica rata mensile semplice, aiutandoti a semplificare e gestire meglio le tue finanze.',
         'title3' => 'Ristrutturazione della casa',
         'desc3' => 'Migliora o rinnova la tua casa, aggiungendo valore e comfort al tuo spazio abitativo senza stress finanziari.',
+        'title4' => 'Finanzia i tuoi studi',
+        'desc4' => 'Investi nel tuo futuro: tasse scolastiche, formazione professionale o riqualificazione, senza compromettere la tua quotidianità.',
+        'title5' => 'Viaggi & vacanze',
+        'desc5' => 'Parti sereno alla scoperta del mondo. Finanzia il viaggio dei tuoi sogni senza intaccare i tuoi risparmi.',
+        'title6' => 'Matrimonio & eventi familiari',
+        'desc6' => 'Celebra i momenti importanti della vita senza stress finanziario. Organizza l’evento dei tuoi sogni al tuo ritmo.',
+        'title7' => 'Spese mediche & salute',
+        'desc7' => 'Affronta gli imprevisti di salute con serenità. Copri cure, interventi o attrezzature mediche rapidamente.',
+        'title8' => 'Creazione d’impresa & investimento',
+        'desc8' => 'Dai vita al tuo progetto imprenditoriale o sviluppa la tua attività grazie a un finanziamento rapido e flessibile.',
     ],
     'btn_text' => 'Scopri di più',
     'btn_icon' => 'icon-next'
@@ -289,7 +329,12 @@ return [
 'total_loan_amount_granted' => 'Importo disponibile',
 'average_approval_time' => 'Risposta garantita',
 'member' => 'Clienti finanziati',
+'years_experience' => 'Anni di esperienza',
 'day' => 'Giorni',
+
+'partners_label' => 'I nostri partner',
+'partners_title' => 'Banche partner',
+'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
 'cta_title2' => 'Ottieni rapidamente il prestito di cui hai bisogno.',
 'cta_text2' => 'Ottieni rapidamente prestiti aziendali',

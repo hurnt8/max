@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', $invoice->reference . ' — Credixa')
+@section('title', $invoice->reference . ' —Solberg Grupo')
 @section('page_title', __('app.invoice_detail'))
 @section('back_btn', true)
 @section('back_url', route('client.app.invoices'))

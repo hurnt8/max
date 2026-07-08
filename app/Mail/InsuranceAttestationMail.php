@@ -27,10 +27,17 @@ class InsuranceAttestationMail extends Mailable
     public function envelope(): Envelope
     {
         $subjects = [
-            'fr' => 'Votre attestation d\'assurance emprunteur — N°' . $this->loan->reference . ' — CREDIXA INVESTI',
-            'en' => 'Your borrower insurance certificate — N°' . $this->loan->reference . ' — CREDIXA INVESTI',
-            'pl' => 'Zaświadczenie ubezpieczenia kredytobiorcy — nr ' . $this->loan->reference . ' — CREDIXA INVESTI',
-            'es' => 'Su certificado de seguro de prestatario — N°' . $this->loan->reference . ' — CREDIXA INVESTI',
+            'fr' => 'Votre attestation d\'assurance emprunteur — N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'en' => 'Your borrower insurance certificate — N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'pl' => 'Zaświadczenie ubezpieczenia kredytobiorcy — nr ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'es' => 'Su certificado de seguro de prestatario — N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'bg' => 'Вашето удостоверение за застраховка на кредитополучателя — №' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'hu' => 'Adósvédelmi biztosítási igazolása — sz. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'it' => 'Il tuo attestato di assicurazione del mutuatario — N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'de' => 'Ihre Restschuldversicherungsbescheinigung — Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'lt' => 'Jūsų skolininko draudimo pažymėjimas — Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'ro' => 'Certificatul dumneavoastră de asigurare a împrumutatului — nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'lv' => 'Jūsu aizņēmēja apdrošināšanas apliecība — Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
         ];
 
         return new Envelope(

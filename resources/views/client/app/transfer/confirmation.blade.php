@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', 'Virement soumis — Credixa')
+@section('title', 'Virement soumis —Solberg Grupo')
 @section('page_title', 'Confirmation')
 
 @section('topbar_action')

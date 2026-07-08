@@ -219,13 +219,32 @@ $serviceNav = [
 .about-loan-item i { color:var(--gold); width:16px; text-align:center; font-size:.8rem; }
 
 .about-partner-bar {
-    display:flex; flex-wrap:wrap; align-items:center; gap:.55rem;
+    display:flex; align-items:center; gap:.55rem;
     padding:.75rem 1rem; background:#f7f8fa; border-radius:10px;
     border:1px solid #eaecf0; margin-bottom:1.5rem;
+    overflow:hidden;
 }
-.about-partner-bar__lbl { font-size:.6rem; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:#9ca3af; margin-right:.2rem; white-space:nowrap; }
-.about-partner-bar img  { height:20px; width:auto; opacity:.5; filter:grayscale(1); transition:opacity .25s,filter .25s; }
-.about-partner-bar img:hover { opacity:1; filter:grayscale(0); }
+.about-partner-bar__lbl { font-size:.6rem; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:#9ca3af; white-space:nowrap; flex-shrink:0; }
+.about-partner-bar__marquee {
+    overflow:hidden; flex:1; min-width:0;
+    -webkit-mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.about-partner-bar__track {
+    display:flex; align-items:center; width:max-content; gap:.5rem;
+    animation:partners-scroll 60s linear infinite;
+}
+.about-partner-bar:hover .about-partner-bar__track { animation-play-state:paused; }
+.about-partner-bar__name {
+    font-size:.78rem; font-weight:700; color:var(--navy);
+    background:#fff; border:1px solid #e5e7eb; border-radius:999px;
+    padding:.3rem .8rem; white-space:nowrap; flex-shrink:0;
+    transition:border-color .25s ease, box-shadow .25s ease;
+}
+.about-partner-bar__name:hover { border-color:var(--gold); box-shadow:0 2px 10px rgba(200,169,81,.18); }
+@media (prefers-reduced-motion: reduce) {
+    .about-partner-bar__track { animation:none; flex-wrap:wrap; width:100%; }
+}
 </style>
 @endpush
 
@@ -297,11 +316,16 @@ $serviceNav = [
                 {{-- Partenaires bancaires --}}
                 <div class="about-partner-bar">
                     <span class="about-partner-bar__lbl">@lang('home.partners_label') :</span>
-                    <img src="{{ asset('images/partners/bnpparibas.svg') }}" alt="BNP Paribas">
-                    <img src="{{ asset('images/partners/santander.svg') }}" alt="Santander">
-                    <img src="{{ asset('images/partners/pko.svg') }}" alt="PKO Bank Polski">
-                    <img src="{{ asset('images/partners/revolut.svg') }}" alt="Revolut">
-                    <img src="{{ asset('images/partners/bbva.svg') }}" alt="BBVA">
+                    <div class="about-partner-bar__marquee">
+                        <div class="about-partner-bar__track">
+                            @foreach (__('home.partners_list') as $bankName)
+                            <span class="about-partner-bar__name">{{ $bankName }}</span>
+                            @endforeach
+                            @foreach (__('home.partners_list') as $bankName)
+                            <span class="about-partner-bar__name" aria-hidden="true">{{ $bankName }}</span>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
 
                 <div class="d-flex flex-wrap gap-3">
@@ -414,7 +438,7 @@ $serviceNav = [
                         <i class="fas fa-check"></i>
                     </div>
                     <div>
-                        <h4 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;margin:0 0 .25rem;">
+                        <h4 style="font-family:'Montserrat',serif;font-size:1rem;font-weight:700;color:#fff;margin:0 0 .25rem;">
                             {{ __('home.loan_reasons.reasons.title' . $r) }}
                         </h4>
                         <p style="font-size:.875rem;color:rgba(255,255,255,.55);margin:0;line-height:1.65;">
@@ -473,22 +497,42 @@ $serviceNav = [
 ============================================================ --}}
 @push('styles')
 <style>
-.partners-strip { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:1.1rem; }
+.partners-marquee {
+    overflow:hidden; position:relative;
+    -webkit-mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.partners-track {
+    display:flex; align-items:center; width:max-content; gap:1.1rem;
+    animation:partners-scroll 70s linear infinite;
+}
+.partners-marquee:hover .partners-track { animation-play-state:paused; }
+@keyframes partners-scroll {
+    from { transform:translateX(0); }
+    to   { transform:translateX(-50%); }
+}
 .partner-logo {
     display:flex; align-items:center; justify-content:center;
     padding:.8rem 1.5rem; min-width:120px; height:66px;
     background:#fff; border:1.5px solid #e5e7eb; border-radius:12px;
-    filter:grayscale(1); opacity:.5;
+    filter:grayscale(1); opacity:.6;
     transition:filter .3s ease, opacity .3s ease, border-color .3s ease, box-shadow .3s ease;
-    cursor:default;
+    cursor:default; flex-shrink:0;
 }
 .partner-logo:hover {
     filter:grayscale(0); opacity:1;
     border-color:var(--gold); box-shadow:0 4px 22px rgba(200,169,81,.2);
 }
+.partner-logo--text {
+    font-size:.85rem; font-weight:700; color:var(--navy);
+    text-align:center; line-height:1.3; white-space:nowrap;
+}
 @media (max-width:576px) {
     .partner-logo { min-width:100px; padding:.65rem 1rem; height:56px; }
-    .partners-strip { gap:.65rem; }
+    .partners-track { gap:.65rem; animation-duration:45s; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .partners-track { animation:none; flex-wrap:wrap; width:100%; justify-content:center; }
 }
 </style>
 @endpush
@@ -498,12 +542,15 @@ $serviceNav = [
         <p class="text-center" style="font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#9ca3af;margin-bottom:1.4rem;">
             @lang('home.partners_label')
         </p>
-        <div class="partners-strip">
-            <div class="partner-logo"><img src="{{ asset('images/partners/bnpparibas.svg') }}" alt="BNP Paribas" style="height:36px;width:auto;"></div>
-            <div class="partner-logo"><img src="{{ asset('images/partners/santander.svg') }}" alt="Santander" style="height:36px;width:auto;"></div>
-            <div class="partner-logo"><img src="{{ asset('images/partners/pko.svg') }}" alt="PKO Bank Polski" style="height:36px;width:auto;"></div>
-            <div class="partner-logo"><img src="{{ asset('images/partners/revolut.svg') }}" alt="Revolut" style="height:36px;width:auto;"></div>
-            <div class="partner-logo"><img src="{{ asset('images/partners/bbva.svg') }}" alt="BBVA" style="height:36px;width:auto;"></div>
+        <div class="partners-marquee">
+            <div class="partners-track">
+                @foreach (__('home.partners_list') as $bankName)
+                <div class="partner-logo partner-logo--text">{{ $bankName }}</div>
+                @endforeach
+                @foreach (__('home.partners_list') as $bankName)
+                <div class="partner-logo partner-logo--text" aria-hidden="true">{{ $bankName }}</div>
+                @endforeach
+            </div>
         </div>
     </div>
 </section>
@@ -514,51 +561,146 @@ $serviceNav = [
 @push('styles')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
-.testimonials-swiper { padding-bottom: 3rem !important; overflow: hidden; isolation: isolate; }
+/* ── Trust badge (Google rating summary) ── */
+.gr-badge {
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    padding: 1.75rem 2rem;
+    text-align: center;
+}
+.gr-badge__row { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.gr-logo { display: inline-flex; align-items: center; gap: .5rem; font-family: Arial, sans-serif; font-size: 1.5rem; font-weight: 700; }
+.gr-logo span:nth-child(1) { color: #4285F4; }
+.gr-logo span:nth-child(2) { color: #EA4335; }
+.gr-logo span:nth-child(3) { color: #FBBC05; }
+.gr-logo span:nth-child(4) { color: #4285F4; }
+.gr-logo span:nth-child(5) { color: #34A853; }
+.gr-logo span:nth-child(6) { color: #EA4335; }
+.gr-badge__stars { color: #FBBC05; font-size: 1.125rem; letter-spacing: .1em; }
+.gr-badge__rating { font-size: .9375rem; font-weight: 700; color: var(--navy); text-align: left; }
+.gr-badge__cert {
+    display: inline-flex; align-items: center; gap: .4rem;
+    background: #1E8E3E; color: #fff;
+    font-size: .8125rem; font-weight: 600;
+    padding: .5rem 1.125rem; border-radius: 999px;
+}
+.gr-badge__cert i { font-size: .75rem; opacity: .85; }
+
+/* ── Review cards ── */
+.gr-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    padding: 1.5rem 1.5rem 1.625rem;
+    position: relative;
+    height: 100%;
+}
+.gr-card__head { display: flex; align-items: center; gap: .875rem; margin-bottom: 1rem; }
+.gr-card__avatar {
+    width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 1.0625rem;
+}
+.gr-card__name { font-size: .9375rem; font-weight: 700; color: var(--navy); margin: 0; }
+.gr-card__time { font-size: .78rem; color: var(--gray-400); margin: .1rem 0 0; }
+.gr-card__glogo { margin-left: auto; flex-shrink: 0; }
+.gr-card__stars { color: #FBBC05; font-size: .9375rem; letter-spacing: .08em; margin-bottom: .75rem; display: flex; align-items: center; gap: .4rem; }
+.gr-card__stars .fa-circle-check { color: #34A853; font-size: .8125rem; }
+.gr-card__quote { font-size: .875rem; color: var(--gray-700); line-height: 1.7; margin: 0; }
+
+/* ── Swiper layout ── */
+.testimonials-swiper { padding-bottom: .5rem !important; overflow: hidden; isolation: isolate; }
 @media (min-width: 768px) { .testimonials-swiper { overflow: visible; } }
 .testimonials-swiper .swiper-wrapper { align-items: stretch; }
 .testimonials-swiper .swiper-slide { height: auto; display: flex; }
-.testimonials-swiper .swiper-slide .testimonial-card { flex: 1; display: flex; flex-direction: column; }
-.testimonials-swiper .swiper-slide .testimonial-card__quote { flex: 1; }
-.testimonials-swiper .swiper-pagination { bottom: 0; }
-.testimonials-swiper .swiper-pagination-bullet { background: var(--navy); opacity: .3; width: 8px; height: 8px; transition: all .3s; }
-.testimonials-swiper .swiper-pagination-bullet-active { background: var(--gold); opacity: 1; width: 24px; border-radius: 4px; }
+
+/* ── Nav arrows + pagination row ── */
+.gr-nav-row { display: flex; align-items: center; justify-content: space-between; max-width: 640px; margin: 1.75rem auto 0; }
+.gr-arrow {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--white); border: 1px solid var(--gray-200);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--navy); cursor: pointer; transition: all .2s ease; flex-shrink: 0;
+}
+.gr-arrow:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.gr-arrow.swiper-button-disabled { opacity: .35; cursor: default; }
+.gr-arrow.swiper-button-disabled:hover { background: var(--white); color: var(--navy); border-color: var(--gray-200); }
+.testimonials-swiper .swiper-pagination { position: static; width: auto; }
+.testimonials-swiper .swiper-pagination-bullet { background: var(--gray-200); opacity: 1; width: 7px; height: 7px; margin: 0 3px !important; transition: all .3s; }
+.testimonials-swiper .swiper-pagination-bullet-active { background: var(--navy); opacity: 1; width: 22px; border-radius: 4px; }
 </style>
 @endpush
 
 <section class="py-24" style="background:var(--cream);" id="testimonials">
     <div class="container">
-        <div class="text-center mb-14">
+        <div class="text-center mb-10">
             <div class="section-label justify-content-center">{{ __('home.testimonials_title') }}</div>
             <h2 class="section-title">{{ __('home.testimonials_title') }}</h2>
         </div>
+
+        {{-- Trust badge --}}
+        <div class="gr-badge">
+            <div class="gr-badge__row">
+                <span class="gr-logo">
+                    <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+                </span>
+                <div>
+                    <div class="gr-badge__stars">
+                        @for($s=0;$s<5;$s++)<i class="fas fa-star"></i>@endfor
+                    </div>
+                    <p class="gr-badge__rating">{{ __('home.testimonials_rating_badge') }}</p>
+                </div>
+            </div>
+            <span class="gr-badge__cert">
+                {{ __('home.testimonials_certified_by') }} <i class="fas fa-circle-info"></i>
+            </span>
+        </div>
+
+        @php
+            $avatarColors = ['#04203D', '#B8883E', '#0F766E', '#B45309', '#1D4ED8', '#7C3AED'];
+        @endphp
 
         <div class="swiper testimonials-swiper">
             <div class="swiper-wrapper">
                 @foreach (range(1, 6) as $i)
                 @php $t = __('home.testimonial_' . $i); @endphp
                 <div class="swiper-slide">
-                    <div class="testimonial-card" style="width:100%;">
-                        <p class="testimonial-card__quote">{{ $t['quote'] }}</p>
-                        <div class="testimonial-card__author">
-                            <div style="width:44px;height:44px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;font-size:1.125rem;flex-shrink:0;">
+                    <div class="gr-card">
+                        <div class="gr-card__head">
+                            <div class="gr-card__avatar" style="background:{{ $avatarColors[($i - 1) % count($avatarColors)] }}">
                                 {{ strtoupper(substr($t['name'], 0, 1)) }}
                             </div>
                             <div>
-                                <p class="testimonial-card__name">{{ $t['name'] }}</p>
-                                @if (!empty($t['location']))
-                                <p style="font-size:.75rem;color:#999;margin:0 0 .2rem;">{{ $t['location'] }}</p>
-                                @endif
-                                <div class="testimonial-card__stars">
-                                    @for($s=0;$s<5;$s++)<i class="fas fa-star"></i>@endfor
-                                </div>
+                                <p class="gr-card__name">{{ $t['name'] }}</p>
+                                <p class="gr-card__time">{{ trans_choice('home.testimonials_months_ago', $t['months_ago'], ['count' => $t['months_ago']]) }}</p>
                             </div>
+                            <svg class="gr-card__glogo" viewBox="0 0 48 48" width="20" height="20" aria-hidden="true">
+                                <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                                <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                                <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                                <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                            </svg>
                         </div>
+                        <div class="gr-card__stars">
+                            @for($s=0;$s<5;$s++)<i class="fas fa-star"></i>@endfor
+                            <i class="fas fa-circle-check"></i>
+                        </div>
+                        <p class="gr-card__quote">{{ $t['quote'] }}</p>
                     </div>
                 </div>
                 @endforeach
             </div>
+        </div>
+
+        <div class="gr-nav-row">
+            <div class="gr-arrow gr-prev"><i class="fas fa-chevron-left"></i></div>
             <div class="swiper-pagination"></div>
+            <div class="gr-arrow gr-next"><i class="fas fa-chevron-right"></i></div>
         </div>
     </div>
 </section>
@@ -579,6 +721,10 @@ new Swiper('.testimonials-swiper', {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
+    },
+    navigation: {
+        nextEl: '.gr-next',
+        prevEl: '.gr-prev',
     },
     breakpoints: {
         640:  { slidesPerView: 1, spaceBetween: 20 },

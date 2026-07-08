@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Credixa - Meilleurs prêteurs en ligne en Allemagne, Espagne, Houngrie etc.',
+    'general_title' => 'Solberg Grupo - Meilleurs prêteurs en ligne en Allemagne, Espagne, Houngrie etc.',
     'banner_title' => 'Obtenez le prêt parfait pour tous vos besoins en ligne.',
-    'banner_text' => 'Des millions de personnes utilisent Credixa pour réaliser leurs projets.',
+    'banner_text' => 'Des millions de personnes utilisent Solberg Grupo pour réaliser leurs projets.',
     'get_loan_now' => 'Obtenez un prêt maintenant',
     'popular_loans' => 'Types de prêts populaires:',
 
@@ -54,49 +54,58 @@ return [
 
     'custom_loan_services' => 'Tirez profit de nos services de prêt sur mesure',
     'reliability_quality' => 'Transparence et Fiabilité',
-    'reliability_quality_description' => 'Chez Credixa, nous offrons des solutions de prêt claires et fiables, soutenues par des avis clients positifs et une transparence totale.',
+    'reliability_quality_description' => 'Chez Solberg Grupo, nous offrons des solutions de prêt claires et fiables, soutenues par des avis clients positifs et une transparence totale.',
     'financial_transparency' => 'Aucun Coût Caché',
     'financial_transparency_description' => 'Examinez nos conditions, discutez des taux, et ne payez qu\'une fois votre prêt approuvé.',
     'optimal_security' => 'Sécurité et Confidentialité',
-    'optimal_security_description' => 'Vos données personnelles sont en sécurité avec nous. Credixa utilise des protocoles de sécurité avancés pour protéger votre vie privée. Notre support est disponible 24/7 pour toute assistance.',
+    'optimal_security_description' => 'Vos données personnelles sont en sécurité avec nous. Solberg Grupo utilise des protocoles de sécurité avancés pour protéger votre vie privée. Notre support est disponible 24/7 pour toute assistance.',
     'apply_loan' => 'Demander un prêt',
 
 
-    'testimonials_title' => 'Témoignages',
+    'testimonials_title' => 'Ils nous font confiance',
     'testimonials_description' => 'Découvrez ce que nos clients disent de nous.',
+    'testimonials_rating_badge' => '4.9 | Fournisseur le mieux noté en 2026',
+    'testimonials_certified_by' => 'Certifié par : Trustindex',
+    'testimonials_months_ago' => '{1} il y a 1 mois|[2,*] il y a :count mois',
     'testimonial_1' => [
         'quote' => '« J\'ai obtenu mon prêt immobilier en moins d\'une semaine. Le conseiller a été d\'une disponibilité remarquable et les conditions proposées étaient bien en dessous de ce que je trouvais ailleurs. Je recommande sans hésiter. »',
         'name'  => 'Jean-Pierre Moreau',
         'location' => 'Paris, France',
+        'months_ago' => 1,
     ],
     'testimonial_2' => [
-        'quote' => '« Après deux refus en banque traditionnelle, Credixa Invest m\'a accordé un prêt personnel en 48 h. L\'équipe a su étudier mon dossier avec sérieux et bienveillance. Merci infiniment ! »',
+        'quote' => '« Après deux refus en banque traditionnelle, Solberg Grupo m\'a accordé un prêt personnel en 48 h. L\'équipe a su étudier mon dossier avec sérieux et bienveillance. Merci infiniment ! »',
         'name'  => 'Isabelle Dupont',
         'location' => 'Lyon, France',
+        'months_ago' => 2,
     ],
     'testimonial_3' => [
         'quote' => '« Démarche 100 % en ligne, réponse rapide, taux compétitif. J\'ai financé ma voiture sans me déplacer une seule fois en agence. Un service moderne et efficace. »',
         'name'  => 'Thomas Renard',
         'location' => 'Bordeaux, France',
+        'months_ago' => 2,
     ],
     'testimonial_4' => [
         'quote' => '« Le suivi personnalisé m\'a vraiment impressionnée. Mon conseiller m\'a appelée à chaque étape pour m\'expliquer l\'avancement de mon dossier. On se sent accompagné, pas seul face aux formulaires. »',
         'name'  => 'Céline Fontaine',
         'location' => 'Marseille, France',
+        'months_ago' => 3,
     ],
     'testimonial_5' => [
-        'quote' => '« Simulateur clair, dossier simple, virement reçu en trois jours ouvrés. J\'avais besoin de financer des travaux urgents et Credixa a répondu présent au bon moment. »',
+        'quote' => '« Simulateur clair, dossier simple, virement reçu en trois jours ouvrés. J\'avais besoin de financer des travaux urgents et Solberg Grupo a répondu présent au bon moment. »',
         'name'  => 'Aurélien Leclerc',
         'location' => 'Nantes, France',
+        'months_ago' => 4,
     ],
     'testimonial_6' => [
         'quote' => '« La transparence sur les taux et les frais m\'a convaincue dès le premier contact. Aucune mauvaise surprise en cours de route. C\'est rare et précieux dans ce secteur. »',
         'name'  => 'Sandrine Bouchard',
         'location' => 'Strasbourg, France',
+        'months_ago' => 5,
     ],
 
     'about_title' => 'Rejoignez le meilleur marché mondial pour les travailleurs',
-    'about_description' => 'Credixa est votre plateforme de confiance pour obtenir des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
+    'about_description' => 'Solberg Grupo est votre plateforme de confiance pour obtenir des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
     'rating' => '4.9/5',
     'rating_description' => 'Les clients évaluent les professionnels',
     'projects_completed' => '+12M',
@@ -132,7 +141,7 @@ return [
         'placeholder' => 'Votre adresse e-mail',
         'button' => 'Envoyer',
     ],
-    'rights_reserved' => '© Credixa. 2024. Tous droits réservés.',
+    'rights_reserved' => '©Solberg Grupo. 2024. Tous droits réservés.',
 
     'en' => 'English',
     'fr' => 'French',
@@ -181,10 +190,10 @@ return [
     // About
     'about' => [
         'exptitle' => 'années d\'expérience',
-        'sectagline' => 'bienvenue chez Credixa',
+        'sectagline' => 'bienvenue chez Solberg Grupo',
         'sectitle' => 'Prêts personnels pour réaliser vos rêves',
         'text1' => 'Nous sommes dans ce domaine depuis 1990 et offrons les meilleurs services.',
-        'text2' => 'Credixa est votre plateforme de confiance pour des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
+        'text2' => 'Solberg Grupo est votre plateforme de confiance pour des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
         'check1' => 'prêt pour petite entreprise',
         'check2' => 'prêt pour étudier à l\'étranger',
         'check3' => 'processus de prêt rapide',
@@ -201,6 +210,15 @@ return [
     'services' => [
         'sectagline' => 'ce que nous offrons',
         'sectitle' => 'Nous fournissons les meilleurs services pour votre prêt',
+        'cta_title' => 'Prêt à démarrer votre projet financier ?',
+        'cta_text' => 'Notre équipe est disponible pour vous accompagner dans votre demande de financement.',
+    ],
+
+    // FAQ page CTA
+    'faq_cta' => [
+        'label' => 'Support',
+        'title' => 'Vous n\'avez pas trouvé votre réponse ?',
+        'text' => 'Notre équipe est disponible du lundi au samedi pour vous accompagner.',
     ],
 
     // Simulate
@@ -280,6 +298,7 @@ return [
 
     'partners_label' => 'Nos partenaires',
     'partners_title' => 'Banques partenaires',
+    'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
     'cta_title2' => 'Obtenez le prêt dont vous avez besoin rapidement.',
     'cta_text2' => 'Obtenez des prêts commerciaux rapidement',

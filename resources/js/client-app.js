@@ -177,9 +177,9 @@ Alpine.data('togglePref', () => ({
 
 // ── Dark / Light theme toggle ────────────────────────────────────────
 Alpine.data('themeToggle', () => ({
-    isDark: true,
+    isDark: false,
     init() {
-        const saved = localStorage.getItem('credixa-theme') || 'dark';
+        const saved = localStorage.getItem('credixa-theme-v2') || 'light';
         this.isDark = saved === 'dark';
         document.documentElement.dataset.theme = saved;
     },
@@ -187,7 +187,7 @@ Alpine.data('themeToggle', () => ({
         this.isDark = !this.isDark;
         const theme = this.isDark ? 'dark' : 'light';
         document.documentElement.dataset.theme = theme;
-        localStorage.setItem('credixa-theme', theme);
+        localStorage.setItem('credixa-theme-v2', theme);
     },
 }));
 
@@ -222,11 +222,11 @@ window.buildDoughnutChart = function (canvasId, data, colors, labels) {
             plugins: {
                 legend: { display: false },
                 tooltip: {
-                    backgroundColor: '#112237',
-                    borderColor: 'rgba(255,255,255,.1)',
+                    backgroundColor: '#04203D',
+                    borderColor: 'rgba(184,136,62,.3)',
                     borderWidth: 1,
-                    titleColor: '#E8EDF5',
-                    bodyColor: '#7A90AA',
+                    titleColor: '#FFFFFF',
+                    bodyColor: '#D2B789',
                     padding: 10,
                     callbacks: {
                         label: (ctx) => ' ' + ctx.parsed.toLocaleString(document.documentElement.lang || 'fr', {
@@ -249,11 +249,11 @@ window.buildLineChart = function (canvasId, labels, values, currency) {
             labels,
             datasets: [{
                 data: values,
-                borderColor: '#22A396',
-                backgroundColor: 'rgba(34,163,150,.08)',
+                borderColor: '#B8883E',
+                backgroundColor: 'rgba(184,136,62,.1)',
                 borderWidth: 2,
                 pointRadius: 3,
-                pointBackgroundColor: '#22A396',
+                pointBackgroundColor: '#B8883E',
                 fill: true,
                 tension: .4,
             }],
@@ -264,11 +264,11 @@ window.buildLineChart = function (canvasId, labels, values, currency) {
             plugins: {
                 legend: { display: false },
                 tooltip: {
-                    backgroundColor: '#112237',
-                    borderColor: 'rgba(255,255,255,.1)',
+                    backgroundColor: '#04203D',
+                    borderColor: 'rgba(184,136,62,.3)',
                     borderWidth: 1,
-                    titleColor: '#E8EDF5',
-                    bodyColor: '#7A90AA',
+                    titleColor: '#FFFFFF',
+                    bodyColor: '#D2B789',
                     padding: 10,
                     callbacks: {
                         label: (ctx) => ' ' + ctx.parsed.y.toLocaleString() + ' ' + (currency || ''),
@@ -277,12 +277,12 @@ window.buildLineChart = function (canvasId, labels, values, currency) {
             },
             scales: {
                 x: {
-                    grid: { color: 'rgba(255,255,255,.04)' },
-                    ticks: { color: '#7A90AA', font: { size: 10 } },
+                    grid: { color: 'rgba(4,32,61,.06)' },
+                    ticks: { color: '#95A3B1', font: { size: 10 } },
                 },
                 y: {
-                    grid: { color: 'rgba(255,255,255,.04)' },
-                    ticks: { color: '#7A90AA', font: { size: 10 } },
+                    grid: { color: 'rgba(4,32,61,.06)' },
+                    ticks: { color: '#95A3B1', font: { size: 10 } },
                     beginAtZero: true,
                 },
             },

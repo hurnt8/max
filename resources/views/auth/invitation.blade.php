@@ -4,10 +4,10 @@ $gender = $user->gender ?? 'N';
 
 $texts = [
     'fr' => [
-        'title'       => 'Activation de compte — Credixa Invest',
+        'title'       => 'Activation de compte —Solberg Grupo Invest',
         'greeting'    => ['M' => 'Cher Monsieur', 'F' => 'Chère Madame', 'N' => 'Bonjour'],
         'subtitle'    => 'Définissez votre mot de passe pour activer votre accès',
-        'info_title'  => 'Votre compte Credixa Invest',
+        'info_title'  => 'Votre compteSolberg Grupo Invest',
         'info_body'   => 'a été créé par votre conseiller. Choisissez un mot de passe sécurisé pour accéder à votre espace personnel.',
         'email_label' => 'Adresse email',
         'pw_label'    => 'Nouveau mot de passe',
@@ -21,10 +21,10 @@ $texts = [
         'strengths'   => ['', 'Très faible', 'Faible', 'Moyen', 'Fort', 'Très fort'],
     ],
     'en' => [
-        'title'       => 'Account Activation — Credixa Invest',
+        'title'       => 'Account Activation —Solberg Grupo Invest',
         'greeting'    => ['M' => 'Dear Mr.', 'F' => 'Dear Ms.', 'N' => 'Hello'],
         'subtitle'    => 'Set your password to activate your account',
-        'info_title'  => 'Your Credixa Invest account',
+        'info_title'  => 'YourSolberg Grupo Invest account',
         'info_body'   => 'was created by your advisor. Choose a secure password to access your personal space.',
         'email_label' => 'Email address',
         'pw_label'    => 'New password',
@@ -38,10 +38,10 @@ $texts = [
         'strengths'   => ['', 'Very weak', 'Weak', 'Fair', 'Strong', 'Very strong'],
     ],
     'es' => [
-        'title'       => 'Activación de cuenta — Credixa Invest',
+        'title'       => 'Activación de cuenta —Solberg Grupo Invest',
         'greeting'    => ['M' => 'Estimado Sr.', 'F' => 'Estimada Sra.', 'N' => 'Hola'],
         'subtitle'    => 'Establezca su contraseña para activar su cuenta',
-        'info_title'  => 'Su cuenta de Credixa Invest',
+        'info_title'  => 'Su cuenta deSolberg Grupo Invest',
         'info_body'   => 'fue creada por su asesor. Elija una contraseña segura para acceder a su espacio personal.',
         'email_label' => 'Correo electrónico',
         'pw_label'    => 'Nueva contraseña',
@@ -55,10 +55,10 @@ $texts = [
         'strengths'   => ['', 'Muy débil', 'Débil', 'Regular', 'Fuerte', 'Muy fuerte'],
     ],
     'pl' => [
-        'title'       => 'Aktywacja konta — Credixa Invest',
+        'title'       => 'Aktywacja konta —Solberg Grupo Invest',
         'greeting'    => ['M' => 'Szanowny Panie', 'F' => 'Szanowna Pani', 'N' => 'Witaj'],
         'subtitle'    => 'Ustaw hasło, aby aktywować dostęp do konta',
-        'info_title'  => 'Twoje konto Credixa Invest',
+        'info_title'  => 'Twoje kontoSolberg Grupo Invest',
         'info_body'   => 'zostało utworzone przez Twojego doradcę. Wybierz bezpieczne hasło, aby uzyskać dostęp do swojego osobistego obszaru.',
         'email_label' => 'Adres e-mail',
         'pw_label'    => 'Nowe hasło',
@@ -91,7 +91,7 @@ $salutationName = ($gender === 'N') ? explode(' ', $user->name)[0] : $user->name
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -108,7 +108,7 @@ $salutationName = ($gender === 'N') ? explode(' ', $user->name)[0] : $user->name
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
   min-height:100vh;background:var(--bg);color:var(--text);
-  font-family:'Inter',system-ui,sans-serif;font-size:15px;
+  font-family:'Montserrat',system-ui,sans-serif;font-size:15px;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
 }
 body{
@@ -150,15 +150,15 @@ a{text-decoration:none;color:inherit}
   margin:0 auto 1.375rem;
   box-shadow:0 0 36px rgba(13,207,220,.3);
 }
-.logo-box img{height:40px;object-fit:contain;filter:brightness(0) invert(1)}
-.logo-box span{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:800;color:#080C18;line-height:1}
+.logo-box img{height:40px;object-fit:contain}
+.logo-box span{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:#080C18;line-height:1}
 
 /* Avatar */
 .avatar{
   width:60px;height:60px;border-radius:50%;
   background:linear-gradient(135deg,var(--cyan),var(--cyan2));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:800;
+  font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;
   color:#080C18;margin:0 auto 1rem;
   box-shadow:0 0 24px rgba(13,207,220,.3);
 }
@@ -166,7 +166,7 @@ a{text-decoration:none;color:inherit}
 /* Heading */
 .card-head{text-align:center;margin-bottom:1.75rem}
 .card-title{
-  font-family:'Space Grotesk',sans-serif;
+  font-family:'Montserrat',sans-serif;
   font-size:1.5rem;font-weight:800;color:var(--text);margin-bottom:.35rem;
 }
 .card-sub{font-size:.8rem;color:var(--sub);line-height:1.6}
@@ -202,7 +202,7 @@ a{text-decoration:none;color:inherit}
 .finput{
   width:100%;padding:.85rem 2.6rem .85rem 2.6rem;
   background:var(--inp);border:1.5px solid rgba(255,255,255,.08);border-radius:12px;
-  font-size:.875rem;font-family:'Inter',sans-serif;color:var(--text);
+  font-size:.875rem;font-family:'Montserrat',sans-serif;color:var(--text);
   outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
 }
 .finput::placeholder{color:rgba(255,255,255,.2)}
@@ -228,7 +228,7 @@ a{text-decoration:none;color:inherit}
 /* Cyan pill button */
 .fbtn{
   width:100%;padding:.92rem 1.5rem;border:none;border-radius:999px;
-  font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;
+  font-size:.97rem;font-weight:700;font-family:'Montserrat',sans-serif;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.625rem;
   background:linear-gradient(90deg,var(--cyan) 0%,var(--cyan2) 100%);
   color:#080C18;letter-spacing:.01em;
@@ -265,10 +265,10 @@ a{text-decoration:none;color:inherit}
 
   {{-- Logo --}}
   <div class="logo-box">
-    <img src="{{ asset('assets/images/logo new.png') }}"
+    <img src="{{ asset('assets/images/logo-white-icon.png') }}"
          onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-         alt="Credixa">
-    <span style="display:none">C</span>
+         alt="Solberg Grupo">
+    <span style="display:none">SG</span>
   </div>
 
   {{-- Avatar + Heading --}}
@@ -356,7 +356,7 @@ a{text-decoration:none;color:inherit}
 
 </div>
 
-<div class="copy">&copy; {{ date('Y') }} Credixa Invest</div>
+<div class="copy">&copy; {{ date('Y') }}Solberg Grupo Invest</div>
 
 <script>
 const strengths = @json($t['strengths']);

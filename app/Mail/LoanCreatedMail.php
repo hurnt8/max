@@ -24,10 +24,17 @@ class LoanCreatedMail extends Mailable
     public function envelope(): Envelope
     {
         $subjects = [
-            'fr' => 'Votre dossier de financement N°' . $this->loan->reference . ' — CREDIXA INVESTI',
-            'pl' => 'Twój wniosek o finansowanie nr ' . $this->loan->reference . ' — CREDIXA INVESTI',
-            'en' => 'Your financing file N°' . $this->loan->reference . ' — CREDIXA INVESTI',
-            'es' => 'Su expediente de financiación N°' . $this->loan->reference . ' — CREDIXA INVESTI',
+            'fr' => 'Votre dossier de financement N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'pl' => 'Twój wniosek o finansowanie nr ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'en' => 'Your financing file N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'es' => 'Su expediente de financiación N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'bg' => 'Вашето досие за финансиране №' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'hu' => 'Finanszírozási ügye sz. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'it' => 'La tua pratica di finanziamento N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'de' => 'Ihre Finanzierungsakte Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'lt' => 'Jūsų finansavimo byla Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'ro' => 'Dosarul dumneavoastră de finanțare nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'lv' => 'Jūsu finansējuma lieta Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
         ];
 
         return new Envelope(subject: $subjects[$this->locale] ?? $subjects['fr']);

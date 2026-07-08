@@ -1,46 +1,46 @@
 <?php
 
 return [
-    'banner_title' => 'Atrask Credixa',
-    'banner_subtitle' => 'Apie mus',
-    'banner_description' => 'Skolinkites lengviau naudodamiesi lanksčiais paskolų sprendimais, pritaikytais jūsų finansiniams poreikiams.',
+    'banner_title' => 'Entdecken Sie Solberg Grupo',
+    'banner_subtitle' => 'Über uns',
+    'banner_description' => 'Leihen Sie sich leichter Geld mit flexiblen Kreditlösungen, die auf Ihre finanziellen Bedürfnisse zugeschnitten sind.',
 
-    'section1_title' => 'Kodėl verta rinktis Credixa',
-    'section1_p1' => 'Mes Credixa tvirtai tikime, kad kiekvienas nusipelno galimybės įgyvendinti savo finansines svajones. Nuo pat savo veiklos pradžios esame įsipareigoję teikti lanksčius ir prieinamus skolinimo sprendimus, kad patenkintume įvairius mūsų klientų poreikius. Nesvarbu, ar norite finansuoti asmeninį projektą, įsigyti automobilį ar išplėsti savo verslą, mes turime jums reikalingą paskolą.',
-    'section1_p2' => 'Mūsų paslaugos sukurtos taip, kad būtų užtikrintas be vargo, greitas ir paprastas paraiškų teikimo procesas. Suprantame, kad kiekvienas klientas yra unikalus, todėl siūlome individualizuotas paskolas, kurios prisitaiko prie konkrečių jūsų poreikių. Be to, mūsų atsidavę patarėjai visada padės jums kiekviename žingsnyje, užtikrindami, kad nuo pradžios iki pabaigos jus visapusiškai palaikytų.',
-    'proposed' => 'Mes siūlome:',
-    'check1' => 'Suasmenintos paskolos pagal jūsų konkrečius poreikius.',
-    'check2' => 'Paskirti patarėjai padės jums kiekviename žingsnyje.',
-    'check3' => 'Lanksčios grąžinimo sąlygos, atitinkančios jūsų finansinę padėtį',
-    'check4' => 'Paskolos be atlyginimo.',
-    'section1_p3' => 'Mūsų „Credixa“ misija yra padėti jums pasiekti jūsų finansinius tikslus, taikant individualiai pritaikytus paskolų sprendimus. Prisijunkite prie mūsų šiandien ir sužinokite, kaip galime padėti jums paversti jūsų projektus realybe.',
-    'btn' => 'Raskite savo idealią paskolą',
+    'section1_title' => 'Warum Solberg Grupo wählen',
+    'section1_p1' => 'Bei Solberg Grupo glauben wir fest daran, dass jeder eine Chance verdient, seine finanziellen Träume zu verwirklichen. Seit unserer Gründung setzen wir uns dafür ein, flexible und zugängliche Kreditlösungen anzubieten, um die vielfältigen Bedürfnisse unserer Kunden zu erfüllen. Ob Sie ein persönliches Projekt finanzieren, ein Auto kaufen oder Ihr Unternehmen erweitern möchten – wir haben den passenden Kredit für Sie.',
+    'section1_p2' => 'Unsere Dienstleistungen sind so gestaltet, dass sie einen reibungslosen, schnellen und einfachen Antragsprozess gewährleisten. Wir wissen, dass jeder Kunde einzigartig ist, deshalb bieten wir individuelle Kredite an, die sich an Ihre spezifischen Bedürfnisse anpassen. Darüber hinaus stehen Ihnen unsere engagierten Berater bei jedem Schritt zur Seite, damit Sie von Anfang bis Ende umfassend unterstützt werden.',
+    'proposed' => 'Wir bieten Ihnen:',
+    'check1' => 'Individuelle Kredite, abgestimmt auf Ihre spezifischen Bedürfnisse.',
+    'check2' => 'Persönliche Berater, die Ihnen bei jedem Schritt helfen.',
+    'check3' => 'Flexible Rückzahlungsbedingungen, passend zu Ihrer finanziellen Situation',
+    'check4' => 'Kredite ohne Gehaltsnachweis.',
+    'section1_p3' => 'Die Mission von Solberg Grupo ist es, Ihnen zu helfen, Ihre finanziellen Ziele mit maßgeschneiderten Kreditlösungen zu erreichen. Werden Sie noch heute Teil unserer Community und erfahren Sie, wie wir Ihnen helfen können, Ihre Projekte zu verwirklichen.',
+    'btn' => 'Finden Sie Ihren idealen Kredit',
 
-    'faq_title' => 'Dažniausiai užduodami klausimai',
-    'faq_description' => 'Raskite atsakymus į dažniausiai užduodamus klausimus apie mūsų paskolų paslaugas.',
-    'acc_1' => 'Kokio tipo paskolas siūlote?',
-    'acc_1_desc' => 'Mes siūlome įvairias paskolas, įskaitant asmenines paskolas, paskolas
-    hipotekos, paskolos automobiliui ir smulkaus verslo paskolos. Kiekvienas
-    paskolos tipas yra skirtas specifiniams poreikiams ir pasiūlymams patenkinti
-    lanksčios sąlygos.',
-    'acc_2' => 'Kaip galiu kreiptis dėl paskolos?',
-    'acc_2_desc' => 'Paskolos paraišką galite pateikti tiesiogiai mūsų svetainėje iki
-    užpildant internetinę paraiškos formą. Mes jūsų paprašysime
-    pagrindinė informacija, pvz., jūsų vardas, kontaktiniai duomenys ir suma
-    pageidaujama paskola. Mūsų konsultantai susisieks su jumis, kad užbaigtų užklausą ir
-    padės jums per procesą.',
-    'acc_3' => 'Kokie yra paskolos tinkamumo kriterijai?',
-    'acc_3_desc' => 'Tinkamumo kriterijai skiriasi priklausomai nuo paskolos tipo, bet apskritai jūs
-    turi būti pilnametis, turėti stabilias pajamas ir gerą kredito balą. Mes
-    Taip pat išnagrinėsime jūsų mokėjimo galimybes ir istoriją
-    finansinis.',
-    'acc_4' => 'Kiek laiko užtrunka paskolos prašymo apdorojimas?',
-    'acc_4_desc' => ' Apdorojimo laikas skiriasi priklausomai nuo paskolos tipo ir sudėtingumo
-    prašymas. Paprastai asmeninės paskolos paraiškos apdorojamos nuo 24 iki 48
-    valandų, o hipoteka gali užtrukti kelias dienas
-    priežastis, dėl kurios reikia atlikti išsamesnius patikrinimus.',
-    'acc_5' => 'Ar galiu grąžinti paskolą anksčiau?',
-    'acc_5_desc' => 'Taip, paskolą galite grąžinti anksčiau laiko be baudos. Mes jūs
-    Rekomenduojame, jei įmanoma, greičiau grąžinti paskolą, nes tai sumažins
-    bendra palūkanų suma, kurią mokėsite per paskolos laikotarpį.',
+    'faq_title' => 'Häufig gestellte Fragen',
+    'faq_description' => 'Finden Sie Antworten auf die häufigsten Fragen zu unseren Kreditdienstleistungen.',
+    'acc_1' => 'Welche Arten von Krediten bieten Sie an?',
+    'acc_1_desc' => 'Wir bieten eine Vielzahl von Krediten an, darunter Privatkredite, Hypothekendarlehen,
+    Autokredite und Kleinunternehmerkredite. Jede
+    Kreditart ist darauf ausgelegt, spezifische Bedürfnisse zu erfüllen und
+    flexible Konditionen zu bieten.',
+    'acc_2' => 'Wie kann ich einen Kredit beantragen?',
+    'acc_2_desc' => 'Sie können einen Kreditantrag direkt auf unserer Website stellen, indem Sie
+    das Online-Antragsformular ausfüllen. Wir bitten Sie um
+    grundlegende Informationen wie Ihren Namen, Kontaktdaten und den
+    gewünschten Kreditbetrag. Unsere Berater setzen sich mit Ihnen in Verbindung, um den Antrag abzuschließen und
+    Sie durch den Prozess zu begleiten.',
+    'acc_3' => 'Welche Zulassungskriterien gelten für einen Kredit?',
+    'acc_3_desc' => 'Die Zulassungskriterien variieren je nach Kreditart, aber im Allgemeinen müssen Sie
+    volljährig sein, ein stabiles Einkommen und eine gute Bonität haben. Wir
+    prüfen außerdem Ihre Rückzahlungsfähigkeit und Ihre
+    finanzielle Vorgeschichte.',
+    'acc_4' => 'Wie lange dauert die Bearbeitung eines Kreditantrags?',
+    'acc_4_desc' => ' Die Bearbeitungszeit variiert je nach Kreditart und Komplexität
+    des Antrags. In der Regel werden Privatkreditanträge innerhalb von 24 bis 48
+    Stunden bearbeitet, während Hypothekendarlehen mehrere Tage dauern können,
+    da umfassendere Prüfungen erforderlich sind.',
+    'acc_5' => 'Kann ich meinen Kredit vorzeitig zurückzahlen?',
+    'acc_5_desc' => 'Ja, Sie können Ihren Kredit vorzeitig ohne Vertragsstrafe zurückzahlen. Wir
+    empfehlen Ihnen, den Kredit nach Möglichkeit schneller zurückzuzahlen, da dies
+    den insgesamt zu zahlenden Zinsbetrag über die Laufzeit des Kredits verringert.',
 ];

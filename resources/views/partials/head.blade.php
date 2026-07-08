@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', __('menu.home')) | Credixa</title>
+    <title>@yield('title', __('menu.home')) |Solberg Grupo</title>
     <meta name="description" content="Credixa — solutions de financement rapides, flexibles et personnalisées à travers l'Europe.">
     <link rel="canonical" href="{{ url()->current() }}">
-    @foreach (['fr', 'en', 'pl', 'es'] as $l)
+    @foreach (['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv'] as $l)
     <link rel="alternate" hreflang="{{ $l }}" href="{{ url($l) }}">
     @endforeach
     <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 
-    <!-- Fonts: Inter + Playfair Display -->
+    <!-- Fonts: Montserrat (Solberg Grupo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,19 +23,19 @@
         theme: {
             extend: {
                 colors: {
-                    navy:      { DEFAULT:'#0B1A2E', mid:'#162540', light:'#1E3A5F', deep:'#060E1C' },
-                    gold:      { DEFAULT:'#C8A951', light:'#E8CB72', pale:'#F5E9C8', dark:'#A88830' },
-                    cream:     { DEFAULT:'#F7F3EC', light:'#FDFBF8' },
+                    navy:      { DEFAULT:'#04203D', mid:'#0A3559', light:'#4A5D73', deep:'#02131F' },
+                    gold:      { DEFAULT:'#B8883E', light:'#D2B789', pale:'#F3E8D6', dark:'#96702F' },
+                    cream:     { DEFAULT:'#FFFFFF', light:'#FFFFFF' },
                 },
                 fontFamily: {
-                    sans:  ['Inter','ui-sans-serif','system-ui','sans-serif'],
-                    serif: ['Playfair Display','Georgia','serif'],
+                    sans:  ['Montserrat','ui-sans-serif','system-ui','sans-serif'],
+                    serif: ['Montserrat','ui-sans-serif','system-ui','sans-serif'],
                 },
                 boxShadow: {
-                    'card':  '0 1px 3px rgba(11,26,46,.06), 0 4px 16px rgba(11,26,46,.08)',
-                    'card-hover': '0 4px 8px rgba(11,26,46,.08), 0 16px 40px rgba(11,26,46,.12)',
-                    'gold':  '0 4px 24px rgba(200,169,81,.30)',
-                    'nav':   '0 1px 0 rgba(11,26,46,.08)',
+                    'card':  '0 1px 3px rgba(4,32,61,.06), 0 4px 16px rgba(4,32,61,.08)',
+                    'card-hover': '0 4px 8px rgba(4,32,61,.08), 0 16px 40px rgba(4,32,61,.12)',
+                    'gold':  '0 4px 24px rgba(184,136,62,.30)',
+                    'nav':   '0 1px 0 rgba(4,32,61,.08)',
                 },
                 animation: {
                     'fade-in-up': 'fadeInUp .6s ease forwards',

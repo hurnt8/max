@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Uvod',
-            'content' => 'Dobro došli u Credixa. Korištenjem naše stranice i usluga suglasni ste da Äete se pridrÅ¾avati sljedeÄih uvjeta i odredbi te biti vezani njima. Molimo paÅ¾ljivo proÄitajte ove uvjete prije korištenja naše stranice ili podizanja kredita kod nas.'
+            'content' => 'Dobro došli uSolberg Grupo. Korištenjem naše stranice i usluga suglasni ste da Äete se pridrÅ¾avati sljedeÄih uvjeta i odredbi te biti vezani njima. Molimo paÅ¾ljivo proÄitajte ove uvjete prije korištenja naše stranice ili podizanja kredita kod nas.'
         ],
         [
             'title' => '2. Korištenje stranice',
@@ -17,7 +17,7 @@ return [
         ],
         [
             'title' => '4. Troškovi ugovora i osiguranja',
-            'content' => 'Prilikom podizanja kredita kod Credixaa mogu se primijeniti naknade za ugovor i osiguranje. Ova naknada pokriva administrativne troškove povezane s postavljanjem i upravljanjem vašim kreditom. Konkretni detalji ovih naknada bit Äe jasno navedeni u vašem ugovoru o zajmu. DuÅ¾ni ste platiti ove naknade u skladu s navedenim uvjetima.'
+            'content' => 'Prilikom podizanja kredita kodSolberg Grupoa mogu se primijeniti naknade za ugovor i osiguranje. Ova naknada pokriva administrativne troškove povezane s postavljanjem i upravljanjem vašim kreditom. Konkretni detalji ovih naknada bit Äe jasno navedeni u vašem ugovoru o zajmu. DuÅ¾ni ste platiti ove naknade u skladu s navedenim uvjetima.'
         ],
         [
             'title' => '5. Povjerljivost',

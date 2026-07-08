@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Credixa – A legjobb online hitelezők Németországban, Spanyolországban, Magyarországon stb.',
+    'general_title' => 'Solberg Grupo – A legjobb online hitelezők Németországban, Spanyolországban, Magyarországon stb.',
     'banner_title' => 'Szerezze meg a tökéletes kölcsönt minden online igényéhez.',
-    'banner_text' => 'Emberek milliói használják a Credixa-ot projektjeik megvalósítására.',
+    'banner_text' => 'Emberek milliói használják a Solberg Grupót projektjeik megvalósítására.',
     'get_loan_now' => 'Kölcsön kérése most',
     'popular_loans' => 'Népszerű hiteltípusok:',
     'personal_loan' => 'Személyi kölcsön',
@@ -62,48 +62,63 @@ return [
 
     'custom_loan_services' => 'Használja ki személyre szabott hitelszolgáltatásainkat',
     'reliability_quality' => 'Átláthatóság és megbízhatóság',
-    'reliability_quality_description' => 'A Credixanál egyértelmű és megbízható hitelezési megoldásokat kínálunk, amelyeket pozitív vásárlói vélemények és teljes átláthatóság támogatnak.',
+    'reliability_quality_description' => 'A Solberg Grupónál egyértelmű és megbízható hitelezési megoldásokat kínálunk, amelyeket pozitív vásárlói vélemények és teljes átláthatóság támogatnak.',
     'financial_transparency' => 'Nincsenek rejtett költségek',
     'financial_transparency_description' => 'Tekintse át feltételeinket, beszélje meg a díjakat, és csak a hitel jóváhagyása után fizessen.',
     'optimal_security' => 'Biztonság és adatvédelem',
-    'optimal_security_description' => 'Személyes adatai biztonságban vannak nálunk. A Credixa fejlett biztonsági protokollokat használ az Ön adatainak védelme érdekében. Támogatásunk a hét minden napján, a nap 24 órájában rendelkezésre áll bármilyen segítségre.',
+    'optimal_security_description' => 'Személyes adatai biztonságban vannak nálunk. A Solberg Grupo fejlett biztonsági protokollokat használ az Ön adatainak védelme érdekében. Támogatásunk a hét minden napján, a nap 24 órájában rendelkezésre áll bármilyen segítségre.',
     'apply_loan' => 'Kölcsön kérése',
 
 
-    'testimonials_title' => 'Testimonials',
+    'testimonials_title' => 'Megbíznak bennünk',
     'testimonials_description' => 'Nézze meg, mit mondanak rólunk ügyfeleink.',
+    'testimonials_rating_badge' => '4.9 | A legjobbra értékelt szolgáltató 2026-ban',
+    'testimonials_certified_by' => 'Tanúsítja: Trustindex',
+    'testimonials_months_ago' => '{1} 1 hónapja|[2,*] :count hónapja',
     'testimonial_1' => [
         'quote' => '"Nagyon elégedett vagyok a szolgáltatással. A hiteligénylési folyamat gyors és egyszerű volt. Néhány napon belül megkaptam a jóváhagyást, a kamatlábak pedig versenyképesek voltak. Köszönöm szépen!"',
-        'name' => 'Julie B.',
+        'name' => 'Nagy Katalin',
+        'location' => 'Budapest, Magyarország',
+        'months_ago' => 1,
     ],
     'testimonial_2' => [
         'quote' => '"Nagyon ajánlom ezt a hitelszolgáltatást. A csapat nagyon profi és segítőkész volt. Minden kérdésemre válaszoltak, és stresszmentessé tették a folyamatot. Köszönjük a kiváló szolgáltatást!"',
-        'name' => 'Pierre L.',
+        'name' => 'Kovács Péter',
+        'location' => 'Debrecen, Magyarország',
+        'months_ago' => 2,
     ],
     'testimonial_3' => [
         'quote' => '"A hiteligénylési folyamat átlátható volt
           és hatékony. Szakszerű és személyre szabott tanácsokat kaptam mindvégig
           az egész folyamat során. Köszönöm az egész csapatnak a kiváló teljesítményt
           munka!"',
-        'name' => 'Sophie D.',
+        'name' => 'Szabó Anna',
+        'location' => 'Szeged, Magyarország',
+        'months_ago' => 2,
     ],
     'testimonial_4' => [
         'quote' => '"A kölcsön felvétele ennél a cégnél a
           Problémamentes élmény. A személyzet barátságos és hozzáértő volt, és a
           a folyamat gyors és hatékony volt. Nagyon ajánlom!"',
-        'name' => 'Marc F.',
+        'name' => 'Tóth Gábor',
+        'location' => 'Pécs, Magyarország',
+        'months_ago' => 3,
     ],
     'testimonial_5' => [
         'quote' => '"Kiváló ügyfélszolgálat! Végigvezettek
           a hitelezési folyamat minden lépésére és kérdéseimre választ kaptak
           gyorsan. Nagyon elégedett vagyok a végeredménnyel."',
-        'name' => 'Nathalie P.',
+        'name' => 'Horváth Eszter',
+        'location' => 'Győr, Magyarország',
+        'months_ago' => 4,
     ],
     'testimonial_6' => [
         'quote' => '"Nagyon jó kamat és gyors folyamat. I
           erősen ajánlom ezt a szolgáltatást mindenkinek, akinek hitelre van szüksége
           gyors és megbízható."',
-        'name' => 'Luc M.',
+        'name' => 'Varga László',
+        'location' => 'Miskolc, Magyarország',
+        'months_ago' => 5,
     ],
     'testimonial_7' => [
         'quote' => '"Egyszerű és hatékony kölcsönfolyamat. Az voltam
@@ -119,7 +134,7 @@ return [
     ],
 
     'about_title' => 'Csatlakozzon a világ legjobb munkavállalói piacteréhez',
-    'about_description' => 'A Credixa az Ön megbízható platformja kivételes ügyfélélménnyel rendelkező hitelek megszerzéséhez. Elkötelezettek vagyunk amellett, hogy egyszerű, biztonságos és gyors pénzügyi megoldásokat kínáljunk Önnek.',
+    'about_description' => 'A Solberg Grupo az Ön megbízható platformja kivételes ügyfélélménnyel rendelkező hitelek megszerzéséhez. Elkötelezettek vagyunk amellett, hogy egyszerű, biztonságos és gyors pénzügyi megoldásokat kínáljunk Önnek.',
     'rating' => '4,9/5',
     'rating_description' => 'Az ügyfelek értékelik a szakembereket',
     'projects_completed' => '+12 millió',
@@ -161,7 +176,7 @@ return [
         'placeholder' => 'Az Ön e-mail címe',
         'button' => 'Küldés',
     ],
-    'rights_reserved' => '© Credixa. 2024. Minden jog fenntartva.',
+    'rights_reserved' => '©Solberg Grupo. 2024. Minden jog fenntartva.',
 
     'en' => 'angol',
     'fr' => 'francia',
@@ -208,19 +223,34 @@ return [
 
     'about' => [
         'exptitle' => 'év tapasztalat',
-        'sectagline' => 'Üdvözlünk a Credixa-nél',
+        'sectagline' => 'Üdvözlünk a Solberg Grupónál',
         'sectitle' => 'Személyi hitelek, hogy valóra váltsd az álmaidat',
         'text1' => '1990 óta vagyunk jelen az üzletben, és a legjobb szolgáltatásokat kínáljuk.',
-        'text2' => 'A Credixa a megbízható platformod hitelekhez, kivételes ügyfélszolgálattal. Elkötelezettek vagyunk abban, hogy egyszerű, biztonságos és gyors pénzügyi megoldásokat kínáljunk.',
+        'text2' => 'A Solberg Grupo a megbízható platformod hitelekhez, kivételes ügyfélszolgálattal. Elkötelezettek vagyunk abban, hogy egyszerű, biztonságos és gyors pénzügyi megoldásokat kínáljunk.',
         'check1' => 'kisvállalkozói hitel',
         'check2' => 'külföldi tanulmányi hitel',
         'check3' => 'gyors hitelfolyamat',
         'check4' => 'nagyon alacsony kamatok',
+        'engage1_title' => 'Engedélyezett & szabályozott',
+        'engage1_desc' => 'Tanúsított hitelintézet, amely megfelel az európai szabványoknak. Adatait és dossziéját minden lépésben védjük.',
+        'engage2_title' => 'Garantált válasz 24 órán belül',
+        'engage2_desc' => '100%-ban online ügyintézés, utazás és papírmunka nélkül. Döntés 24 órán belül.',
+        'engage3_title' => 'Több pénznem & több ország',
+        'engage3_desc' => 'Kölcsönök euróban, zlotyban, amerikai dollárban, mexikói pesóban, brazil realban és costa rica-i colónban is elérhetők, projektjétől függően.',
     ],
 
     'services' => [
         'sectagline' => 'mit kínálunk',
         'sectitle' => 'A legjobb szolgáltatásokat biztosítjuk hiteledhez',
+        'cta_title' => 'Készen áll pénzügyi projektje elindítására?',
+        'cta_text' => 'Csapatunk készséggel segít Önnek a finanszírozási kérelme során.',
+    ],
+
+    // GYIK oldal CTA
+    'faq_cta' => [
+        'label' => 'Támogatás',
+        'title' => 'Nem találta meg a választ?',
+        'text' => 'Csapatunk hétfőtől szombatig áll rendelkezésére.',
     ],
 
     'simulate' => [
@@ -270,6 +300,16 @@ return [
             'desc2' => 'Kombináld a több adósságot egy könnyen kezelhető havi törlesztésbe, segítve, hogy egyszerűsítsd és jobban kezeld a pénzügyeidet.',
             'title3' => 'Otthoni felújítás',
             'desc3' => 'Újítsd fel vagy renováld otthonodat, növelve az értékét és kényelmét anélkül, hogy pénzügyi terhet róna rád.',
+            'title4' => 'Finanszírozza tanulmányait',
+            'desc4' => 'Fektessen a jövőjébe: tandíj, szakképzés vagy átképzés, anélkül hogy veszélyeztetné mindennapjait.',
+            'title5' => 'Utazás & vakáció',
+            'desc5' => 'Fedezze fel nyugodtan a világot. Finanszírozza álmai utazását anélkül, hogy hozzányúlna a megtakarításaihoz.',
+            'title6' => 'Esküvő & családi események',
+            'desc6' => 'Ünnepelje az élet fontos pillanatait pénzügyi stressz nélkül. Szervezze meg álmai eseményét a saját tempójában.',
+            'title7' => 'Orvosi kiadások & egészség',
+            'desc7' => 'Kezelje nyugodtan az egészségügyi váratlan helyzeteket. Fedezze gyorsan a kezelések, műtétek vagy orvosi eszközök költségeit.',
+            'title8' => 'Vállalkozásindítás & befektetés',
+            'desc8' => 'Keltse életre vállalkozói projektjét, vagy fejlessze tevékenységét egy gyors és rugalmas finanszírozás segítségével.',
         ],
         'btn_text' => 'Tudd meg többet',
         'btn_icon' => 'ikon-következő',
@@ -280,7 +320,12 @@ return [
     'total_loan_amount_granted' => 'Elérhető összeg',
     'average_approval_time' => 'Garantált válasz',
     'member' => 'Finanszírozott ügyfelek',
+    'years_experience' => 'Év tapasztalat',
     'day' => 'Napok',
+
+    'partners_label' => 'Partnereink',
+    'partners_title' => 'Partnerbankok',
+    'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
     'cta_title2' => 'Szerezd meg a szükséges hitelt gyorsan.',
     'cta_text2' => 'Szerezd meg a Vállalkozói Hitel gyorsan',

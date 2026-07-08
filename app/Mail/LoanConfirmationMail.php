@@ -24,6 +24,13 @@ class LoanConfirmationMail extends Mailable
             'en' => 'Your loan request is being processed',
             'es' => 'Su solicitud de préstamo está siendo procesada',
             'pl' => 'Twój wniosek o pożyczkę jest przetwarzany',
+            'bg' => 'Вашата заявка за заем се обработва',
+            'hu' => 'Kölcsönkérelme feldolgozás alatt áll',
+            'it' => 'La tua richiesta di prestito è in fase di elaborazione',
+            'de' => 'Ihr Kreditantrag wird bearbeitet',
+            'lt' => 'Jūsų paskolos paraiška yra nagrinėjama',
+            'ro' => 'Cererea dumneavoastră de împrumut este în curs de procesare',
+            'lv' => 'Jūsu aizdevuma pieteikums tiek apstrādāts',
         ];
         return new Envelope(subject: $subjects[$this->lang] ?? $subjects['fr']);
     }

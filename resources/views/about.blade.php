@@ -18,6 +18,24 @@
 }
 .about-engage-title { font-size:.875rem; font-weight:800; color:var(--navy); margin-bottom:.2rem; }
 .about-engage-desc  { font-size:.78rem; color:#6b7280; margin:0; line-height:1.55; }
+
+.about-page-partners-marquee {
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.about-page-partners-track {
+    display:flex; align-items:center; width:max-content; gap:.5rem;
+    animation:about-page-partners-scroll 60s linear infinite;
+}
+.about-page-partners-marquee:hover .about-page-partners-track { animation-play-state:paused; }
+@keyframes about-page-partners-scroll {
+    from { transform:translateX(0); }
+    to   { transform:translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .about-page-partners-track { animation:none; flex-wrap:wrap; width:100%; }
+}
 </style>
 @endpush
 
@@ -106,12 +124,15 @@
                 {{-- Partenaires --}}
                 <div style="padding:.85rem 1.1rem;background:#f7f8fa;border:1px solid #eaecf0;border-radius:12px;margin-bottom:1.5rem;">
                     <div style="font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#9ca3af;margin-bottom:.75rem;">@lang('home.partners_title')</div>
-                    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:.65rem;">
-                        <img src="{{ asset('images/partners/bnpparibas.svg') }}" alt="BNP Paribas" style="height:22px;width:auto;opacity:.55;filter:grayscale(1);">
-                        <img src="{{ asset('images/partners/santander.svg') }}" alt="Santander" style="height:22px;width:auto;opacity:.55;filter:grayscale(1);">
-                        <img src="{{ asset('images/partners/pko.svg') }}" alt="PKO Bank Polski" style="height:22px;width:auto;opacity:.55;filter:grayscale(1);">
-                        <img src="{{ asset('images/partners/revolut.svg') }}" alt="Revolut" style="height:22px;width:auto;opacity:.55;filter:grayscale(1);">
-                        <img src="{{ asset('images/partners/bbva.svg') }}" alt="BBVA" style="height:22px;width:auto;opacity:.55;filter:grayscale(1);">
+                    <div class="about-page-partners-marquee">
+                        <div class="about-page-partners-track">
+                            @foreach (__('home.partners_list') as $bankName)
+                            <span style="font-size:.72rem;font-weight:700;color:var(--navy);background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:.25rem .7rem;white-space:nowrap;flex-shrink:0;">{{ $bankName }}</span>
+                            @endforeach
+                            @foreach (__('home.partners_list') as $bankName)
+                            <span style="font-size:.72rem;font-weight:700;color:var(--navy);background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:.25rem .7rem;white-space:nowrap;flex-shrink:0;" aria-hidden="true">{{ $bankName }}</span>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
 
@@ -165,7 +186,7 @@
                     <div style="width:52px;height:52px;background:var(--gold-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--gold-dark);font-size:1.25rem;margin-bottom:1.25rem;">
                         <i class="fas fa-{{ $r===1 ? 'shield-alt' : ($r===2 ? 'bolt' : 'headset') }}"></i>
                     </div>
-                    <h3 style="font-family:'Playfair Display',serif;font-size:1.125rem;font-weight:700;color:var(--navy);margin-bottom:.625rem;">
+                    <h3 style="font-family:'Montserrat',serif;font-size:1.125rem;font-weight:700;color:var(--navy);margin-bottom:.625rem;">
                         {{ __('home.loan_reasons.reasons.title' . $r) }}
                     </h3>
                     <p style="font-size:.875rem;color:var(--gray-500);line-height:1.75;margin:0;">

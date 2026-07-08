@@ -24,6 +24,13 @@ class LoanDocumentsConfirmationMail extends Mailable
             'en' => 'Your documents have been received',
             'es' => 'Sus documentos han sido recibidos',
             'pl' => 'Twoje dokumenty zostały odebrane',
+            'bg' => 'Вашите документи бяха получени успешно',
+            'hu' => 'Dokumentumait sikeresen megkaptuk',
+            'it' => 'I tuoi documenti sono stati ricevuti correttamente',
+            'de' => 'Ihre Unterlagen sind bei uns eingegangen',
+            'lt' => 'Jūsų dokumentai buvo sėkmingai gauti',
+            'ro' => 'Documentele dumneavoastră au fost primite cu succes',
+            'lv' => 'Jūsu dokumenti ir veiksmīgi saņemti',
         ];
         return new Envelope(subject: $subjects[$this->lang] ?? $subjects['fr']);
     }

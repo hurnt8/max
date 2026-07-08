@@ -7,12 +7,12 @@ return [
 
     'client_login_title'  => 'Strefa Klienta',
     'client_login_sub'    => 'Zaloguj się, aby uzyskać dostęp do swoich wniosków',
-    'client_brand_title'  => 'Twoja strefa<br>klienta Credixa',
+    'client_brand_title'  => 'Twoja strefa<br>klienta Solberg Grupo',
     'client_brand_sub'    => 'Śledź swoje wnioski, zarządzaj profilem i uzyskaj dostęp do wszystkich dokumentów.',
 
     'staff_login_title'   => 'Portal Administracyjny',
     'staff_login_sub'     => 'Wyłącznie dla upoważnionego personelu',
-    'staff_brand_title'   => 'Administracja<br>Credixa',
+    'staff_brand_title'   => 'Administracja<br>Solberg Grupo',
     'staff_brand_sub'     => 'Bezpieczny dostęp do narzędzi zarządzania, śledzenia wniosków i administracji użytkownikami.',
 
     'email'               => 'Adres email',
@@ -28,7 +28,7 @@ return [
     'staff_portal_link'   => 'Portal agenta / administratora',
     'client_portal_link'  => 'Strefa klienta',
     'staff_restricted'    => 'Dostęp zastrzeżony — tylko upoważniony personel',
-    'staff_notice'        => 'Ten portal jest zarezerwowany wyłącznie dla pracowników Credixa. Wszystkie logowania są rejestrowane.',
+    'staff_notice'        => 'Ten portal jest zarezerwowany wyłącznie dla pracowników Solberg Grupo. Wszystkie logowania są rejestrowane.',
     'or_staff'            => 'Jesteś agentem lub administratorem?',
     'or_client'           => 'Jesteś klientem?',
 
@@ -78,22 +78,32 @@ return [
     'account_unblocked'                   => 'Twoje konto zostało pomyślnie odblokowane. Możesz się teraz zalogować.',
     'unblock_invalid'                     => 'Ten link odblokowania jest nieprawidłowy lub wygasł. Skontaktuj się z pomocą techniczną.',
 
-    'account_blocked_email_subject'       => 'Twoje konto Credixa zostało zablokowane',
+    'account_blocked_email_subject'       => 'Twoje konto Solberg Grupo zostało zablokowane',
     'account_blocked_email_title'         => 'Konto tymczasowo zablokowane',
     'account_blocked_email_intro'         => 'Twoje konto zostało tymczasowo zablokowane po kilku nieprawidłowych próbach logowania.',
     'account_blocked_email_reason_title'  => 'Dlaczego konto zostało zablokowane?',
     'account_blocked_email_reason_body'   => 'Podczas próby logowania wprowadzono 4 kolejne nieprawidłowe kody OTP. Ze względów bezpieczeństwa dostęp został zawieszony.',
     'account_blocked_email_btn'           => 'Odblokuj moje konto',
     'account_blocked_email_fallback'      => 'Jeśli przycisk nie działa, skopiuj ten link do przeglądarki:',
-    'account_blocked_email_notice'        => 'Jeśli to nie Ty dokonywałeś tych prób, nie klikaj w link i natychmiast skontaktuj się z pomocą techniczną Credixa.',
+    'account_blocked_email_notice'        => 'Jeśli to nie Ty dokonywałeś tych prób, nie klikaj w link i natychmiast skontaktuj się z pomocą techniczną Solberg Grupo.',
     'account_blocked_email_footer'        => 'Link ważny przez 48 godzin.',
 
-    'otp_email_subject'      => 'Twój kod logowania — Credixa',
+    'otp_email_subject'      => 'Twój kod logowania — Solberg Grupo',
     'otp_email_title'        => 'Kod weryfikacyjny',
     'otp_email_intro'        => 'Oto jednorazowy kod logowania. Nie udostępniaj go nikomu.',
     'otp_email_code_label'   => 'Twój kod',
     'otp_email_expiry'       => 'Ten kod wygasa za 10 minut.',
     'otp_email_notice_title' => 'Ważne ostrzeżenie bezpieczeństwa',
-    'otp_email_notice_body'  => 'Credixa nigdy nie poprosi Cię o ten kod przez telefon ani wiadomość. Jeśli nie prosiłeś o ten kod, zignoruj ten email.',
+    'otp_email_notice_body'  => 'Solberg Grupo nigdy nie poprosi Cię o ten kod przez telefon ani wiadomość. Jeśli nie prosiłeś o ten kod, zignoruj ten email.',
     'otp_email_footer'       => 'Jeśli nie prosiłeś o ten kod, zignoruj ten email.',
+
+    // Baner instalacji PWA (strony logowania)
+    'pwa_install_title' => 'Zainstaluj aplikację',
+    'pwa_install_hint'  => 'Szybki dostęp · Powiadomienia · Tryb offline',
+    'pwa_install_btn'   => 'Zainstaluj',
+    'pwa_ios_title'     => 'Zainstaluj aplikację Solberg Grupo na iPhonie',
+    'pwa_ios_step1'     => 'Stuknij <strong>Udostępnij</strong> w Safari',
+    'pwa_ios_step2'     => 'Wybierz <strong>Dodaj do ekranu głównego</strong>',
+    'pwa_ios_step3'     => 'Stuknij <strong>Dodaj</strong> — gotowe!',
+    'pwa_close'         => 'Zamknij',
 ];

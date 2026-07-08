@@ -14,8 +14,14 @@ return [
     'button' => 'Imituoti',
 
     'result_title' => 'Modeliavimo rezultatai:',
-    'payment' => 'Apskaičiuota mėnesinė įmoka',
+    'paiement' => 'Apskaičiuota mėnesinė įmoka',
     'table' => 'Amortizacijos lentelė:',
-    'terms' => 'Termini di utilizzo',
-    'total' => 'Importo totale del rimborso',
+
+    'table_month' => 'Mėnuo',
+    'pay_table' => 'Mėnesinė įmoka (€)',
+    'table_primal' => 'Pagrindinė suma (€)',
+    'table_interest' => 'Palūkanos (€)',
+    'table_solde' => 'Likęs balansas (€)',
+    'terms' => 'Naudojimo sąlygos',
+    'total' => 'Bendra grąžintina suma',
 ];

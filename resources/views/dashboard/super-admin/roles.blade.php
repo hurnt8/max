@@ -337,7 +337,7 @@ $roleConf = [
         @forelse($users as $u)
         @php
           $rn = $u->getRoleNames()->first() ?? '';
-          $avatarColors = ['#2563EB','#059669','#D97706','#7C3AED','#DC2626','#0D9488','#C8A951','#0B1A2E'];
+          $avatarColors = ['#2563EB','#059669','#D97706','#7C3AED','#DC2626','#0D9488','#B8883E','#04203D'];
           $avatarBg = $avatarColors[crc32($u->email) % count($avatarColors)];
           $roleBadge = ['super-admin'=>'bs-dark','admin'=>'bs-amber','client'=>'bs-blue'][$rn] ?? 'bs-gray';
         @endphp

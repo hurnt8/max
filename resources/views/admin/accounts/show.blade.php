@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Compte — ' . $account->name . ' — Credixa')
+@section('title', 'Compte — ' . $account->name . ' —Solberg Grupo')
 
 @section('content')
 <style>

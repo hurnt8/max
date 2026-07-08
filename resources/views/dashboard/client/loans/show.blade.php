@@ -1,53 +1,13 @@
 @extends('layouts.dashboard')
-@section('title','Dossier '.$loan->reference.' — Credixa')
-@section('page_title','Dossier '.$loan->reference)
+@section('title', __('app.loan_ref').' '.$loan->reference.' — Solberg Grupo')
+@section('page_title', __('app.loan_ref').' '.$loan->reference)
 
 @push('styles')
 <style>
-  body { background: #0D1F35 !important; }
-  .main-wrap { background: #0D1F35; }
-  .content-area { background: transparent; }
-  .topbar { background: #112237 !important; border-bottom-color: rgba(200,169,81,.14) !important; }
-  .topbar-title { color: #E8EDF5 !important; }
-  .topbar-badge { background: #162D47 !important; border-color: rgba(255,255,255,.1) !important; color: #B8C8D8 !important; }
-  .topbar-avatar { background: linear-gradient(135deg,#1D3A5C,#0B2E4E) !important; color: #C8A951 !important; }
-
   /* ── Tableau d'amortissement — responsive mobile ── */
   .cl-amort-wrap { overflow-x: auto; overflow-y: auto; max-height: 380px; -webkit-overflow-scrolling: touch; }
 
   @media(max-width:640px) {
-    /* Mode carte pour cl-table */
-    .cl-table { display: block; min-width: 0 !important; }
-    .cl-table thead { display: none; }
-    .cl-table tbody { display: block; }
-    .cl-table tbody tr {
-      display: block;
-      background: rgba(22,45,71,.7);
-      border: 1px solid rgba(200,169,81,.14);
-      border-radius: 9px;
-      padding: .75rem;
-      margin-bottom: .625rem;
-    }
-    .cl-table tbody td {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: .3rem 0;
-      border-bottom: 1px solid rgba(255,255,255,.05);
-      font-size: .8rem;
-      gap: .5rem;
-    }
-    .cl-table tbody td:last-child { border-bottom: none; }
-    .cl-table tbody td[data-label]::before {
-      content: attr(data-label);
-      font-size: .65rem;
-      font-weight: 700;
-      color: var(--cl-muted, #6B88A4);
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      flex-shrink: 0;
-      white-space: nowrap;
-    }
     /* Panel head wrap */
     .cl-panel__head { flex-wrap: wrap; gap: .5rem; }
     /* Steps : scroll horizontal sur mobile */
@@ -68,12 +28,12 @@
 @section('content')
 @php
   $steps = [
-    'draft'           => 'Brouillon',
-    'pending'         => 'En attente',
-    'validated'       => 'Validée',
-    'contract_sent'   => 'Contrat envoyé',
-    'contract_signed' => 'Contrat signé',
-    'finalized'       => 'Finalisée',
+    'draft'           => __('app.status_draft'),
+    'pending'         => __('app.status_pending'),
+    'validated'       => __('app.status_validated'),
+    'contract_sent'   => __('app.status_sent'),
+    'contract_signed' => __('app.status_signed'),
+    'finalized'       => __('app.status_finalized'),
   ];
   $stepKeys   = array_keys($steps);
   $currentIdx = array_search($loan->status, $stepKeys);
@@ -99,18 +59,18 @@
 <div class="d-flex align-items-start justify-content-between flex-wrap gap-3 mb-4">
   <div>
     <div class="d-flex align-items-center gap-3 mb-1 flex-wrap">
-      <span style="font-family:'Space Grotesk',monospace;font-size:1rem;font-weight:700;color:var(--cl-gold)">
+      <span style="font-family:'Montserrat',monospace;font-size:1rem;font-weight:700;color:var(--cl-gold)">
         {{ $loan->reference }}
       </span>
       <span class="cl-badge {{ $badgeClass }}">{{ $loan->statusLabel() }}</span>
     </div>
     <div style="font-size:.8rem;color:var(--cl-muted)">
       {{ number_format($loan->amount, 2, ',', ' ') }} {{ $loan->currency }} ·
-      {{ $loan->darly }} mois · {{ $loan->interest_rate }}% · ouvert le {{ $loan->created_at->format('d/m/Y') }}
+      {{ $loan->darly }} {{ __('app.months') }} · {{ $loan->interest_rate }}% · {{ __('app.date_opened') }} {{ $loan->created_at->format('d/m/Y') }}
     </div>
   </div>
   <a href="{{ route('client.loans') }}" class="cl-btn cl-btn--ghost">
-    <i class="fas fa-arrow-left"></i> Mes dossiers
+    <i class="fas fa-arrow-left"></i> {{ __('app.loans_title') }}
   </a>
 </div>
 
@@ -119,9 +79,8 @@
 <div class="cl-alert cl-alert--warn mb-4">
   <div class="cl-alert__icon"><i class="fas fa-envelope"></i></div>
   <div>
-    <div class="cl-alert__title">Contrat en attente de signature</div>
-    Nous vous avons envoyé votre contrat le {{ $loan->sent_at?->format('d/m/Y') }}.
-    Veuillez le signer et nous le retourner par email.
+    <div class="cl-alert__title">{{ __('app.contract_pending_title') }}</div>
+    {{ __('app.contract_pending_body', ['date' => $loan->sent_at?->format('d/m/Y')]) }}
   </div>
 </div>
 @endif
@@ -130,9 +89,8 @@
 <div class="cl-alert cl-alert--green mb-4">
   <div class="cl-alert__icon"><i class="fas fa-check-circle"></i></div>
   <div>
-    <div class="cl-alert__title">Financement accordé</div>
-    Le montant de {{ number_format($loan->amount, 2, ',', ' ') }} {{ $loan->currency }}
-    a été versé sur votre compte.
+    <div class="cl-alert__title">{{ __('app.funded_title') }}</div>
+    {{ __('app.funded_body', ['amount' => number_format($loan->amount, 2, ',', ' '), 'currency' => $loan->currency]) }}
   </div>
 </div>
 @endif
@@ -141,8 +99,8 @@
 <div class="cl-alert cl-alert--error mb-4">
   <div class="cl-alert__icon"><i class="fas fa-ban"></i></div>
   <div>
-    <div class="cl-alert__title">Demande non acceptée</div>
-    Contactez votre conseiller Credixa pour plus d'informations.
+    <div class="cl-alert__title">{{ __('app.rejected_title') }}</div>
+    {{ __('app.contact_advisor') }}
   </div>
 </div>
 @endif
@@ -152,7 +110,7 @@
 <div class="cl-panel mb-4">
   <div class="cl-panel__head">
     <div class="cl-panel__title">
-      <span class="cl-panel__dot"></span> Avancement du dossier
+      <span class="cl-panel__dot"></span> {{ __('app.file_progress') }}
     </div>
     @php
       $pct = $currentIdx !== false ? round(($currentIdx + 1) / count($stepKeys) * 100) : 0;
@@ -191,7 +149,7 @@
     <div class="cl-panel h-100">
       <div class="cl-panel__head">
         <div class="cl-panel__title">
-          <span class="cl-panel__dot"></span> Détails du financement
+          <span class="cl-panel__dot"></span> {{ __('app.loan_details') }}
         </div>
       </div>
       <div class="cl-panel__body">
@@ -201,9 +159,9 @@
           <div class="col-6">
             <div style="background:var(--cl-surface-2);border-radius:12px;padding:1rem;border:1px solid var(--cl-border)">
               <div style="font-size:.65rem;color:var(--cl-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.4rem">
-                Montant accordé
+                {{ __('app.loan_amount') }}
               </div>
-              <div style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--cl-text);line-height:1">
+              <div style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:700;color:var(--cl-text);line-height:1">
                 {{ number_format($loan->amount, 2, ',', ' ') }}
                 <span style="font-size:.8rem;color:var(--cl-gold);font-weight:600">{{ $loan->currency }}</span>
               </div>
@@ -212,9 +170,9 @@
           <div class="col-6">
             <div style="background:var(--cl-surface-2);border-radius:12px;padding:1rem;border:1px solid var(--cl-border)">
               <div style="font-size:.65rem;color:var(--cl-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.4rem">
-                Mensualité
+                {{ __('app.monthly') }}
               </div>
-              <div style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--cl-gold-2);line-height:1">
+              <div style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:700;color:var(--cl-gold-2);line-height:1">
                 {{ number_format($loan->monthly_payment, 2, ',', ' ') }}
                 <span style="font-size:.8rem;font-weight:600">{{ $loan->currency }}</span>
               </div>
@@ -224,13 +182,13 @@
 
         {{-- Data rows --}}
         @foreach([
-          ['Durée totale', $loan->darly.' mois'],
-          ["Taux d'intérêt", $loan->interest_rate.' %'],
-          ['Total à rembourser', number_format($loan->total_with_interest, 2, ',', ' ').' '.$loan->currency],
-          ['Coût total du crédit', number_format($loan->total_cost ?? 0, 2, ',', ' ').' '.$loan->currency],
-          ['Frais administratifs', $loan->admin_fees ? number_format($loan->admin_fees, 2, ',', ' ').' '.$loan->currency : '—'],
-          ['Première échéance', $loan->start_date?->format('d/m/Y') ?? '—'],
-          ['Objet', $loan->objet ?? '—'],
+          [__('app.total_duration'), $loan->darly.' '.__('app.months')],
+          [__('app.interest_rate'), $loan->interest_rate.' %'],
+          [__('app.loan_total'), number_format($loan->total_with_interest, 2, ',', ' ').' '.$loan->currency],
+          [__('app.total_credit_cost'), number_format($loan->total_cost ?? 0, 2, ',', ' ').' '.$loan->currency],
+          [__('app.loan_fees'), $loan->admin_fees ? number_format($loan->admin_fees, 2, ',', ' ').' '.$loan->currency : '—'],
+          [__('app.loan_start'), $loan->start_date?->format('d/m/Y') ?? '—'],
+          [__('app.loan_object'), $loan->objet ?? '—'],
         ] as [$lbl, $val])
         <div class="cl-data-row">
           <span class="cl-data-row__label">{{ $lbl }}</span>
@@ -241,7 +199,7 @@
         @if($loan->special_conditions)
         <div style="margin-top:1rem;background:var(--cl-surface-2);border-radius:10px;padding:.875rem;border:1px solid var(--cl-border)">
           <div style="font-size:.68rem;color:var(--cl-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.4rem">
-            Conditions particulières
+            {{ __('app.loan_conditions') }}
           </div>
           <div style="font-size:.82rem;color:var(--cl-text-2)">{{ $loan->special_conditions }}</div>
         </div>
@@ -258,7 +216,7 @@
     <div class="cl-panel">
       <div class="cl-panel__head">
         <div class="cl-panel__title">
-          <span class="cl-panel__dot"></span> Répartition capital / intérêts
+          <span class="cl-panel__dot"></span> {{ __('app.financing_breakdown') }}
         </div>
       </div>
       <div class="cl-panel__body">
@@ -268,19 +226,19 @@
             <div class="cl-chart-center__val">
               {{ number_format($principal / max(1, $total) * 100, 0) }}%
             </div>
-            <div class="cl-chart-center__lbl">Capital</div>
+            <div class="cl-chart-center__lbl">{{ __('app.loan_capital') }}</div>
           </div>
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.25rem">
           <div style="background:rgba(29,58,92,.4);border-radius:9px;padding:.75rem;border:1px solid rgba(29,58,92,.6)">
-            <div style="font-size:.65rem;color:var(--cl-muted);margin-bottom:.2rem">Capital</div>
+            <div style="font-size:.65rem;color:var(--cl-muted);margin-bottom:.2rem">{{ __('app.loan_capital') }}</div>
             <div style="font-weight:700;color:var(--cl-text-2);font-size:.85rem">
               {{ number_format($principal, 2, ',', ' ') }} {{ $loan->currency }}
             </div>
           </div>
-          <div style="background:rgba(200,169,81,.08);border-radius:9px;padding:.75rem;border:1px solid rgba(200,169,81,.2)">
-            <div style="font-size:.65rem;color:var(--cl-muted);margin-bottom:.2rem">Intérêts</div>
+          <div style="background:rgba(184,136,62,.08);border-radius:9px;padding:.75rem;border:1px solid rgba(184,136,62,.2)">
+            <div style="font-size:.65rem;color:var(--cl-muted);margin-bottom:.2rem">{{ __('app.loan_interest') }}</div>
             <div style="font-weight:700;color:var(--cl-gold-2);font-size:.85rem">
               {{ number_format($interest, 2, ',', ' ') }} {{ $loan->currency }}
             </div>
@@ -294,17 +252,17 @@
     <div class="cl-panel">
       <div class="cl-panel__head">
         <div class="cl-panel__title">
-          <span class="cl-panel__dot"></span> Suivi du dossier
+          <span class="cl-panel__dot"></span> {{ __('app.loan_tracking') }}
         </div>
       </div>
       <div class="cl-panel__body" style="padding:1rem 1.25rem">
         @foreach([
-          ['fa-hashtag',         'Référence',              $loan->reference],
-          ['fa-calendar-plus',   'Date de demande',        $loan->created_at->format('d/m/Y')],
-          ['fa-check-double',    'Date de validation',     $loan->validated_at?->format('d/m/Y') ?? 'En attente'],
-          ['fa-envelope-open',   'Contrat envoyé le',      $loan->sent_at?->format('d/m/Y') ?? '—'],
-          ['fa-file-check',      'Contrat signé reçu',     $loan->signed_received_at?->format('d/m/Y') ?? '—'],
-          ['fa-user-tie',        'Votre conseiller',       $loan->admin?->name ?? '—'],
+          ['fa-hashtag',         __('app.loan_ref'),        $loan->reference],
+          ['fa-calendar-plus',   __('app.loan_opened'),     $loan->created_at->format('d/m/Y')],
+          ['fa-check-double',    __('app.loan_validated'),  $loan->validated_at?->format('d/m/Y') ?? __('app.status_pending')],
+          ['fa-envelope-open',   __('app.loan_sent'),       $loan->sent_at?->format('d/m/Y') ?? '—'],
+          ['fa-file-check',      __('app.loan_signed'),     $loan->signed_received_at?->format('d/m/Y') ?? '—'],
+          ['fa-user-tie',        __('app.loan_advisor'),    $loan->admin?->name ?? '—'],
         ] as [$icon, $label, $value])
         <div class="cl-track-item">
           <div class="cl-track-icon"><i class="fas {{ $icon }}"></i></div>
@@ -325,31 +283,31 @@
 <div class="cl-panel mt-4">
   <div class="cl-panel__head">
     <div class="cl-panel__title">
-      <span class="cl-panel__dot"></span> Tableau d'amortissement
+      <span class="cl-panel__dot"></span> {{ __('app.amortization') }}
     </div>
     <span style="font-size:.72rem;color:var(--cl-muted)">
-      {{ count($loan->amortization_schedule) }} échéances · {{ $loan->darly }} mois
+      {{ __('app.installments_count', ['count' => count($loan->amortization_schedule), 'months' => $loan->darly]) }}
     </span>
   </div>
   <div class="cl-amort-wrap">
     <table class="cl-table">
       <thead>
         <tr>
-          <th>N°</th>
-          <th>Mensualité</th>
-          <th>Capital remboursé</th>
-          <th>Intérêts payés</th>
-          <th>Capital restant</th>
+          <th>{{ __('app.amort_num') }}</th>
+          <th>{{ __('app.monthly') }}</th>
+          <th>{{ __('app.principal_paid') }}</th>
+          <th>{{ __('app.interest_paid') }}</th>
+          <th>{{ __('app.remaining_capital') }}</th>
         </tr>
       </thead>
       <tbody>
         @foreach($loan->amortization_schedule as $row)
         <tr>
-          <td data-label="N°" class="td-muted">{{ $row['month'] }}</td>
-          <td data-label="Mensualité" class="td-bold">{{ number_format($row['payment'], 2, ',', ' ') }} {{ $loan->currency }}</td>
-          <td data-label="Capital remb." class="td-green">{{ number_format($row['principal'], 2, ',', ' ') }} {{ $loan->currency }}</td>
-          <td data-label="Intérêts" class="td-red">{{ number_format($row['interest'], 2, ',', ' ') }} {{ $loan->currency }}</td>
-          <td data-label="Solde restant" class="td-muted">{{ number_format($row['balance'], 2, ',', ' ') }} {{ $loan->currency }}</td>
+          <td data-label="{{ __('app.amort_num') }}" class="td-muted">{{ $row['month'] }}</td>
+          <td data-label="{{ __('app.monthly') }}" class="td-bold">{{ number_format($row['payment'], 2, ',', ' ') }} {{ $loan->currency }}</td>
+          <td data-label="{{ __('app.principal_paid') }}" class="td-green">{{ number_format($row['principal'], 2, ',', ' ') }} {{ $loan->currency }}</td>
+          <td data-label="{{ __('app.interest_paid') }}" class="td-red">{{ number_format($row['interest'], 2, ',', ' ') }} {{ $loan->currency }}</td>
+          <td data-label="{{ __('app.remaining_capital') }}" class="td-muted">{{ number_format($row['balance'], 2, ',', ' ') }} {{ $loan->currency }}</td>
         </tr>
         @endforeach
       </tbody>

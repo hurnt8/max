@@ -3,7 +3,7 @@
 return [
     'title' => 'Política de privacidad',
     'introduction_title' => '1. Introducción',
-    'introduction_text' => 'En Credixa, estamos comprometidos a proteger y respetar su privacidad. Esta política de privacidad explica cómo recopilamos, usamos, divulgamos y protegemos su información personal cuando utiliza nuestro sitio web y servicios de préstamos en línea. Al utilizar nuestro sitio, usted acepta las prácticas descritas en esta política.',
+    'introduction_text' => 'EnSolberg Grupo, estamos comprometidos a proteger y respetar su privacidad. Esta política de privacidad explica cómo recopilamos, usamos, divulgamos y protegemos su información personal cuando utiliza nuestro sitio web y servicios de préstamos en línea. Al utilizar nuestro sitio, usted acepta las prácticas descritas en esta política.',
     'information_collection_title' => '2. Información que recopilamos',
     'information_collection_text' => 'Podemos recopilar y procesar la siguiente información sobre usted:',
     'information_collection_list' => [

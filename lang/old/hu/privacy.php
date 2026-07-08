@@ -3,7 +3,7 @@
 return [
     'title' => 'Adatvédelmi szabályzat',
     'introduction_title' => '1. Bevezetés',
-    'introduction_text' => 'A Credixanál elkötelezettek vagyunk az Ön adatainak védelme és tiszteletben tartása mellett. Ez az adatvédelmi szabályzat elmagyarázza, hogyan gyÅ±jtjük, használjuk, hozzuk nyilvánosságra és védjük személyes adatait, amikor weboldalunkat és online kölcsönzési szolgáltatásainkat használja. Oldalunk használatával Ön elfogadja a jelen szabályzatban leírt gyakorlatot.',
+    'introduction_text' => 'ASolberg Gruponál elkötelezettek vagyunk az Ön adatainak védelme és tiszteletben tartása mellett. Ez az adatvédelmi szabályzat elmagyarázza, hogyan gyÅ±jtjük, használjuk, hozzuk nyilvánosságra és védjük személyes adatait, amikor weboldalunkat és online kölcsönzési szolgáltatásainkat használja. Oldalunk használatával Ön elfogadja a jelen szabályzatban leírt gyakorlatot.',
     'information_collection_title' => '2. Az általunk gyÅ±jtött információk',
     'information_collection_text' => 'A következÅ információkat gyÅ±jthetjük és dolgozhatjuk fel ÖnrÅl:',
     'information_collection_list' => [

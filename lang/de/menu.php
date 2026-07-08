@@ -21,13 +21,13 @@ return [
 
 
     'faq'              => 'FAQ',
-    'terms'            => 'Terms of Use',
-    'privacy'          => 'Privacy Policy',
-    'quick_links'      => 'Quick Links',
-    'rights_reserved'  => 'All rights reserved.',
-    'email_placeholder'=> 'Your email address',
-    'newsletter_title' => 'Stay informed about our offers',
-    'subscribe'        => 'Subscribe',
-    'read_more'        => 'Learn more',
-    'footer_desc'      => 'Credixa is your trusted partner for fast, flexible and personalized financing solutions across Europe.',
+    'terms'            => 'Nutzungsbedingungen',
+    'privacy'          => 'Datenschutzerklärung',
+    'quick_links'      => 'Schnellzugriff',
+    'rights_reserved'  => 'Alle Rechte vorbehalten.',
+    'email_placeholder'=> 'Ihre E-Mail-Adresse',
+    'newsletter_title' => 'Bleiben Sie über unsere Angebote informiert',
+    'subscribe'        => 'Abonnieren',
+    'read_more'        => 'Mehr erfahren',
+    'footer_desc'      => 'Solberg Grupo ist Ihr vertrauenswürdiger Partner für schnelle, flexible und individuelle Finanzierungslösungen in ganz Europa.',
 ];

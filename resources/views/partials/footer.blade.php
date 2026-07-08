@@ -7,7 +7,7 @@
             {{-- ── Colonne marque (toujours visible) ── --}}
             <div class="col-lg-4 col-md-6">
                 <a href="{{ route('home', ['locale' => $locale]) }}" class="d-inline-block mb-4">
-                    <img src="{{ asset('assets/images/logo new.png') }}" alt="Credixa" class="footer-logo">
+                    <img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="Solberg Grupo" class="footer-logo">
                 </a>
                 <p class="footer-desc">@lang('menu.footer_desc')</p>
                 <div class="footer-social">
@@ -91,7 +91,7 @@
 
         {{-- ── Barre du bas ── --}}
         <div class="footer-bottom">
-            <p>&copy; {{ date('Y') }} <a href="{{ route('home', ['locale' => $locale]) }}">Credixa</a>. @lang('menu.rights_reserved')</p>
+            <p>&copy; {{ date('Y') }} <a href="{{ route('home', ['locale' => $locale]) }}">Solberg Grupo</a>. @lang('menu.rights_reserved')</p>
             <p>
                 <a href="{{ route('terms',   ['locale' => $locale]) }}">@lang('menu.terms')</a>
                 <span style="color:rgba(255,255,255,.2);margin:0 .5rem">·</span>

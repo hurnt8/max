@@ -185,7 +185,7 @@ document.addEventListener('alpine:init', () => {
                     <div class="d-flex align-items-start justify-content-between flex-wrap gap-2 mb-4">
                         <div>
                             <div class="section-label mb-1">@lang('loan.quote_step_label')</div>
-                            <h3 style="font-family:'Playfair Display',serif;color:var(--navy);font-size:1.25rem;font-weight:700;margin:0 0 .15rem;">
+                            <h3 style="font-family:'Montserrat',serif;color:var(--navy);font-size:1.25rem;font-weight:700;margin:0 0 .15rem;">
                                 @lang('loan.quote_step_title')
                             </h3>
                             <p style="font-size:.78rem;color:#6b7280;margin:0;">@lang('loan.quote_step_desc')</p>

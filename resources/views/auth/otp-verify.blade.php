@@ -6,36 +6,41 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Credixa">
-<meta name="theme-color" content="#080C18">
+<meta name="apple-mobile-web-app-title" content="Solberg Grupo">
+<meta name="theme-color" content="#F7F8F9">
 <link rel="manifest" href="{{ route('pwa.manifest') }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
-<title>{{ __('auth.otp_title') }} — Credixa</title>
+<title>{{ __('auth.otp_title') }} —Solberg Grupo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <style>
 :root{
-  --bg:   #080C18;
-  --bg2:  #0C1120;
-  --card: #0E1626;
-  --inp:  #141C2E;
-  --cyan: #0DCFDC;
-  --cyan2:#09B5C8;
-  --text: #FFFFFF;
-  --sub:  rgba(255,255,255,.52);
-  --muted:rgba(255,255,255,.28);
-  --bdr:  rgba(255,255,255,.09);
+  --bg:   #F7F8F9;
+  --bg2:  #FFFFFF;
+  --card: #FFFFFF;
+  --inp:  #F7F8F9;
+  --navy: #04203D;
+  --navy2:#0A3559;
+  --gold: #B8883E;
+  --gold2:#96702F;
+  --text: #04203D;
+  --sub:  #4A5D73;
+  --muted:#95A3B1;
+  --bdr:  #DBDDDE;
+  /* Compat: le reste de la feuille référence encore --cyan/--cyan2 pour ses accents ponctuels */
+  --cyan: #B8883E;
+  --cyan2:#96702F;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
   height:100%;background:var(--bg);color:var(--text);
-  font-family:'Inter',system-ui,sans-serif;font-size:15px;
+  font-family:'Montserrat',system-ui,sans-serif;font-size:15px;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
   /* Empêche le resize du viewport quand le clavier natif s'ouvre */
   overflow:hidden;
@@ -50,30 +55,30 @@ html,body{
 #ld.on{opacity:1;pointer-events:all}
 .ld-bar{
   position:absolute;top:0;left:0;width:0;height:3px;
-  background:linear-gradient(90deg,var(--cyan),var(--cyan2),var(--cyan));
+  background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));
   background-size:200% 100%;border-radius:0 3px 3px 0;
 }
 #ld.on .ld-bar{animation:ldbar 1.8s cubic-bezier(.4,0,.2,1) forwards}
 @keyframes ldbar{0%{width:0}40%{width:60%}100%{width:92%}}
 .ld-logo{
   width:80px;height:80px;border-radius:24px;
-  background:linear-gradient(135deg,var(--cyan),var(--cyan2));
+  background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   margin-bottom:1.5rem;position:relative;
-  box-shadow:0 0 40px rgba(13,207,220,.35);
+  box-shadow:0 0 40px rgba(4,32,61,.25);
   overflow:hidden;
 }
 .ld-logo img{width:56px;height:56px;object-fit:contain;border-radius:10px}
 .ld-ring{
   position:absolute;inset:-8px;border-radius:32px;
-  border:2px solid rgba(13,207,220,.2);border-top-color:var(--cyan);
+  border:2px solid rgba(4,32,61,.15);border-top-color:var(--gold);
   animation:spin .9s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
 .ld-lbl{font-size:.8rem;font-weight:600;color:var(--sub);letter-spacing:.06em;margin-bottom:.875rem}
 .ld-dots{display:flex;gap:.4rem}
 .ld-dot{
-  width:6px;height:6px;border-radius:50%;background:var(--cyan);
+  width:6px;height:6px;border-radius:50%;background:var(--gold);
   animation:ldp 1.2s ease-in-out infinite;
 }
 .ld-dot:nth-child(2){animation-delay:.18s}
@@ -85,12 +90,12 @@ html,body{
 .orb{position:absolute;border-radius:50%;filter:blur(90px)}
 .orb-1{
   width:480px;height:480px;top:-10%;right:-8%;
-  background:radial-gradient(circle,rgba(13,207,220,.1) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(184,136,62,.09) 0%,transparent 65%);
   animation:orbf 10s ease-in-out infinite alternate;
 }
 .orb-2{
   width:360px;height:360px;bottom:-15%;left:-8%;
-  background:radial-gradient(circle,rgba(13,207,220,.06) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(4,32,61,.05) 0%,transparent 65%);
   animation:orbf 14s ease-in-out infinite alternate-reverse;
 }
 @keyframes orbf{from{transform:scale(1)}to{transform:scale(1.1) translate(2%,3%)}}
@@ -113,13 +118,13 @@ html,body{
 .topbar__back{
   display:inline-flex;align-items:center;gap:.45rem;
   font-size:.78rem;font-weight:500;color:var(--sub);
-  background:rgba(255,255,255,.05);border:1.5px solid var(--bdr);
+  background:var(--inp);border:1.5px solid var(--bdr);
   border-radius:999px;padding:.4rem .85rem;
   text-decoration:none;
   transition:color .18s,background .18s;
   -webkit-tap-highlight-color:transparent;
 }
-.topbar__back:hover{color:var(--text);background:rgba(255,255,255,.09)}
+.topbar__back:hover{color:var(--navy);background:#F3E8D6}
 .topbar__back i{font-size:.65rem}
 .topbar__logo img{height:26px;object-fit:contain}
 
@@ -139,17 +144,17 @@ html,body{
 /* Shield icon */
 .otp-icon{
   width:76px;height:76px;border-radius:22px;
-  background:linear-gradient(135deg,rgba(13,207,220,.18),rgba(9,181,200,.18));
-  border:1.5px solid rgba(13,207,220,.25);
+  background:linear-gradient(135deg,rgba(184,136,62,.16),rgba(150,112,47,.16));
+  border:1.5px solid rgba(184,136,62,.3);
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.25rem;
   position:relative;
 }
-.otp-icon i{font-size:2rem;color:var(--cyan)}
+.otp-icon i{font-size:2rem;color:var(--gold2)}
 .otp-icon::after{
   content:'';
   position:absolute;inset:-6px;border-radius:28px;
-  border:1px solid rgba(13,207,220,.12);
+  border:1px solid rgba(184,136,62,.15);
   animation:pulse-ring 2.5s ease-in-out infinite;
 }
 @keyframes pulse-ring{
@@ -158,7 +163,7 @@ html,body{
 }
 
 .card-title{
-  font-family:'Space Grotesk',sans-serif;
+  font-family:'Montserrat',sans-serif;
   font-size:1.55rem;font-weight:800;color:var(--text);margin-bottom:.35rem;
 }
 .card-sub{font-size:.82rem;color:var(--sub);line-height:1.6;margin-bottom:1.5rem}
@@ -167,9 +172,9 @@ html,body{
 /* ── Error ── */
 .oerr{
   display:flex;align-items:flex-start;gap:.55rem;
-  background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);
+  background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);
   border-left:3px solid #ef4444;border-radius:10px;
-  padding:.65rem .875rem;font-size:.79rem;color:#FCA5A5;
+  padding:.65rem .875rem;font-size:.79rem;color:#991B1B;
   margin-bottom:1rem;text-align:left;
 }
 .oerr i{margin-top:.1rem;flex-shrink:0}
@@ -182,27 +187,27 @@ html,body{
 .odigit{
   width:52px;height:52px;border-radius:14px;
   background:var(--inp);
-  border:2px solid rgba(255,255,255,.1);
+  border:2px solid var(--bdr);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:800;
+  font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;
   color:var(--text);
   transition:border-color .2s,background .2s,box-shadow .2s;
   flex-shrink:0;position:relative;
 }
 .odigit.filled{
-  border-color:var(--cyan);
-  background:rgba(13,207,220,.12);
-  color:var(--cyan);
+  border-color:var(--navy);
+  background:rgba(4,32,61,.05);
+  color:var(--navy);
 }
 .odigit.active{
-  border-color:var(--cyan);
-  background:rgba(13,207,220,.08);
-  box-shadow:0 0 0 4px rgba(13,207,220,.18),0 0 20px rgba(13,207,220,.18);
+  border-color:var(--navy);
+  background:#fff;
+  box-shadow:0 0 0 4px rgba(4,32,61,.1),0 0 16px rgba(4,32,61,.08);
 }
 .odigit.active::after{
   content:'';position:absolute;
   width:2px;height:60%;border-radius:2px;
-  background:var(--cyan);
+  background:var(--navy);
   animation:blink .8s step-end infinite;
 }
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
@@ -216,8 +221,8 @@ html,body{
 }
 .odigit.err{
   border-color:#ef4444;
-  background:rgba(239,68,68,.14);
-  color:#f87171;
+  background:rgba(239,68,68,.1);
+  color:#dc2626;
 }
 @media(max-width:360px){
   .odigit{width:44px;height:44px;font-size:1.25rem;border-radius:12px}
@@ -228,21 +233,21 @@ html,body{
 .obtn{
   width:100%;max-width:400px;
   padding:.88rem 1.5rem;border:none;border-radius:999px;
-  font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;
+  font-size:.97rem;font-weight:700;font-family:'Montserrat',sans-serif;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.625rem;
-  background:linear-gradient(90deg,var(--cyan) 0%,var(--cyan2) 100%);
-  color:#080C18;letter-spacing:.01em;
-  box-shadow:0 6px 28px rgba(13,207,220,.35),0 2px 8px rgba(0,0,0,.3);
+  background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 100%);
+  color:#fff;letter-spacing:.01em;
+  box-shadow:0 6px 28px rgba(4,32,61,.28),0 2px 8px rgba(4,32,61,.15);
   transition:filter .2s,box-shadow .2s,transform .1s;
   margin-bottom:.5rem;
 }
-.obtn:hover{filter:brightness(1.08)}
+.obtn:hover{filter:brightness(1.2)}
 .obtn:active{transform:scale(.975)}
 .obtn:disabled{opacity:.45;cursor:not-allowed;filter:none}
 
 .btn-spinner{
   display:inline-block;width:18px;height:18px;border-radius:50%;
-  border:2.5px solid rgba(8,12,24,.3);border-top-color:#080C18;
+  border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;
   animation:spin .65s linear infinite;
 }
 
@@ -253,7 +258,7 @@ html,body{
   display:flex;align-items:center;justify-content:center;gap:.35rem;
   flex-wrap:wrap;
 }
-.resend-timer strong{color:var(--cyan);font-weight:700;font-family:'Space Grotesk',sans-serif}
+.resend-timer strong{color:var(--cyan);font-weight:700;font-family:'Montserrat',sans-serif}
 .resend-btn{
   background:none;border:none;cursor:pointer;padding:0;
   font-size:.79rem;font-weight:700;color:var(--cyan);
@@ -265,7 +270,7 @@ html,body{
   display:block;font-size:.74rem;font-weight:600;margin-top:.2rem;
   text-align:center;
 }
-.resend-msg.ok{color:#4ade80}.resend-msg.fail{color:#f87171}
+.resend-msg.ok{color:#059669}.resend-msg.fail{color:#dc2626}
 
 /* ── Numeric keypad (fixé en bas, hors du flux flex) ── */
 .keypad-zone{
@@ -283,8 +288,8 @@ html,body{
 }
 .kbtn{
   height:68px;border-radius:18px;
-  background:rgba(255,255,255,.05);
-  border:1.5px solid rgba(255,255,255,.07);
+  background:var(--inp);
+  border:1.5px solid var(--bdr);
   color:var(--text);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   cursor:pointer;gap:.1rem;
@@ -294,24 +299,24 @@ html,body{
 }
 .kbtn:active,.kbtn.pressed{
   transform:scale(.92);
-  background:rgba(13,207,220,.15);
-  border-color:rgba(13,207,220,.35);
-  box-shadow:0 0 14px rgba(13,207,220,.2);
+  background:rgba(4,32,61,.08);
+  border-color:rgba(4,32,61,.25);
+  box-shadow:0 0 14px rgba(4,32,61,.12);
 }
 .kbtn:disabled{opacity:.3;cursor:not-allowed}
 .knum{
-  font-family:'Space Grotesk',sans-serif;
+  font-family:'Montserrat',sans-serif;
   font-size:1.375rem;font-weight:700;line-height:1;
 }
 .ksub{
   font-size:.4rem;font-weight:600;letter-spacing:.12em;
-  color:var(--muted);font-family:'Inter',sans-serif;
+  color:var(--muted);font-family:'Montserrat',sans-serif;
   text-transform:uppercase;
 }
-.kbtn-del{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.05)}
-.kbtn-del i{font-size:1.15rem;color:rgba(255,255,255,.5)}
+.kbtn-del{background:#F1F2F3;border-color:var(--bdr)}
+.kbtn-del i{font-size:1.15rem;color:var(--muted)}
 .kbtn-del:active,.kbtn-del.pressed{
-  background:rgba(255,100,100,.1);border-color:rgba(255,100,100,.25);
+  background:rgba(220,38,38,.1);border-color:rgba(220,38,38,.25);
 }
 .kbtn-empty{pointer-events:none;background:none;border:none}
 
@@ -359,8 +364,8 @@ html,body{
       <i class="fas fa-chevron-left"></i> {{ __('auth.otp_back') }}
     </a>
     <a href="{{ url('/') }}" class="topbar__logo">
-      <img src="{{ asset('assets/images/logo%20new.png') }}"
-           onerror="this.style.display='none'" alt="Credixa">
+      <img src="{{ asset('assets/images/logo-transparent-icon.png') }}"
+           onerror="this.style.display='none'" alt="Solberg Grupo">
     </a>
   </div>
 

@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.notifications_title') . ' — Credixa')
+@section('title', __('app.notifications_title') . ' —Solberg Grupo')
 @section('page_title', __('app.notifications_title'))
 @section('back_btn', true)
 @section('back_url', route('client.app.home'))

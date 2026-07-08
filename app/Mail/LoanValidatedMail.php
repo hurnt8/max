@@ -30,10 +30,17 @@ class LoanValidatedMail extends Mailable
     public function envelope(): Envelope
     {
         $subjects = [
-            'fr' => 'Validation de votre demande N°' . $this->loan->reference . ' — CREDIXA INVESTI',
-            'pl' => 'Zatwierdzenie wniosku nr ' . $this->loan->reference . ' — CREDIXA INVESTI',
-            'en' => 'Approval of your application N°' . $this->loan->reference . ' — CREDIXA INVESTI',
-            'es' => 'Validación de su solicitud N°' . $this->loan->reference . ' — CREDIXA INVESTI',
+            'fr' => 'Validation de votre demande N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'pl' => 'Zatwierdzenie wniosku nr ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'en' => 'Approval of your application N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'es' => 'Validación de su solicitud N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'bg' => 'Одобрение на вашата заявка №' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'hu' => 'Kérelme jóváhagyása sz. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'it' => 'Convalida della tua richiesta N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'de' => 'Genehmigung Ihres Antrags Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'lt' => 'Jūsų paraiškos Nr. ' . $this->loan->reference . ' patvirtinimas — SOLBERG GRUPO',
+            'ro' => 'Validarea cererii dumneavoastră nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'lv' => 'Jūsu pieteikuma Nr. ' . $this->loan->reference . ' apstiprinājums — SOLBERG GRUPO',
         ];
 
         return new Envelope(subject: $subjects[$this->mailLocale] ?? $subjects['fr']);

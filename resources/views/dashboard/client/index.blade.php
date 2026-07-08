@@ -1,20 +1,6 @@
 @extends('layouts.dashboard')
-@section('title', 'Mon espace — Credixa')
-@section('page_title', 'Mon espace')
-
-@push('styles')
-<style>
-  body { background: #0D1F35 !important; }
-  .main-wrap { background: #0D1F35; }
-  .content-area { background: transparent; }
-  .topbar { background: #112237 !important; border-bottom-color: rgba(200,169,81,.14) !important; }
-  .topbar-title { color: #E8EDF5 !important; }
-  .topbar-badge { background: #162D47 !important; border-color: rgba(255,255,255,.1) !important; color: #B8C8D8 !important; }
-  .topbar-avatar { background: linear-gradient(135deg,#1D3A5C,#0B2E4E) !important; color: #C8A951 !important; }
-  .flash-ok  { background: rgba(16,185,129,.1); color: #6EE7B7; border-color: rgba(16,185,129,.25); }
-  .flash-err { background: rgba(239,68,68,.1); color: #FCA5A5; border-color: rgba(239,68,68,.2); }
-</style>
-@endpush
+@section('title', __('app.title'))
+@section('page_title', __('app.title'))
 
 @section('content')
 <div class="cl-scope">
@@ -22,30 +8,30 @@
 {{-- ── Hero balance ──────────────────────────────────────────── --}}
 <div class="cl-hero">
   <div class="cl-hero__badge">
-    <i class="fas fa-shield-check"></i> Espace sécurisé
+    <i class="fas fa-shield-check"></i> {{ __('app.secure_space') }}
   </div>
 
   <div class="d-flex align-items-start justify-content-between flex-wrap gap-4">
     <div>
-      <div class="cl-hero__label">Bonjour, {{ Auth::user()->name }}</div>
+      <div class="cl-hero__label">{{ __('app.greeting') }}, {{ Auth::user()->name }}</div>
       <div class="cl-hero__amount">
         {{ number_format((float) Auth::user()->balance, 2, ',', ' ') }}
         <span class="cl-hero__currency">{{ Auth::user()->currency ?? config('credixa.default_currency') }}</span>
       </div>
       <div class="cl-hero__sub">
         <i class="fas fa-wallet me-1" style="color:var(--cl-gold)"></i>
-        Solde disponible sur votre compte
+        {{ __('app.balance') }}
       </div>
     </div>
 
     <div class="d-flex flex-column gap-2 text-end">
-      <div style="font-size:.68rem;color:var(--cl-muted);text-transform:uppercase;letter-spacing:.07em">Dossiers actifs</div>
-      <div style="font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--cl-gold);line-height:1">
+      <div style="font-size:.68rem;color:var(--cl-muted);text-transform:uppercase;letter-spacing:.07em">{{ __('app.active_files') }}</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:700;color:var(--cl-gold);line-height:1">
         {{ $stats['active'] + $stats['finalized'] }}
       </div>
       <div>
         <span class="cl-badge cl-badge--finalized">
-          {{ $stats['finalized'] }} finalisé{{ $stats['finalized'] > 1 ? 's' : '' }}
+          {{ $stats['finalized'] }} {{ __('app.status_finalized') }}
         </span>
       </div>
     </div>
@@ -54,31 +40,31 @@
 
 {{-- ── Stats ────────────────────────────────────────────────── --}}
 <div class="cl-stats">
-  <div class="cl-stat" style="--stat-color:var(--cl-gold);--stat-color-bg:rgba(200,169,81,.12)">
+  <div class="cl-stat" style="--stat-color:var(--cl-gold);--stat-color-bg:rgba(184,136,62,.12)">
     <div class="cl-stat__icon"><i class="fas fa-layer-group"></i></div>
     <div class="cl-stat__val">{{ $stats['total'] }}</div>
-    <div class="cl-stat__lbl">Total dossiers</div>
+    <div class="cl-stat__lbl">{{ __('app.total_files') }}</div>
   </div>
   <div class="cl-stat" style="--stat-color:var(--cl-amber);--stat-color-bg:rgba(245,158,11,.12)">
     <div class="cl-stat__icon"><i class="fas fa-hourglass-half"></i></div>
     <div class="cl-stat__val">{{ $stats['pending'] }}</div>
-    <div class="cl-stat__lbl">En cours d'analyse</div>
+    <div class="cl-stat__lbl">{{ __('app.stat_pending') }}</div>
   </div>
   <div class="cl-stat" style="--stat-color:var(--cl-blue);--stat-color-bg:rgba(59,130,246,.12)">
     <div class="cl-stat__icon"><i class="fas fa-file-contract"></i></div>
     <div class="cl-stat__val">{{ $stats['active'] }}</div>
-    <div class="cl-stat__lbl">Contrats actifs</div>
+    <div class="cl-stat__lbl">{{ __('app.active_files') }}</div>
   </div>
   <div class="cl-stat" style="--stat-color:var(--cl-green);--stat-color-bg:rgba(16,185,129,.12)">
     <div class="cl-stat__icon"><i class="fas fa-check-circle"></i></div>
     <div class="cl-stat__val">{{ $stats['finalized'] }}</div>
-    <div class="cl-stat__lbl">Finalisés</div>
+    <div class="cl-stat__lbl">{{ __('app.stat_finalized') }}</div>
   </div>
 </div>
 
 {{-- ── Recent loans ─────────────────────────────────────────── --}}
 @if($loans->isNotEmpty())
-<div class="cl-section-title"><i class="fas fa-history me-1" style="color:var(--cl-gold)"></i> Derniers dossiers</div>
+<div class="cl-section-title"><i class="fas fa-history me-1" style="color:var(--cl-gold)"></i> {{ __('app.recent_files') }}</div>
 
 <div class="row g-3 mb-4">
   @foreach($loans->take(6) as $loan)
@@ -114,7 +100,7 @@
       </div>
 
       <div class="cl-loan-card__body">
-        <div class="cl-loan-card__amount-label">Montant accordé</div>
+        <div class="cl-loan-card__amount-label">{{ __('app.loan_amount') }}</div>
         <div class="cl-loan-card__amount">
           {{ number_format($loan->amount, 0, ',', ' ') }}
           <span>{{ $loan->currency }}</span>
@@ -122,21 +108,21 @@
 
         <div class="cl-loan-card__grid">
           <div>
-            <div class="cl-loan-card__metric-label">Mensualité</div>
+            <div class="cl-loan-card__metric-label">{{ __('app.monthly') }}</div>
             <div class="cl-loan-card__metric-val accent">
               {{ number_format($loan->monthly_payment, 2, ',', ' ') }} {{ $loan->currency }}
             </div>
           </div>
           <div>
-            <div class="cl-loan-card__metric-label">Durée</div>
-            <div class="cl-loan-card__metric-val">{{ $loan->darly }} mois</div>
+            <div class="cl-loan-card__metric-label">{{ __('app.duration') }}</div>
+            <div class="cl-loan-card__metric-val">{{ $loan->darly }} {{ __('app.months') }}</div>
           </div>
           <div>
-            <div class="cl-loan-card__metric-label">Taux</div>
+            <div class="cl-loan-card__metric-label">{{ __('app.rate') }}</div>
             <div class="cl-loan-card__metric-val">{{ $loan->interest_rate }} %</div>
           </div>
           <div>
-            <div class="cl-loan-card__metric-label">Ouverture</div>
+            <div class="cl-loan-card__metric-label">{{ __('app.date_opened') }}</div>
             <div class="cl-loan-card__metric-val">{{ $loan->created_at->format('d/m/Y') }}</div>
           </div>
         </div>
@@ -144,7 +130,7 @@
         @if($loan->status !== 'rejected')
         <div class="cl-progress">
           <div class="cl-progress__header">
-            <span class="cl-progress__label">Avancement</span>
+            <span class="cl-progress__label">{{ __('app.progress') }}</span>
             <span class="cl-progress__pct">{{ $pct }}%</span>
           </div>
           <div class="cl-progress__bar">
@@ -156,7 +142,7 @@
 
       <div class="cl-loan-card__foot">
         <a href="{{ route('client.loans.show', $loan) }}" class="cl-btn cl-btn--primary" style="width:100%">
-          <i class="fas fa-eye"></i> Voir le dossier
+          <i class="fas fa-eye"></i> {{ __('app.view_file') }}
         </a>
       </div>
     </div>
@@ -167,7 +153,7 @@
 @if($loans->count() > 6)
 <div class="text-center mt-2 mb-4">
   <a href="{{ route('client.loans') }}" class="cl-btn cl-btn--ghost">
-    <i class="fas fa-list me-1"></i> Voir tous les dossiers ({{ $loans->count() }})
+    <i class="fas fa-list me-1"></i> {{ __('app.view_all_files') }} ({{ $loans->count() }})
   </a>
 </div>
 @endif
@@ -175,13 +161,12 @@
 @else
 <div class="cl-empty">
   <div class="cl-empty__icon"><i class="fas fa-file-invoice-dollar"></i></div>
-  <div class="cl-empty__title">Aucun dossier en cours</div>
+  <div class="cl-empty__title">{{ __('app.no_loans_title') }}</div>
   <div class="cl-empty__body">
-    Vous n'avez pas encore de demande de financement.
-    Contactez votre conseiller Credixa pour en initier une.
+    {{ __('app.no_loans_body') }}
   </div>
   <a href="{{ route('home',['locale'=>app()->getLocale()]) }}" class="cl-btn cl-btn--gold">
-    <i class="fas fa-globe me-1"></i> Retour au site
+    <i class="fas fa-globe me-1"></i> {{ __('app.back_to_site') }}
   </a>
 </div>
 @endif

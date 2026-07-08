@@ -6,38 +6,43 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Credixa">
-<meta name="theme-color" content="#0A1628">
+<meta name="apple-mobile-web-app-title" content="Solberg Grupo">
+<meta name="theme-color" content="#F7F8F9">
 <link rel="manifest" href="{{ route('pwa.manifest') }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/images/icon-512.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
 <link rel="shortcut icon" href="/images/icon-192.png" type="image/png">
-<title>{{ __('auth.client_login_title') }} — Credixa</title>
+<title>{{ __('auth.client_login_title') }} — Solberg Grupo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <style>
 :root{
-  --bg:   #080C18;
-  --bg2:  #0C1120;
-  --card: #0E1626;
-  --inp:  #141C2E;
-  --cyan: #0DCFDC;
-  --cyan2:#09B5C8;
-  --text: #FFFFFF;
-  --sub:  rgba(255,255,255,.52);
-  --muted:rgba(255,255,255,.28);
-  --bdr:  rgba(255,255,255,.09);
+  --bg:   #F7F8F9;
+  --bg2:  #FFFFFF;
+  --card: #FFFFFF;
+  --inp:  #F7F8F9;
+  --navy: #04203D;
+  --navy2:#0A3559;
+  --gold: #B8883E;
+  --gold2:#96702F;
+  --text: #04203D;
+  --sub:  #4A5D73;
+  --muted:#95A3B1;
+  --bdr:  #DBDDDE;
+  /* Compat: le reste de la feuille référence encore --cyan/--cyan2 pour ses accents ponctuels */
+  --cyan: #B8883E;
+  --cyan2:#96702F;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
   height:100%;background:var(--bg);color:var(--text);
-  font-family:'Inter',system-ui,sans-serif;font-size:15px;
+  font-family:'Montserrat',system-ui,sans-serif;font-size:15px;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
 }
 body{min-height:100vh;overflow-x:hidden}
@@ -52,7 +57,7 @@ a{text-decoration:none;color:inherit}
 #ld.on{opacity:1;pointer-events:all}
 .ld-bar{
   position:absolute;top:0;left:0;width:0;height:3px;
-  background:linear-gradient(90deg,var(--cyan),var(--cyan2),var(--cyan));
+  background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));
   background-size:200% 100%;border-radius:0 3px 3px 0;
 }
 #ld.on .ld-bar{animation:ldbar 1.8s cubic-bezier(.4,0,.2,1) forwards}
@@ -63,25 +68,25 @@ a{text-decoration:none;color:inherit}
 }
 .ld-logo{
   width:76px;height:76px;border-radius:22px;
-  background:linear-gradient(135deg,var(--cyan),var(--cyan2));
+  background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   margin-bottom:1.5rem;position:relative;
-  box-shadow:0 0 40px rgba(13,207,220,.35);
+  box-shadow:0 0 40px rgba(4,32,61,.25);
 }
 .ld-logo span{
-  font-family:'Space Grotesk',sans-serif;font-size:2rem;
-  font-weight:800;color:#080C18;
+  font-family:'Montserrat',sans-serif;font-size:2rem;
+  font-weight:800;color:#fff;
 }
 .ld-ring{
   position:absolute;inset:-8px;border-radius:30px;
-  border:2px solid rgba(13,207,220,.2);border-top-color:var(--cyan);
+  border:2px solid rgba(4,32,61,.15);border-top-color:var(--gold);
   animation:spin .9s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
 .ld-lbl{font-size:.8rem;font-weight:600;color:var(--sub);letter-spacing:.06em}
 .ld-dots{display:flex;gap:.4rem;margin-top:.875rem}
 .ld-dot{
-  width:6px;height:6px;border-radius:50%;background:var(--cyan);
+  width:6px;height:6px;border-radius:50%;background:var(--gold);
   animation:ldp 1.2s ease-in-out infinite;
 }
 .ld-dot:nth-child(2){animation-delay:.18s}
@@ -93,12 +98,12 @@ a{text-decoration:none;color:inherit}
 .orb{position:absolute;border-radius:50%;filter:blur(90px)}
 .orb-1{
   width:480px;height:480px;top:-10%;right:-8%;
-  background:radial-gradient(circle,rgba(13,207,220,.1) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(184,136,62,.09) 0%,transparent 65%);
   animation:orbf 10s ease-in-out infinite alternate;
 }
 .orb-2{
   width:360px;height:360px;bottom:-15%;left:-8%;
-  background:radial-gradient(circle,rgba(13,207,220,.06) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(4,32,61,.05) 0%,transparent 65%);
   animation:orbf 14s ease-in-out infinite alternate-reverse;
 }
 @keyframes orbf{from{transform:scale(1)}to{transform:scale(1.1) translate(2%,3%)}}
@@ -114,36 +119,36 @@ a{text-decoration:none;color:inherit}
   display:inline-flex;align-items:center;gap:.45rem;
   font-size:.78rem;font-weight:500;color:var(--sub);transition:color .18s;
 }
-.topbar__back:hover{color:var(--text)}
+.topbar__back:hover{color:var(--navy)}
 .topbar__back i{font-size:.65rem}
 
 /* Language dropdown */
 .ls{position:relative}
 .ls__btn{
   display:flex;align-items:center;gap:.45rem;cursor:pointer;
-  background:rgba(255,255,255,.06);border:1.5px solid var(--bdr);
+  background:var(--inp);border:1.5px solid var(--bdr);
   border-radius:8px;padding:.35rem .7rem;
-  font-size:.76rem;font-weight:600;color:var(--text);
+  font-size:.76rem;font-weight:600;color:var(--navy);
   transition:border-color .18s,background .18s;
 }
-.ls__btn:hover{border-color:rgba(13,207,220,.4);background:rgba(13,207,220,.06)}
+.ls__btn:hover{border-color:var(--gold);background:#F3E8D6}
 .ls__btn img{width:18px;height:12px;object-fit:cover;border-radius:2px}
 .ls__chevron{font-size:.48rem;transition:transform .2s;color:var(--muted)}
 .ls__menu{
   position:absolute;right:0;top:calc(100% + .5rem);
-  background:#0E1626;border:1.5px solid var(--bdr);
-  border-radius:12px;box-shadow:0 16px 48px rgba(0,0,0,.55);
+  background:#fff;border:1.5px solid var(--bdr);
+  border-radius:12px;box-shadow:0 16px 48px rgba(4,32,61,.14);
   padding:.35rem;min-width:148px;z-index:1000;
 }
 .ls__opt{
   display:flex;align-items:center;gap:.5rem;
   padding:.45rem .7rem;border-radius:8px;
-  font-size:.78rem;font-weight:600;color:rgba(255,255,255,.65);
+  font-size:.78rem;font-weight:600;color:var(--sub);
   transition:all .15s;
 }
-.ls__opt:hover{background:rgba(255,255,255,.06);color:#fff}
+.ls__opt:hover{background:var(--inp);color:var(--navy)}
 .ls__opt img{width:18px;height:12px;object-fit:cover;border-radius:2px}
-.ls__opt.cur{background:rgba(13,207,220,.12);color:var(--cyan)}
+.ls__opt.cur{background:#F3E8D6;color:var(--gold2)}
 
 /* ── Center wrapper ── */
 .page-wrap{
@@ -155,37 +160,43 @@ a{text-decoration:none;color:inherit}
 .page-shell{display:flex;flex-direction:column;min-height:100vh}
 
 /* ── Auth card ── */
-.card{width:100%;max-width:400px}
+.card{
+  width:100%;max-width:400px;
+  background:var(--card);border:1px solid var(--bdr);border-radius:20px;
+  padding:2.25rem 2rem;
+  box-shadow:0 4px 24px rgba(4,32,61,.06),0 16px 48px rgba(4,32,61,.08);
+}
 
 /* Logo */
 .logo-box{
   width:74px;height:74px;border-radius:22px;
-  background:linear-gradient(135deg,var(--cyan),var(--cyan2));
+  background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.5rem;
-  box-shadow:0 0 36px rgba(13,207,220,.3);
+  box-shadow:0 0 36px rgba(4,32,61,.22);
 }
-.logo-box img{height:40px;object-fit:contain;filter:brightness(0) invert(1)}
+.logo-box img{height:40px;object-fit:contain}
 .logo-box span{
-  font-family:'Space Grotesk',sans-serif;font-size:2rem;
-  font-weight:800;color:#080C18;line-height:1;
+  font-family:'Montserrat',sans-serif;font-size:2rem;
+  font-weight:800;color:#fff;line-height:1;
 }
 
 /* Heading */
 .card-head{text-align:center;margin-bottom:2rem}
 .card-title{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:1.75rem;font-weight:800;color:var(--text);
-  margin-bottom:.4rem;
+  font-family:'Montserrat',sans-serif;
+  font-size:1.5rem;font-weight:600;color:var(--navy);
+  text-transform:uppercase;letter-spacing:.05em;
+  margin-bottom:.5rem;
 }
 .card-sub{font-size:.82rem;color:var(--sub);line-height:1.6}
 
 /* Error */
 .ferr{
   display:flex;align-items:flex-start;gap:.55rem;
-  background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);
+  background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);
   border-left:3px solid #ef4444;border-radius:10px;
-  padding:.7rem .9rem;font-size:.79rem;color:#FCA5A5;margin-bottom:1.125rem;
+  padding:.7rem .9rem;font-size:.79rem;color:#991B1B;margin-bottom:1.125rem;
 }
 .ferr i{margin-top:.1rem;flex-shrink:0}
 
@@ -193,36 +204,36 @@ a{text-decoration:none;color:inherit}
 .fgrp{margin-bottom:.875rem}
 .flabel{
   display:block;font-size:.75rem;font-weight:600;
-  color:rgba(255,255,255,.5);margin-bottom:.4rem;letter-spacing:.01em;
+  color:var(--sub);margin-bottom:.4rem;letter-spacing:.01em;
 }
 .frel{position:relative}
 .ficon{
   position:absolute;left:.95rem;top:50%;transform:translateY(-50%);
-  color:rgba(255,255,255,.3);font-size:.75rem;pointer-events:none;z-index:1;
+  color:var(--muted);font-size:.75rem;pointer-events:none;z-index:1;
   transition:color .18s;
 }
 .finput{
   width:100%;padding:.85rem 1rem .85rem 2.6rem;
   background:var(--inp);
-  border:1.5px solid rgba(255,255,255,.08);
+  border:1.5px solid var(--bdr);
   border-radius:12px;
-  font-size:.88rem;font-family:'Inter',sans-serif;color:var(--text);
+  font-size:.88rem;font-family:'Montserrat',sans-serif;color:var(--text);
   outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
 }
-.finput::placeholder{color:rgba(255,255,255,.2)}
+.finput::placeholder{color:var(--muted)}
 .finput:focus{
-  border-color:var(--cyan);background:#161E30;
-  box-shadow:0 0 0 3.5px rgba(13,207,220,.15);
+  border-color:var(--navy);background:#fff;
+  box-shadow:0 0 0 3.5px rgba(4,32,61,.08);
 }
-.finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--cyan)}
+.finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--navy)}
 .finput.err{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.13)}
 .feye{
   position:absolute;right:.9rem;top:50%;transform:translateY(-50%);
-  background:none;border:none;color:rgba(255,255,255,.28);cursor:pointer;
+  background:none;border:none;color:var(--muted);cursor:pointer;
   font-size:.78rem;padding:.3rem;display:flex;align-items:center;
   transition:color .18s;
 }
-.feye:hover{color:rgba(255,255,255,.7)}
+.feye:hover{color:var(--navy)}
 
 /* Checkbox row */
 .frow{
@@ -231,32 +242,32 @@ a{text-decoration:none;color:inherit}
 }
 .fcheck{display:flex;align-items:center;gap:.45rem}
 .fcheck input{
-  width:16px;height:16px;accent-color:var(--cyan);
+  width:16px;height:16px;accent-color:var(--navy);
   cursor:pointer;flex-shrink:0;border-radius:4px;
 }
 .fcheck label{font-size:.78rem;color:var(--sub);cursor:pointer;-webkit-user-select:none;user-select:none}
-.fforgot{font-size:.78rem;font-weight:600;color:var(--cyan);transition:opacity .18s}
+.fforgot{font-size:.78rem;font-weight:600;color:var(--gold2);transition:opacity .18s}
 .fforgot:hover{opacity:.75}
 
-/* Cyan pill submit button */
+/* Bouton primaire — marine (charte Solberg Grupo) */
 .fbtn{
   width:100%;padding:.95rem 1.5rem;border:none;border-radius:999px;
-  font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;
+  font-size:.97rem;font-weight:700;font-family:'Montserrat',sans-serif;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.625rem;
-  background:linear-gradient(90deg,var(--cyan) 0%,var(--cyan2) 100%);
-  color:#080C18;letter-spacing:.01em;
-  box-shadow:0 6px 28px rgba(13,207,220,.35),0 2px 8px rgba(0,0,0,.3);
+  background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 100%);
+  color:#fff;letter-spacing:.01em;
+  box-shadow:0 6px 28px rgba(4,32,61,.28),0 2px 8px rgba(4,32,61,.15);
   transition:filter .2s,box-shadow .2s,transform .1s;
 }
 .fbtn:hover{
-  filter:brightness(1.08);
-  box-shadow:0 8px 36px rgba(13,207,220,.5),0 2px 10px rgba(0,0,0,.35);
+  filter:brightness(1.2);
+  box-shadow:0 8px 36px rgba(4,32,61,.35),0 2px 10px rgba(4,32,61,.2);
 }
 .fbtn:active{transform:scale(.975)}
 .fbtn:disabled{opacity:.6;cursor:not-allowed;filter:none}
 .btn-spinner{
   display:inline-block;width:18px;height:18px;border-radius:50%;
-  border:2.5px solid rgba(8,12,24,.3);border-top-color:#080C18;
+  border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;
   animation:spin .65s linear infinite;
 }
 
@@ -265,18 +276,18 @@ a{text-decoration:none;color:inherit}
   text-align:center;margin-top:1.625rem;
   font-size:.76rem;color:var(--muted);
 }
-.alt-link a{color:rgba(13,207,220,.75);font-weight:600;transition:color .18s}
-.alt-link a:hover{color:var(--cyan)}
+.alt-link a{color:var(--gold2);font-weight:600;transition:color .18s}
+.alt-link a:hover{color:var(--gold)}
 
 /* ── Quick-login avatar block ── */
 .qlogin{display:flex;flex-direction:column;align-items:center;gap:.6rem;margin-bottom:2rem}
 .qavatar{
   width:72px;height:72px;border-radius:50%;
-  background:linear-gradient(135deg,var(--cyan),var(--cyan2));
+  background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Space Grotesk',sans-serif;font-size:1.45rem;font-weight:800;
-  color:#080C18;letter-spacing:.02em;
-  box-shadow:0 0 0 4px rgba(13,207,220,.18);
+  font-family:'Montserrat',sans-serif;font-size:1.45rem;font-weight:800;
+  color:#fff;letter-spacing:.02em;
+  box-shadow:0 0 0 4px rgba(4,32,61,.1);
 }
 .qname{font-size:.93rem;font-weight:700;color:var(--text)}
 .qemail{font-size:.78rem;color:var(--sub)}
@@ -287,24 +298,24 @@ a{text-decoration:none;color:inherit}
   padding:.28rem .65rem;margin-top:.15rem;
   transition:color .18s,border-color .18s;
 }
-.qchange:hover{color:var(--sub);border-color:rgba(255,255,255,.18)}
+.qchange:hover{color:var(--sub);border-color:#c5c9cc}
 
 /* Footer */
 .pg-foot{
   padding:.75rem 1.5rem 1.25rem;text-align:center;
   padding-bottom:calc(1.25rem + env(safe-area-inset-bottom,0px));
-  font-size:.68rem;color:rgba(255,255,255,.22);
+  font-size:.68rem;color:var(--muted);
   position:relative;z-index:1;
 }
-.pg-foot a{color:rgba(255,255,255,.3)}.pg-foot a:hover{color:rgba(255,255,255,.6)}
+.pg-foot a{color:var(--sub)}.pg-foot a:hover{color:var(--navy)}
 
 /* ── PWA Install banner ── */
 #pwa-banner{
   display:none;
   position:relative;z-index:10;
   margin:0 1.25rem .5rem;
-  background:linear-gradient(135deg,rgba(13,207,220,.12),rgba(13,207,220,.05));
-  border:1.5px solid rgba(13,207,220,.25);
+  background:linear-gradient(135deg,rgba(184,136,62,.1),rgba(184,136,62,.04));
+  border:1.5px solid rgba(184,136,62,.3);
   border-radius:16px;
   padding:.875rem 1rem;
   animation:fadeUp .4s ease .4s both;
@@ -312,9 +323,9 @@ a{text-decoration:none;color:inherit}
 .pwa-inner{display:flex;align-items:center;gap:.75rem}
 .pwa-icon{
   width:42px;height:42px;border-radius:12px;flex-shrink:0;
-  background:linear-gradient(135deg,var(--cyan),var(--cyan2));
+  background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 14px rgba(13,207,220,.3);
+  box-shadow:0 4px 14px rgba(4,32,61,.25);
 }
 .pwa-icon img{width:26px;height:26px;object-fit:contain;border-radius:6px}
 .pwa-text{flex:1;min-width:0}
@@ -322,14 +333,14 @@ a{text-decoration:none;color:inherit}
 .pwa-sub{font-size:.7rem;color:var(--sub);line-height:1.4}
 .pwa-btn{
   flex-shrink:0;
-  background:linear-gradient(90deg,var(--cyan),var(--cyan2));
-  color:#080C18;border:none;border-radius:999px;
+  background:linear-gradient(135deg,var(--navy2),var(--navy));
+  color:#fff;border:none;border-radius:999px;
   padding:.42rem .9rem;font-size:.75rem;font-weight:700;
-  cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif;
-  box-shadow:0 4px 14px rgba(13,207,220,.3);
+  cursor:pointer;white-space:nowrap;font-family:'Montserrat',sans-serif;
+  box-shadow:0 4px 14px rgba(4,32,61,.25);
   transition:filter .18s,transform .1s;
 }
-.pwa-btn:hover{filter:brightness(1.1)}
+.pwa-btn:hover{filter:brightness(1.15)}
 .pwa-btn:active{transform:scale(.96)}
 .pwa-close{
   position:absolute;top:.5rem;right:.6rem;
@@ -343,14 +354,15 @@ a{text-decoration:none;color:inherit}
 #pwa-ios{
   display:none;
   margin:0 1.25rem .5rem;
-  background:rgba(13,207,220,.07);border:1.5px solid rgba(13,207,220,.2);
+  background:rgba(184,136,62,.06);border:1.5px solid rgba(184,136,62,.2);
   border-radius:16px;padding:.875rem 1rem;
   font-size:.76rem;color:var(--sub);line-height:1.7;
   animation:fadeUp .4s ease .4s both;position:relative;z-index:10;
 }
 .ios-step{display:flex;align-items:center;gap:.5rem;margin-bottom:.25rem}
 .ios-step:last-child{margin-bottom:0}
-.ios-step i{color:var(--cyan);font-size:.8rem;flex-shrink:0;width:16px;text-align:center}
+.ios-step i{color:var(--gold2);font-size:.8rem;flex-shrink:0;width:16px;text-align:center}
+.ios-step strong{color:var(--gold2)}
 
 /* Entrance animation */
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
@@ -369,7 +381,7 @@ a{text-decoration:none;color:inherit}
 <div id="ld" role="status" aria-label="Connexion en cours">
   <div class="ld-bar"></div>
   <div class="ld-logo">
-    <img src="/images/icon-192.png" alt="Credixa"
+    <img src="/images/icon-192.png" alt="Solberg Grupo"
          style="width:48px;height:48px;object-fit:contain;border-radius:10px">
     <div class="ld-ring"></div>
   </div>
@@ -398,7 +410,7 @@ a{text-decoration:none;color:inherit}
     {{-- Language switcher --}}
     @php
       $cur   = app()->getLocale();
-      $langs = ['fr'=>['Français','png'],'en'=>['English','png'],'pl'=>['Polski','svg'],'es'=>['Español','png']];
+      $langs = ['fr'=>['Français','png'],'en'=>['English','png'],'pl'=>['Polski','svg'],'es'=>['Español','png'],'bg'=>['Български','png'],'hu'=>['Magyar','png'],'it'=>['Italiano','png'],'de'=>['Deutsch','png'],'lt'=>['Lietuvių','png'],'ro'=>['Română','png'],'lv'=>['Latviešu','png']];
     @endphp
     <div class="ls" x-data="{open:false}">
       <button class="ls__btn" type="button"
@@ -428,10 +440,10 @@ a{text-decoration:none;color:inherit}
 
       {{-- Logo --}}
       <div class="logo-box">
-        <img src="{{ asset('assets/images/logo new.png') }}"
+        <img src="{{ asset('assets/images/logo-white-icon.png') }}"
              onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-             alt="Credixa">
-        <span style="display:none">C</span>
+             alt="Solberg Grupo">
+        <span style="display:none">SG</span>
       </div>
 
       {{-- Heading --}}
@@ -442,8 +454,8 @@ a{text-decoration:none;color:inherit}
 
       {{-- Unblock success --}}
       @if(session('unblock_success'))
-      <div class="ferr" style="background:rgba(74,222,128,.1);border-color:rgba(74,222,128,.25);border-left-color:#4ade80;color:#86efac">
-        <i class="fas fa-circle-check" style="color:#4ade80"></i>
+      <div class="ferr" style="background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.25);border-left-color:#10b981;color:#065F46">
+        <i class="fas fa-circle-check" style="color:#059669"></i>
         <span>{{ session('unblock_success') }}</span>
       </div>
       @endif
@@ -532,19 +544,19 @@ a{text-decoration:none;color:inherit}
 
   {{-- ── PWA Install — Android/Chrome ── --}}
   <div id="pwa-banner">
-    <button class="pwa-close" onclick="pwaDismiss()" aria-label="Fermer">
+    <button class="pwa-close" onclick="pwaDismiss()" aria-label="{{ __('auth.pwa_close') }}">
       <i class="fas fa-xmark"></i>
     </button>
     <div class="pwa-inner">
       <div class="pwa-icon">
-        <img src="/images/icon-192.png" alt="Credixa">
+        <img src="/images/icon-192.png" alt="Solberg Grupo">
       </div>
       <div class="pwa-text">
-        <div class="pwa-title">Installer l'application</div>
-        <div class="pwa-sub">Accès rapide · Notifications · Mode hors-ligne</div>
+        <div class="pwa-title">{{ __('auth.pwa_install_title') }}</div>
+        <div class="pwa-sub">{{ __('auth.pwa_install_hint') }}</div>
       </div>
       <button class="pwa-btn" id="pwa-install-btn">
-        <i class="fas fa-download" style="margin-right:.3rem"></i>Installer
+        <i class="fas fa-download" style="margin-right:.3rem"></i>{{ __('auth.pwa_install_btn') }}
       </button>
     </div>
   </div>
@@ -553,30 +565,30 @@ a{text-decoration:none;color:inherit}
   <div id="pwa-ios">
     <div style="font-weight:700;color:var(--text);margin-bottom:.5rem;font-size:.8rem">
       <i class="fas fa-mobile-screen" style="color:var(--cyan);margin-right:.4rem"></i>
-      Installer l'app Credixa sur votre iPhone
+      {{ __('auth.pwa_ios_title') }}
     </div>
     <div class="ios-step">
       <i class="fas fa-arrow-up-from-bracket"></i>
-      <span>Appuyez sur <strong style="color:var(--cyan)">Partager</strong> dans Safari</span>
+      <span>{!! __('auth.pwa_ios_step1') !!}</span>
     </div>
     <div class="ios-step">
       <i class="fas fa-plus-square"></i>
-      <span>Choisissez <strong style="color:var(--cyan)">Sur l'écran d'accueil</strong></span>
+      <span>{!! __('auth.pwa_ios_step2') !!}</span>
     </div>
     <div class="ios-step">
       <i class="fas fa-check-circle"></i>
-      <span>Appuyez sur <strong style="color:var(--cyan)">Ajouter</strong> — c'est fait !</span>
+      <span>{!! __('auth.pwa_ios_step3') !!}</span>
     </div>
     <button onclick="document.getElementById('pwa-ios').style.display='none'"
             style="margin-top:.6rem;background:none;border:none;color:var(--muted);font-size:.7rem;cursor:pointer;padding:0">
-      <i class="fas fa-xmark" style="margin-right:.25rem"></i>Fermer
+      <i class="fas fa-xmark" style="margin-right:.25rem"></i>{{ __('auth.pwa_close') }}
     </button>
   </div>
 
   <div class="pg-foot">
-    &copy; {{ date('Y') }} Credixa Invest &nbsp;·&nbsp;
-    <a href="{{ url('/fr/terms') }}">CGU</a> &nbsp;·&nbsp;
-    <a href="{{ url('/fr/privacy') }}">Confidentialité</a>
+    &copy; {{ date('Y') }} Solberg Grupo &nbsp;·&nbsp;
+    <a href="{{ url('/'.app()->getLocale().'/terms') }}">{{ __('menu.terms') }}</a> &nbsp;·&nbsp;
+    <a href="{{ url('/'.app()->getLocale().'/privacy') }}">{{ __('menu.privacy') }}</a>
   </div>
 
 </div>
@@ -598,7 +610,7 @@ document.getElementById('login-form').addEventListener('submit', function() {
   var btn  = document.getElementById('submit-btn');
   var text = document.getElementById('btn-text');
   btn.disabled = true;
-  text.innerHTML = '<span style="display:inline-block;width:18px;height:18px;border-radius:50%;border:2.5px solid rgba(8,12,24,.3);border-top-color:#080C18;animation:spin .65s linear infinite;vertical-align:middle"></span>';
+  text.innerHTML = '<span style="display:inline-block;width:18px;height:18px;border-radius:50%;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;animation:spin .65s linear infinite;vertical-align:middle"></span>';
   setTimeout(function() { document.getElementById('ld').classList.add('on'); }, 300);
 });
 

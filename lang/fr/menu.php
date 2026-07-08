@@ -30,5 +30,5 @@ return [
     'newsletter_title' => 'Restez informé de nos offres',
     'subscribe'        => "S'abonner",
     'read_more'        => 'En savoir plus',
-    'footer_desc'      => "Credixa est votre partenaire de confiance pour des solutions de financement rapides, flexibles et personnalisées à travers l'Europe.",
+    'footer_desc'      => "Solberg Grupo est votre partenaire de confiance pour des solutions de financement rapides, flexibles et personnalisées à travers l'Europe.",
 ];

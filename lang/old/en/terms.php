@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Introduction',
-            'content' => 'Welcome to Credixa. By using our site and services, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our site or taking out a loan with us.'
+            'content' => 'Welcome toSolberg Grupo. By using our site and services, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our site or taking out a loan with us.'
         ],
         [
             'title' => '2. Use of the site',
@@ -17,7 +17,7 @@ return [
         ],
         [
             'title' => '4. Contract and insurance costs',
-            'content' => 'When taking out a loan with Credixa, contract and insurance fees may be applied. This fee covers the administrative costs associated with setting up and managing your loan. The specific details of these fees will be clearly stated in your loan agreement. You are required to pay these charges in accordance with the terms specified.'
+            'content' => 'When taking out a loan withSolberg Grupo, contract and insurance fees may be applied. This fee covers the administrative costs associated with setting up and managing your loan. The specific details of these fees will be clearly stated in your loan agreement. You are required to pay these charges in accordance with the terms specified.'
         ],
         [
             'title' => '5. Confidentiality',

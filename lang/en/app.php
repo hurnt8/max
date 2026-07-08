@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'           => 'My Credixa Space',
+    'title'           => 'My Solberg Grupo Space',
     'greeting'        => 'Hello',
     'language'        => 'Language',
     'welcome_back'    => 'Welcome back',
@@ -204,6 +204,9 @@ return [
     'notif_minutes_ago'    => ':n min ago',
     'notif_hours_ago'      => ':n h ago',
     'notif_days_ago'       => ':n d ago',
+    'notif_transfer'       => 'Transfer',
+    'notif_loan_update'    => 'File',
+    'notif_system'         => 'System',
 
     // Notification titles and bodies
     'notif_transfer_approved'      => 'Transfer approved',
@@ -272,4 +275,33 @@ return [
     'push_enable'        => 'Enable notifications',
     'push_enabled'       => 'Notifications enabled',
     'push_denied'        => 'Notifications blocked in browser',
+
+    // Client dashboard (desktop)
+    'secure_space'          => 'Secure area',
+    'active_files'           => 'Active files',
+    'total_files'            => 'Total files',
+    'recent_files'           => 'Recent files',
+    'date_opened'            => 'Opened',
+    'view_file'              => 'View file',
+    'view_all_files'         => 'View all files',
+    'back_to_site'           => 'Back to site',
+    'files_title'            => 'My financing files',
+    'files_subtitle'         => 'Real-time tracking of your loan requests',
+    'files_total_count'      => '{1} :count file in total|[2,*] :count files in total',
+    'interest_rate'          => 'Interest rate',
+    'total_duration'         => 'Total duration',
+    'contract_pending_title' => 'Contract awaiting signature',
+    'contract_pending_body'  => 'We sent you your contract on :date. Please sign it and return it to us by email.',
+    'funded_title'           => 'Financing granted',
+    'funded_body'            => 'The amount of :amount :currency has been paid into your account.',
+    'rejected_title'         => 'Application not accepted',
+    'contact_advisor'        => 'Contact your Solberg Grupo advisor for more information.',
+    'file_progress'          => 'File progress',
+    'financing_breakdown'    => 'Principal / interest breakdown',
+    'total_credit_cost'      => 'Total cost of credit',
+    'installments_count'     => ':count installments · :months months',
+    'principal_paid'         => 'Principal repaid',
+    'interest_paid'          => 'Interest paid',
+    'remaining_capital'      => 'Remaining balance',
+    'back_to_dashboard'      => 'Dashboard',
 ];

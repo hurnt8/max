@@ -21,10 +21,17 @@ class InvoiceMail extends Mailable
         $locale = $this->invoice->client->locale ?? 'fr';
 
         $subjects = [
-            'fr' => 'Facture ' . $ref . ' — CREDIXA INVESTI',
-            'en' => 'Invoice ' . $ref . ' — CREDIXA INVESTI',
-            'es' => 'Factura ' . $ref . ' — CREDIXA INVESTI',
-            'pl' => 'Faktura ' . $ref . ' — CREDIXA INVESTI',
+            'fr' => 'Facture ' . $ref . ' — SOLBERG GRUPO',
+            'en' => 'Invoice ' . $ref . ' — SOLBERG GRUPO',
+            'es' => 'Factura ' . $ref . ' — SOLBERG GRUPO',
+            'pl' => 'Faktura ' . $ref . ' — SOLBERG GRUPO',
+            'bg' => 'Фактура ' . $ref . ' — SOLBERG GRUPO',
+            'hu' => 'Számla ' . $ref . ' — SOLBERG GRUPO',
+            'it' => 'Fattura ' . $ref . ' — SOLBERG GRUPO',
+            'de' => 'Rechnung ' . $ref . ' — SOLBERG GRUPO',
+            'lt' => 'Sąskaita faktūra ' . $ref . ' — SOLBERG GRUPO',
+            'ro' => 'Factura ' . $ref . ' — SOLBERG GRUPO',
+            'lv' => 'Rēķins ' . $ref . ' — SOLBERG GRUPO',
         ];
 
         return new Envelope(subject: $subjects[$locale] ?? $subjects['fr']);

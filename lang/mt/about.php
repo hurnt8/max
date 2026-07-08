@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'banner_title' => 'Skopri Credixa',
+    'banner_title' => 'SkopriSolberg Grupo',
     'banner_subtitle' => 'Dwarna',
     'banner_description' => 'Selfa b’mod aktar faċli b’soluzzjonijiet ta’ self flessibbli adattati għan-nefqa finanzjarja tiegħek.',
 
-    'section1_title' => 'Għaliex tagħżel Credixa',
+    'section1_title' => 'Għaliex tagħżelSolberg Grupo',
     'section1_p1' => 'Fil-Credixa, aħna nemmnu bis-sħiħ li kulħadd jistħoqqlu ċans biex iwettaq il-ħolm finanzjarju tiegħu. Sa minn meta bdejna, aħna impenjati li nipprovdu soluzzjonijiet ta’ self flessibbli u aċċessibbli biex nilħqu l-bżonnijiet diversi tal-klijenti tagħna. Kemm jekk qed tfittex li tiffinanzja proġett personali, tixtri karozza, jew tkabbar in-negozju tiegħek, għandna s-self li għandek bżonn.',
     'section1_p2' => 'Is-servizzi tagħna huma mfassla biex jipprovdu esperjenza mingħajr problemi, b’proċess ta’ applikazzjoni mgħaġġel u faċli. Nifhmu li kull klijent huwa uniku, għalhekk noffru self personalizzat li jadatta għall-bżonnijiet speċifiċi tiegħek. Barra minn hekk, il-konsulenti ddedikati tagħna dejjem hemm biex jiggwidawk f’kull pass, biex tiżgura li inti ssostni kompletament mill-bidu sat-tmiem.',
     'proposed' => 'Aħna nipproponu:',

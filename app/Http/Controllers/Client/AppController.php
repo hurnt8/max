@@ -185,7 +185,7 @@ class AppController extends Controller
     {
         $user      = Auth::user();
         $validated = $request->validate([
-            'locale' => 'nullable|in:fr,en,pl,es',
+            'locale' => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv',
             'phone'  => 'nullable|string|max:30',
         ]);
 
@@ -397,15 +397,15 @@ class AppController extends Controller
     public function manifest()
     {
         $data = [
-            'name'             => config('app.company_name', 'Credixa Invest') . ' — Espace Client',
-            'short_name'       => 'Credixa',
+            'name'             => config('app.company_name', 'Solberg Grupo') . ' — Espace Client',
+            'short_name'       => 'Solberg Grupo',
             'description'      => 'Gérez vos prêts, virements et documents en toute sécurité.',
             'start_url'        => '/app',
             'scope'            => '/app',
             'display'          => 'standalone',
             'orientation'      => 'any',
-            'background_color' => '#0A1628',
-            'theme_color'      => '#0A1628',
+            'background_color' => '#04203D',
+            'theme_color'      => '#04203D',
             'lang'             => app()->getLocale(),
             'categories'       => ['finance', 'business'],
             'icons'            => [
@@ -449,15 +449,15 @@ class AppController extends Controller
     public function adminManifest()
     {
         $data = [
-            'name'             => config('app.company_name', 'Credixa Invest') . ' — Administration',
-            'short_name'       => 'Credixa Admin',
-            'description'      => 'Gérez les prêts, clients et opérations Credixa.',
+            'name'             => config('app.company_name', 'Solberg Grupo') . ' — Administration',
+            'short_name'       => 'Solberg Admin',
+            'description'      => 'Gérez les prêts, clients et opérations Solberg Grupo.',
             'start_url'        => '/admin',
             'scope'            => '/',
             'display'          => 'standalone',
             'orientation'      => 'any',
-            'background_color' => '#0B1A2E',
-            'theme_color'      => '#0B1A2E',
+            'background_color' => '#04203D',
+            'theme_color'      => '#04203D',
             'lang'             => app()->getLocale(),
             'categories'       => ['finance', 'business'],
             'icons'            => [

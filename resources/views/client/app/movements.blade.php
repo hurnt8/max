@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.movements_title', [], $user->locale ?? 'fr') . ' — Credixa')
+@section('title', __('app.movements_title', [], $user->locale ?? 'fr') . ' —Solberg Grupo')
 @section('page_title', __('app.movements_title'))
 @section('back_btn', true)
 @section('back_url', route('client.app.profile'))

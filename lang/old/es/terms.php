@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Introducción',
-            'content' => 'Bienvenido a Credixa. Al utilizar nuestro sitio y servicios, usted acepta cumplir y estar sujeto a los siguientes términos y condiciones. Lea estos términos detenidamente antes de utilizar nuestro sitio o solicitar un préstamo con nosotros.',
+            'content' => 'Bienvenido aSolberg Grupo. Al utilizar nuestro sitio y servicios, usted acepta cumplir y estar sujeto a los siguientes términos y condiciones. Lea estos términos detenidamente antes de utilizar nuestro sitio o solicitar un préstamo con nosotros.',
         ],
         [
             'title' => '2. Uso del sitio',
@@ -17,7 +17,7 @@ return [
         ],
         [
             'title' => '4. Costos de contrato y seguro',
-            'content' => 'Al solicitar un préstamo con Credixa, se pueden aplicar tarifas de contrato y seguro. Esta tarifa cubre los costos administrativos asociados con la configuración y administración de su préstamo. Los detalles específicos de estas tarifas estarán claramente establecidos en su contrato de préstamo. Debe pagar estos cargos de acuerdo con los términos especificados.'
+            'content' => 'Al solicitar un préstamo conSolberg Grupo, se pueden aplicar tarifas de contrato y seguro. Esta tarifa cubre los costos administrativos asociados con la configuración y administración de su préstamo. Los detalles específicos de estas tarifas estarán claramente establecidos en su contrato de préstamo. Debe pagar estos cargos de acuerdo con los términos especificados.'
         ],
         [
             'title' => '5. Confidencialidad',

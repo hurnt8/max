@@ -3,7 +3,7 @@
 return [
     'title' => 'Privacy policy',
     'introduction_title' => '1. Introduction',
-    'introduction_text' => 'At Credixa, we are committed to protecting and respecting your privacy. This privacy policy explains how we collect, use, disclose and protect your personal information when you use our website and online lending services. By using our site, you accept the practices described in this policy.',
+    'introduction_text' => 'AtSolberg Grupo, we are committed to protecting and respecting your privacy. This privacy policy explains how we collect, use, disclose and protect your personal information when you use our website and online lending services. By using our site, you accept the practices described in this policy.',
     'information_collection_title' => '2. Information we collect',
     'information_collection_text' => 'We may collect and process the following information about you:',
     'information_collection_list' => [

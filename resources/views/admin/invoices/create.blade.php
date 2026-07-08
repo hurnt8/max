@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Nouvelle facture — Credixa')
+@section('title', 'Nouvelle facture —Solberg Grupo')
 @section('page_title', 'Nouvelle facture')
 
 @section('content')

@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Credixa - Los mejores prestamistas online en Alemania, España, Hungría, etc.',
+    'general_title' => 'Solberg Grupo - Los mejores prestamistas online en Alemania, España, Hungría, etc.',
     'banner_title' => 'Obtenga el préstamo perfecto para todas sus necesidades en línea.',
-    'banner_text' => 'Millones de personas utilizan Credixa para realizar sus proyectos.',
+    'banner_text' => 'Millones de personas utilizan Solberg Grupo para realizar sus proyectos.',
     'get_loan_now' => 'Obtener un préstamo ahora',
     'popular_loans' => 'Tipos de préstamos populares:',
 
@@ -53,48 +53,57 @@ return [
 
     'custom_loan_services' => 'Aproveche nuestros servicios de préstamo a medida',
     'reliability_quality' => 'Transparencia y Confiabilidad',
-    'reliability_quality_description' => 'En Credixa ofrecemos soluciones crediticias claras y confiables, respaldadas por opiniones positivas de los clientes y total transparencia.',
+    'reliability_quality_description' => 'En Solberg Grupo ofrecemos soluciones crediticias claras y confiables, respaldadas por opiniones positivas de los clientes y total transparencia.',
     'financial_transparency' => 'Sin costos ocultos',
     'financial_transparency_description' => 'Revise nuestros términos, analice las tasas y pague solo una vez que se apruebe su préstamo.',
     'optimal_security' => 'Seguridad y Privacidad',
-    'optimal_security_description' => 'Sus datos personales están seguros con nosotros. Credixa utiliza protocolos de seguridad avanzados para proteger su privacidad. Nuestro soporte está disponible las 24 horas del día, los 7 días de la semana para cualquier ayuda.',
+    'optimal_security_description' => 'Sus datos personales están seguros con nosotros. Solberg Grupo utiliza protocolos de seguridad avanzados para proteger su privacidad. Nuestro soporte está disponible las 24 horas del día, los 7 días de la semana para cualquier ayuda.',
     'apply_loan' => 'Solicitar un préstamo',
 
-    'testimonials_title' => 'Testimonios',
+    'testimonials_title' => 'Confían en nosotros',
     'testimonials_description' => 'Descubra lo que nuestros clientes dicen sobre nosotros.',
+    'testimonials_rating_badge' => '4.9 | Proveedor mejor valorado en 2026',
+    'testimonials_certified_by' => 'Certificado por: Trustindex',
+    'testimonials_months_ago' => '{1} hace 1 mes|[2,*] hace :count meses',
     'testimonial_1' => [
-        'quote'    => '«Solicité un préstamo hipotecario tras varios rechazos en mi banco habitual. Credixa Invest estudió mi caso con detalle y me aprobó la financiación en cinco días. El tipo de interés fue mejor de lo esperado. Muy recomendable.»',
+        'quote'    => '«Solicité un préstamo hipotecario tras varios rechazos en mi banco habitual. Solberg Grupo estudió mi caso con detalle y me aprobó la financiación en cinco días. El tipo de interés fue mejor de lo esperado. Muy recomendable.»',
         'name'     => 'Carlos García',
         'location' => 'Madrid, España',
+        'months_ago' => 1,
     ],
     'testimonial_2' => [
         'quote'    => '«El proceso fue completamente digital y muy intuitivo. Me asignaron un asesor personal que me llamó en cada fase para explicarme los pasos. Nunca me sentí perdida ni presionada. Un servicio de diez.»',
         'name'     => 'María López',
         'location' => 'Barcelona, España',
+        'months_ago' => 2,
     ],
     'testimonial_3' => [
-        'quote'    => '«Necesitaba financiación para ampliar mi taller mecánico y los bancos me pedían avales imposibles. Credixa analizó mi facturación real y me concedió el préstamo empresarial que necesitaba. Gracias al equipo.»',
+        'quote'    => '«Necesitaba financiación para ampliar mi taller mecánico y los bancos me pedían avales imposibles. Solberg Grupo analizó mi facturación real y me concedió el préstamo empresarial que necesitaba. Gracias al equipo.»',
         'name'     => 'Antonio Martínez',
         'location' => 'Sevilla, España',
+        'months_ago' => 2,
     ],
     'testimonial_4' => [
         'quote'    => '«Pedí un préstamo personal para reformar la cocina de casa. La respuesta llegó en menos de 24 horas y el dinero estaba en mi cuenta al día siguiente. Rapidez y profesionalidad al máximo nivel.»',
         'name'     => 'Isabel Rodríguez',
         'location' => 'Valencia, España',
+        'months_ago' => 3,
     ],
     'testimonial_5' => [
         'quote'    => '«Lo que más valoré fue la transparencia total: sin comisiones ocultas, sin letra pequeña engañosa. Desde el primer momento supe exactamente cuánto iba a pagar cada mes. Eso genera mucha confianza.»',
         'name'     => 'Juan Hernández',
         'location' => 'Bilbao, España',
+        'months_ago' => 4,
     ],
     'testimonial_6' => [
-        'quote'    => '«Mi situación laboral como autónoma complicaba la obtención de crédito. Credixa valoró mis ingresos reales y me ofreció condiciones adaptadas a mi perfil. Por fin una entidad que entiende la realidad de los trabajadores independientes.»',
+        'quote'    => '«Mi situación laboral como autónoma complicaba la obtención de crédito. Solberg Grupo valoró mis ingresos reales y me ofreció condiciones adaptadas a mi perfil. Por fin una entidad que entiende la realidad de los trabajadores independientes.»',
         'name'     => 'Carmen Fernández',
         'location' => 'Málaga, España',
+        'months_ago' => 5,
     ],
 
     'about_title' => 'Únase al mejor mercado para trabajadores del mundo',
-    'about_description' => 'Credixa es su plataforma confiable para obtener préstamos con una experiencia de cliente excepcional. Estamos comprometidos a brindarle soluciones financieras simples, seguras y rápidas.',
+    'about_description' => 'Solberg Grupo es su plataforma confiable para obtener préstamos con una experiencia de cliente excepcional. Estamos comprometidos a brindarle soluciones financieras simples, seguras y rápidas.',
     'rating' => '4,9/5',
     'rating_description' => 'Los clientes califican a los profesionales',
     'projects_completed' => '+12M',
@@ -130,7 +139,7 @@ return [
         'placeholder' => 'Su dirección de correo electrónico',
         'button' => 'Enviar',
     ],
-    'rights_reserved' => '© Credixa. 2024. Todos los derechos reservados.',
+    'rights_reserved' => '©Solberg Grupo. 2024. Todos los derechos reservados.',
 
     'en' => 'inglés',
     'fr' => 'francés',
@@ -177,10 +186,10 @@ return [
 
     'about' => [
         'exptitle' => 'años de experiencia',
-        'sectagline' => 'bienvenido a Credixa',
+        'sectagline' => 'bienvenido a Solberg Grupo',
         'sectitle' => 'Préstamos personales para cumplir tus sueños',
         'text1' => 'Estamos en este negocio desde 1990 y brindamos los mejores servicios.',
-        'text2' => 'Credixa es tu plataforma confiable para préstamos con una experiencia al cliente excepcional. Nos comprometemos a ofrecerte soluciones financieras simples, seguras y rápidas.',
+        'text2' => 'Solberg Grupo es tu plataforma confiable para préstamos con una experiencia al cliente excepcional. Nos comprometemos a ofrecerte soluciones financieras simples, seguras y rápidas.',
         'check1' => 'préstamo para pequeñas empresas',
         'check2' => 'préstamo para estudiar en el extranjero',
         'check3' => 'proceso rápido de préstamo',
@@ -196,6 +205,15 @@ return [
     'services' => [
         'sectagline' => 'lo que ofrecemos',
         'sectitle' => 'Ofrecemos los mejores servicios para tu préstamo',
+        'cta_title' => '¿Listo para empezar su proyecto financiero?',
+        'cta_text' => 'Nuestro equipo está disponible para acompañarle en su solicitud de financiación.',
+    ],
+
+    // CTA de la página de preguntas frecuentes
+    'faq_cta' => [
+        'label' => 'Soporte',
+        'title' => '¿No encontró su respuesta?',
+        'text' => 'Nuestro equipo está disponible de lunes a sábado para ayudarle.',
     ],
 
     'simulate' => [
@@ -270,6 +288,7 @@ return [
 
     'partners_label' => 'Nuestros socios',
     'partners_title' => 'Bancos asociados',
+    'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
     'cta_title2' => 'Obtén el préstamo que necesitas rápidamente.',
     'cta_text2' => 'Obtén Préstamos para Negocios Rápidamente',

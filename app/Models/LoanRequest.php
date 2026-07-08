@@ -145,8 +145,12 @@ class LoanRequest extends Model
     // Génère une référence unique CR-YYYY-XXXX
     public static function generateReference(): string
     {
-        $year  = now()->format('Y');
-        $last  = self::whereYear('created_at', $year)->count() + 1;
-        return 'CR-' . $year . '-' . str_pad($last, 4, '0', STR_PAD_LEFT);
+        return \Illuminate\Support\Facades\DB::transaction(function () {
+            $year = now()->format('Y');
+            // lockForUpdate() serialise les appels concurrents : la 2e transaction
+            // attend que la 1re commit avant de lire le compteur, évitant les doublons.
+            $last = self::whereYear('created_at', $year)->lockForUpdate()->count() + 1;
+            return 'CR-' . $year . '-' . str_pad($last, 4, '0', STR_PAD_LEFT);
+        });
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Credixa – Die besten Online-Kreditgeber in Deutschland, Spanien, Ungarn usw.',
+    'general_title' => 'Solberg Grupo – Die besten Online-Kreditgeber in Deutschland, Spanien, Ungarn usw.',
     'banner_title' => 'Holen Sie sich den perfekten Kredit für alle Ihre Online-Bedürfnisse.',
-    'banner_text' => 'Millionen Menschen nutzen Credixa, um ihre Projekte zu realisieren.',
+    'banner_text' => 'Millionen Menschen nutzen Solberg Grupo, um ihre Projekte zu realisieren.',
     'get_loan_now' => 'Jetzt einen Kredit aufnehmen',
     'popular_loans' => 'Beliebte Kreditarten:',
     'personal_loan' => 'Privatkredit',
@@ -62,48 +62,63 @@ return [
 
     'custom_loan_services' => 'Nutzen Sie unsere maßgeschneiderten Kreditdienstleistungen',
     'reliability_quality' => 'Transparenz und Zuverlässigkeit',
-    'reliability_quality_description' => 'Bei Credixa bieten wir klare und zuverlässige Kreditlösungen, gestützt auf positive Kundenbewertungen und vollständige Transparenz.',
+    'reliability_quality_description' => 'Bei Solberg Grupo bieten wir klare und zuverlässige Kreditlösungen, gestützt auf positive Kundenbewertungen und vollständige Transparenz.',
     'financial_transparency' => 'Keine versteckten Kosten',
     'financial_transparency_description' => 'Überprüfen Sie unsere Bedingungen, besprechen Sie die Zinssätze und zahlen Sie erst, wenn Ihr Kredit genehmigt wurde.',
     'optimal_security' => 'Sicherheit und Datenschutz',
-    'optimal_security_description' => 'Ihre persönlichen Daten sind bei uns sicher. Credixa verwendet fortschrittliche Sicherheitsprotokolle, um Ihre Privatsphäre zu schützen. Unser Support steht Ihnen rund um die Uhr für jede Hilfe zur Verfügung.',
+    'optimal_security_description' => 'Ihre persönlichen Daten sind bei uns sicher. Solberg Grupo verwendet fortschrittliche Sicherheitsprotokolle, um Ihre Privatsphäre zu schützen. Unser Support steht Ihnen rund um die Uhr für jede Hilfe zur Verfügung.',
     'apply_loan' => 'Darlehen beantragen',
 
 
     'testimonials_title' => 'Testimonials',
     'testimonials_description' => 'Finden Sie heraus, was unsere Kunden über uns sagen.',
+    'testimonials_rating_badge' => '4.9 | Bestbewerteter Anbieter 2026',
+    'testimonials_certified_by' => 'Zertifiziert von: Trustindex',
+    'testimonials_months_ago' => '{1} vor 1 Monat|[2,*] vor :count Monaten',
     'testimonial_1' => [
         'quote' => '"Ich bin mit dem Service sehr zufrieden. Der Kreditantragsprozess verlief schnell und einfach. Ich erhielt die Genehmigung innerhalb weniger Tage und die Zinssätze waren wettbewerbsfähig. Vielen Dank!"',
-        'name' => 'Julie B.',
+        'name' => 'Julia Becker',
+        'location' => 'Berlin, Deutschland',
+        'months_ago' => 1,
     ],
     'testimonial_2' => [
         'quote' => '"Ich kann diesen Kreditservice wärmstens empfehlen. Das Team war sehr professionell und hilfsbereit. Sie haben alle meine Fragen beantwortet und den Prozess stressfrei gestaltet. Vielen Dank für Ihren hervorragenden Service!"',
-        'name' => 'Pierre L.',
+        'name' => 'Thomas Wagner',
+        'location' => 'München, Deutschland',
+        'months_ago' => 2,
     ],
     'testimonial_3' => [
         'quote' => '"Der Kreditantragsprozess war transparent
           und effizient. Ich wurde durchgehend professionell und individuell beraten
           während des gesamten Prozesses. Vielen Dank an das gesamte Team für Ihre hervorragende Arbeit
           arbeiten!"',
-        'name' => 'Sophie D.',
+        'name' => 'Sophie Fischer',
+        'location' => 'Hamburg, Deutschland',
+        'months_ago' => 2,
     ],
     'testimonial_4' => [
         'quote' => '"Einen Kredit bei dieser Firma zu bekommen war eine
           Problemloses Erlebnis. Das Personal war freundlich und kompetent, und das
           Der Prozess war schnell und effizient. Ich empfehle es sehr!"',
-        'name' => 'Marc F.',
+        'name' => 'Markus Schmidt',
+        'location' => 'Köln, Deutschland',
+        'months_ago' => 3,
     ],
     'testimonial_5' => [
         'quote' => '"Ausgezeichneter Kundenservice! Ich wurde durch die Beratung geführt
           Jeder Schritt des Kreditprozesses und meine Fragen wurden beantwortet
           schnell. „Ich bin mit dem Endergebnis sehr zufrieden.“"',
-        'name' => 'Nathalie P.',
+        'name' => 'Anna Hoffmann',
+        'location' => 'Frankfurt, Deutschland',
+        'months_ago' => 4,
     ],
     'testimonial_6' => [
         'quote' => '"Sehr guter Zinssatz und schnelle Abwicklung. I
           Ich kann diesen Service jedem wärmstens empfehlen, der einen Kredit benötigt
           schnell und zuverlässig."',
-        'name' => 'Luc M.',
+        'name' => 'Lukas Weber',
+        'location' => 'Stuttgart, Deutschland',
+        'months_ago' => 5,
     ],
     'testimonial_7' => [
         'quote' => '"Einfacher und effizienter Kreditprozess. Ich war
@@ -119,7 +134,7 @@ return [
     ],
 
     'about_title' => 'Treten Sie dem weltbesten Marktplatz für Arbeitskräfte bei',
-    'about_description' => 'Credixa ist Ihre vertrauenswürdige Plattform für die Kreditaufnahme mit einem außergewöhnlichen Kundenerlebnis. Wir sind bestrebt, Ihnen einfache, sichere und schnelle Finanzlösungen anzubieten.',
+    'about_description' => 'Solberg Grupo ist Ihre vertrauenswürdige Plattform für die Kreditaufnahme mit einem außergewöhnlichen Kundenerlebnis. Wir sind bestrebt, Ihnen einfache, sichere und schnelle Finanzlösungen anzubieten.',
     'rating' => '4.9/5',
     'rating_description' => 'Kunden bewerten Profis',
     'projects_completed' => '+12M',
@@ -161,7 +176,7 @@ return [
         'placeholder' => 'Ihre E-Mail-Adresse',
         'button' => 'Senden',
     ],
-    'rights_reserved' => '© Credixa. 2024. Alle Rechte vorbehalten.',
+    'rights_reserved' => '© Solberg Grupo. 2024. Alle Rechte vorbehalten.',
 
     'en' => 'Englisch',
     'fr' => 'Französisch',
@@ -208,19 +223,34 @@ return [
 
     'about' => [
         'exptitle' => 'Jahre Erfahrung',
-        'sectagline' => 'Willkommen bei Credixa',
+        'sectagline' => 'Willkommen bei Solberg Grupo',
         'sectitle' => 'Persönliche Kredite, um Ihre Träume zu erfüllen',
         'text1' => 'Wir sind seit 1990 in diesem Geschäft und bieten die besten Dienstleistungen.',
-        'text2' => 'Credixa ist Ihre vertrauenswürdige Plattform für Kredite mit einer außergewöhnlichen Kundenerfahrung. Wir bieten einfache, sichere und schnelle Finanzlösungen.',
+        'text2' => 'Solberg Grupo ist Ihre vertrauenswürdige Plattform für Kredite mit einer außergewöhnlichen Kundenerfahrung. Wir bieten einfache, sichere und schnelle Finanzlösungen.',
         'check1' => 'Kredit für kleine Unternehmen',
         'check2' => 'Kredit für Auslandsstudium',
         'check3' => 'schneller Kreditprozess',
         'check4' => 'sehr niedrige Zinsen',
+        'engage1_title' => 'Zugelassen & reguliert',
+        'engage1_desc' => 'Zertifiziertes Kreditinstitut, das den europäischen Standards unterliegt. Ihre Daten und Ihr Dossier sind bei jedem Schritt geschützt.',
+        'engage2_title' => 'Garantierte Antwort innerhalb von 24 Stunden',
+        'engage2_desc' => '100 % Online-Abwicklung, ohne Anfahrt oder Papierkram. Entscheidung innerhalb von 24 Stunden.',
+        'engage3_title' => 'Mehrere Währungen & Länder',
+        'engage3_desc' => 'Kredite verfügbar in Euro, polnischem Zloty, US-Dollar, mexikanischem Peso, brasilianischem Real und costa-ricanischem Colón, je nach Ihrem Vorhaben.',
     ],
 
     'services' => [
         'sectagline' => 'was wir anbieten',
         'sectitle' => 'Wir bieten die besten Dienstleistungen für Ihren Kredit',
+        'cta_title' => 'Bereit, Ihr Finanzierungsprojekt zu starten?',
+        'cta_text' => 'Unser Team steht Ihnen bei Ihrem Finanzierungsantrag gerne zur Seite.',
+    ],
+
+    // FAQ-Seiten-CTA
+    'faq_cta' => [
+        'label' => 'Support',
+        'title' => 'Ihre Antwort nicht gefunden?',
+        'text' => 'Unser Team ist von Montag bis Samstag für Sie da.',
     ],
 
     'simulate' => [
@@ -270,6 +300,16 @@ return [
             'desc2' => 'Kombinieren Sie mehrere Schulden zu einer einfachen monatlichen Zahlung und verbessern Sie Ihr Finanzmanagement.',
             'title3' => 'Hausrenovierung',
             'desc3' => 'Renovieren oder verbessern Sie Ihr Zuhause und steigern Sie dessen Wert und Komfort, ohne finanziellen Druck.',
+            'title4' => 'Finanzieren Sie Ihr Studium',
+            'desc4' => 'Investieren Sie in Ihre Zukunft: Studiengebühren, Weiterbildungen oder Umschulungen, ohne Ihren Alltag zu gefährden.',
+            'title5' => 'Reise & Urlaub',
+            'desc5' => 'Entdecken Sie die Welt ganz entspannt. Finanzieren Sie Ihre Traumreise, ohne Ihre Ersparnisse anzugreifen.',
+            'title6' => 'Hochzeit & Familienfeiern',
+            'desc6' => 'Feiern Sie die wichtigen Momente des Lebens ohne finanziellen Stress. Organisieren Sie das Fest Ihrer Träume in Ihrem eigenen Tempo.',
+            'title7' => 'Medizinische Ausgaben & Gesundheit',
+            'desc7' => 'Meistern Sie gesundheitliche Notfälle mit Gelassenheit. Decken Sie Behandlungen, Operationen oder medizinische Geräte schnell ab.',
+            'title8' => 'Unternehmensgründung & Investition',
+            'desc8' => 'Verwirklichen Sie Ihr unternehmerisches Projekt oder entwickeln Sie Ihre Tätigkeit dank einer schnellen und flexiblen Finanzierung.',
         ],
         'btn_text' => 'Mehr erfahren',
         'btn_icon' => 'icon-next'
@@ -280,7 +320,12 @@ return [
     'total_loan_amount_granted' => 'Verfügbarer Betrag',
     'average_approval_time' => 'Garantierte Antwort',
     'member' => 'Finanzierte Kunden',
+    'years_experience' => 'Jahre Erfahrung',
     'day' => 'Tage',
+
+    'partners_label' => 'Unsere Partner',
+    'partners_title' => 'Partnerbanken',
+    'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
     'cta_title2' => 'Erhalten Sie den Kredit, den Sie schnell benötigen.',
     'cta_text2' => 'Erhalten Sie schnell einen Geschäftskredit',
