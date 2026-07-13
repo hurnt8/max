@@ -99,6 +99,15 @@ $texts = [
         'closing' => 'Ar cieņu,',
         'team'    => 'Solberg Grupo komanda',
     ],
+    'nl' => [
+        'title'   => 'Contract nr. '.$loan->reference.' ontvangen',
+        'sub'     => 'Ontvangstbevestiging',
+        'greeting'=> 'Geachte heer/mevrouw '.$loan->name.',',
+        'intro'   => 'Wij bevestigen de ontvangst van uw ondertekende leningsovereenkomst (Referentie: <strong>'.$loan->reference.'</strong>).',
+        'next'    => 'Ons beheerteam zal overgaan tot de definitieve verwerking van uw dossier. De gegevens van de betaalrekening worden u binnen <strong>24 tot 48 uur</strong> meegedeeld.',
+        'closing' => 'Met vriendelijke groet,',
+        'team'    => 'Het team van Solberg Grupo',
+    ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];
 @endphp

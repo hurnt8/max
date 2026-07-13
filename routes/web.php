@@ -38,7 +38,7 @@ use App\Http\Controllers\Client\SupportController as ClientSupportController;
 |
 */
 
-$supportedLocales = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv'];
+$supportedLocales = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl'];
 
 Route::get('/', function (Request $request) use ($supportedLocales) {
     $locale = 'en';
@@ -64,7 +64,7 @@ Route::get('/', function (Request $request) use ($supportedLocales) {
     return redirect("/{$locale}");
 });
 
-Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['locale' => 'fr|en|pl|es|bg|hu|it|de|lt|ro|lv']], function () {
+Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['locale' => 'fr|en|pl|es|bg|hu|it|de|lt|ro|lv|nl']], function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
@@ -239,7 +239,7 @@ Route::middleware(['auth', 'role:client', 'client.locale'])->prefix('app')->name
 
     Route::post('/locale', function (\Illuminate\Http\Request $request) {
         $locale = $request->input('locale', 'fr');
-        if (in_array($locale, ['fr','en','pl','es','bg','hu','it','de','lt','ro','lv'])) {
+        if (in_array($locale, ['fr','en','pl','es','bg','hu','it','de','lt','ro','lv','nl'])) {
             $request->user()->update(['locale' => $locale]);
             session(['locale' => $locale]);
         }
@@ -346,6 +346,22 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::get('/profile',           [\App\Http\Controllers\Admin\AdminProfileController::class, 'index'])->name('profile');
     Route::post('/profile',          [\App\Http\Controllers\Admin\AdminProfileController::class, 'update'])->name('profile.update');
     Route::post('/profile/password', [\App\Http\Controllers\Admin\AdminProfileController::class, 'updatePassword'])->name('profile.password');
+
+    // Coordonnées du site (footer)
+    Route::get('/site-contacts',  [\App\Http\Controllers\Admin\SiteContactController::class, 'edit'])->name('site-contacts.edit');
+    Route::post('/site-contacts', [\App\Http\Controllers\Admin\SiteContactController::class, 'update'])->name('site-contacts.update');
+
+    // Réseaux sociaux (footer + page contact)
+    Route::get('/social-links',                  [\App\Http\Controllers\Admin\SocialLinkController::class, 'index'])->name('social-links.index');
+    Route::get('/social-links/create',           [\App\Http\Controllers\Admin\SocialLinkController::class, 'create'])->name('social-links.create');
+    Route::post('/social-links',                 [\App\Http\Controllers\Admin\SocialLinkController::class, 'store'])->name('social-links.store');
+    Route::get('/social-links/{socialLink}/edit',[\App\Http\Controllers\Admin\SocialLinkController::class, 'edit'])->name('social-links.edit');
+    Route::put('/social-links/{socialLink}',     [\App\Http\Controllers\Admin\SocialLinkController::class, 'update'])->name('social-links.update');
+    Route::delete('/social-links/{socialLink}',  [\App\Http\Controllers\Admin\SocialLinkController::class, 'destroy'])->name('social-links.destroy');
+
+    // Paramètres de prêt (taux d'intérêt annuel)
+    Route::get('/loan-settings',  [\App\Http\Controllers\Admin\LoanSettingController::class, 'edit'])->name('loan-settings.edit');
+    Route::post('/loan-settings', [\App\Http\Controllers\Admin\LoanSettingController::class, 'update'])->name('loan-settings.update');
 
     // Facturation
     Route::get('/invoices',                         [InvoiceController::class, 'index'])->name('invoices.index');

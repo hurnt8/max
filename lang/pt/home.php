@@ -169,7 +169,7 @@ return [
     'slide_1' => [
         'title' => ' Desde 1990 · Autorizado · Resposta em 24h',
         'text1' => 'Financie todos os seus projetos,',
-        'text2' => 'até 95 000 € em 24h.',
+        'text2' => 'até 500 000 € em 24h.',
     ],
     'slide_2' => [
         'title' => 'Empréstimos Inteligentes para Futuros Brilhantes',

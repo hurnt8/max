@@ -187,6 +187,23 @@ $texts = [
         'closing'  => 'Ar cieņu,',
         'team'     => 'Solberg Grupo komanda',
     ],
+    'nl' => [
+        'title'    => 'Aanvraag nr. '.$loan->reference.' goedgekeurd',
+        'sub'      => 'Goed nieuws!',
+        'greeting' => 'Geachte heer/mevrouw '.$loan->name.',',
+        'intro'    => 'Wij zijn verheugd u te kunnen meedelen dat uw financieringsaanvraag door ons team is <strong>goedgekeurd</strong>.',
+        'next'     => 'Volgende stap',
+        'next_body'=> 'Ons team bereidt uw leningsovereenkomst voor. U ontvangt deze binnenkort per e-mail, samen met de instructies voor ondertekening.',
+        'summary'  => 'SAMENVATTING',
+        'lbl_ref'  => 'Dossierreferentie',
+        'lbl_amt'  => 'Toegekend bedrag',
+        'lbl_dur'  => 'Looptijd',
+        'lbl_mo'   => 'maanden',
+        'lbl_pay'  => 'Geschatte maandelijkse aflossing',
+        'lbl_rate' => 'Jaarlijkse rente',
+        'closing'  => 'Met vriendelijke groet,',
+        'team'     => 'Het Solberg Grupo Team',
+    ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];
 @endphp

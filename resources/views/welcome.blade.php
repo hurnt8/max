@@ -137,7 +137,7 @@
                         <div class="hero-trust__icon"><i class="fas fa-euro-sign"></i></div>
                         <div>
                             <div class="hero-trust__label">{{ __('home.total_loan_amount_granted') }}</div>
-                            <div class="hero-trust__value">95 000 €</div>
+                            <div class="hero-trust__value">500 000 €</div>
                         </div>
                     </div>
                     {{-- Carte 3 : expérience --}}
@@ -145,7 +145,7 @@
                         <div class="hero-trust__icon"><i class="fas fa-history"></i></div>
                         <div>
                             <div class="hero-trust__label">{{ __('home.about.exptitle') }}</div>
-                            <div class="hero-trust__value">5</div>
+                            <div class="hero-trust__value">15</div>
                         </div>
                     </div>
                 </div>
@@ -470,10 +470,10 @@ $serviceNav = [
         <div class="row gutter-y-0">
             @php
             $stats = [
-                ['stop'=>'2500', 'suffix'=>'+', 'prefix'=>'',  'label'=> __('home.customer_satisfaction_rate')],
-                ['stop'=>'95',   'suffix'=>'k', 'prefix'=>'€', 'label'=> __('home.total_loan_amount_granted')],
+                ['stop'=>'8500', 'suffix'=>'+', 'prefix'=>'',  'label'=> __('home.customer_satisfaction_rate')],
+                ['stop'=>'500',   'suffix'=>'k', 'prefix'=>'€', 'label'=> __('home.total_loan_amount_granted')],
                 ['stop'=>'24',   'suffix'=>'h', 'prefix'=>'',  'label'=> __('home.average_approval_time')],
-                ['stop'=>'5',    'suffix'=>'+', 'prefix'=>'',  'label'=> __('home.years_experience')],
+                ['stop'=>'15',    'suffix'=>'+', 'prefix'=>'',  'label'=> __('home.years_experience')],
             ];
             @endphp
             @foreach ($stats as $i => $stat)

@@ -161,7 +161,7 @@ return [
     'slide_1' => [
         'title' => ' De 5 ani · Autorizat · Răspuns garantat',
         'text1' => 'Finanțați toate proiectele dumneavoastră,',
-        'text2' => 'până la 95 000 € în 24h.',
+        'text2' => 'până la 500 000 € în 24h.',
     ],
     'slide_2' => [
         'title' => 'Împrumuturi Inteligente pentru un Viitor Strălucit',
@@ -203,7 +203,7 @@ return [
         'engage2_title' => 'Răspuns garantat în 24h',
         'engage2_desc'  => 'Procesare 100% online, fără deplasări sau documente pe hârtie. Decizie comunicată în 24 de ore.',
         'engage3_title' => 'Multi-valută și multi-țară',
-        'engage3_desc'  => 'Împrumuturi disponibile în euro, zlot, dolar american, peso mexican, real brazilian și colón costarican, în funcție de proiectul dumneavoastră.',
+        'engage3_desc'  => 'Finanțare disponibilă în moneda țării dumneavoastră, adaptată proiectului dumneavoastră.',
     ],
 
     // Services

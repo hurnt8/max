@@ -280,6 +280,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
             'lt' => ['Lietuvių', 'png'],
             'ro' => ['Română',   'png'],
             'lv' => ['Latviešu', 'png'],
+            'nl' => ['Nederlands', 'png'],
           ];
         @endphp
         <div class="ls" x-data="{ open: false }">

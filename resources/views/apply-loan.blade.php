@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('title', __('menu.loan'))
 
+@php
+    $loanSetting = \App\Models\LoanSetting::current();
+    $siteContact = \App\Models\SiteContact::current();
+@endphp
+
 @push('styles')
 <style>
 /* ── Devise ── */
@@ -80,28 +85,38 @@ document.addEventListener('alpine:init', () => {
         customAmt:   '',
         selDuration: null,
         customDur:   '',
-        rate: 5,
+        rate: {{ (float) $loanSetting->annual_rate }},
+        minAmount: {{ (float) $loanSetting->min_amount }},
+        maxAmount: {{ (float) $loanSetting->max_amount }},
 
         monthsLabel: "{{ __('message.months') }}",
         monthAbbr:   "{{ __('message.month_abbr') }}",
         locale:      "{{ str_replace('_','-',app()->getLocale()) }}",
 
         currencies: [
-            { code:'EUR', symbol:'€',  flag:'🇪🇺', name:'Euro'             },
-            { code:'PLN', symbol:'zł', flag:'🇵🇱', name:'Złoty (PLN)'      },
-            { code:'USD', symbol:'$',  flag:'🇺🇸', name:'Dollar (USD)'     },
-            { code:'MXN', symbol:'$',  flag:'🇲🇽', name:'Peso mexicain'    },
-            { code:'BRL', symbol:'R$', flag:'🇧🇷', name:'Réal brésilien'   },
-            { code:'CRC', symbol:'₡',  flag:'🇨🇷', name:'Colón (Costa Rica)'},
+            { code:'EUR', symbol:'€',   flag:'🇪🇺', name:'Euro'                    },
+            { code:'GBP', symbol:'£',   flag:'🇬🇧', name:'Livre sterling (GBP)'    },
+            { code:'CHF', symbol:'CHF', flag:'🇨🇭', name:'Franc suisse (CHF)'      },
+            { code:'NOK', symbol:'kr',  flag:'🇳🇴', name:'Couronne norvégienne (NOK)' },
+            { code:'SEK', symbol:'kr',  flag:'🇸🇪', name:'Couronne suédoise (SEK)' },
+            { code:'DKK', symbol:'kr',  flag:'🇩🇰', name:'Couronne danoise (DKK)'  },
+            { code:'PLN', symbol:'zł',  flag:'🇵🇱', name:'Złoty (PLN)'             },
+            { code:'CZK', symbol:'Kč',  flag:'🇨🇿', name:'Couronne tchèque (CZK)'  },
+            { code:'HUF', symbol:'Ft',  flag:'🇭🇺', name:'Forint (HUF)'            },
+            { code:'RON', symbol:'lei', flag:'🇷🇴', name:'Leu roumain (RON)'       },
         ],
 
         amountsByCurrency: {
             EUR:[1000,3000,5000,10000,20000,50000,75000,95000],
+            GBP:[1000,2500,5000,10000,20000,40000,65000,80000],
+            CHF:[1000,3000,5000,10000,20000,50000,75000,95000],
+            NOK:[10000,30000,50000,100000,200000,500000,750000,950000],
+            SEK:[10000,30000,50000,100000,200000,500000,750000,950000],
+            DKK:[7000,20000,35000,75000,150000,375000,550000,700000],
             PLN:[5000,10000,20000,50000,100000,200000,350000,500000],
-            USD:[1000,3000,5000,10000,25000,50000,75000,100000],
-            MXN:[20000,50000,100000,250000,500000,1000000,1500000,2000000],
-            BRL:[5000,10000,25000,50000,100000,250000,400000,500000],
-            CRC:[600000,1500000,3000000,6000000,15000000,30000000,45000000,55000000],
+            CZK:[25000,75000,125000,250000,500000,1000000,1500000,2000000],
+            HUF:[500000,1000000,2000000,4000000,8000000,20000000,30000000,40000000],
+            RON:[5000,15000,25000,50000,100000,250000,375000,475000],
         },
 
         get amounts()  { return this.amountsByCurrency[this.selCurrency] || this.amountsByCurrency['EUR']; },
@@ -109,7 +124,14 @@ document.addEventListener('alpine:init', () => {
 
         get amount() {
             const c = parseFloat(this.customAmt);
-            return (!isNaN(c) && c > 0) ? c : this.selAmount;
+            if (!isNaN(c) && c > 0) {
+                return (c >= this.minAmount && c <= this.maxAmount) ? c : null;
+            }
+            return this.selAmount;
+        },
+        get amountOutOfRange() {
+            const c = parseFloat(this.customAmt);
+            return !isNaN(c) && c > 0 && (c < this.minAmount || c > this.maxAmount);
         },
         get duration() {
             const c = parseInt(this.customDur);
@@ -192,7 +214,7 @@ document.addEventListener('alpine:init', () => {
                         </div>
                         <div style="display:inline-flex;align-items:center;gap:.4rem;background:var(--navy);color:var(--gold);padding:.35rem .9rem;border-radius:999px;font-weight:800;font-size:.82rem;white-space:nowrap;flex-shrink:0;">
                             <i class="fas fa-lock" style="font-size:.68rem;"></i>
-                            @lang('loan.label_rate') : 5 %
+                            @lang('loan.label_rate') : {{ number_format((float) $loanSetting->annual_rate, 2) }} %
                         </div>
                     </div>
 
@@ -268,10 +290,14 @@ document.addEventListener('alpine:init', () => {
                                 @lang('loan.label_other') :
                             </label>
                             <input type="number" x-model="customAmt" @input="selAmount = null"
-                                   min="100" step="100"
+                                   :min="minAmount" :max="maxAmount" step="100"
                                    placeholder="{{ __('loan.placeholder_amount') }}">
                             <span class="sym" x-text="currency.symbol"></span>
                         </div>
+                        <p x-show="amountOutOfRange" x-cloak style="font-size:.75rem;color:#dc2626;margin:.4rem 0 0;">
+                            <i class="fas fa-exclamation-circle" style="margin-right:.25rem;"></i>
+                            {{ __('loan.amount_range_hint', ['min' => number_format((float) $loanSetting->min_amount, 0, ',', ' '), 'max' => number_format((float) $loanSetting->max_amount, 0, ',', ' ')]) }}
+                        </p>
                     </div>
 
                     {{-- ── ③ Durée ── --}}
@@ -326,7 +352,7 @@ document.addEventListener('alpine:init', () => {
                                 </div>
                             </div>
                             <p style="font-size:.68rem;color:rgba(255,255,255,.4);margin:0;">
-                                <i class="fas fa-info-circle" style="margin-right:.25rem;"></i>@lang('loan.quote_hint')
+                                <i class="fas fa-info-circle" style="margin-right:.25rem;"></i>{{ __('loan.quote_hint', ['rate' => number_format((float) $loanSetting->annual_rate, 2)]) }}
                             </p>
                         </div>
                     </div>
@@ -424,7 +450,9 @@ document.addEventListener('alpine:init', () => {
                         <div class="contact-widget__icon"><i class="fas fa-phone-alt"></i></div>
                         <h4>@lang('contact.phone_title')</h4>
                         <p>@lang('loan.sidebar_hours')</p>
-                        <a href="tel:+34613853614" class="contact-widget__phone">+31 6 57341120</a>
+                        @if($siteContact->phone_1)
+                        <a href="tel:{{ preg_replace('/[^\d+]/', '', $siteContact->phone_1) }}" class="contact-widget__phone">{{ $siteContact->phone_1 }}</a>
+                        @endif
                         <a href="{{ route('contact', ['locale' => $locale]) }}"
                            class="btn-outline w-100 justify-content-center mt-2">
                             <i class="fas fa-envelope"></i> @lang('menu.contact')
@@ -464,24 +492,62 @@ document.addEventListener('alpine:init', () => {
 </section>
 
 {{-- Bande partenaires (signal de confiance) --}}
-<div style="background:#f7f8fa;border-top:1px solid #eaecf0;padding:1.5rem 0 1.75rem;">
+@push('styles')
+<style>
+.partners-marquee {
+    overflow:hidden; position:relative;
+    -webkit-mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.partners-track {
+    display:flex; align-items:center; width:max-content; gap:1.1rem;
+    animation:partners-scroll 70s linear infinite;
+}
+.partners-marquee:hover .partners-track { animation-play-state:paused; }
+@keyframes partners-scroll {
+    from { transform:translateX(0); }
+    to   { transform:translateX(-50%); }
+}
+.partner-logo {
+    display:flex; align-items:center; justify-content:center;
+    padding:.8rem 1.5rem; min-width:120px; height:66px;
+    background:#fff; border:1.5px solid #e5e7eb; border-radius:12px;
+    filter:grayscale(1); opacity:.6;
+    transition:filter .3s ease, opacity .3s ease, border-color .3s ease, box-shadow .3s ease;
+    cursor:default; flex-shrink:0;
+}
+.partner-logo:hover {
+    filter:grayscale(0); opacity:1;
+    border-color:var(--gold); box-shadow:0 4px 22px rgba(200,169,81,.2);
+}
+.partner-logo--text {
+    font-size:.85rem; font-weight:700; color:var(--navy);
+    text-align:center; line-height:1.3; white-space:nowrap;
+}
+@media (max-width:576px) {
+    .partner-logo { min-width:100px; padding:.65rem 1rem; height:56px; }
+    .partners-track { gap:.65rem; animation-duration:45s; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .partners-track { animation:none; flex-wrap:wrap; width:100%; justify-content:center; }
+}
+</style>
+@endpush
+<section class="py-10" style="background:#f7f8fa;border-top:1px solid #eaecf0;border-bottom:1px solid #eaecf0;">
     <div class="container">
-        <p style="text-align:center;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:#b0b8c5;margin:0 0 1rem;">
+        <p class="text-center" style="font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#9ca3af;margin-bottom:1.4rem;">
             @lang('home.partners_label')
         </p>
-        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.75rem;">
-            @foreach([
-                ['bnpparibas','BNP Paribas'],
-                ['santander','Santander'],
-                ['pko','PKO Bank Polski'],
-                ['revolut','Revolut'],
-                ['bbva','BBVA'],
-            ] as $p)
-            <div style="display:flex;align-items:center;justify-content:center;padding:.55rem 1.25rem;height:52px;background:#fff;border:1.5px solid #e5e7eb;border-radius:10px;filter:grayscale(1);opacity:.45;transition:filter .25s,opacity .25s;">
-                <img src="{{ asset('images/partners/' . $p[0] . '.svg') }}" alt="{{ $p[1] }}" style="height:30px;width:auto;">
+        <div class="partners-marquee">
+            <div class="partners-track">
+                @foreach (__('home.partners_list') as $bankName)
+                <div class="partner-logo partner-logo--text">{{ $bankName }}</div>
+                @endforeach
+                @foreach (__('home.partners_list') as $bankName)
+                <div class="partner-logo partner-logo--text" aria-hidden="true">{{ $bankName }}</div>
+                @endforeach
             </div>
-            @endforeach
         </div>
     </div>
-</div>
+</section>
 @endsection

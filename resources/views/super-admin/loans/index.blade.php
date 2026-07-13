@@ -449,7 +449,7 @@ $sIcons = [
 
   @if($loans->hasPages())
   <div class="li-pagi">
-    {{ $loans->appends(request()->query())->links() }}
+    {{ $loans->appends(request()->query())->links('partials.pagination') }}
   </div>
   @endif
 

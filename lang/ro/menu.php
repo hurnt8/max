@@ -25,6 +25,7 @@ return [
     'terms'            => "Termeni și condiții de utilizare",
     'privacy'          => 'Politica de confidențialitate',
     'quick_links'      => 'Linkuri rapide',
+    'addresses'        => 'Adrese',
     'rights_reserved'  => 'Toate drepturile rezervate.',
     'email_placeholder'=> 'Adresa dumneavoastră de e-mail',
     'newsletter_title' => 'Rămâneți informat despre ofertele noastre',

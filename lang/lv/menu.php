@@ -25,6 +25,7 @@ return [
     'terms'            => 'Lietošanas noteikumi',
     'privacy'          => 'Konfidencialitātes politika',
     'quick_links'      => 'Ātrās saites',
+    'addresses'        => 'Adreses',
     'rights_reserved'  => 'Visas tiesības aizsargātas.',
     'email_placeholder'=> 'Jūsu e-pasta adrese',
     'newsletter_title' => 'Uzziniet pirmais par mūsu piedāvājumiem',

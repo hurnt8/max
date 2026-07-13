@@ -24,6 +24,7 @@ return [
     'terms'            => 'Nutzungsbedingungen',
     'privacy'          => 'Datenschutzerklärung',
     'quick_links'      => 'Schnellzugriff',
+    'addresses'        => 'Adressen',
     'rights_reserved'  => 'Alle Rechte vorbehalten.',
     'email_placeholder'=> 'Ihre E-Mail-Adresse',
     'newsletter_title' => 'Bleiben Sie über unsere Angebote informiert',

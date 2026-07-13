@@ -35,6 +35,7 @@ class LoanCreatedMail extends Mailable
             'lt' => 'Jūsų finansavimo byla Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
             'ro' => 'Dosarul dumneavoastră de finanțare nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
             'lv' => 'Jūsu finansējuma lieta Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'nl' => 'Uw financieringsdossier Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
         ];
 
         return new Envelope(subject: $subjects[$this->locale] ?? $subjects['fr']);

@@ -119,10 +119,9 @@
             <div class="col-6">
               <label class="form-label-pro">Langue du contrat</label>
               <select name="client_locale" class="form-control-pro">
-                <option value="fr" {{ old('client_locale','fr')==='fr'?'selected':'' }}>🇫🇷 Français</option>
-                <option value="pl" {{ old('client_locale')==='pl'?'selected':'' }}>🇵🇱 Polski</option>
-                <option value="en" {{ old('client_locale')==='en'?'selected':'' }}>🇬🇧 English</option>
-                <option value="es" {{ old('client_locale')==='es'?'selected':'' }}>🇪🇸 Español</option>
+                @foreach(['fr'=>'🇫🇷 Français','en'=>'🇬🇧 English','es'=>'🇪🇸 Español','pl'=>'🇵🇱 Polski','bg'=>'🇧🇬 Български','hu'=>'🇭🇺 Magyar','it'=>'🇮🇹 Italiano','de'=>'🇩🇪 Deutsch','lt'=>'🇱🇹 Lietuvių','ro'=>'🇷🇴 Română','lv'=>'🇱🇻 Latviešu','nl'=>'🇳🇱 Nederlands'] as $lc => $llabel)
+                <option value="{{ $lc }}" {{ old('client_locale','fr')===$lc?'selected':'' }}>{{ $llabel }}</option>
+                @endforeach
               </select>
             </div>
           </div>
@@ -215,7 +214,7 @@
           <div class="col-sm-6">
             <label class="form-label-pro">Taux d'intérêt annuel</label>
             <div class="d-flex gap-2 align-items-center">
-              <input type="text" class="form-control-pro" value="5 %" readonly
+              <input type="text" class="form-control-pro" value="{{ number_format((float) $annualRate, 2) }} %" readonly
                      style="background:var(--c-bg);cursor:not-allowed;flex:1">
             </div>
             <p class="form-help">Taux fixe — automatiquement appliqué</p>
@@ -337,7 +336,7 @@ const _missingVarsBase = '{{ url("admin/contract-templates") }}';
 
 function loanForm(){
   return {
-    amount:{{ old('amount',0) }}, duration:{{ old('darly',12) }}, rate:5,
+    amount:{{ old('amount',0) }}, duration:{{ old('darly',12) }}, rate:{{ (float) $annualRate }},
     currency:'{{ old('currency','EUR') }}', clientMode:'{{ old('client_mode','existing') }}',
     monthly:0, totalCost:0, totalInterest:0, schedule:[],
     missingFields:[], extraFieldValues:{},

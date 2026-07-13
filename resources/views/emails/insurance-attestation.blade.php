@@ -13,6 +13,7 @@ $greetings = [
     'lt' => ['M' => 'Gerbiamas Pone '.$loan->name.',', 'F' => 'Gerbiama Ponia '.$loan->name.',', 'N' => 'Sveiki, '.$loan->name.','],
     'ro' => ['M' => 'Stimate Domnule '.$loan->name.',', 'F' => 'Stimată Doamnă '.$loan->name.',', 'N' => 'Bună ziua, '.$loan->name.','],
     'lv' => ['M' => 'Godātais Kungs '.$loan->name.',', 'F' => 'Godātā Kundze '.$loan->name.',', 'N' => 'Sveiki, '.$loan->name.','],
+    'nl' => ['M' => 'Geachte heer '.$loan->name.',', 'F' => 'Geachte mevrouw '.$loan->name.',', 'N' => 'Beste '.$loan->name.','],
 ];
 
 $texts = [
@@ -202,6 +203,23 @@ $texts = [
         'contact'      => 'Ja jums ir kādi jautājumi par savu apdrošināšanu, nevilcinieties sazināties ar savu konsultantu.',
         'closing'      => 'Ar cieņu,',
         'team'         => 'Solberg Grupo komanda',
+    ],
+    'nl' => [
+        'title'    => 'Verzekeringsattest kredietnemer — Nr. '.$loan->reference,
+        'sub'      => 'Verzekering CG-A340G',
+        'greeting' => $greetings['nl'][$gender],
+        'intro'    => 'Bijgevoegd vindt u uw <strong>verzekeringsattest kredietnemer</strong> (referentie <strong>'.$loan->reference.'</strong>), afgegeven door Solberg Grupo in het kader van uw financieringsdossier.',
+        'summary'  => 'OVERZICHT VAN UW VERZEKERING',
+        'lbl_ref'  => 'Dossierreferentie',
+        'lbl_montant'  => 'Verzekerd bedrag',
+        'lbl_duree'    => 'Looptijd',
+        'lbl_months'   => 'maanden',
+        'lbl_frais'    => 'Verzekeringskosten',
+        'lbl_fin'      => 'Einddatum verzekering',
+        'attach_note'  => 'Uw verzekeringsattest CG-A340G is als PDF-bijlage bij deze e-mail gevoegd.',
+        'contact'      => 'Voor vragen over uw verzekering kunt u gerust contact opnemen met uw adviseur.',
+        'closing'      => 'Met vriendelijke groet,',
+        'team'         => 'Het Solberg Grupo Team',
     ],
 ];
 

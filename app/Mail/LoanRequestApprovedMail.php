@@ -32,6 +32,7 @@ class LoanRequestApprovedMail extends Mailable
             'lt' => 'Jūsų paraiška Nr. ' . $this->loan->reference . ' buvo patvirtinta — SOLBERG GRUPO',
             'ro' => 'Cererea dumneavoastră nr. ' . $this->loan->reference . ' a fost aprobată — SOLBERG GRUPO',
             'lv' => 'Jūsu pieteikums Nr. ' . $this->loan->reference . ' ir apstiprināts — SOLBERG GRUPO',
+            'nl' => 'Uw aanvraag nr. ' . $this->loan->reference . ' is goedgekeurd — SOLBERG GRUPO',
         ];
 
         return new Envelope(subject: $subjects[$this->mailLocale] ?? $subjects['fr']);

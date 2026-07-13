@@ -31,6 +31,7 @@ class LoanConfirmationMail extends Mailable
             'lt' => 'Jūsų paskolos paraiška yra nagrinėjama',
             'ro' => 'Cererea dumneavoastră de împrumut este în curs de procesare',
             'lv' => 'Jūsu aizdevuma pieteikums tiek apstrādāts',
+            'nl' => 'Uw leningaanvraag wordt verwerkt',
         ];
         return new Envelope(subject: $subjects[$this->lang] ?? $subjects['fr']);
     }

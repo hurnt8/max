@@ -328,6 +328,20 @@ $tpl = $loan->contractTemplate;
           </div>
         </div>
         @endif
+
+        @if($loan->client?->invitation_token)
+        <div class="ld-warn-box" style="margin-top:.75rem">
+          <i class="fas fa-user-clock" style="color:#F59E0B;flex-shrink:0;margin-top:.1rem"></i>
+          <span>Ce client n'a pas encore activé son compte.</span>
+        </div>
+        <form action="{{ route('admin.users.resend-invite', $loan->client) }}" method="POST"
+              onsubmit="return confirm('Envoyer le lien d\'invitation à {{ $loan->email }} ?')" style="margin-top:.5rem">
+          @csrf
+          <button type="submit" class="btn-navy ld-btn-full">
+            <i class="fas fa-paper-plane"></i> Envoyer le lien d'invitation
+          </button>
+        </form>
+        @endif
       </div>
     </div>
 

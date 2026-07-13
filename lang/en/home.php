@@ -200,7 +200,7 @@ return [
         'engage2_title' => 'Guaranteed Response in 24h',
         'engage2_desc'  => '100% online process, no branch visit required. Decision delivered within 24 hours.',
         'engage3_title' => 'Multi-currency & Multi-country',
-        'engage3_desc'  => 'Loans available in Euro, Złoty, US Dollar, Mexican Peso, Brazilian Real and Costa Rican Colón to suit your project.',
+        'engage3_desc'  => 'Financing available in your country\'s currency, tailored to your project.',
     ],
 
     'services' => [

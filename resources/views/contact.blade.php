@@ -2,7 +2,13 @@
 @section('title', __('menu.contact'))
 
 @section('content')
-@php $locale = app()->getLocale(); @endphp
+@php
+    $locale = app()->getLocale();
+    $siteContact = \App\Models\SiteContact::current();
+    $socialLinks = \App\Models\SocialLink::where('is_visible', true)->orderBy('sort_order')->get();
+    $addresses = collect([$siteContact->address_1, $siteContact->address_2, $siteContact->address_3])->filter();
+    $phones    = collect([$siteContact->phone_1, $siteContact->phone_2])->filter();
+@endphp
 
 {{-- Page hero --}}
 <div class="page-hero">
@@ -22,25 +28,45 @@
 <div class="contact-info-bar">
     <div class="container">
         <div class="row g-3 gutter-y-20">
-            @foreach ([
-                ['fas fa-map-marker-alt', __('contact.address_title'), __('contact.address_desc'), null],
-                ['fas fa-phone-alt',      __('contact.phone_title'),   __('contact.phone_desc'),   'tel:+34613853614'],
-                ['fas fa-envelope',       __('contact.mail_title'),    __('contact.mail_desc'),    'mailto:contact@credixa.eu'],
-            ] as $i => $info)
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="800ms" data-wow-delay="{{ $i*80 }}ms">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="800ms" data-wow-delay="0ms">
                 <div class="contact-info-card">
-                    <div class="contact-info-card__icon"><i class="{{ $info[0] }}"></i></div>
+                    <div class="contact-info-card__icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div>
-                        <p class="contact-info-card__title">{{ $info[1] }}</p>
-                        @if($info[3])
-                        <p class="contact-info-card__value"><a href="{{ $info[3] }}">{{ $info[2] }}</a></p>
+                        <p class="contact-info-card__title">{{ __('contact.address_title') }}</p>
+                        @forelse ($addresses as $address)
+                        <p class="contact-info-card__value" style="margin-bottom:.35rem">{{ $address }}</p>
+                        @empty
+                        <p class="contact-info-card__value">—</p>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="800ms" data-wow-delay="80ms">
+                <div class="contact-info-card">
+                    <div class="contact-info-card__icon"><i class="fas fa-phone-alt"></i></div>
+                    <div>
+                        <p class="contact-info-card__title">{{ __('contact.phone_title') }}</p>
+                        @forelse ($phones as $phone)
+                        <p class="contact-info-card__value" style="margin-bottom:.35rem"><a href="tel:{{ preg_replace('/[^\d+]/', '', $phone) }}">{{ $phone }}</a></p>
+                        @empty
+                        <p class="contact-info-card__value">—</p>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="800ms" data-wow-delay="160ms">
+                <div class="contact-info-card">
+                    <div class="contact-info-card__icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <p class="contact-info-card__title">{{ __('contact.mail_title') }}</p>
+                        @if($siteContact->email)
+                        <p class="contact-info-card__value"><a href="mailto:{{ $siteContact->email }}">{{ $siteContact->email }}</a></p>
                         @else
-                        <p class="contact-info-card__value">{{ $info[2] }}</p>
+                        <p class="contact-info-card__value">—</p>
                         @endif
                     </div>
                 </div>
             </div>
-            @endforeach
         </div>
     </div>
 </div>
@@ -54,38 +80,43 @@
             <div class="col-lg-5 wow fadeInLeft" data-wow-duration="900ms">
                 <div class="contact-image-panel">
                     <img src="{{ asset('assets/images/resources/contact-1-1.jpg') }}"
-                         alt="ContactSolberg Grupo" class="contact-image-panel__img">
+                         alt="Contact Solberg Grupo" class="contact-image-panel__img">
                     <div class="contact-image-panel__info">
                         <div class="contact-panel__company">
-                            <h3>Credixa</h3>
+                            <h3>Solberg Grupo</h3>
                             <p>{{ __('contact.detail_desc') }}</p>
                         </div>
+                        @if ($addresses->first())
                         <div class="contact-panel__item">
                             <div class="contact-panel__item-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div>
                                 <span class="contact-panel__item-label">{{ __('contact.address_title') }}</span>
-                                <span class="contact-panel__item-value">{{ __('contact.address_desc') }}</span>
+                                <span class="contact-panel__item-value">{{ $addresses->first() }}</span>
                             </div>
                         </div>
+                        @endif
+                        @if ($phones->first())
                         <div class="contact-panel__item">
                             <div class="contact-panel__item-icon"><i class="fas fa-phone-alt"></i></div>
                             <div>
                                 <span class="contact-panel__item-label">{{ __('contact.phone_title') }}</span>
-                                <a href="tel:+34613853614" class="contact-panel__item-value">{{ __('contact.phone_desc') }}</a>
+                                <a href="tel:{{ preg_replace('/[^\d+]/', '', $phones->first()) }}" class="contact-panel__item-value">{{ $phones->first() }}</a>
                             </div>
                         </div>
+                        @endif
+                        @if ($siteContact->email)
                         <div class="contact-panel__item">
                             <div class="contact-panel__item-icon"><i class="fas fa-envelope"></i></div>
                             <div>
                                 <span class="contact-panel__item-label">{{ __('contact.mail_title') }}</span>
-                                <a href="mailto:contact@credixa.eu" class="contact-panel__item-value">{{ __('contact.mail_desc') }}</a>
+                                <a href="mailto:{{ $siteContact->email }}" class="contact-panel__item-value">{{ $siteContact->email }}</a>
                             </div>
                         </div>
+                        @endif
                         <div class="contact-panel__social">
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            @foreach ($socialLinks as $link)
+                            <a href="{{ $link->url }}" aria-label="{{ $link->label }}" @if(str_starts_with($link->url, 'http')) target="_blank" rel="noopener" @endif><i class="{{ $link->icon_class }}"></i></a>
+                            @endforeach
                         </div>
                     </div>
                 </div>

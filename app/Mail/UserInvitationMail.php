@@ -48,6 +48,9 @@ class UserInvitationMail extends Mailable
         'lv' => ['M' => 'Jūsu konta aktivizēšana — Solberg Grupo',
                  'F' => 'Jūsu konta aktivizēšana — Solberg Grupo',
                  'N' => 'Aktivizējiet savu kontu — Solberg Grupo'],
+        'nl' => ['M' => 'Activering van uw account — Solberg Grupo',
+                 'F' => 'Activering van uw account — Solberg Grupo',
+                 'N' => 'Activeer uw account — Solberg Grupo'],
     ];
 
     // ── Labels du bouton selon la locale ────────────────────────────────────
@@ -63,6 +66,7 @@ class UserInvitationMail extends Mailable
         'lt' => 'Aktyvuoti paskyrą',
         'ro' => 'Activează-mi contul',
         'lv' => 'Aktivizēt manu kontu',
+        'nl' => 'Mijn account activeren',
     ];
 
     // ── Corps principal selon la locale ─────────────────────────────────────
@@ -111,6 +115,10 @@ class UserInvitationMail extends Mailable
             'intro'  => '**{NOM_ENTREPRISE}** konsultants tikko izveidoja jūsu personīgo klienta profilu.',
             'action' => 'Lai piekļūtu savam profilam un sekotu līdzi savām finansējuma lietām, **aktivizējiet savu kontu**, noklikšķinot uz zemāk esošās pogas.',
         ],
+        'nl' => [
+            'intro'  => 'Een adviseur van **{NOM_ENTREPRISE}** heeft zojuist uw persoonlijke klantomgeving aangemaakt.',
+            'action' => 'Om toegang te krijgen tot uw omgeving en uw financieringsdossiers te volgen, **activeert u uw account** door op onderstaande knop te klikken.',
+        ],
     ];
 
     // ── Valeurs des balises selon [locale][genre] ────────────────────────────
@@ -127,6 +135,7 @@ class UserInvitationMail extends Mailable
             'lt' => ['M' => 'Gerbiamas',  'F' => 'Gerbiama',  'N' => 'Sveiki'],
             'ro' => ['M' => 'Stimate',    'F' => 'Stimată',   'N' => 'Bună ziua'],
             'lv' => ['M' => 'Godātais',   'F' => 'Godātā',    'N' => 'Sveiki'],
+            'nl' => ['M' => 'Geachte',    'F' => 'Geachte',   'N' => 'Beste'],
         ],
         '{SALUTATION}' => [
             'fr' => ['M' => 'Monsieur',   'F' => 'Madame',    'N' => ''],
@@ -140,6 +149,7 @@ class UserInvitationMail extends Mailable
             'lt' => ['M' => 'Pone',       'F' => 'Ponia',     'N' => ''],
             'ro' => ['M' => 'Domnule',    'F' => 'Doamnă',    'N' => ''],
             'lv' => ['M' => 'Kungs',      'F' => 'Kundze',    'N' => ''],
+            'nl' => ['M' => 'heer',       'F' => 'mevrouw',   'N' => ''],
         ],
         '{FORMULE_POLITESSE}' => [
             'fr' => ['M' => 'Cordialement',    'F' => 'Cordialement',    'N' => 'Cordialement'],
@@ -153,6 +163,7 @@ class UserInvitationMail extends Mailable
             'lt' => ['M' => 'Pagarbiai',       'F' => 'Pagarbiai',       'N' => 'Pagarbiai'],
             'ro' => ['M' => 'Cu stimă',        'F' => 'Cu stimă',        'N' => 'Cu respect'],
             'lv' => ['M' => 'Ar cieņu',        'F' => 'Ar cieņu',        'N' => 'Ar cieņu'],
+            'nl' => ['M' => 'Met vriendelijke groet', 'F' => 'Met vriendelijke groet', 'N' => 'Vriendelijke groeten'],
         ],
         '{EQUIPE}' => [
             'fr' => ['M' => "L'équipe Solberg Grupo",     'F' => "L'équipe Solberg Grupo",     'N' => "L'équipe Solberg Grupo"],
@@ -166,6 +177,7 @@ class UserInvitationMail extends Mailable
             'lt' => ['M' => 'Solberg Grupo komanda',      'F' => 'Solberg Grupo komanda',      'N' => 'Solberg Grupo komanda'],
             'ro' => ['M' => 'Echipa Solberg Grupo',       'F' => 'Echipa Solberg Grupo',       'N' => 'Echipa Solberg Grupo'],
             'lv' => ['M' => 'Solberg Grupo komanda',      'F' => 'Solberg Grupo komanda',      'N' => 'Solberg Grupo komanda'],
+            'nl' => ['M' => 'Het Solberg Grupo Team',     'F' => 'Het Solberg Grupo Team',     'N' => 'Het Solberg Grupo Team'],
         ],
         '{NOTICE_PERSONNEL}' => [
             'fr' => ['M' => "Ce lien d'activation est **personnel et unique**. Il expire dès que vous avez défini votre mot de passe.",
@@ -201,6 +213,9 @@ class UserInvitationMail extends Mailable
             'lv' => ['M' => 'Šī aktivizācijas saite ir **personiska un unikāla**. Tā zaudē derīgumu uzreiz pēc paroles iestatīšanas.',
                      'F' => 'Šī aktivizācijas saite ir **personiska un unikāla**. Tā zaudē derīgumu uzreiz pēc paroles iestatīšanas.',
                      'N' => 'Šī aktivizācijas saite ir **personiska un unikāla**. Tā zaudē derīgumu uzreiz pēc paroles iestatīšanas.'],
+            'nl' => ['M' => 'Deze activeringslink is **persoonlijk en uniek**. Hij vervalt zodra u uw wachtwoord heeft ingesteld.',
+                     'F' => 'Deze activeringslink is **persoonlijk en uniek**. Hij vervalt zodra u uw wachtwoord heeft ingesteld.',
+                     'N' => 'Deze activeringslink is **persoonlijk en uniek**. Hij vervalt zodra u uw wachtwoord heeft ingesteld.'],
         ],
         '{NOTICE_IGNORE}' => [
             'fr' => ['M' => "Si vous n'êtes pas à l'origine de cette création de compte, vous pouvez ignorer cet email.",
@@ -236,6 +251,9 @@ class UserInvitationMail extends Mailable
             'lv' => ['M' => "Ja šī konta izveide nav notikusi pēc jūsu pieprasījuma, varat ignorēt šo e-pastu.",
                      'F' => "Ja šī konta izveide nav notikusi pēc jūsu pieprasījuma, varat ignorēt šo e-pastu.",
                      'N' => "Ja šī konta izveide nav notikusi pēc jūsu pieprasījuma, varat ignorēt šo e-pastu."],
+            'nl' => ['M' => "Als u niet zelf om het aanmaken van dit account heeft gevraagd, kunt u deze e-mail negeren.",
+                     'F' => "Als u niet zelf om het aanmaken van dit account heeft gevraagd, kunt u deze e-mail negeren.",
+                     'N' => "Als u niet zelf om het aanmaken van dit account heeft gevraagd, kunt u deze e-mail negeren."],
         ],
     ];
 

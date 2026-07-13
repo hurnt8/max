@@ -180,7 +180,7 @@ return [
     'slide_1' => [
         'title' => ' Od 1990. · Licencirano · Odgovor za 24h',
         'text1' => 'Financirajte sve svoje projekte,',
-        'text2' => 'do 95.000 € za 24h.',
+        'text2' => 'do 500.000 € za 24h.',
     ],
     'slide_2' => [
         'title' => 'Pametni krediti za svijetlu budućnost',

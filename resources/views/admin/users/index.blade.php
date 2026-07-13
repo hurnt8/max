@@ -291,10 +291,9 @@
                     <div class="col-md-4">
                       <label class="form-label-pro">Langue</label>
                       <select name="locale" class="form-control-pro">
-                        <option value="fr" {{ old('locale',$user->locale)==='fr'?'selected':'' }}>Français</option>
-                        <option value="en" {{ old('locale',$user->locale)==='en'?'selected':'' }}>English</option>
-                        <option value="es" {{ old('locale',$user->locale)==='es'?'selected':'' }}>Español</option>
-                        <option value="pl" {{ old('locale',$user->locale)==='pl'?'selected':'' }}>Polski</option>
+                        @foreach(['fr'=>'Français','en'=>'English','es'=>'Español','pl'=>'Polski','bg'=>'Български','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuvių','ro'=>'Română','lv'=>'Latviešu','nl'=>'Nederlands'] as $lc => $llabel)
+                        <option value="{{ $lc }}" {{ old('locale',$user->locale)===$lc?'selected':'' }}>{{ $llabel }}</option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -485,10 +484,9 @@
             <div class="col-md-6">
               <label class="form-label-pro">Langue <span style="font-size:.7rem;color:var(--c-muted);font-weight:400">(langue de l'email d'invitation)</span></label>
               <select name="locale" class="form-control-pro">
-                <option value="fr" {{ old('locale')==='fr'||!old('locale')?'selected':'' }}>🇫🇷 Français</option>
-                <option value="en" {{ old('locale')==='en'?'selected':'' }}>🇬🇧 English</option>
-                <option value="es" {{ old('locale')==='es'?'selected':'' }}>🇪🇸 Español</option>
-                <option value="pl" {{ old('locale')==='pl'?'selected':'' }}>🇵🇱 Polski</option>
+                @foreach(['fr'=>'🇫🇷 Français','en'=>'🇬🇧 English','es'=>'🇪🇸 Español','pl'=>'🇵🇱 Polski','bg'=>'🇧🇬 Български','hu'=>'🇭🇺 Magyar','it'=>'🇮🇹 Italiano','de'=>'🇩🇪 Deutsch','lt'=>'🇱🇹 Lietuvių','ro'=>'🇷🇴 Română','lv'=>'🇱🇻 Latviešu','nl'=>'🇳🇱 Nederlands'] as $lc => $llabel)
+                <option value="{{ $lc }}" {{ old('locale')===$lc||(!old('locale')&&$lc==='fr')?'selected':'' }}>{{ $llabel }}</option>
+                @endforeach
               </select>
             </div>
             <div class="col-md-4">

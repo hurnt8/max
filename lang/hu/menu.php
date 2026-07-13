@@ -24,6 +24,7 @@ return [
     'terms'            => 'Felhasználási feltételek',
     'privacy'          => 'Adatvédelmi irányelv',
     'quick_links'      => 'Gyorslinkek',
+    'addresses'        => 'Címek',
     'rights_reserved'  => 'Minden jog fenntartva.',
     'email_placeholder'=> 'Az Ön e-mail-címe',
     'newsletter_title' => 'Legyen tájékozott ajánlatainkról',

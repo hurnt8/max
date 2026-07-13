@@ -38,6 +38,7 @@ class InsuranceAttestationMail extends Mailable
             'lt' => 'Jūsų skolininko draudimo pažymėjimas — Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
             'ro' => 'Certificatul dumneavoastră de asigurare a împrumutatului — nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
             'lv' => 'Jūsu aizņēmēja apdrošināšanas apliecība — Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'nl' => 'Uw verzekeringsattest kredietnemer — Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
         ];
 
         return new Envelope(

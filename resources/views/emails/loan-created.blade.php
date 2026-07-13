@@ -244,6 +244,28 @@ $texts = [
         'closing'      => 'Esam jūsu rīcībā, ja rodas kādi jautājumi.',
         'team'         => 'Solberg Grupo komanda',
     ],
+    'nl' => [
+        'greeting'     => 'Geachte heer/mevrouw ' . $loan->name . ',',
+        'intro'        => 'Wij hebben uw financieringsdossier bij **SOLBERG GRUPO** succesvol geregistreerd. Bijgevoegd vindt u uw leningsovereenkomst en het aflossingsschema met de details van uw maandelijkse terugbetalingen.',
+        'summary'      => 'SAMENVATTING VAN UW FINANCIERING',
+        'ref'          => 'Dossierreferentie',
+        'amount'       => 'Toegekend bedrag',
+        'duration'     => 'Looptijd',
+        'months'       => 'maanden',
+        'monthly'      => 'Maandelijkse aflossing',
+        'rate'         => 'Rentevoet',
+        'fees'         => 'Administratiekosten',
+        'start'        => 'Eerste vervaldatum',
+        'docs_title'   => 'BIJGEVOEGDE DOCUMENTEN',
+        'doc_contract' => '📄 **Contract_{{ ref }}.pdf** — Uw leningsovereenkomst, aandachtig te lezen',
+        'doc_amort'    => '📊 **Aflossingsschema_{{ ref }}.pdf** — Volledig maandelijks aflossingsschema',
+        'next_title'   => 'VOLGENDE STAPPEN',
+        'next_1'       => '1. Lees het bijgevoegde contract aandachtig door.',
+        'next_2'       => '2. Onderteken het en stuur het per e-mail terug naar ons team.',
+        'next_3'       => '3. Zodra wij het ontvangen hebben, ontvangt u de bankgegevens voor de uitbetaling van de fondsen.',
+        'closing'      => 'Wij staan u graag ter beschikking voor al uw vragen.',
+        'team'         => 'Het Solberg Grupo Team',
+    ],
 ];
 $t   = $texts[$locale] ?? $texts['fr'];
 $ref = $loan->reference;

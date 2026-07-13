@@ -23,6 +23,7 @@ return [
     'terms'            => 'Warunki użytkowania',
     'privacy'          => 'Polityka prywatności',
     'quick_links'      => 'Szybkie linki',
+    'addresses'        => 'Adresy',
     'rights_reserved'  => 'Wszelkie prawa zastrzeżone.',
     'email_placeholder'=> 'Twój adres email',
     'newsletter_title' => 'Bądź na bieżąco z naszymi ofertami',

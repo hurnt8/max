@@ -11,6 +11,7 @@ $docTypes = [
     'lt' => ['passport'=>'Pasas','id_card'=>'Asmens tapatybės kortelė','residence_permit'=>'Leidimas gyventi','driving_license'=>'Vairuotojo pažymėjimas'],
     'ro' => ['passport'=>'Pașaport','id_card'=>'Act de identitate','residence_permit'=>'Permis de ședere','driving_license'=>'Permis de conducere'],
     'lv' => ['passport'=>'Pase','id_card'=>'Personu apliecinošs dokuments','residence_permit'=>'Uzturēšanās atļauja','driving_license'=>'Vadītāja apliecība'],
+    'nl' => ['passport'=>'Paspoort','id_card'=>'Identiteitskaart','residence_permit'=>'Verblijfsvergunning','driving_license'=>'Rijbewijs'],
 ];
 $texts = [
     'fr' => [
@@ -155,6 +156,19 @@ $texts = [
         'noreply'   => 'Šis e-pasts ir nosūtīts no adreses, uz kuru netiek pieņemtas atbildes. Lūdzu, neatbildiet tieši uz šo ziņojumu.',
         'closing'   => 'Ar cieņu,',
         'team'      => 'Solberg Grupo komanda',
+    ],
+    'nl' => [
+        'title'     => 'Documenten ontvangen',
+        'sub'       => 'Solberg Grupo',
+        'greeting'  => 'Hallo '.$data['name'].',',
+        'body'      => 'We hebben uw documenten (adres en identiteitsbewijs) in goede orde ontvangen. Ons team zal deze beoordelen en binnen <strong>24 uur</strong> bij u terugkomen.',
+        'lbl_name'  => 'Naam',
+        'lbl_doc'   => 'Documenttype',
+        'lbl_addr'  => 'Adres',
+        'footer'    => 'Hartelijk dank voor uw vertrouwen. Wij staan u graag ter beschikking voor eventuele vragen.',
+        'noreply'   => 'Deze e-mail is verzonden vanaf een no-reply-adres. Gelieve hier niet rechtstreeks op te antwoorden.',
+        'closing'   => 'Met vriendelijke groet,',
+        'team'      => 'Het team van Solberg Grupo',
     ],
 ];
 $t       = $texts[$lang] ?? $texts['fr'];

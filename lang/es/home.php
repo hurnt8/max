@@ -159,7 +159,7 @@ return [
     'slide_1' => [
         'title' => ' 5 años de experiencia · Autorizado · Respuesta garantizada',
         'text1' => 'Financia todos tus proyectos,',
-        'text2' => 'hasta 95.000 € en 24h.',
+        'text2' => 'hasta 500.000 € en 24h.',
     ],
     'slide_2' => [
         'title' => 'Préstamos Inteligentes para Futuros Brillantes',
@@ -199,7 +199,7 @@ return [
         'engage2_title' => 'Respuesta garantizada en 24h',
         'engage2_desc'  => 'Proceso 100% en línea, sin visita a sucursal. Decisión en menos de 24 horas.',
         'engage3_title' => 'Multidivisa y Multipaís',
-        'engage3_desc'  => 'Préstamos disponibles en Euro, Esloti, Dólar estadounidense, Peso mexicano, Real brasileño y Colón costarricense.',
+        'engage3_desc'  => 'Financiación disponible en la moneda de tu país, adaptada a tu proyecto.',
     ],
 
     'services' => [

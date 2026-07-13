@@ -57,6 +57,11 @@ $greetings = [
         'F' => 'Godātā Kundze '.$loan->name.',',
         'N' => 'Godātais/Godātā '.$loan->name.',',
     ],
+    'nl' => [
+        'M' => 'Geachte heer '.$loan->name.',',
+        'F' => 'Geachte mevrouw '.$loan->name.',',
+        'N' => 'Geachte heer/mevrouw '.$loan->name.',',
+    ],
 ];
 
 $intros = [
@@ -114,6 +119,11 @@ $intros = [
         'M' => 'Mums ir prieks jums paziņot, ka jūsu finansējuma pieteikumu SOLBERG GRUPO ir <strong>apstiprinājusi</strong>.',
         'F' => 'Mums ir prieks jums paziņot, ka jūsu finansējuma pieteikumu SOLBERG GRUPO ir <strong>apstiprinājusi</strong>.',
         'N' => 'Mums ir prieks jums paziņot, ka jūsu finansējuma pieteikumu SOLBERG GRUPO ir <strong>apstiprinājusi</strong>.',
+    ],
+    'nl' => [
+        'M' => 'Wij hebben het genoegen u te informeren dat uw financieringsaanvraag door SOLBERG GRUPO is <strong>goedgekeurd</strong>.',
+        'F' => 'Wij hebben het genoegen u te informeren dat uw financieringsaanvraag door SOLBERG GRUPO is <strong>goedgekeurd</strong>.',
+        'N' => 'Wij hebben het genoegen u te informeren dat uw financieringsaanvraag door SOLBERG GRUPO is <strong>goedgekeurd</strong>.',
     ],
 ];
 
@@ -381,6 +391,30 @@ $texts = [
         'note'          => 'Norēķinu konta datus un izmaksas kārtību jums paziņos mūsu komanda pēc jūsu parakstītā līguma saņemšanas.',
         'closing'       => 'Ar cieņu,',
         'team'          => 'Solberg Grupo komanda',
+    ],
+    'nl' => [
+        'title'         => 'Aanvraag nr. '.$loan->reference.' goedgekeurd',
+        'sub'           => 'Financiering toegekend',
+        'greeting'      => $greetings['nl'][$gender],
+        'intro'         => $intros['nl'][$gender],
+        'summary'       => 'OVERZICHT VAN DE FINANCIERING',
+        'lbl_ref'       => 'Dossierreferentie',
+        'lbl_amount'    => 'Toegekend bedrag',
+        'lbl_duration'  => 'Looptijd',
+        'lbl_months'    => 'maanden',
+        'lbl_monthly'   => 'Maandelijkse aflossing',
+        'lbl_rate'      => 'Rentevoet',
+        'lbl_fees'      => 'Administratiekosten',
+        'action_title'  => 'ACTIE VEREIST',
+        'attachments'   => 'In bijlage bij dit bericht vindt u:',
+        'attach_contract' => 'Uw financieringscontract (PDF)',
+        'attach_table'    => 'Het aflossingsschema (PDF)',
+        'action_body'   => 'Gelieve <strong>het contract te ondertekenen</strong> en per e-mail terug te sturen naar:',
+        'action_email'  => 'serviceloan@credixa.eu',
+        'action_subject'=> 'met als onderwerp: <strong>Ondertekend contract — nr. '.$loan->reference.' — '.$loan->name.'</strong>',
+        'note'          => 'De gegevens van de betaalrekening en de uitbetalingsvoorwaarden worden u door ons team meegedeeld na ontvangst van uw ondertekende contract.',
+        'closing'       => 'Met vriendelijke groet,',
+        'team'          => 'Het team van Solberg Grupo',
     ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];

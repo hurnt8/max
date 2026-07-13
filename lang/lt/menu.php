@@ -23,6 +23,7 @@ return [
     'terms'            => 'Naudojimo sąlygos',
     'privacy'          => 'Privatumo politika',
     'quick_links'      => 'Greitosios nuorodos',
+    'addresses'        => 'Adresai',
     'rights_reserved'  => 'Visos teisės saugomos.',
     'email_placeholder'=> 'Jūsų el. pašto adresas',
     'newsletter_title' => 'Gaukite informaciją apie mūsų pasiūlymus',

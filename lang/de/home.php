@@ -196,7 +196,7 @@ return [
     'slide_1' => [
         'title' => ' Seit 1990 · Lizenziert · Antwort in 24h',
         'text1' => 'Finanzieren Sie alle Projekte,',
-        'text2' => 'bis zu 95.000 € in 24h.',
+        'text2' => 'bis zu 500.000 € in 24h.',
     ],
     'slide_2' => [
         'title' => 'Smarte Kredite für eine glänzende Zukunft',
@@ -236,7 +236,7 @@ return [
         'engage2_title' => 'Garantierte Antwort innerhalb von 24 Stunden',
         'engage2_desc' => '100 % Online-Abwicklung, ohne Anfahrt oder Papierkram. Entscheidung innerhalb von 24 Stunden.',
         'engage3_title' => 'Mehrere Währungen & Länder',
-        'engage3_desc' => 'Kredite verfügbar in Euro, polnischem Zloty, US-Dollar, mexikanischem Peso, brasilianischem Real und costa-ricanischem Colón, je nach Ihrem Vorhaben.',
+        'engage3_desc' => 'Finanzierung verfügbar in der Währung Ihres Landes, abgestimmt auf Ihr Vorhaben.',
     ],
 
     'services' => [

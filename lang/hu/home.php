@@ -196,7 +196,7 @@ return [
     'slide_1' => [
         'title' => ' 1990 óta · Engedélyes · Válasz 24 órán belül',
         'text1' => 'Finanszírozza összes projektjét,',
-        'text2' => 'akár 95 000 € 24 órán belül.',
+        'text2' => 'akár 500 000 € 24 órán belül.',
     ],
     'slide_2' => [
         'title' => 'Okos Hitelek a Világos Jövőért',
@@ -236,7 +236,7 @@ return [
         'engage2_title' => 'Garantált válasz 24 órán belül',
         'engage2_desc' => '100%-ban online ügyintézés, utazás és papírmunka nélkül. Döntés 24 órán belül.',
         'engage3_title' => 'Több pénznem & több ország',
-        'engage3_desc' => 'Kölcsönök euróban, zlotyban, amerikai dollárban, mexikói pesóban, brazil realban és costa rica-i colónban is elérhetők, projektjétől függően.',
+        'engage3_desc' => 'Az Ön országának pénznemében elérhető finanszírozás, projektjéhez igazítva.',
     ],
 
     'services' => [

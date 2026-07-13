@@ -150,10 +150,10 @@
         <div class="row">
             @php
             $stats = [
-                ['stop'=>'2500','suffix'=>'+','prefix'=>'', 'label'=> __('home.customer_satisfaction_rate')],
-                ['stop'=>'95',  'suffix'=>'k','prefix'=>'€','label'=> __('home.total_loan_amount_granted')],
+                ['stop'=>'8500','suffix'=>'+','prefix'=>'', 'label'=> __('home.customer_satisfaction_rate')],
+                ['stop'=>'500',  'suffix'=>'k','prefix'=>'€','label'=> __('home.total_loan_amount_granted')],
                 ['stop'=>'24',  'suffix'=>'h','prefix'=>'', 'label'=> __('home.average_approval_time')],
-                ['stop'=>'5',   'suffix'=>'+','prefix'=>'', 'label'=> __('home.years_experience')],
+                ['stop'=>'15',   'suffix'=>'+','prefix'=>'', 'label'=> __('home.years_experience')],
             ];
             @endphp
             @foreach ($stats as $i => $stat)

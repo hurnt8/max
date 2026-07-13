@@ -196,7 +196,7 @@ return [
     'slide_1' => [
         'title' => ' Nuo 1990 · Licencijuota · Atsakymas per 24h',
         'text1' => 'Finansuokite visus projektus,',
-        'text2' => 'iki 95 000 € per 24h.',
+        'text2' => 'iki 500 000 € per 24h.',
     ],
     'slide_2' => [
         'title' => 'Išmanios paskolos šviesiai ateičiai',
@@ -236,7 +236,7 @@ return [
         'engage2_title' => 'Garantuotas atsakymas per 24 val.',
         'engage2_desc' => '100 % apdorojimas internetu, be kelionių ir popierizmo. Sprendimas priimamas per 24 valandas.',
         'engage3_title' => 'Kelios valiutos & šalys',
-        'engage3_desc' => 'Paskolos galimos eurais, Lenkijos zlotais, JAV doleriais, Meksikos pesais, Brazilijos realais ir Kosta Rikos kolonais, priklausomai nuo jūsų projekto.',
+        'engage3_desc' => 'Finansavimas jūsų šalies valiuta, pritaikytas jūsų projektui.',
     ],
 
     'services' => [

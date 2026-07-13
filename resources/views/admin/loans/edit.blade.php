@@ -101,7 +101,7 @@
           <div class="col-sm-6">
             <label class="form-label-pro">Langue du contrat</label>
             <select name="contract_language" class="form-control-pro">
-              @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','bg'=>'Български','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuvių','ro'=>'Română','lv'=>'Latviešu'] as $lc => $llabel)
+              @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','bg'=>'Български','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuvių','ro'=>'Română','lv'=>'Latviešu','nl'=>'Nederlands'] as $lc => $llabel)
               <option value="{{ $lc }}" {{ old('contract_language', $loan->contract_language ?? 'fr') === $lc ? 'selected' : '' }}>
                 {{ $llabel }}
               </option>
@@ -187,7 +187,7 @@
           </div>
           <div class="col-sm-6">
             <label class="form-label-pro">Taux d'intérêt annuel</label>
-            <input type="text" class="form-control-pro" value="5 %" readonly style="background:var(--c-bg)">
+            <input type="text" class="form-control-pro" value="{{ number_format((float) $loan->interest_rate, 2) }} %" readonly style="background:var(--c-bg)">
           </div>
           <div class="col-sm-6">
             <label class="form-label-pro">Date de première échéance</label>
@@ -265,7 +265,7 @@
 function loanForm(){
   return {
     amount:{{ old('amount',$loan->amount??0) }}, duration:{{ old('darly',$loan->darly??12) }},
-    rate:5, currency:'{{ old('currency',$loan->currency??'EUR') }}',
+    rate:{{ (float) $loan->interest_rate }}, currency:'{{ old('currency',$loan->currency??'EUR') }}',
     monthly:0, totalCost:0, totalInterest:0, schedule:[],
     calc(){
       if(!this.amount||!this.duration){this.monthly=0;return;}

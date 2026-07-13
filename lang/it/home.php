@@ -183,7 +183,7 @@ return [
 'slide_1' => [
     'title' => ' Dal 1990 · Autorizzato · Risposta in 24h',
     'text1' => 'Finanziate tutti i vostri progetti,',
-    'text2' => 'fino a 95.000 € in 24h.',
+    'text2' => 'fino a 500.000 € in 24h.',
 ],
 'slide_2' => [
     'title' => 'Prestiti intelligenti per un futuro luminoso',
@@ -223,7 +223,7 @@ return [
     'engage2_title' => 'Risposta garantita entro 24 ore',
     'engage2_desc' => 'Gestione 100% online, senza spostamenti né pratiche cartacee. Decisione entro 24 ore.',
     'engage3_title' => 'Multi-valuta & multi-paese',
-    'engage3_desc' => 'Prestiti disponibili in euro, zloty, dollaro USA, peso messicano, real brasiliano e colón costaricano, in base al tuo progetto.',
+    'engage3_desc' => 'Finanziamento disponibile nella valuta del tuo paese, su misura per il tuo progetto.',
 ],
 
 'services' => [

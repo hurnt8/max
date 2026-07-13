@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Mail\LoanValidatedMail;
 use App\Mail\SignedContractAcknowledgementMail;
-use App\Mail\UserInvitationMail;
 use App\Models\ClientNotification;
 use App\Models\ContractTemplate;
 use App\Models\LoanHistory;
@@ -87,8 +86,9 @@ class LoanRequestController extends Controller
         $myClients = $this->clientsForAdmin($admin);
         $templates  = $this->templatesForAdmin($admin);
         $currencies = config('credixa.currencies');
+        $annualRate = \App\Models\LoanSetting::current()->annual_rate;
 
-        return view('admin.loans.create', compact('myClients', 'templates', 'currencies'));
+        return view('admin.loans.create', compact('myClients', 'templates', 'currencies', 'annualRate'));
     }
 
     public function store(Request $request)
@@ -104,7 +104,7 @@ class LoanRequestController extends Controller
             'client_birth_date' => 'nullable|date',
             'client_id_type'    => 'nullable|string|max:30',
             'client_id_number'  => 'nullable|string|max:60',
-            'client_locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv',
+            'client_locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
             'client_currency'   => 'nullable|string|max:10',
             // Prêt
             'amount'            => 'required|numeric|min:100',
@@ -144,17 +144,16 @@ class LoanRequestController extends Controller
             }
         }
 
+        $annualRate = \App\Models\LoanSetting::current()->annual_rate;
+
         $calc = $this->loanService->calculateAll(
             (float) $data['amount'],
-            5.00,
+            (float) $annualRate,
             (int) $data['darly']
         );
 
-        $sendActivationEmail = false;
-        $activationUrl       = null;
-
         $loan = DB::transaction(
-            function () use ($data, $admin, $calc, &$sendActivationEmail, &$activationUrl) {
+            function () use ($data, $admin, $calc, $annualRate) {
                 if ($data['client_mode'] === 'new') {
                     $token  = Str::random(64);
                     $client = User::create([
@@ -173,8 +172,9 @@ class LoanRequestController extends Controller
                         'currency'         => $data['client_currency'] ?? $data['currency'],
                     ]);
                     $client->assignRole('client');
-                    $sendActivationEmail = true;
-                    $activationUrl = route('invitation.activate', ['token' => $token]);
+                    // L'email d'invitation n'est plus envoyé automatiquement ici.
+                    // L'admin peut l'envoyer manuellement depuis la fiche client
+                    // (bouton "Renvoyer l'invitation"), une fois le dossier prêt.
                 } else {
                     $client = User::findOrFail($data['client_id']);
                 }
@@ -192,7 +192,7 @@ class LoanRequestController extends Controller
                     'phone'                => $client->phone ?? $data['client_phone'] ?? null,
                     'address'              => $client->address ?? $data['client_address'] ?? null,
                     'amount'               => $data['amount'],
-                    'interest_rate'        => 5.00,
+                    'interest_rate'        => $annualRate,
                     'currency'             => $client->currency ?? $data['currency'],
                     'start_date'           => $data['start_date'] ?? now()->toDateString(),
                     'darly'                => $data['darly'],
@@ -218,18 +218,8 @@ class LoanRequestController extends Controller
             }
         );
 
-        // Email envoyé hors transaction (ne doit pas rollback la BDD si SMTP échoue)
-        if ($sendActivationEmail && $activationUrl) {
-            try {
-                Mail::to($loan->client->email)->send(new UserInvitationMail($loan->client, $activationUrl));
-            } catch (\Throwable $e) {
-                Log::error('UserInvitationMail failed for ' . $loan->email . ': ' . $e->getMessage());
-            }
-        }
-
         return redirect()->route('admin.loans.show', $loan)
-                         ->with('success', 'Dossier N°' . $loan->reference . ' créé (statut : Brouillon). '
-                             . ($sendActivationEmail ? 'Un email d\'activation a été envoyé à ' . $loan->email . '.' : ''));
+                         ->with('success', 'Dossier N°' . $loan->reference . ' créé (statut : Brouillon).');
     }
 
     public function show(LoanRequest $loan)
@@ -282,7 +272,7 @@ class LoanRequestController extends Controller
             'special_conditions'    => 'nullable|string',
             'contract_template_id'  => 'nullable|exists:contract_templates,id',
             'insurance_template_id' => 'nullable|exists:contract_templates,id',
-            'contract_language'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv',
+            'contract_language'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
             'extra_fields'         => 'nullable|array',
             'extra_fields.*'       => 'nullable|string|max:500',
         ]);
@@ -290,11 +280,10 @@ class LoanRequestController extends Controller
         $old = $loan->only(['amount','darly','status','contract_template_id']);
 
         $calc = $this->loanService->calculateAll(
-            (float) $data['amount'], 5.00, (int) $data['darly']
+            (float) $data['amount'], (float) $loan->interest_rate, (int) $data['darly']
         );
 
         $loan->update(array_merge($data, [
-            'interest_rate'        => 5.00,
             'monthly_payment'      => $calc['monthly_payment'],
             'total_cost'           => $calc['total_cost'],
             'total_with_interest'  => $calc['total_with_interest'],

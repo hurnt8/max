@@ -98,6 +98,20 @@
   ];
 @endphp
 
+@if ($errors->any())
+<div class="flash flash-err">
+  <i class="fas fa-exclamation-triangle"></i>
+  <div>
+    <strong>Impossible d'enregistrer :</strong>
+    <ul style="margin:.25rem 0 0 1.1rem;padding:0">
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+</div>
+@endif
+
 {{-- ── En-tête de page ── --}}
 <div class="page-hdr-row" style="margin-bottom:1.25rem">
   <div class="page-hdr">
@@ -396,10 +410,9 @@
             <div class="col-md-4">
               <label class="form-label-pro">Langue</label>
               <select name="locale" class="form-control-pro">
-                <option value="fr" {{ old('locale', $user->locale) === 'fr' ? 'selected' : '' }}>Français</option>
-                <option value="en" {{ old('locale', $user->locale) === 'en' ? 'selected' : '' }}>English</option>
-                <option value="es" {{ old('locale', $user->locale) === 'es' ? 'selected' : '' }}>Español</option>
-                <option value="pl" {{ old('locale', $user->locale) === 'pl' ? 'selected' : '' }}>Polski</option>
+                @foreach(['fr'=>'Français','en'=>'English','es'=>'Español','pl'=>'Polski','bg'=>'Български','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuvių','ro'=>'Română','lv'=>'Latviešu','nl'=>'Nederlands'] as $lc => $llabel)
+                <option value="{{ $lc }}" {{ old('locale', $user->locale) === $lc ? 'selected' : '' }}>{{ $llabel }}</option>
+                @endforeach
               </select>
             </div>
           </div>
@@ -414,5 +427,16 @@
     </div>
   </div>
 </div>
+
+@if ($errors->any() || session('error'))
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var modalEl = document.getElementById('editModal');
+  if (modalEl && window.bootstrap) {
+    new bootstrap.Modal(modalEl).show();
+  }
+});
+</script>
+@endif
 
 @endsection

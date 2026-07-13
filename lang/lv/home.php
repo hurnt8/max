@@ -161,7 +161,7 @@ return [
     'slide_1' => [
         'title' => 'Jau 5 gadus · Sertificēts · Garantēta atbilde',
         'text1' => 'Finansējiet visus savus projektus,',
-        'text2' => 'līdz 95 000 € 24 stundu laikā.',
+        'text2' => 'līdz 500 000 € 24 stundu laikā.',
     ],
     'slide_2' => [
         'title' => 'Gudri aizdevumi spožai nākotnei',
@@ -203,7 +203,7 @@ return [
         'engage2_title' => 'Garantēta atbilde 24 stundu laikā',
         'engage2_desc'  => 'Process 100% tiešsaistē, bez apmeklējuma vai papīra dokumentiem. Lēmums 24 stundu laikā.',
         'engage3_title' => 'Vairākas valūtas un valstis',
-        'engage3_desc'  => 'Aizdevumi pieejami eiro, zlotos, ASV dolāros, Meksikas peso, Brazīlijas reālos un Kostarikas kolonos atkarībā no jūsu projekta.',
+        'engage3_desc'  => 'Finansējums pieejams jūsu valsts valūtā, pielāgots jūsu projektam.',
     ],
 
     // Services

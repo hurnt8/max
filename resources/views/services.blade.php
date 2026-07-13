@@ -2,7 +2,10 @@
 @section('title', __('menu.services'))
 
 @section('content')
-@php $locale = app()->getLocale(); @endphp
+@php
+    $locale = app()->getLocale();
+    $siteContact = \App\Models\SiteContact::current();
+@endphp
 
 {{-- Page hero --}}
 <div class="page-hero">
@@ -84,18 +87,24 @@
                 </div>
 
                 <div class="d-flex flex-wrap justify-content-lg-end gap-4 mt-5">
+                    @if($siteContact->address_1)
                     <div class="d-flex align-items-center gap-2">
                         <i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.9rem;"></i>
-                        <span style="color:rgba(255,255,255,.6);font-size:.875rem;">{{ __('contact.address_desc') }}</span>
+                        <span style="color:rgba(255,255,255,.6);font-size:.875rem;">{{ $siteContact->address_1 }}</span>
                     </div>
+                    @endif
+                    @if($siteContact->phone_1)
                     <div class="d-flex align-items-center gap-2">
                         <i class="fas fa-phone-alt" style="color:var(--gold);font-size:.9rem;"></i>
-                        <a href="tel:+34613853614" style="color:rgba(255,255,255,.6);font-size:.875rem;">{{ __('contact.phone_desc') }}</a>
+                        <a href="tel:{{ preg_replace('/[^\d+]/', '', $siteContact->phone_1) }}" style="color:rgba(255,255,255,.6);font-size:.875rem;">{{ $siteContact->phone_1 }}</a>
                     </div>
+                    @endif
+                    @if($siteContact->email)
                     <div class="d-flex align-items-center gap-2">
                         <i class="fas fa-envelope" style="color:var(--gold);font-size:.9rem;"></i>
-                        <a href="mailto:contact@credixa.eu" style="color:rgba(255,255,255,.6);font-size:.875rem;">{{ __('contact.mail_desc') }}</a>
+                        <a href="mailto:{{ $siteContact->email }}" style="color:rgba(255,255,255,.6);font-size:.875rem;">{{ $siteContact->email }}</a>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

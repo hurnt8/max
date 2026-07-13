@@ -154,6 +154,20 @@ $texts = [
         'closing'    => 'Ar cieņu,',
         'team'       => 'Solberg Grupo komanda',
     ],
+    'nl' => [
+        'title'      => 'Leningaanvraag ontvangen',
+        'sub'        => 'Solberg Grupo',
+        'greeting'   => 'Hallo '.$data['name'].',',
+        'body'       => 'Wij hebben uw leningaanvraag van <strong>'.number_format($data['amount'], 0, ',', ' ').' '.($data['currency'] ?? 'EUR').'</strong> over <strong>'.$data['darly'].' maanden</strong> in goede orde ontvangen. Deze wordt momenteel door ons team verwerkt.',
+        'cond_title' => 'Toelatingsvoorwaarden',
+        'cond_body'  => 'Om een lening te verkrijgen, moet u minstens 18 jaar oud zijn, over een stabiel maandinkomen beschikken en in staat zijn terug te betalen volgens de vastgestelde voorwaarden.',
+        'btn_intro'  => 'Om uw dossier af te ronden, klikt u op onderstaande knop om ons uw volledige adres en een kopie van uw identiteitsbewijs te bezorgen.',
+        'btn_label'  => 'Mijn aanvraag voltooien',
+        'footer'     => 'Wij nemen zo spoedig mogelijk contact met u op. Bedankt voor uw vertrouwen.',
+        'noreply'    => 'Deze e-mail is verzonden vanaf een no-reply-adres. Gelieve niet rechtstreeks te antwoorden.',
+        'closing'    => 'Met vriendelijke groet,',
+        'team'       => 'Het Solberg Grupo Team',
+    ],
 ];
 $t = $texts[$lang] ?? $texts['fr'];
 @endphp

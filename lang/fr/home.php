@@ -161,7 +161,7 @@ return [
     'slide_1' => [
         'title' => ' Depuis 5 ans · Agréé · Réponse garantie',
         'text1' => 'Financez tous vos projets,',
-        'text2' => 'jusqu\'à 95 000 € en 24h.',
+        'text2' => 'jusqu\'à 500 000 € en 24h.',
     ],
     'slide_2' => [
         'title' => 'Prêts Intelligents pour un Avenir Brillant',
@@ -203,7 +203,7 @@ return [
         'engage2_title' => 'Réponse garantie sous 24h',
         'engage2_desc'  => 'Traitement 100 % en ligne, sans déplacement ni paperasse. Décision rendue sous 24 heures.',
         'engage3_title' => 'Multi-devises & multi-pays',
-        'engage3_desc'  => 'Prêts disponibles en Euro, Złoty, Dollar US, Peso mexicain, Réal brésilien et Colón costaricien selon votre projet.',
+        'engage3_desc'  => 'Un financement disponible dans la devise de votre pays, adapté à votre projet.',
     ],
 
     // Services

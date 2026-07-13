@@ -288,6 +288,40 @@ a { text-decoration:none; }
 .sb { display:inline-block; padding:.25rem .65rem; border-radius:999px; font-size:.7rem; font-weight:600; white-space:nowrap; }
 
 /* ══════════════════
+   PAGINATION
+   ══════════════════ */
+.pg-pro {
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:.75rem;
+}
+.pg-pro__summary { font-size:.78rem; color:var(--c-muted); margin:0; }
+.pg-pro__summary strong { color:var(--c-navy); font-weight:700; }
+.pg-pro__list {
+  display:flex; align-items:center; gap:.3rem;
+  list-style:none; margin:0; padding:0;
+}
+.pg-pro__item { display:flex; }
+.pg-pro__link {
+  display:flex; align-items:center; justify-content:center;
+  min-width:32px; height:32px; padding:0 .5rem;
+  border-radius:var(--radius-sm); border:1.5px solid var(--c-border);
+  background:var(--c-surface); color:var(--c-text);
+  font-size:.78rem; font-weight:600;
+  text-decoration:none; cursor:pointer;
+  transition:var(--transition);
+}
+a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(--c-navy); }
+.pg-pro__item--active .pg-pro__link {
+  background:var(--c-navy); border-color:var(--c-navy); color:#fff;
+}
+.pg-pro__item--disabled .pg-pro__link { color:#C4CADC; cursor:not-allowed; }
+.pg-pro__item--dots .pg-pro__link { border:none; background:none; color:var(--c-muted); }
+@media(max-width:640px) {
+  .pg-pro { flex-direction:column; align-items:stretch; text-align:center; }
+  .pg-pro__list { justify-content:center; flex-wrap:wrap; }
+}
+
+/* ══════════════════
    PROFESSIONAL TABLE
    ══════════════════ */
 .pro-table { width:100%; border-collapse:collapse; }
@@ -740,6 +774,18 @@ a { text-decoration:none; }
          class="sidebar-link {{ request()->routeIs('admin.contract-templates*') ? 'active':'' }}">
         <i class="fas fa-file-signature icon"></i> Modèles de contrats
       </a>
+      <a href="{{ route('admin.site-contacts.edit') }}"
+         class="sidebar-link {{ request()->routeIs('admin.site-contacts*') ? 'active':'' }}">
+        <i class="fas fa-map-marker-alt icon"></i> Coordonnées
+      </a>
+      <a href="{{ route('admin.social-links.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.social-links*') ? 'active':'' }}">
+        <i class="fas fa-share-alt icon"></i> Réseaux sociaux
+      </a>
+      <a href="{{ route('admin.loan-settings.edit') }}"
+         class="sidebar-link {{ request()->routeIs('admin.loan-settings*') ? 'active':'' }}">
+        <i class="fas fa-percentage icon"></i> Paramètres de prêt
+      </a>
 
       @hasanyrole(['super-admin'])
       <span class="sidebar-label">Administration</span>
@@ -808,6 +854,18 @@ a { text-decoration:none; }
       <a href="{{ route('admin.contract-templates.index') }}"
          class="sidebar-link {{ request()->routeIs('admin.contract-templates*') ? 'active':'' }}">
         <i class="fas fa-file-signature icon"></i> Modèles de contrats
+      </a>
+      <a href="{{ route('admin.site-contacts.edit') }}"
+         class="sidebar-link {{ request()->routeIs('admin.site-contacts*') ? 'active':'' }}">
+        <i class="fas fa-map-marker-alt icon"></i> Coordonnées
+      </a>
+      <a href="{{ route('admin.social-links.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.social-links*') ? 'active':'' }}">
+        <i class="fas fa-share-alt icon"></i> Réseaux sociaux
+      </a>
+      <a href="{{ route('admin.loan-settings.edit') }}"
+         class="sidebar-link {{ request()->routeIs('admin.loan-settings*') ? 'active':'' }}">
+        <i class="fas fa-percentage icon"></i> Paramètres de prêt
       </a>
 
       <span class="sidebar-label">Gestion</span>

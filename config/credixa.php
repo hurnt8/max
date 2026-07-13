@@ -15,7 +15,7 @@ return [
     | Devises supportées (liste unique pour tout le projet)
     |--------------------------------------------------------------------------
     */
-    'currencies' => ['EUR', 'USD', 'GBP', 'PLN', 'CHF', 'CAD', 'BRL', 'MXN', 'XAF', 'XOF'],
+    'currencies' => ['EUR', 'GBP', 'CHF', 'NOK', 'SEK', 'DKK', 'PLN', 'CZK', 'HUF', 'RON'],
 
     /*
     |--------------------------------------------------------------------------
@@ -24,15 +24,15 @@ return [
     */
     'currency_symbols' => [
         'EUR' => '€',
-        'USD' => '$',
         'GBP' => '£',
+        'CHF' => 'CHF',
+        'NOK' => 'kr',
+        'SEK' => 'kr',
+        'DKK' => 'kr',
         'PLN' => 'zł',
-        'CHF' => 'Fr',
-        'CAD' => 'CA$',
-        'BRL' => 'R$',
-        'MXN' => 'MX$',
-        'XAF' => 'FCFA',
-        'XOF' => 'CFA',
+        'CZK' => 'Kč',
+        'HUF' => 'Ft',
+        'RON' => 'lei',
     ],
 
 ];

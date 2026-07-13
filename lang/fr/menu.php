@@ -25,6 +25,7 @@ return [
     'terms'            => "Conditions d'utilisation",
     'privacy'          => 'Politique de confidentialité',
     'quick_links'      => 'Liens rapides',
+    'addresses'        => 'Adresses',
     'rights_reserved'  => 'Tous droits réservés.',
     'email_placeholder'=> 'Votre adresse email',
     'newsletter_title' => 'Restez informé de nos offres',

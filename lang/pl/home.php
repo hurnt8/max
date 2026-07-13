@@ -7,7 +7,7 @@ return [
     'slide_1' => [
         'title' => ' 5 lat doświadczenia · Licencjonowany · Gwarantowana odpowiedź',
         'text1' => 'Sfinansuj wszystkie swoje projekty,',
-        'text2' => 'do 95 000 € w 24h.',
+        'text2' => 'do 500 000 € w 24h.',
     ],
     'slide_2' => [
         'title' => 'Inteligentne kredyty na świetlaną przyszłość',
@@ -47,7 +47,7 @@ return [
         'engage2_title' => 'Gwarantowana odpowiedź w 24h',
         'engage2_desc'  => 'Proces 100% online, bez wizyty w oddziale. Decyzja w ciągu 24 godzin.',
         'engage3_title' => 'Wielowalutowy i Wielokrajowy',
-        'engage3_desc'  => 'Kredyty dostępne w Euro, Złotym, Dolarze amerykańskim, Peso meksykańskim, Realu brazylijskim i Kolonie kostarykańskim.',
+        'engage3_desc'  => 'Finansowanie dostępne w walucie Twojego kraju, dopasowane do Twojego projektu.',
     ],
 
     'services' => [

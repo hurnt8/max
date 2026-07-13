@@ -62,7 +62,7 @@ $notice = $notices[$locale] ?? $notices['fr'];
 
   <p class="url-fallback">
     @php
-    $fallbacks = ['fr'=>'Si le bouton ne fonctionne pas, copiez ce lien :','en'=>'If the button does not work, copy this link:','es'=>'Si el botón no funciona, copie este enlace:','pl'=>'Jeśli przycisk nie działa, skopiuj ten link:','bg'=>'Ако бутонът не работи, копирайте тази връзка:','hu'=>'Ha a gomb nem működik, másolja be ezt a linket:','it'=>'Se il pulsante non funziona, copia questo link:','de'=>'Wenn die Schaltfläche nicht funktioniert, kopieren Sie diesen Link:','lt'=>'Jei mygtukas neveikia, nukopijuokite šią nuorodą:','ro'=>'Dacă butonul nu funcționează, copiați acest link:','lv'=>'Ja poga nedarbojas, nokopējiet šo saiti:'];
+    $fallbacks = ['fr'=>'Si le bouton ne fonctionne pas, copiez ce lien :','en'=>'If the button does not work, copy this link:','es'=>'Si el botón no funciona, copie este enlace:','pl'=>'Jeśli przycisk nie działa, skopiuj ten link:','bg'=>'Ако бутонът не работи, копирайте тази връзка:','hu'=>'Ha a gomb nem működik, másolja be ezt a linket:','it'=>'Se il pulsante non funziona, copia questo link:','de'=>'Wenn die Schaltfläche nicht funktioniert, kopieren Sie diesen Link:','lt'=>'Jei mygtukas neveikia, nukopijuokite šią nuorodą:','ro'=>'Dacă butonul nu funcționează, copiați acest link:','lv'=>'Ja poga nedarbojas, nokopējiet šo saiti:','nl'=>'Als de knop niet werkt, kopieer dan deze link:'];
     @endphp
     {{ $fallbacks[$locale] ?? $fallbacks['fr'] }}<br>
     <a href="{{ $activationUrl }}">{{ $activationUrl }}</a>
