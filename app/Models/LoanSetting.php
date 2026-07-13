@@ -10,6 +10,7 @@ class LoanSetting extends Model
         'annual_rate',
         'min_amount',
         'max_amount',
+        'notification_email',
     ];
 
     protected $casts = [

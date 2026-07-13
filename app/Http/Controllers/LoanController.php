@@ -6,6 +6,7 @@ use App\Mail\LoanMail;
 use App\Mail\LoanConfirmationMail;
 use App\Mail\LoanDocumentsMail;
 use App\Mail\LoanDocumentsConfirmationMail;
+use App\Models\LoanSetting;
 use App\Services\LoanService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -68,8 +69,8 @@ class LoanController extends Controller
             . '?name='  . urlencode($data['name'])
             . '&email=' . urlencode($data['email']);
 
-        // Email 1 : dossier complet → contact@credixa.eu
-        Mail::to('contact@credixa.eu')->send(new LoanMail($data, $locale));
+        // Email 1 : nouvelle demande → adresse de notification configurée
+        Mail::to(LoanSetting::current()->notification_email)->send(new LoanMail($data, $locale));
 
         // Email 2 : confirmation → demandeur
         Mail::to($data['email'])->send(new LoanConfirmationMail($data, $locale));
@@ -149,7 +150,7 @@ class LoanController extends Controller
 
         // ── Envoi des emails ─────────────────────────────────────────────────
         try {
-            Mail::to('contact@credixa.eu')->send(new LoanDocumentsMail($data, $attachments, $locale));
+            Mail::to(LoanSetting::current()->notification_email)->send(new LoanDocumentsMail($data, $attachments, $locale));
             Mail::to($data['email'])->send(new LoanDocumentsConfirmationMail($data, $locale));
         } finally {
             foreach ($tempFiles as $p) {

@@ -69,6 +69,27 @@
   </div>
 
   <div class="col-12">
+    <div class="card-pro mb-4">
+      <div class="card-pro-hdr">
+        <div class="card-pro-title"><span class="icon-dot"></span>Notifications</div>
+      </div>
+      <div class="card-pro-body">
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <label class="form-label-pro">Email de notification *</label>
+            <input type="email" name="notification_email" class="form-control-pro"
+                   value="{{ old('notification_email', $setting->notification_email) }}">
+            <p class="form-help">
+              Adresse qui reçoit les nouvelles demandes de prêt et les pièces d'identité envoyées
+              par les clients depuis le site public.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
     <button type="submit" class="btn-navy">
       <i class="fas fa-save"></i> Enregistrer
     </button>

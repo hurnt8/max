@@ -17,9 +17,10 @@ class LoanSettingController extends Controller
     public function update(Request $request)
     {
         $validated = $request->validate([
-            'annual_rate' => ['required', 'numeric', 'min:0', 'max:100'],
-            'min_amount'  => ['required', 'numeric', 'min:0'],
-            'max_amount'  => ['required', 'numeric', 'gt:min_amount'],
+            'annual_rate'         => ['required', 'numeric', 'min:0', 'max:100'],
+            'min_amount'          => ['required', 'numeric', 'min:0'],
+            'max_amount'          => ['required', 'numeric', 'gt:min_amount'],
+            'notification_email'  => ['required', 'email'],
         ], [
             'max_amount.gt' => 'Le montant maximum doit être supérieur au montant minimum.',
         ]);
