@@ -111,13 +111,25 @@ class SupportController extends Controller
 
     private function authorizeClient(User $client): void
     {
-        abort_unless(Auth::user()->hasAnyRole(['admin', 'super-admin']), 403);
+        $authUser = Auth::user();
+        if ($authUser->hasRole('super-admin')) return;
+
+        $hasAccess = $client->created_by === $authUser->id
+            || $client->clientLoans()->where('admin_id', $authUser->id)->exists();
+        abort_unless($hasAccess, 403, 'Accès non autorisé.');
     }
 
     private function clientsForSidebar(): \Illuminate\Support\Collection
     {
+        $authUser     = Auth::user();
+        $isSuperAdmin = $authUser->hasRole('super-admin');
+
         return User::where('type', 'client')
             ->whereHas('supportMessages')
+            ->when(! $isSuperAdmin, fn ($q) => $q->where(fn ($q2) => $q2
+                ->where('created_by', $authUser->id)
+                ->orWhereHas('clientLoans', fn ($q3) => $q3->where('admin_id', $authUser->id))
+            ))
             ->with(['supportMessages' => fn ($q) => $q->latest()->limit(1)])
             ->get()
             ->map(function (User $c) {

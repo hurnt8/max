@@ -4,12 +4,14 @@
 
 @section('content')
 
+@php $panelPrefix = request()->routeIs('super-admin.*') ? 'super-admin' : 'admin'; @endphp
+
 <div class="d-flex align-items-start justify-content-between flex-wrap gap-3 page-hdr">
   <div>
     <h4>Nouvelle demande de prêt</h4>
     <p>Renseignez les informations client et les paramètres du financement</p>
   </div>
-  <a href="{{ route('admin.loans.index') }}" class="btn-ghost btn-sm-pro">
+  <a href="{{ route($panelPrefix.'.loans.index') }}" class="btn-ghost btn-sm-pro">
     <i class="fas fa-arrow-left"></i> Retour
   </a>
 </div>
@@ -18,7 +20,7 @@
 <div class="flash flash-err mb-4"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first() }}</div>
 @endif
 
-<form action="{{ route('admin.loans.store') }}" method="POST" x-data="loanForm()" x-init="calc()">
+<form action="{{ route($panelPrefix.'.loans.store') }}" method="POST" x-data="loanForm()" x-init="calc()">
 @csrf
 <div class="row g-4">
 
@@ -224,10 +226,20 @@
             <input type="date" name="start_date" class="form-control-pro"
                    value="{{ old('start_date',now()->format('Y-m-d')) }}">
           </div>
-          <div class="col-12">
+          <div class="col-sm-6">
+            <label class="form-label-pro">Type de financement</label>
+            <select name="type_financement" class="form-control-pro">
+              <option value="">— Non renseigné —</option>
+              @foreach($financingTypes as $code => $label)
+              <option value="{{ $code }}" {{ old('type_financement')===$code?'selected':'' }}>{{ $label }}</option>
+              @endforeach
+            </select>
+            <p class="form-help">Remplace la variable <code>{typefinance}</code> dans le contrat</p>
+          </div>
+          <div class="col-sm-6">
             <label class="form-label-pro">Objet du prêt</label>
             <input type="text" name="objet" class="form-control-pro" value="{{ old('objet') }}"
-                   placeholder="Ex : Financement personnel, acquisition immobilière…">
+                   placeholder="Ex : acquisition immobilière…">
           </div>
           <div class="col-12">
             <label class="form-label-pro">Remarques internes</label>
@@ -283,7 +295,7 @@
     </div>
 
     <div class="d-flex justify-content-end gap-3">
-      <a href="{{ route('admin.loans.index') }}" class="btn-ghost">Annuler</a>
+      <a href="{{ route($panelPrefix.'.loans.index') }}" class="btn-ghost">Annuler</a>
       <button type="submit" class="btn-navy">
         <i class="fas fa-save"></i> Créer le dossier &amp; générer le contrat
       </button>

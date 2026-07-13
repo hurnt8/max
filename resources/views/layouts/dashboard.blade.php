@@ -706,6 +706,16 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
   .metric-card__val { font-size:1.2rem; }
   .content-area { padding:.75rem; }
 }
+
+/* ═══════════════ MODAL DE CONFIRMATION (global) ═══════════════ */
+.cf-modal-overlay{display:none;position:fixed;inset:0;background:rgba(4,32,61,.55);z-index:99999;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(2px)}
+.cf-modal-overlay.open{display:flex}
+.cf-modal{background:#fff;border-radius:14px;max-width:420px;width:100%;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.28);animation:cfPop .16s ease}
+@keyframes cfPop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
+.cf-modal-icon{width:44px;height:44px;border-radius:12px;background:#FEF9EC;color:var(--c-gold-d,#a88830);display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:.875rem}
+.cf-modal-title{font-size:1rem;font-weight:800;color:var(--c-navy,#04203D);margin-bottom:.5rem}
+.cf-modal-msg{font-size:.85rem;color:var(--c-muted,#6b7280);line-height:1.6;margin-bottom:1.5rem;white-space:pre-line}
+.cf-modal-actions{display:flex;gap:.6rem;justify-content:flex-end}
 </style>
 @auth
   @if(Auth::user()->hasRole('client'))
@@ -773,6 +783,10 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
       <a href="{{ route('admin.contract-templates.index') }}"
          class="sidebar-link {{ request()->routeIs('admin.contract-templates*') ? 'active':'' }}">
         <i class="fas fa-file-signature icon"></i> Modèles de contrats
+      </a>
+      <a href="{{ route('admin.notification-templates.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.notification-templates*') ? 'active':'' }}">
+        <i class="fas fa-bell icon"></i> Modèles de notification
       </a>
       <a href="{{ route('admin.site-contacts.edit') }}"
          class="sidebar-link {{ request()->routeIs('admin.site-contacts*') ? 'active':'' }}">
@@ -854,18 +868,6 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
       <a href="{{ route('admin.contract-templates.index') }}"
          class="sidebar-link {{ request()->routeIs('admin.contract-templates*') ? 'active':'' }}">
         <i class="fas fa-file-signature icon"></i> Modèles de contrats
-      </a>
-      <a href="{{ route('admin.site-contacts.edit') }}"
-         class="sidebar-link {{ request()->routeIs('admin.site-contacts*') ? 'active':'' }}">
-        <i class="fas fa-map-marker-alt icon"></i> Coordonnées
-      </a>
-      <a href="{{ route('admin.social-links.index') }}"
-         class="sidebar-link {{ request()->routeIs('admin.social-links*') ? 'active':'' }}">
-        <i class="fas fa-share-alt icon"></i> Réseaux sociaux
-      </a>
-      <a href="{{ route('admin.loan-settings.edit') }}"
-         class="sidebar-link {{ request()->routeIs('admin.loan-settings*') ? 'active':'' }}">
-        <i class="fas fa-percentage icon"></i> Paramètres de prêt
       </a>
 
       <span class="sidebar-label">Gestion</span>
@@ -1199,5 +1201,63 @@ function doInstallPwa() {
 </div>
 @endif
 @endauth
+
+{{-- ═══════════════ MODAL DE CONFIRMATION (global) ═══════════════ --}}
+<div class="cf-modal-overlay" id="cfModalOverlay">
+  <div class="cf-modal">
+    <div class="cf-modal-icon"><i class="fas fa-question-circle" id="cfModalIcon"></i></div>
+    <div class="cf-modal-title" id="cfModalTitle">Confirmation</div>
+    <div class="cf-modal-msg" id="cfModalMsg"></div>
+    <div class="cf-modal-actions">
+      <button type="button" class="btn-ghost" id="cfModalCancel">Annuler</button>
+      <button type="button" class="btn-navy" id="cfModalConfirm">Confirmer</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var overlay  = document.getElementById('cfModalOverlay');
+  var titleEl  = document.getElementById('cfModalTitle');
+  var msgEl    = document.getElementById('cfModalMsg');
+  var btnOk    = document.getElementById('cfModalConfirm');
+  var btnCancel = document.getElementById('cfModalCancel');
+  var pendingResolve = null;
+
+  function close(result) {
+    overlay.classList.remove('open');
+    document.removeEventListener('keydown', onKeydown);
+    if (pendingResolve) { var r = pendingResolve; pendingResolve = null; r(result); }
+  }
+  function onKeydown(e) {
+    if (e.key === 'Escape') close(false);
+  }
+
+  // window.confirmModal(message, { title, confirmLabel }) → Promise<boolean>
+  window.confirmModal = function (message, opts) {
+    opts = opts || {};
+    titleEl.textContent = opts.title || 'Confirmation';
+    msgEl.textContent = message;
+    btnOk.textContent = opts.confirmLabel || 'Confirmer';
+    overlay.classList.add('open');
+    document.addEventListener('keydown', onKeydown);
+    return new Promise(function (resolve) { pendingResolve = resolve; });
+  };
+
+  btnOk.addEventListener('click', function () { close(true); });
+  btnCancel.addEventListener('click', function () { close(false); });
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(false); });
+
+  // Auto-wire : tout <form data-confirm="message"> passe par le modal avant soumission.
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (form && form.dataset && form.dataset.confirm) {
+      e.preventDefault();
+      confirmModal(form.dataset.confirm, { title: form.dataset.confirmTitle }).then(function (ok) {
+        if (ok) form.submit();
+      });
+    }
+  }, true);
+})();
+</script>
 </body>
 </html>

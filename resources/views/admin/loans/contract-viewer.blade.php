@@ -287,6 +287,8 @@ kbd {
 </head>
 <body>
 
+@php $panelPrefix = request()->routeIs('super-admin.*') ? 'super-admin' : 'admin'; @endphp
+
 <div class="pv-overlay" id="ovl" onclick="sideClose()"></div>
 
 <div class="pv">
@@ -295,7 +297,7 @@ kbd {
   <aside class="pv-side" id="side">
 
     {{-- Brand --}}
-    <a href="{{ route('admin.loans.show', $loan) }}" class="s-brand">
+    <a href="{{ route($panelPrefix.'.loans.show', $loan) }}" class="s-brand">
       <div class="s-logo">CI</div>
       <div class="s-brand-wrap">
         <span class="s-brand-name">Credixa Invest</span>
@@ -344,7 +346,7 @@ kbd {
     {{-- Actions --}}
     <div class="s-sec">Actions</div>
     <div class="s-actions">
-      <a href="{{ route('admin.loans.contract.pdf', $loan) }}"
+      <a href="{{ route($panelPrefix.'.loans.contract.pdf', $loan) }}"
          download="Contrat_{{ $loan->reference }}.pdf"
          class="s-btn s-btn-ghost">
         <i class="fas fa-download"></i> Télécharger le PDF
@@ -360,16 +362,16 @@ kbd {
     <div class="s-sec">Navigation</div>
     <div class="s-nav">
       @if($loan->insurance_pdf_path)
-      <a href="{{ route('admin.loans.insurance.viewer', $loan) }}" class="s-nav-item">
+      <a href="{{ route($panelPrefix.'.loans.insurance.viewer', $loan) }}" class="s-nav-item">
         <i class="fas fa-shield-alt" style="color:#10B981"></i>
         Attestation d'assurance
       </a>
       @endif
-      <a href="{{ route('admin.loans.contract', $loan) }}" class="s-nav-item">
+      <a href="{{ route($panelPrefix.'.loans.contract', $loan) }}" class="s-nav-item">
         <i class="fas fa-cog" style="color:var(--sub)"></i>
         Gérer le dossier
       </a>
-      <a href="{{ route('admin.loans.show', $loan) }}" class="s-nav-item">
+      <a href="{{ route($panelPrefix.'.loans.show', $loan) }}" class="s-nav-item">
         <i class="fas fa-folder-open" style="color:var(--sub)"></i>
         Fiche dossier
       </a>
@@ -377,7 +379,7 @@ kbd {
 
     {{-- Retour (bas de sidebar) --}}
     <div class="s-back-wrap">
-      <a href="{{ route('admin.loans.show', $loan) }}" class="s-back">
+      <a href="{{ route($panelPrefix.'.loans.show', $loan) }}" class="s-back">
         <i class="fas fa-arrow-left"></i> Retour au dossier
       </a>
     </div>
@@ -399,9 +401,9 @@ kbd {
     {{-- Fil d'Ariane (desktop) --}}
     <div class="pv-bar">
       <nav class="pv-crumb" aria-label="Fil d'Ariane">
-        <a href="{{ route('admin.loans.index') }}">Dossiers</a>
+        <a href="{{ route($panelPrefix.'.loans.index') }}">Dossiers</a>
         <span class="pv-crumb-sep">/</span>
-        <a href="{{ route('admin.loans.show', $loan) }}">{{ $loan->reference }}</a>
+        <a href="{{ route($panelPrefix.'.loans.show', $loan) }}">{{ $loan->reference }}</a>
         <span class="pv-crumb-sep">/</span>
         <span class="pv-crumb-cur">Contrat de prêt</span>
       </nav>
@@ -413,7 +415,7 @@ kbd {
     <div class="pv-frame-wrap">
       <iframe
         class="pv-frame"
-        src="{{ route('admin.loans.contract.pdf', $loan) }}#toolbar=1&navpanes=0&scrollbar=1&view=FitH"
+        src="{{ route($panelPrefix.'.loans.contract.pdf', $loan) }}#toolbar=1&navpanes=0&scrollbar=1&view=FitH"
         title="Contrat de prêt — {{ $loan->reference }}"
         loading="eager"
       ></iframe>
@@ -423,7 +425,7 @@ kbd {
       <div class="pv-empty-ico"><i class="fas fa-file-pdf"></i></div>
       <h3>Aucun contrat PDF disponible</h3>
       <p>Uploadez le contrat signé depuis la page de gestion.</p>
-      <a href="{{ route('admin.loans.contract', $loan) }}" class="pv-empty-cta">
+      <a href="{{ route($panelPrefix.'.loans.contract', $loan) }}" class="pv-empty-cta">
         <i class="fas fa-upload"></i> Gérer le contrat
       </a>
     </div>
@@ -436,7 +438,7 @@ kbd {
 function sideOpen()  { document.getElementById('side').classList.add('open'); document.getElementById('ovl').classList.add('open'); }
 function sideClose() { document.getElementById('side').classList.remove('open'); document.getElementById('ovl').classList.remove('open'); }
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') window.location.href = '{{ route('admin.loans.show', $loan) }}';
+  if (e.key === 'Escape') window.location.href = '{{ route($panelPrefix.'.loans.show', $loan) }}';
 });
 </script>
 </body>

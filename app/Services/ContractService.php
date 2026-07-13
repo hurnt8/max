@@ -39,6 +39,46 @@ class ContractService
         ],
     ];
 
+    // ── Labels traduits pour type_financement ────────────────────────────────
+    private const FINANCING_TYPE_LABELS = [
+        'fr' => [
+            'personnel'      => 'Financement personnel',
+            'professionnel'  => 'Financement professionnel',
+            'immobilier'     => 'Crédit immobilier',
+            'rachat_credit'  => 'Rachat de crédit',
+            'investissement' => 'Financement investissement',
+            'credit_relais'  => 'Crédit relais',
+            'autre'          => 'Autre',
+        ],
+        'en' => [
+            'personnel'      => 'Personal financing',
+            'professionnel'  => 'Business financing',
+            'immobilier'     => 'Mortgage loan',
+            'rachat_credit'  => 'Debt consolidation',
+            'investissement' => 'Investment financing',
+            'credit_relais'  => 'Bridge loan',
+            'autre'          => 'Other',
+        ],
+        'pl' => [
+            'personnel'      => 'Finansowanie osobiste',
+            'professionnel'  => 'Finansowanie firmowe',
+            'immobilier'     => 'Kredyt hipoteczny',
+            'rachat_credit'  => 'Konsolidacja kredytów',
+            'investissement' => 'Finansowanie inwestycyjne',
+            'credit_relais'  => 'Kredyt pomostowy',
+            'autre'          => 'Inne',
+        ],
+        'es' => [
+            'personnel'      => 'Financiación personal',
+            'professionnel'  => 'Financiación profesional',
+            'immobilier'     => 'Crédito hipotecario',
+            'rachat_credit'  => 'Consolidación de deudas',
+            'investissement' => 'Financiación de inversión',
+            'credit_relais'  => 'Crédito puente',
+            'autre'          => 'Otro',
+        ],
+    ];
+
     // ── En-têtes pays ────────────────────────────────────────────────────────
     private array $countryHeaders = [
         'fr' => "RÉPUBLIQUE FRANÇAISE\nMinistère de la Justice\nTribunal de Première Instance",
@@ -211,6 +251,36 @@ class ContractService
         ],
     ];
 
+    // ── Description des balises disponibles (affichée dans les éditeurs de modèles) ──
+    public function variableDescriptions(): array
+    {
+        return [
+            '{reference}'       => 'Référence du dossier',
+            '{archive}'         => 'Numéro d\'archive',
+            '{nom_client}'      => 'Nom complet du client',
+            '{adresse_client}'  => 'Adresse du client',
+            '{date_naissance}'  => 'Date de naissance',
+            '{type_identite}'   => 'Type de pièce d\'identité (traduit selon la langue)',
+            '{numero_identite}' => 'Numéro de pièce d\'identité',
+            '{typefinance}'     => 'Type de financement (traduit selon la langue)',
+            '{ne_e}'            => 'né / née (fr) · born (en) · urodzony/a (pl) · nacido/a (es)',
+            '{denomme_e}'       => 'dénommé/e (fr) · zwany/a (pl) · denominado/a (es)',
+            '{zamieszkal_a}'    => 'Polonais : zamieszkały / zamieszkała',
+            '{e}'               => 'Suffixe genre : vide/"e" (fr) · "y"/"a" (pl)',
+            '{agent_suivi}'     => 'Nom de l\'agent',
+            '{directeur}'       => 'Nom du directeur (saisi à la création du dossier)',
+            '{montant}'         => 'Montant du prêt',
+            '{devise}'          => 'Devise (EUR, PLN…)',
+            '{duree}'           => 'Durée en mois',
+            '{mensualite}'      => 'Mensualité calculée',
+            '{taux}'            => 'Taux d\'intérêt (%)',
+            '{frais_admin}'     => 'Frais administratifs',
+            '{compte_bancaire}' => 'Coordonnées bancaires',
+            '{date}'            => 'Date de validation',
+            '{societe}'         => 'Nom de la société (CREDIXA INVESTI)',
+        ];
+    }
+
     // ── Variables dynamiques issues du dossier ───────────────────────────────
     public function getVariables(LoanRequest $loan): array
     {
@@ -225,6 +295,8 @@ class ContractService
         $idTypeLabel = self::ID_TYPE_LABELS[$locale][$idType]
                     ?? self::ID_TYPE_LABELS['fr'][$idType]
                     ?? $idType;
+
+        $financingTypeLabel = $this->translateFinancingType($loan->type_financement ?? '', $locale);
 
         // ── Accord de genre ──────────────────────────────────────────────────
         $gender = $client?->gender ?? 'N';
@@ -272,6 +344,7 @@ class ContractService
             '{date_naissance}'  => $birthDate,
             '{numero_identite}' => $client?->id_number ?? '',
             '{type_identite}'   => $idTypeLabel,
+            '{typefinance}'     => $financingTypeLabel,
             '{agent_suivi}'     => $loan->agent_suivi ?: ($admin?->name ?? 'CREDIXA INVESTI'),
             '{montant}'         => number_format((float)$loan->amount, 2, ',', ' '),
             '{devise}'          => $loan->currency ?? config('credixa.default_currency'),
@@ -483,6 +556,13 @@ body{font-family:"DejaVu Serif","Times New Roman",Times,Georgia,serif;font-size:
     {
         return self::ID_TYPE_LABELS[$locale][$raw]
             ?? self::ID_TYPE_LABELS['fr'][$raw]
+            ?? $raw;
+    }
+
+    public function translateFinancingType(string $raw, string $locale): string
+    {
+        return self::FINANCING_TYPE_LABELS[$locale][$raw]
+            ?? self::FINANCING_TYPE_LABELS['fr'][$raw]
             ?? $raw;
     }
 }

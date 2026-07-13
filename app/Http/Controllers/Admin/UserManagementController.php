@@ -60,14 +60,10 @@ class UserManagementController extends Controller
 
     public function show(User $user)
     {
+        $this->authorizeUser($user);
+
         $authUser     = Auth::user();
         $isSuperAdmin = $authUser->hasRole('super-admin');
-
-        if (! $isSuperAdmin) {
-            $hasAccess = $user->created_by === $authUser->id
-                || $user->clientLoans()->where('admin_id', $authUser->id)->exists();
-            abort_unless($hasAccess, 403, 'Accès non autorisé.');
-        }
 
         $loans = $user->clientLoans()->with('admin')->latest()->get();
 
@@ -144,6 +140,8 @@ class UserManagementController extends Controller
 
     public function update(Request $request, User $user)
     {
+        $this->authorizeUser($user);
+
         $isSuperAdmin = Auth::user()->hasRole('super-admin');
 
         $data = $request->validate([
@@ -198,6 +196,8 @@ class UserManagementController extends Controller
 
     public function resendInvitation(User $user)
     {
+        $this->authorizeUser($user);
+
         if (! $user->invitation_token) {
             return back()->with('error', 'Ce compte est déjà activé.');
         }
@@ -240,10 +240,27 @@ class UserManagementController extends Controller
 
     public function destroy(User $user)
     {
+        $this->authorizeUser($user);
+
         if ($user->hasRole('super-admin')) {
             return back()->with('error', 'Impossible de supprimer un super-administrateur.');
         }
         $user->delete();
         return back()->with('success', 'Utilisateur supprimé.');
+    }
+
+    /**
+     * Vérifie qu'un admin classique gère bien cet utilisateur (créateur direct
+     * ou admin responsable d'un de ses prêts) avant de le consulter/modifier.
+     * Bypass pour le super-admin.
+     */
+    private function authorizeUser(User $user): void
+    {
+        $authUser = Auth::user();
+        if ($authUser->hasRole('super-admin')) return;
+
+        $hasAccess = $user->created_by === $authUser->id
+            || $user->clientLoans()->where('admin_id', $authUser->id)->exists();
+        abort_unless($hasAccess, 403, 'Accès non autorisé.');
     }
 }

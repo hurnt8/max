@@ -73,10 +73,27 @@
 
 /* ── Vars grid ── */
 .lc-vars-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.5rem}
+
+/* ── Sélecteur de document (tabs) ── */
+.lc-doctabs{display:flex;gap:.35rem;flex-wrap:wrap}
+.lc-doctab-btn{display:flex;align-items:center;gap:.45rem;padding:.6rem 1.1rem;font-size:.8rem;font-weight:700;color:var(--c-muted);background:#f8f9fa;border:1px solid var(--c-border);border-bottom:none;border-radius:10px 10px 0 0;cursor:pointer;font-family:inherit;transition:.15s}
+.lc-doctab-btn:hover{background:#fff;color:var(--c-navy)}
+.lc-doctab-badge{font-size:.6rem;padding:.05rem .4rem;border-radius:8px;background:#e5e7eb;color:#6b7280;font-weight:800}
+.lc-doctab-btn.active .lc-doctab-badge{background:rgba(255,255,255,.25);color:#fff}
+.lc-doctab-btn--notification.active{color:#fff;background:#0ea5e9;border-color:#0ea5e9}
+.lc-doctab-btn--contrat.active{color:#fff;background:#dc2626;border-color:#dc2626}
+.lc-doctab-btn--assurance.active{color:#fff;background:#16a34a;border-color:#16a34a}
+.lc-doctab-pane{display:none}
+.lc-doctab-pane.active{display:block}
 </style>
 @endpush
 
 @section('content')
+
+@php
+$panelPrefix   = request()->routeIs('super-admin.*') ? 'super-admin' : 'admin';
+$defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
+@endphp
 
 {{-- Flash messages --}}
 @if(session('success'))
@@ -107,29 +124,35 @@
   </div>
 
   <div class="lc-header-actions">
-    <a href="{{ route('admin.loans.show', $loan) }}" class="btn-ghost btn-sm-pro">
+    <a href="{{ route($panelPrefix.'.loans.show', $loan) }}" class="btn-ghost btn-sm-pro">
       <i class="fas fa-arrow-left"></i> Dossier
     </a>
-    <a href="{{ $loan->contract_pdf_path ? route('admin.loans.contract.viewer', $loan) : '#' }}"
+    <a href="{{ $loan->notification_pdf_path ? route($panelPrefix.'.loans.notification.pdf', $loan) : '#' }}"
+       class="btn-ghost btn-sm-pro{{ !$loan->notification_pdf_path ? ' disabled' : '' }}"
+       style="{{ !$loan->notification_pdf_path ? 'opacity:.4;pointer-events:none' : '' }}"
+       target="_blank" title="Voir le document de notification">
+      <i class="fas fa-bell" style="color:#0ea5e9"></i> Notification
+    </a>
+    <a href="{{ $loan->contract_pdf_path ? route($panelPrefix.'.loans.contract.viewer', $loan) : '#' }}"
        class="btn-ghost btn-sm-pro{{ !$loan->contract_pdf_path ? ' disabled' : '' }}"
        style="{{ !$loan->contract_pdf_path ? 'opacity:.4;pointer-events:none' : '' }}"
        title="Plein écran contrat">
       <i class="fas fa-file-contract" style="color:#dc2626"></i> Contrat
     </a>
-    <a href="{{ $loan->insurance_pdf_path ? route('admin.loans.insurance.viewer', $loan) : '#' }}"
+    <a href="{{ $loan->insurance_pdf_path ? route($panelPrefix.'.loans.insurance.viewer', $loan) : '#' }}"
        class="btn-ghost btn-sm-pro{{ !$loan->insurance_pdf_path ? ' disabled' : '' }}"
        style="{{ !$loan->insurance_pdf_path ? 'opacity:.4;pointer-events:none' : '' }}"
        title="Plein écran assurance">
       <i class="fas fa-shield-alt" style="color:#16a34a"></i> Assurance
     </a>
     @if($loan->contract_pdf_path)
-    <a href="{{ route('admin.loans.contract.pdf', $loan) }}"
+    <a href="{{ route($panelPrefix.'.loans.contract.pdf', $loan) }}"
        download="Contrat_{{ $loan->reference }}.pdf" class="btn-ghost btn-sm-pro">
       <i class="fas fa-download"></i> Télécharger
     </a>
     @endif
     @if($loan->contractTemplate?->hasDocxTemplate())
-    <a href="{{ route('admin.loans.contract.docx', $loan) }}" class="btn-navy btn-sm-pro">
+    <a href="{{ route($panelPrefix.'.loans.contract.docx', $loan) }}" class="btn-navy btn-sm-pro">
       <i class="fas fa-file-word"></i> Générer DOCX
     </a>
     @endif
@@ -178,18 +201,41 @@
       <div class="lc-pcard-body">
 
         @if($loan->canBeValidated())
-          @if($loan->contract_pdf_path)
+          @if($loan->notification_pdf_path)
           {{-- Prêt à valider --}}
           <div style="font-size:.78rem;color:var(--c-muted);margin-bottom:.625rem;line-height:1.5">
-            Le PDF sera envoyé avec le tableau d'amortissement à
+            Le document de notification sera envoyé à
             <strong style="color:var(--c-navy)">{{ $loan->email }}</strong> en
             <strong style="color:var(--c-navy)">{{ strtoupper($loan->contract_language ?? 'FR') }}</strong>.
           </div>
-          <form action="{{ route('admin.loans.validate', $loan) }}" method="POST"
-                onsubmit="return confirmSend()">
+          <form action="{{ route($panelPrefix.'.loans.validate', $loan) }}" method="POST"
+                onsubmit="confirmValidate(event); return false;">
+            @csrf
+            <button type="submit" class="btn-navy" style="width:100%;justify-content:center" id="validateBtn">
+              <i class="fas fa-check"></i> Valider
+            </button>
+          </form>
+          @else
+          {{-- Document de notification manquant --}}
+          <div style="background:#FFFBEB;border:1px solid #FDE68A;border-left:3px solid #F59E0B;border-radius:8px;padding:.625rem .75rem;font-size:.78rem;color:#78350F;display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.25rem">
+            <i class="fas fa-lock" style="color:#F59E0B;flex-shrink:0;margin-top:.1rem"></i>
+            <span>Uploadez d'abord le <strong>document de notification</strong> ci-dessous pour débloquer la validation.</span>
+          </div>
+          @endif
+
+        @elseif($loan->canSendContract())
+          @if($loan->contract_pdf_path)
+          {{-- Prêt à envoyer le contrat --}}
+          <div style="font-size:.78rem;color:var(--c-muted);margin-bottom:.625rem;line-height:1.5">
+            Le PDF du contrat sera envoyé avec le tableau d'amortissement à
+            <strong style="color:var(--c-navy)">{{ $loan->email }}</strong> en
+            <strong style="color:var(--c-navy)">{{ strtoupper($loan->contract_language ?? 'FR') }}</strong>.
+          </div>
+          <form action="{{ route($panelPrefix.'.loans.send-contract', $loan) }}" method="POST"
+                onsubmit="confirmSendContract(event); return false;">
             @csrf
             <button type="submit" class="btn-navy" style="width:100%;justify-content:center" id="sendBtn">
-              <i class="fas fa-paper-plane"></i> Valider &amp; Envoyer
+              <i class="fas fa-paper-plane"></i> Envoyer le contrat
             </button>
           </form>
           <div style="font-size:.68rem;color:var(--c-muted);margin-top:.5rem;display:flex;align-items:flex-start;gap:.35rem">
@@ -197,7 +243,7 @@
             <span>Une notification in-app est aussi envoyée au client.</span>
           </div>
           @else
-          {{-- PDF manquant --}}
+          {{-- PDF contrat manquant --}}
           <div style="background:#FFFBEB;border:1px solid #FDE68A;border-left:3px solid #F59E0B;border-radius:8px;padding:.625rem .75rem;font-size:.78rem;color:#78350F;display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.25rem">
             <i class="fas fa-lock" style="color:#F59E0B;flex-shrink:0;margin-top:.1rem"></i>
             <span>Uploadez d'abord le <strong>PDF du contrat</strong> ci-dessous pour débloquer l'envoi.</span>
@@ -212,15 +258,15 @@
             <div style="font-size:.7rem;color:#047857">{{ $loan->sent_at?->format('d/m/Y \à H:i') }}</div>
           </div>
         </div>
-        <form action="{{ route('admin.loans.contract.pdf.resend', $loan) }}" method="POST"
-              onsubmit="return confirm('Renvoyer le contrat à {{ $loan->email }} ?')">
+        <form action="{{ route($panelPrefix.'.loans.contract.pdf.resend', $loan) }}" method="POST"
+              data-confirm="Renvoyer le contrat à {{ $loan->email }} ?">
           @csrf
           <button type="submit" class="btn-ghost btn-sm-pro" style="width:100%;justify-content:center;margin-top:.5rem">
             <i class="fas fa-redo" style="color:var(--c-green)"></i> Renvoyer l'email
           </button>
         </form>
-        <form action="{{ route('admin.loans.signed', $loan) }}" method="POST"
-              onsubmit="return confirm('Confirmer la réception du contrat signé ?')"
+        <form action="{{ route($panelPrefix.'.loans.signed', $loan) }}" method="POST"
+              data-confirm="Confirmer la réception du contrat signé ?"
               style="margin-top:.5rem">
           @csrf
           <button type="submit" class="btn-navy" style="width:100%;justify-content:center;background:var(--c-green);border-color:var(--c-green)">
@@ -256,8 +302,87 @@
       </div>
     </div>
 
-    {{-- ── Séparateur CONTRAT ── --}}
+    {{-- ── Séparateur NOTIFICATION ── --}}
     <div style="display:flex;align-items:center;gap:.5rem;margin:.25rem 0 -.25rem">
+      <div style="width:3px;height:16px;border-radius:2px;background:#0ea5e9;flex-shrink:0"></div>
+      <span style="font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#0ea5e9">Notification de validation</span>
+      <div style="flex:1;height:1px;background:#e0f2fe"></div>
+    </div>
+
+    {{-- Document de notification --}}
+    <div class="lc-pcard">
+      <div class="lc-pcard-hdr">
+        <div class="lc-pcard-ico" style="background:#F0F9FF;color:#0ea5e9"><i class="fas fa-file-pdf"></i></div>
+        <span class="lc-pcard-title">Document de notification</span>
+        @if($loan->notification_pdf_path)
+        <a href="{{ route($panelPrefix.'.loans.notification.pdf',$loan) }}" target="_blank"
+           class="btn-ghost btn-sm-pro" style="margin-left:auto;padding:.2rem .5rem;font-size:.7rem" title="Visualiser">
+          <i class="fas fa-expand-alt"></i>
+        </a>
+        @endif
+      </div>
+      <div class="lc-pcard-body">
+        @if($loan->notification_pdf_path)
+        <div class="lc-pdf-file" style="background:#F0F9FF;border-color:#BAE6FD">
+          <i class="fas fa-file-pdf" style="color:#0ea5e9;font-size:1.1rem;flex-shrink:0"></i>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:.78rem;font-weight:700;color:#0369A1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
+              {{ $loan->reference }}_notification.pdf
+            </div>
+            <div style="font-size:.64rem;color:#0284C7;margin-top:.1rem">
+              <i class="fas fa-check-circle"></i> Sera joint à la notification
+            </div>
+          </div>
+          <a href="{{ route($panelPrefix.'.loans.notification.pdf',$loan) }}"
+             class="btn-ghost btn-sm-pro" style="padding:.25rem .45rem;flex-shrink:0" target="_blank">
+            <i class="fas fa-download"></i>
+          </a>
+        </div>
+        @endif
+
+        @if($notificationTemplate?->hasDocxTemplate())
+        <a href="{{ route($panelPrefix.'.loans.notification.docx', $loan) }}"
+           style="width:100%;justify-content:center;display:flex;align-items:center;gap:.45rem;padding:.55rem .875rem;font-size:.78rem;font-weight:700;border-radius:8px;cursor:pointer;background:#0ea5e9;color:#fff;text-decoration:none;margin-bottom:.625rem">
+          <i class="fas fa-file-word"></i> Générer &amp; Télécharger DOCX
+        </a>
+        <div style="font-size:.63rem;color:var(--c-muted);margin-bottom:.75rem;text-align:center">
+          Ouvrez → convertissez en PDF → uploadez ci-dessous
+        </div>
+        @elseif(!$notificationTemplate)
+        <div style="font-size:.72rem;color:#78350F;background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:.5rem .625rem;margin-bottom:.625rem">
+          <i class="fas fa-exclamation-triangle"></i> Aucun modèle de notification pour la langue
+          <strong>{{ strtoupper($loan->contract_language ?? 'FR') }}</strong>.
+          <a href="{{ route('admin.notification-templates.create') }}" style="color:#78350F;font-weight:700">Créer →</a>
+        </div>
+        @else
+        <div style="font-size:.72rem;color:#78350F;background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:.5rem .625rem;margin-bottom:.625rem">
+          <i class="fas fa-exclamation-triangle"></i> Le modèle « {{ $notificationTemplate->name }} » n'a pas de DOCX.
+          <a href="{{ route('admin.notification-templates.edit',$notificationTemplate) }}" style="color:#78350F;font-weight:700">Configurer →</a>
+        </div>
+        @endif
+
+        <form action="{{ route($panelPrefix.'.loans.notification.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
+          @csrf
+          <div class="lc-upload-zone" onclick="this.querySelector('input').click()">
+            <i class="fas fa-cloud-upload-alt" style="color:var(--c-gold);font-size:1.3rem;display:block;margin-bottom:.35rem"></i>
+            <div style="font-size:.76rem;font-weight:600;color:var(--c-navy)">
+              {{ $loan->notification_pdf_path ? 'Remplacer le PDF' : 'Uploader le document PDF' }}
+            </div>
+            <div style="font-size:.65rem;color:var(--c-muted);margin-top:.15rem">PDF · max 20 Mo · Cliquez pour choisir</div>
+            <input type="file" name="notification_pdf" accept=".pdf" required style="display:none"
+                   onchange="this.closest('form').submit()">
+          </div>
+          @error('notification_pdf')
+          <div style="font-size:.72rem;color:#dc2626;margin-top:.35rem">
+            <i class="fas fa-exclamation-circle"></i> {{ $message }}
+          </div>
+          @enderror
+        </form>
+      </div>
+    </div>
+
+    {{-- ── Séparateur CONTRAT ── --}}
+    <div style="display:flex;align-items:center;gap:.5rem;margin:.5rem 0 -.25rem">
       <div style="width:3px;height:16px;border-radius:2px;background:#dc2626;flex-shrink:0"></div>
       <span style="font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#dc2626">Contrat de prêt</span>
       <div style="flex:1;height:1px;background:#fee2e2"></div>
@@ -269,7 +394,7 @@
         <div class="lc-pcard-ico" style="background:#FFF1F2;color:#dc2626"><i class="fas fa-file-pdf"></i></div>
         <span class="lc-pcard-title">PDF du contrat</span>
         @if($loan->contract_pdf_path)
-        <a href="{{ route('admin.loans.contract.viewer',$loan) }}"
+        <a href="{{ route($panelPrefix.'.loans.contract.viewer',$loan) }}"
            class="btn-ghost btn-sm-pro" style="margin-left:auto;padding:.2rem .5rem;font-size:.7rem" title="Visualiser plein écran">
           <i class="fas fa-expand-alt"></i>
         </a>
@@ -287,14 +412,14 @@
               <i class="fas fa-check-circle"></i> Sera joint à l'envoi
             </div>
           </div>
-          <a href="{{ route('admin.loans.contract.pdf',$loan) }}"
+          <a href="{{ route($panelPrefix.'.loans.contract.pdf',$loan) }}"
              class="btn-ghost btn-sm-pro" style="padding:.25rem .45rem;flex-shrink:0" target="_blank">
             <i class="fas fa-download"></i>
           </a>
         </div>
         @endif
 
-        <form action="{{ route('admin.loans.contract.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route($panelPrefix.'.loans.contract.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="lc-upload-zone" onclick="this.querySelector('input').click()">
             <i class="fas fa-cloud-upload-alt" style="color:var(--c-gold);font-size:1.3rem;display:block;margin-bottom:.35rem"></i>
@@ -327,7 +452,7 @@
         <div class="lc-pcard-ico" style="background:#F0FDF4;color:#16a34a"><i class="fas fa-shield-alt"></i></div>
         <span class="lc-pcard-title">Attestation d'assurance</span>
         @if($loan->insurance_pdf_path)
-        <a href="{{ route('admin.loans.insurance.viewer', $loan) }}"
+        <a href="{{ route($panelPrefix.'.loans.insurance.viewer', $loan) }}"
            class="btn-ghost btn-sm-pro" style="margin-left:auto;padding:.2rem .5rem;font-size:.7rem" title="Visualiser plein écran">
           <i class="fas fa-expand-alt"></i>
         </a>
@@ -346,7 +471,7 @@
               <i class="fas fa-check-circle"></i> Attestation CG-A340G disponible
             </div>
           </div>
-          <a href="{{ route('admin.loans.insurance.pdf', $loan) }}"
+          <a href="{{ route($panelPrefix.'.loans.insurance.pdf', $loan) }}"
              class="btn-ghost btn-sm-pro" style="padding:.25rem .45rem;flex-shrink:0" target="_blank">
             <i class="fas fa-download"></i>
           </a>
@@ -362,14 +487,14 @@
             </div>
             <div style="font-size:.63rem;color:var(--c-muted)">
               {{ $loan->insuranceTemplate ? 'Modèle personnalisé' : 'Modèle intégré (par défaut)' }}
-              · <a href="{{ route('admin.loans.edit',$loan) }}" style="color:#16a34a;text-decoration:none">Modifier →</a>
+              · <a href="{{ route($panelPrefix.'.loans.edit',$loan) }}" style="color:#16a34a;text-decoration:none">Modifier →</a>
             </div>
           </div>
         </div>
 
         {{-- Générer : DOCX si template DOCX, sinon PDF intégré --}}
         @if($loan->insuranceTemplate?->hasDocxTemplate())
-        <a href="{{ route('admin.loans.insurance.docx', $loan) }}"
+        <a href="{{ route($panelPrefix.'.loans.insurance.docx', $loan) }}"
            style="width:100%;justify-content:center;display:flex;align-items:center;gap:.45rem;padding:.55rem .875rem;font-size:.78rem;font-weight:700;border-radius:8px;cursor:pointer;background:#16a34a;color:#fff;text-decoration:none">
           <i class="fas fa-file-word"></i> Télécharger DOCX assurance
         </a>
@@ -377,8 +502,8 @@
           Ouvrez → finalisez → exportez en PDF → uploadez ci-dessous
         </div>
         @else
-        <form action="{{ route('admin.loans.insurance.pdf.generate', $loan) }}" method="POST"
-              onsubmit="return confirm('Générer l\'attestation d\'assurance ?')">
+        <form action="{{ route($panelPrefix.'.loans.insurance.pdf.generate', $loan) }}" method="POST"
+              data-confirm="Générer l'attestation d'assurance ?">
           @csrf
           <button type="submit"
                   style="width:100%;justify-content:center;display:flex;align-items:center;gap:.45rem;padding:.55rem .875rem;font-size:.78rem;font-weight:700;border-radius:8px;cursor:pointer;background:#16a34a;border:none;color:#fff">
@@ -388,7 +513,7 @@
         @endif
 
         {{-- Upload --}}
-        <form action="{{ route('admin.loans.insurance.pdf.upload', $loan) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route($panelPrefix.'.loans.insurance.pdf.upload', $loan) }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="lc-upload-zone" onclick="this.querySelector('input').click()"
                style="{{ $loan->insurance_pdf_path ? 'border-color:#A7F3D0;background:#F0FDF4' : '' }}">
@@ -415,132 +540,152 @@
   {{-- ════ ZONE PRINCIPALE ════ --}}
   <div style="min-width:0;display:flex;flex-direction:column;gap:1.125rem">
 
-    {{-- ── Séparateur section CONTRAT (zone principale) ── --}}
-    <div style="display:flex;align-items:center;gap:.75rem">
-      <div style="display:flex;align-items:center;gap:.5rem;background:#FFF1F2;border:1px solid #FECDD3;border-radius:8px;padding:.35rem .75rem">
-        <i class="fas fa-file-contract" style="color:#dc2626;font-size:.8rem"></i>
-        <span style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#9F1239">Contrat de prêt</span>
-      </div>
-      <div style="flex:1;height:1.5px;background:linear-gradient(to right,#FECDD3,transparent)"></div>
+    {{-- ── Sélecteur de document : un seul visible à la fois ── --}}
+    <div class="lc-doctabs">
+      <button type="button" class="lc-doctab-btn lc-doctab-btn--notification{{ $defaultDocTab==='notification' ? ' active':'' }}"
+              onclick="lcDocTab(this,'notification')">
+        <i class="fas fa-bell"></i> Notification
+        @if($loan->notification_pdf_path)<span class="lc-doctab-badge">PDF</span>@endif
+      </button>
+      <button type="button" class="lc-doctab-btn lc-doctab-btn--contrat{{ $defaultDocTab==='contrat' ? ' active':'' }}"
+              onclick="lcDocTab(this,'contrat')">
+        <i class="fas fa-file-contract"></i> Contrat
+        @if($loan->contract_pdf_path)<span class="lc-doctab-badge">PDF</span>@endif
+      </button>
+      <button type="button" class="lc-doctab-btn lc-doctab-btn--assurance"
+              onclick="lcDocTab(this,'assurance')">
+        <i class="fas fa-shield-alt"></i> Assurance
+        @if($loan->insurance_pdf_path)<span class="lc-doctab-badge">PDF</span>@endif
+      </button>
     </div>
 
-    {{-- Visionneuse PDF contrat --}}
-    <div class="lc-pdf-card">
-      <div class="lc-pdf-toolbar">
-        <div class="lc-pdf-title">
-          <i class="fas fa-file-pdf" style="color:#dc2626"></i>
-          Aperçu du contrat
-          <span class="lc-lang-badge">{{ strtoupper($loan->contract_language ?? 'FR') }}</span>
-        </div>
-        <div class="lc-pdf-actions">
-          <a href="{{ route('admin.loans.contract.pdf', $loan) }}" class="btn-ghost btn-sm-pro" target="_blank">
-            <i class="fas fa-external-link-alt"></i> Nouvel onglet
-          </a>
-          <a href="{{ route('admin.loans.contract.pdf', $loan) }}"
-             download="Contrat_{{ $loan->reference }}.pdf" class="btn-ghost btn-sm-pro">
-            <i class="fas fa-download"></i> Télécharger
-          </a>
-        </div>
-      </div>
+    <div class="lc-pdf-card" style="border-radius:0 12px 12px 12px">
 
-      @if($loan->contract_pdf_path)
-      <iframe
-        src="{{ route('admin.loans.contract.pdf', $loan) }}"
-        class="lc-pdf-frame"
-        title="Aperçu contrat {{ $loan->reference }}"
-        loading="lazy"
-      ></iframe>
-      @else
-      <div class="lc-pdf-placeholder">
-        <i class="fas fa-file-pdf" style="font-size:3rem;margin-bottom:.75rem;opacity:.2"></i>
-        <div style="font-size:.9rem;font-weight:600;color:var(--c-navy)">Aucun PDF disponible</div>
-        <div style="font-size:.78rem;color:var(--c-muted);margin-top:.3rem">Uploadez le contrat signé dans le panneau gauche</div>
-      </div>
-      @endif
-    </div>
-
-    {{-- ── Séparateur section ASSURANCE (zone principale) ── --}}
-    <div style="display:flex;align-items:center;gap:.75rem;margin-top:.25rem">
-      <div style="display:flex;align-items:center;gap:.5rem;background:#F0FDF4;border:1px solid #A7F3D0;border-radius:8px;padding:.35rem .75rem">
-        <i class="fas fa-shield-alt" style="color:#16a34a;font-size:.8rem"></i>
-        <span style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#065F46">Assurance emprunteur · CG-A340G</span>
-      </div>
-      <div style="flex:1;height:1.5px;background:linear-gradient(to right,#A7F3D0,transparent)"></div>
-    </div>
-
-    {{-- Visionneuse PDF attestation d'assurance --}}
-    <div class="lc-pdf-card">
-      <div class="lc-pdf-toolbar">
-        <div class="lc-pdf-title">
-          <i class="fas fa-shield-alt" style="color:#16a34a"></i>
-          Attestation d'assurance emprunteur
-          <span class="lc-lang-badge" style="background:#F0FDF4;border-color:#A7F3D0;color:#065F46">CG-A340G</span>
+      {{-- Pane Notification --}}
+      <div class="lc-doctab-pane{{ $defaultDocTab==='notification' ? ' active':'' }}" data-pane="notification">
+        <div class="lc-pdf-toolbar">
+          <div class="lc-pdf-title">
+            <i class="fas fa-file-pdf" style="color:#0ea5e9"></i>
+            Aperçu du document de notification
+            <span class="lc-lang-badge" style="background:#F0F9FF;border-color:#BAE6FD;color:#0369A1">{{ strtoupper($loan->contract_language ?? 'FR') }}</span>
+          </div>
+          @if($loan->notification_pdf_path)
+          <div class="lc-pdf-actions">
+            <a href="{{ route($panelPrefix.'.loans.notification.pdf', $loan) }}" class="btn-ghost btn-sm-pro" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Nouvel onglet
+            </a>
+            <a href="{{ route($panelPrefix.'.loans.notification.pdf', $loan) }}"
+               download="Notification_{{ $loan->reference }}.pdf" class="btn-ghost btn-sm-pro">
+              <i class="fas fa-download"></i> Télécharger
+            </a>
+          </div>
+          @endif
         </div>
-        @if($loan->insurance_pdf_path)
-        <div class="lc-pdf-actions">
-          <a href="{{ route('admin.loans.insurance.pdf', $loan) }}" class="btn-ghost btn-sm-pro" target="_blank">
-            <i class="fas fa-external-link-alt"></i> Nouvel onglet
-          </a>
-          <a href="{{ route('admin.loans.insurance.pdf', $loan) }}"
-             download="Assurance_{{ $loan->reference }}.pdf" class="btn-ghost btn-sm-pro">
-            <i class="fas fa-download"></i> Télécharger
-          </a>
+
+        @if($loan->notification_pdf_path)
+        <iframe
+          data-src="{{ route($panelPrefix.'.loans.notification.pdf', $loan) }}"
+          class="lc-pdf-frame"
+          title="Notification {{ $loan->reference }}"
+        ></iframe>
+        @else
+        <div class="lc-pdf-placeholder">
+          <i class="fas fa-file-pdf" style="font-size:3rem;margin-bottom:.75rem;opacity:.2;color:#0ea5e9"></i>
+          <div style="font-size:.9rem;font-weight:600;color:var(--c-navy)">Aucun document disponible</div>
+          <div style="font-size:.78rem;color:var(--c-muted);margin-top:.3rem">Uploadez le document de notification dans le panneau gauche</div>
         </div>
         @endif
       </div>
 
-      @if($loan->insurance_pdf_path)
-      <iframe
-        src="{{ route('admin.loans.insurance.pdf', $loan) }}"
-        class="lc-pdf-frame"
-        title="Attestation assurance {{ $loan->reference }}"
-        loading="lazy"
-      ></iframe>
-      @else
-      <div class="lc-pdf-placeholder">
-        <i class="fas fa-shield-alt" style="font-size:3rem;margin-bottom:.75rem;opacity:.2;color:#16a34a"></i>
-        <div style="font-size:.9rem;font-weight:600;color:var(--c-navy)">Aucune attestation disponible</div>
-        <div style="font-size:.78rem;color:var(--c-muted);margin-top:.3rem">Uploadez l'attestation d'assurance CG-A340G dans le panneau gauche</div>
+      {{-- Pane Contrat --}}
+      <div class="lc-doctab-pane{{ $defaultDocTab==='contrat' ? ' active':'' }}" data-pane="contrat">
+        <div class="lc-pdf-toolbar">
+          <div class="lc-pdf-title">
+            <i class="fas fa-file-pdf" style="color:#dc2626"></i>
+            Aperçu du contrat
+            <span class="lc-lang-badge">{{ strtoupper($loan->contract_language ?? 'FR') }}</span>
+          </div>
+          @if($loan->contract_pdf_path)
+          <div class="lc-pdf-actions">
+            <a href="{{ route($panelPrefix.'.loans.contract.pdf', $loan) }}" class="btn-ghost btn-sm-pro" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Nouvel onglet
+            </a>
+            <a href="{{ route($panelPrefix.'.loans.contract.pdf', $loan) }}"
+               download="Contrat_{{ $loan->reference }}.pdf" class="btn-ghost btn-sm-pro">
+              <i class="fas fa-download"></i> Télécharger
+            </a>
+          </div>
+          @endif
+        </div>
+
+        @if($loan->contract_pdf_path)
+        <iframe
+          data-src="{{ route($panelPrefix.'.loans.contract.pdf', $loan) }}"
+          class="lc-pdf-frame"
+          title="Aperçu contrat {{ $loan->reference }}"
+        ></iframe>
+        @else
+        <div class="lc-pdf-placeholder">
+          <i class="fas fa-file-pdf" style="font-size:3rem;margin-bottom:.75rem;opacity:.2"></i>
+          <div style="font-size:.9rem;font-weight:600;color:var(--c-navy)">Aucun PDF disponible</div>
+          <div style="font-size:.78rem;color:var(--c-muted);margin-top:.3rem">Uploadez le contrat signé dans le panneau gauche</div>
+        </div>
+        @endif
       </div>
-      @endif
-    </div>
+
+      {{-- Pane Assurance --}}
+      <div class="lc-doctab-pane" data-pane="assurance">
+        <div class="lc-pdf-toolbar">
+          <div class="lc-pdf-title">
+            <i class="fas fa-shield-alt" style="color:#16a34a"></i>
+            Attestation d'assurance emprunteur
+            <span class="lc-lang-badge" style="background:#F0FDF4;border-color:#A7F3D0;color:#065F46">CG-A340G</span>
+          </div>
+          @if($loan->insurance_pdf_path)
+          <div class="lc-pdf-actions">
+            <a href="{{ route($panelPrefix.'.loans.insurance.pdf', $loan) }}" class="btn-ghost btn-sm-pro" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Nouvel onglet
+            </a>
+            <a href="{{ route($panelPrefix.'.loans.insurance.pdf', $loan) }}"
+               download="Assurance_{{ $loan->reference }}.pdf" class="btn-ghost btn-sm-pro">
+              <i class="fas fa-download"></i> Télécharger
+            </a>
+          </div>
+          @endif
+        </div>
+
+        @if($loan->insurance_pdf_path)
+        <iframe
+          data-src="{{ route($panelPrefix.'.loans.insurance.pdf', $loan) }}"
+          class="lc-pdf-frame"
+          title="Attestation assurance {{ $loan->reference }}"
+        ></iframe>
+        @else
+        <div class="lc-pdf-placeholder">
+          <i class="fas fa-shield-alt" style="font-size:3rem;margin-bottom:.75rem;opacity:.2;color:#16a34a"></i>
+          <div style="font-size:.9rem;font-weight:600;color:var(--c-navy)">Aucune attestation disponible</div>
+          <div style="font-size:.78rem;color:var(--c-muted);margin-top:.3rem">Uploadez l'attestation d'assurance CG-A340G dans le panneau gauche</div>
+        </div>
+        @endif
+      </div>
+
+    </div>{{-- /lc-pdf-card --}}
 
     {{-- Variables disponibles --}}
     <div class="lc-editor-card">
       <div class="lc-pcard-hdr" style="padding:.8rem 1.25rem">
         <div class="lc-pcard-ico" style="background:#EEF2FF;color:var(--c-navy)"><i class="fas fa-tags"></i></div>
-        <span class="lc-pcard-title">Variables disponibles pour le modèle DOCX</span>
-        <span style="margin-left:auto;font-size:.62rem;padding:.15rem .5rem;border-radius:10px;background:#e5e7eb;color:#6b7280;font-weight:700">20</span>
+        <span class="lc-pcard-title">Variables disponibles (contrat, assurance, notification)</span>
+        <span style="margin-left:auto;font-size:.62rem;padding:.15rem .5rem;border-radius:10px;background:#e5e7eb;color:#6b7280;font-weight:700">{{ count($variables) }}</span>
       </div>
       <div style="padding:1.125rem">
         <div style="font-size:.78rem;color:var(--c-muted);margin-bottom:1rem">
-          Cliquez sur <i class="fas fa-copy"></i> pour copier une variable, puis utilisez-la dans votre modèle DOCX.
+          Cliquez sur <i class="fas fa-copy"></i> pour copier une variable, puis utilisez-la dans vos modèles DOCX ou HTML.
         </div>
         <div class="lc-vars-grid">
-          @foreach([
-            ['{nom_client}',          'Nom complet du client',                   'user'],
-            ['{email_client}',        'Adresse email du client',                 'envelope'],
-            ['{adresse_client}',      'Adresse postale',                         'map-marker-alt'],
-            ['{date_naissance}',      'Date de naissance',                       'birthday-cake'],
-            ['{reference}',           'Référence du dossier',                    'hashtag'],
-            ['{archive}',             'Référence d\'archivage',                  'archive'],
-            ['{montant}',             'Montant du prêt formaté',                 'coins'],
-            ['{devise}',              'Devise (EUR, PLN, GBP…)',                 'euro-sign'],
-            ['{duree}',               'Durée en mois',                           'calendar-alt'],
-            ['{mensualite}',          'Mensualité calculée',                     'redo'],
-            ['{taux}',                'Taux d\'intérêt annuel',                  'percent'],
-            ['{total_remboursement}', 'Total à rembourser',                      'calculator'],
-            ['{cout_credit}',         'Coût total des intérêts',                 'chart-line'],
-            ['{frais_admin}',         'Frais administratifs',                    'file-invoice'],
-            ['{agent_suivi}',         'Admin responsable du dossier',            'user-tie'],
-            ['{directeur}',           'Directeur signataire',                    'user-shield'],
-            ['{date}',                'Date de validation du contrat',           'calendar-check'],
-            ['{date_debut}',          'Date de première échéance',               'calendar'],
-            ['{objet}',               'Objet / motif du prêt',                   'tag'],
-            ['{conditions_speciales}','Conditions particulières',                'file-alt'],
-          ] as [$var, $desc, $icon])
+          @foreach($variables as $var => $desc)
           <div class="lc-var-chip">
-            <div class="lc-var-chip-ico"><i class="fas fa-{{ $icon }}"></i></div>
+            <div class="lc-var-chip-ico"><i class="fas fa-tag"></i></div>
             <div style="flex:1;min-width:0">
               <span class="lc-var-code">{{ $var }}</span>
               <span class="lc-var-desc">{{ $desc }}</span>
@@ -563,6 +708,29 @@
 
 @push('scripts')
 <script>
+function lcDocTab(btn, tab) {
+  document.querySelectorAll('.lc-doctab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.lc-doctab-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const pane = document.querySelector('.lc-doctab-pane[data-pane="' + tab + '"]');
+  if (pane) {
+    pane.classList.add('active');
+    lcLoadPaneIframe(pane);
+  }
+}
+
+function lcLoadPaneIframe(pane) {
+  const iframe = pane.querySelector('iframe[data-src]');
+  if (iframe && !iframe.getAttribute('src')) {
+    iframe.setAttribute('src', iframe.dataset.src);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const activePane = document.querySelector('.lc-doctab-pane.active');
+  if (activePane) lcLoadPaneIframe(activePane);
+});
+
 function lcCopy(text, btn) {
   navigator.clipboard.writeText(text).then(() => {
     btn.innerHTML = '<i class="fas fa-check" style="color:#22c55e"></i>';
@@ -570,11 +738,31 @@ function lcCopy(text, btn) {
   });
 }
 
-function confirmSend() {
-  const ok = confirm(
-    'Valider et envoyer le contrat à {{ $loan->email }} ?\n\n' +
+async function confirmValidate(e) {
+  const form = e.target;
+  const ok = await confirmModal(
+    'Valider ce dossier et envoyer la notification à {{ $loan->email }} ?\n\n' +
     'Langue : {{ strtoupper($loan->contract_language ?? "FR") }}\n' +
-    'Le PDF du contrat + tableau d\'amortissement seront joints au message.'
+    'Le document de notification sera joint au message.',
+    { title: 'Valider le dossier', confirmLabel: 'Valider' }
+  );
+  if (ok) {
+    const btn = document.getElementById('validateBtn');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours…';
+    }
+    form.submit();
+  }
+}
+
+async function confirmSendContract(e) {
+  const form = e.target;
+  const ok = await confirmModal(
+    'Envoyer le contrat à {{ $loan->email }} ?\n\n' +
+    'Langue : {{ strtoupper($loan->contract_language ?? "FR") }}\n' +
+    'Le PDF du contrat + tableau d\'amortissement seront joints au message.',
+    { title: 'Envoyer le contrat', confirmLabel: 'Envoyer' }
   );
   if (ok) {
     const btn = document.getElementById('sendBtn');
@@ -582,8 +770,8 @@ function confirmSend() {
       btn.disabled = true;
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours…';
     }
+    form.submit();
   }
-  return ok;
 }
 
 // Auto-submit feedback upload

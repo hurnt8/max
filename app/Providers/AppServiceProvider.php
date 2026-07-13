@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Auth\Notifications\ResetPassword;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
@@ -13,6 +15,8 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        $this->configureResetPasswordMail();
+
         Mail::extend('smtp-no-verify', function (array $config) {
             $transport = new EsmtpTransport(
                 $config['host'] ?? 'localhost',
@@ -34,6 +38,31 @@ class AppServiceProvider extends ServiceProvider
             }
 
             return $transport;
+        });
+    }
+
+    private function configureResetPasswordMail(): void
+    {
+        ResetPassword::toMailUsing(function ($notifiable, string $token) {
+            $locale  = $notifiable->locale ?? 'fr';
+            $url     = route('password.reset', ['token' => $token, 'email' => $notifiable->email]);
+            $expire  = (int) config('auth.passwords.users.expire', 60);
+
+            $subjects = [
+                'fr' => 'Réinitialisation de votre mot de passe — Solberg Grupo',
+                'en' => 'Reset your password — Solberg Grupo',
+                'es' => 'Restablecimiento de su contraseña — Solberg Grupo',
+                'pl' => 'Resetowanie hasła — Solberg Grupo',
+            ];
+
+            return (new MailMessage)
+                ->subject($subjects[$locale] ?? $subjects['fr'])
+                ->view('emails.password-reset', [
+                    'url'            => $url,
+                    'user'           => $notifiable,
+                    'locale'         => $locale,
+                    'expireMinutes'  => $expire,
+                ]);
         });
     }
 }

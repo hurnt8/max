@@ -138,7 +138,7 @@
         </a>
         @if(!$t->is_default)
         <form action="{{ route('admin.contract-templates.destroy',$t) }}" method="POST"
-              onsubmit="return confirm('Supprimer ce modèle de contrat ?')">
+              data-confirm="Supprimer ce modèle de contrat ?">
           @csrf @method('DELETE')
           <button class="btn-icon btn-icon-danger" title="Supprimer">
             <i class="fas fa-trash"></i>

@@ -73,6 +73,8 @@ class ContractVariableResolver
             '{type_identite}'   => $this->contractService->translateIdType(
                                     $client?->id_type ?? '', $locale),
             '{numero_identite}' => $client?->id_number ?? $client?->npi ?? $loan->npi ?? '',
+            '{typefinance}'     => $this->contractService->translateFinancingType(
+                                    $loan->type_financement ?? '', $locale),
             '{agent_suivi}'     => $loan->agent_suivi ?? $loan->admin?->name ?? '',
             '{directeur}'       => $loan->directeur ?? '',
             '{montant}'         => number_format((float)$loan->amount, 2, ',', ' '),
@@ -156,6 +158,7 @@ class ContractVariableResolver
             '{date_naissance}'  => '15/06/1985',
             '{type_identite}'   => 'Passeport',
             '{numero_identite}' => 'AB123456',
+            '{typefinance}'     => 'Financement personnel',
             '{agent_suivi}'     => 'Marie MARTIN',
             '{directeur}'       => 'Pierre DUPONT',
             '{montant}'         => '15 000,00',

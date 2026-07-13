@@ -282,9 +282,20 @@ kbd {
   }
   .pv-side.open { left: 0; }
 }
+
+/* ── Modal de confirmation ── */
+.cf-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center;padding:1rem}
+.cf-modal-overlay.open{display:flex}
+.cf-modal{background:var(--navy2);border:1px solid var(--line);border-radius:14px;max-width:400px;width:100%;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.cf-modal-icon{width:40px;height:40px;border-radius:10px;background:rgba(184,136,62,.15);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:.75rem}
+.cf-modal-title{font-size:.95rem;font-weight:800;color:var(--text);margin-bottom:.5rem}
+.cf-modal-msg{font-size:.8rem;color:var(--sub);line-height:1.6;margin-bottom:1.25rem;white-space:pre-line}
+.cf-modal-actions{display:flex;gap:.5rem;justify-content:flex-end}
 </style>
 </head>
 <body>
+
+@php $panelPrefix = request()->routeIs('super-admin.*') ? 'super-admin' : 'admin'; @endphp
 
 <div class="pv-overlay" id="ovl" onclick="sideClose()"></div>
 
@@ -294,7 +305,7 @@ kbd {
   <aside class="pv-side" id="side">
 
     {{-- Brand --}}
-    <a href="{{ route('admin.loans.show', $loan) }}" class="s-brand">
+    <a href="{{ route($panelPrefix.'.loans.show', $loan) }}" class="s-brand">
       <div class="s-logo">CI</div>
       <div class="s-brand-wrap">
         <span class="s-brand-name">Credixa Invest</span>
@@ -351,14 +362,14 @@ kbd {
     {{-- Actions --}}
     <div class="s-sec">Actions</div>
     <div class="s-actions">
-      <form action="{{ route('admin.loans.insurance.send', $loan) }}" method="POST"
-            onsubmit="return confirm('Envoyer l\'attestation par email à {{ addslashes($loan->email ?? '') }} ?')">
+      <form action="{{ route($panelPrefix.'.loans.insurance.send', $loan) }}" method="POST"
+            data-confirm="Envoyer l'attestation par email à {{ $loan->email ?? '' }} ?">
         @csrf
         <button type="submit" class="s-btn s-btn-primary">
           <i class="fas fa-paper-plane"></i> Envoyer par email
         </button>
       </form>
-      <a href="{{ route('admin.loans.insurance.pdf', $loan) }}"
+      <a href="{{ route($panelPrefix.'.loans.insurance.pdf', $loan) }}"
          download="Assurance_{{ $loan->reference }}.pdf"
          class="s-btn s-btn-ghost">
         <i class="fas fa-download"></i> Télécharger le PDF
@@ -374,16 +385,16 @@ kbd {
     <div class="s-sec">Navigation</div>
     <div class="s-nav">
       @if($loan->contract_pdf_path)
-      <a href="{{ route('admin.loans.contract.viewer', $loan) }}" class="s-nav-item">
+      <a href="{{ route($panelPrefix.'.loans.contract.viewer', $loan) }}" class="s-nav-item">
         <i class="fas fa-file-contract" style="color:#F87171"></i>
         Contrat de prêt
       </a>
       @endif
-      <a href="{{ route('admin.loans.contract', $loan) }}" class="s-nav-item">
+      <a href="{{ route($panelPrefix.'.loans.contract', $loan) }}" class="s-nav-item">
         <i class="fas fa-cog" style="color:var(--sub)"></i>
         Gérer le dossier
       </a>
-      <a href="{{ route('admin.loans.show', $loan) }}" class="s-nav-item">
+      <a href="{{ route($panelPrefix.'.loans.show', $loan) }}" class="s-nav-item">
         <i class="fas fa-folder-open" style="color:var(--sub)"></i>
         Fiche dossier
       </a>
@@ -391,7 +402,7 @@ kbd {
 
     {{-- Retour (bas de sidebar) --}}
     <div class="s-back-wrap">
-      <a href="{{ route('admin.loans.show', $loan) }}" class="s-back">
+      <a href="{{ route($panelPrefix.'.loans.show', $loan) }}" class="s-back">
         <i class="fas fa-arrow-left"></i> Retour au dossier
       </a>
     </div>
@@ -413,9 +424,9 @@ kbd {
     {{-- Fil d'Ariane (desktop) --}}
     <div class="pv-bar">
       <nav class="pv-crumb" aria-label="Fil d'Ariane">
-        <a href="{{ route('admin.loans.index') }}">Dossiers</a>
+        <a href="{{ route($panelPrefix.'.loans.index') }}">Dossiers</a>
         <span class="pv-crumb-sep">/</span>
-        <a href="{{ route('admin.loans.show', $loan) }}">{{ $loan->reference }}</a>
+        <a href="{{ route($panelPrefix.'.loans.show', $loan) }}">{{ $loan->reference }}</a>
         <span class="pv-crumb-sep">/</span>
         <span class="pv-crumb-cur">Attestation d'assurance</span>
       </nav>
@@ -427,7 +438,7 @@ kbd {
     <div class="pv-frame-wrap">
       <iframe
         class="pv-frame"
-        src="{{ route('admin.loans.insurance.pdf', $loan) }}#toolbar=1&navpanes=0&scrollbar=1&view=FitH"
+        src="{{ route($panelPrefix.'.loans.insurance.pdf', $loan) }}#toolbar=1&navpanes=0&scrollbar=1&view=FitH"
         title="Attestation d'assurance — {{ $loan->reference }}"
         loading="eager"
       ></iframe>
@@ -437,7 +448,7 @@ kbd {
       <div class="pv-empty-ico"><i class="fas fa-shield-alt"></i></div>
       <h3>Aucune attestation disponible</h3>
       <p>Générez ou uploadez l'attestation depuis le dossier.</p>
-      <a href="{{ route('admin.loans.show', $loan) }}" class="pv-empty-cta">
+      <a href="{{ route($panelPrefix.'.loans.show', $loan) }}" class="pv-empty-cta">
         <i class="fas fa-arrow-left"></i> Retour au dossier
       </a>
     </div>
@@ -446,12 +457,65 @@ kbd {
   </main>
 </div>
 
+{{-- ── Modal de confirmation ── --}}
+<div class="cf-modal-overlay" id="cfModalOverlay">
+  <div class="cf-modal">
+    <div class="cf-modal-icon"><i class="fas fa-question-circle"></i></div>
+    <div class="cf-modal-title" id="cfModalTitle">Confirmation</div>
+    <div class="cf-modal-msg" id="cfModalMsg"></div>
+    <div class="cf-modal-actions">
+      <button type="button" class="s-btn s-btn-ghost" id="cfModalCancel" style="width:auto">Annuler</button>
+      <button type="button" class="s-btn s-btn-primary" id="cfModalConfirm" style="width:auto">Confirmer</button>
+    </div>
+  </div>
+</div>
+
 <script>
 function sideOpen()  { document.getElementById('side').classList.add('open'); document.getElementById('ovl').classList.add('open'); }
 function sideClose() { document.getElementById('side').classList.remove('open'); document.getElementById('ovl').classList.remove('open'); }
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') window.location.href = '{{ route('admin.loans.show', $loan) }}';
-});
+
+(function () {
+  var overlay = document.getElementById('cfModalOverlay');
+  var titleEl = document.getElementById('cfModalTitle');
+  var msgEl   = document.getElementById('cfModalMsg');
+  var btnOk   = document.getElementById('cfModalConfirm');
+  var btnCancel = document.getElementById('cfModalCancel');
+  var pendingResolve = null;
+
+  function close(result) {
+    overlay.classList.remove('open');
+    if (pendingResolve) { var r = pendingResolve; pendingResolve = null; r(result); }
+  }
+
+  window.confirmModal = function (message, opts) {
+    opts = opts || {};
+    titleEl.textContent = opts.title || 'Confirmation';
+    msgEl.textContent = message;
+    btnOk.textContent = opts.confirmLabel || 'Confirmer';
+    overlay.classList.add('open');
+    return new Promise(function (resolve) { pendingResolve = resolve; });
+  };
+
+  btnOk.addEventListener('click', function () { close(true); });
+  btnCancel.addEventListener('click', function () { close(false); });
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(false); });
+
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (form && form.dataset && form.dataset.confirm) {
+      e.preventDefault();
+      confirmModal(form.dataset.confirm, { title: form.dataset.confirmTitle }).then(function (ok) {
+        if (ok) form.submit();
+      });
+    }
+  }, true);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (overlay.classList.contains('open')) { close(false); return; }
+    window.location.href = '{{ route($panelPrefix.'.loans.show', $loan) }}';
+  });
+})();
 </script>
 </body>
 </html>

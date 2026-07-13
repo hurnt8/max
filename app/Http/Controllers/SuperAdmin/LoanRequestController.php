@@ -4,6 +4,7 @@ namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Models\LoanRequest;
+use App\Models\NotificationTemplate;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,9 @@ class LoanRequestController extends Controller
         }
         if ($request->filled('status')) {
             $query->where('status', $request->status);
+        }
+        if ($request->filled('type_financement')) {
+            $query->where('type_financement', $request->type_financement);
         }
         if ($request->filled('search')) {
             $s = $request->search;
@@ -42,17 +46,20 @@ class LoanRequestController extends Controller
             'rejected'          => LoanRequest::where('status', 'rejected')->count(),
         ];
 
-        return view('super-admin.loans.index', compact('loans', 'admins', 'stats'));
+        $financingTypes = LoanRequest::FINANCING_TYPES;
+
+        return view('super-admin.loans.index', compact('loans', 'admins', 'stats', 'financingTypes'));
     }
 
     public function show(LoanRequest $loan)
     {
         $loan->load(['client', 'admin', 'history.admin', 'contractTemplate']);
-        $generatedDocs = $loan->generatedDocuments()->with('generatedBy')->get();
+        $generatedDocs         = $loan->generatedDocuments()->with('generatedBy')->get();
+        $notificationTemplate  = NotificationTemplate::resolveForLoan($loan);
         $isSuperAdmin  = true;
         $admins        = User::where('type', 'staff')
             ->whereHas('roles', fn($q) => $q->whereIn('name', ['admin', 'super-admin']))
             ->orderBy('name')->get();
-        return view('admin.loans.show', compact('loan', 'generatedDocs', 'isSuperAdmin', 'admins'));
+        return view('admin.loans.show', compact('loan', 'generatedDocs', 'isSuperAdmin', 'admins', 'notificationTemplate'));
     }
 }

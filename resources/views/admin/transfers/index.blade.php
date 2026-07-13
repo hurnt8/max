@@ -208,14 +208,14 @@
 
   {{-- Reject form ── --}}
   <div class="trf-form" id="reject-{{ $trf->id }}" style="display:none;padding:1rem 1.25rem;border-top:1px solid var(--c-border);background:rgba(220,38,38,.03)">
-    <form method="POST" action="{{ route('admin.transfers.reject', $trf) }}">
+    <form method="POST" action="{{ route('admin.transfers.reject', $trf) }}"
+          data-confirm="Rejeter ce virement ? Les fonds seront recrédités au client.">
       @csrf
       <label class="form-label-pro">Motif du rejet (optionnel)</label>
       <input type="text" name="admin_note" class="form-control-pro" style="margin-bottom:.875rem"
         placeholder="Ex : IBAN invalide, KYC incomplet, limite atteinte…" maxlength="500">
       <div style="display:flex;gap:.5rem">
-        <button type="submit" class="btn-navy btn-sm-pro" style="background:var(--c-red)"
-          onclick="return confirm('Rejeter ce virement ? Les fonds seront recrédités au client.')">
+        <button type="submit" class="btn-navy btn-sm-pro" style="background:var(--c-red)">
           <i class="fas fa-times"></i> Confirmer le rejet
         </button>
         <button type="button" class="btn-ghost btn-sm-pro"
@@ -227,7 +227,8 @@
   {{-- Invoice form ── --}}
   @if($trf->status === \App\Models\Transfer::STATUS_PENDING)
   <div class="trf-form" id="invoice-{{ $trf->id }}" style="display:none;padding:1rem 1.25rem;border-top:1px solid var(--c-border);background:rgba(37,99,235,.03)">
-    <form method="POST" action="{{ route('admin.transfers.invoice', $trf) }}">
+    <form method="POST" action="{{ route('admin.transfers.invoice', $trf) }}"
+          data-confirm="Créer la facture de frais et l'envoyer au client ?">
       @csrf
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.875rem">
         <div>
@@ -241,8 +242,7 @@
         </div>
       </div>
       <div style="display:flex;gap:.5rem">
-        <button type="submit" class="btn-gold btn-sm-pro"
-          onclick="return confirm('Créer la facture de frais et l\'envoyer au client ?')">
+        <button type="submit" class="btn-gold btn-sm-pro">
           <i class="fas fa-paper-plane"></i> Créer &amp; envoyer
         </button>
         <button type="button" class="btn-ghost btn-sm-pro"
@@ -267,7 +267,7 @@
 </div>
 
 @if($transfers->hasPages())
-<div style="margin-top:1.5rem">{{ $transfers->links() }}</div>
+<div style="margin-top:1.5rem">{{ $transfers->links('partials.pagination') }}</div>
 @endif
 @endif
 

@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(RolesAndPermissionsSeeder::class);
+        $this->call(ExceptionalPermissionsSeeder::class);
         $this->call(ContractTemplateSeeder::class);
     }
 }

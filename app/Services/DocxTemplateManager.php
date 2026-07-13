@@ -108,7 +108,7 @@ class DocxTemplateManager
 
     // ── Privé ─────────────────────────────────────────────────────────────────
 
-    private function validateDocx(UploadedFile $file): void
+    public function validateDocx(UploadedFile $file): void
     {
         $ext = strtolower($file->getClientOriginalExtension());
         if ($ext !== 'docx') {

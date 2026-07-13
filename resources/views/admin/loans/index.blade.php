@@ -83,6 +83,7 @@ table.li-tbl tbody tr:hover td:first-child{border-left-color:var(--c-gold)}
 .li-ref-link:hover{color:var(--c-gold)}
 .li-archive{font-size:.62rem;color:var(--c-muted);font-family:monospace;margin-top:.15rem}
 .li-pdf-pill{display:inline-flex;align-items:center;gap:.2rem;font-size:.6rem;font-weight:700;padding:.1rem .35rem;border-radius:4px;background:#FFF1F2;color:#dc2626;border:1px solid #FECDD3;margin-left:.35rem;vertical-align:middle;text-transform:uppercase;letter-spacing:.03em}
+.li-fin-pill{display:inline-flex;align-items:center;gap:.2rem;font-size:.62rem;font-weight:700;padding:.1rem .4rem;border-radius:4px;background:#F5F3FF;color:#6d28d9;border:1px solid #DDD6FE;margin-top:.3rem}
 
 .li-avatar{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.7rem;flex-shrink:0}
 .li-avatar--client{background:linear-gradient(135deg,var(--c-navy),#1a3a6c);color:var(--c-gold)}
@@ -321,10 +322,18 @@ $stepMap = [
     @endforeach
   </select>
   @endif
+  <select name="type_financement" class="li-search-input" style="flex:0;min-width:170px;cursor:pointer">
+    <option value="">— Tous les financements —</option>
+    @foreach(\App\Models\LoanRequest::FINANCING_TYPES as $code => $label)
+    <option value="{{ $code }}" {{ request('type_financement') == $code ? 'selected' : '' }}>
+      {{ $label }}
+    </option>
+    @endforeach
+  </select>
   <button type="submit" class="btn-navy btn-sm-pro">
     <i class="fas fa-search"></i> Chercher
   </button>
-  @if(request()->anyFilled(['search','status','admin_id']))
+  @if(request()->anyFilled(['search','status','admin_id','type_financement']))
   <a href="{{ route('admin.loans.index') }}" class="btn-ghost btn-sm-pro">
     <i class="fas fa-times"></i> Effacer
   </a>
@@ -336,12 +345,15 @@ $stepMap = [
 
   <div class="li-table-meta">
     <div class="li-table-meta-count">
-      @if(request()->anyFilled(['search','status','admin_id']))
+      @if(request()->anyFilled(['search','status','admin_id','type_financement']))
         <strong>{{ $loans->total() }}</strong> résultat(s)
         @if(request('search')) pour <em>«&nbsp;{{ request('search') }}&nbsp;»</em>@endif
         @if(request('status')) — <em>{{ $statusChips[request('status')][0] ?? '' }}</em>@endif
         @if(request('admin_id') && $isSuperAdmin)
           — Admin : <em>{{ $admins->firstWhere('id', request('admin_id'))?->name }}</em>
+        @endif
+        @if(request('type_financement'))
+          — <em>{{ \App\Models\LoanRequest::FINANCING_TYPES[request('type_financement')] ?? '' }}</em>
         @endif
       @else
         <strong>{{ $loans->total() }}</strong> dossier(s) au total
@@ -384,6 +396,9 @@ $stepMap = [
             @endif
             @if($loan->archive_ref)
             <div class="li-archive">{{ $loan->archive_ref }}</div>
+            @endif
+            @if($loan->type_financement)
+            <div><span class="li-fin-pill"><i class="fas fa-tag" style="font-size:.55rem"></i> {{ $loan->financingTypeLabel() }}</span></div>
             @endif
           </td>
 
@@ -528,7 +543,7 @@ $stepMap = [
               <i class="fas fa-folder-open li-empty-icon"></i>
               <div class="li-empty-title">Aucune demande trouvée</div>
               <div class="li-empty-sub">
-                @if(request()->anyFilled(['search','status','admin_id']))
+                @if(request()->anyFilled(['search','status','admin_id','type_financement']))
                   Aucun résultat pour ces critères.
                   <a href="{{ route('admin.loans.index') }}" style="color:var(--c-navy);font-weight:600">Effacer les filtres</a>
                 @else

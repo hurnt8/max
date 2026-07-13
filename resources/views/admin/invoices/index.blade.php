@@ -167,7 +167,7 @@
 
   @if($invoices->hasPages())
   <div style="padding:1rem 1.25rem;border-top:1px solid var(--c-border)">
-    {{ $invoices->links() }}
+    {{ $invoices->links('partials.pagination') }}
   </div>
   @endif
   @endif

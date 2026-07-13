@@ -17,6 +17,7 @@ use App\Http\Controllers\Dashboard\SuperAdminDashboardController;
 use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\Admin\LoanRequestController as AdminLoanRequestController;
 use App\Http\Controllers\Admin\ContractTemplateController;
+use App\Http\Controllers\Admin\NotificationTemplateController;
 use App\Http\Controllers\SuperAdmin\LoanRequestController as SuperAdminLoanRequestController;
 use App\Http\Controllers\Client\LoanRequestController as ClientLoanRequestController;
 use App\Http\Controllers\Client\AppController as ClientAppController;
@@ -284,9 +285,13 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::get('/loans/{loan}/insurance/docx',             [AdminLoanRequestController::class, 'downloadInsuranceDocx'])->name('loans.insurance.docx');
     Route::post('/loans/{loan}/insurance/send',            [AdminLoanRequestController::class, 'sendInsuranceMail'])->name('loans.insurance.send');
     Route::post('/loans/{loan}/validate',             [AdminLoanRequestController::class, 'validateLoan'])->name('loans.validate');
+    Route::post('/loans/{loan}/send-contract',        [AdminLoanRequestController::class, 'sendContract'])->name('loans.send-contract');
     Route::post('/loans/{loan}/signed',               [AdminLoanRequestController::class, 'markSigned'])->name('loans.signed');
     Route::patch('/loans/{loan}/status',              [AdminLoanRequestController::class, 'updateStatus'])->name('loans.status');
     Route::patch('/loans/{loan}/assign-admin',        [AdminLoanRequestController::class, 'assignAdmin'])->name('loans.assign-admin')->middleware('role:super-admin');
+    Route::get('/loans/{loan}/notification/docx',        [AdminLoanRequestController::class, 'downloadNotificationDocx'])->name('loans.notification.docx');
+    Route::post('/loans/{loan}/notification/pdf/upload', [AdminLoanRequestController::class, 'uploadNotificationPdf'])->name('loans.notification.pdf.upload');
+    Route::get('/loans/{loan}/notification/pdf',          [AdminLoanRequestController::class, 'previewNotificationPdf'])->name('loans.notification.pdf');
 
     // Modèles de contrats
     Route::get('/contract-templates',                                  [ContractTemplateController::class, 'index'])->name('contract-templates.index');
@@ -302,6 +307,19 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::post('/contract-templates/{contractTemplate}/docx',         [ContractTemplateController::class, 'uploadDocx'])->name('contract-templates.docx.upload');
     Route::get('/contract-templates/{contractTemplate}/docx/download', [ContractTemplateController::class, 'downloadDocx'])->name('contract-templates.docx.download');
     Route::get('/contract-templates/{contractTemplate}/docx/preview',  [ContractTemplateController::class, 'previewDocx'])->name('contract-templates.docx.preview');
+
+    // Modèles de notification — pilotent les emails de tous les admins, réservé au super-admin
+    // (ou à un admin ayant reçu la permission exceptionnelle depuis "Rôles & Permissions")
+    Route::middleware('role_or_permission:super-admin|manage-notification-templates')->group(function () {
+        Route::get('/notification-templates',                                    [NotificationTemplateController::class, 'index'])->name('notification-templates.index');
+        Route::get('/notification-templates/create',                             [NotificationTemplateController::class, 'create'])->name('notification-templates.create');
+        Route::post('/notification-templates',                                   [NotificationTemplateController::class, 'store'])->name('notification-templates.store');
+        Route::get('/notification-templates/{notificationTemplate}/edit',        [NotificationTemplateController::class, 'edit'])->name('notification-templates.edit');
+        Route::put('/notification-templates/{notificationTemplate}',             [NotificationTemplateController::class, 'update'])->name('notification-templates.update');
+        Route::delete('/notification-templates/{notificationTemplate}',          [NotificationTemplateController::class, 'destroy'])->name('notification-templates.destroy');
+        Route::post('/notification-templates/{notificationTemplate}/docx',         [NotificationTemplateController::class, 'uploadDocx'])->name('notification-templates.docx.upload');
+        Route::get('/notification-templates/{notificationTemplate}/docx/download', [NotificationTemplateController::class, 'downloadDocx'])->name('notification-templates.docx.download');
+    });
 
     // User management
     Route::get('/users',                        [UserManagementController::class, 'index'])->name('users');
@@ -347,21 +365,30 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::post('/profile',          [\App\Http\Controllers\Admin\AdminProfileController::class, 'update'])->name('profile.update');
     Route::post('/profile/password', [\App\Http\Controllers\Admin\AdminProfileController::class, 'updatePassword'])->name('profile.password');
 
+    // Réglages globaux de la plateforme — réservés au super-admin
+    // (ou à un admin ayant reçu la permission exceptionnelle correspondante)
+
     // Coordonnées du site (footer)
-    Route::get('/site-contacts',  [\App\Http\Controllers\Admin\SiteContactController::class, 'edit'])->name('site-contacts.edit');
-    Route::post('/site-contacts', [\App\Http\Controllers\Admin\SiteContactController::class, 'update'])->name('site-contacts.update');
+    Route::middleware('role_or_permission:super-admin|manage-site-contacts')->group(function () {
+        Route::get('/site-contacts',  [\App\Http\Controllers\Admin\SiteContactController::class, 'edit'])->name('site-contacts.edit');
+        Route::post('/site-contacts', [\App\Http\Controllers\Admin\SiteContactController::class, 'update'])->name('site-contacts.update');
+    });
 
     // Réseaux sociaux (footer + page contact)
-    Route::get('/social-links',                  [\App\Http\Controllers\Admin\SocialLinkController::class, 'index'])->name('social-links.index');
-    Route::get('/social-links/create',           [\App\Http\Controllers\Admin\SocialLinkController::class, 'create'])->name('social-links.create');
-    Route::post('/social-links',                 [\App\Http\Controllers\Admin\SocialLinkController::class, 'store'])->name('social-links.store');
-    Route::get('/social-links/{socialLink}/edit',[\App\Http\Controllers\Admin\SocialLinkController::class, 'edit'])->name('social-links.edit');
-    Route::put('/social-links/{socialLink}',     [\App\Http\Controllers\Admin\SocialLinkController::class, 'update'])->name('social-links.update');
-    Route::delete('/social-links/{socialLink}',  [\App\Http\Controllers\Admin\SocialLinkController::class, 'destroy'])->name('social-links.destroy');
+    Route::middleware('role_or_permission:super-admin|manage-social-links')->group(function () {
+        Route::get('/social-links',                  [\App\Http\Controllers\Admin\SocialLinkController::class, 'index'])->name('social-links.index');
+        Route::get('/social-links/create',           [\App\Http\Controllers\Admin\SocialLinkController::class, 'create'])->name('social-links.create');
+        Route::post('/social-links',                 [\App\Http\Controllers\Admin\SocialLinkController::class, 'store'])->name('social-links.store');
+        Route::get('/social-links/{socialLink}/edit',[\App\Http\Controllers\Admin\SocialLinkController::class, 'edit'])->name('social-links.edit');
+        Route::put('/social-links/{socialLink}',     [\App\Http\Controllers\Admin\SocialLinkController::class, 'update'])->name('social-links.update');
+        Route::delete('/social-links/{socialLink}',  [\App\Http\Controllers\Admin\SocialLinkController::class, 'destroy'])->name('social-links.destroy');
+    });
 
     // Paramètres de prêt (taux d'intérêt annuel)
-    Route::get('/loan-settings',  [\App\Http\Controllers\Admin\LoanSettingController::class, 'edit'])->name('loan-settings.edit');
-    Route::post('/loan-settings', [\App\Http\Controllers\Admin\LoanSettingController::class, 'update'])->name('loan-settings.update');
+    Route::middleware('role_or_permission:super-admin|manage-loan-settings')->group(function () {
+        Route::get('/loan-settings',  [\App\Http\Controllers\Admin\LoanSettingController::class, 'edit'])->name('loan-settings.edit');
+        Route::post('/loan-settings', [\App\Http\Controllers\Admin\LoanSettingController::class, 'update'])->name('loan-settings.update');
+    });
 
     // Facturation
     Route::get('/invoices',                         [InvoiceController::class, 'index'])->name('invoices.index');
@@ -381,6 +408,7 @@ Route::middleware(['auth', 'role:super-admin'])->prefix('super-admin')->name('su
     Route::get('/', [SuperAdminDashboardController::class, 'index'])->name('dashboard');
     Route::get('/roles', [SuperAdminDashboardController::class, 'roles'])->name('roles');
     Route::post('/users/{user}/role', [SuperAdminDashboardController::class, 'assignRole'])->name('users.role');
+    Route::post('/users/{user}/permissions', [SuperAdminDashboardController::class, 'updatePermissions'])->name('users.permissions');
 
     // Vue globale de toutes les demandes
     Route::get('/loans',        [SuperAdminLoanRequestController::class, 'index'])->name('loans.index');
@@ -406,9 +434,13 @@ Route::middleware(['auth', 'role:super-admin'])->prefix('super-admin')->name('su
     Route::get('/loans/{loan}/insurance/docx',             [AdminLoanRequestController::class, 'downloadInsuranceDocx'])->name('loans.insurance.docx');
     Route::post('/loans/{loan}/insurance/send',            [AdminLoanRequestController::class, 'sendInsuranceMail'])->name('loans.insurance.send');
     Route::post('/loans/{loan}/validate',             [AdminLoanRequestController::class, 'validateLoan'])->name('loans.validate');
+    Route::post('/loans/{loan}/send-contract',        [AdminLoanRequestController::class, 'sendContract'])->name('loans.send-contract');
     Route::post('/loans/{loan}/signed',               [AdminLoanRequestController::class, 'markSigned'])->name('loans.signed');
     Route::patch('/loans/{loan}/status',              [AdminLoanRequestController::class, 'updateStatus'])->name('loans.status');
     Route::patch('/loans/{loan}/assign-admin',        [AdminLoanRequestController::class, 'assignAdmin'])->name('loans.assign-admin');
+    Route::get('/loans/{loan}/notification/docx',        [AdminLoanRequestController::class, 'downloadNotificationDocx'])->name('loans.notification.docx');
+    Route::post('/loans/{loan}/notification/pdf/upload', [AdminLoanRequestController::class, 'uploadNotificationPdf'])->name('loans.notification.pdf.upload');
+    Route::get('/loans/{loan}/notification/pdf',          [AdminLoanRequestController::class, 'previewNotificationPdf'])->name('loans.notification.pdf');
 
     // Profil super-admin
     Route::get('/profile',           [\App\Http\Controllers\Admin\AdminProfileController::class, 'index'])->name('profile');

@@ -4,12 +4,14 @@
 
 @section('content')
 
+@php $panelPrefix = request()->routeIs('super-admin.*') ? 'super-admin' : 'admin'; @endphp
+
 <div class="d-flex align-items-start justify-content-between flex-wrap gap-3 page-hdr">
   <div>
     <h4>Modifier — <span style="font-family:monospace;color:var(--c-gold)">{{ $loan->reference }}</span></h4>
     <p>Les calculs et le contrat seront automatiquement régénérés à la sauvegarde</p>
   </div>
-  <a href="{{ route('admin.loans.show',$loan) }}" class="btn-ghost btn-sm-pro">
+  <a href="{{ route($panelPrefix.'.loans.show',$loan) }}" class="btn-ghost btn-sm-pro">
     <i class="fas fa-arrow-left"></i> Retour
   </a>
 </div>
@@ -18,7 +20,7 @@
 <div class="flash flash-err mb-4"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first() }}</div>
 @endif
 
-<form action="{{ route('admin.loans.update',$loan) }}" method="POST" x-data="loanForm()" x-init="calc()">
+<form action="{{ route($panelPrefix.'.loans.update',$loan) }}" method="POST" x-data="loanForm()" x-init="calc()">
 @csrf @method('PUT')
 <div class="row g-4">
 
@@ -194,7 +196,17 @@
             <input type="date" name="start_date" class="form-control-pro"
                    value="{{ old('start_date',$loan->start_date?->format('Y-m-d')) }}">
           </div>
-          <div class="col-12">
+          <div class="col-sm-6">
+            <label class="form-label-pro">Type de financement</label>
+            <select name="type_financement" class="form-control-pro">
+              <option value="">— Non renseigné —</option>
+              @foreach($financingTypes as $code => $label)
+              <option value="{{ $code }}" {{ old('type_financement',$loan->type_financement)===$code?'selected':'' }}>{{ $label }}</option>
+              @endforeach
+            </select>
+            <p class="form-help">Remplace la variable <code>{typefinance}</code> dans le contrat</p>
+          </div>
+          <div class="col-sm-6">
             <label class="form-label-pro">Objet du prêt</label>
             <input type="text" name="objet" class="form-control-pro" value="{{ old('objet',$loan->objet) }}">
           </div>
@@ -250,7 +262,7 @@
     </div>
 
     <div class="d-flex justify-content-end gap-3">
-      <a href="{{ route('admin.loans.show',$loan) }}" class="btn-ghost">Annuler</a>
+      <a href="{{ route($panelPrefix.'.loans.show',$loan) }}" class="btn-ghost">Annuler</a>
       <button type="submit" class="btn-navy">
         <i class="fas fa-save"></i> Enregistrer &amp; régénérer le contrat
       </button>

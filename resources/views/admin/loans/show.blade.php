@@ -149,6 +149,7 @@
 
 @section('content')
 @php
+$panelPrefix = request()->routeIs('super-admin.*') ? 'super-admin' : 'admin';
 $statusLabels = [
     'draft'           => 'Brouillon',
     'pending'         => 'En attente',
@@ -165,21 +166,25 @@ $curIdx    = array_search($loan->status, $stepKeys);
 $hIcoMap  = [
     'created'           => ['fa-plus-circle',   '#22c55e','rgba(34,197,94,.12)'],
     'updated'           => ['fa-pen',            '#3b82f6','rgba(59,130,246,.12)'],
+    'validated'         => ['fa-bell',           '#0ea5e9','rgba(14,165,233,.12)'],
     'validated_and_sent'=> ['fa-paper-plane',    '#14b8a6','rgba(20,184,166,.12)'],
     'signed_received'   => ['fa-file-signature', '#8b5cf6','rgba(139,92,246,.12)'],
     'status_changed'    => ['fa-exchange-alt',   '#f59e0b','rgba(245,158,11,.12)'],
     'contract_edited'   => ['fa-edit',           '#3b82f6','rgba(59,130,246,.12)'],
     'pdf_uploaded'      => ['fa-file-pdf',       '#dc2626','rgba(220,38,38,.12)'],
+    'notification_pdf_uploaded' => ['fa-file-pdf', '#0ea5e9','rgba(14,165,233,.12)'],
     'admin_assigned'    => ['fa-user-shield',    '#7c3aed','rgba(124,58,237,.12)'],
 ];
 $hLblMap  = [
     'created'           => 'Dossier créé',
     'updated'           => 'Dossier modifié',
+    'validated'         => 'Notification de validation envoyée',
     'validated_and_sent'=> 'Contrat validé et envoyé',
     'signed_received'   => 'Contrat signé reçu',
     'status_changed'    => 'Statut modifié',
     'contract_edited'   => 'Contrat édité',
     'pdf_uploaded'      => 'PDF uploadé',
+    'notification_pdf_uploaded' => 'Document de notification uploadé',
     'admin_assigned'    => 'Dossier réaffecté',
 ];
 $tpl = $loan->contractTemplate;
@@ -203,15 +208,15 @@ $tpl = $loan->contractTemplate;
   </span>
 
   <div class="ld-header-actions">
-    <a href="{{ route('admin.loans.index') }}" class="btn-ghost btn-sm-pro">
+    <a href="{{ route($panelPrefix.'.loans.index') }}" class="btn-ghost btn-sm-pro">
       <i class="fas fa-arrow-left"></i> Retour
     </a>
     @if($loan->isEditable())
-    <a href="{{ route('admin.loans.edit', $loan) }}" class="btn-ghost btn-sm-pro">
+    <a href="{{ route($panelPrefix.'.loans.edit', $loan) }}" class="btn-ghost btn-sm-pro">
       <i class="fas fa-pen"></i> Modifier
     </a>
     @endif
-    <a href="{{ route('admin.loans.contract', $loan) }}" class="btn-navy btn-sm-pro">
+    <a href="{{ route($panelPrefix.'.loans.contract', $loan) }}" class="btn-navy btn-sm-pro">
       <i class="fas fa-file-contract"></i> Contrat
     </a>
   </div>
@@ -335,7 +340,7 @@ $tpl = $loan->contractTemplate;
           <span>Ce client n'a pas encore activé son compte.</span>
         </div>
         <form action="{{ route('admin.users.resend-invite', $loan->client) }}" method="POST"
-              onsubmit="return confirm('Envoyer le lien d\'invitation à {{ $loan->email }} ?')" style="margin-top:.5rem">
+              data-confirm="Envoyer le lien d'invitation à {{ $loan->email }} ?" style="margin-top:.5rem">
           @csrf
           <button type="submit" class="btn-navy ld-btn-full">
             <i class="fas fa-paper-plane"></i> Envoyer le lien d'invitation
@@ -361,7 +366,8 @@ $tpl = $loan->contractTemplate;
             <div style="font-size:.68rem;color:var(--c-muted)">Responsable actuel</div>
           </div>
         </div>
-        <form action="{{ route('admin.loans.assign-admin', $loan) }}" method="POST">
+        <form action="{{ route($panelPrefix.'.loans.assign-admin', $loan) }}" method="POST"
+              data-confirm="Confirmer la réaffectation ?">
           @csrf @method('PATCH')
           <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--c-muted);margin-bottom:.35rem">Réaffecter à</div>
           <div class="ld-status-row">
@@ -371,8 +377,7 @@ $tpl = $loan->contractTemplate;
               <option value="{{ $adm->id }}" {{ $loan->admin_id==$adm->id?'selected':'' }}>{{ $adm->name }}</option>
               @endforeach
             </select>
-            <button type="submit" class="btn-navy" style="background:#7c3aed;border-color:#7c3aed"
-                    onclick="return confirm('Confirmer la réaffectation ?')" title="Confirmer">
+            <button type="submit" class="btn-navy" style="background:#7c3aed;border-color:#7c3aed" title="Confirmer">
               <i class="fas fa-check"></i>
             </button>
           </div>
@@ -390,25 +395,35 @@ $tpl = $loan->contractTemplate;
       <div class="ld-pcard-body">
 
         @if($loan->canBeValidated())
-          @if($loan->contract_pdf_path)
-          <form action="{{ route('admin.loans.validate', $loan) }}" method="POST"
-                onsubmit="return confirm('Valider et envoyer le contrat par email ?')">
+          @if($loan->notification_pdf_path)
+          <form action="{{ route($panelPrefix.'.loans.validate', $loan) }}" method="POST"
+                data-confirm="Valider ce dossier et envoyer la notification au client ?">
             @csrf
             <button class="btn-navy ld-btn-full">
-              <i class="fas fa-paper-plane"></i> Valider &amp; Envoyer le contrat
+              <i class="fas fa-check"></i> Valider
             </button>
           </form>
           @else
           <div class="ld-warn-box">
             <i class="fas fa-lock" style="color:#F59E0B;flex-shrink:0;margin-top:.1rem"></i>
-            <span>Uploadez d'abord le <strong>PDF du contrat</strong> (onglet Documents) pour débloquer la validation.</span>
+            <span>Uploadez d'abord le <strong>document de notification</strong> (onglet Documents) pour débloquer la validation.</span>
           </div>
           @endif
         @endif
 
+        @if($loan->canSendContract())
+        <form action="{{ route($panelPrefix.'.loans.send-contract', $loan) }}" method="POST"
+              data-confirm="Envoyer le contrat par email ?">
+          @csrf
+          <button class="btn-navy ld-btn-full">
+            <i class="fas fa-paper-plane"></i> Envoyer le contrat
+          </button>
+        </form>
+        @endif
+
         @if($loan->status === 'contract_sent')
-        <form action="{{ route('admin.loans.signed', $loan) }}" method="POST"
-              onsubmit="return confirm('Confirmer la réception du contrat signé ?')">
+        <form action="{{ route($panelPrefix.'.loans.signed', $loan) }}" method="POST"
+              data-confirm="Confirmer la réception du contrat signé ?">
           @csrf
           <button class="btn-navy ld-btn-full" style="background:var(--c-green);border-color:var(--c-green)">
             <i class="fas fa-file-signature"></i> Contrat signé reçu
@@ -417,8 +432,8 @@ $tpl = $loan->contractTemplate;
         @endif
 
         @if($loan->status === 'contract_sent')
-        <form action="{{ route('admin.loans.contract.pdf.resend',$loan) }}" method="POST"
-              onsubmit="return confirm('Renvoyer le contrat à {{ $loan->email }} ?')">
+        <form action="{{ route($panelPrefix.'.loans.contract.pdf.resend',$loan) }}" method="POST"
+              data-confirm="Renvoyer le contrat à {{ $loan->email }} ?">
           @csrf
           <button type="submit" class="btn-ghost btn-sm-pro ld-btn-full">
             <i class="fas fa-redo" style="color:#dc2626"></i> Renvoyer l'email
@@ -426,7 +441,7 @@ $tpl = $loan->contractTemplate;
         </form>
         @endif
 
-        <a href="{{ $loan->contract_pdf_path ? route('admin.loans.contract.viewer', $loan) : '#' }}"
+        <a href="{{ $loan->contract_pdf_path ? route($panelPrefix.'.loans.contract.viewer', $loan) : '#' }}"
            class="btn-ghost btn-sm-pro ld-btn-full"
            style="display:flex;align-items:center;justify-content:center;gap:.4rem;text-decoration:none;{{ !$loan->contract_pdf_path ? 'opacity:.4;pointer-events:none' : '' }}">
           <i class="fas fa-expand-alt" style="color:#dc2626"></i>
@@ -442,14 +457,14 @@ $tpl = $loan->contractTemplate;
 
         @if($loan->insuranceTemplate?->hasDocxTemplate())
         {{-- Template DOCX → télécharger DOCX --}}
-        <a href="{{ route('admin.loans.insurance.docx', $loan) }}"
+        <a href="{{ route($panelPrefix.'.loans.insurance.docx', $loan) }}"
            class="btn-navy ld-btn-full" style="background:#16a34a;border-color:#16a34a;display:flex;align-items:center;justify-content:center;gap:.45rem;text-decoration:none">
           <i class="fas fa-file-word"></i> Télécharger DOCX assurance
         </a>
         @else
         {{-- Template intégré ou HTML → générer PDF --}}
-        <form action="{{ route('admin.loans.insurance.pdf.generate', $loan) }}" method="POST"
-              onsubmit="return confirm('Générer l\'attestation d\'assurance ?')">
+        <form action="{{ route($panelPrefix.'.loans.insurance.pdf.generate', $loan) }}" method="POST"
+              data-confirm="Générer l'attestation d'assurance ?">
           @csrf
           <button type="submit" class="btn-navy ld-btn-full" style="background:#16a34a;border-color:#16a34a">
             <i class="fas fa-magic"></i> {{ $loan->insurance_pdf_path ? 'Régénérer l\'attestation' : 'Générer l\'attestation' }}
@@ -458,8 +473,8 @@ $tpl = $loan->contractTemplate;
         @endif
 
         @if($loan->insurance_pdf_path)
-        <form action="{{ route('admin.loans.insurance.send', $loan) }}" method="POST"
-              onsubmit="return confirm('Envoyer l\'attestation par email à {{ $loan->email }} ?')">
+        <form action="{{ route($panelPrefix.'.loans.insurance.send', $loan) }}" method="POST"
+              data-confirm="Envoyer l'attestation par email à {{ $loan->email }} ?">
           @csrf
           <button type="submit" class="btn-navy ld-btn-full" style="background:#059669;border-color:#059669;margin-top:.4rem">
             <i class="fas fa-paper-plane"></i> Envoyer par email
@@ -467,7 +482,7 @@ $tpl = $loan->contractTemplate;
         </form>
         @endif
 
-        <a href="{{ $loan->insurance_pdf_path ? route('admin.loans.insurance.viewer', $loan) : '#' }}"
+        <a href="{{ $loan->insurance_pdf_path ? route($panelPrefix.'.loans.insurance.viewer', $loan) : '#' }}"
            class="btn-ghost btn-sm-pro ld-btn-full"
            style="margin-top:.35rem;display:flex;align-items:center;justify-content:center;gap:.4rem;text-decoration:none;{{ !$loan->insurance_pdf_path ? 'opacity:.4;pointer-events:none' : '' }}">
           <i class="fas fa-expand-alt" style="color:#16a34a"></i>
@@ -477,7 +492,7 @@ $tpl = $loan->contractTemplate;
         <hr class="ld-divider">
 
         <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--c-muted);margin-bottom:.35rem">Changer le statut</div>
-        <form action="{{ route('admin.loans.status', $loan) }}" method="POST">
+        <form action="{{ route($panelPrefix.'.loans.status', $loan) }}" method="POST">
           @csrf @method('PATCH')
           <div class="ld-status-row">
             <select name="status" class="form-control-pro">
@@ -593,7 +608,7 @@ $tpl = $loan->contractTemplate;
               <span class="icon-dot" style="background:#dc2626"></span>PDF du contrat signé
             </div>
             @if($loan->contract_pdf_path)
-            <a href="{{ route('admin.loans.contract.viewer',$loan) }}" class="btn-ghost btn-sm-pro" title="Visualiser le contrat">
+            <a href="{{ route($panelPrefix.'.loans.contract.viewer',$loan) }}" class="btn-ghost btn-sm-pro" title="Visualiser le contrat">
               <i class="fas fa-eye"></i>
             </a>
             @endif
@@ -607,10 +622,10 @@ $tpl = $loan->contractTemplate;
                 <div class="ld-pdf-file-name">{{ $loan->reference }}.pdf</div>
                 <div class="ld-pdf-file-sub"><i class="fas fa-check-circle"></i> Joint à l'email de validation</div>
               </div>
-              <a href="{{ route('admin.loans.contract.viewer',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" title="Visualiser">
+              <a href="{{ route($panelPrefix.'.loans.contract.viewer',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" title="Visualiser">
                 <i class="fas fa-external-link-alt"></i>
               </a>
-              <a href="{{ route('admin.loans.contract.pdf',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" target="_blank" title="Télécharger">
+              <a href="{{ route($panelPrefix.'.loans.contract.pdf',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" target="_blank" title="Télécharger">
                 <i class="fas fa-download"></i>
               </a>
             </div>
@@ -621,7 +636,7 @@ $tpl = $loan->contractTemplate;
             </div>
             @endif
 
-            <form action="{{ route('admin.loans.contract.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route($panelPrefix.'.loans.contract.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="ld-upload-area" onclick="this.querySelector('input').click()">
                 <i class="fas fa-cloud-upload-alt" style="color:var(--c-gold);font-size:1.5rem;display:block;margin-bottom:.4rem"></i>
@@ -664,7 +679,7 @@ $tpl = $loan->contractTemplate;
               @endif
             </div>
             @if($tpl->hasDocxTemplate())
-            <a href="{{ route('admin.loans.contract.docx',$loan) }}" class="btn-navy btn-sm-pro ld-btn-full">
+            <a href="{{ route($panelPrefix.'.loans.contract.docx',$loan) }}" class="btn-navy btn-sm-pro ld-btn-full">
               <i class="fas fa-file-word"></i> Générer &amp; Télécharger DOCX
             </a>
             @else
@@ -685,7 +700,107 @@ $tpl = $loan->contractTemplate;
             @else
             <div class="ld-warn-box">
               <i class="fas fa-exclamation-triangle" style="color:#F59E0B;flex-shrink:0"></i>
-              <span>Aucun modèle assigné. <a href="{{ route('admin.loans.edit',$loan) }}" style="color:#78350F;font-weight:700">Assigner →</a></span>
+              <span>Aucun modèle assigné. <a href="{{ route($panelPrefix.'.loans.edit',$loan) }}" style="color:#78350F;font-weight:700">Assigner →</a></span>
+            </div>
+            @endif
+          </div>
+        </div>
+
+        {{-- Document de notification --}}
+        <div class="card-pro">
+          <div class="card-pro-hdr">
+            <div class="card-pro-title">
+              <span class="icon-dot" style="background:#0ea5e9"></span>Document de notification
+            </div>
+            @if($loan->notification_pdf_path)
+            <a href="{{ route($panelPrefix.'.loans.notification.pdf',$loan) }}" class="btn-ghost btn-sm-pro" target="_blank" title="Visualiser">
+              <i class="fas fa-eye"></i>
+            </a>
+            @endif
+          </div>
+          <div class="card-pro-body" style="display:flex;flex-direction:column;gap:.875rem">
+
+            @if($loan->notification_pdf_path)
+            <div class="ld-pdf-file" style="background:#F0F9FF;border:1px solid #BAE6FD">
+              <i class="fas fa-file-pdf" style="color:#0ea5e9;font-size:1.3rem;flex-shrink:0"></i>
+              <div style="flex:1;min-width:0">
+                <div class="ld-pdf-file-name">{{ $loan->reference }}_notification.pdf</div>
+                <div class="ld-pdf-file-sub"><i class="fas fa-check-circle"></i> Joint à l'email de validation</div>
+              </div>
+              <a href="{{ route($panelPrefix.'.loans.notification.pdf',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" target="_blank" title="Visualiser">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+            @else
+            <div class="ld-warn-box">
+              <i class="fas fa-exclamation-triangle" style="color:#F59E0B;flex-shrink:0"></i>
+              <span><strong>Aucun PDF.</strong> Uploadez le document de notification pour débloquer « Valider ».</span>
+            </div>
+            @endif
+
+            <form action="{{ route($panelPrefix.'.loans.notification.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
+              @csrf
+              <div class="ld-upload-area" onclick="this.querySelector('input').click()">
+                <i class="fas fa-cloud-upload-alt" style="color:var(--c-gold);font-size:1.5rem;display:block;margin-bottom:.4rem"></i>
+                <div style="font-size:.78rem;font-weight:600;color:var(--c-navy)">{{ $loan->notification_pdf_path ? 'Remplacer le PDF' : 'Uploader le document PDF' }}</div>
+                <div style="font-size:.68rem;color:var(--c-muted);margin-top:.2rem">PDF · max 20 Mo</div>
+                <input type="file" name="notification_pdf" accept=".pdf" required
+                       style="display:none" onchange="this.closest('form').submit()">
+              </div>
+              @error('notification_pdf')
+              <div style="font-size:.72rem;color:#dc2626;margin-top:.3rem"><i class="fas fa-exclamation-circle"></i> {{ $message }}</div>
+              @enderror
+            </form>
+
+          </div>
+        </div>
+
+        {{-- Modèle de notification --}}
+        <div class="card-pro">
+          <div class="card-pro-hdr">
+            <div class="card-pro-title"><span class="icon-dot" style="background:#0ea5e9"></span>Modèle DOCX notification</div>
+            @if($notificationTemplate)
+            <a href="{{ route('admin.notification-templates.edit',$notificationTemplate) }}" class="btn-ghost btn-sm-pro">
+              <i class="fas fa-pen"></i>
+            </a>
+            @endif
+          </div>
+          <div class="card-pro-body">
+            @if($notificationTemplate)
+            <div style="font-weight:700;color:var(--c-navy);font-size:.875rem;margin-bottom:.5rem">{{ $notificationTemplate->name }}</div>
+            <div style="display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:1rem">
+              <span class="badge-status bs-amber" style="font-size:.6rem">{{ strtoupper($notificationTemplate->locale) }}</span>
+              @if($notificationTemplate->hasDocxTemplate())
+              <span style="font-size:.62rem;padding:.15rem .45rem;border-radius:5px;background:#ECFDF5;color:#166534;border:1px solid #86EFAC;font-weight:700">
+                <i class="fas fa-file-word"></i> DOCX v{{ $notificationTemplate->docx_version }}
+              </span>
+              @else
+              <span style="font-size:.62rem;padding:.15rem .45rem;border-radius:5px;background:#FEF9C3;color:#713F12;border:1px solid #FDE047">Pas de DOCX</span>
+              @endif
+            </div>
+            @if($notificationTemplate->hasDocxTemplate())
+            <a href="{{ route($panelPrefix.'.loans.notification.docx',$loan) }}" class="btn-navy btn-sm-pro ld-btn-full" style="background:#0ea5e9;border-color:#0ea5e9">
+              <i class="fas fa-file-word"></i> Générer &amp; Télécharger DOCX
+            </a>
+            @else
+            <a href="{{ route('admin.notification-templates.edit',$notificationTemplate) }}" class="btn-ghost btn-sm-pro ld-btn-full">
+              <i class="fas fa-upload"></i> Uploader un template DOCX
+            </a>
+            @endif
+            @if($notificationTemplate->hasDocxTemplate() && count($notificationTemplate->docx_detected_vars ?? []) > 0)
+            <div style="margin-top:.75rem;padding:.5rem .625rem;background:#f8f9fa;border:1px solid var(--c-border);border-radius:7px">
+              <div style="font-size:.66rem;color:var(--c-muted);margin-bottom:.35rem"><i class="fas fa-tags" style="color:var(--c-gold)"></i> {{ count($notificationTemplate->docx_detected_vars) }} variable(s)</div>
+              <div style="display:flex;flex-wrap:wrap;gap:.2rem">
+                @foreach($notificationTemplate->docx_detected_vars as $v)
+                <code style="font-size:.6rem;padding:.05rem .25rem;border-radius:3px;background:#fff;border:1px solid var(--c-border);color:var(--c-navy)">{{"{"}}{{ $v }}{{"}"}}</code>
+                @endforeach
+              </div>
+            </div>
+            @endif
+            @else
+            <div class="ld-warn-box">
+              <i class="fas fa-exclamation-triangle" style="color:#F59E0B;flex-shrink:0"></i>
+              <span>Aucun modèle de notification configuré pour cette langue. <a href="{{ route('admin.notification-templates.create') }}" style="color:#78350F;font-weight:700">Créer →</a></span>
             </div>
             @endif
           </div>
@@ -711,7 +826,7 @@ $tpl = $loan->contractTemplate;
               <span class="icon-dot" style="background:#16a34a"></span>Attestation d'assurance PDF
             </div>
             @if($loan->insurance_pdf_path)
-            <a href="{{ route('admin.loans.insurance.viewer',$loan) }}" class="btn-ghost btn-sm-pro" title="Visualiser l'attestation">
+            <a href="{{ route($panelPrefix.'.loans.insurance.viewer',$loan) }}" class="btn-ghost btn-sm-pro" title="Visualiser l'attestation">
               <i class="fas fa-eye"></i>
             </a>
             @endif
@@ -725,10 +840,10 @@ $tpl = $loan->contractTemplate;
                 <div class="ld-pdf-file-name" style="color:#065F46">{{ $loan->reference }}_assurance.pdf</div>
                 <div class="ld-pdf-file-sub" style="color:#047857"><i class="fas fa-check-circle"></i> Attestation CG-A340G disponible</div>
               </div>
-              <a href="{{ route('admin.loans.insurance.viewer',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" title="Visualiser">
+              <a href="{{ route($panelPrefix.'.loans.insurance.viewer',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" title="Visualiser">
                 <i class="fas fa-external-link-alt"></i>
               </a>
-              <a href="{{ route('admin.loans.insurance.pdf',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" target="_blank" title="Télécharger">
+              <a href="{{ route($panelPrefix.'.loans.insurance.pdf',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" target="_blank" title="Télécharger">
                 <i class="fas fa-download"></i>
               </a>
             </div>
@@ -741,7 +856,7 @@ $tpl = $loan->contractTemplate;
 
             {{-- Générer : DOCX si template DOCX, sinon PDF intégré --}}
             @if($loan->insuranceTemplate?->hasDocxTemplate())
-            <a href="{{ route('admin.loans.insurance.docx', $loan) }}"
+            <a href="{{ route($panelPrefix.'.loans.insurance.docx', $loan) }}"
                class="btn-navy btn-sm-pro ld-btn-full" style="background:#16a34a;border-color:#16a34a;display:flex;align-items:center;justify-content:center;gap:.4rem;text-decoration:none">
               <i class="fas fa-file-word"></i> Télécharger DOCX assurance
             </a>
@@ -750,8 +865,8 @@ $tpl = $loan->contractTemplate;
               <span>Ouvrez le DOCX, finalisez-le, exportez en PDF, puis uploadez ci-dessous.</span>
             </div>
             @else
-            <form action="{{ route('admin.loans.insurance.pdf.generate', $loan) }}" method="POST"
-                  onsubmit="return confirm('Générer l\'attestation d\'assurance pour ce dossier ?')">
+            <form action="{{ route($panelPrefix.'.loans.insurance.pdf.generate', $loan) }}" method="POST"
+                  data-confirm="Générer l'attestation d'assurance pour ce dossier ?">
               @csrf
               <button type="submit" class="btn-navy btn-sm-pro ld-btn-full" style="background:#16a34a;border-color:#16a34a">
                 <i class="fas fa-magic"></i> {{ $loan->insurance_pdf_path ? 'Régénérer l\'attestation' : 'Générer l\'attestation PDF' }}
@@ -760,7 +875,7 @@ $tpl = $loan->contractTemplate;
             @endif
 
             {{-- Upload manuel --}}
-            <form action="{{ route('admin.loans.insurance.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route($panelPrefix.'.loans.insurance.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="ld-upload-area" onclick="this.querySelector('input').click()"
                    style="{{ $loan->insurance_pdf_path ? 'border-color:#A7F3D0' : '' }}">
@@ -782,7 +897,7 @@ $tpl = $loan->contractTemplate;
         <div class="card-pro">
           <div class="card-pro-hdr">
             <div class="card-pro-title"><span class="icon-dot" style="background:#16a34a"></span>Modèle &amp; envoi</div>
-            <a href="{{ route('admin.loans.edit',$loan) }}" class="btn-ghost btn-sm-pro">
+            <a href="{{ route($panelPrefix.'.loans.edit',$loan) }}" class="btn-ghost btn-sm-pro">
               <i class="fas fa-pen"></i>
             </a>
           </div>
@@ -817,8 +932,8 @@ $tpl = $loan->contractTemplate;
 
             {{-- Envoyer par email --}}
             @if($loan->insurance_pdf_path)
-            <form action="{{ route('admin.loans.insurance.send', $loan) }}" method="POST"
-                  onsubmit="return confirm('Envoyer l\'attestation d\'assurance à {{ $loan->email }} ?')">
+            <form action="{{ route($panelPrefix.'.loans.insurance.send', $loan) }}" method="POST"
+                  data-confirm="Envoyer l'attestation d'assurance à {{ $loan->email }} ?">
               @csrf
               <button type="submit" class="btn-navy btn-sm-pro ld-btn-full" style="background:#059669;border-color:#059669">
                 <i class="fas fa-paper-plane"></i> Envoyer à {{ $loan->email }}
@@ -849,7 +964,7 @@ $tpl = $loan->contractTemplate;
             Documents générés
             <span style="font-size:.65rem;padding:.1rem .45rem;border-radius:10px;background:#DBEAFE;color:#1D4ED8;font-weight:700;margin-left:.25rem">{{ $generatedDocs->count() }}</span>
           </div>
-          <a href="{{ route('admin.loans.contract.docx',$loan) }}" class="btn-navy btn-sm-pro">
+          <a href="{{ route($panelPrefix.'.loans.contract.docx',$loan) }}" class="btn-navy btn-sm-pro">
             <i class="fas fa-plus"></i> Régénérer
           </a>
         </div>
@@ -869,7 +984,7 @@ $tpl = $loan->contractTemplate;
                 <td data-label="Par">{{ $doc->generatedBy?->name ?? '—' }}</td>
                 <td data-label="">
                   @if($exists)
-                  <a href="{{ route('admin.loans.contract.docx',$loan) }}" class="btn-icon" title="Télécharger"><i class="fas fa-download"></i></a>
+                  <a href="{{ route($panelPrefix.'.loans.contract.docx',$loan) }}" class="btn-icon" title="Télécharger"><i class="fas fa-download"></i></a>
                   @else
                   <span style="color:#dc2626" title="Fichier manquant"><i class="fas fa-exclamation-circle"></i></span>
                   @endif

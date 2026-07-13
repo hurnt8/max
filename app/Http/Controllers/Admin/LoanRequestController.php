@@ -5,15 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Mail\LoanValidatedMail;
 use App\Mail\SignedContractAcknowledgementMail;
+use App\Mail\LoanValidationNotificationMail;
 use App\Models\ClientNotification;
 use App\Models\ContractTemplate;
 use App\Models\LoanHistory;
 use App\Models\LoanRequest;
+use App\Models\NotificationTemplate;
 use App\Models\User;
 use App\Services\ContractHtmlService;
 use App\Services\DocumentArchive;
 use App\Services\LoanPdfService;
 use App\Services\LoanService;
+use App\Services\NotificationDocxService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -25,8 +28,9 @@ use Illuminate\Support\Str;
 class LoanRequestController extends Controller
 {
     public function __construct(
-        private LoanService     $loanService,
-        private LoanPdfService  $pdfService,
+        private LoanService            $loanService,
+        private LoanPdfService         $pdfService,
+        private NotificationDocxService $notificationDocxService,
     ) {}
 
     public function index(Request $request)
@@ -47,6 +51,9 @@ class LoanRequestController extends Controller
 
         if ($request->filled('status')) {
             $query->where('status', $request->status);
+        }
+        if ($request->filled('type_financement')) {
+            $query->where('type_financement', $request->type_financement);
         }
         if ($request->filled('search')) {
             $search = $request->search;
@@ -87,8 +94,9 @@ class LoanRequestController extends Controller
         $templates  = $this->templatesForAdmin($admin);
         $currencies = config('credixa.currencies');
         $annualRate = \App\Models\LoanSetting::current()->annual_rate;
+        $financingTypes = LoanRequest::FINANCING_TYPES;
 
-        return view('admin.loans.create', compact('myClients', 'templates', 'currencies', 'annualRate'));
+        return view('admin.loans.create', compact('myClients', 'templates', 'currencies', 'annualRate', 'financingTypes'));
     }
 
     public function store(Request $request)
@@ -110,6 +118,7 @@ class LoanRequestController extends Controller
             'amount'            => 'required|numeric|min:100',
             'darly'             => 'required|integer|min:1|max:360',
             'objet'             => 'nullable|string|max:255',
+            'type_financement'  => 'nullable|in:' . implode(',', array_keys(LoanRequest::FINANCING_TYPES)),
             'subject'           => 'nullable|string|max:2000',
             'start_date'        => 'nullable|date',
             'currency'          => 'required|string|max:10',
@@ -197,6 +206,7 @@ class LoanRequestController extends Controller
                     'start_date'           => $data['start_date'] ?? now()->toDateString(),
                     'darly'                => $data['darly'],
                     'objet'                => $data['objet'] ?? null,
+                    'type_financement'     => $data['type_financement'] ?? null,
                     'subject'              => $data['subject'] ?? null,
                     'special_conditions'   => $data['special_conditions'] ?? null,
                     'admin_fees'           => $data['admin_fees'] ?? null,
@@ -218,7 +228,7 @@ class LoanRequestController extends Controller
             }
         );
 
-        return redirect()->route('admin.loans.show', $loan)
+        return redirect()->route($this->panelPrefix().'.loans.show', $loan)
                          ->with('success', 'Dossier N°' . $loan->reference . ' créé (statut : Brouillon).');
     }
 
@@ -226,14 +236,15 @@ class LoanRequestController extends Controller
     {
         $this->authorizeAccess($loan);
         $loan->load(['client', 'admin', 'history.admin', 'contractTemplate']);
-        $generatedDocs = $loan->generatedDocuments()->with('generatedBy')->get();
+        $generatedDocs        = $loan->generatedDocuments()->with('generatedBy')->get();
+        $notificationTemplate = NotificationTemplate::resolveForLoan($loan);
         $isSuperAdmin  = Auth::user()->hasRole('super-admin');
         $admins        = $isSuperAdmin
             ? \App\Models\User::where('type', 'staff')
                 ->whereHas('roles', fn($q) => $q->whereIn('name', ['admin', 'super-admin']))
                 ->orderBy('name')->get()
             : collect();
-        return view('admin.loans.show', compact('loan', 'generatedDocs', 'isSuperAdmin', 'admins'));
+        return view('admin.loans.show', compact('loan', 'generatedDocs', 'isSuperAdmin', 'admins', 'notificationTemplate'));
     }
 
     public function edit(LoanRequest $loan)
@@ -247,8 +258,9 @@ class LoanRequestController extends Controller
                          ->orderBy('name')->get();
         $currencies = config('credixa.currencies');
         $templates  = $this->templatesForAdmin($admin);
+        $financingTypes = LoanRequest::FINANCING_TYPES;
 
-        return view('admin.loans.edit', compact('loan', 'myClients', 'currencies', 'templates'));
+        return view('admin.loans.edit', compact('loan', 'myClients', 'currencies', 'templates', 'financingTypes'));
     }
 
     public function update(Request $request, LoanRequest $loan)
@@ -260,6 +272,7 @@ class LoanRequestController extends Controller
             'amount'               => 'required|numeric|min:100',
             'darly'                => 'required|integer|min:1|max:360',
             'objet'                => 'nullable|string|max:255',
+            'type_financement'     => 'nullable|in:' . implode(',', array_keys(LoanRequest::FINANCING_TYPES)),
             'subject'              => 'nullable|string|max:2000',
             'start_date'           => 'nullable|date',
             'currency'             => 'required|string|max:10',
@@ -294,7 +307,7 @@ class LoanRequestController extends Controller
 
         $this->logHistory($loan, 'updated', $old, $loan->only(['amount','darly','status','contract_template_id']));
 
-        return redirect()->route('admin.loans.show', $loan)
+        return redirect()->route($this->panelPrefix().'.loans.show', $loan)
                          ->with('success', 'Demande mise à jour.');
     }
 
@@ -319,9 +332,11 @@ class LoanRequestController extends Controller
     public function contract(LoanRequest $loan)
     {
         $this->authorizeAccess($loan);
-        $templates   = $this->templatesForAdmin(Auth::user());
-        $previewHtml = $loan->contract_content ?? '';
-        return view('admin.loans.contract', compact('loan', 'templates', 'previewHtml'));
+        $templates             = $this->templatesForAdmin(Auth::user());
+        $previewHtml           = $loan->contract_content ?? '';
+        $variables             = app(\App\Services\ContractService::class)->variableDescriptions();
+        $notificationTemplate  = NotificationTemplate::resolveForLoan($loan);
+        return view('admin.loans.contract', compact('loan', 'templates', 'previewHtml', 'variables', 'notificationTemplate'));
     }
 
     public function previewPdf(LoanRequest $loan)
@@ -572,17 +587,96 @@ class LoanRequestController extends Controller
         $this->authorizeAccess($loan);
         abort_unless($loan->canBeValidated(), 403, 'Cette demande ne peut pas être validée.');
 
-        // ── Bloquer si le contrat PDF n'est pas encore uploadé ────────────
+        if ($error = $this->sendValidationNotification($loan)) {
+            return back()->with('error', $error);
+        }
+
+        return redirect()->route($this->panelPrefix().'.loans.show', $loan)
+            ->with('success', 'Dossier validé — notification envoyée à ' . $this->recipientEmail($loan) . '.');
+    }
+
+    public function sendContract(LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+        abort_unless($loan->canSendContract(), 403, 'Le contrat ne peut être envoyé que pour un dossier validé.');
+
+        if ($error = $this->sendContractStep($loan)) {
+            return back()->with('error', $error);
+        }
+
+        return redirect()->route($this->panelPrefix().'.loans.show', $loan)
+            ->with('success', 'Contrat envoyé à ' . $this->recipientEmail($loan) . '.');
+    }
+
+    /**
+     * Envoie le mail de notification (modèle sélectionné selon la langue du client)
+     * et passe le dossier au statut "validated". Retourne un message d'erreur si
+     * l'envoi n'a pas pu avoir lieu, ou null en cas de succès.
+     */
+    private function sendValidationNotification(LoanRequest $loan): ?string
+    {
+        // ── Bloquer si le document de notification (PDF) n'est pas encore uploadé ─
+        $notificationPdfAbs = $loan->notification_pdf_path
+            ? storage_path('app/private/' . $loan->notification_pdf_path)
+            : null;
+
+        if (!$notificationPdfAbs || !file_exists($notificationPdfAbs)) {
+            return 'Impossible de valider : aucun document de notification n\'a été uploadé pour ce dossier. '
+                . 'Générez le DOCX, convertissez-le en PDF et uploadez-le (section "Documents").';
+        }
+
+        $locale   = $loan->contract_language ?? 'fr';
+        $template = NotificationTemplate::resolveForLoan($loan);
+
+        if (!$template) {
+            return 'Impossible de valider : aucun modèle de notification n\'est configuré (langue '
+                . strtoupper($locale) . ' ni FR). Créez-en un depuis "Modèles de notification".';
+        }
+
+        $vars      = app(\App\Services\ContractService::class)->getVariables($loan);
+        $subject   = str_replace(array_keys($vars), array_values($vars), $template->subject);
+        $body      = str_replace(array_keys($vars), array_values($vars), $template->content ?? '');
+        $recipient = $this->recipientEmail($loan);
+
+        try {
+            Mail::to($recipient)->send(
+                new LoanValidationNotificationMail($loan, $subject, $body, $notificationPdfAbs)
+            );
+        } catch (\Throwable $e) {
+            Log::error('LoanValidationNotificationMail failed for ' . $loan->reference . ': ' . $e->getMessage());
+            return 'Erreur lors de l\'envoi de la notification : ' . $e->getMessage();
+        }
+
+        $old = ['status' => $loan->status];
+        $loan->update([
+            'status'       => LoanRequest::STATUS_VALIDATED,
+            'validated_at' => now(),
+        ]);
+
+        $this->logHistory($loan, 'validated', $old, ['status' => $loan->status, 'locale' => $locale, 'recipient' => $recipient]);
+
+        return null;
+    }
+
+    /**
+     * Reprend la logique historique de validation complète : génère le tableau
+     * d'amortissement, envoie le contrat (LoanValidatedMail) et passe le dossier
+     * au statut "contract_sent". Retourne un message d'erreur ou null en cas de succès.
+     */
+    private function sendContractStep(LoanRequest $loan): ?string
+    {
         $contractPdfAbs = $loan->contract_pdf_path
             ? storage_path('app/private/' . $loan->contract_pdf_path)
             : null;
 
         if (!$contractPdfAbs || !file_exists($contractPdfAbs)) {
-            return back()->with(
-                'error',
-                'Impossible de valider : aucun contrat PDF n\'a été uploadé pour ce dossier. '
-                . 'Uploadez le contrat signé (section "PDF du contrat") avant de valider.'
-            );
+            return 'Impossible d\'envoyer le contrat : aucun contrat PDF n\'a été uploadé pour ce dossier.';
+        }
+
+        $content = $this->resolveContractSentContent($loan);
+        if (!$content) {
+            $locale = strtoupper($loan->contract_language ?? 'fr');
+            return "Impossible d'envoyer le contrat : aucun modèle d'email \"Contrat envoyé\" n'est configuré (langue $locale ni FR). Créez-en un depuis \"Modèles de notification\".";
         }
 
         $old       = ['status' => $loan->status];
@@ -598,16 +692,10 @@ class LoanRequestController extends Controller
             Log::warning('Amortization PDF generation failed for ' . $loan->reference . ': ' . $e->getMessage());
         }
 
-        // ── Mettre à jour le statut ───────────────────────────────────────
-        $loan->update([
-            'status'       => LoanRequest::STATUS_VALIDATED,
-            'validated_at' => now(),
-        ]);
-
         // ── Envoyer l'email dans la langue du client ──────────────────────
         try {
             Mail::to($recipient)->send(
-                new LoanValidatedMail($loan, $contractPdfAbs, $locale, $amortPdfPath ?? '')
+                new LoanValidatedMail($loan, $content['subject'], $content['body'], $contractPdfAbs, $amortPdfPath ?? '')
             );
         } catch (\Throwable $e) {
             Log::error('LoanValidatedMail failed for ' . $loan->reference . ': ' . $e->getMessage());
@@ -637,11 +725,103 @@ class LoanRequestController extends Controller
             );
         }
 
-        return redirect()->route('admin.loans.show', $loan)
-            ->with('success', 'Contrat validé — email envoyé à ' . $recipient
-                . ' en ' . strtoupper($locale)
-                . ($amortPdfPath ? ' avec tableau d\'amortissement.' : ' (tableau d\'amortissement non généré).')
-            );
+        return null;
+    }
+
+    /**
+     * Résout le sujet et le corps HTML de l'email "contrat envoyé" à partir du
+     * modèle configuré pour la langue du dossier. Retourne null si aucun modèle
+     * n'est configuré (ni pour la langue du dossier, ni en repli FR).
+     */
+    private function resolveContractSentContent(LoanRequest $loan): ?array
+    {
+        $template = NotificationTemplate::resolveForLoan($loan, NotificationTemplate::TYPE_CONTRACT_SENT);
+        if (!$template) {
+            return null;
+        }
+
+        $vars = app(\App\Services\ContractService::class)->getVariables($loan);
+
+        return [
+            'subject' => str_replace(array_keys($vars), array_values($vars), $template->subject),
+            'body'    => str_replace(array_keys($vars), array_values($vars), $template->content ?? ''),
+        ];
+    }
+
+    public function downloadNotificationDocx(LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+
+        $template = NotificationTemplate::resolveForLoan($loan);
+
+        if (!$template || !$template->hasDocxTemplate()) {
+            return back()->with('error', 'Aucun template DOCX de notification disponible pour la langue de ce dossier. Uploadez-en un depuis "Modèles de notification".');
+        }
+
+        $locale = $loan->contract_language ?? 'fr';
+
+        try {
+            $path = $this->notificationDocxService->generate($loan, $template, $locale);
+        } catch (\Throwable $e) {
+            return back()->with('error', 'Génération DOCX de notification impossible : ' . $e->getMessage());
+        }
+
+        return response()->download($path, 'Notification_' . $loan->reference . '.docx');
+    }
+
+    public function uploadNotificationPdf(Request $request, LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+
+        $request->validate([
+            'notification_pdf' => 'required|file|mimes:pdf|max:20480',
+        ], [
+            'notification_pdf.required' => 'Veuillez sélectionner un fichier PDF.',
+            'notification_pdf.mimes'    => 'Seuls les fichiers PDF sont acceptés.',
+            'notification_pdf.max'      => 'Le fichier PDF ne doit pas dépasser 20 Mo.',
+        ]);
+
+        if ($loan->notification_pdf_path) {
+            $old = storage_path('app/private/' . $loan->notification_pdf_path);
+            if (file_exists($old)) {
+                @unlink($old);
+            }
+        }
+
+        $file    = $request->file('notification_pdf');
+        $relPath = 'notification-pdfs/' . $loan->id . '/' . $loan->reference . '_notification.pdf';
+        $absDir  = storage_path('app/private/notification-pdfs/' . $loan->id);
+
+        if (!is_dir($absDir)) {
+            mkdir($absDir, 0755, true);
+        }
+
+        $file->move($absDir, $loan->reference . '_notification.pdf');
+
+        $loan->update(['notification_pdf_path' => $relPath]);
+
+        $this->logHistory($loan, 'notification_pdf_uploaded', [], ['pdf' => $relPath]);
+
+        return back()->with('success', 'Document de notification uploadé avec succès. Il débloque le bouton "Valider".');
+    }
+
+    public function previewNotificationPdf(LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+
+        if (!$loan->notification_pdf_path) {
+            return back()->with('error', 'Aucun document de notification uploadé pour ce dossier.');
+        }
+
+        $absPath = storage_path('app/private/' . $loan->notification_pdf_path);
+        if (!file_exists($absPath)) {
+            return back()->with('error', 'Fichier PDF introuvable sur le serveur.');
+        }
+
+        return response()->file($absPath, [
+            'Content-Type'        => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="Notification_' . $loan->reference . '.pdf"',
+        ]);
     }
 
     public function resendContractEmail(LoanRequest $loan)
@@ -658,11 +838,16 @@ class LoanRequestController extends Controller
             return back()->with('error', 'Fichier PDF introuvable sur le serveur.');
         }
 
-        $locale    = $loan->contract_language ?? 'fr';
+        $content = $this->resolveContractSentContent($loan);
+        if (!$content) {
+            $locale = strtoupper($loan->contract_language ?? 'fr');
+            return back()->with('error', "Aucun modèle d'email \"Contrat envoyé\" n'est configuré (langue $locale ni FR).");
+        }
+
         $recipient = $this->recipientEmail($loan);
 
         try {
-            Mail::to($recipient)->send(new LoanValidatedMail($loan, $pdfAbs, $locale));
+            Mail::to($recipient)->send(new LoanValidatedMail($loan, $content['subject'], $content['body'], $pdfAbs));
         } catch (\Throwable $e) {
             Log::error('resendContractEmail failed for ' . $loan->reference . ': ' . $e->getMessage());
             return back()->with('error', 'Erreur lors de l\'envoi de l\'email : ' . $e->getMessage());
@@ -721,67 +906,24 @@ class LoanRequestController extends Controller
 
         $old = ['status' => $loan->status];
 
-        // ── Passage en "validé" : flux complet (contrat + tableau + email) ─
+        // ── Passage en "validé" : envoie la notification (modèle selon la langue) ─
         if ($data['status'] === LoanRequest::STATUS_VALIDATED && $old['status'] !== LoanRequest::STATUS_VALIDATED) {
-
-            $contractPdfAbs = $loan->contract_pdf_path
-                ? storage_path('app/private/' . $loan->contract_pdf_path)
-                : null;
-
-            if (!$contractPdfAbs || !file_exists($contractPdfAbs)) {
-                return back()->with(
-                    'error',
-                    'Impossible de valider : aucun contrat PDF n\'a été uploadé pour ce dossier. '
-                    . 'Uploadez le contrat signé (section "PDF du contrat") avant de valider.'
-                );
+            if ($error = $this->sendValidationNotification($loan)) {
+                return back()->with('error', $error);
             }
 
-            $locale    = $loan->contract_language ?? 'fr';
-            $recipient = $this->recipientEmail($loan);
+            return redirect()->route($this->panelPrefix().'.loans.show', $loan)
+                ->with('success', 'Dossier validé — notification envoyée à ' . $this->recipientEmail($loan) . '.');
+        }
 
-            set_time_limit(180);
-            $amortPdfPath = null;
-            try {
-                $amortPdfPath = $this->pdfService->generateAmortizationPdf($loan, $locale);
-            } catch (\Throwable $e) {
-                Log::warning('Amortization PDF generation failed for ' . $loan->reference . ': ' . $e->getMessage());
+        // ── Passage en "contrat envoyé" : tableau d'amortissement + LoanValidatedMail ─
+        if ($data['status'] === LoanRequest::STATUS_CONTRACT_SENT && $old['status'] !== LoanRequest::STATUS_CONTRACT_SENT) {
+            if ($error = $this->sendContractStep($loan)) {
+                return back()->with('error', $error);
             }
 
-            try {
-                Mail::to($recipient)->send(
-                    new LoanValidatedMail($loan, $contractPdfAbs, $locale, $amortPdfPath ?? '')
-                );
-            } catch (\Throwable $e) {
-                Log::error('LoanValidatedMail failed for ' . $loan->reference . ': ' . $e->getMessage());
-            } finally {
-                if ($amortPdfPath && file_exists($amortPdfPath)) {
-                    @unlink($amortPdfPath);
-                }
-            }
-
-            $loan->update([
-                'status'       => LoanRequest::STATUS_CONTRACT_SENT,
-                'validated_at' => now(),
-                'sent_at'      => now(),
-            ]);
-
-            if ($loan->client_id) {
-                ClientNotification::notifyUser(
-                    $loan->client,
-                    'loan_update',
-                    'app.notif_loan_contract',
-                    'app.notif_loan_contract_body',
-                    ['reference' => $loan->reference],
-                    ['loan_id' => $loan->id, 'reference' => $loan->reference]
-                );
-            }
-
-            $this->logHistory($loan, 'validated_and_sent', $old, ['status' => $loan->status, 'locale' => $locale, 'recipient' => $recipient]);
-
-            return redirect()->route('admin.loans.show', $loan)
-                ->with('success', 'Contrat validé — email envoyé à ' . $recipient
-                    . ' en ' . strtoupper($locale)
-                    . ($amortPdfPath ? ' avec tableau d\'amortissement.' : '.'));
+            return redirect()->route($this->panelPrefix().'.loans.show', $loan)
+                ->with('success', 'Contrat envoyé à ' . $this->recipientEmail($loan) . '.');
         }
 
         // ── Autres changements de statut ──────────────────────────────────
@@ -824,7 +966,7 @@ class LoanRequestController extends Controller
         $this->authorizeAccess($loan);
         abort_unless($loan->status === LoanRequest::STATUS_DRAFT, 403, 'Seuls les brouillons peuvent être supprimés.');
         $loan->delete();
-        return redirect()->route('admin.loans.index')->with('success', 'Demande supprimée.');
+        return redirect()->route($this->panelPrefix().'.loans.index')->with('success', 'Demande supprimée.');
     }
 
     public function assignAdmin(Request $request, LoanRequest $loan)
@@ -876,6 +1018,15 @@ class LoanRequestController extends Controller
         $user = Auth::user();
         if ($user->hasRole('super-admin')) return;
         abort_unless($loan->admin_id === $user->id, 403, 'Accès non autorisé.');
+    }
+
+    /**
+     * Préfixe de route ('admin' ou 'super-admin') selon le panneau depuis lequel
+     * la requête courante a été faite — pour rediriger vers le bon contexte.
+     */
+    private function panelPrefix(): string
+    {
+        return request()->routeIs('super-admin.*') ? 'super-admin' : 'admin';
     }
 
     private function logHistory(LoanRequest $loan, string $action, ?array $old, ?array $new): void

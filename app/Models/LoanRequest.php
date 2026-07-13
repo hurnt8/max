@@ -28,6 +28,17 @@ class LoanRequest extends Model
         self::STATUS_REJECTED,
     ];
 
+    // Types de financement possibles
+    const FINANCING_TYPES = [
+        'personnel'      => 'Financement personnel',
+        'professionnel'  => 'Financement professionnel',
+        'immobilier'     => 'Crédit immobilier',
+        'rachat_credit'  => 'Rachat de crédit',
+        'investissement' => 'Financement investissement',
+        'credit_relais'  => 'Crédit relais',
+        'autre'          => 'Autre',
+    ];
+
     protected $fillable = [
         'reference', 'archive_ref',
         'admin_id', 'client_id', 'contract_template_id', 'insurance_template_id',
@@ -35,10 +46,10 @@ class LoanRequest extends Model
         'amount', 'interest_rate', 'currency', 'start_date',
         'monthly_payment', 'total_cost', 'total_with_interest',
         'admin_fees', 'frais_assurance', 'date_fin_assurance', 'bank_account', 'agent_suivi', 'directeur',
-        'darly', 'objet', 'subject', 'npi',
+        'darly', 'objet', 'type_financement', 'subject', 'npi',
         'extra_fields',
         'special_conditions',
-        'contract_content', 'contract_pdf_path', 'insurance_pdf_path', 'contract_language',
+        'contract_content', 'contract_pdf_path', 'insurance_pdf_path', 'notification_pdf_path', 'contract_language',
         'amortization_schedule',
         'status', 'notes', 'files',
         'validated_at', 'sent_at', 'signed_received_at',
@@ -112,6 +123,16 @@ class LoanRequest extends Model
     public function canBeValidated(): bool
     {
         return in_array($this->status, [self::STATUS_DRAFT, self::STATUS_PENDING]);
+    }
+
+    public function canSendContract(): bool
+    {
+        return $this->status === self::STATUS_VALIDATED;
+    }
+
+    public function financingTypeLabel(): string
+    {
+        return self::FINANCING_TYPES[$this->type_financement] ?? '—';
     }
 
     public function statusLabel(): string

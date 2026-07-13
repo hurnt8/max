@@ -26,14 +26,7 @@
 }
 .role-card__count { font-size:2rem; font-weight:800; color:var(--c-navy); line-height:1; margin-bottom:.2rem; }
 .role-card__name  { font-size:.9rem; font-weight:700; color:var(--c-navy); margin-bottom:.35rem; }
-.role-card__desc  { font-size:.72rem; color:var(--c-muted); line-height:1.5; margin-bottom:1rem; }
-.role-card__perms { display:flex; flex-direction:column; gap:.3rem; }
-.role-card__perm {
-  display:flex; align-items:center; gap:.45rem;
-  font-size:.7rem; color:var(--c-text);
-}
-.role-card__perm-ok  { color:var(--c-green); font-size:.6rem; }
-.role-card__perm-no  { color:#CBD5E1; font-size:.6rem; }
+.role-card__desc  { font-size:.72rem; color:var(--c-muted); line-height:1.5; }
 .role-card__accent {
   position:absolute; bottom:-30px; right:-30px;
   width:100px; height:100px; border-radius:50%; opacity:.05;
@@ -108,6 +101,12 @@
 .perm-scroll::-webkit-scrollbar { height: 4px; }
 .perm-scroll::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 99px; }
 
+/* ── En-tête repliable (matrice) ─────────────────── */
+.card-pro-hdr--toggle { cursor:pointer; user-select:none; }
+.card-pro-hdr--toggle .toggle-label { display:flex; align-items:center; gap:.4rem; }
+.card-pro-hdr--toggle .toggle-label i { font-size:.65rem; transition:transform .18s ease; }
+.card-pro-hdr--toggle.is-open .toggle-label i { transform:rotate(180deg); }
+
 /* ─────────────────────────────────────────
    RESPONSIVE MOBILE — roles
    ─────────────────────────────────────────*/
@@ -162,7 +161,6 @@ $roleConf = [
     'badge'  => 'bs-dark',
     'name'   => 'Super Administrateur',
     'desc'   => 'Contrôle total du système. Gestion des rôles, accès à toutes les données et configurations.',
-    'perms'  => ['Toutes les permissions admin','Attribution des rôles','Vue globale du système','Configuration avancée'],
     'accent' => 'var(--c-navy)',
   ],
   'admin' => [
@@ -172,7 +170,6 @@ $roleConf = [
     'badge'  => 'bs-amber',
     'name'   => 'Administrateur',
     'desc'   => 'Gestion complète des prêts, des utilisateurs et des modèles de contrats.',
-    'perms'  => ['Gérer toutes les demandes','Approuver / Refuser','Gérer les utilisateurs','Modèles de contrats'],
     'accent' => 'var(--c-gold)',
   ],
   'client' => [
@@ -182,7 +179,6 @@ $roleConf = [
     'badge'  => 'bs-blue',
     'name'   => 'Client',
     'desc'   => 'Espace personnel. Soumettre et suivre ses propres demandes de prêt.',
-    'perms'  => ['Soumettre une demande','Suivre ses dossiers','Télécharger ses contrats','Modifier son profil'],
     'accent' => 'var(--c-blue)',
   ],
 ];
@@ -190,7 +186,7 @@ $roleConf = [
 
 <div class="role-cards">
   @foreach($roles as $role)
-  @php $cfg = $roleConf[$role->name] ?? ['icon'=>'fa-user','color'=>'var(--c-muted)','bg'=>'#F3F4F6','badge'=>'bs-gray','name'=>ucfirst($role->name),'desc'=>'Rôle personnalisé','perms'=>[],'accent'=>'#6B7280']; @endphp
+  @php $cfg = $roleConf[$role->name] ?? ['icon'=>'fa-user','color'=>'var(--c-muted)','bg'=>'#F3F4F6','badge'=>'bs-gray','name'=>ucfirst($role->name),'desc'=>'Rôle personnalisé','accent'=>'#6B7280']; @endphp
   <div class="role-card">
     <div class="role-card__top">
       <div class="role-card__icon" style="background:{{ $cfg['bg'] }};color:{{ $cfg['color'] }}">
@@ -201,14 +197,6 @@ $roleConf = [
     <div class="role-card__count">{{ $role->users_count }}</div>
     <div class="role-card__name">{{ $cfg['name'] }}</div>
     <div class="role-card__desc">{{ $cfg['desc'] }}</div>
-    <div class="role-card__perms">
-      @foreach($cfg['perms'] as $perm)
-      <div class="role-card__perm">
-        <i class="fas fa-check-circle role-card__perm-ok"></i>
-        {{ $perm }}
-      </div>
-      @endforeach
-    </div>
     <div class="role-card__accent" style="background:{{ $cfg['accent'] }}"></div>
   </div>
   @endforeach
@@ -216,13 +204,15 @@ $roleConf = [
 
 {{-- ── PERMISSION MATRIX ────────────────────────────────────────── --}}
 <div class="card-pro mb-4">
-  <div class="card-pro-hdr">
+  <div class="card-pro-hdr card-pro-hdr--toggle" id="matrixHdr" onclick="toggleMatrix()">
     <div class="card-pro-title">
       <span class="icon-dot"></span>Matrice des permissions
     </div>
-    <span style="font-size:.7rem;color:var(--c-muted)">Permissions basées sur les rôles du système</span>
+    <span class="toggle-label" style="font-size:.7rem;color:var(--c-muted)">
+      Détail par rôle <i class="fas fa-chevron-down"></i>
+    </span>
   </div>
-  <div class="perm-scroll">
+  <div class="perm-scroll" id="matrixBody" style="display:none">
     <table class="perm-matrix">
       <thead>
         <tr>
@@ -401,7 +391,70 @@ $roleConf = [
 
   @if($users->hasPages())
   <div style="padding:.875rem 1.25rem;border-top:1px solid var(--c-border);display:flex;justify-content:flex-end">
-    {{ $users->links() }}
+    {{ $users->links('partials.pagination') }}
+  </div>
+  @endif
+</div>
+
+{{-- ── PERMISSIONS EXCEPTIONNELLES ──────────────────────────────── --}}
+<div class="card-pro mt-4">
+  <div class="card-pro-hdr">
+    <div class="card-pro-title">
+      <span class="icon-dot"></span>Permissions exceptionnelles
+    </div>
+    <span style="font-size:.72rem;color:var(--c-muted)">
+      Donnez à un admin classique l'accès à une zone habituellement réservée au super-admin, sans changer son rôle.
+    </span>
+  </div>
+
+  @if($adminUsers->isEmpty())
+  <div style="padding:2.5rem;text-align:center;color:var(--c-muted)">
+    <i class="fas fa-user-shield" style="font-size:1.5rem;display:block;margin-bottom:.5rem;opacity:.3"></i>
+    Aucun admin classique pour le moment.
+  </div>
+  @else
+  <div class="table-responsive-pro">
+    <table class="pro-table">
+      <thead>
+        <tr>
+          <th>Admin</th>
+          @foreach($exceptionalPerms as $label)
+          <th style="text-align:center">{{ $label }}</th>
+          @endforeach
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($adminUsers as $u)
+        @php $userPerms = $u->getPermissionNames(); @endphp
+        <tr>
+          <td data-label="Admin">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <div class="u-avatar" style="background:#B8883E22;color:#B8883E">
+                {{ strtoupper(mb_substr($u->name, 0, 1)) }}
+              </div>
+              <div>
+                <div class="cell-name">{{ $u->name }}</div>
+                <div class="cell-sub">{{ $u->email }}</div>
+              </div>
+            </div>
+          </td>
+          @foreach($exceptionalPerms as $permKey => $permLabel)
+          <td style="text-align:center" data-label="{{ $permLabel }}">
+            <input type="checkbox" form="perm-form-{{ $u->id }}" name="permissions[]" value="{{ $permKey }}"
+                   {{ $userPerms->contains($permKey) ? 'checked' : '' }}
+                   onchange="this.form.requestSubmit()"
+                   style="width:16px;height:16px;accent-color:var(--c-navy);cursor:pointer">
+          </td>
+          @endforeach
+          <td style="display:none">
+            <form action="{{ route('super-admin.users.permissions', $u) }}" method="POST" id="perm-form-{{ $u->id }}">
+              @csrf
+            </form>
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
   </div>
   @endif
 </div>
@@ -410,6 +463,14 @@ $roleConf = [
 
 @push('scripts')
 <script>
+function toggleMatrix() {
+  const body = document.getElementById('matrixBody');
+  const hdr  = document.getElementById('matrixHdr');
+  const open = body.style.display !== 'none';
+  body.style.display = open ? 'none' : '';
+  hdr.classList.toggle('is-open', !open);
+}
+
 function filterTable(query) {
   const q    = query.toLowerCase().trim();
   const role = document.getElementById('roleFilter').value;
