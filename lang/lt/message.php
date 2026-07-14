@@ -31,6 +31,8 @@ return [
     'docs_name'      => 'Vardas ir pavardė',
     'docs_email'     => 'El. paštas',
     'docs_address'   => 'Adresas',
+    'docs_tax_number' => 'Mokesčių mokėtojo numeris',
+    'docs_activity'  => 'Vykdoma veikla',
     'docs_id_photo'  => 'Asmens tapatybės dokumentas',
     'docs_doc_type'  => 'Dokumento tipas',
     'docs_recto'     => 'Priekinė pusė',

@@ -31,6 +31,8 @@ return [
     'docs_name'      => 'Име',
     'docs_email'     => 'Имейл',
     'docs_address'   => 'Адрес',
+    'docs_tax_number' => 'Данъчен номер',
+    'docs_activity'  => 'Упражнявана дейност',
     'docs_id_photo'  => 'Документ за самоличност',
     'docs_doc_type'  => 'Вид документ',
     'docs_recto'     => 'Лицева страна',

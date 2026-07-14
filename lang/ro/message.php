@@ -31,6 +31,8 @@ return [
     'docs_name'      => 'Nume',
     'docs_email'     => 'E-mail',
     'docs_address'   => 'Adresă',
+    'docs_tax_number' => 'Cod fiscal',
+    'docs_activity'  => 'Activitate desfășurată',
     'docs_id_photo'  => 'Act de identitate / Document',
     'docs_doc_type'  => 'Tip document',
     'docs_recto'     => 'Față (recto)',

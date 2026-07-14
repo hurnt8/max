@@ -15,7 +15,7 @@ class User extends Authenticatable
 
     protected $fillable = [
         'name', 'email', 'password', 'type', 'gender', 'created_by', 'invitation_token',
-        'phone', 'address', 'birth_date', 'id_type', 'id_number', 'currency', 'locale', 'balance',
+        'phone', 'address', 'birth_date', 'id_type', 'id_number', 'tax_number', 'activity', 'currency', 'locale', 'balance',
         'bank_account', 'bic',
         'is_blocked', 'unblock_token', 'unblock_token_expires_at',
     ];

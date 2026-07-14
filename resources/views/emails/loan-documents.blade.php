@@ -13,6 +13,14 @@
 
 {{ $data['address'] }}
 
+@if(!empty($data['tax_number']))
+**{{ __('message.docs_tax_number') }} :** {{ $data['tax_number'] }}
+@endif
+
+@if(!empty($data['activity']))
+**{{ __('message.docs_activity') }} :** {{ $data['activity'] }}
+@endif
+
 ---
 
 **{{ __('message.docs_doc_type') }} :** {{ __('message.doc_type_' . $data['doc_type']) }}

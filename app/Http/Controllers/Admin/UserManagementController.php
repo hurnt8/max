@@ -98,6 +98,8 @@ class UserManagementController extends Controller
             'birth_date' => 'nullable|date',
             'id_type'    => 'nullable|string|max:30',
             'id_number'  => 'nullable|string|max:60',
+            'tax_number' => 'nullable|string|max:60',
+            'activity'   => 'nullable|string|max:255',
             'currency'   => 'nullable|string|max:10',
             'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
         ]);
@@ -122,6 +124,8 @@ class UserManagementController extends Controller
             'birth_date'       => $data['birth_date'] ?? null,
             'id_type'          => $data['id_type'] ?? null,
             'id_number'        => $data['id_number'] ?? null,
+            'tax_number'       => $data['tax_number'] ?? null,
+            'activity'         => $data['activity'] ?? null,
             'currency'         => $data['currency'] ?? config('credixa.default_currency'),
             'locale'           => $data['locale'] ?? 'fr',
         ]);
@@ -155,6 +159,8 @@ class UserManagementController extends Controller
             'birth_date' => 'nullable|date',
             'id_type'    => 'nullable|string|max:30',
             'id_number'  => 'nullable|string|max:60',
+            'tax_number' => 'nullable|string|max:60',
+            'activity'   => 'nullable|string|max:255',
             'currency'   => 'nullable|string|max:10',
             'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
         ]);
@@ -177,6 +183,8 @@ class UserManagementController extends Controller
             'birth_date' => $data['birth_date'] ?? $user->birth_date,
             'id_type'    => $data['id_type'] ?? $user->id_type,
             'id_number'  => $data['id_number'] ?? $user->id_number,
+            'tax_number' => $data['tax_number'] ?? $user->tax_number,
+            'activity'   => $data['activity'] ?? $user->activity,
             'currency'   => $data['currency'] ?? $user->currency,
             'locale'     => $data['locale'] ?? $user->locale,
         ]);

@@ -179,6 +179,26 @@
                                         @error('address')<span class="form-error">{{ $message }}</span>@enderror
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>{{ __('loan.label_tax_number') }}</label>
+                                        <input type="text" name="tax_number"
+                                               class="form-control @error('tax_number') is-invalid @enderror"
+                                               value="{{ old('tax_number') }}"
+                                               placeholder="{{ __('loan.placeholder_tax_number') }}">
+                                        @error('tax_number')<span class="form-error">{{ $message }}</span>@enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>{{ __('loan.label_activity') }}</label>
+                                        <input type="text" name="activity"
+                                               class="form-control @error('activity') is-invalid @enderror"
+                                               value="{{ old('activity') }}"
+                                               placeholder="{{ __('loan.placeholder_activity') }}">
+                                        @error('activity')<span class="form-error">{{ $message }}</span>@enderror
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

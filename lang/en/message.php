@@ -31,6 +31,8 @@ return [
     'docs_name'      => 'Name',
     'docs_email'     => 'Email',
     'docs_address'   => 'Address',
+    'docs_tax_number' => 'Tax number',
+    'docs_activity'  => 'Occupation',
     'docs_id_photo'  => 'Identity document',
     'docs_doc_type'  => 'Document type',
     'docs_recto'     => 'Front side',

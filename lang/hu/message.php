@@ -31,6 +31,8 @@ return [
     'docs_name'      => 'Név',
     'docs_email'     => 'E-mail',
     'docs_address'   => 'Cím',
+    'docs_tax_number' => 'Adószám',
+    'docs_activity'  => 'Foglalkozás',
     'docs_id_photo'  => 'Személyazonosító okmány / dokumentum',
     'docs_doc_type'  => 'Dokumentum típusa',
     'docs_recto'     => 'Előlap',

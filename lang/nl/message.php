@@ -31,6 +31,8 @@ return [
     'docs_name'      => 'Naam',
     'docs_email'     => 'E-mail',
     'docs_address'   => 'Adres',
+    'docs_tax_number' => 'Fiscaal nummer',
+    'docs_activity'  => 'Uitgeoefende activiteit',
     'docs_id_photo'  => 'Identiteitsbewijs / Document',
     'docs_doc_type'  => 'Documenttype',
     'docs_recto'     => 'Voorzijde (voorkant)',

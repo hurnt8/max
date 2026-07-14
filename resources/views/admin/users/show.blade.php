@@ -195,6 +195,14 @@
     </div>
   </div>
   <div class="cu-meta">
+    <div class="cu-meta-lbl">Numéro fiscal</div>
+    <div class="cu-meta-val" style="font-size:.8rem">{{ $user->tax_number ?? '—' }}</div>
+  </div>
+  <div class="cu-meta">
+    <div class="cu-meta-lbl">Activité</div>
+    <div class="cu-meta-val" style="font-size:.8rem">{{ $user->activity ?? '—' }}</div>
+  </div>
+  <div class="cu-meta">
     <div class="cu-meta-lbl">Devise</div>
     <div class="cu-meta-val">{{ $user->currency ?? '—' }}</div>
   </div>
@@ -398,6 +406,18 @@
               <input type="text" name="id_number" class="form-control-pro"
                      value="{{ old('id_number', $user->id_number) }}"
                      placeholder="Ex : AB123456">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-pro">Numéro fiscal</label>
+              <input type="text" name="tax_number" class="form-control-pro"
+                     value="{{ old('tax_number', $user->tax_number) }}"
+                     placeholder="Ex : FR123456789">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-pro">Activité exercée</label>
+              <input type="text" name="activity" class="form-control-pro"
+                     value="{{ old('activity', $user->activity) }}"
+                     placeholder="Ex : Commerçant">
             </div>
             <div class="col-md-4">
               <label class="form-label-pro">Devise</label>

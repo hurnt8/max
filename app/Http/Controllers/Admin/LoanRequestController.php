@@ -112,6 +112,8 @@ class LoanRequestController extends Controller
             'client_birth_date' => 'nullable|date',
             'client_id_type'    => 'nullable|string|max:30',
             'client_id_number'  => 'nullable|string|max:60',
+            'client_tax_number' => 'nullable|string|max:60',
+            'client_activity'   => 'nullable|string|max:255',
             'client_locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
             'client_currency'   => 'nullable|string|max:10',
             // Prêt
@@ -177,6 +179,8 @@ class LoanRequestController extends Controller
                         'birth_date'       => $data['client_birth_date'] ?? null,
                         'id_type'          => $data['client_id_type'] ?? null,
                         'id_number'        => $data['client_id_number'] ?? null,
+                        'tax_number'       => $data['client_tax_number'] ?? null,
+                        'activity'         => $data['client_activity'] ?? null,
                         'locale'           => $data['client_locale'] ?? 'fr',
                         'currency'         => $data['client_currency'] ?? $data['currency'],
                     ]);

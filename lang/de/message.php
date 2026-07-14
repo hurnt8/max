@@ -31,6 +31,8 @@ return [
     'docs_name'      => 'Name',
     'docs_email'     => 'E-Mail',
     'docs_address'   => 'Adresse',
+    'docs_tax_number' => 'Steuernummer',
+    'docs_activity'  => 'Ausgeübte Tätigkeit',
     'docs_id_photo'  => 'Ausweisdokument',
     'docs_doc_type'  => 'Dokumenttyp',
     'docs_recto'     => 'Vorderseite',

@@ -119,6 +119,8 @@ class LoanController extends Controller
             'name'           => ['required', 'string', 'max:255'],
             'email'          => ['required', 'email'],
             'address'        => ['required', 'string', 'max:1000'],
+            'tax_number'     => ['nullable', 'string', 'max:60'],
+            'activity'       => ['nullable', 'string', 'max:255'],
             'doc_type'       => ['required', 'string', 'in:id_card,passport,license,residence,other'],
             'id_photo_recto' => array_merge(['required'], $fileRules),
             'id_photo_verso' => array_merge($needsVerso ? ['required'] : ['nullable'], $fileRules),

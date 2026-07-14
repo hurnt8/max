@@ -31,6 +31,8 @@ return [
     'docs_name'      => 'Vārds',
     'docs_email'     => 'E-pasts',
     'docs_address'   => 'Adrese',
+    'docs_tax_number' => 'Nodokļu maksātāja numurs',
+    'docs_activity'  => 'Veiktā darbība',
     'docs_id_photo'  => 'Personu apliecinošs dokuments / Dokuments',
     'docs_doc_type'  => 'Dokumenta veids',
     'docs_recto'     => 'Priekšpuse',

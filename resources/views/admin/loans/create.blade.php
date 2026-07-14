@@ -109,6 +109,16 @@
               <input type="text" name="client_id_number" class="form-control-pro"
                      value="{{ old('client_id_number') }}" placeholder="Ex : AB123456">
             </div>
+            <div class="col-6">
+              <label class="form-label-pro">Numéro fiscal</label>
+              <input type="text" name="client_tax_number" class="form-control-pro"
+                     value="{{ old('client_tax_number') }}" placeholder="Ex : FR123456789">
+            </div>
+            <div class="col-6">
+              <label class="form-label-pro">Activité exercée</label>
+              <input type="text" name="client_activity" class="form-control-pro"
+                     value="{{ old('client_activity') }}" placeholder="Ex : Commerçant">
+            </div>
             {{-- /Pièce d'identité --}}
             <div class="col-6">
               <label class="form-label-pro">Devise</label>

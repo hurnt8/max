@@ -254,8 +254,8 @@
           $groups = [
             'Données dossier' => array_filter($variables, fn($k) => in_array($k, [
               '{reference}','{archive}','{nom_client}','{adresse_client}','{date_naissance}',
-              '{type_identite}','{numero_identite}','{agent_suivi}','{directeur}',
-              '{montant}','{devise}','{duree}','{mensualite}','{taux}',
+              '{type_identite}','{numero_identite}','{numero_fiscal}','{activite_exercee}','{agent_suivi}','{directeur}',
+              '{objet}','{montant}','{montant_lettres}','{devise}','{duree}','{mensualite}','{taux}',
               '{frais_admin}','{compte_bancaire}','{date}','{societe}',
             ]), ARRAY_FILTER_USE_KEY),
             'Accord de genre' => array_filter($variables, fn($k) => in_array($k, [

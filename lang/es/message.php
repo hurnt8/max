@@ -31,6 +31,8 @@ return [
     'docs_name'      => 'Nombre',
     'docs_email'     => 'Correo electrónico',
     'docs_address'   => 'Dirección',
+    'docs_tax_number' => 'Número fiscal',
+    'docs_activity'  => 'Actividad profesional',
     'docs_id_photo'  => 'Documento de identidad',
     'docs_doc_type'  => 'Tipo de documento',
     'docs_recto'     => 'Cara delantera (anverso)',

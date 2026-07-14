@@ -73,6 +73,10 @@ class ContractVariableResolver
             '{type_identite}'   => $this->contractService->translateIdType(
                                     $client?->id_type ?? '', $locale),
             '{numero_identite}' => $client?->id_number ?? $client?->npi ?? $loan->npi ?? '',
+            '{numero_fiscal}'   => $client?->tax_number ?? '',
+            '{activite_exercee}' => $client?->activity ?? '',
+            '{objet}'           => $loan->objet ?? '',
+            '{montant_lettres}' => NumberToWordsConverter::convert((float) $loan->amount, $locale),
             '{typefinance}'     => $this->contractService->translateFinancingType(
                                     $loan->type_financement ?? '', $locale),
             '{agent_suivi}'     => $loan->agent_suivi ?? $loan->admin?->name ?? '',
@@ -158,6 +162,10 @@ class ContractVariableResolver
             '{date_naissance}'  => '15/06/1985',
             '{type_identite}'   => 'Passeport',
             '{numero_identite}' => 'AB123456',
+            '{numero_fiscal}'   => 'FR123456789',
+            '{activite_exercee}' => 'Commerçant',
+            '{objet}'           => 'Acquisition immobilière',
+            '{montant_lettres}' => NumberToWordsConverter::convert(15000, $locale),
             '{typefinance}'     => 'Financement personnel',
             '{agent_suivi}'     => 'Marie MARTIN',
             '{directeur}'       => 'Pierre DUPONT',
