@@ -45,7 +45,7 @@ class LoanRequest extends Model
         'name', 'email', 'phone', 'address',
         'amount', 'interest_rate', 'currency', 'start_date',
         'monthly_payment', 'total_cost', 'total_with_interest',
-        'admin_fees', 'frais_assurance', 'date_fin_assurance', 'bank_account', 'agent_suivi', 'directeur',
+        'admin_fees', 'frais_assurance', 'date_fin_assurance', 'bank_account', 'agent_suivi', 'directeur', 'notaire',
         'darly', 'objet', 'type_financement', 'subject', 'npi',
         'extra_fields',
         'special_conditions',

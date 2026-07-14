@@ -86,6 +86,13 @@
             <p class="form-help">Remplace la variable <code>{directeur}</code> dans le contrat</p>
           </div>
           <div class="col-12">
+            <label class="form-label-pro">Notaire</label>
+            <input type="text" name="notaire" class="form-control-pro"
+                   value="{{ old('notaire', $loan->notaire) }}"
+                   placeholder="Nom du notaire">
+            <p class="form-help">Remplace la variable <code>{notaire}</code> dans le contrat</p>
+          </div>
+          <div class="col-12">
             <label class="form-label-pro">Conditions particulières</label>
             <textarea name="special_conditions" class="form-control-pro" rows="3">{{ old('special_conditions',$loan->special_conditions) }}</textarea>
           </div>

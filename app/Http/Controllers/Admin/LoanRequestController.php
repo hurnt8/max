@@ -128,6 +128,7 @@ class LoanRequestController extends Controller
             'bank_account'      => 'nullable|string|max:255',
             'agent_suivi'       => 'nullable|string|max:255',
             'directeur'         => 'nullable|string|max:255',
+            'notaire'           => 'nullable|string|max:255',
             'special_conditions'=> 'nullable|string',
             'contract_template_id' => 'nullable|exists:contract_templates,id',
             // Balises personnalisées du template (modale)
@@ -217,6 +218,7 @@ class LoanRequestController extends Controller
                     'bank_account'         => $data['bank_account'] ?? null,
                     'agent_suivi'          => $data['agent_suivi'] ?? null,
                     'directeur'            => $data['directeur'] ?? null,
+                    'notaire'              => $data['notaire'] ?? null,
                     'monthly_payment'      => $calc['monthly_payment'],
                     'total_cost'           => $calc['total_cost'],
                     'total_with_interest'  => $calc['total_with_interest'],
@@ -287,6 +289,7 @@ class LoanRequestController extends Controller
             'bank_account'          => 'nullable|string|max:255',
             'agent_suivi'           => 'nullable|string|max:255',
             'directeur'             => 'nullable|string|max:255',
+            'notaire'               => 'nullable|string|max:255',
             'special_conditions'    => 'nullable|string',
             'contract_template_id'  => 'nullable|exists:contract_templates,id',
             'insurance_template_id' => 'nullable|exists:contract_templates,id',
