@@ -49,7 +49,7 @@ class LoanRequest extends Model
         'darly', 'objet', 'type_financement', 'subject', 'npi',
         'extra_fields',
         'special_conditions',
-        'contract_content', 'contract_pdf_path', 'insurance_pdf_path', 'notification_pdf_path', 'contract_language',
+        'contract_content', 'contract_pdf_path', 'insurance_pdf_path', 'notification_pdf_path', 'conditions_pdf_path', 'contract_language',
         'amortization_schedule',
         'status', 'notes', 'files',
         'validated_at', 'sent_at', 'signed_received_at',

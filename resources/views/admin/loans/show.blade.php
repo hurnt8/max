@@ -806,6 +806,106 @@ $tpl = $loan->contractTemplate;
           </div>
         </div>
 
+        {{-- Modèle de conditions générales --}}
+        <div class="card-pro">
+          <div class="card-pro-hdr">
+            <div class="card-pro-title"><span class="icon-dot" style="background:#7C3AED"></span>Modèle DOCX conditions générales</div>
+            @if($conditionsTemplate)
+            <a href="{{ route('admin.notification-templates.edit',$conditionsTemplate) }}" class="btn-ghost btn-sm-pro">
+              <i class="fas fa-pen"></i>
+            </a>
+            @endif
+          </div>
+          <div class="card-pro-body">
+            @if($conditionsTemplate)
+            <div style="font-weight:700;color:var(--c-navy);font-size:.875rem;margin-bottom:.5rem">{{ $conditionsTemplate->name }}</div>
+            <div style="display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:1rem">
+              <span class="badge-status bs-amber" style="font-size:.6rem">{{ strtoupper($conditionsTemplate->locale) }}</span>
+              @if($conditionsTemplate->hasDocxTemplate())
+              <span style="font-size:.62rem;padding:.15rem .45rem;border-radius:5px;background:#ECFDF5;color:#166534;border:1px solid #86EFAC;font-weight:700">
+                <i class="fas fa-file-word"></i> DOCX v{{ $conditionsTemplate->docx_version }}
+              </span>
+              @else
+              <span style="font-size:.62rem;padding:.15rem .45rem;border-radius:5px;background:#FEF9C3;color:#713F12;border:1px solid #FDE047">Pas de DOCX</span>
+              @endif
+            </div>
+            @if($conditionsTemplate->hasDocxTemplate())
+            <a href="{{ route($panelPrefix.'.loans.conditions.docx',$loan) }}" class="btn-navy btn-sm-pro ld-btn-full" style="background:#7C3AED;border-color:#7C3AED">
+              <i class="fas fa-file-word"></i> Générer &amp; Télécharger DOCX
+            </a>
+            @else
+            <a href="{{ route('admin.notification-templates.edit',$conditionsTemplate) }}" class="btn-ghost btn-sm-pro ld-btn-full">
+              <i class="fas fa-upload"></i> Uploader un template DOCX
+            </a>
+            @endif
+            @if($conditionsTemplate->hasDocxTemplate() && count($conditionsTemplate->docx_detected_vars ?? []) > 0)
+            <div style="margin-top:.75rem;padding:.5rem .625rem;background:#f8f9fa;border:1px solid var(--c-border);border-radius:7px">
+              <div style="font-size:.66rem;color:var(--c-muted);margin-bottom:.35rem"><i class="fas fa-tags" style="color:var(--c-gold)"></i> {{ count($conditionsTemplate->docx_detected_vars) }} variable(s)</div>
+              <div style="display:flex;flex-wrap:wrap;gap:.2rem">
+                @foreach($conditionsTemplate->docx_detected_vars as $v)
+                <code style="font-size:.6rem;padding:.05rem .25rem;border-radius:3px;background:#fff;border:1px solid var(--c-border);color:var(--c-navy)">{{"{"}}{{ $v }}{{"}"}}</code>
+                @endforeach
+              </div>
+            </div>
+            @endif
+            @else
+            <div class="ld-warn-box">
+              <i class="fas fa-exclamation-triangle" style="color:#F59E0B;flex-shrink:0"></i>
+              <span>Aucun modèle de conditions générales configuré pour cette langue. <a href="{{ route('admin.notification-templates.create') }}" style="color:#78350F;font-weight:700">Créer →</a></span>
+            </div>
+            @endif
+          </div>
+        </div>
+
+        {{-- Document conditions générales --}}
+        <div class="card-pro">
+          <div class="card-pro-hdr">
+            <div class="card-pro-title">
+              <span class="icon-dot" style="background:#7C3AED"></span>Document conditions générales
+            </div>
+            @if($loan->conditions_pdf_path)
+            <a href="{{ route($panelPrefix.'.loans.conditions.pdf',$loan) }}" class="btn-ghost btn-sm-pro" target="_blank" title="Visualiser">
+              <i class="fas fa-eye"></i>
+            </a>
+            @endif
+          </div>
+          <div class="card-pro-body" style="display:flex;flex-direction:column;gap:.875rem">
+
+            @if($loan->conditions_pdf_path)
+            <div class="ld-pdf-file" style="background:#F5F3FF;border:1px solid #DDD6FE">
+              <i class="fas fa-file-pdf" style="color:#7C3AED;font-size:1.3rem;flex-shrink:0"></i>
+              <div style="flex:1;min-width:0">
+                <div class="ld-pdf-file-name">{{ $loan->reference }}_conditions.pdf</div>
+                <div class="ld-pdf-file-sub"><i class="fas fa-check-circle"></i> Joint à l'email d'envoi du contrat</div>
+              </div>
+              <a href="{{ route($panelPrefix.'.loans.conditions.pdf',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" target="_blank" title="Visualiser">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+            @else
+            <div class="ld-warn-box">
+              <i class="fas fa-exclamation-triangle" style="color:#F59E0B;flex-shrink:0"></i>
+              <span><strong>Aucun PDF.</strong> Générez le DOCX ci-dessus, convertissez-le en PDF, puis uploadez-le ici.</span>
+            </div>
+            @endif
+
+            <form action="{{ route($panelPrefix.'.loans.conditions.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
+              @csrf
+              <div class="ld-upload-area" onclick="this.querySelector('input').click()">
+                <i class="fas fa-cloud-upload-alt" style="color:var(--c-gold);font-size:1.5rem;display:block;margin-bottom:.4rem"></i>
+                <div style="font-size:.78rem;font-weight:600;color:var(--c-navy)">{{ $loan->conditions_pdf_path ? 'Remplacer le PDF' : 'Uploader le document PDF' }}</div>
+                <div style="font-size:.68rem;color:var(--c-muted);margin-top:.2rem">PDF · max 20 Mo</div>
+                <input type="file" name="conditions_pdf" accept=".pdf" required
+                       style="display:none" onchange="this.closest('form').submit()">
+              </div>
+              @error('conditions_pdf')
+              <div style="font-size:.72rem;color:#dc2626;margin-top:.3rem"><i class="fas fa-exclamation-circle"></i> {{ $message }}</div>
+              @enderror
+            </form>
+
+          </div>
+        </div>
+
       </div>{{-- /ld-doc-grid --}}
 
       {{-- ── SECTION ASSURANCE EMPRUNTEUR ── --}}

@@ -58,7 +58,7 @@
               @endforeach
             </select>
           </div>
-          <div class="col-12">
+          <div class="col-12" id="subjectField">
             <label class="form-label-pro">Sujet de l'email *</label>
             <input type="text" name="subject" id="subjectInput" class="form-control-pro"
                    value="{{ old('subject', $template->subject) }}" required>
@@ -69,7 +69,7 @@
 
     <div class="card-pro mb-4">
       <div class="card-pro-hdr">
-        <div class="card-pro-title"><span class="icon-dot"></span>Contenu de l'email</div>
+        <div class="card-pro-title"><span class="icon-dot"></span><span id="contentCardTitle">Contenu de l'email</span></div>
       </div>
       <div class="card-pro-body">
         <div style="font-size:.75rem;color:var(--c-muted);margin-bottom:.6rem">
@@ -101,12 +101,15 @@
     </div>
     </form>
 
-    @if($template->type === \App\Models\NotificationTemplate::TYPE_VALIDATION)
+    @if(in_array($template->type, [\App\Models\NotificationTemplate::TYPE_VALIDATION, \App\Models\NotificationTemplate::TYPE_CONDITIONS]))
     {{-- ═══════════════════════════════════════════════════════════════ --}}
-    {{-- SECTION DOCX — document de notification attaché au dossier     --}}
-    {{-- Uniquement pour l'étape "Notification de validation" : c'est   --}}
-    {{-- ce document qui débloque le bouton « Valider ».                --}}
+    {{-- SECTION DOCX — document attaché au dossier                     --}}
+    {{-- "Notification de validation" : ce document débloque « Valider ».--}}
+    {{-- "Conditions générales" : disponible pour référence/conversion  --}}
+    {{-- manuelle — l'envoi automatique au contrat utilise le champ     --}}
+    {{-- « Contenu » (HTML) ci-dessus, pas ce DOCX.                     --}}
     {{-- ═══════════════════════════════════════════════════════════════ --}}
+    @php $isValidationType = $template->type === \App\Models\NotificationTemplate::TYPE_VALIDATION; @endphp
     <div class="card-pro" id="docx-section">
       <div class="card-pro-hdr">
         <div>
@@ -121,7 +124,11 @@
             @endif
           </div>
           <div style="font-size:.72rem;color:var(--c-muted);margin-top:.15rem">
+            @if($isValidationType)
             Document généré par dossier (comme les contrats), à convertir en PDF puis uploader — requis pour débloquer « Valider ».
+            @else
+            Document de référence, téléchargeable pour consultation ou conversion manuelle. L'envoi automatique joint au contrat utilise le champ « Contenu » ci-dessus (converti en PDF automatiquement) — pas ce DOCX.
+            @endif
           </div>
         </div>
         @if($template->hasDocxTemplate())
@@ -161,8 +168,13 @@
                     border-radius:8px;margin-bottom:1.25rem;font-size:.8125rem;color:#713F12">
           <i class="fas fa-exclamation-triangle me-1"></i>
           <strong>Aucun template DOCX uploadé.</strong>
+          @if($isValidationType)
           Uploadez un fichier <code>.docx</code> contenant des placeholders
           <code>{variable}</code> — indispensable pour que « Valider » soit disponible sur les dossiers de cette langue.
+          @else
+          Uploadez un fichier <code>.docx</code> contenant des placeholders <code>{variable}</code> si vous préférez rédiger
+          les conditions dans Word plutôt que dans l'éditeur ci-dessus (téléchargement manuel uniquement, non joint automatiquement).
+          @endif
         </div>
         @endif
 
@@ -274,6 +286,26 @@ function copyVar(tag) {
     setTimeout(() => t.style.opacity = '0', 1800);
   });
 }
+
+// ── Sujet masqué + titre du contenu adapté pour "Conditions générales" ──────
+(function () {
+  var typeSelect     = document.querySelector('select[name="type"]');
+  var subjectField   = document.getElementById('subjectField');
+  var subjectInput   = document.getElementById('subjectInput');
+  var contentTitle   = document.getElementById('contentCardTitle');
+  var CONDITIONS     = '{{ \App\Models\NotificationTemplate::TYPE_CONDITIONS }}';
+  if (!typeSelect || !subjectField) return;
+
+  function sync() {
+    var isConditions = typeSelect.value === CONDITIONS;
+    subjectField.style.display = isConditions ? 'none' : '';
+    subjectInput.required = !isConditions;
+    if (contentTitle) contentTitle.textContent = isConditions ? 'Contenu' : 'Contenu de l\'email';
+  }
+
+  typeSelect.addEventListener('change', sync);
+  sync();
+})();
 
 // ── Éditeur WYSIWYG du contenu de notification ──────────────────────────────
 (function () {

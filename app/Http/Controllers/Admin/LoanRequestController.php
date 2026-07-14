@@ -242,13 +242,14 @@ class LoanRequestController extends Controller
         $loan->load(['client', 'admin', 'history.admin', 'contractTemplate']);
         $generatedDocs        = $loan->generatedDocuments()->with('generatedBy')->get();
         $notificationTemplate = NotificationTemplate::resolveForLoan($loan);
+        $conditionsTemplate   = NotificationTemplate::resolveForLoan($loan, NotificationTemplate::TYPE_CONDITIONS);
         $isSuperAdmin  = Auth::user()->hasRole('super-admin');
         $admins        = $isSuperAdmin
             ? \App\Models\User::where('type', 'staff')
                 ->whereHas('roles', fn($q) => $q->whereIn('name', ['admin', 'super-admin']))
                 ->orderBy('name')->get()
             : collect();
-        return view('admin.loans.show', compact('loan', 'generatedDocs', 'isSuperAdmin', 'admins', 'notificationTemplate'));
+        return view('admin.loans.show', compact('loan', 'generatedDocs', 'isSuperAdmin', 'admins', 'notificationTemplate', 'conditionsTemplate'));
     }
 
     public function edit(LoanRequest $loan)
@@ -696,10 +697,18 @@ class LoanRequestController extends Controller
             Log::warning('Amortization PDF generation failed for ' . $loan->reference . ': ' . $e->getMessage());
         }
 
+        // ── Conditions générales : PDF uploadé pour ce dossier (comme le contrat) ──
+        $conditionsPdfAbs = $loan->conditions_pdf_path
+            ? storage_path('app/private/' . $loan->conditions_pdf_path)
+            : null;
+        if ($conditionsPdfAbs && !file_exists($conditionsPdfAbs)) {
+            $conditionsPdfAbs = null;
+        }
+
         // ── Envoyer l'email dans la langue du client ──────────────────────
         try {
             Mail::to($recipient)->send(
-                new LoanValidatedMail($loan, $content['subject'], $content['body'], $contractPdfAbs, $amortPdfPath ?? '')
+                new LoanValidatedMail($loan, $content['subject'], $content['body'], $contractPdfAbs, $amortPdfPath ?? '', $conditionsPdfAbs ?? '')
             );
         } catch (\Throwable $e) {
             Log::error('LoanValidatedMail failed for ' . $loan->reference . ': ' . $e->getMessage());
@@ -750,6 +759,96 @@ class LoanRequestController extends Controller
             'subject' => str_replace(array_keys($vars), array_values($vars), $template->subject),
             'body'    => str_replace(array_keys($vars), array_values($vars), $template->content ?? ''),
         ];
+    }
+
+    /**
+     * Génère le DOCX des conditions générales rempli pour ce dossier, à partir
+     * du modèle assigné à la langue du dossier (repli FR géré par
+     * resolveForLoan). L'admin le convertit lui-même en PDF puis l'uploade
+     * via uploadConditionsPdf() — même flux que le document de notification.
+     */
+    public function downloadConditionsDocx(LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+
+        $template = NotificationTemplate::resolveForLoan($loan, NotificationTemplate::TYPE_CONDITIONS);
+
+        if (!$template || !$template->hasDocxTemplate()) {
+            return back()->with('error', 'Aucun template DOCX de conditions générales disponible pour la langue de ce dossier. Uploadez-en un depuis "Modèles de notification".');
+        }
+
+        $locale = $loan->contract_language ?? 'fr';
+
+        try {
+            $path = $this->notificationDocxService->generate($loan, $template, $locale);
+        } catch (\Throwable $e) {
+            return back()->with('error', 'Génération DOCX des conditions générales impossible : ' . $e->getMessage());
+        }
+
+        return response()->download($path, 'Conditions_' . $loan->reference . '.docx');
+    }
+
+    /**
+     * Upload la version PDF des conditions générales pour ce dossier, une fois
+     * le DOCX (ci-dessus) converti manuellement par l'admin — comme pour le
+     * contrat, l'assurance et le document de notification.
+     */
+    public function uploadConditionsPdf(Request $request, LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+
+        $request->validate([
+            'conditions_pdf' => 'required|file|mimes:pdf|max:20480',
+        ], [
+            'conditions_pdf.required' => 'Veuillez sélectionner un fichier PDF.',
+            'conditions_pdf.mimes'    => 'Seuls les fichiers PDF sont acceptés.',
+            'conditions_pdf.max'      => 'Le fichier PDF ne doit pas dépasser 20 Mo.',
+        ]);
+
+        if ($loan->conditions_pdf_path) {
+            $old = storage_path('app/private/' . $loan->conditions_pdf_path);
+            if (file_exists($old)) {
+                @unlink($old);
+            }
+        }
+
+        $file    = $request->file('conditions_pdf');
+        $relPath = 'conditions-pdfs/' . $loan->id . '/' . $loan->reference . '_conditions.pdf';
+        $absDir  = storage_path('app/private/conditions-pdfs/' . $loan->id);
+
+        if (!is_dir($absDir)) {
+            mkdir($absDir, 0755, true);
+        }
+
+        $file->move($absDir, $loan->reference . '_conditions.pdf');
+
+        $loan->update(['conditions_pdf_path' => $relPath]);
+
+        $this->logHistory($loan, 'conditions_pdf_uploaded', [], ['pdf' => $relPath]);
+
+        return back()->with('success', 'PDF des conditions générales uploadé avec succès.');
+    }
+
+    /**
+     * Affiche le PDF des conditions générales uploadé pour ce dossier.
+     */
+    public function previewConditionsPdf(LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+
+        if (!$loan->conditions_pdf_path) {
+            return back()->with('error', 'Aucun PDF de conditions générales uploadé pour ce dossier.');
+        }
+
+        $absPath = storage_path('app/private/' . $loan->conditions_pdf_path);
+        if (!file_exists($absPath)) {
+            return back()->with('error', 'Fichier PDF introuvable sur le serveur.');
+        }
+
+        return response()->file($absPath, [
+            'Content-Type'        => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="Conditions_' . $loan->reference . '.pdf"',
+        ]);
     }
 
     public function downloadNotificationDocx(LoanRequest $loan)

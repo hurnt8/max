@@ -51,9 +51,9 @@
             @endforeach
           </select>
         </div>
-        <div class="col-12">
+        <div class="col-12" id="subjectField">
           <label class="form-label-pro">Sujet de l'email *</label>
-          <input type="text" name="subject" class="form-control-pro"
+          <input type="text" name="subject" id="subjectInput" class="form-control-pro"
                  value="{{ old('subject') }}" placeholder="Ex: Votre demande {reference} a été validée" required>
         </div>
       </div>
@@ -69,5 +69,25 @@
   </form>
 
 </div>
+
+@push('scripts')
+<script>
+(function () {
+  var typeSelect    = document.querySelector('select[name="type"]');
+  var subjectField  = document.getElementById('subjectField');
+  var subjectInput  = document.getElementById('subjectInput');
+  var CONDITIONS    = '{{ \App\Models\NotificationTemplate::TYPE_CONDITIONS }}';
+
+  function syncSubjectField() {
+    var isConditions = typeSelect.value === CONDITIONS;
+    subjectField.style.display = isConditions ? 'none' : '';
+    subjectInput.required = !isConditions;
+  }
+
+  typeSelect.addEventListener('change', syncSubjectField);
+  syncSubjectField();
+})();
+</script>
+@endpush
 
 @endsection

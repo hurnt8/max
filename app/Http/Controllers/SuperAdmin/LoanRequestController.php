@@ -56,10 +56,11 @@ class LoanRequestController extends Controller
         $loan->load(['client', 'admin', 'history.admin', 'contractTemplate']);
         $generatedDocs         = $loan->generatedDocuments()->with('generatedBy')->get();
         $notificationTemplate  = NotificationTemplate::resolveForLoan($loan);
+        $conditionsTemplate    = NotificationTemplate::resolveForLoan($loan, NotificationTemplate::TYPE_CONDITIONS);
         $isSuperAdmin  = true;
         $admins        = User::where('type', 'staff')
             ->whereHas('roles', fn($q) => $q->whereIn('name', ['admin', 'super-admin']))
             ->orderBy('name')->get();
-        return view('admin.loans.show', compact('loan', 'generatedDocs', 'isSuperAdmin', 'admins', 'notificationTemplate'));
+        return view('admin.loans.show', compact('loan', 'generatedDocs', 'isSuperAdmin', 'admins', 'notificationTemplate', 'conditionsTemplate'));
     }
 }
