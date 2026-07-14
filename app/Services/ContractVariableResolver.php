@@ -73,6 +73,7 @@ class ContractVariableResolver
             '{type_identite}'   => $this->contractService->translateIdType(
                                     $client?->id_type ?? '', $locale),
             '{numero_identite}' => $client?->id_number ?? $client?->npi ?? $loan->npi ?? '',
+            '{date_delivre}'    => $client?->date_delivre?->format('d/m/Y') ?? '',
             '{numero_fiscal}'   => $client?->tax_number ?? '',
             '{activite_exercee}' => $client?->activity ?? '',
             '{objet}'           => $loan->objet ?? '',
@@ -164,6 +165,7 @@ class ContractVariableResolver
             '{date_naissance}'  => '15/06/1985',
             '{type_identite}'   => 'Passeport',
             '{numero_identite}' => 'AB123456',
+            '{date_delivre}'    => '10/03/2020',
             '{numero_fiscal}'   => 'FR123456789',
             '{activite_exercee}' => 'Commerçant',
             '{objet}'           => 'Acquisition immobilière',

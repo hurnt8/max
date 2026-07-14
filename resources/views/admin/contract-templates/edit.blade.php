@@ -254,7 +254,7 @@
           $groups = [
             'Données dossier' => array_filter($variables, fn($k) => in_array($k, [
               '{reference}','{archive}','{nom_client}','{adresse_client}','{date_naissance}',
-              '{type_identite}','{numero_identite}','{numero_fiscal}','{activite_exercee}','{agent_suivi}','{directeur}','{notaire}',
+              '{type_identite}','{numero_identite}','{date_delivre}','{numero_fiscal}','{activite_exercee}','{agent_suivi}','{directeur}','{notaire}',
               '{objet}','{montant}','{montant_lettres}','{montant_totalavecinteret}','{devise}','{duree}','{mensualite}','{taux}',
               '{frais_admin}','{compte_bancaire}','{date}','{societe}',
             ]), ARRAY_FILTER_USE_KEY),

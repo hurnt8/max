@@ -110,6 +110,12 @@
                      value="{{ old('client_id_number') }}" placeholder="Ex : AB123456">
             </div>
             <div class="col-6">
+              <label class="form-label-pro">Date de délivrance</label>
+              <input type="date" name="client_date_delivre" class="form-control-pro"
+                     value="{{ old('client_date_delivre') }}">
+              <p class="form-help">Remplace la variable <code>{date_delivre}</code> dans le contrat</p>
+            </div>
+            <div class="col-6">
               <label class="form-label-pro">Numéro fiscal</label>
               <input type="text" name="client_tax_number" class="form-control-pro"
                      value="{{ old('client_tax_number') }}" placeholder="Ex : FR123456789">

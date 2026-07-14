@@ -262,6 +262,7 @@ class ContractService
             '{date_naissance}'  => 'Date de naissance',
             '{type_identite}'   => 'Type de pièce d\'identité (traduit selon la langue)',
             '{numero_identite}' => 'Numéro de pièce d\'identité',
+            '{date_delivre}'    => 'Date de délivrance de la pièce d\'identité',
             '{numero_fiscal}'   => 'Numéro fiscal du client',
             '{activite_exercee}' => 'Activité professionnelle exercée par le client',
             '{objet}'           => 'Objet / motif du prêt (ex. acquisition immobilière)',
@@ -295,6 +296,9 @@ class ContractService
         $locale    = $loan->contract_language ?? 'fr';
         $birthDate = $client?->birth_date
             ? $client->birth_date->format('d/m/Y')
+            : '';
+        $dateDelivre = $client?->date_delivre
+            ? $client->date_delivre->format('d/m/Y')
             : '';
 
         $idType      = $client?->id_type ?? '';
@@ -349,6 +353,7 @@ class ContractService
             '{adresse_client}'  => $loan->address ?? ($client?->address ?? ''),
             '{date_naissance}'  => $birthDate,
             '{numero_identite}' => $client?->id_number ?? '',
+            '{date_delivre}'    => $dateDelivre,
             '{type_identite}'   => $idTypeLabel,
             '{numero_fiscal}'   => $client?->tax_number ?? '',
             '{activite_exercee}' => $client?->activity ?? '',
