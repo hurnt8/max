@@ -95,16 +95,10 @@
 
 <section class="py-24 bg-white">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-7 wow fadeInUp" data-wow-duration="900ms">
+        <div class="row g-4 align-items-start">
 
-                <div class="mb-4" style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:1rem 1.25rem;">
-                    <div style="font-weight:700;color:#7c5800;margin-bottom:.35rem;">
-                        <i class="fas fa-info-circle" style="margin-right:.4rem;"></i>
-                        {{ __('message.loan_conditions_title') }}
-                    </div>
-                    <p style="margin:0;color:#7c5800;font-size:.88rem;">{{ __('message.loan_conditions_text') }}</p>
-                </div>
+            {{-- ══════════ FORMULAIRE PRINCIPAL ══════════ --}}
+            <div class="col-lg-8 order-2 order-lg-1 wow fadeInLeft" data-wow-duration="700ms">
 
                 <div class="form-card" x-data="docUploadForm">
 
@@ -136,7 +130,15 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('loan.documents') }}" enctype="multipart/form-data">
+                    @if (session('success') || session('docs_already_sent'))
+                        <div class="text-center py-3">
+                            <a href="{{ route('home', ['locale' => $locale]) }}" class="btn-primary btn-primary--lg">
+                                <i class="fas fa-home" style="margin-right:.5rem;"></i>
+                                @lang('menu.home')
+                            </a>
+                        </div>
+                    @else
+                    <form method="POST" action="{{ route('loan.documents') }}" enctype="multipart/form-data" @submit="submitting = true">
                         @csrf
                         <input type="hidden" name="locale" value="{{ $locale }}">
                         <input type="hidden" name="submission_token" value="{{ $submissionToken }}">
@@ -291,17 +293,33 @@
                             </div>
 
                             <div class="mt-4">
-                                <button type="submit" class="btn-primary btn-primary--lg w-100 justify-content-center">
-                                    <i class="fas fa-upload" style="margin-right:.5rem;"></i>
+                                <button type="submit" class="btn-primary btn-primary--lg w-100 justify-content-center" :disabled="submitting">
+                                    <i class="fas fa-spinner fa-spin" style="margin-right:.5rem;" x-show="submitting"></i>
+                                    <i class="fas fa-upload" style="margin-right:.5rem;" x-show="!submitting"></i>
                                     {{ __('loan.complete_btn') }}
                                 </button>
                             </div>
                         </div>
 
                     </form>
+                    @endif
                 </div>
 
             </div>
+
+            {{-- ══════════ CONDITIONS ══════════ --}}
+            <div class="col-lg-4 order-1 order-lg-2 wow fadeInRight" data-wow-duration="900ms" data-wow-delay="150ms">
+                <div style="position:sticky;top:110px;">
+                    <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:1rem 1.25rem;">
+                        <div style="font-weight:700;color:#7c5800;margin-bottom:.35rem;">
+                            <i class="fas fa-info-circle" style="margin-right:.4rem;"></i>
+                            {{ __('message.loan_conditions_title') }}
+                        </div>
+                        <p style="margin:0;color:#7c5800;font-size:.88rem;">{{ __('message.loan_conditions_text') }}</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -315,6 +333,7 @@ document.addEventListener('alpine:init', () => {
         docType: '{{ old('doc_type', '') }}' || null,
         rectoName: null,
         versoName: null,
+        submitting: false,
         get needsVerso() {
             return ['id_card', 'license', 'residence'].includes(this.docType);
         },
