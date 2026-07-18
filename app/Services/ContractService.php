@@ -280,6 +280,7 @@ class ContractService
             '{devise}'          => 'Devise (EUR, PLN…)',
             '{duree}'           => 'Durée en mois',
             '{mensualite}'      => 'Mensualité calculée',
+            '{montant_mensualite}' => 'Mensualité calculée (alias de {mensualite})',
             '{taux}'            => 'Taux d\'intérêt (%)',
             '{frais_admin}'     => 'Frais administratifs',
             '{compte_bancaire}' => 'Coordonnées bancaires',
@@ -368,6 +369,7 @@ class ContractService
             '{devise}'          => $loan->currency ?? config('credixa.default_currency'),
             '{duree}'           => $loan->darly ?? '',
             '{mensualite}'      => number_format((float)$loan->monthly_payment, 2, ',', ' '),
+            '{montant_mensualite}' => number_format((float)$loan->monthly_payment, 2, ',', ' '),
             '{taux}'            => $loan->interest_rate ?? 5,
             '{frais_admin}'      => $loan->admin_fees
                                     ? number_format((float)$loan->admin_fees, 2, ',', ' ')
