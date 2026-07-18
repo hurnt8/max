@@ -351,10 +351,10 @@ kbd {
         <div class="s-meta-val">{{ $loan->date_fin_assurance->format('d/m/Y') }}</div>
       </div>
       @endif
-      @if($loan->insuranceTemplate)
+      @if($insuranceTemplate)
       <div style="grid-column:1/-1">
         <div class="s-meta-lbl">Modèle d'assurance</div>
-        <div class="s-meta-val" style="font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ $loan->insuranceTemplate->name }}</div>
+        <div class="s-meta-val" style="font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ $insuranceTemplate->name }}</div>
       </div>
       @endif
     </div>

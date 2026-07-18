@@ -128,22 +128,9 @@
         <div class="card-pro-title">
           <span class="icon-dot" style="background:#16a34a"></span>Assurance emprunteur
         </div>
-        <span class="badge-status" style="background:#F0FDF4;color:#15803d;border:1px solid #A7F3D0;font-size:.6rem;padding:.2rem .55rem">CG-A340G</span>
       </div>
       <div class="card-pro-body">
         <div class="row g-3">
-          <div class="col-12">
-            <label class="form-label-pro">Modèle d'attestation d'assurance</label>
-            <select name="insurance_template_id" class="form-control-pro">
-              <option value="">— Modèle intégré CG-A340G (par défaut) —</option>
-              @foreach($templates as $tpl)
-              <option value="{{ $tpl->id }}" {{ old('insurance_template_id',$loan->insurance_template_id)==$tpl->id?'selected':'' }}>
-                {{ $tpl->name }} {{ $tpl->is_default?'✓':'' }}
-              </option>
-              @endforeach
-            </select>
-            <p class="form-help">Remplace le modèle intégré lors de la génération du PDF d'assurance</p>
-          </div>
           <div class="col-sm-6">
             <label class="form-label-pro">Frais d'assurance</label>
             <div class="d-flex gap-2">

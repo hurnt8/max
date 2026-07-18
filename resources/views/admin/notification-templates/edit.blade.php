@@ -101,15 +101,30 @@
     </div>
     </form>
 
-    @if(in_array($template->type, [\App\Models\NotificationTemplate::TYPE_VALIDATION, \App\Models\NotificationTemplate::TYPE_CONDITIONS]))
+    @if(in_array($template->type, [\App\Models\NotificationTemplate::TYPE_VALIDATION, \App\Models\NotificationTemplate::TYPE_CONDITIONS, \App\Models\NotificationTemplate::TYPE_INSURANCE]))
     {{-- ═══════════════════════════════════════════════════════════════ --}}
     {{-- SECTION DOCX — document attaché au dossier                     --}}
     {{-- "Notification de validation" : ce document débloque « Valider ».--}}
     {{-- "Conditions générales" : disponible pour référence/conversion  --}}
     {{-- manuelle — l'envoi automatique au contrat utilise le champ     --}}
     {{-- « Contenu » (HTML) ci-dessus, pas ce DOCX.                     --}}
+    {{-- "Assurance emprunteur" : le DOCX généré par dossier est        --}}
+    {{-- converti manuellement en PDF puis uploadé sur la fiche dossier.--}}
     {{-- ═══════════════════════════════════════════════════════════════ --}}
-    @php $isValidationType = $template->type === \App\Models\NotificationTemplate::TYPE_VALIDATION; @endphp
+    @php
+      $isValidationType = $template->type === \App\Models\NotificationTemplate::TYPE_VALIDATION;
+      $isInsuranceType  = $template->type === \App\Models\NotificationTemplate::TYPE_INSURANCE;
+      $docxHeaderHelp = match(true) {
+          $isValidationType => 'Document généré par dossier (comme les contrats), à convertir en PDF puis uploader — requis pour débloquer « Valider ».',
+          $isInsuranceType  => 'Document généré par dossier, à convertir en PDF puis uploader sur la fiche du dossier (comme l\'attestation d\'assurance).',
+          default           => 'Document de référence, téléchargeable pour consultation ou conversion manuelle. L\'envoi automatique joint au contrat utilise le champ « Contenu » ci-dessus (converti en PDF automatiquement) — pas ce DOCX.',
+      };
+      $docxEmptyHelp = match(true) {
+          $isValidationType => 'Uploadez un fichier <code>.docx</code> contenant des placeholders <code>{variable}</code> — indispensable pour que « Valider » soit disponible sur les dossiers de cette langue.',
+          $isInsuranceType  => 'Uploadez un fichier <code>.docx</code> contenant des placeholders <code>{variable}</code> — nécessaire pour générer l\'attestation d\'assurance personnalisée par dossier.',
+          default           => 'Uploadez un fichier <code>.docx</code> contenant des placeholders <code>{variable}</code> si vous préférez rédiger les conditions dans Word plutôt que dans l\'éditeur ci-dessus (téléchargement manuel uniquement, non joint automatiquement).',
+      };
+    @endphp
     <div class="card-pro" id="docx-section">
       <div class="card-pro-hdr">
         <div>
@@ -124,11 +139,7 @@
             @endif
           </div>
           <div style="font-size:.72rem;color:var(--c-muted);margin-top:.15rem">
-            @if($isValidationType)
-            Document généré par dossier (comme les contrats), à convertir en PDF puis uploader — requis pour débloquer « Valider ».
-            @else
-            Document de référence, téléchargeable pour consultation ou conversion manuelle. L'envoi automatique joint au contrat utilise le champ « Contenu » ci-dessus (converti en PDF automatiquement) — pas ce DOCX.
-            @endif
+            {!! $docxHeaderHelp !!}
           </div>
         </div>
         @if($template->hasDocxTemplate())
@@ -168,13 +179,7 @@
                     border-radius:8px;margin-bottom:1.25rem;font-size:.8125rem;color:#713F12">
           <i class="fas fa-exclamation-triangle me-1"></i>
           <strong>Aucun template DOCX uploadé.</strong>
-          @if($isValidationType)
-          Uploadez un fichier <code>.docx</code> contenant des placeholders
-          <code>{variable}</code> — indispensable pour que « Valider » soit disponible sur les dossiers de cette langue.
-          @else
-          Uploadez un fichier <code>.docx</code> contenant des placeholders <code>{variable}</code> si vous préférez rédiger
-          les conditions dans Word plutôt que dans l'éditeur ci-dessus (téléchargement manuel uniquement, non joint automatiquement).
-          @endif
+          {!! $docxEmptyHelp !!}
         </div>
         @endif
 
@@ -293,14 +298,14 @@ function copyVar(tag) {
   var subjectField   = document.getElementById('subjectField');
   var subjectInput   = document.getElementById('subjectInput');
   var contentTitle   = document.getElementById('contentCardTitle');
-  var CONDITIONS     = '{{ \App\Models\NotificationTemplate::TYPE_CONDITIONS }}';
+  var NO_SUBJECT_TYPES = ['{{ \App\Models\NotificationTemplate::TYPE_CONDITIONS }}', '{{ \App\Models\NotificationTemplate::TYPE_INSURANCE }}'];
   if (!typeSelect || !subjectField) return;
 
   function sync() {
-    var isConditions = typeSelect.value === CONDITIONS;
-    subjectField.style.display = isConditions ? 'none' : '';
-    subjectInput.required = !isConditions;
-    if (contentTitle) contentTitle.textContent = isConditions ? 'Contenu' : 'Contenu de l\'email';
+    var noSubject = NO_SUBJECT_TYPES.indexOf(typeSelect.value) !== -1;
+    subjectField.style.display = noSubject ? 'none' : '';
+    subjectInput.required = !noSubject;
+    if (contentTitle) contentTitle.textContent = noSubject ? 'Contenu' : 'Contenu de l\'email';
   }
 
   typeSelect.addEventListener('change', sync);

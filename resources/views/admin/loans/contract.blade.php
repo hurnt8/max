@@ -468,7 +468,7 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
               {{ $loan->reference }}_assurance.pdf
             </div>
             <div style="font-size:.64rem;color:#047857;margin-top:.1rem">
-              <i class="fas fa-check-circle"></i> Attestation CG-A340G disponible
+              <i class="fas fa-check-circle"></i> Attestation disponible
             </div>
           </div>
           <a href="{{ route($panelPrefix.'.loans.insurance.pdf', $loan) }}"
@@ -483,17 +483,17 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
           <i class="fas fa-file-medical-alt" style="color:#16a34a;font-size:.8rem;flex-shrink:0"></i>
           <div style="flex:1;min-width:0">
             <div style="font-size:.74rem;font-weight:700;color:var(--c-navy)">
-              {{ $loan->insuranceTemplate?->name ?? 'Attestation CG-A340G' }}
+              {{ $insuranceTemplate?->name ?? 'Aucun modèle' }}
             </div>
             <div style="font-size:.63rem;color:var(--c-muted)">
-              {{ $loan->insuranceTemplate ? 'Modèle personnalisé' : 'Modèle intégré (par défaut)' }}
-              · <a href="{{ route($panelPrefix.'.loans.edit',$loan) }}" style="color:#16a34a;text-decoration:none">Modifier →</a>
+              {{ $insuranceTemplate ? strtoupper($insuranceTemplate->locale) : 'Non configuré pour cette langue' }}
+              · <a href="{{ route('admin.notification-templates.create') }}" style="color:#16a34a;text-decoration:none">{{ $insuranceTemplate ? 'Modifier' : 'Créer' }} →</a>
             </div>
           </div>
         </div>
 
-        {{-- Générer : DOCX si template DOCX, sinon PDF intégré --}}
-        @if($loan->insuranceTemplate?->hasDocxTemplate())
+        {{-- Générer le DOCX personnalisé pour ce dossier --}}
+        @if($insuranceTemplate?->hasDocxTemplate())
         <a href="{{ route($panelPrefix.'.loans.insurance.docx', $loan) }}"
            style="width:100%;justify-content:center;display:flex;align-items:center;gap:.45rem;padding:.55rem .875rem;font-size:.78rem;font-weight:700;border-radius:8px;cursor:pointer;background:#16a34a;color:#fff;text-decoration:none">
           <i class="fas fa-file-word"></i> Télécharger DOCX assurance
@@ -502,14 +502,9 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
           Ouvrez → finalisez → exportez en PDF → uploadez ci-dessous
         </div>
         @else
-        <form action="{{ route($panelPrefix.'.loans.insurance.pdf.generate', $loan) }}" method="POST"
-              data-confirm="Générer l'attestation d'assurance ?">
-          @csrf
-          <button type="submit"
-                  style="width:100%;justify-content:center;display:flex;align-items:center;gap:.45rem;padding:.55rem .875rem;font-size:.78rem;font-weight:700;border-radius:8px;cursor:pointer;background:#16a34a;border:none;color:#fff">
-            <i class="fas fa-magic"></i> {{ $loan->insurance_pdf_path ? 'Régénérer' : 'Générer l\'attestation PDF' }}
-          </button>
-        </form>
+        <div style="font-size:.68rem;color:var(--c-muted);text-align:center;padding:.4rem">
+          Aucun template DOCX disponible pour la langue de ce dossier.
+        </div>
         @endif
 
         {{-- Upload --}}
@@ -639,7 +634,6 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
           <div class="lc-pdf-title">
             <i class="fas fa-shield-alt" style="color:#16a34a"></i>
             Attestation d'assurance emprunteur
-            <span class="lc-lang-badge" style="background:#F0FDF4;border-color:#A7F3D0;color:#065F46">CG-A340G</span>
           </div>
           @if($loan->insurance_pdf_path)
           <div class="lc-pdf-actions">
@@ -664,7 +658,7 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
         <div class="lc-pdf-placeholder">
           <i class="fas fa-shield-alt" style="font-size:3rem;margin-bottom:.75rem;opacity:.2;color:#16a34a"></i>
           <div style="font-size:.9rem;font-weight:600;color:var(--c-navy)">Aucune attestation disponible</div>
-          <div style="font-size:.78rem;color:var(--c-muted);margin-top:.3rem">Uploadez l'attestation d'assurance CG-A340G dans le panneau gauche</div>
+          <div style="font-size:.78rem;color:var(--c-muted);margin-top:.3rem">Uploadez l'attestation d'assurance dans le panneau gauche</div>
         </div>
         @endif
       </div>

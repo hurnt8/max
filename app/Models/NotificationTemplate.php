@@ -12,11 +12,13 @@ class NotificationTemplate extends Model
     const TYPE_VALIDATION    = 'validation';
     const TYPE_CONTRACT_SENT = 'contract_sent';
     const TYPE_CONDITIONS    = 'conditions';
+    const TYPE_INSURANCE     = 'insurance';
 
     const TYPES = [
         self::TYPE_VALIDATION    => 'Notification de validation',
         self::TYPE_CONTRACT_SENT => 'Contrat envoyé',
         self::TYPE_CONDITIONS    => 'Conditions générales',
+        self::TYPE_INSURANCE     => 'Assurance emprunteur',
     ];
 
     protected $fillable = [

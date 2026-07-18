@@ -41,7 +41,7 @@ class LoanRequest extends Model
 
     protected $fillable = [
         'reference', 'archive_ref',
-        'admin_id', 'client_id', 'contract_template_id', 'insurance_template_id',
+        'admin_id', 'client_id', 'contract_template_id',
         'name', 'email', 'phone', 'address',
         'amount', 'interest_rate', 'currency', 'start_date',
         'monthly_payment', 'total_cost', 'total_with_interest',
@@ -92,11 +92,6 @@ class LoanRequest extends Model
     public function contractTemplate()
     {
         return $this->belongsTo(ContractTemplate::class, 'contract_template_id');
-    }
-
-    public function insuranceTemplate()
-    {
-        return $this->belongsTo(ContractTemplate::class, 'insurance_template_id');
     }
 
     public function history()

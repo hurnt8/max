@@ -281,7 +281,6 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::get('/loans/{loan}/insurance/pdf',              [AdminLoanRequestController::class, 'previewInsurancePdf'])->name('loans.insurance.pdf');
     Route::get('/loans/{loan}/insurance/viewer',           [AdminLoanRequestController::class, 'insuranceViewer'])->name('loans.insurance.viewer');
     Route::post('/loans/{loan}/insurance/pdf/upload',      [AdminLoanRequestController::class, 'uploadInsurancePdf'])->name('loans.insurance.pdf.upload');
-    Route::post('/loans/{loan}/insurance/pdf/generate',    [AdminLoanRequestController::class, 'generateInsurancePdf'])->name('loans.insurance.pdf.generate');
     Route::get('/loans/{loan}/insurance/docx',             [AdminLoanRequestController::class, 'downloadInsuranceDocx'])->name('loans.insurance.docx');
     Route::post('/loans/{loan}/insurance/send',            [AdminLoanRequestController::class, 'sendInsuranceMail'])->name('loans.insurance.send');
     Route::get('/loans/{loan}/conditions/pdf',              [AdminLoanRequestController::class, 'previewConditionsPdf'])->name('loans.conditions.pdf');
@@ -433,7 +432,6 @@ Route::middleware(['auth', 'role:super-admin'])->prefix('super-admin')->name('su
     Route::get('/loans/{loan}/insurance/pdf',              [AdminLoanRequestController::class, 'previewInsurancePdf'])->name('loans.insurance.pdf');
     Route::get('/loans/{loan}/insurance/viewer',           [AdminLoanRequestController::class, 'insuranceViewer'])->name('loans.insurance.viewer');
     Route::post('/loans/{loan}/insurance/pdf/upload',      [AdminLoanRequestController::class, 'uploadInsurancePdf'])->name('loans.insurance.pdf.upload');
-    Route::post('/loans/{loan}/insurance/pdf/generate',    [AdminLoanRequestController::class, 'generateInsurancePdf'])->name('loans.insurance.pdf.generate');
     Route::get('/loans/{loan}/insurance/docx',             [AdminLoanRequestController::class, 'downloadInsuranceDocx'])->name('loans.insurance.docx');
     Route::post('/loans/{loan}/insurance/send',            [AdminLoanRequestController::class, 'sendInsuranceMail'])->name('loans.insurance.send');
     Route::get('/loans/{loan}/conditions/pdf',              [AdminLoanRequestController::class, 'previewConditionsPdf'])->name('loans.conditions.pdf');

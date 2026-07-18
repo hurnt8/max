@@ -76,12 +76,12 @@
   var typeSelect    = document.querySelector('select[name="type"]');
   var subjectField  = document.getElementById('subjectField');
   var subjectInput  = document.getElementById('subjectInput');
-  var CONDITIONS    = '{{ \App\Models\NotificationTemplate::TYPE_CONDITIONS }}';
+  var NO_SUBJECT_TYPES = ['{{ \App\Models\NotificationTemplate::TYPE_CONDITIONS }}', '{{ \App\Models\NotificationTemplate::TYPE_INSURANCE }}'];
 
   function syncSubjectField() {
-    var isConditions = typeSelect.value === CONDITIONS;
-    subjectField.style.display = isConditions ? 'none' : '';
-    subjectInput.required = !isConditions;
+    var noSubject = NO_SUBJECT_TYPES.indexOf(typeSelect.value) !== -1;
+    subjectField.style.display = noSubject ? 'none' : '';
+    subjectInput.required = !noSubject;
   }
 
   typeSelect.addEventListener('change', syncSubjectField);

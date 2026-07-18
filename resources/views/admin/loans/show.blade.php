@@ -455,21 +455,17 @@ $tpl = $loan->contractTemplate;
           <i class="fas fa-shield-alt" style="font-size:.65rem"></i> Assurance emprunteur
         </div>
 
-        @if($loan->insuranceTemplate?->hasDocxTemplate())
+        @if($insuranceTemplate?->hasDocxTemplate())
         {{-- Template DOCX → télécharger DOCX --}}
         <a href="{{ route($panelPrefix.'.loans.insurance.docx', $loan) }}"
            class="btn-navy ld-btn-full" style="background:#16a34a;border-color:#16a34a;display:flex;align-items:center;justify-content:center;gap:.45rem;text-decoration:none">
           <i class="fas fa-file-word"></i> Télécharger DOCX assurance
         </a>
         @else
-        {{-- Template intégré ou HTML → générer PDF --}}
-        <form action="{{ route($panelPrefix.'.loans.insurance.pdf.generate', $loan) }}" method="POST"
-              data-confirm="Générer l'attestation d'assurance ?">
-          @csrf
-          <button type="submit" class="btn-navy ld-btn-full" style="background:#16a34a;border-color:#16a34a">
-            <i class="fas fa-magic"></i> {{ $loan->insurance_pdf_path ? 'Régénérer l\'attestation' : 'Générer l\'attestation' }}
-          </button>
-        </form>
+        <a href="{{ route('admin.notification-templates.create') }}" class="ld-warn-box" style="text-decoration:none">
+          <i class="fas fa-exclamation-triangle" style="color:#F59E0B;flex-shrink:0"></i>
+          <span>Aucun modèle d'assurance configuré pour cette langue. Créer →</span>
+        </a>
         @endif
 
         @if($loan->insurance_pdf_path)
@@ -912,7 +908,7 @@ $tpl = $loan->contractTemplate;
       <div style="display:flex;align-items:center;gap:.75rem;margin:1.75rem 0 1rem">
         <div style="display:flex;align-items:center;gap:.5rem;background:#F0FDF4;border:1px solid #A7F3D0;border-radius:8px;padding:.35rem .75rem;flex-shrink:0">
           <i class="fas fa-shield-alt" style="color:#16a34a;font-size:.8rem"></i>
-          <span style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#065F46">Assurance emprunteur · CG-A340G</span>
+          <span style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#065F46">Assurance emprunteur</span>
         </div>
         <div style="flex:1;height:1.5px;background:linear-gradient(to right,#A7F3D0,transparent)"></div>
       </div>
@@ -938,7 +934,7 @@ $tpl = $loan->contractTemplate;
               <i class="fas fa-shield-alt" style="color:#16a34a;font-size:1.3rem;flex-shrink:0"></i>
               <div style="flex:1;min-width:0">
                 <div class="ld-pdf-file-name" style="color:#065F46">{{ $loan->reference }}_assurance.pdf</div>
-                <div class="ld-pdf-file-sub" style="color:#047857"><i class="fas fa-check-circle"></i> Attestation CG-A340G disponible</div>
+                <div class="ld-pdf-file-sub" style="color:#047857"><i class="fas fa-check-circle"></i> Attestation disponible</div>
               </div>
               <a href="{{ route($panelPrefix.'.loans.insurance.viewer',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" title="Visualiser">
                 <i class="fas fa-external-link-alt"></i>
@@ -950,12 +946,12 @@ $tpl = $loan->contractTemplate;
             @else
             <div class="ld-warn-box" style="background:#F0FDF4;border-color:#A7F3D0">
               <i class="fas fa-shield-alt" style="color:#16a34a;flex-shrink:0"></i>
-              <span style="color:#065F46">Aucune attestation. Cliquez sur <strong>Générer</strong> pour créer le PDF.</span>
+              <span style="color:#065F46">Aucune attestation. Générez le DOCX ci-dessous, convertissez-le en PDF, puis uploadez-le.</span>
             </div>
             @endif
 
-            {{-- Générer : DOCX si template DOCX, sinon PDF intégré --}}
-            @if($loan->insuranceTemplate?->hasDocxTemplate())
+            {{-- Générer le DOCX personnalisé pour ce dossier --}}
+            @if($insuranceTemplate?->hasDocxTemplate())
             <a href="{{ route($panelPrefix.'.loans.insurance.docx', $loan) }}"
                class="btn-navy btn-sm-pro ld-btn-full" style="background:#16a34a;border-color:#16a34a;display:flex;align-items:center;justify-content:center;gap:.4rem;text-decoration:none">
               <i class="fas fa-file-word"></i> Télécharger DOCX assurance
@@ -965,13 +961,10 @@ $tpl = $loan->contractTemplate;
               <span>Ouvrez le DOCX, finalisez-le, exportez en PDF, puis uploadez ci-dessous.</span>
             </div>
             @else
-            <form action="{{ route($panelPrefix.'.loans.insurance.pdf.generate', $loan) }}" method="POST"
-                  data-confirm="Générer l'attestation d'assurance pour ce dossier ?">
-              @csrf
-              <button type="submit" class="btn-navy btn-sm-pro ld-btn-full" style="background:#16a34a;border-color:#16a34a">
-                <i class="fas fa-magic"></i> {{ $loan->insurance_pdf_path ? 'Régénérer l\'attestation' : 'Générer l\'attestation PDF' }}
-              </button>
-            </form>
+            <a href="{{ route('admin.notification-templates.create') }}" class="ld-warn-box" style="text-decoration:none">
+              <i class="fas fa-exclamation-triangle" style="color:#F59E0B;flex-shrink:0"></i>
+              <span>Aucun modèle d'assurance configuré pour cette langue. Créer →</span>
+            </a>
             @endif
 
             {{-- Upload manuel --}}
@@ -981,7 +974,7 @@ $tpl = $loan->contractTemplate;
                    style="{{ $loan->insurance_pdf_path ? 'border-color:#A7F3D0' : '' }}">
                 <i class="fas fa-cloud-upload-alt" style="color:#16a34a;font-size:1.5rem;display:block;margin-bottom:.4rem"></i>
                 <div style="font-size:.78rem;font-weight:600;color:var(--c-navy)">{{ $loan->insurance_pdf_path ? 'Remplacer le PDF' : 'Uploader un PDF existant' }}</div>
-                <div style="font-size:.68rem;color:var(--c-muted);margin-top:.2rem">PDF · max 20 Mo · CG-A340G</div>
+                <div style="font-size:.68rem;color:var(--c-muted);margin-top:.2rem">PDF · max 20 Mo</div>
                 <input type="file" name="insurance_pdf" accept=".pdf" required
                        style="display:none" onchange="this.closest('form').submit()">
               </div>
@@ -1003,14 +996,16 @@ $tpl = $loan->contractTemplate;
           </div>
           <div class="card-pro-body">
 
-            @if($loan->insuranceTemplate)
-            <div style="font-weight:700;color:var(--c-navy);font-size:.875rem;margin-bottom:.5rem">{{ $loan->insuranceTemplate->name }}</div>
+            @if($insuranceTemplate)
+            <div style="font-weight:700;color:var(--c-navy);font-size:.875rem;margin-bottom:.5rem">{{ $insuranceTemplate->name }}</div>
             <div style="display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:1rem">
-              <span class="badge-status" style="background:#F0FDF4;color:#15803d;border:1px solid #A7F3D0;font-size:.6rem">Modèle personnalisé</span>
+              <span class="badge-status bs-amber" style="font-size:.6rem">{{ strtoupper($insuranceTemplate->locale) }}</span>
             </div>
             @else
-            <div style="font-weight:700;color:var(--c-navy);font-size:.875rem;margin-bottom:.25rem">Attestation CG-A340G</div>
-            <div style="font-size:.72rem;color:var(--c-muted);margin-bottom:1rem">Modèle intégré (par défaut)</div>
+            <div class="ld-warn-box" style="background:#F0FDF4;border-color:#A7F3D0;margin-bottom:1rem">
+              <i class="fas fa-exclamation-triangle" style="color:#F59E0B;flex-shrink:0"></i>
+              <span>Aucun modèle configuré pour cette langue. <a href="{{ route('admin.notification-templates.create') }}" style="color:#065F46;font-weight:700">Créer →</a></span>
+            </div>
             @endif
 
             @if($loan->frais_assurance || $loan->date_fin_assurance)

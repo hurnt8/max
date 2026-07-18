@@ -12,7 +12,6 @@ use App\Models\LoanHistory;
 use App\Models\LoanRequest;
 use App\Models\NotificationTemplate;
 use App\Models\User;
-use App\Services\ContractHtmlService;
 use App\Services\DocumentArchive;
 use App\Services\LoanPdfService;
 use App\Services\LoanService;
@@ -247,13 +246,14 @@ class LoanRequestController extends Controller
         $generatedDocs        = $loan->generatedDocuments()->with('generatedBy')->get();
         $notificationTemplate = NotificationTemplate::resolveForLoan($loan);
         $conditionsTemplate   = NotificationTemplate::resolveForLoan($loan, NotificationTemplate::TYPE_CONDITIONS);
+        $insuranceTemplate    = NotificationTemplate::resolveForLoan($loan, NotificationTemplate::TYPE_INSURANCE);
         $isSuperAdmin  = Auth::user()->hasRole('super-admin');
         $admins        = $isSuperAdmin
             ? \App\Models\User::where('type', 'staff')
                 ->whereHas('roles', fn($q) => $q->whereIn('name', ['admin', 'super-admin']))
                 ->orderBy('name')->get()
             : collect();
-        return view('admin.loans.show', compact('loan', 'generatedDocs', 'isSuperAdmin', 'admins', 'notificationTemplate', 'conditionsTemplate'));
+        return view('admin.loans.show', compact('loan', 'generatedDocs', 'isSuperAdmin', 'admins', 'notificationTemplate', 'conditionsTemplate', 'insuranceTemplate'));
     }
 
     public function edit(LoanRequest $loan)
@@ -294,7 +294,6 @@ class LoanRequestController extends Controller
             'notaire'               => 'nullable|string|max:255',
             'special_conditions'    => 'nullable|string',
             'contract_template_id'  => 'nullable|exists:contract_templates,id',
-            'insurance_template_id' => 'nullable|exists:contract_templates,id',
             'contract_language'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
             'extra_fields'         => 'nullable|array',
             'extra_fields.*'       => 'nullable|string|max:500',
@@ -336,7 +335,8 @@ class LoanRequestController extends Controller
         if (!$loan->insurance_pdf_path) {
             return back()->with('error', 'Aucune attestation d\'assurance disponible pour ce dossier.');
         }
-        return view('admin.loans.insurance-viewer', compact('loan'));
+        $insuranceTemplate = NotificationTemplate::resolveForLoan($loan, NotificationTemplate::TYPE_INSURANCE);
+        return view('admin.loans.insurance-viewer', compact('loan', 'insuranceTemplate'));
     }
 
     public function contract(LoanRequest $loan)
@@ -346,7 +346,8 @@ class LoanRequestController extends Controller
         $previewHtml           = $loan->contract_content ?? '';
         $variables             = app(\App\Services\ContractService::class)->variableDescriptions();
         $notificationTemplate  = NotificationTemplate::resolveForLoan($loan);
-        return view('admin.loans.contract', compact('loan', 'templates', 'previewHtml', 'variables', 'notificationTemplate'));
+        $insuranceTemplate     = NotificationTemplate::resolveForLoan($loan, NotificationTemplate::TYPE_INSURANCE);
+        return view('admin.loans.contract', compact('loan', 'templates', 'previewHtml', 'variables', 'notificationTemplate', 'insuranceTemplate'));
     }
 
     public function previewPdf(LoanRequest $loan)
@@ -482,77 +483,28 @@ class LoanRequestController extends Controller
         return back()->with('success', 'Attestation d\'assurance envoyée à ' . $loan->email . '.');
     }
 
-    public function selectInsuranceTemplate(Request $request, LoanRequest $loan)
-    {
-        $this->authorizeAccess($loan);
-        $request->validate(['insurance_template_id' => 'nullable|exists:contract_templates,id']);
-        $loan->update(['insurance_template_id' => $request->insurance_template_id ?: null]);
-        return back()->with('success', 'Modèle d\'assurance sélectionné.');
-    }
-
-    public function generateInsurancePdf(LoanRequest $loan)
-    {
-        $this->authorizeAccess($loan);
-
-        // Si le template a un DOCX, orienter vers le téléchargement DOCX
-        if ($loan->insuranceTemplate?->hasDocxTemplate()) {
-            return back()->with('error', 'Ce modèle utilise un fichier DOCX. Cliquez sur "Télécharger DOCX" pour l\'obtenir, convertissez-le en PDF, puis uploadez-le.');
-        }
-
-        $vars                = app(\App\Services\ContractService::class)->getVariables($loan);
-        $vars['{directeur}'] = $loan->directeur ?: 'CREDIXA INVESTI';
-
-        // Si le template a du contenu HTML personnalisé, l'utiliser
-        $template = $loan->insuranceTemplate;
-        if ($template && $template->content) {
-            $html = app(ContractHtmlService::class)->buildContractHtml($loan, $template, $loan->contract_language ?? 'fr');
-        } else {
-            $html = view('contracts.assurance-emprunteur', ['vars' => $vars])->render();
-            $html = str_replace(array_keys($vars), array_values($vars), $html);
-        }
-
-        $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadHTML($html)
-            ->setPaper('a4', 'portrait')
-            ->setOptions([
-                'isHtml5ParserEnabled' => true,
-                'isRemoteEnabled'      => false,
-                'isPhpEnabled'         => false,
-                'defaultFont'          => 'DejaVu Sans',
-                'dpi'                  => 150,
-            ]);
-
-        $relDir  = 'insurance-pdfs/' . $loan->id;
-        $relPath = $relDir . '/' . $loan->reference . '_assurance.pdf';
-        $absDir  = storage_path('app/private/' . $relDir);
-
-        if (!is_dir($absDir)) {
-            mkdir($absDir, 0755, true);
-        }
-
-        file_put_contents(storage_path('app/private/' . $relPath), $pdf->output());
-
-        $loan->update(['insurance_pdf_path' => $relPath]);
-        $this->logHistory($loan, 'insurance_pdf_generated', [], ['pdf' => $relPath]);
-
-        return back()->with('success', 'Attestation d\'assurance générée avec succès.');
-    }
-
-    public function downloadInsuranceDocx(LoanRequest $loan, DocumentArchive $archive)
+    /**
+     * Génère le DOCX de l'attestation d'assurance rempli pour ce dossier, à
+     * partir du modèle assigné à la langue du dossier (résolu par langue,
+     * comme les notifications et les conditions générales). L'admin le
+     * convertit lui-même en PDF puis l'uploade via uploadInsurancePdf().
+     */
+    public function downloadInsuranceDocx(LoanRequest $loan)
     {
         $this->authorizeAccess($loan);
 
-        $template = $loan->insuranceTemplate;
+        $template = NotificationTemplate::resolveForLoan($loan, NotificationTemplate::TYPE_INSURANCE);
 
         if (!$template || !$template->hasDocxTemplate()) {
-            return back()->with('error', 'Aucun template DOCX assurance disponible. Sélectionnez un modèle avec DOCX dans la fiche du dossier.');
+            return back()->with('error', 'Aucun template DOCX d\'assurance disponible pour la langue de ce dossier. Uploadez-en un depuis "Modèles de notification".');
         }
 
         $locale = $loan->contract_language ?? 'fr';
 
         try {
-            $path = $archive->getOrGenerate($loan, $template, $locale);
+            $path = $this->notificationDocxService->generate($loan, $template, $locale);
         } catch (\Throwable $e) {
-            return back()->with('error', 'Génération DOCX assurance impossible : ' . $e->getMessage());
+            return back()->with('error', 'Génération DOCX d\'assurance impossible : ' . $e->getMessage());
         }
 
         return response()->download($path, 'Assurance_' . $loan->reference . '.docx');
