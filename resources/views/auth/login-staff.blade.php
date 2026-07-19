@@ -325,7 +325,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
           </div>
           @endif
 
-          <form action="{{ route('staff.login.submit') }}" method="POST" novalidate>
+          <form id="staff-login-form" action="{{ route('staff.login.submit') }}" method="POST" novalidate>
             @csrf
 
             <div class="f-group">
@@ -387,6 +387,31 @@ function tglPwd(id, ico) {
   f.type = f.type === 'password' ? 'text' : 'password';
   i.classList.toggle('fa-eye'); i.classList.toggle('fa-eye-slash');
 }
+
+/* Si la page reste ouverte trop longtemps, la session (et le token CSRF) expire
+   côté serveur — un submit sur une page périmée échoue de façon confuse. On
+   recharge la page avant que ça arrive, pour repartir sur un token frais. */
+(function () {
+  var PAGE_LOADED_AT = Date.now();
+  var STALE_MS = 100 * 60 * 1000; // marge sous SESSION_LIFETIME (120 min)
+  var isStale = function () { return Date.now() - PAGE_LOADED_AT > STALE_MS; };
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible' && isStale()) {
+      window.location.reload();
+    }
+  });
+
+  var form = document.getElementById('staff-login-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      if (isStale()) {
+        e.preventDefault();
+        window.location.reload();
+      }
+    });
+  }
+})();
 </script>
 
 {{-- ══ PWA Install ══ --}}

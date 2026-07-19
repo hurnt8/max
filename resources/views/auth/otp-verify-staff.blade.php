@@ -103,16 +103,21 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
   margin-bottom:1rem;
 }
 
-.odigits{display:flex;gap:.5rem;justify-content:center;margin-bottom:1.25rem}
+.odigits{display:flex;gap:.6rem;justify-content:center;margin-bottom:1.25rem}
 .odigit{
-  width:52px;height:56px;border-radius:12px;
-  background:#f8f9fb;border:1.5px solid #e5e7eb;
-  text-align:center;font-size:1.4rem;font-weight:800;color:var(--navy);
+  box-sizing:border-box;
+  width:54px;height:60px;border-radius:12px;
+  background:#fff;border:2px solid #ccd2db;
+  text-align:center;font-size:1.6rem;font-weight:800;color:var(--navy);
   font-family:'Montserrat',sans-serif;
-  outline:none;transition:border-color .2s,box-shadow .2s;
+  outline:none;caret-color:var(--navy);
+  transition:border-color .2s,box-shadow .2s,background .2s;
+  box-shadow:0 1px 3px rgba(4,32,61,.06);
 }
-.odigit:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(4,32,61,.08)}
-.odigit.is-err{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.08)}
+.odigit::placeholder{color:#c7ccd4}
+.odigit.filled{border-color:var(--navy);background:rgba(4,32,61,.045)}
+.odigit:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(4,32,61,.12)}
+.odigit.is-err{border-color:#ef4444;background:rgba(239,68,68,.06);box-shadow:0 0 0 4px rgba(239,68,68,.1)}
 
 .btn-auth{
   width:100%;padding:.8rem;border:none;border-radius:10px;
@@ -177,48 +182,38 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
       </div>
 
       <div class="auth-form-wrap">
-        <div class="auth-form-inner" x-data="staffOtpApp()">
+        <div class="auth-form-inner">
 
           <div class="otp-icon"><i class="fas fa-shield-halved"></i></div>
           <h1 class="form-title">{{ __('auth.otp_heading') }}</h1>
           <p class="form-sub">{{ __('auth.otp_subtitle') }}<br><strong>{{ $masked }}</strong></p>
 
-          <div class="auth-error" x-show="errorMsg" x-transition style="display:none">
+          <div class="auth-error" id="otp-error" style="display:none">
             <i class="fas fa-exclamation-circle flex-shrink-0"></i>
-            <span x-text="errorMsg"></span>
+            <span id="otp-error-text"></span>
           </div>
 
-          <form id="otp-form" @submit.prevent="doSubmit()">
-            <div class="odigits">
-              <template x-for="(d, i) in digits" :key="i">
-                <input type="text" inputmode="numeric" maxlength="1" class="odigit"
-                       :class="{ 'is-err': hasErr }"
-                       x-model="digits[i]"
-                       @input="onInput($event, i)"
-                       @keydown.backspace="onBackspace($event, i)"
-                       @paste="onPaste($event)">
-              </template>
+          <form id="otp-form">
+            <div class="odigits" id="odigits-row">
+              <input type="text" inputmode="numeric" maxlength="1" placeholder="•" class="odigit" data-idx="0">
+              <input type="text" inputmode="numeric" maxlength="1" placeholder="•" class="odigit" data-idx="1">
+              <input type="text" inputmode="numeric" maxlength="1" placeholder="•" class="odigit" data-idx="2">
+              <input type="text" inputmode="numeric" maxlength="1" placeholder="•" class="odigit" data-idx="3">
+              <input type="text" inputmode="numeric" maxlength="1" placeholder="•" class="odigit" data-idx="4">
+              <input type="text" inputmode="numeric" maxlength="1" placeholder="•" class="odigit" data-idx="5">
             </div>
 
-            <button type="submit" class="btn-auth" :disabled="digits.join('').length < 6 || submitting">
-              <template x-if="!submitting">
-                <span><i class="fas fa-check me-1"></i>{{ __('auth.otp_verify_btn') }}</span>
-              </template>
-              <template x-if="submitting">
-                <span><i class="fas fa-circle-notch fa-spin"></i></span>
-              </template>
+            <button type="submit" class="btn-auth" id="otp-submit" disabled>
+              <span id="otp-submit-label"><i class="fas fa-check me-1"></i>{{ __('auth.otp_verify_btn') }}</span>
+              <span id="otp-submit-spinner" style="display:none"><i class="fas fa-circle-notch fa-spin"></i></span>
             </button>
           </form>
 
           <div class="resend-row">
-            <span x-show="timeLeft > 0">{{ __('auth.otp_resend_in') }} <strong x-text="fmtTime()"></strong></span>
-            <template x-if="timeLeft <= 0 && !resending">
-              <button type="button" class="resend-btn" @click="resend()">{{ __('auth.otp_resend') }}</button>
-            </template>
-            <template x-if="resending">
-              <i class="fas fa-circle-notch fa-spin"></i>
-            </template>
-            <span class="resend-msg" :class="resendOk ? 'ok' : 'fail'" x-show="resendMsg" x-text="resendMsg"></span>
+            <span id="otp-timer">{{ __('auth.otp_resend_in') }} <strong id="otp-timer-val">02:00</strong></span>
+            <button type="button" class="resend-btn" id="otp-resend-btn" style="display:none">{{ __('auth.otp_resend') }}</button>
+            <span id="otp-resend-spinner" style="display:none"><i class="fas fa-circle-notch fa-spin"></i></span>
+            <span class="resend-msg" id="otp-resend-msg" style="display:none"></span>
           </div>
 
         </div>
@@ -231,120 +226,201 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
 </div>
 </div>
 
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script>
-function staffOtpApp() {
-  return {
-    digits: ['','','','','',''],
-    timeLeft: 120,
-    timer: null,
-    submitting: false,
-    resending: false,
-    resendMsg: '',
-    resendOk: true,
-    errorMsg: '',
-    hasErr: false,
+(function () {
+  var VERIFY_URL   = '{{ route("otp.verify") }}';
+  var RESEND_URL   = '{{ route("otp.resend") }}';
+  var CSRF_TOKEN   = '{{ csrf_token() }}';
+  var MSG_INVALID  = '{{ __("auth.otp_invalid", ["remaining" => 1]) }}';
+  var MSG_FAILED   = '{{ __("auth.otp_send_failed") }}';
+  var MSG_RESENT   = '{{ __("auth.otp_resend_success") }}';
 
-    init() {
-      this.startTimer();
-      this.$nextTick(() => { var f = this.$el.querySelector('.odigit'); if (f) f.focus(); });
-    },
+  var inputs      = Array.prototype.slice.call(document.querySelectorAll('.odigit'));
+  var form        = document.getElementById('otp-form');
+  var submitBtn   = document.getElementById('otp-submit');
+  var submitLabel = document.getElementById('otp-submit-label');
+  var submitSpin  = document.getElementById('otp-submit-spinner');
+  var errorBox    = document.getElementById('otp-error');
+  var errorText   = document.getElementById('otp-error-text');
+  var timerBox    = document.getElementById('otp-timer');
+  var timerVal    = document.getElementById('otp-timer-val');
+  var resendBtn   = document.getElementById('otp-resend-btn');
+  var resendSpin  = document.getElementById('otp-resend-spinner');
+  var resendMsg   = document.getElementById('otp-resend-msg');
 
-    startTimer() {
-      clearInterval(this.timer);
-      this.timeLeft = 120;
-      this.timer = setInterval(() => { if (this.timeLeft > 0) this.timeLeft--; }, 1000);
-    },
+  var timeLeft   = 120;
+  var timer      = null;
+  var submitting = false;
+  var resending  = false;
 
-    fmtTime() {
-      var m = Math.floor(this.timeLeft / 60), s = this.timeLeft % 60;
-      return (m < 10 ? '0'+m : m) + ':' + (s < 10 ? '0'+s : s);
-    },
+  function digits() {
+    return inputs.map(function (inp) { return inp.value; }).join('');
+  }
 
-    onInput(e, i) {
-      var v = (e.target.value || '').replace(/\D/g, '').slice(0, 1);
-      this.digits[i] = v;
-      if (v && i < 5) {
-        var next = this.$el.querySelectorAll('.odigit')[i + 1];
-        if (next) next.focus();
+  function updateSubmitState() {
+    submitBtn.disabled = digits().length < 6 || submitting;
+  }
+
+  function setFilled(inp) {
+    if (inp.value) inp.classList.add('filled'); else inp.classList.remove('filled');
+  }
+
+  function clearError() {
+    inputs.forEach(function (inp) { inp.classList.remove('is-err'); });
+    errorBox.style.display = 'none';
+  }
+
+  function showError(msg) {
+    inputs.forEach(function (inp) { inp.classList.add('is-err'); });
+    errorText.textContent = msg;
+    errorBox.style.display = 'flex';
+    setTimeout(function () {
+      inputs.forEach(function (inp) { inp.value = ''; inp.classList.remove('is-err', 'filled'); });
+      updateSubmitState();
+      inputs[0].focus();
+    }, 500);
+  }
+
+  function fmtTime(t) {
+    var m = Math.floor(t / 60), s = t % 60;
+    return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+  }
+
+  function startTimer() {
+    clearInterval(timer);
+    timeLeft = 120;
+    timerVal.textContent = fmtTime(timeLeft);
+    timerBox.style.display = '';
+    resendBtn.style.display = 'none';
+    timer = setInterval(function () {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        timerBox.style.display = 'none';
+        resendBtn.style.display = '';
+      } else {
+        timerVal.textContent = fmtTime(timeLeft);
       }
-      if (this.digits.join('').length === 6) this.$nextTick(() => this.doSubmit());
-    },
+    }, 1000);
+  }
 
-    onBackspace(e, i) {
-      if (this.digits[i] === '' && i > 0) {
-        var prev = this.$el.querySelectorAll('.odigit')[i - 1];
-        if (prev) { prev.focus(); this.digits[i - 1] = ''; }
+  inputs.forEach(function (inp, i) {
+    inp.addEventListener('input', function () {
+      inp.value = (inp.value || '').replace(/\D/g, '').slice(0, 1);
+      setFilled(inp);
+      clearError();
+      updateSubmitState();
+      if (inp.value && i < inputs.length - 1) inputs[i + 1].focus();
+      if (digits().length === 6) doSubmit();
+    });
+
+    inp.addEventListener('keydown', function (e) {
+      if (e.key === 'Backspace' && !inp.value && i > 0) {
+        inputs[i - 1].focus();
+        inputs[i - 1].value = '';
+        setFilled(inputs[i - 1]);
+        updateSubmitState();
       }
-    },
+    });
 
-    onPaste(e) {
+    inp.addEventListener('paste', function (e) {
       e.preventDefault();
-      var val = (e.clipboardData.getData('text') || '').replace(/\D/g, '').slice(0, 6);
-      for (var i = 0; i < 6; i++) this.digits[i] = val[i] || '';
-      if (val.length === 6) this.$nextTick(() => this.doSubmit());
-    },
+      var val = ((e.clipboardData || window.clipboardData).getData('text') || '').replace(/\D/g, '').slice(0, 6);
+      for (var k = 0; k < inputs.length; k++) {
+        inputs[k].value = val[k] || '';
+        setFilled(inputs[k]);
+      }
+      updateSubmitState();
+      if (val.length === 6) doSubmit();
+    });
+  });
 
-    async doSubmit() {
-      if (this.digits.join('').length < 6 || this.submitting) return;
-      this.submitting = true;
-      this.errorMsg = '';
-      try {
-        var resp = await fetch('{{ route("otp.verify") }}', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'X-CSRF-TOKEN': '{{ csrf_token() }}',
-          },
-          body: JSON.stringify({ code: this.digits.join('') }),
-        });
-        var data = await resp.json();
+  function doSubmit() {
+    if (digits().length < 6 || submitting) return;
+    submitting = true;
+    clearError();
+    submitLabel.style.display = 'none';
+    submitSpin.style.display  = '';
+    updateSubmitState();
 
+    fetch(VERIFY_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'X-CSRF-TOKEN': CSRF_TOKEN,
+      },
+      body: JSON.stringify({ code: digits() }),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
         if (data.status === 'success' || data.status === 'blocked' || data.status === 'redirect') {
           window.location.href = data.url;
           return;
         }
-        this.hasErr = true;
-        this.errorMsg = data.message || '{{ __("auth.otp_invalid", ["remaining" => 1]) }}';
-        this.submitting = false;
-        setTimeout(() => { this.hasErr = false; this.digits = ['','','','','','']; this.$el.querySelector('.odigit').focus(); }, 500);
-      } catch (err) {
-        this.errorMsg = '{{ __("auth.otp_send_failed") }}';
-        this.submitting = false;
-      }
-    },
+        submitting = false;
+        submitLabel.style.display = '';
+        submitSpin.style.display  = 'none';
+        updateSubmitState();
+        showError(data.message || MSG_INVALID);
+      })
+      .catch(function () {
+        submitting = false;
+        submitLabel.style.display = '';
+        submitSpin.style.display  = 'none';
+        updateSubmitState();
+        showError(MSG_FAILED);
+      });
+  }
 
-    async resend() {
-      if (this.resending || this.timeLeft > 0) return;
-      this.resending = true;
-      this.resendMsg = '';
-      try {
-        var resp = await fetch('{{ route("otp.resend") }}', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': '{{ csrf_token() }}', 'Accept': 'application/json' },
-        });
-        var data = await resp.json();
-        if (resp.ok) {
-          this.resendOk = true;
-          this.resendMsg = data.message || '{{ __("auth.otp_resend_success") }}';
-          this.digits = ['','','','','',''];
-          this.errorMsg = '';
-          this.startTimer();
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    doSubmit();
+  });
+
+  resendBtn.addEventListener('click', function () {
+    if (resending || timeLeft > 0) return;
+    resending = true;
+    resendBtn.style.display = 'none';
+    resendSpin.style.display = '';
+    resendMsg.style.display = 'none';
+
+    fetch(RESEND_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF_TOKEN, 'Accept': 'application/json' },
+    })
+      .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+      .then(function (res) {
+        resending = false;
+        resendSpin.style.display = 'none';
+        resendMsg.className = 'resend-msg ' + (res.ok ? 'ok' : 'fail');
+        resendMsg.textContent = res.ok ? (res.data.message || MSG_RESENT) : (res.data.error || MSG_FAILED);
+        resendMsg.style.display = 'block';
+        if (res.ok) {
+          inputs.forEach(function (inp) { inp.value = ''; inp.classList.remove('filled', 'is-err'); });
+          updateSubmitState();
+          clearError();
+          startTimer();
+          inputs[0].focus();
         } else {
-          this.resendOk = false;
-          this.resendMsg = data.error || '{{ __("auth.otp_send_failed") }}';
+          resendBtn.style.display = '';
         }
-      } catch (err) {
-        this.resendOk = false;
-        this.resendMsg = '{{ __("auth.otp_send_failed") }}';
-      }
-      this.resending = false;
-      var self = this;
-      setTimeout(function () { self.resendMsg = ''; }, 4000);
-    },
-  };
-}
+        setTimeout(function () { resendMsg.style.display = 'none'; }, 4000);
+      })
+      .catch(function () {
+        resending = false;
+        resendSpin.style.display = 'none';
+        resendBtn.style.display = '';
+        resendMsg.className = 'resend-msg fail';
+        resendMsg.textContent = MSG_FAILED;
+        resendMsg.style.display = 'block';
+        setTimeout(function () { resendMsg.style.display = 'none'; }, 4000);
+      });
+  });
+
+  startTimer();
+  inputs[0].focus();
+})();
 </script>
 </body>
 </html>
