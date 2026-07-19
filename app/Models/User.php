@@ -29,7 +29,24 @@ class User extends Authenticatable
         'balance'                  => 'decimal:2',
         'is_blocked'               => 'boolean',
         'unblock_token_expires_at' => 'datetime',
+        'bank_account'             => 'encrypted',
+        'bic'                      => 'encrypted',
+        'id_number'                => 'encrypted',
+        'tax_number'               => 'encrypted',
     ];
+
+    protected static function booted(): void
+    {
+        static::creating(function (User $user) {
+            $user->uuid = $user->uuid ?? (string) \Illuminate\Support\Str::uuid();
+        });
+    }
+
+    // Clé utilisée pour le routage HTTP ({user}) — non devinable, distincte de l'id interne
+    public function getRouteKeyName(): string
+    {
+        return 'uuid';
+    }
 
     // Demandes créées par cet admin
     public function createdLoans()

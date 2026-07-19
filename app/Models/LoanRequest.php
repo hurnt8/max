@@ -71,7 +71,22 @@ class LoanRequest extends Model
         'frais_assurance'      => 'decimal:2',
         'date_fin_assurance'   => 'date',
         'interest_rate'        => 'decimal:2',
+        'bank_account'         => 'encrypted',
+        'npi'                  => 'encrypted',
     ];
+
+    protected static function booted(): void
+    {
+        static::creating(function (LoanRequest $loan) {
+            $loan->uuid = $loan->uuid ?? (string) \Illuminate\Support\Str::uuid();
+        });
+    }
+
+    // Clé utilisée pour le routage HTTP ({loan}) — non devinable, distincte de l'id interne
+    public function getRouteKeyName(): string
+    {
+        return 'uuid';
+    }
 
     // Relations
     public function admin()

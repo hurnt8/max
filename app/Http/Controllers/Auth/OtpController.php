@@ -23,31 +23,37 @@ class OtpController extends Controller
 
     public function show(Request $request)
     {
+        $isStaff  = $request->session()->get('otp_flow') === 'staff';
+        $loginUrl = $isStaff ? route('staff.login') : '/login';
+
         $userId = $request->session()->get('otp_user_id');
         if (!$userId) {
-            return redirect('/login');
+            return redirect($loginUrl);
         }
 
         $user = User::find($userId);
         if (!$user) {
-            $request->session()->forget(['otp_user_id', 'otp_remember']);
-            return redirect('/login');
+            $request->session()->forget(['otp_user_id', 'otp_remember', 'otp_flow']);
+            return redirect($loginUrl);
         }
 
         $masked = $this->maskEmail($user->email);
+        $view   = $isStaff ? 'auth.otp-verify-staff' : 'auth.otp-verify';
 
-        return view('auth.otp-verify', compact('masked'));
+        return view($view, ['masked' => $masked, 'backUrl' => $loginUrl]);
     }
 
     public function verify(Request $request)
     {
-        $isAjax = $request->expectsJson();
+        $isAjax   = $request->expectsJson();
+        $flow     = $request->session()->get('otp_flow', 'client');
+        $loginUrl = $flow === 'staff' ? route('staff.login') : '/login';
 
         $userId = $request->session()->get('otp_user_id');
         if (!$userId) {
             return $isAjax
-                ? response()->json(['status' => 'redirect', 'url' => '/login'])
-                : redirect('/login');
+                ? response()->json(['status' => 'redirect', 'url' => $loginUrl])
+                : redirect($loginUrl);
         }
 
         $request->validate(['code' => 'required|string|digits:6']);
@@ -55,16 +61,16 @@ class OtpController extends Controller
         $user = User::find($userId);
         if (!$user) {
             return $isAjax
-                ? response()->json(['status' => 'redirect', 'url' => '/login'])
-                : redirect('/login');
+                ? response()->json(['status' => 'redirect', 'url' => $loginUrl])
+                : redirect($loginUrl);
         }
 
         if ($user->is_blocked) {
-            $request->session()->forget(['otp_user_id', 'otp_remember']);
+            $request->session()->forget(['otp_user_id', 'otp_remember', 'otp_flow']);
             $msg = __('auth.account_blocked');
             return $isAjax
-                ? response()->json(['status' => 'blocked', 'url' => '/login', 'message' => $msg])
-                : redirect('/login')->withErrors(['identifier' => $msg]);
+                ? response()->json(['status' => 'blocked', 'url' => $loginUrl, 'message' => $msg])
+                : redirect($loginUrl)->withErrors(['identifier' => $msg]);
         }
 
         $attemptKey = 'otp_attempts_' . $userId;
@@ -91,12 +97,15 @@ class OtpController extends Controller
         RateLimiter::clear('otp_resend_' . $userId);
 
         $remember = (bool) $request->session()->pull('otp_remember', false);
-        $request->session()->forget('otp_user_id');
+        $request->session()->forget(['otp_user_id', 'otp_flow']);
 
         Auth::login($user, $remember);
         $request->session()->regenerate();
 
-        $url = route('client.app.home');
+        $url = $flow === 'staff'
+            ? ($user->hasRole('super-admin') ? route('super-admin.dashboard') : route('admin.dashboard'))
+            : route('client.app.home');
+
         return $isAjax
             ? response()->json(['status' => 'success', 'url' => $url])
             : redirect($url);
@@ -154,7 +163,9 @@ class OtpController extends Controller
             'unblock_token_expires_at' => null,
         ]);
 
-        return redirect('/login')->with('unblock_success', __('auth.account_unblocked', [], $user->locale ?? 'fr'));
+        $loginUrl = $user->type === 'staff' ? route('staff.login') : '/login';
+
+        return redirect($loginUrl)->with('unblock_success', __('auth.account_unblocked', [], $user->locale ?? 'fr'));
     }
 
     private function blockAccount(User $user, Request $request)
@@ -169,7 +180,8 @@ class OtpController extends Controller
 
         Cache::forget('otp_' . $user->id);
         RateLimiter::clear('otp_attempts_' . $user->id);
-        $request->session()->forget(['otp_user_id', 'otp_remember']);
+        $loginUrl = $request->session()->get('otp_flow') === 'staff' ? route('staff.login') : '/login';
+        $request->session()->forget(['otp_user_id', 'otp_remember', 'otp_flow']);
 
         try {
             Mail::to($user->email)->send(new AccountBlockedMail($user, $token));
@@ -178,8 +190,8 @@ class OtpController extends Controller
         $msg = __('auth.account_blocked_notified', [], $user->locale ?? 'fr');
 
         return $request->expectsJson()
-            ? response()->json(['status' => 'blocked', 'url' => '/login', 'message' => $msg])
-            : redirect('/login')->withErrors(['identifier' => $msg]);
+            ? response()->json(['status' => 'blocked', 'url' => $loginUrl, 'message' => $msg])
+            : redirect($loginUrl)->withErrors(['identifier' => $msg]);
     }
 
     private function maskEmail(string $email): string

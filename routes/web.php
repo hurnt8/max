@@ -156,27 +156,27 @@ Route::post('/invitation/{token}', [InvitationController::class, 'activate'])->n
 
 // Client login
 Route::get('/login',        [ClientLoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
-Route::post('/login',       [ClientLoginController::class, 'login'])->name('login.submit')->middleware('guest');
+Route::post('/login',       [ClientLoginController::class, 'login'])->name('login.submit')->middleware(['guest', 'throttle:5,1']);
 Route::post('/logout',      [ClientLoginController::class, 'logout'])->name('logout');
 Route::get('/login/forget', [ClientLoginController::class, 'forgetAccount'])->name('login.forget');
 
 // OTP verification
 Route::get('/otp-verify',  [OtpController::class, 'show'])->name('otp.show');
-Route::post('/otp-verify', [OtpController::class, 'verify'])->name('otp.verify');
-Route::post('/otp-resend', [OtpController::class, 'resend'])->name('otp.resend');
+Route::post('/otp-verify', [OtpController::class, 'verify'])->name('otp.verify')->middleware('throttle:5,1');
+Route::post('/otp-resend', [OtpController::class, 'resend'])->name('otp.resend')->middleware('throttle:3,1');
 
 // Account unblock (via email link)
 Route::get('/account/unblock/{token}', [OtpController::class, 'unblock'])->name('account.unblock');
 
 // Forgot / reset password (clients)
 Route::get('/forgot-password',         [ForgotPasswordController::class, 'show'])->name('password.request')->middleware('guest');
-Route::post('/forgot-password',        [ForgotPasswordController::class, 'send'])->name('password.email')->middleware('guest');
+Route::post('/forgot-password',        [ForgotPasswordController::class, 'send'])->name('password.email')->middleware(['guest', 'throttle:5,1']);
 Route::get('/reset-password/{token}',  [ResetPasswordController::class, 'show'])->name('password.reset')->middleware('guest');
-Route::post('/reset-password',         [ResetPasswordController::class, 'reset'])->name('password.update')->middleware('guest');
+Route::post('/reset-password',         [ResetPasswordController::class, 'reset'])->name('password.update')->middleware(['guest', 'throttle:5,1']);
 
 // Staff login (admin / super-admin)
 Route::get('/staff/login',  [StaffLoginController::class, 'showLoginForm'])->name('staff.login')->middleware('guest');
-Route::post('/staff/login', [StaffLoginController::class, 'login'])->name('staff.login.submit')->middleware('guest');
+Route::post('/staff/login', [StaffLoginController::class, 'login'])->name('staff.login.submit')->middleware(['guest', 'throttle:5,1']);
 Route::post('/staff/logout',[StaffLoginController::class, 'logout'])->name('staff.logout');
 
 // ── Client dashboard ────────────────────────────────────────────────────────

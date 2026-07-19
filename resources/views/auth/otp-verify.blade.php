@@ -360,7 +360,7 @@ html,body{
 
   {{-- Top bar --}}
   <div class="topbar">
-    <a href="/login" class="topbar__back">
+    <a href="{{ $backUrl ?? '/login' }}" class="topbar__back">
       <i class="fas fa-chevron-left"></i> {{ __('auth.otp_back') }}
     </a>
     <a href="{{ url('/') }}" class="topbar__logo">
