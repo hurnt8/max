@@ -14,47 +14,21 @@ class InsuranceAttestationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public string $mailLocale;
-
     public function __construct(
         public LoanRequest $loan,
+        public string      $mailSubject,
+        public string      $htmlBody,
         public string      $pdfPath,
-        string             $locale = 'fr',
-    ) {
-        $this->mailLocale = $locale;
-    }
+    ) {}
 
     public function envelope(): Envelope
     {
-        $subjects = [
-            'fr' => 'Votre attestation d\'assurance emprunteur — N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'en' => 'Your borrower insurance certificate — N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'pl' => 'Zaświadczenie ubezpieczenia kredytobiorcy — nr ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'es' => 'Su certificado de seguro de prestatario — N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'bg' => 'Вашето удостоверение за застраховка на кредитополучателя — №' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'hu' => 'Adósvédelmi biztosítási igazolása — sz. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'it' => 'Il tuo attestato di assicurazione del mutuatario — N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'de' => 'Ihre Restschuldversicherungsbescheinigung — Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'lt' => 'Jūsų skolininko draudimo pažymėjimas — Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'ro' => 'Certificatul dumneavoastră de asigurare a împrumutatului — nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'lv' => 'Jūsu aizņēmēja apdrošināšanas apliecība — Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'nl' => 'Uw verzekeringsattest kredietnemer — Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-        ];
-
-        return new Envelope(
-            subject: $subjects[$this->mailLocale] ?? $subjects['fr'],
-        );
+        return new Envelope(subject: $this->mailSubject);
     }
 
     public function content(): Content
     {
-        return new Content(
-            view: 'emails.insurance-attestation',
-            with: [
-                'loan'   => $this->loan,
-                'locale' => $this->mailLocale,
-            ],
-        );
+        return new Content(htmlString: $this->htmlBody);
     }
 
     public function attachments(): array

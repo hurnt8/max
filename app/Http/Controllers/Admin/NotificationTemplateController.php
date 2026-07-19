@@ -45,7 +45,7 @@ class NotificationTemplateController extends Controller
             'locale'  => ['required', 'in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
                 Rule::unique('notification_templates')->where(fn($q) => $q->where('type', $request->type)),
             ],
-            'subject' => 'nullable|required_unless:type,' . NotificationTemplate::TYPE_CONDITIONS . ',' . NotificationTemplate::TYPE_INSURANCE . '|string|max:255',
+            'subject' => 'nullable|required_unless:type,' . NotificationTemplate::TYPE_CONDITIONS . '|string|max:255',
         ]);
 
         $template = NotificationTemplate::create([
@@ -80,7 +80,7 @@ class NotificationTemplateController extends Controller
                     ->where(fn($q) => $q->where('type', $request->type))
                     ->ignore($notificationTemplate->id),
             ],
-            'subject' => 'nullable|required_unless:type,' . NotificationTemplate::TYPE_CONDITIONS . ',' . NotificationTemplate::TYPE_INSURANCE . '|string|max:255',
+            'subject' => 'nullable|required_unless:type,' . NotificationTemplate::TYPE_CONDITIONS . '|string|max:255',
             'content' => 'nullable|string',
         ]);
 

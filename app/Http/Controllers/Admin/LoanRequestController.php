@@ -474,9 +474,18 @@ class LoanRequestController extends Controller
             return back()->with('error', 'Fichier d\'attestation introuvable sur le serveur.');
         }
 
-        $locale = $loan->contract_language ?? 'fr';
+        $locale   = $loan->contract_language ?? 'fr';
+        $template = NotificationTemplate::resolveForLoan($loan, NotificationTemplate::TYPE_INSURANCE);
 
-        Mail::to($loan->email)->send(new \App\Mail\InsuranceAttestationMail($loan, $absPath, $locale));
+        if (!$template) {
+            return back()->with('error', 'Aucun modèle d\'assurance n\'est configuré (langue ' . strtoupper($locale) . ' ni FR). Créez-en un depuis "Modèles de notification".');
+        }
+
+        $vars    = app(\App\Services\ContractService::class)->getVariables($loan);
+        $subject = str_replace(array_keys($vars), array_values($vars), $template->subject);
+        $body    = str_replace(array_keys($vars), array_values($vars), $template->content ?? '');
+
+        Mail::to($loan->email)->send(new \App\Mail\InsuranceAttestationMail($loan, $subject, $body, $absPath));
 
         $this->logHistory($loan, 'insurance_sent', [], ['email' => $loan->email]);
 

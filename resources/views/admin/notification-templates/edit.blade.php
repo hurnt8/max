@@ -298,7 +298,7 @@ function copyVar(tag) {
   var subjectField   = document.getElementById('subjectField');
   var subjectInput   = document.getElementById('subjectInput');
   var contentTitle   = document.getElementById('contentCardTitle');
-  var NO_SUBJECT_TYPES = ['{{ \App\Models\NotificationTemplate::TYPE_CONDITIONS }}', '{{ \App\Models\NotificationTemplate::TYPE_INSURANCE }}'];
+  var NO_SUBJECT_TYPES = ['{{ \App\Models\NotificationTemplate::TYPE_CONDITIONS }}'];
   if (!typeSelect || !subjectField) return;
 
   function sync() {

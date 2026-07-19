@@ -76,7 +76,7 @@
   var typeSelect    = document.querySelector('select[name="type"]');
   var subjectField  = document.getElementById('subjectField');
   var subjectInput  = document.getElementById('subjectInput');
-  var NO_SUBJECT_TYPES = ['{{ \App\Models\NotificationTemplate::TYPE_CONDITIONS }}', '{{ \App\Models\NotificationTemplate::TYPE_INSURANCE }}'];
+  var NO_SUBJECT_TYPES = ['{{ \App\Models\NotificationTemplate::TYPE_CONDITIONS }}'];
 
   function syncSubjectField() {
     var noSubject = NO_SUBJECT_TYPES.indexOf(typeSelect.value) !== -1;
