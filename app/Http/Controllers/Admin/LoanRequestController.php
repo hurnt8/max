@@ -1033,7 +1033,6 @@ class LoanRequestController extends Controller
     public function destroy(LoanRequest $loan)
     {
         $this->authorizeAccess($loan);
-        abort_unless($loan->status === LoanRequest::STATUS_DRAFT, 403, 'Seuls les brouillons peuvent être supprimés.');
         $loan->delete();
         return back()->with('success', 'Demande supprimée.');
     }

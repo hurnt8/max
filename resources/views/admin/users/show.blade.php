@@ -301,15 +301,13 @@
             <a href="{{ route('admin.loans.show', $loan) }}" class="btn-icon btn-icon-primary" title="Voir le dossier">
               <i class="fas fa-eye"></i>
             </a>
-            @if($loan->status === \App\Models\LoanRequest::STATUS_DRAFT)
             <form action="{{ route('admin.loans.destroy', $loan) }}" method="POST"
-                  onsubmit="return confirm('Supprimer ce dossier de prêt (brouillon) ? Cette action est irréversible.')">
+                  onsubmit="return confirm('Supprimer ce dossier de prêt ? Cette action est irréversible.')">
               @csrf @method('DELETE')
               <button type="submit" class="btn-icon btn-icon-danger" title="Supprimer le dossier">
                 <i class="fas fa-trash"></i>
               </button>
             </form>
-            @endif
           </td>
         </tr>
         @empty
