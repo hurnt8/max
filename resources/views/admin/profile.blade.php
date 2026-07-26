@@ -36,6 +36,20 @@
 
         <div style="margin-bottom:1.125rem">
           <label style="display:block;font-size:.75rem;font-weight:600;color:var(--c-muted);margin-bottom:.375rem">
+            Nom complet
+          </label>
+          <input type="text" name="name" value="{{ old('name', $user->name) }}"
+            style="width:100%;padding:.625rem .875rem;border-radius:var(--radius-sm);
+              border:1.5px solid {{ $errors->has('name') ? 'var(--c-red)' : 'var(--c-border)' }};
+              background:var(--c-bg);color:var(--c-text);font-size:.8375rem;outline:none;transition:.15s"
+            onfocus="this.style.borderColor='var(--c-gold)'" onblur="this.style.borderColor='var(--c-border)'">
+          @error('name')
+          <div style="font-size:.72rem;color:var(--c-red);margin-top:.3rem">{{ $message }}</div>
+          @enderror
+        </div>
+
+        <div style="margin-bottom:1.125rem">
+          <label style="display:block;font-size:.75rem;font-weight:600;color:var(--c-muted);margin-bottom:.375rem">
             Adresse e-mail
           </label>
           <input type="email" name="email" value="{{ old('email', $user->email) }}"

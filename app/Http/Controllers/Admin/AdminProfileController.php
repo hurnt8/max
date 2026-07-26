@@ -20,11 +20,13 @@ class AdminProfileController extends Controller
     {
         $user = Auth::user();
         $request->validate([
+            'name'  => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
             'phone' => ['nullable', 'string', 'max:30'],
         ]);
 
         $user->update([
+            'name'  => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
         ]);

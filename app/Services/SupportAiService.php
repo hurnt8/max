@@ -65,9 +65,21 @@ class SupportAiService
         }
     }
 
+    private const LOCALE_NAMES = [
+        'fr' => 'français', 'en' => 'anglais',    'pl' => 'polonais', 'es' => 'espagnol',
+        'bg' => 'bulgare',  'hu' => 'hongrois',    'it' => 'italien',  'de' => 'allemand',
+        'lt' => 'lituanien','ro' => 'roumain',     'lv' => 'letton',   'nl' => 'néerlandais',
+    ];
+
     private function buildSystemPrompt(User $client): string
     {
-        $name = $client->name;
+        $name     = $client->name;
+        $locale   = $client->locale ?? app()->getLocale();
+        $language = self::LOCALE_NAMES[$locale] ?? null;
+
+        $languageRule = $language
+            ? "Réponds IMPÉRATIVEMENT en {$language}, quelle que soit la langue utilisée par le client dans son message et quelle que soit la langue de ce prompt système"
+            : "Détecte automatiquement la langue du client et réponds TOUJOURS dans la même langue";
 
         return <<<PROMPT
 Tu es l'assistant IA de support deSolberg Grupo, une plateforme fintech spécialisée dans le crédit, les transferts et les services financiers.
@@ -79,7 +91,7 @@ MISSION :
 - NE JAMAIS inventer de données spécifiques (montants, dates, numéros de dossier) que tu ne connais pas
 
 RÈGLES IMPÉRATIVES :
-- Détecte automatiquement la langue du client et réponds TOUJOURS dans la même langue
+- {$languageRule}
 - Sois concis : 3 à 5 phrases maximum — pas de listes longues
 - Ton professionnel, rassurant et empathique
 - Termine TOUJOURS par : "— AssistantSolberg Grupo"
