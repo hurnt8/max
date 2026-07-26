@@ -304,4 +304,17 @@ return [
     'interest_paid'          => 'Sumokėtos palūkanos',
     'remaining_capital'      => 'Likusi pagrindinė suma',
     'back_to_dashboard'      => 'Skydelis',
+
+    // Pavedimo patvirtinimas (laukiama patvirtinimo)
+    'transfer_pending_title'          => 'Pavedimas pateiktas',
+    'transfer_pending_body'           => 'Jūsų užklausa užregistruota ir laukia mūsų komandos patvirtinimo.',
+    'transfer_pending_status'         => 'Laukiama patvirtinimo',
+    'transfer_pending_amount_label'   => 'Rezervuota suma',
+    'transfer_pending_beneficiary'    => 'Gavėjas',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Pateikta',
+    'transfer_pending_reference'      => 'Nuoroda',
+    'transfer_pending_note'           => 'Pastaba',
+    'transfer_pending_info'           => 'Būsite informuoti el. paštu ir programėlėje, kai tik pavedimas bus apdorotas. Suma rezervuota jūsų sąskaitoje tvirtinimo metu.',
+    'transfer_pending_view_movements' => 'Peržiūrėti mano operacijas',
 ];

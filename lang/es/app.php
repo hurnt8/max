@@ -297,4 +297,17 @@ return [
     'interest_paid'          => 'Intereses pagados',
     'remaining_capital'      => 'Capital restante',
     'back_to_dashboard'      => 'Panel de control',
+
+    // Confirmación de transferencia (pendiente de validación)
+    'transfer_pending_title'          => 'Transferencia enviada',
+    'transfer_pending_body'           => 'Su solicitud ha sido registrada y está pendiente de validación por nuestro equipo.',
+    'transfer_pending_status'         => 'Pendiente de validación',
+    'transfer_pending_amount_label'   => 'Importe reservado',
+    'transfer_pending_beneficiary'    => 'Beneficiario',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Enviado el',
+    'transfer_pending_reference'      => 'Referencia',
+    'transfer_pending_note'           => 'Nota',
+    'transfer_pending_info'           => 'Recibirá una notificación por correo electrónico y en la aplicación en cuanto se procese su transferencia. El importe queda reservado en su cuenta durante la validación.',
+    'transfer_pending_view_movements' => 'Ver mis movimientos',
 ];

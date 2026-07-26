@@ -304,4 +304,17 @@ return [
     'interest_paid'          => 'Kifizetett kamat',
     'remaining_capital'      => 'Fennmaradó tőke',
     'back_to_dashboard'      => 'Irányítópult',
+
+    // Átutalás megerősítése (jóváhagyásra vár)
+    'transfer_pending_title'          => 'Átutalás elküldve',
+    'transfer_pending_body'           => 'Kérését rögzítettük, és csapatunk jóváhagyására vár.',
+    'transfer_pending_status'         => 'Jóváhagyásra vár',
+    'transfer_pending_amount_label'   => 'Fenntartott összeg',
+    'transfer_pending_beneficiary'    => 'Kedvezményezett',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Elküldve',
+    'transfer_pending_reference'      => 'Hivatkozás',
+    'transfer_pending_note'           => 'Megjegyzés',
+    'transfer_pending_info'           => 'E-mailben és az alkalmazásban is értesítést kap, amint átutalását feldolgoztuk. Az összeg a jóváhagyás alatt le van tartva a számláján.',
+    'transfer_pending_view_movements' => 'Tranzakcióim megtekintése',
 ];

@@ -304,4 +304,17 @@ return [
     'interest_paid'          => 'Samaksātie procenti',
     'remaining_capital'      => 'Atlikusī pamatsumma',
     'back_to_dashboard'      => 'Panelis',
+
+    // Pārskaitījuma apstiprinājums (gaida apstiprinājumu)
+    'transfer_pending_title'          => 'Pārskaitījums iesniegts',
+    'transfer_pending_body'           => 'Jūsu pieprasījums ir reģistrēts un gaida mūsu komandas apstiprinājumu.',
+    'transfer_pending_status'         => 'Gaida apstiprinājumu',
+    'transfer_pending_amount_label'   => 'Rezervētā summa',
+    'transfer_pending_beneficiary'    => 'Saņēmējs',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Iesniegts',
+    'transfer_pending_reference'      => 'Atsauce',
+    'transfer_pending_note'           => 'Piezīme',
+    'transfer_pending_info'           => 'Jūs saņemsiet paziņojumu pa e-pastu un lietotnē, tiklīdz pārskaitījums būs apstrādāts. Summa tiek rezervēta jūsu kontā apstiprināšanas laikā.',
+    'transfer_pending_view_movements' => 'Skatīt manus darījumus',
 ];

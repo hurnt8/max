@@ -304,4 +304,17 @@ return [
     'interest_paid'          => 'Dobândă plătită',
     'remaining_capital'      => 'Capital rămas',
     'back_to_dashboard'      => 'Tablou de bord',
+
+    // Confirmare transfer (în așteptarea validării)
+    'transfer_pending_title'          => 'Transfer trimis',
+    'transfer_pending_body'           => 'Cererea dumneavoastră a fost înregistrată și este în așteptarea validării de către echipa noastră.',
+    'transfer_pending_status'         => 'În așteptarea validării',
+    'transfer_pending_amount_label'   => 'Sumă rezervată',
+    'transfer_pending_beneficiary'    => 'Beneficiar',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Trimis la',
+    'transfer_pending_reference'      => 'Referință',
+    'transfer_pending_note'           => 'Notă',
+    'transfer_pending_info'           => 'Veți fi notificat prin e-mail și în aplicație imediat ce transferul va fi procesat. Suma rămâne rezervată în contul dumneavoastră pe durata validării.',
+    'transfer_pending_view_movements' => 'Vezi tranzacțiile mele',
 ];

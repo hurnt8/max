@@ -324,4 +324,17 @@ return [
     'interest_paid'          => 'Intérêts payés',
     'remaining_capital'      => 'Capital restant',
     'back_to_dashboard'      => 'Tableau de bord',
+
+    // Confirmation de virement (en attente de validation)
+    'transfer_pending_title'          => 'Virement soumis',
+    'transfer_pending_body'           => 'Votre demande a bien été enregistrée et est en attente de validation par notre équipe.',
+    'transfer_pending_status'         => 'En attente de validation',
+    'transfer_pending_amount_label'   => 'Montant réservé',
+    'transfer_pending_beneficiary'    => 'Bénéficiaire',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Soumis le',
+    'transfer_pending_reference'      => 'Référence',
+    'transfer_pending_note'           => 'Note',
+    'transfer_pending_info'           => 'Vous serez notifié par e-mail et dans l\'application dès que votre virement sera traité. Le montant est réservé sur votre compte pendant la validation.',
+    'transfer_pending_view_movements' => 'Voir mes mouvements',
 ];

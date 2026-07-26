@@ -304,4 +304,17 @@ return [
     'interest_paid'          => 'Interessi pagati',
     'remaining_capital'      => 'Capitale residuo',
     'back_to_dashboard'      => 'Pannello di controllo',
+
+    // Conferma bonifico (in attesa di convalida)
+    'transfer_pending_title'          => 'Bonifico inviato',
+    'transfer_pending_body'           => 'La tua richiesta è stata registrata ed è in attesa di convalida da parte del nostro team.',
+    'transfer_pending_status'         => 'In attesa di convalida',
+    'transfer_pending_amount_label'   => 'Importo riservato',
+    'transfer_pending_beneficiary'    => 'Beneficiario',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Inviato il',
+    'transfer_pending_reference'      => 'Riferimento',
+    'transfer_pending_note'           => 'Nota',
+    'transfer_pending_info'           => 'Riceverai una notifica via e-mail e nell\'app non appena il tuo bonifico sarà elaborato. L\'importo resta riservato sul tuo conto durante la convalida.',
+    'transfer_pending_view_movements' => 'Vedi i miei movimenti',
 ];

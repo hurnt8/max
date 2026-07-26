@@ -324,4 +324,17 @@ return [
     'interest_paid'          => 'Betaalde rente',
     'remaining_capital'      => 'Resterend kapitaal',
     'back_to_dashboard'      => 'Dashboard',
+
+    // Bevestiging overschrijving (in afwachting van goedkeuring)
+    'transfer_pending_title'          => 'Overschrijving verzonden',
+    'transfer_pending_body'           => 'Uw aanvraag is geregistreerd en wacht op goedkeuring door ons team.',
+    'transfer_pending_status'         => 'In afwachting van goedkeuring',
+    'transfer_pending_amount_label'   => 'Gereserveerd bedrag',
+    'transfer_pending_beneficiary'    => 'Begunstigde',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Verzonden op',
+    'transfer_pending_reference'      => 'Referentie',
+    'transfer_pending_note'           => 'Notitie',
+    'transfer_pending_info'           => 'U ontvangt een melding per e-mail en in de app zodra uw overschrijving is verwerkt. Het bedrag blijft gereserveerd op uw rekening tijdens de goedkeuring.',
+    'transfer_pending_view_movements' => 'Mijn transacties bekijken',
 ];

@@ -304,4 +304,17 @@ return [
     'interest_paid'          => 'Gezahlte Zinsen',
     'remaining_capital'      => 'Restkapital',
     'back_to_dashboard'      => 'Dashboard',
+
+    // Überweisungsbestätigung (wartet auf Freigabe)
+    'transfer_pending_title'          => 'Überweisung übermittelt',
+    'transfer_pending_body'           => 'Ihre Anfrage wurde registriert und wartet auf die Freigabe durch unser Team.',
+    'transfer_pending_status'         => 'Wartet auf Freigabe',
+    'transfer_pending_amount_label'   => 'Reservierter Betrag',
+    'transfer_pending_beneficiary'    => 'Empfänger',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Übermittelt am',
+    'transfer_pending_reference'      => 'Referenz',
+    'transfer_pending_note'           => 'Notiz',
+    'transfer_pending_info'           => 'Sie werden per E-Mail und in der App benachrichtigt, sobald Ihre Überweisung bearbeitet wurde. Der Betrag bleibt während der Prüfung auf Ihrem Konto reserviert.',
+    'transfer_pending_view_movements' => 'Meine Transaktionen ansehen',
 ];

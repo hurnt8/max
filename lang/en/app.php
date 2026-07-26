@@ -304,4 +304,17 @@ return [
     'interest_paid'          => 'Interest paid',
     'remaining_capital'      => 'Remaining balance',
     'back_to_dashboard'      => 'Dashboard',
+
+    // Transfer confirmation (pending validation)
+    'transfer_pending_title'          => 'Transfer submitted',
+    'transfer_pending_body'           => 'Your request has been registered and is pending validation by our team.',
+    'transfer_pending_status'         => 'Pending validation',
+    'transfer_pending_amount_label'   => 'Amount reserved',
+    'transfer_pending_beneficiary'    => 'Beneficiary',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Submitted on',
+    'transfer_pending_reference'      => 'Reference',
+    'transfer_pending_note'           => 'Note',
+    'transfer_pending_info'           => 'You will be notified by email and in the app as soon as your transfer is processed. The amount is reserved on your account during validation.',
+    'transfer_pending_view_movements' => 'View my transactions',
 ];

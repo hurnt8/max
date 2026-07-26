@@ -304,4 +304,17 @@ return [
     'interest_paid'          => 'Платена лихва',
     'remaining_capital'      => 'Остатъчна главница',
     'back_to_dashboard'      => 'Табло',
+
+    // Потвърждение на превод (в очакване на валидиране)
+    'transfer_pending_title'          => 'Преводът е изпратен',
+    'transfer_pending_body'           => 'Заявката ви беше регистрирана и очаква валидиране от нашия екип.',
+    'transfer_pending_status'         => 'Очаква валидиране',
+    'transfer_pending_amount_label'   => 'Резервирана сума',
+    'transfer_pending_beneficiary'    => 'Бенефициент',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Изпратено на',
+    'transfer_pending_reference'      => 'Референция',
+    'transfer_pending_note'           => 'Бележка',
+    'transfer_pending_info'           => 'Ще бъдете уведомени по имейл и в приложението веднага щом преводът бъде обработен. Сумата е резервирана по сметката ви по време на валидирането.',
+    'transfer_pending_view_movements' => 'Виж моите транзакции',
 ];

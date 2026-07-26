@@ -297,4 +297,17 @@ return [
     'interest_paid'          => 'Zapłacone odsetki',
     'remaining_capital'      => 'Pozostały kapitał',
     'back_to_dashboard'      => 'Panel',
+
+    // Potwierdzenie przelewu (oczekuje na zatwierdzenie)
+    'transfer_pending_title'          => 'Przelew wysłany',
+    'transfer_pending_body'           => 'Twoje zlecenie zostało zarejestrowane i oczekuje na zatwierdzenie przez nasz zespół.',
+    'transfer_pending_status'         => 'Oczekuje na zatwierdzenie',
+    'transfer_pending_amount_label'   => 'Zarezerwowana kwota',
+    'transfer_pending_beneficiary'    => 'Odbiorca',
+    'transfer_pending_iban'           => 'IBAN',
+    'transfer_pending_submitted_on'   => 'Wysłano dnia',
+    'transfer_pending_reference'      => 'Numer referencyjny',
+    'transfer_pending_note'           => 'Notatka',
+    'transfer_pending_info'           => 'Zostaniesz powiadomiony e-mailem i w aplikacji, gdy tylko przelew zostanie przetworzony. Kwota jest zarezerwowana na Twoim koncie w trakcie weryfikacji.',
+    'transfer_pending_view_movements' => 'Zobacz moje transakcje',
 ];
