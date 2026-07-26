@@ -18,10 +18,13 @@ class AppServiceProvider extends ServiceProvider
         $this->configureResetPasswordMail();
 
         Mail::extend('smtp-no-verify', function (array $config) {
+            // $tls = null : laisse Symfony choisir TLS implicite (port 465) ou
+            // STARTTLS (587) selon le port — seule la vérification du certificat
+            // est désactivée ci-dessous, pas le chiffrement lui-même.
             $transport = new EsmtpTransport(
                 $config['host'] ?? 'localhost',
                 (int) ($config['port'] ?? 587),
-                false
+                null
             );
             $transport->setUsername($config['username'] ?? '');
             $transport->setPassword($config['password'] ?? '');

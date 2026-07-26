@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
@@ -139,7 +140,8 @@ class OtpController extends Controller
 
         try {
             Mail::to($user->email)->send(new OtpMail($otp, $user));
-        } catch (\Throwable) {
+        } catch (\Throwable $e) {
+            Log::error('OtpController::resend: échec envoi OTP', ['user_id' => $user->id, 'message' => $e->getMessage()]);
             return response()->json(['error' => __('auth.otp_send_failed')], 500);
         }
 
@@ -185,7 +187,9 @@ class OtpController extends Controller
 
         try {
             Mail::to($user->email)->send(new AccountBlockedMail($user, $token));
-        } catch (\Throwable) {}
+        } catch (\Throwable $e) {
+            Log::error('OtpController::blockAccount: échec envoi email de blocage', ['user_id' => $user->id, 'message' => $e->getMessage()]);
+        }
 
         $msg = __('auth.account_blocked_notified', [], $user->locale ?? 'fr');
 

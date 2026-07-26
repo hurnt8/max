@@ -73,7 +73,8 @@ class ClientLoginController extends Controller
 
         try {
             Mail::to($user->email)->send(new OtpMail($otp, $user));
-        } catch (\Throwable) {
+        } catch (\Throwable $e) {
+            Log::error('ClientLoginController: échec envoi OTP', ['user_id' => $user->id, 'message' => $e->getMessage()]);
             return back()->withErrors(['identifier' => __('auth.otp_send_failed')])->onlyInput('identifier');
         }
 
