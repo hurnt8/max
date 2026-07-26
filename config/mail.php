@@ -53,6 +53,20 @@ return [
             ],
         ],
 
+        // Comme 'smtp', mais sans vérification du certificat TLS — utile quand
+        // l'hébergeur mutualisé présente un certificat partagé (ex: LWS/LiteSpeed)
+        // qui ne correspond pas au hostname mail.<domaine>.
+        'smtp-no-verify' => [
+            'transport'    => 'smtp-no-verify',
+            'url'          => env('MAIL_URL'),
+            'host'         => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port'         => env('MAIL_PORT', 587),
+            'encryption'   => env('MAIL_ENCRYPTION', 'tls'),
+            'username'     => env('MAIL_USERNAME'),
+            'password'     => env('MAIL_PASSWORD'),
+            'timeout'      => 30,
+        ],
+
         'ses' => [
             'transport' => 'ses',
         ],
