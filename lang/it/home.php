@@ -177,13 +177,13 @@ return [
 'sl' => 'Sloveno',
 
 // Hero subtitle
-'hero_subtitle' => 'Nessun processo complesso, nessuna commissione nascosta. Dal 1990 finanziamo i vostri progetti personali, immobiliari, auto e aziendali con trasparenza e velocità.',
+'hero_subtitle' => 'Nessun processo complesso, nessuna commissione nascosta. Da 15 anni finanziamo i vostri progetti personali, immobiliari, auto e aziendali con trasparenza e velocità.',
 
 // Slide
 'slide_1' => [
-    'title' => ' Dal 1990 · Autorizzato · Risposta in 24h',
+    'title' => ' Da 15 anni · Autorizzato · Risposta in 48h',
     'text1' => 'Finanziate tutti i vostri progetti,',
-    'text2' => 'fino a 500.000 € in 24h.',
+    'text2' => 'fino a 500.000 € in 48h.',
 ],
 'slide_2' => [
     'title' => 'Prestiti intelligenti per un futuro luminoso',
@@ -212,7 +212,7 @@ return [
     'exptitle' => 'anni di esperienza',
     'sectagline' => 'benvenuto in Solberg Grupo',
     'sectitle' => 'Prestiti personali per realizzare i tuoi sogni',
-    'text1' => 'Siamo in questo settore dal 1990 e forniamo i migliori servizi.',
+    'text1' => 'Siamo in questo settore da 15 anni e forniamo i migliori servizi.',
     'text2' => 'Solberg Grupo è la tua piattaforma di fiducia per prestiti con un’esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.',
     'check1' => 'prestito per piccole imprese',
     'check2' => 'prestito per studiare all’estero',
@@ -247,7 +247,7 @@ return [
 'chooses' => [
     'sectagline' => 'i nostri vantaggi',
     'sectitle' => 'perché sceglierci',
-    'text1' => 'Siamo in questo settore dal 1990 e forniamo i migliori servizi.',
+    'text1' => 'Siamo in questo settore da 15 anni e forniamo i migliori servizi.',
     'item1' => 'tassi più bassi',
     'item2' => 'rapido e semplice',
     'progress1' => 'processo di prestito',

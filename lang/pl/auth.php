@@ -40,7 +40,7 @@ return [
     'feature_secure'      => 'Szyfrowane dane',
     'feature_currencies'  => '6 walut akceptowanych',
     'feature_certified'   => 'Certyfikat EU',
-    'feature_fast'        => 'Odpowiedź w 24h',
+    'feature_fast'        => 'Odpowiedź w 48h',
 
     'role_superadmin'     => 'Super Administrator',
     'role_superadmin_sub' => 'Zarządzanie globalne i role',

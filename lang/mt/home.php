@@ -154,13 +154,13 @@ return [
     'sl' => 'Is-Sloven',
 
     // Hero subtitle
-    'hero_subtitle' => 'L-ebda proċess kumpless, l-ebda tariffi moħbija. Mill-1990, niffinanzjaw proġetti personali, tal-proprjetà, tal-karozza u tan-negozju b\'trasparenza u veloċità.',
+    'hero_subtitle' => 'L-ebda proċess kumpless, l-ebda tariffi moħbija. Ilna 15-il sena niffinanzjaw proġetti personali, tal-proprjetà, tal-karozza u tan-negozju b\'trasparenza u veloċità.',
 
     // Slide
     'slide_1' => [
-        'title' => ' Mill-1990 · Liċenzjat · Risposta fi 24h',
+        'title' => ' 15-il sena esperjenza · Liċenzjat · Risposta fi 48h',
         'text1' => 'Iffinanzja l-proġetti kollha tiegħek,',
-        'text2' => 'sa €95,000 fi 24h.',
+        'text2' => 'sa €95,000 fi 48h.',
     ],
     'slide_2' => [
         'title' => 'Prestiti Smart għal Futuri Brillanti',
@@ -189,7 +189,7 @@ return [
         'exptitle' => 'sena ta\' esperjenza',
         'sectagline' => 'Merħba fil-finanzi tal-ekwità',
         'sectitle' => 'Prestiti personali biex twettqu l-ħolm tiegħek',
-        'text1' => 'Aħna fil-business minn 1990 u nipprovdu l-aħjar servizzi.',
+        'text1' => 'Ilna 15-il sena f\'dan il-business u nipprovdu l-aħjar servizzi.',
         'text2' => 'Credixa hija l-pjattaforma affidabbli tiegħek għall-prestiti bi esperjenza tal-klijent eċċezzjonali. Aħna impenjati li nipprovdu soluzzjonijiet finanzjarji sempliċi, siguri u rapidi.',
         'check1' => 'prestitu għall-kumpaniji żgħar',
         'check2' => 'prestitu għall-istudju barra',
@@ -209,7 +209,7 @@ return [
     'chooses' => [
         'sectagline' => 'il-vantaġġi tagħna',
         'sectitle' => 'Għaliex Agħżelna?',
-        'text1' => 'Aħna fil-business minn 1990 u nipprovdu l-aħjar servizzi.',
+        'text1' => 'Ilna 15-il sena f\'dan il-business u nipprovdu l-aħjar servizzi.',
         'item1' => 'rates baxxi',
         'item2' => 'veloċi u faċli',
         'progress1' => 'proċess tal-prestitu',

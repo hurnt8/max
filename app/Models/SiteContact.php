@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class SiteContact extends Model
 {
     protected $fillable = [
+        'name',
+        'logo_light_path',
+        'logo_dark_path',
         'address_1',
         'address_2',
         'address_3',

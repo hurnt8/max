@@ -52,7 +52,7 @@ return [
     'feature_secure'      => 'Date criptate',
     'feature_currencies'  => '6 valute acceptate',
     'feature_certified'   => 'Certificat UE',
-    'feature_fast'        => 'Răspuns în 24h',
+    'feature_fast'        => 'Răspuns în 48h',
 
     'role_superadmin'     => 'Super Administrator',
     'role_superadmin_sub' => 'Gestionare globală și roluri',

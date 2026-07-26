@@ -2,12 +2,12 @@
 
 return [
     'general_title' => 'Solberg Grupo – Najlepsze kredyty online w Europie.',
-    'hero_subtitle' => 'Bez skomplikowanych procedur, bez ukrytych opłat. Od 5 lat finansujemy projekty osobiste, nieruchomości, samochodowe i biznesowe z pełną przejrzystością i szybkością.',
+    'hero_subtitle' => 'Bez skomplikowanych procedur, bez ukrytych opłat. Od 15 lat finansujemy projekty osobiste, nieruchomości, samochodowe i biznesowe z pełną przejrzystością i szybkością.',
 
     'slide_1' => [
-        'title' => ' 5 lat doświadczenia · Licencjonowany · Gwarantowana odpowiedź',
+        'title' => ' 15 lat doświadczenia · Licencjonowany · Gwarantowana odpowiedź',
         'text1' => 'Sfinansuj wszystkie swoje projekty,',
-        'text2' => 'do 500 000 € w 24h.',
+        'text2' => 'do 500 000 € w 48h.',
     ],
     'slide_2' => [
         'title' => 'Inteligentne kredyty na świetlaną przyszłość',
@@ -36,7 +36,7 @@ return [
         'exptitle' => 'lat doświadczenia',
         'sectagline' => 'Witamy w Solberg Grupo',
         'sectitle' => 'Kredyty osobiste spełniające Twoje marzenia',
-        'text1' => 'Działamy w tej branży od 1990 roku i oferujemy najlepsze usługi.',
+        'text1' => 'Działamy w tej branży od 15 lat i oferujemy najlepsze usługi.',
         'text2' => 'Solberg Grupo to Twoja zaufana platforma kredytowa z wyjątkową obsługą klienta. Jesteśmy zobowiązani do zapewniania prostych, bezpiecznych i szybkich rozwiązań finansowych.',
         'check1' => 'kredyt dla małych firm',
         'check2' => 'kredyt na studia za granicą',
@@ -44,8 +44,8 @@ return [
         'check4' => 'bardzo niskie oprocentowanie',
         'engage1_title' => 'Licencjonowany i Regulowany',
         'engage1_desc'  => 'Certyfikowana instytucja kredytowa działająca zgodnie z normami europejskimi. Twoje dane i akta są chronione na każdym etapie.',
-        'engage2_title' => 'Gwarantowana odpowiedź w 24h',
-        'engage2_desc'  => 'Proces 100% online, bez wizyty w oddziale. Decyzja w ciągu 24 godzin.',
+        'engage2_title' => 'Gwarantowana odpowiedź w 48h',
+        'engage2_desc'  => 'Proces 100% online, bez wizyty w oddziale. Decyzja w ciągu 48 godzin.',
         'engage3_title' => 'Wielowalutowy i Wielokrajowy',
         'engage3_desc'  => 'Finansowanie dostępne w walucie Twojego kraju, dopasowane do Twojego projektu.',
     ],
@@ -93,7 +93,7 @@ return [
     'chooses' => [
         'sectagline' => 'nasze zalety',
         'sectitle' => 'dlaczego warto nas wybrać',
-        'text1' => 'Działamy w tej branży od 1990 roku i oferujemy najlepsze usługi.',
+        'text1' => 'Działamy w tej branży od 15 lat i oferujemy najlepsze usługi.',
         'item1' => 'niższe oprocentowanie',
         'item2' => 'szybko i łatwo',
         'progress1' => 'proces kredytowy',

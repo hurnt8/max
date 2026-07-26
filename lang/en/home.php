@@ -154,13 +154,13 @@ return [
     'sl' => 'Slovenian',
 
     // Hero subtitle
-    'hero_subtitle' => 'No complex process, no hidden fees. For 5 years, we have been financing personal, real estate, auto and business projects with transparency and speed.',
+    'hero_subtitle' => 'No complex process, no hidden fees. For 15 years, we have been financing personal, real estate, auto and business projects with transparency and speed.',
 
     // Slide
     'slide_1' => [
-        'title' => ' 5 Years of Expertise · Licensed · Guaranteed Response',
+        'title' => ' 15 Years of Expertise · Licensed · Guaranteed Response',
         'text1' => 'Finance all your projects,',
-        'text2' => 'up to €95,000 in 24h.',
+        'text2' => 'up to €95,000 in 48h.',
     ],
     'slide_2' => [
         'title' => 'Smart Loans for Bright Futures',
@@ -189,7 +189,7 @@ return [
         'exptitle' => 'year of experience',
         'sectagline' => 'welcome to Solberg Grupo',
         'sectitle' => 'Personal loans to fulfill your dreams',
-        'text1' => 'We’re in this business since 1990 and we provide the best services.',
+        'text1' => 'We’ve been in this business for 15 years and we provide the best services.',
         'text2' => 'Solberg Grupo is your trusted platform for loans with an exceptional customer experience. We are committed to providing you with simple, secure and fast financial solutions.',
         'check1' => 'small business loan',
         'check2' => 'studying abroad loan',
@@ -197,8 +197,8 @@ return [
         'check4' => 'very low rates',
         'engage1_title' => 'Licensed & Regulated',
         'engage1_desc'  => 'Certified credit institution operating under European standards. Your data and file are protected at every step.',
-        'engage2_title' => 'Guaranteed Response in 24h',
-        'engage2_desc'  => '100% online process, no branch visit required. Decision delivered within 24 hours.',
+        'engage2_title' => 'Guaranteed Response in 48h',
+        'engage2_desc'  => '100% online process, no branch visit required. Decision delivered within 48 hours.',
         'engage3_title' => 'Multi-currency & Multi-country',
         'engage3_desc'  => 'Financing available in your country\'s currency, tailored to your project.',
     ],
@@ -224,7 +224,7 @@ return [
     'chooses' => [
         'sectagline' => 'our benefits',
         'sectitle' => 'why choose us',
-        'text1' => 'We’re in this business since 1990 and we provide the best services.',
+        'text1' => 'We’ve been in this business for 15 years and we provide the best services.',
         'item1' => 'lower rates',
         'item2' => 'quick and easy',
         'progress1' => 'loan process',

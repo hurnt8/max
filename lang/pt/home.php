@@ -163,13 +163,13 @@ return [
     'sl' => 'esloveno',
 
     // Hero subtitle
-    'hero_subtitle' => 'Sem procedimentos complexos, sem taxas ocultas. Desde 1990 financiamos projetos pessoais, imobiliários, automóveis e empresariais com transparência e rapidez.',
+    'hero_subtitle' => 'Sem procedimentos complexos, sem taxas ocultas. Há 15 anos financiamos projetos pessoais, imobiliários, automóveis e empresariais com transparência e rapidez.',
 
     // Slide
     'slide_1' => [
-        'title' => ' Desde 1990 · Autorizado · Resposta em 24h',
+        'title' => ' 15 anos de experiência · Autorizado · Resposta em 48h',
         'text1' => 'Financie todos os seus projetos,',
-        'text2' => 'até 500 000 € em 24h.',
+        'text2' => 'até 500 000 € em 48h.',
     ],
     'slide_2' => [
         'title' => 'Empréstimos Inteligentes para Futuros Brilhantes',
@@ -198,7 +198,7 @@ return [
         'exptitle' => 'ano de experiência',
         'sectagline' => 'bem-vindo àSolberg Grupo',
         'sectitle' => 'Empréstimos pessoais para realizar os seus sonhos',
-        'text1' => 'Estamos neste negócio desde 1990 e oferecemos os melhores serviços.',
+        'text1' => 'Estamos neste negócio há 15 anos e oferecemos os melhores serviços.',
         'text2' => 'ASolberg Grupo é a sua plataforma confiável para empréstimos com uma experiência de cliente excecional. Estamos comprometidos em fornecer soluções financeiras simples, seguras e rápidas.',
         'check1' => 'empréstimo para pequenas empresas',
         'check2' => 'empréstimo para estudar no estrangeiro',
@@ -218,7 +218,7 @@ return [
     'chooses' => [
         'sectagline' => 'os nossos benefícios',
         'sectitle' => 'por que escolher-nos',
-        'text1' => 'Estamos neste negócio desde 1990 e oferecemos os melhores serviços.',
+        'text1' => 'Estamos neste negócio há 15 anos e oferecemos os melhores serviços.',
         'item1' => 'taxas mais baixas',
         'item2' => 'rápido e fácil',
         'progress1' => 'processo de empréstimo',

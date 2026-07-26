@@ -190,13 +190,13 @@ return [
     'sl' => 'Slowenisch',
 
     // Hero subtitle
-    'hero_subtitle' => 'Kein aufwändiges Verfahren, keine versteckten Gebühren. Wir finanzieren Ihre persönlichen, Immobilien-, Auto- und Geschäftsprojekte seit 1990 transparent und schnell.',
+    'hero_subtitle' => 'Kein aufwändiges Verfahren, keine versteckten Gebühren. Wir finanzieren Ihre persönlichen, Immobilien-, Auto- und Geschäftsprojekte seit 15 Jahren transparent und schnell.',
 
     // Slide
     'slide_1' => [
-        'title' => ' Seit 1990 · Lizenziert · Antwort in 24h',
+        'title' => ' Seit 15 Jahren · Lizenziert · Antwort in 48h',
         'text1' => 'Finanzieren Sie alle Projekte,',
-        'text2' => 'bis zu 500.000 € in 24h.',
+        'text2' => 'bis zu 500.000 € in 48h.',
     ],
     'slide_2' => [
         'title' => 'Smarte Kredite für eine glänzende Zukunft',
@@ -225,7 +225,7 @@ return [
         'exptitle' => 'Jahre Erfahrung',
         'sectagline' => 'Willkommen bei Solberg Grupo',
         'sectitle' => 'Persönliche Kredite, um Ihre Träume zu erfüllen',
-        'text1' => 'Wir sind seit 1990 in diesem Geschäft und bieten die besten Dienstleistungen.',
+        'text1' => 'Wir sind seit 15 Jahren in diesem Geschäft und bieten die besten Dienstleistungen.',
         'text2' => 'Solberg Grupo ist Ihre vertrauenswürdige Plattform für Kredite mit einer außergewöhnlichen Kundenerfahrung. Wir bieten einfache, sichere und schnelle Finanzlösungen.',
         'check1' => 'Kredit für kleine Unternehmen',
         'check2' => 'Kredit für Auslandsstudium',
@@ -260,7 +260,7 @@ return [
     'chooses' => [
         'sectagline' => 'unsere Vorteile',
         'sectitle' => 'warum uns wählen',
-        'text1' => 'Wir sind seit 1990 in diesem Geschäft und bieten die besten Dienstleistungen.',
+        'text1' => 'Wir sind seit 15 Jahren in diesem Geschäft und bieten die besten Dienstleistungen.',
         'item1' => 'niedrigere Zinsen',
         'item2' => 'schnell und einfach',
         'progress1' => 'Kreditprozess',

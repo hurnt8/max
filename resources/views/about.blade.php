@@ -65,7 +65,7 @@
                          alt="" class="about-image-secondary"
                          style="width:38%;right:1rem;bottom:1rem;">
                     <div class="about-badge">
-                        <span class="about-badge__number">5</span>
+                        <span class="about-badge__number">15</span>
                         <span class="about-badge__label">{{ __('home.about.exptitle') }}</span>
                     </div>
                 </div>

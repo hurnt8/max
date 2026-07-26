@@ -105,7 +105,7 @@
                      style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1);">
                     @foreach ([
                         ['fas fa-star',        __('home.customer_satisfaction_rate'), '4.9/5'],
-                        ['fas fa-bolt',        __('home.average_approval_time'),      '24h'],
+                        ['fas fa-bolt',        __('home.average_approval_time'),      '48h'],
                         ['fas fa-users',       __('home.member'),                     '8 500+'],
                     ] as $trust)
                     <div class="d-flex align-items-center gap-2">
@@ -261,7 +261,7 @@ $serviceNav = [
                          alt="Conseiller avec clients" class="about-image-secondary"
                          style="width:38%;right:1rem;bottom:1rem;">
                     <div class="about-badge">
-                        <span class="about-badge__number">5</span>
+                        <span class="about-badge__number">15</span>
                         <span class="about-badge__label">{{ __('home.about.exptitle') }}</span>
                     </div>
                 </div>

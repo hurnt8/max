@@ -80,10 +80,10 @@
             <div class="col-lg-5 wow fadeInLeft" data-wow-duration="900ms">
                 <div class="contact-image-panel">
                     <img src="{{ asset('assets/images/resources/contact-1-1.jpg') }}"
-                         alt="Contact Solberg Grupo" class="contact-image-panel__img">
+                         alt="Contact {{ $siteContact->name }}" class="contact-image-panel__img">
                     <div class="contact-image-panel__info">
                         <div class="contact-panel__company">
-                            <h3>Solberg Grupo</h3>
+                            <h3>{{ $siteContact->name }}</h3>
                             <p>{{ __('contact.detail_desc') }}</p>
                         </div>
                         @if ($addresses->first())

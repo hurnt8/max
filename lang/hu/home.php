@@ -190,11 +190,11 @@ return [
     'sl' => 'szlovén',
 
     // Hero subtitle
-    'hero_subtitle' => 'Nincs bonyolult folyamat, nincsenek rejtett díjak. 1990 óta finanszírozzuk személyes, ingatlan-, autó- és üzleti projektjeit átláthatóan és gyorsan.',
+    'hero_subtitle' => 'Nincs bonyolult folyamat, nincsenek rejtett díjak. 15 éve finanszírozzuk személyes, ingatlan-, autó- és üzleti projektjeit átláthatóan és gyorsan.',
 
     // Slide
     'slide_1' => [
-        'title' => ' 1990 óta · Engedélyes · Válasz 24 órán belül',
+        'title' => ' 15 év tapasztalat · Engedélyes · Válasz 24 órán belül',
         'text1' => 'Finanszírozza összes projektjét,',
         'text2' => 'akár 500 000 € 24 órán belül.',
     ],
@@ -225,7 +225,7 @@ return [
         'exptitle' => 'év tapasztalat',
         'sectagline' => 'Üdvözlünk a Solberg Grupónál',
         'sectitle' => 'Személyi hitelek, hogy valóra váltsd az álmaidat',
-        'text1' => '1990 óta vagyunk jelen az üzletben, és a legjobb szolgáltatásokat kínáljuk.',
+        'text1' => '15 éve vagyunk jelen az üzletben, és a legjobb szolgáltatásokat kínáljuk.',
         'text2' => 'A Solberg Grupo a megbízható platformod hitelekhez, kivételes ügyfélszolgálattal. Elkötelezettek vagyunk abban, hogy egyszerű, biztonságos és gyors pénzügyi megoldásokat kínáljunk.',
         'check1' => 'kisvállalkozói hitel',
         'check2' => 'külföldi tanulmányi hitel',
@@ -260,7 +260,7 @@ return [
     'chooses' => [
         'sectagline' => 'előnyeink',
         'sectitle' => 'Miért válassz minket',
-        'text1' => '1990 óta vagyunk jelen az üzletben, és a legjobb szolgáltatásokat kínáljuk.',
+        'text1' => '15 éve vagyunk jelen az üzletben, és a legjobb szolgáltatásokat kínáljuk.',
         'item1' => 'alacsonyabb kamatok',
         'item2' => 'gyors és egyszerű',
         'progress1' => 'hitel folyamat',

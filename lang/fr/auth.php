@@ -52,7 +52,7 @@ return [
     'feature_secure'      => 'Données chiffrées',
     'feature_currencies'  => '6 devises acceptées',
     'feature_certified'   => 'Agrément européen',
-    'feature_fast'        => 'Réponse en 24h',
+    'feature_fast'        => 'Réponse en 48h',
 
     'role_superadmin'     => 'Super Administrateur',
     'role_superadmin_sub' => 'Gestion globale & rôles',

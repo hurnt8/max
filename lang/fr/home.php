@@ -155,13 +155,13 @@ return [
     'sl' => 'Slovène',
 
     // Hero subtitle
-    'hero_subtitle' => 'Pas de démarche complexe, pas de frais cachés. Depuis 5 ans, nous finançons vos projets personnels, immobiliers, auto et professionnels avec transparence et rapidité.',
+    'hero_subtitle' => 'Pas de démarche complexe, pas de frais cachés. Depuis 15 ans, nous finançons vos projets personnels, immobiliers, auto et professionnels avec transparence et rapidité.',
 
     // Slide
     'slide_1' => [
-        'title' => ' Depuis 5 ans · Agréé · Réponse garantie',
+        'title' => ' Depuis 15 ans · Agréé · Réponse garantie',
         'text1' => 'Financez tous vos projets,',
-        'text2' => 'jusqu\'à 500 000 € en 24h.',
+        'text2' => 'jusqu\'à 500 000 € en 48h.',
     ],
     'slide_2' => [
         'title' => 'Prêts Intelligents pour un Avenir Brillant',
@@ -192,7 +192,7 @@ return [
         'exptitle' => 'années d\'expérience',
         'sectagline' => 'bienvenue chez Solberg Grupo',
         'sectitle' => 'Prêts personnels pour réaliser vos rêves',
-        'text1' => 'Nous sommes dans ce domaine depuis 1990 et offrons les meilleurs services.',
+        'text1' => 'Nous sommes dans ce domaine depuis 15 ans et offrons les meilleurs services.',
         'text2' => 'Solberg Grupo est votre plateforme de confiance pour des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
         'check1' => 'prêt pour petite entreprise',
         'check2' => 'prêt pour étudier à l\'étranger',
@@ -200,8 +200,8 @@ return [
         'check4' => 'taux très bas',
         'engage1_title' => 'Agréé & réglementé',
         'engage1_desc'  => 'Organisme de crédit certifié, soumis aux normes européennes. Vos données et votre dossier sont protégés à chaque étape.',
-        'engage2_title' => 'Réponse garantie sous 24h',
-        'engage2_desc'  => 'Traitement 100 % en ligne, sans déplacement ni paperasse. Décision rendue sous 24 heures.',
+        'engage2_title' => 'Réponse garantie sous 48h',
+        'engage2_desc'  => 'Traitement 100 % en ligne, sans déplacement ni paperasse. Décision rendue sous 48 heures.',
         'engage3_title' => 'Multi-devises & multi-pays',
         'engage3_desc'  => 'Un financement disponible dans la devise de votre pays, adapté à votre projet.',
     ],
@@ -230,7 +230,7 @@ return [
     'chooses' => [
         'sectagline' => 'nos avantages',
         'sectitle' => 'pourquoi nous choisir',
-        'text1' => 'Nous sommes dans ce domaine depuis 1990 et offrons les meilleurs services.',
+        'text1' => 'Nous sommes dans ce domaine depuis 15 ans et offrons les meilleurs services.',
         'item1' => 'taux bas',
         'item2' => 'rapide et facile',
         'progress1' => 'processus de prêt',

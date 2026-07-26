@@ -155,13 +155,13 @@ return [
     'sl' => 'Slovenă',
 
     // Hero subtitle
-    'hero_subtitle' => 'Fără demersuri complicate, fără costuri ascunse. De 5 ani, finanțăm proiectele dumneavoastră personale, imobiliare, auto și profesionale cu transparență și rapiditate.',
+    'hero_subtitle' => 'Fără demersuri complicate, fără costuri ascunse. De 15 ani, finanțăm proiectele dumneavoastră personale, imobiliare, auto și profesionale cu transparență și rapiditate.',
 
     // Slide
     'slide_1' => [
-        'title' => ' De 5 ani · Autorizat · Răspuns garantat',
+        'title' => ' De 15 ani · Autorizat · Răspuns garantat',
         'text1' => 'Finanțați toate proiectele dumneavoastră,',
-        'text2' => 'până la 500 000 € în 24h.',
+        'text2' => 'până la 500 000 € în 48h.',
     ],
     'slide_2' => [
         'title' => 'Împrumuturi Inteligente pentru un Viitor Strălucit',
@@ -192,7 +192,7 @@ return [
         'exptitle' => 'ani de experiență',
         'sectagline' => 'bine ați venit la Solberg Grupo',
         'sectitle' => 'Împrumuturi personale pentru a vă îndeplini visurile',
-        'text1' => 'Suntem activi în acest domeniu din 1990 și oferim cele mai bune servicii.',
+        'text1' => 'Suntem activi în acest domeniu de 15 ani și oferim cele mai bune servicii.',
         'text2' => 'Solberg Grupo este platforma dumneavoastră de încredere pentru împrumuturi, cu o experiență excepțională pentru clienți. Ne angajăm să vă oferim soluții financiare simple, sigure și rapide.',
         'check1' => 'împrumut pentru afaceri mici',
         'check2' => 'împrumut pentru studii în străinătate',
@@ -200,8 +200,8 @@ return [
         'check4' => 'rate foarte mici',
         'engage1_title' => 'Autorizat și reglementat',
         'engage1_desc'  => 'Instituție de creditare certificată, supusă normelor europene. Datele și dosarul dumneavoastră sunt protejate la fiecare etapă.',
-        'engage2_title' => 'Răspuns garantat în 24h',
-        'engage2_desc'  => 'Procesare 100% online, fără deplasări sau documente pe hârtie. Decizie comunicată în 24 de ore.',
+        'engage2_title' => 'Răspuns garantat în 48h',
+        'engage2_desc'  => 'Procesare 100% online, fără deplasări sau documente pe hârtie. Decizie comunicată în 48 de ore.',
         'engage3_title' => 'Multi-valută și multi-țară',
         'engage3_desc'  => 'Finanțare disponibilă în moneda țării dumneavoastră, adaptată proiectului dumneavoastră.',
     ],
@@ -230,7 +230,7 @@ return [
     'chooses' => [
         'sectagline' => 'avantajele noastre',
         'sectitle' => 'de ce să ne alegeți',
-        'text1' => 'Suntem activi în acest domeniu din 1990 și oferim cele mai bune servicii.',
+        'text1' => 'Suntem activi în acest domeniu de 15 ani și oferim cele mai bune servicii.',
         'item1' => 'rate mici',
         'item2' => 'rapid și simplu',
         'progress1' => 'proces de creditare',

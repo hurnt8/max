@@ -153,13 +153,13 @@ return [
     'sl' => 'esloveno',
 
     // Hero subtitle
-    'hero_subtitle' => 'Sin trámites complejos, sin costes ocultos. Desde hace 5 años financiamos sus proyectos personales, inmobiliarios, de vehículos y empresariales con total transparencia.',
+    'hero_subtitle' => 'Sin trámites complejos, sin costes ocultos. Desde hace 15 años financiamos sus proyectos personales, inmobiliarios, de vehículos y empresariales con total transparencia.',
 
     // Slide
     'slide_1' => [
-        'title' => ' 5 años de experiencia · Autorizado · Respuesta garantizada',
+        'title' => ' 15 años de experiencia · Autorizado · Respuesta garantizada',
         'text1' => 'Financia todos tus proyectos,',
-        'text2' => 'hasta 500.000 € en 24h.',
+        'text2' => 'hasta 500.000 € en 48h.',
     ],
     'slide_2' => [
         'title' => 'Préstamos Inteligentes para Futuros Brillantes',
@@ -188,7 +188,7 @@ return [
         'exptitle' => 'años de experiencia',
         'sectagline' => 'bienvenido a Solberg Grupo',
         'sectitle' => 'Préstamos personales para cumplir tus sueños',
-        'text1' => 'Estamos en este negocio desde 1990 y brindamos los mejores servicios.',
+        'text1' => 'Estamos en este negocio desde hace 15 años y brindamos los mejores servicios.',
         'text2' => 'Solberg Grupo es tu plataforma confiable para préstamos con una experiencia al cliente excepcional. Nos comprometemos a ofrecerte soluciones financieras simples, seguras y rápidas.',
         'check1' => 'préstamo para pequeñas empresas',
         'check2' => 'préstamo para estudiar en el extranjero',
@@ -196,8 +196,8 @@ return [
         'check4' => 'tasas muy bajas',
         'engage1_title' => 'Autorizado y Regulado',
         'engage1_desc'  => 'Entidad de crédito certificada, sujeta a las normas europeas. Sus datos y expediente están protegidos en todo momento.',
-        'engage2_title' => 'Respuesta garantizada en 24h',
-        'engage2_desc'  => 'Proceso 100% en línea, sin visita a sucursal. Decisión en menos de 24 horas.',
+        'engage2_title' => 'Respuesta garantizada en 48h',
+        'engage2_desc'  => 'Proceso 100% en línea, sin visita a sucursal. Decisión en menos de 48 horas.',
         'engage3_title' => 'Multidivisa y Multipaís',
         'engage3_desc'  => 'Financiación disponible en la moneda de tu país, adaptada a tu proyecto.',
     ],
@@ -223,7 +223,7 @@ return [
     'chooses' => [
         'sectagline' => 'nuestros beneficios',
         'sectitle' => '¿por qué elegirnos?',
-        'text1' => 'Estamos en este negocio desde 1990 y brindamos los mejores servicios.',
+        'text1' => 'Estamos en este negocio desde hace 15 años y brindamos los mejores servicios.',
         'item1' => 'tasas bajas',
         'item2' => 'rápido y fácil',
         'progress1' => 'proceso de préstamo',

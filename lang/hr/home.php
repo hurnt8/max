@@ -174,13 +174,13 @@ return [
     'sl' => 'slovenski',
 
     // Hero subtitle
-    'hero_subtitle' => 'Bez složenih postupaka, bez skrivenih naknada. Od 1990. financiramo vaše osobne, stambene, auto i poslovne projekte transparentno i brzo.',
+    'hero_subtitle' => 'Bez složenih postupaka, bez skrivenih naknada. Već 15 godina financiramo vaše osobne, stambene, auto i poslovne projekte transparentno i brzo.',
 
     // Slide
     'slide_1' => [
-        'title' => ' Od 1990. · Licencirano · Odgovor za 24h',
+        'title' => ' 15 godina iskustva · Licencirano · Odgovor za 48h',
         'text1' => 'Financirajte sve svoje projekte,',
-        'text2' => 'do 500.000 € za 24h.',
+        'text2' => 'do 500.000 € za 48h.',
     ],
     'slide_2' => [
         'title' => 'Pametni krediti za svijetlu budućnost',
@@ -209,7 +209,7 @@ return [
         'exptitle' => 'godina iskustva',
         'sectagline' => 'dobrodošli uSolberg Grupo',
         'sectitle' => 'Osobni krediti za ostvarenje vaših snova',
-        'text1' => 'U ovom poslu smo od 1990. godine i pružamo najbolje usluge.',
+        'text1' => 'U ovom poslu smo već 15 godina i pružamo najbolje usluge.',
         'text2' => 'Credixa je vaša pouzdana platforma za kredite s iznimnim korisničkim iskustvom. Posvećeni smo pružanju jednostavnih, sigurnih i brzih financijskih rješenja.',
         'check1' => 'kredit za mala poduzeća',
         'check2' => 'kredit za studiranje u inozemstvu',
@@ -229,7 +229,7 @@ return [
     'chooses' => [
         'sectagline' => 'naše prednosti',
         'sectitle' => 'Zašto odabrati nas?',
-        'text1' => 'U ovom poslu smo od 1990. godine i pružamo najbolje usluge.',
+        'text1' => 'U ovom poslu smo već 15 godina i pružamo najbolje usluge.',
         'item1' => 'niži kamatni postoci',
         'item2' => 'brzo i jednostavno',
         'progress1' => 'postupak odobrenja kredita',

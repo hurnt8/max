@@ -190,13 +190,13 @@ return [
     'sl' => 'sloveno',
 
     // Hero subtitle
-    'hero_subtitle' => 'Jokių sudėtingų procedūrų, jokių paslėptų mokesčių. Nuo 1990 m. finansuojame asmeninius, nekilnojamojo turto, automobilių ir verslo projektus skaidriai ir greitai.',
+    'hero_subtitle' => 'Jokių sudėtingų procedūrų, jokių paslėptų mokesčių. Jau 15 metų finansuojame asmeninius, nekilnojamojo turto, automobilių ir verslo projektus skaidriai ir greitai.',
 
     // Slide
     'slide_1' => [
-        'title' => ' Nuo 1990 · Licencijuota · Atsakymas per 24h',
+        'title' => ' 15 metų patirtis · Licencijuota · Atsakymas per 48h',
         'text1' => 'Finansuokite visus projektus,',
-        'text2' => 'iki 500 000 € per 24h.',
+        'text2' => 'iki 500 000 € per 48h.',
     ],
     'slide_2' => [
         'title' => 'Išmanios paskolos šviesiai ateičiai',
@@ -225,7 +225,7 @@ return [
         'exptitle' => 'metų patirtis',
         'sectagline' => 'sveiki atvykę į Solberg Grupo',
         'sectitle' => 'Asmeninės paskolos jūsų svajonėms įgyvendinti',
-        'text1' => 'Šioje srityje dirbame nuo 1990 m. ir siūlome geriausias paslaugas.',
+        'text1' => 'Šioje srityje dirbame jau 15 metų ir siūlome geriausias paslaugas.',
         'text2' => 'Solberg Grupo yra jūsų patikima platforma paskoloms gauti su išskirtine klientų patirtimi. Esame įsipareigoję pasiūlyti jums paprastus, saugius ir greitus finansinius sprendimus.',
         'check1' => 'paskola smulkiajam verslui',
         'check2' => 'paskola studijoms užsienyje',
@@ -260,7 +260,7 @@ return [
     'chooses' => [
         'sectagline' => 'mūsų privalumai',
         'sectitle' => 'kodėl rinktis mus',
-        'text1' => 'Šioje srityje dirbame nuo 1990 m. ir siūlome geriausias paslaugas.',
+        'text1' => 'Šioje srityje dirbame jau 15 metų ir siūlome geriausias paslaugas.',
         'item1' => 'mažesnės palūkanos',
         'item2' => 'greita ir paprasta',
         'progress1' => 'paskolos procesas',

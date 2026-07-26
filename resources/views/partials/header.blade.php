@@ -1,12 +1,15 @@
-@php $locale = app()->getLocale(); $route = Route::currentRouteName() ?? 'home'; @endphp
+@php
+    $locale = app()->getLocale(); $route = Route::currentRouteName() ?? 'home';
+    $siteContact = \App\Models\SiteContact::current();
+@endphp
 
 <header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300">
     <div class="max-w-screen-xl mx-auto px-6 flex items-center justify-between h-20">
 
         <!-- Logo -->
         <a href="{{ route('home', ['locale' => $locale]) }}" class="flex items-center gap-3 flex-shrink-0">
-            <img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="Solberg Grupo" class="h-12 lg:h-14 logo-img logo-img--white transition-opacity duration-300">
-            <img src="{{ asset('assets/images/logo-transparent-icon.png') }}" alt="Solberg Grupo" class="h-10 logo-img logo-img--color transition-opacity duration-300">
+            <img src="{{ $siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : asset('assets/images/logo-white-icon.png') }}" alt="{{ $siteContact->name }}" class="h-12 lg:h-14 logo-img logo-img--white transition-opacity duration-300">
+            <img src="{{ $siteContact->logo_light_path ? Storage::url($siteContact->logo_light_path) : asset('assets/images/logo-transparent-icon.png') }}" alt="{{ $siteContact->name }}" class="h-10 logo-img logo-img--color transition-opacity duration-300">
         </a>
 
         <!-- Desktop nav -->

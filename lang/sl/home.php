@@ -162,13 +162,13 @@ return [
     'sl' => 'Slovenščina',
 
     // Hero subtitle
-    'hero_subtitle' => 'Brez zapletenih postopkov, brez skritih stroškov. Od leta 1990 financiramo osebne, nepremičninske, avtomobilske in poslovne projekte s preglednostjo in hitrostjo.',
+    'hero_subtitle' => 'Brez zapletenih postopkov, brez skritih stroškov. Že 15 let financiramo osebne, nepremičninske, avtomobilske in poslovne projekte s preglednostjo in hitrostjo.',
 
     // Slide
     'slide_1' => [
-        'title' => ' Od 1990 · Licencirano · Odgovor v 24h',
+        'title' => ' 15 let izkušenj · Licencirano · Odgovor v 48h',
         'text1' => 'Financirajte vse svoje projekte,',
-        'text2' => 'do 500.000 € v 24h.',
+        'text2' => 'do 500.000 € v 48h.',
     ],
     'slide_2' => [
         'title' => 'Pametna posojila za svetle prihodnosti',
@@ -197,7 +197,7 @@ return [
         'exptitle' => 'leta izkušenj',
         'sectagline' => 'dobrodošli vSolberg Grupo',
         'sectitle' => 'Osebna posojila za izpolnitev vaših sanj',
-        'text1' => 'Smo v tem poslu že od leta 1990 in nudimo najboljše storitve.',
+        'text1' => 'Smo v tem poslu že 15 let in nudimo najboljše storitve.',
         'text2' => 'Credixa je vaša zaupanja vredna platforma za posojila z izjemno uporabniško izkušnjo. Zavezani smo k zagotavljanju preprostih, varnih in hitrih finančnih rešitev.',
         'check1' => 'posojilo za mala podjetja',
         'check2' => 'posojilo za študij v tujini',
@@ -217,7 +217,7 @@ return [
     'chooses' => [
         'sectagline' => 'naše prednosti',
         'sectitle' => 'zakaj izbrati nas',
-        'text1' => 'Smo v tem poslu že od leta 1990 in nudimo najboljše storitve.',
+        'text1' => 'Smo v tem poslu že 15 let in nudimo najboljše storitve.',
         'item1' => 'nižje obrestne mere',
         'item2' => 'hitro in enostavno',
         'progress1' => 'postopek posojila',
