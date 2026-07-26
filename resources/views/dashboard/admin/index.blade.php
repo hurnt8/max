@@ -544,7 +544,7 @@
           </td>
           <td data-label="Client">
             @if($loan->client_id)
-            <a href="{{ route('admin.users.show', $loan->client_id) }}" style="text-decoration:none">
+            <a href="{{ route('admin.users.show', $loan->client) }}" style="text-decoration:none">
               <div class="cell-name" style="color:var(--c-navy)">{{ $clientName }}</div>
             </a>
             @else

@@ -358,7 +358,7 @@ $roleConf = [
             @endif
           </td>
           <td data-label="Changer le rôle">
-            <form action="{{ route('super-admin.users.role', $u->id) }}" method="POST"
+            <form action="{{ route('super-admin.users.role', $u) }}" method="POST"
                   class="role-select-wrap" id="form-{{ $u->id }}">
               @csrf
               <select name="role" class="role-select" onchange="this.form.submit()">

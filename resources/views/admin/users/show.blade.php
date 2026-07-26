@@ -158,7 +158,7 @@
 
   <div class="cu-profile-actions">
     @if($user->invitation_token)
-    <form action="{{ route('admin.users.resend-invite', $user->id) }}" method="POST">
+    <form action="{{ route('admin.users.resend-invite', $user) }}" method="POST">
       @csrf
       <button type="submit" class="btn-navy" style="background:rgba(5,150,105,.1);color:#059669;border:1px solid rgba(5,150,105,.25)">
         <i class="fas fa-paper-plane"></i> Renvoyer l'invitation
@@ -344,7 +344,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
-      <form action="{{ route('admin.users.update', $user->id) }}" method="POST">
+      <form action="{{ route('admin.users.update', $user) }}" method="POST">
         @csrf @method('PUT')
         <div class="modal-body" style="padding:1.5rem">
           <div class="row g-3">

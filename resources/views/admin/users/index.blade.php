@@ -139,7 +139,7 @@
             <div style="display:flex;gap:.375rem;justify-content:flex-end">
               {{-- Renvoyer invitation si pas encore activé --}}
               @if($user->invitation_token)
-              <form action="{{ route('admin.users.resend-invite',$user->id) }}" method="POST">
+              <form action="{{ route('admin.users.resend-invite',$user) }}" method="POST">
                 @csrf
                 <button type="submit" class="btn-icon btn-icon-success" title="Renvoyer l'invitation">
                   <i class="fas fa-paper-plane"></i>
@@ -158,7 +158,7 @@
               </button>
               @endif
 
-              <a href="{{ route('admin.users.show', $user->id) }}"
+              <a href="{{ route('admin.users.show', $user) }}"
                  class="btn-icon btn-icon-primary"
                  title="Voir la fiche">
                 <i class="fas fa-eye"></i>
@@ -173,7 +173,7 @@
               </button>
 
               @if(! $user->hasRole('super-admin') || $isSuperAdmin)
-              <form action="{{ route('admin.users.destroy',$user->id) }}" method="POST"
+              <form action="{{ route('admin.users.destroy',$user) }}" method="POST"
                     data-confirm="Supprimer {{ $user->name }} ?">
                 @csrf @method('DELETE')
                 <button type="submit" class="btn-icon btn-icon-danger" title="Supprimer">
@@ -206,7 +206,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
 
-              <form action="{{ route('admin.users.update',$user->id) }}" method="POST">
+              <form action="{{ route('admin.users.update',$user) }}" method="POST">
                 @csrf @method('PUT')
                 <div class="modal-body" style="padding:1.5rem">
                   <div class="row g-3">
@@ -331,7 +331,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
 
-              <form action="{{ route('admin.users.assign-admin', $user->id) }}" method="POST">
+              <form action="{{ route('admin.users.assign-admin', $user) }}" method="POST">
                 @csrf
                 <div class="modal-body" style="padding:1.5rem">
 
