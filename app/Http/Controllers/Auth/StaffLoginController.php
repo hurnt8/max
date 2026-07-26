@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class StaffLoginController extends Controller
@@ -56,7 +57,8 @@ class StaffLoginController extends Controller
 
             try {
                 Mail::to($user->email)->send(new OtpMail($otp, $user));
-            } catch (\Throwable) {
+            } catch (\Throwable $e) {
+                Log::error('StaffLoginController: échec envoi OTP', ['user_id' => $user->id, 'message' => $e->getMessage()]);
                 return back()->withErrors(['email' => 'Impossible d\'envoyer le code de vérification.']);
             }
 
