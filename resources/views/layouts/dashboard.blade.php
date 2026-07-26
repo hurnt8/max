@@ -869,6 +869,12 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
          class="sidebar-link {{ request()->routeIs('admin.contract-templates*') ? 'active':'' }}">
         <i class="fas fa-file-signature icon"></i> Modèles de contrats
       </a>
+      @can('manage-notification-templates')
+      <a href="{{ route('admin.notification-templates.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.notification-templates*') ? 'active':'' }}">
+        <i class="fas fa-bell icon"></i> Modèles de notification
+      </a>
+      @endcan
 
       <span class="sidebar-label">Gestion</span>
       @hasanyrole(['admin', 'super-admin'])
@@ -888,6 +894,26 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
          class="sidebar-link {{ request()->routeIs('admin.invoices*') ? 'active':'' }}">
         <i class="fas fa-file-invoice icon"></i> Factures
       </a>
+      @endhasanyrole
+      @can('manage-site-contacts')
+      <a href="{{ route('admin.site-contacts.edit') }}"
+         class="sidebar-link {{ request()->routeIs('admin.site-contacts*') ? 'active':'' }}">
+        <i class="fas fa-map-marker-alt icon"></i> Coordonnées
+      </a>
+      @endcan
+      @can('manage-social-links')
+      <a href="{{ route('admin.social-links.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.social-links*') ? 'active':'' }}">
+        <i class="fas fa-share-alt icon"></i> Réseaux sociaux
+      </a>
+      @endcan
+      @can('manage-loan-settings')
+      <a href="{{ route('admin.loan-settings.edit') }}"
+         class="sidebar-link {{ request()->routeIs('admin.loan-settings*') ? 'active':'' }}">
+        <i class="fas fa-percentage icon"></i> Paramètres de prêt
+      </a>
+      @endcan
+      @hasanyrole(['admin', 'super-admin'])
       @php $admSupUnread = \App\Models\SupportMessage::where('sender_type','client')->whereNull('read_at')->count(); @endphp
       <a href="{{ route('admin.support.index') }}"
          class="sidebar-link {{ request()->routeIs('admin.support*') ? 'active':'' }}">
