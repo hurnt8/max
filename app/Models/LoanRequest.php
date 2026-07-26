@@ -71,8 +71,8 @@ class LoanRequest extends Model
         'frais_assurance'      => 'decimal:2',
         'date_fin_assurance'   => 'date',
         'interest_rate'        => 'decimal:2',
-        'bank_account'         => 'encrypted',
-        'npi'                  => 'encrypted',
+        'bank_account'         => \App\Casts\SafeEncrypted::class,
+        'npi'                  => \App\Casts\SafeEncrypted::class,
     ];
 
     protected static function booted(): void

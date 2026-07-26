@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('email')->nullable()->after('phone_2');
         });
 
-        DB::table('site_contacts')->update(['email' => 'contact@credixa.eu']);
+        DB::table('site_contacts')->update(['email' => 'contact@solberggrupo.site']);
     }
 
     /**

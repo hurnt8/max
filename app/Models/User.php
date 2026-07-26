@@ -29,10 +29,10 @@ class User extends Authenticatable
         'balance'                  => 'decimal:2',
         'is_blocked'               => 'boolean',
         'unblock_token_expires_at' => 'datetime',
-        'bank_account'             => 'encrypted',
-        'bic'                      => 'encrypted',
-        'id_number'                => 'encrypted',
-        'tax_number'               => 'encrypted',
+        'bank_account'             => \App\Casts\SafeEncrypted::class,
+        'bic'                      => \App\Casts\SafeEncrypted::class,
+        'id_number'                => \App\Casts\SafeEncrypted::class,
+        'tax_number'               => \App\Casts\SafeEncrypted::class,
     ];
 
     protected static function booted(): void

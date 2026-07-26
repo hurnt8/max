@@ -1,7 +1,7 @@
 <?php
 /*
  * Script de diagnostic — À SUPPRIMER après vérification
- * Accès : https://credixa.eu/diag.php
+ * Accès : https://solberggrupo.site/diag.php
  */
 header('Content-Type: text/plain; charset=utf-8');
 

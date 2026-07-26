@@ -46,7 +46,7 @@ return [
     'contact_details' => [
         'Solberg Grupo',
         'Адрес: Rua de Santo António 33, 7200-175, Португалия',
-        'Имейл: contact@credixa.eu',
+        'Имейл: contact@solberggrupo.site',
         'Телефон: +31 6 57341120 ',
     ],
 

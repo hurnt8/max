@@ -46,7 +46,7 @@ return [
     'contact_details' => [
         'Credixa',
         'Adresa: Rua de Santo António 33, 7200-175, Portugal',
-        'E-pošta: contact@credixa.eu',
+        'E-pošta: contact@solberggrupo.site',
         'Telefon: +31 6 57341120 ',
     ],
 ];

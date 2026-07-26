@@ -30,7 +30,7 @@ return [
     'email'               => 'Correo electrónico',
     'email_staff'         => 'Email profesional',
     'email_ph'            => 'usted@ejemplo.com',
-    'email_ph_staff'      => 'agente@credixa.eu',
+    'email_ph_staff'      => 'agente@solberggrupo.site',
     'password_label'      => 'Contraseña',
     'remember'            => 'Recordarme',
     'remember_staff'      => 'Mantener sesión',

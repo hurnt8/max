@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contatti',
-            'content' => 'Se hai domande o preoccupazioni riguardo a questi termini e condizioni, contattaci al:<br><br>Solberg Grupo<br>Indirizzo: Rua de Santo António 33, 7200-175, Portogallo<br>Email: contact@credixa.eu<br>Telefono: +31 6 57341120 '
+            'content' => 'Se hai domande o preoccupazioni riguardo a questi termini e condizioni, contattaci al:<br><br>Solberg Grupo<br>Indirizzo: Rua de Santo António 33, 7200-175, Portogallo<br>Email: contact@solberggrupo.site<br>Telefono: +31 6 57341120 '
         ],
     ],
 

@@ -37,7 +37,7 @@ return [
         ],
         [
             'pavadinimas' => '9. Kontaktas',
-            'content' => 'Jei turite klausimÅ³ ar neaiškumÅ³ dÄl šiÅ³ taisykliÅ³ ir sÄlygÅ³, susisiekite su mumis adresu:<br><br>Credixa<br>Adresas: Rua de Santo António 33, 7200-175, Portugal<br>El. paštas: contact@credixa.eu<br>Telefonas: +31 6 57341120 '
+            'content' => 'Jei turite klausimÅ³ ar neaiškumÅ³ dÄl šiÅ³ taisykliÅ³ ir sÄlygÅ³, susisiekite su mumis adresu:<br><br>Credixa<br>Adresas: Rua de Santo António 33, 7200-175, Portugal<br>El. paštas: contact@solberggrupo.site<br>Telefonas: +31 6 57341120 '
         ],
     ],
 ];

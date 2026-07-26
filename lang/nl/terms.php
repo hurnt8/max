@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contact',
-            'content' => 'Als u vragen of opmerkingen heeft over deze algemene voorwaarden, neem dan contact met ons op via:<br><br>Solberg Grupo<br>Adres: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@credixa.eu<br>Telefoon: +31 6 57341120 '
+            'content' => 'Als u vragen of opmerkingen heeft over deze algemene voorwaarden, neem dan contact met ons op via:<br><br>Solberg Grupo<br>Adres: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@solberggrupo.site<br>Telefoon: +31 6 57341120 '
         ],
     ],
 ];

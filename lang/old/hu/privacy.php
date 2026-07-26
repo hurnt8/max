@@ -46,7 +46,7 @@ return [
     'contact_details' => [
         "Credixa",
         "Cím: Rua de Santo António 33, 7200-175, Portugal",
-        "E-mail: contact@credixa.eu",
+        "E-mail: contact@solberggrupo.site",
         "Telefon: +31 6 57341120 ",
     ],
 ];

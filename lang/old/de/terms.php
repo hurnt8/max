@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kontakt',
-            'content' => 'Wenn Sie Fragen oder Bedenken zu diesen Allgemeinen Geschäftsbedingungen haben, kontaktieren Sie uns bitte unter:<br><br>Credixa<br>Adresse: Rua de Santo António 33, 7200-175, Portugal<br>E-Mail: contact@credixa.eu<br>Telefon: +31 6 57341120 '
+            'content' => 'Wenn Sie Fragen oder Bedenken zu diesen Allgemeinen Geschäftsbedingungen haben, kontaktieren Sie uns bitte unter:<br><br>Credixa<br>Adresse: Rua de Santo António 33, 7200-175, Portugal<br>E-Mail: contact@solberggrupo.site<br>Telefon: +31 6 57341120 '
         ],
     ],
 ];

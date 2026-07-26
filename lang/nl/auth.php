@@ -30,7 +30,7 @@ return [
     'email'               => 'E-mailadres',
     'email_staff'         => 'Zakelijk e-mailadres',
     'email_ph'            => 'u@voorbeeld.com',
-    'email_ph_staff'      => 'agent@credixa.eu',
+    'email_ph_staff'      => 'agent@solberggrupo.site',
     'password_label'      => 'Wachtwoord',
     'remember'            => 'Onthoud mij',
     'remember_staff'      => 'Aangemeld blijven',

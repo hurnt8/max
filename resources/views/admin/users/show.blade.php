@@ -297,10 +297,19 @@
           <td data-label="Date" style="font-size:.72rem;color:var(--c-muted);white-space:nowrap">
             {{ $loan->created_at->format('d/m/Y') }}
           </td>
-          <td data-label="">
+          <td data-label="" style="display:flex;gap:.35rem">
             <a href="{{ route('admin.loans.show', $loan) }}" class="btn-icon btn-icon-primary" title="Voir le dossier">
               <i class="fas fa-eye"></i>
             </a>
+            @if($loan->status === \App\Models\LoanRequest::STATUS_DRAFT)
+            <form action="{{ route('admin.loans.destroy', $loan) }}" method="POST"
+                  onsubmit="return confirm('Supprimer ce dossier de prêt (brouillon) ? Cette action est irréversible.')">
+              @csrf @method('DELETE')
+              <button type="submit" class="btn-icon btn-icon-danger" title="Supprimer le dossier">
+                <i class="fas fa-trash"></i>
+              </button>
+            </form>
+            @endif
           </td>
         </tr>
         @empty

@@ -1035,7 +1035,7 @@ class LoanRequestController extends Controller
         $this->authorizeAccess($loan);
         abort_unless($loan->status === LoanRequest::STATUS_DRAFT, 403, 'Seuls les brouillons peuvent être supprimés.');
         $loan->delete();
-        return redirect()->route($this->panelPrefix().'.loans.index')->with('success', 'Demande supprimée.');
+        return back()->with('success', 'Demande supprimée.');
     }
 
     public function assignAdmin(Request $request, LoanRequest $loan)
