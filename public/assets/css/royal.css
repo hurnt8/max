@@ -1099,7 +1099,7 @@ select.form-control { cursor: pointer; }
    FOOTER
 ================================================================ */
 .site-footer { background: var(--navy-deep); color: rgba(255,255,255,.6); padding-top: 5rem; }
-.footer-logo { height: 96px; width: auto; max-width: 260px; object-fit: contain; margin-bottom: 1.25rem; }
+.footer-logo { height: 96px; width: auto; max-width: none; object-fit: contain; margin-bottom: 1.25rem; }
 .footer-desc { font-size: .875rem; line-height: 1.8; margin-bottom: 1.5rem; color: rgba(255,255,255,.5); }
 .footer-social { display: flex; gap: .625rem; }
 .footer-social a { width: 36px; height: 36px; background: rgba(255,255,255,.07); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); font-size: .8125rem; transition: all .2s ease; }
@@ -1402,7 +1402,7 @@ select.form-control { cursor: pointer; }
 
     /* ── Footer ── */
     .site-footer { padding-top: 3rem; }
-    .footer-logo { height: 82px; max-width: 220px; }
+    .footer-logo { height: 82px; max-width: none; }
     .footer-heading { font-size: .9375rem; }
     .footer-links { gap: .5rem; }
     .footer-links a { font-size: .8125rem; }
@@ -1508,7 +1508,7 @@ select.form-control { cursor: pointer; }
     .footer-heading { font-size: .875rem; margin-bottom: 1rem; }
     .footer-links a { font-size: .75rem; gap: .35rem; }
     .footer-social a { width: 32px; height: 32px; font-size: .75rem; }
-    .footer-logo { height: 64px; max-width: 180px; }
+    .footer-logo { height: 88px; max-width: none; }
 
     /* ── About ── */
     .about-image-main { height: 200px; }
