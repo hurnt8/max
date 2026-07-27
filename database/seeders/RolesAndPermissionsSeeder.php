@@ -62,8 +62,8 @@ class RolesAndPermissionsSeeder extends Seeder
         $this->command->table(
             ['Role', 'Email', 'Password (change immediately)'],
             [
-                ['super-admin', 'superadmin@solberggrupo.site', 'Credixa@2025!'],
-                ['admin',       'admin@solberggrupo.site',      'Admin@2025!'],
+                ['super-admin', ' contact@aureliscapital.online', 'Credixa@2025!'],
+                ['admin',       'no-reply@aureliscapital.online',      'Admin@2025!'],
             ]
         );
     }
