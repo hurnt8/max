@@ -2,20 +2,20 @@
   AURELIS CAPITAL GROUP — Système de design client (AURELIS CAPITAL GROUP, thème clair)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* ── Variables ─────────────────────────────────────────────── */
 :root {
   /* Palette */
-  --cl-navy:      #04203D;
-  --cl-navy-2:    #0A3559;
-  --cl-navy-3:    #12446E;
-  --cl-navy-4:    #4A5D73;
-  --cl-gold:      #B8883E;
-  --cl-gold-2:    #D2B789;
-  --cl-gold-d:    #96702F;
-  --cl-green:     #10B981;
-  --cl-green-bg:  rgba(16,185,129,.12);
+  --cl-navy:      #071A33;
+  --cl-navy-2:    #12315C;
+  --cl-navy-3:    #1B4A7A;
+  --cl-navy-4:    #5B6B7D;
+  --cl-gold:      #C9A227;
+  --cl-gold-2:    #DEC066;
+  --cl-gold-d:    #A3841D;
+  --cl-green:     #0B8F55;
+  --cl-green-bg:  rgba(11,143,85,.12);
   --cl-amber:     #F59E0B;
   --cl-amber-bg:  rgba(245,158,11,.12);
   --cl-red:       #EF4444;
@@ -27,26 +27,26 @@
   --cl-bg:        #F7F8F9;
   --cl-surface:   #FFFFFF;
   --cl-surface-2: #F1F2F3;
-  --cl-border:    rgba(184,136,62,.25);
-  --cl-border-2:  rgba(4,32,61,.08);
+  --cl-border:    rgba(201,162,39,.25);
+  --cl-border-2:  rgba(7,26,51,.08);
   /* Text */
-  --cl-text:      #04203D;
-  --cl-text-2:    #4A5D73;
-  --cl-muted:     #95A3B1;
+  --cl-text:      #071A33;
+  --cl-text-2:    #5B6B7D;
+  --cl-muted:     #A7B0BE;
   /* Geometry */
   --cl-radius:    14px;
   --cl-radius-sm: 9px;
   --cl-radius-lg: 20px;
   /* Effects */
-  --cl-shadow:    0 4px 24px rgba(4,32,61,.10);
-  --cl-shadow-lg: 0 8px 48px rgba(4,32,61,.14);
-  --cl-glow:      0 0 32px rgba(184,136,62,.18);
+  --cl-shadow:    0 4px 24px rgba(7,26,51,.10);
+  --cl-shadow-lg: 0 8px 48px rgba(7,26,51,.14);
+  --cl-glow:      0 0 32px rgba(201,162,39,.18);
   --cl-transition: .2s cubic-bezier(.4,0,.2,1);
 }
 
 /* ── Reset client ──────────────────────────────────────────── */
 .cl-scope, .cl-scope * { box-sizing: border-box; }
-.cl-scope { font-family: 'Montserrat', system-ui, sans-serif; }
+.cl-scope { font-family: 'Inter', system-ui, sans-serif; }
 
 /* ── Hero banner ───────────────────────────────────────────── */
 .cl-hero {
@@ -54,7 +54,7 @@
   --cl-text: #FFFFFF;
   --cl-text-2: rgba(255,255,255,.75);
   --cl-muted: rgba(255,255,255,.55);
-  --cl-border: rgba(184,136,62,.35);
+  --cl-border: rgba(201,162,39,.35);
   --cl-border-2: rgba(255,255,255,.12);
   position: relative;
   overflow: hidden;
@@ -71,7 +71,7 @@
   top: -60px; right: -60px;
   width: 240px; height: 240px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,136,62,.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,162,39,.18) 0%, transparent 70%);
   pointer-events: none;
 }
 .cl-hero::after {
@@ -87,8 +87,8 @@
   display: inline-flex;
   align-items: center;
   gap: .4rem;
-  background: rgba(184,136,62,.15);
-  border: 1px solid rgba(184,136,62,.3);
+  background: rgba(201,162,39,.15);
+  border: 1px solid rgba(201,162,39,.3);
   border-radius: 99px;
   padding: .25rem .75rem;
   font-size: .7rem;
@@ -107,7 +107,7 @@
   margin-bottom: .4rem;
 }
 .cl-hero__amount {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--cl-text);
@@ -166,14 +166,14 @@
 .cl-stat__icon {
   width: 36px; height: 36px;
   border-radius: 9px;
-  background: var(--stat-color-bg, rgba(184,136,62,.12));
+  background: var(--stat-color-bg, rgba(201,162,39,.12));
   display: flex; align-items: center; justify-content: center;
   color: var(--stat-color, var(--cl-gold));
   font-size: .875rem;
   margin-bottom: .875rem;
 }
 .cl-stat__val {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--cl-text);
@@ -218,8 +218,8 @@
   box-shadow: var(--cl-shadow);
 }
 .cl-loan-card:hover {
-  border-color: rgba(184,136,62,.3);
-  box-shadow: var(--cl-shadow-lg), 0 0 0 1px rgba(184,136,62,.1);
+  border-color: rgba(201,162,39,.3);
+  box-shadow: var(--cl-shadow-lg), 0 0 0 1px rgba(201,162,39,.1);
   transform: translateY(-2px);
 }
 .cl-loan-card__top {
@@ -234,7 +234,7 @@
   border-bottom: 1px solid var(--cl-border-2);
 }
 .cl-loan-card__ref {
-  font-family: 'Montserrat', monospace;
+  font-family: 'Inter', monospace;
   font-size: .8rem;
   font-weight: 700;
   color: var(--cl-gold-d);
@@ -249,7 +249,7 @@
   margin-bottom: .3rem;
 }
 .cl-loan-card__amount {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--cl-text);
@@ -335,7 +335,7 @@
 .cl-badge--validated{ background: var(--cl-blue-bg);    color: var(--cl-blue); }
 .cl-badge--sent     { background: rgba(139,92,246,.12); color: var(--cl-purple); }
 .cl-badge--signed   { background: var(--cl-green-bg);   color: var(--cl-green); }
-.cl-badge--finalized{ background: rgba(184,136,62,.15); color: var(--cl-gold-d); }
+.cl-badge--finalized{ background: rgba(201,162,39,.15); color: var(--cl-gold-d); }
 .cl-badge--rejected { background: var(--cl-red-bg);     color: var(--cl-red); }
 
 /* ── Boutons client ────────────────────────────────────────── */
@@ -362,7 +362,7 @@
 .cl-btn--primary:hover {
   border-color: var(--cl-gold);
   color: var(--cl-gold-2);
-  box-shadow: 0 0 0 1px rgba(184,136,62,.25);
+  box-shadow: 0 0 0 1px rgba(201,162,39,.25);
 }
 .cl-btn--gold {
   background: linear-gradient(135deg, var(--cl-gold), var(--cl-gold-d));
@@ -371,7 +371,7 @@
 }
 .cl-btn--gold:hover {
   filter: brightness(1.08);
-  box-shadow: 0 4px 16px rgba(184,136,62,.3);
+  box-shadow: 0 4px 16px rgba(201,162,39,.3);
 }
 .cl-btn--ghost {
   background: transparent;
@@ -496,7 +496,7 @@
   background: linear-gradient(135deg, var(--cl-gold-d), var(--cl-gold));
   border-color: var(--cl-gold);
   color: #FFFFFF;
-  box-shadow: 0 0 0 4px rgba(184,136,62,.2);
+  box-shadow: 0 0 0 4px rgba(201,162,39,.2);
 }
 .cl-step.done::before { background: var(--cl-gold); opacity: .4; }
 .cl-step__label {
@@ -523,7 +523,7 @@
   pointer-events: none;
 }
 .cl-chart-center__val {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--cl-text);
@@ -560,7 +560,7 @@
   color: var(--cl-text-2);
 }
 .cl-table tr:last-child td { border-bottom: none; }
-.cl-table tr:hover td { background: rgba(4,32,61,.03); }
+.cl-table tr:hover td { background: rgba(7,26,51,.03); }
 .cl-table .td-green  { color: var(--cl-green); font-weight: 600; }
 .cl-table .td-red    { color: var(--cl-red); }
 .cl-table .td-muted  { color: var(--cl-muted); }
@@ -579,7 +579,7 @@
 .cl-alert--warn  { background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.25); color: #92400E; }
 .cl-alert--error { background: rgba(239,68,68,.08);  border: 1px solid rgba(239,68,68,.2);  color: #991B1B; }
 .cl-alert--info  { background: rgba(59,130,246,.08); border: 1px solid rgba(59,130,246,.2); color: #1E40AF; }
-.cl-alert--green { background: rgba(16,185,129,.08); border: 1px solid rgba(16,185,129,.2); color: #065F46; }
+.cl-alert--green { background: rgba(11,143,85,.08); border: 1px solid rgba(11,143,85,.2); color: #065F32; }
 .cl-alert__icon  { font-size: 1.1rem; flex-shrink: 0; margin-top: .05rem; }
 .cl-alert__title { font-weight: 700; margin-bottom: .2rem; }
 

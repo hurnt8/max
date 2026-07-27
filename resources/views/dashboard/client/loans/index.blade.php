@@ -24,7 +24,7 @@
 
 {{-- ── Stats bar ────────────────────────────────────────────── --}}
 <div class="cl-stats mb-4">
-  <div class="cl-stat" style="--stat-color:var(--cl-gold);--stat-color-bg:rgba(184,136,62,.12)">
+  <div class="cl-stat" style="--stat-color:var(--cl-gold);--stat-color-bg:rgba(201,162,39,.12)">
     <div class="cl-stat__icon"><i class="fas fa-layer-group"></i></div>
     <div class="cl-stat__val">{{ $stats['total'] }}</div>
     <div class="cl-stat__lbl">{{ __('app.stat_total') }}</div>

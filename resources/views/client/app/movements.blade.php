@@ -10,7 +10,7 @@
 .mv-summary{margin:.75rem 1.25rem 1rem;background:linear-gradient(135deg,#1B4976,#0D2E52);border-radius:var(--ca-radius-md);padding:1rem 1.25rem;display:flex;gap:1.25rem;flex-wrap:wrap}
 .mv-summary__item{flex:1;min-width:0}
 .mv-summary__lbl{font-size:.65rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.2rem}
-.mv-summary__val{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800;color:#fff}
+.mv-summary__val{font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:800;color:#fff}
 .mv-summary__val--green{color:#4ade80}
 .mv-summary__val--red{color:#f87171}
 .mv-list{padding:0 1.25rem}
@@ -26,10 +26,10 @@
 .mv-title{font-size:.875rem;font-weight:600;color:var(--ca-text-1)}
 .mv-sub{font-size:.72rem;color:var(--ca-text-3);margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mv-right{text-align:right;flex-shrink:0}
-.mv-amount--credit{font-size:.9375rem;font-weight:800;color:#4ade80;font-family:'Space Grotesk',sans-serif}
-.mv-amount--debit{font-size:.9375rem;font-weight:800;color:#f87171;font-family:'Space Grotesk',sans-serif}
-.mv-amount--pending{font-size:.9375rem;font-weight:800;color:#fbbf24;font-family:'Space Grotesk',sans-serif}
-.mv-amount--rejected{font-size:.9375rem;font-weight:800;color:#94a3b8;font-family:'Space Grotesk',sans-serif;text-decoration:line-through}
+.mv-amount--credit{font-size:.9375rem;font-weight:800;color:#4ade80;font-family:'Inter',sans-serif}
+.mv-amount--debit{font-size:.9375rem;font-weight:800;color:#f87171;font-family:'Inter',sans-serif}
+.mv-amount--pending{font-size:.9375rem;font-weight:800;color:#fbbf24;font-family:'Inter',sans-serif}
+.mv-amount--rejected{font-size:.9375rem;font-weight:800;color:#94a3b8;font-family:'Inter',sans-serif;text-decoration:line-through}
 .mv-bal{font-size:.7rem;color:var(--ca-text-3);margin-top:.15rem}
 .mv-status-pill{display:inline-block;font-size:.6rem;font-weight:700;padding:.1rem .4rem;border-radius:8px;margin-left:.35rem;vertical-align:middle;text-transform:uppercase;letter-spacing:.04em}
 .mv-status-pill--pending{background:rgba(251,191,36,.18);color:#fbbf24}

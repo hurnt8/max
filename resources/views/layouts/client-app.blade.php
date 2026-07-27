@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="AURELIS CAPITAL GROUP">
-  <meta name="theme-color" content="#04203D">
+  <meta name="theme-color" content="#071A33">
   <meta name="description" content="Credixa — Espace client mobile">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -49,7 +49,7 @@
 <style>
 #cxa-splash{
   position:fixed;inset:0;z-index:9999;
-  background:#04203D;
+  background:#071A33;
   display:flex;align-items:center;justify-content:center;
   animation:splashFade 0.4s ease 1.4s forwards;
   pointer-events:none;
@@ -182,7 +182,7 @@
 
 {{-- ══ BANNIERE PWA ══ --}}
 <div class="ca-install-banner" id="ca-install-banner" role="complementary">
-  <div style="width:42px;height:42px;border-radius:14px;background:rgba(184,136,62,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+  <div style="width:42px;height:42px;border-radius:14px;background:rgba(201,162,39,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
     <i class="fas fa-mobile-screen" style="color:var(--ca-gold-l);font-size:1.25rem"></i>
   </div>
   <div style="flex:1;min-width:0">
@@ -207,16 +207,16 @@
 @stack('scripts')
 
 {{-- ══ Push Notifications ══ --}}
-<div id="cxa-push-banner" style="display:none;position:fixed;bottom:calc(62px + env(safe-area-inset-bottom,0px) + .75rem);left:.875rem;right:.875rem;z-index:9000;background:#04203D;border:1px solid rgba(184,136,62,.35);border-radius:16px;padding:.875rem 1rem;box-shadow:0 8px 32px rgba(4,32,61,.5);display:none;align-items:center;gap:.875rem">
-  <div style="width:42px;height:42px;border-radius:13px;background:rgba(184,136,62,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-    <i class="fas fa-bell" style="color:#D2B789;font-size:1.1rem"></i>
+<div id="cxa-push-banner" style="display:none;position:fixed;bottom:calc(62px + env(safe-area-inset-bottom,0px) + .75rem);left:.875rem;right:.875rem;z-index:9000;background:#071A33;border:1px solid rgba(201,162,39,.35);border-radius:16px;padding:.875rem 1rem;box-shadow:0 8px 32px rgba(7,26,51,.5);display:none;align-items:center;gap:.875rem">
+  <div style="width:42px;height:42px;border-radius:13px;background:rgba(201,162,39,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+    <i class="fas fa-bell" style="color:#DEC066;font-size:1.1rem"></i>
   </div>
   <div style="flex:1;min-width:0">
     <div style="font-size:.84rem;font-weight:700;color:#fff;margin-bottom:.15rem">Activer les notifications</div>
     <div style="font-size:.72rem;color:rgba(255,255,255,.45);line-height:1.4">Recevez vos virements, factures et mises à jour en temps réel.</div>
   </div>
   <div style="display:flex;flex-direction:column;gap:.4rem;flex-shrink:0">
-    <button id="cxa-push-allow" style="background:linear-gradient(90deg,#D2B789,#B8883E);color:#04203D;border:none;padding:.42rem .875rem;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap">Activer</button>
+    <button id="cxa-push-allow" style="background:linear-gradient(90deg,#DEC066,#C9A227);color:#071A33;border:none;padding:.42rem .875rem;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap">Activer</button>
     <button id="cxa-push-later" style="background:none;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.45);padding:.38rem .875rem;border-radius:8px;font-size:.72rem;cursor:pointer;white-space:nowrap">Plus tard</button>
   </div>
 </div>

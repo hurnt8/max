@@ -27,7 +27,7 @@
   text-align: center;
 }
 .inv-chip__val {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.125rem; font-weight: 900;
   color: var(--ca-text); line-height: 1;
 }
@@ -111,7 +111,7 @@
 
 .inv-card__right { text-align: right; flex-shrink: 0 }
 .inv-card__amount {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: .975rem; font-weight: 800;
   color: var(--ca-text); line-height: 1;
 }

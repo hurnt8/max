@@ -33,13 +33,13 @@
   margin-bottom:1.25rem;
 }
 .pm-card__brand {
-  font-family:'Montserrat',sans-serif;font-size:.62rem;
+  font-family:'Inter',sans-serif;font-size:.62rem;
   font-weight:800;letter-spacing:.14em;text-transform:uppercase;
   color:rgba(255,255,255,.45);
 }
 .pm-card__chip {
   width:32px;height:24px;border-radius:4px;
-  background:linear-gradient(135deg,#D2B789,#B8883E,#96702F);
+  background:linear-gradient(135deg,#DEC066,#C9A227,#A3841D);
   box-shadow:0 2px 6px rgba(0,0,0,.35);position:relative;overflow:hidden;
 }
 .pm-card__chip::before {
@@ -55,7 +55,7 @@
   letter-spacing:.1em;color:rgba(255,255,255,.38);margin-bottom:.25rem;
 }
 .pm-card__iban {
-  font-family:'Montserrat',monospace;font-size:.95rem;font-weight:700;
+  font-family:'Inter',monospace;font-size:.95rem;font-weight:700;
   color:#fff;letter-spacing:.1em;word-break:break-all;line-height:1.5;
   margin-bottom:1.125rem;
 }
@@ -64,7 +64,7 @@
   position:relative;z-index:1;
 }
 .pm-card__holder {
-  font-family:'Montserrat',sans-serif;
+  font-family:'Inter',sans-serif;
   font-size:.75rem;font-weight:700;color:rgba(255,255,255,.7);
   text-transform:uppercase;letter-spacing:.06em;
 }
@@ -112,7 +112,7 @@
 .pm-detail-key { font-size:.8rem;color:var(--ca-text-3);font-weight:500 }
 .pm-detail-val {
   font-size:.82rem;font-weight:700;color:var(--ca-text);
-  font-family:'Montserrat',monospace;letter-spacing:.03em;
+  font-family:'Inter',monospace;letter-spacing:.03em;
   text-align:right;max-width:60%;word-break:break-all;
 }
 

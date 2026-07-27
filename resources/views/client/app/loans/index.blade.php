@@ -21,7 +21,7 @@
   background:var(--ca-bg2);border:1px solid var(--ca-border);
   border-radius:14px;padding:.625rem .5rem;text-align:center;
 }
-.dos-chip__val{font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:900;color:var(--ca-text);line-height:1}
+.dos-chip__val{font-family:'Inter',sans-serif;font-size:1.125rem;font-weight:900;color:var(--ca-text);line-height:1}
 .dos-chip__lbl{font-size:.6rem;color:var(--ca-text-3);margin-top:.25rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 
 /* ── Filter pills ── */
@@ -76,7 +76,7 @@
 
 /* Amount */
 .dos-card__amount{
-  font-family:'Montserrat',sans-serif;
+  font-family:'Inter',sans-serif;
   font-size:1.5rem;font-weight:900;color:var(--ca-text);
   line-height:1;margin-bottom:.5rem;
 }
@@ -170,7 +170,7 @@
     'validated'       => ['#2BBAA8','dos-badge--valid',    'pending'],
     'contract_sent'   => ['#60a5fa','dos-badge--sent',     'active'],
     'contract_signed' => ['#a78bfa','dos-badge--signed',   'active'],
-    'finalized'       => ['#B8883E','dos-badge--final',    'finalized'],
+    'finalized'       => ['#C9A227','dos-badge--final',    'finalized'],
     'rejected'        => ['#f87171','dos-badge--rejected', 'rejected'],
     default           => ['#94a3b8','dos-badge--draft',    'pending'],
   };

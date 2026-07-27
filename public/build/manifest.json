@@ -8,12 +8,12 @@
     "src": "resources/css/app.css"
   },
   "resources/css/client-app.css": {
-    "file": "assets/client-app-f4fb642b.css",
+    "file": "assets/client-app-e5e58294.css",
     "isEntry": true,
     "src": "resources/css/client-app.css"
   },
   "resources/css/client.css": {
-    "file": "assets/client-fbad8419.css",
+    "file": "assets/client-5426ffb4.css",
     "isEntry": true,
     "src": "resources/css/client.css"
   },

@@ -438,7 +438,7 @@ $serviceNav = [
                         <i class="fas fa-check"></i>
                     </div>
                     <div>
-                        <h4 style="font-family:'Montserrat',serif;font-size:1rem;font-weight:700;color:#fff;margin:0 0 .25rem;">
+                        <h4 style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;margin:0 0 .25rem;">
                             {{ __('home.loan_reasons.reasons.title' . $r) }}
                         </h4>
                         <p style="font-size:.875rem;color:rgba(255,255,255,.55);margin:0;line-height:1.65;">
@@ -662,7 +662,7 @@ $serviceNav = [
         </div>
 
         @php
-            $avatarColors = ['#04203D', '#B8883E', '#0F766E', '#B45309', '#1D4ED8', '#7C3AED'];
+            $avatarColors = ['#071A33', '#C9A227', '#0F766E', '#B45309', '#1D4ED8', '#7C3AED'];
         @endphp
 
         <div class="swiper testimonials-swiper">

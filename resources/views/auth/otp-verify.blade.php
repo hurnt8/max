@@ -15,7 +15,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -25,22 +25,22 @@
   --bg2:  #FFFFFF;
   --card: #FFFFFF;
   --inp:  #F7F8F9;
-  --navy: #04203D;
-  --navy2:#0A3559;
-  --gold: #B8883E;
-  --gold2:#96702F;
-  --text: #04203D;
-  --sub:  #4A5D73;
-  --muted:#95A3B1;
+  --navy: #071A33;
+  --navy2:#12315C;
+  --gold: #C9A227;
+  --gold2:#A3841D;
+  --text: #071A33;
+  --sub:  #5B6B7D;
+  --muted:#A7B0BE;
   --bdr:  #DBDDDE;
   /* Compat: le reste de la feuille référence encore --cyan/--cyan2 pour ses accents ponctuels */
-  --cyan: #B8883E;
-  --cyan2:#96702F;
+  --cyan: #C9A227;
+  --cyan2:#A3841D;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
   height:100%;background:var(--bg);color:var(--text);
-  font-family:'Montserrat',system-ui,sans-serif;font-size:15px;
+  font-family:'Inter',system-ui,sans-serif;font-size:15px;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
   /* Empêche le resize du viewport quand le clavier natif s'ouvre */
   overflow:hidden;
@@ -65,13 +65,13 @@ html,body{
   background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   margin-bottom:1.5rem;position:relative;
-  box-shadow:0 0 40px rgba(4,32,61,.25);
+  box-shadow:0 0 40px rgba(7,26,51,.25);
   overflow:hidden;
 }
 .ld-logo img{width:56px;height:56px;object-fit:contain;border-radius:10px}
 .ld-ring{
   position:absolute;inset:-8px;border-radius:32px;
-  border:2px solid rgba(4,32,61,.15);border-top-color:var(--gold);
+  border:2px solid rgba(7,26,51,.15);border-top-color:var(--gold);
   animation:spin .9s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -90,12 +90,12 @@ html,body{
 .orb{position:absolute;border-radius:50%;filter:blur(90px)}
 .orb-1{
   width:480px;height:480px;top:-10%;right:-8%;
-  background:radial-gradient(circle,rgba(184,136,62,.09) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(201,162,39,.09) 0%,transparent 65%);
   animation:orbf 10s ease-in-out infinite alternate;
 }
 .orb-2{
   width:360px;height:360px;bottom:-15%;left:-8%;
-  background:radial-gradient(circle,rgba(4,32,61,.05) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(7,26,51,.05) 0%,transparent 65%);
   animation:orbf 14s ease-in-out infinite alternate-reverse;
 }
 @keyframes orbf{from{transform:scale(1)}to{transform:scale(1.1) translate(2%,3%)}}
@@ -124,7 +124,7 @@ html,body{
   transition:color .18s,background .18s;
   -webkit-tap-highlight-color:transparent;
 }
-.topbar__back:hover{color:var(--navy);background:#F3E8D6}
+.topbar__back:hover{color:var(--navy);background:#F6EFD8}
 .topbar__back i{font-size:.65rem}
 .topbar__logo img{height:26px;object-fit:contain}
 
@@ -144,8 +144,8 @@ html,body{
 /* Shield icon */
 .otp-icon{
   width:76px;height:76px;border-radius:22px;
-  background:linear-gradient(135deg,rgba(184,136,62,.16),rgba(150,112,47,.16));
-  border:1.5px solid rgba(184,136,62,.3);
+  background:linear-gradient(135deg,rgba(201,162,39,.16),rgba(150,112,47,.16));
+  border:1.5px solid rgba(201,162,39,.3);
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.25rem;
   position:relative;
@@ -154,7 +154,7 @@ html,body{
 .otp-icon::after{
   content:'';
   position:absolute;inset:-6px;border-radius:28px;
-  border:1px solid rgba(184,136,62,.15);
+  border:1px solid rgba(201,162,39,.15);
   animation:pulse-ring 2.5s ease-in-out infinite;
 }
 @keyframes pulse-ring{
@@ -163,7 +163,7 @@ html,body{
 }
 
 .card-title{
-  font-family:'Montserrat',sans-serif;
+  font-family:'Inter',sans-serif;
   font-size:1.55rem;font-weight:800;color:var(--text);margin-bottom:.35rem;
 }
 .card-sub{font-size:.82rem;color:var(--sub);line-height:1.6;margin-bottom:1.5rem}
@@ -189,20 +189,20 @@ html,body{
   background:var(--inp);
   border:2px solid var(--bdr);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;
+  font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;
   color:var(--text);
   transition:border-color .2s,background .2s,box-shadow .2s;
   flex-shrink:0;position:relative;
 }
 .odigit.filled{
   border-color:var(--navy);
-  background:rgba(4,32,61,.05);
+  background:rgba(7,26,51,.05);
   color:var(--navy);
 }
 .odigit.active{
   border-color:var(--navy);
   background:#fff;
-  box-shadow:0 0 0 4px rgba(4,32,61,.1),0 0 16px rgba(4,32,61,.08);
+  box-shadow:0 0 0 4px rgba(7,26,51,.1),0 0 16px rgba(7,26,51,.08);
 }
 .odigit.active::after{
   content:'';position:absolute;
@@ -233,11 +233,11 @@ html,body{
 .obtn{
   width:100%;max-width:400px;
   padding:.88rem 1.5rem;border:none;border-radius:999px;
-  font-size:.97rem;font-weight:700;font-family:'Montserrat',sans-serif;
+  font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.625rem;
   background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 100%);
   color:#fff;letter-spacing:.01em;
-  box-shadow:0 6px 28px rgba(4,32,61,.28),0 2px 8px rgba(4,32,61,.15);
+  box-shadow:0 6px 28px rgba(7,26,51,.28),0 2px 8px rgba(7,26,51,.15);
   transition:filter .2s,box-shadow .2s,transform .1s;
   margin-bottom:.5rem;
 }
@@ -258,7 +258,7 @@ html,body{
   display:flex;align-items:center;justify-content:center;gap:.35rem;
   flex-wrap:wrap;
 }
-.resend-timer strong{color:var(--cyan);font-weight:700;font-family:'Montserrat',sans-serif}
+.resend-timer strong{color:var(--cyan);font-weight:700;font-family:'Inter',sans-serif}
 .resend-btn{
   background:none;border:none;cursor:pointer;padding:0;
   font-size:.79rem;font-weight:700;color:var(--cyan);
@@ -299,18 +299,18 @@ html,body{
 }
 .kbtn:active,.kbtn.pressed{
   transform:scale(.92);
-  background:rgba(4,32,61,.08);
-  border-color:rgba(4,32,61,.25);
-  box-shadow:0 0 14px rgba(4,32,61,.12);
+  background:rgba(7,26,51,.08);
+  border-color:rgba(7,26,51,.25);
+  box-shadow:0 0 14px rgba(7,26,51,.12);
 }
 .kbtn:disabled{opacity:.3;cursor:not-allowed}
 .knum{
-  font-family:'Montserrat',sans-serif;
+  font-family:'Inter',sans-serif;
   font-size:1.375rem;font-weight:700;line-height:1;
 }
 .ksub{
   font-size:.4rem;font-weight:600;letter-spacing:.12em;
-  color:var(--muted);font-family:'Montserrat',sans-serif;
+  color:var(--muted);font-family:'Inter',sans-serif;
   text-transform:uppercase;
 }
 .kbtn-del{background:#F1F2F3;border-color:var(--bdr)}

@@ -26,7 +26,7 @@
 
     <div class="d-flex flex-column gap-2 text-end">
       <div style="font-size:.68rem;color:var(--cl-muted);text-transform:uppercase;letter-spacing:.07em">{{ __('app.active_files') }}</div>
-      <div style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:700;color:var(--cl-gold);line-height:1">
+      <div style="font-family:'Inter',sans-serif;font-size:2rem;font-weight:700;color:var(--cl-gold);line-height:1">
         {{ $stats['active'] + $stats['finalized'] }}
       </div>
       <div>
@@ -40,7 +40,7 @@
 
 {{-- ── Stats ────────────────────────────────────────────────── --}}
 <div class="cl-stats">
-  <div class="cl-stat" style="--stat-color:var(--cl-gold);--stat-color-bg:rgba(184,136,62,.12)">
+  <div class="cl-stat" style="--stat-color:var(--cl-gold);--stat-color-bg:rgba(201,162,39,.12)">
     <div class="cl-stat__icon"><i class="fas fa-layer-group"></i></div>
     <div class="cl-stat__val">{{ $stats['total'] }}</div>
     <div class="cl-stat__lbl">{{ __('app.total_files') }}</div>

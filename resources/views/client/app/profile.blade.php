@@ -24,7 +24,7 @@
 <div style="background:linear-gradient(135deg,#1B4976,#0D2E52);border-radius:var(--ca-radius-md);padding:1rem 1.25rem;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between">
   <div>
     <div style="font-size:.65rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.25rem">{{ __('app.balance') }}</div>
-    <div style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:800;color:#fff">
+    <div style="font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;color:#fff">
       {{ $user->currency ?? config('credixa.default_currency') }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
     </div>
   </div>

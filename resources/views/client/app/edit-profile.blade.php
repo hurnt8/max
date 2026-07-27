@@ -80,7 +80,7 @@
 .ep-otp-panel__body { font-size:.8rem;color:var(--ca-text-2);margin-bottom:1rem;line-height:1.55 }
 .ep-otp-input {
   letter-spacing:.45em;font-size:1.35rem;font-weight:800;
-  text-align:center;font-family:'Space Grotesk',monospace;
+  text-align:center;font-family:'Inter',monospace;
 }
 </style>
 @endpush

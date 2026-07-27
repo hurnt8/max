@@ -85,7 +85,7 @@
 @section('content')
 
 @php
-  $palette = ['#2563EB','#059669','#D97706','#7C3AED','#DC2626','#0D9488','#B8883E'];
+  $palette = ['#2563EB','#059669','#D97706','#7C3AED','#DC2626','#0D9488','#C9A227'];
   $avatarBg = $palette[crc32($user->email) % count($palette)];
   $stMap = [
     'draft'           => ['lbl' => 'Brouillon',      'cls' => 'bs-gray'],

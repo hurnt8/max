@@ -81,7 +81,7 @@
           <div style="display:flex;justify-content:space-between;margin-bottom:.5rem;font-size:.8rem;color:rgba(255,255,255,.6)">
             <span>TVA (<span x-text="taxRate">0</span>%)</span><span x-text="fmt(taxAmt) + ' ' + currency">0</span>
           </div>
-          <div style="display:flex;justify-content:space-between;padding-top:.625rem;border-top:1px solid rgba(255,255,255,.15);font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif">
+          <div style="display:flex;justify-content:space-between;padding-top:.625rem;border-top:1px solid rgba(255,255,255,.15);font-size:1.25rem;font-weight:800;font-family:'Inter',sans-serif">
             <span>Total TTC</span><span x-text="fmt(total) + ' ' + currency">0</span>
           </div>
         </div>

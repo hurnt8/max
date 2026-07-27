@@ -28,10 +28,10 @@
   background:linear-gradient(145deg,rgba(27,138,122,.6),rgba(27,138,122,.3));
   border:2px solid rgba(255,255,255,.15);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:800;
+  font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;
   color:#fff;margin:0 auto .75rem;
 }
-.rcv-hero__name{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.2rem}
+.rcv-hero__name{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.2rem}
 .rcv-hero__badge{
   display:inline-flex;align-items:center;gap:.35rem;
   font-size:.68rem;font-weight:600;
@@ -48,7 +48,7 @@
 }
 .rcv-iban-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--ca-text-3);margin-bottom:.625rem}
 .rcv-iban-value{
-  font-family:'Space Grotesk',monospace;
+  font-family:'Inter',monospace;
   font-size:1.0625rem;font-weight:700;color:var(--ca-text);
   letter-spacing:.04em;line-height:1.4;
   word-break:break-all;margin-bottom:1rem;

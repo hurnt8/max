@@ -6,21 +6,21 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#080C18">
+<meta name="theme-color" content="#040F1F">
 <link rel="icon" type="image/svg+xml" href="/images/icon-192.svg">
 <title>Mot de passe oublié : AURELIS CAPITAL GROUP</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
-  --bg:   #080C18;
-  --inp:  #141C2E;
-  --cyan: #0DCFDC;
-  --cyan2:#09B5C8;
+  --bg:   #040F1F;
+  --inp:  #0C2038;
+  --cyan: #C9A227;
+  --cyan2:#A3841D;
   --text: #FFFFFF;
   --sub:  rgba(255,255,255,.52);
   --muted:rgba(255,255,255,.28);
@@ -29,7 +29,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
   height:100%;background:var(--bg);color:var(--text);
-  font-family:'Montserrat',system-ui,sans-serif;font-size:15px;
+  font-family:'Inter',system-ui,sans-serif;font-size:15px;
   -webkit-font-smoothing:antialiased;
 }
 body{min-height:100vh;overflow-x:hidden}
@@ -38,8 +38,8 @@ a{text-decoration:none;color:inherit}
 /* Background orbs */
 .bg-orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .orb{position:absolute;border-radius:50%;filter:blur(90px)}
-.orb-1{width:480px;height:480px;top:-10%;right:-8%;background:radial-gradient(circle,rgba(13,207,220,.1) 0%,transparent 65%);animation:orbf 10s ease-in-out infinite alternate}
-.orb-2{width:360px;height:360px;bottom:-15%;left:-8%;background:radial-gradient(circle,rgba(13,207,220,.06) 0%,transparent 65%);animation:orbf 14s ease-in-out infinite alternate-reverse}
+.orb-1{width:480px;height:480px;top:-10%;right:-8%;background:radial-gradient(circle,rgba(201,162,39,.1) 0%,transparent 65%);animation:orbf 10s ease-in-out infinite alternate}
+.orb-2{width:360px;height:360px;bottom:-15%;left:-8%;background:radial-gradient(circle,rgba(201,162,39,.06) 0%,transparent 65%);animation:orbf 14s ease-in-out infinite alternate-reverse}
 @keyframes orbf{from{transform:scale(1)}to{transform:scale(1.1) translate(2%,3%)}}
 
 /* Top bar */
@@ -73,23 +73,23 @@ a{text-decoration:none;color:inherit}
   background:linear-gradient(135deg,var(--cyan),var(--cyan2));
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.5rem;
-  box-shadow:0 0 36px rgba(13,207,220,.3);
+  box-shadow:0 0 36px rgba(201,162,39,.3);
 }
 .logo-box img{height:40px;object-fit:contain;filter:brightness(0) invert(1)}
-.logo-box span{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:#080C18;line-height:1}
+.logo-box span{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:#040F1F;line-height:1}
 
 /* Icon badge */
 .icon-badge{
   width:72px;height:72px;border-radius:50%;
-  background:rgba(13,207,220,.1);border:1.5px solid rgba(13,207,220,.25);
+  background:rgba(201,162,39,.1);border:1.5px solid rgba(201,162,39,.25);
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.5rem;
-  box-shadow:0 0 28px rgba(13,207,220,.15);
+  box-shadow:0 0 28px rgba(201,162,39,.15);
 }
 .icon-badge i{font-size:1.75rem;color:var(--cyan)}
 
 /* Heading */
-.card-title{font-family:'Montserrat',sans-serif;font-size:1.625rem;font-weight:800;color:var(--text);margin-bottom:.45rem}
+.card-title{font-family:'Playfair Display',serif;font-size:1.625rem;font-weight:800;color:var(--text);margin-bottom:.45rem}
 .card-sub{font-size:.82rem;color:var(--sub);line-height:1.65;margin-bottom:1.875rem;max-width:320px;margin-left:auto;margin-right:auto}
 
 /* Success state */
@@ -118,25 +118,25 @@ a{text-decoration:none;color:inherit}
 .finput{
   width:100%;padding:.85rem 1rem .85rem 2.6rem;
   background:var(--inp);border:1.5px solid rgba(255,255,255,.08);border-radius:12px;
-  font-size:.88rem;font-family:'Montserrat',sans-serif;color:var(--text);
+  font-size:.88rem;font-family:'Inter',sans-serif;color:var(--text);
   outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
 }
 .finput::placeholder{color:rgba(255,255,255,.2)}
-.finput:focus{border-color:var(--cyan);background:#161E30;box-shadow:0 0 0 3.5px rgba(13,207,220,.15)}
+.finput:focus{border-color:var(--cyan);background:#161E30;box-shadow:0 0 0 3.5px rgba(201,162,39,.15)}
 .finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--cyan)}
 .finput.err{border-color:#ef4444}
 
 /* Cyan pill button */
 .fbtn{
   width:100%;padding:.92rem 1.5rem;border:none;border-radius:999px;
-  font-size:.97rem;font-weight:700;font-family:'Montserrat',sans-serif;cursor:pointer;
+  font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;
   display:flex;align-items:center;justify-content:center;gap:.625rem;
   background:linear-gradient(90deg,var(--cyan) 0%,var(--cyan2) 100%);
-  color:#080C18;letter-spacing:.01em;
-  box-shadow:0 6px 28px rgba(13,207,220,.35),0 2px 8px rgba(0,0,0,.3);
+  color:#040F1F;letter-spacing:.01em;
+  box-shadow:0 6px 28px rgba(201,162,39,.35),0 2px 8px rgba(0,0,0,.3);
   transition:filter .2s,box-shadow .2s,transform .1s;margin-top:.25rem;
 }
-.fbtn:hover{filter:brightness(1.08);box-shadow:0 8px 36px rgba(13,207,220,.5)}
+.fbtn:hover{filter:brightness(1.08);box-shadow:0 8px 36px rgba(201,162,39,.5)}
 .fbtn:active{transform:scale(.975)}
 .fbtn:disabled{opacity:.6;cursor:not-allowed;filter:none}
 

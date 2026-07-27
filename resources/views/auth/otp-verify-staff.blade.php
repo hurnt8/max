@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#04203D">
+<meta name="theme-color" content="#071A33">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
 <title>{{ __('auth.otp_title') }} | Solberg Admin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/vendors/fontawesome/css/all.min.css') }}">
 <style>
 :root{
-  --navy:#04203D;--nm:#12446E;--nl:#4A5D73;
-  --gold:#B8883E;--gd:#96702F;--gp:#F3E8D6;
+  --navy:#071A33;--nm:#12446E;--nl:#5B6B7D;
+  --gold:#C9A227;--gd:#A3841D;--gp:#F6EFD8;
 }
 html,body{height:100%;margin:0;padding:0}
-body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;display:flex;flex-direction:column}
+body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:flex;flex-direction:column}
 
 .auth-left{
-  background:linear-gradient(160deg,#04203D 0%,#04203D 45%,#0A3559 100%);
+  background:linear-gradient(160deg,#071A33 0%,#071A33 45%,#12315C 100%);
   min-height:100vh; padding:2.5rem 3rem;
   display:flex;flex-direction:column;justify-content:space-between;
   position:relative;overflow:hidden;
@@ -36,7 +36,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
 .auth-left::after{
   content:'';position:absolute;top:-100px;right:-100px;
   width:380px;height:380px;border-radius:50%;
-  background:radial-gradient(circle,rgba(184,136,62,.08) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(201,162,39,.08) 0%,transparent 70%);
   pointer-events:none;
 }
 .auth-left__logo img{height:40px;position:relative;z-index:1}
@@ -44,12 +44,12 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
 
 .staff-badge{
   display:inline-flex;align-items:center;gap:.625rem;
-  background:rgba(184,136,62,.08);border:1px solid rgba(184,136,62,.2);
+  background:rgba(201,162,39,.08);border:1px solid rgba(201,162,39,.2);
   border-radius:12px;padding:.625rem 1rem;margin-bottom:1.75rem;
 }
 .staff-badge__ico{
   width:32px;height:32px;border-radius:8px;
-  background:rgba(184,136,62,.12);display:flex;align-items:center;justify-content:center;
+  background:rgba(201,162,39,.12);display:flex;align-items:center;justify-content:center;
 }
 .staff-badge__ico i{color:var(--gold);font-size:.75rem}
 .staff-badge__text{line-height:1.3}
@@ -57,7 +57,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
 .staff-badge__sub{font-size:.68rem;color:rgba(255,255,255,.35)}
 
 .auth-left__title{
-  font-family:'Montserrat',serif;font-size:2.25rem;font-weight:800;
+  font-family:'Playfair Display',serif;font-size:2.25rem;font-weight:800;
   color:#fff;line-height:1.2;margin-bottom:.875rem;
 }
 .auth-left__title span{color:var(--gold)}
@@ -82,15 +82,15 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
 
 .otp-icon{
   width:64px;height:64px;border-radius:18px;
-  background:linear-gradient(135deg,rgba(184,136,62,.16),rgba(150,112,47,.16));
-  border:1.5px solid rgba(184,136,62,.3);
+  background:linear-gradient(135deg,rgba(201,162,39,.16),rgba(150,112,47,.16));
+  border:1.5px solid rgba(201,162,39,.3);
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.25rem;
 }
 .otp-icon i{font-size:1.75rem;color:var(--gd)}
 
 .form-title{
-  font-family:'Montserrat',serif;font-size:1.75rem;font-weight:800;
+  font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:800;
   color:var(--navy);line-height:1.15;margin-bottom:.5rem;
 }
 .form-sub{font-size:.82rem;color:#6b7280;margin-bottom:1.75rem;line-height:1.6}
@@ -109,24 +109,24 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
   width:54px;height:60px;border-radius:12px;
   background:#fff;border:2px solid #ccd2db;
   text-align:center;font-size:1.6rem;font-weight:800;color:var(--navy);
-  font-family:'Montserrat',sans-serif;
+  font-family:'Inter',sans-serif;
   outline:none;caret-color:var(--navy);
   transition:border-color .2s,box-shadow .2s,background .2s;
-  box-shadow:0 1px 3px rgba(4,32,61,.06);
+  box-shadow:0 1px 3px rgba(7,26,51,.06);
 }
 .odigit::placeholder{color:#c7ccd4}
-.odigit.filled{border-color:var(--navy);background:rgba(4,32,61,.045)}
-.odigit:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(4,32,61,.12)}
+.odigit.filled{border-color:var(--navy);background:rgba(7,26,51,.045)}
+.odigit:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(7,26,51,.12)}
 .odigit.is-err{border-color:#ef4444;background:rgba(239,68,68,.06);box-shadow:0 0 0 4px rgba(239,68,68,.1)}
 
 .btn-auth{
   width:100%;padding:.8rem;border:none;border-radius:10px;
-  font-size:.9rem;font-weight:700;font-family:'Montserrat',sans-serif;cursor:pointer;
+  font-size:.9rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;
   display:flex;align-items:center;justify-content:center;gap:.5rem;
   background:var(--navy);color:#fff;
   transition:background .2s,transform .12s;letter-spacing:.01em;margin-bottom:.75rem;
 }
-.btn-auth:hover{background:#04203D}
+.btn-auth:hover{background:#071A33}
 .btn-auth:active{transform:scale(.98)}
 .btn-auth:disabled{opacity:.5;cursor:not-allowed}
 

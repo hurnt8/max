@@ -18,7 +18,7 @@
   border-radius:14px;
 }
 .send-balance__lbl{font-size:.7rem;color:var(--ca-text-3);font-weight:600}
-.send-balance__val{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:800;color:var(--ca-teal-l)}
+.send-balance__val{font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;color:var(--ca-teal-l)}
 
 /* ── Info banner (pending notice) ── */
 .send-notice{

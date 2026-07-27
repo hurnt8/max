@@ -11,10 +11,10 @@
     @endforeach
     <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 
-    <!-- Fonts: Montserrat (AURELIS CAPITAL GROUP) -->
+    <!-- Fonts: Playfair Display (titres) + Inter (corps) — AURELIS CAPITAL GROUP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,19 +23,19 @@
         theme: {
             extend: {
                 colors: {
-                    navy:      { DEFAULT:'#04203D', mid:'#0A3559', light:'#4A5D73', deep:'#02131F' },
-                    gold:      { DEFAULT:'#B8883E', light:'#D2B789', pale:'#F3E8D6', dark:'#96702F' },
+                    navy:      { DEFAULT:'#071A33', mid:'#12315C', light:'#5B6B7D', deep:'#040F1F' },
+                    gold:      { DEFAULT:'#C9A227', light:'#DEC066', pale:'#F6EFD8', dark:'#A3841D' },
                     cream:     { DEFAULT:'#FFFFFF', light:'#FFFFFF' },
                 },
                 fontFamily: {
-                    sans:  ['Montserrat','ui-sans-serif','system-ui','sans-serif'],
-                    serif: ['Montserrat','ui-sans-serif','system-ui','sans-serif'],
+                    sans:  ['Inter','ui-sans-serif','system-ui','sans-serif'],
+                    serif: ['Playfair Display','ui-serif','serif'],
                 },
                 boxShadow: {
-                    'card':  '0 1px 3px rgba(4,32,61,.06), 0 4px 16px rgba(4,32,61,.08)',
-                    'card-hover': '0 4px 8px rgba(4,32,61,.08), 0 16px 40px rgba(4,32,61,.12)',
-                    'gold':  '0 4px 24px rgba(184,136,62,.30)',
-                    'nav':   '0 1px 0 rgba(4,32,61,.08)',
+                    'card':  '0 1px 3px rgba(7,26,51,.06), 0 4px 16px rgba(7,26,51,.08)',
+                    'card-hover': '0 4px 8px rgba(7,26,51,.08), 0 16px 40px rgba(7,26,51,.12)',
+                    'gold':  '0 4px 24px rgba(201,162,39,.30)',
+                    'nav':   '0 1px 0 rgba(7,26,51,.08)',
                 },
                 animation: {
                     'fade-in-up': 'fadeInUp .6s ease forwards',

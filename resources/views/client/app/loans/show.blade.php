@@ -22,7 +22,7 @@
     'validated'       => ['#2BBAA8', 'ca-badge--valid'],
     'contract_sent'   => ['#60a5fa', 'ca-badge--sent'],
     'contract_signed' => ['#a78bfa', 'ca-badge--signed'],
-    'finalized'       => ['#B8883E', 'ca-badge--final'],
+    'finalized'       => ['#C9A227', 'ca-badge--final'],
     'rejected'        => ['#f87171', 'ca-badge--rejected'],
     default           => ['#94a3b8', 'ca-badge--draft'],
   };
@@ -49,7 +49,7 @@
   pointer-events:none;
 }
 .ds-hero__ref{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem;font-family:monospace}
-.ds-hero__amount{font-family:'Montserrat',sans-serif;font-size:2.25rem;font-weight:900;color:#fff;line-height:1;margin-bottom:.25rem}
+.ds-hero__amount{font-family:'Inter',sans-serif;font-size:2.25rem;font-weight:900;color:#fff;line-height:1;margin-bottom:.25rem}
 .ds-hero__amount sup{font-size:.875rem;font-weight:600;color:rgba(255,255,255,.55);margin-right:.25rem;vertical-align:top;margin-top:.5rem}
 .ds-hero__obj{font-size:.8rem;color:rgba(255,255,255,.45);margin-bottom:1rem}
 .ds-hero__pills{display:flex;flex-wrap:wrap;gap:.5rem}
@@ -61,7 +61,7 @@
   border:1px solid rgba(255,255,255,.12);
   color:rgba(255,255,255,.7);
 }
-.ds-hero__pill--accent{background:rgba(184,136,62,.15);border-color:rgba(184,136,62,.3);color:#B8883E}
+.ds-hero__pill--accent{background:rgba(201,162,39,.15);border-color:rgba(201,162,39,.3);color:#C9A227}
 
 /* ── Alert ── */
 .ds-alert{
@@ -86,7 +86,7 @@
   padding:.875rem 1rem;
 }
 .ds-kpi__lbl{font-size:.65rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;color:var(--ca-text-3);margin-bottom:.35rem}
-.ds-kpi__val{font-family:'Montserrat',sans-serif;font-size:1.0625rem;font-weight:800;color:var(--ca-text);line-height:1}
+.ds-kpi__val{font-family:'Inter',sans-serif;font-size:1.0625rem;font-weight:800;color:var(--ca-text);line-height:1}
 .ds-kpi__sub{font-size:.67rem;color:var(--ca-text-3);margin-top:.2rem}
 
 /* ── Section title ── */

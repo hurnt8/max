@@ -15,7 +15,7 @@
 .acs-info__sub{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.7}
 .acs-balance-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-sm);padding:1.25rem 1.75rem;text-align:center;min-width:180px}
 .acs-balance-lbl{font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:.5rem}
-.acs-balance-val{font-family:'Space Grotesk',sans-serif;font-size:2.25rem;font-weight:900;line-height:1}
+.acs-balance-val{font-family:'Inter',sans-serif;font-size:2.25rem;font-weight:900;line-height:1}
 .acs-balance-cur{font-size:.875rem;font-weight:600;color:rgba(255,255,255,.6);margin-left:.3rem}
 
 /* ── Alert / flash ── */
@@ -61,8 +61,8 @@
 .acs-mvt__label{font-size:.8125rem;font-weight:600;color:var(--c-navy)}
 .acs-mvt__sub{font-size:.72rem;color:var(--c-muted);margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .acs-mvt__right{text-align:right;flex-shrink:0;min-width:120px}
-.acs-mvt__amount--credit{font-family:'Space Grotesk',sans-serif;font-size:.9375rem;font-weight:800;color:#16a34a}
-.acs-mvt__amount--debit{font-family:'Space Grotesk',sans-serif;font-size:.9375rem;font-weight:800;color:#dc2626}
+.acs-mvt__amount--credit{font-family:'Inter',sans-serif;font-size:.9375rem;font-weight:800;color:#16a34a}
+.acs-mvt__amount--debit{font-family:'Inter',sans-serif;font-size:.9375rem;font-weight:800;color:#dc2626}
 .acs-mvt__balance{font-size:.7rem;color:var(--c-muted);margin-top:.15rem}
 
 .acs-date-sep{font-size:.67rem;color:var(--c-muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700;padding:.75rem 0 .25rem}

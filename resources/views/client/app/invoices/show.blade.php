@@ -56,7 +56,7 @@
   color: rgba(255,255,255,.38); margin-bottom: .5rem;
 }
 .invd-total__amount {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2.25rem; font-weight: 900;
   color: #fff; letter-spacing: -.03em; line-height: 1;
 }
@@ -118,7 +118,7 @@
   display: flex; gap: .75rem; flex-wrap: wrap;
 }
 .invd-item__price {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: .9rem; font-weight: 800; color: var(--ca-text);
   float: right; margin-top: -.1rem;
 }
@@ -137,7 +137,7 @@
 }
 .invd-totals__row--total .invd-totals__val {
   color: var(--ca-teal-l);
-  font-family: 'Space Grotesk', sans-serif; font-size: 1rem;
+  font-family: 'Inter', sans-serif; font-size: 1rem;
 }
 
 /* ── Note ── */
@@ -210,7 +210,7 @@
   <div class="invd-card">
     <div class="invd-row">
       <span class="invd-row__lbl"><i class="fas fa-hashtag"></i>{{ __('app.invoice_ref') }}</span>
-      <span class="invd-row__val" style="font-family:'Space Grotesk',sans-serif;font-size:.78rem">{{ $invoice->reference }}</span>
+      <span class="invd-row__val" style="font-family:'Inter',sans-serif;font-size:.78rem">{{ $invoice->reference }}</span>
     </div>
     <div class="invd-row">
       <span class="invd-row__lbl"><i class="fas fa-calendar-plus"></i>{{ __('app.invoice_date') }}</span>

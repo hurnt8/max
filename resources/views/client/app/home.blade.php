@@ -54,9 +54,9 @@
 .h-header__actions{ display:flex;gap:.5rem }
 .h-avatar{
   width:46px;height:46px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--ca-teal),#04203D);
-  border:2.5px solid rgba(184,136,62,.45);
-  box-shadow:0 0 0 4px rgba(184,136,62,.1);
+  background:linear-gradient(135deg,var(--ca-teal),#071A33);
+  border:2.5px solid rgba(201,162,39,.45);
+  box-shadow:0 0 0 4px rgba(201,162,39,.1);
   display:flex;align-items:center;justify-content:center;
   font-weight:800;font-size:1.1rem;color:#fff;
 }
@@ -84,18 +84,18 @@
   background:linear-gradient(145deg,var(--ca-navy-3) 0%,var(--ca-navy-2) 40%,var(--ca-navy) 100%);
   padding:1.375rem 1.5rem 1.25rem;
   position:relative;overflow:hidden;
-  box-shadow:0 20px 56px rgba(4,32,61,.4),0 0 0 1px rgba(255,255,255,.07);
+  box-shadow:0 20px 56px rgba(7,26,51,.4),0 0 0 1px rgba(255,255,255,.07);
 }
 .h-card::before{
   content:'';position:absolute;top:-80px;right:-80px;
   width:260px;height:260px;border-radius:50%;
-  background:radial-gradient(circle,rgba(184,136,62,.12) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(201,162,39,.12) 0%,transparent 65%);
   pointer-events:none;
 }
 .h-card::after{
   content:'';position:absolute;bottom:-80px;left:-50px;
   width:220px;height:220px;border-radius:50%;
-  background:radial-gradient(circle,rgba(184,136,62,.09) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(201,162,39,.09) 0%,transparent 65%);
   pointer-events:none;
 }
 /* Card top row */
@@ -104,14 +104,14 @@
   margin-bottom:1.125rem;
 }
 .h-card__brand{
-  font-family:'Montserrat',sans-serif;
+  font-family:'Inter',sans-serif;
   font-size:.65rem;font-weight:800;
   letter-spacing:.14em;text-transform:uppercase;
   color:rgba(255,255,255,.5);
 }
 .h-card__chip{
   width:34px;height:26px;border-radius:5px;
-  background:linear-gradient(135deg,#D2B789,#B8883E,#96702F);
+  background:linear-gradient(135deg,#DEC066,#C9A227,#A3841D);
   box-shadow:0 2px 8px rgba(0,0,0,.35);
   position:relative;overflow:hidden;
 }
@@ -139,7 +139,7 @@
 }
 .h-eye:hover{color:rgba(255,255,255,.75)}
 .h-balance{
-  font-family:'Montserrat',sans-serif;
+  font-family:'Inter',sans-serif;
   font-size:2.125rem;font-weight:800;
   color:#fff;letter-spacing:-.03em;line-height:1;
   margin-bottom:1.125rem;
@@ -159,7 +159,7 @@
   position:relative;z-index:1;
 }
 .h-card__name{
-  font-family:'Montserrat',sans-serif;
+  font-family:'Inter',sans-serif;
   font-size:.78rem;font-weight:700;
   color:rgba(255,255,255,.75);
   text-transform:uppercase;letter-spacing:.06em;
@@ -170,8 +170,8 @@
   color:rgba(255,255,255,.38);letter-spacing:.15em;
 }
 .h-card__badge{
-  background:rgba(184,136,62,.18);
-  border:1px solid rgba(184,136,62,.38);
+  background:rgba(201,162,39,.18);
+  border:1px solid rgba(201,162,39,.38);
   border-radius:999px;
   padding:.28rem .75rem;
   font-size:.65rem;font-weight:700;
@@ -206,7 +206,7 @@
   transition:transform .14s,box-shadow .14s;
 }
 .h-action:active .h-action__ico{ transform:scale(.91) }
-.h-action__ico--teal  { background:rgba(184,136,62,.2);  border:1px solid rgba(184,136,62,.35);  color:var(--ca-teal-l);    box-shadow:0 4px 14px rgba(184,136,62,.18) }
+.h-action__ico--teal  { background:rgba(201,162,39,.2);  border:1px solid rgba(201,162,39,.35);  color:var(--ca-teal-l);    box-shadow:0 4px 14px rgba(201,162,39,.18) }
 .h-action__ico--green { background:rgba(0,200,150,.15);  border:1px solid rgba(0,200,150,.3);    color:var(--ca-positive);  box-shadow:0 4px 14px rgba(0,200,150,.16) }
 .h-action__ico--blue  { background:rgba(74,158,255,.15); border:1px solid rgba(74,158,255,.3);   color:var(--ca-blue);      box-shadow:0 4px 14px rgba(74,158,255,.14) }
 .h-action__ico--purple{ background:rgba(139,92,246,.15); border:1px solid rgba(139,92,246,.3);   color:var(--ca-purple);    box-shadow:0 4px 14px rgba(139,92,246,.14) }
@@ -233,10 +233,10 @@
   height:3px;border-radius:16px 16px 0 0;
 }
 .h-stat--def::before { background:linear-gradient(90deg,var(--ca-text-3),var(--ca-bg4)) }
-.h-stat--teal::before{ background:linear-gradient(90deg,var(--ca-teal-l),#96702F) }
+.h-stat--teal::before{ background:linear-gradient(90deg,var(--ca-teal-l),#A3841D) }
 .h-stat--amb::before { background:linear-gradient(90deg,var(--ca-amber),#C87800) }
 .h-stat__num{
-  font-family:'Montserrat',sans-serif;
+  font-family:'Inter',sans-serif;
   font-size:1.75rem;font-weight:800;
   line-height:1;margin-bottom:.3rem;
 }
@@ -291,7 +291,7 @@
 }
 .h-txn__right{ text-align:right;flex-shrink:0 }
 .h-txn__amount{
-  font-family:'Montserrat',sans-serif;
+  font-family:'Inter',sans-serif;
   font-size:.95rem;font-weight:700;
 }
 .h-txn__amount--pos{ color:var(--ca-positive) }
@@ -306,10 +306,10 @@
   font-size:.62rem;font-weight:700;
   text-transform:uppercase;letter-spacing:.04em;
 }
-.h-badge--loan   { background:rgba(184,136,62,.18); color:var(--ca-teal-l) }
+.h-badge--loan   { background:rgba(201,162,39,.18); color:var(--ca-teal-l) }
 .h-badge--pending{ background:rgba(245,158,11,.15); color:var(--ca-amber) }
 .h-badge--signed { background:rgba(74,158,255,.15); color:var(--ca-blue) }
-.h-badge--final  { background:rgba(184,136,62,.15); color:var(--ca-gold-l) }
+.h-badge--final  { background:rgba(201,162,39,.15); color:var(--ca-gold-l) }
 
 /* ── Empty state ── */
 .h-empty{
@@ -426,7 +426,7 @@
     <span class="h-action__lbl">{{ __('app.action_analytics') }}</span>
   </a>
   <a href="{{ route('client.app.movements') }}" class="h-action">
-    <div class="h-action__ico" style="background:rgba(184,136,62,.15);border:1px solid rgba(184,136,62,.3);color:var(--ca-gold-l)">
+    <div class="h-action__ico" style="background:rgba(201,162,39,.15);border:1px solid rgba(201,162,39,.3);color:var(--ca-gold-l)">
       <i class="fas fa-list-ul"></i>
     </div>
     <span class="h-action__lbl">{{ __('app.movements_title') }}</span>

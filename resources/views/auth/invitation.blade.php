@@ -85,21 +85,21 @@ $salutationName = ($gender === 'N') ? explode(' ', $user->name)[0] : $user->name
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#080C18">
+<meta name="theme-color" content="#040F1F">
 <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 <title>{{ $t['title'] }}</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
-  --bg:   #080C18;
-  --inp:  #141C2E;
-  --cyan: #0DCFDC;
-  --cyan2:#09B5C8;
+  --bg:   #040F1F;
+  --inp:  #0C2038;
+  --cyan: #C9A227;
+  --cyan2:#A3841D;
   --text: #FFFFFF;
   --sub:  rgba(255,255,255,.52);
   --muted:rgba(255,255,255,.28);
@@ -108,7 +108,7 @@ $salutationName = ($gender === 'N') ? explode(' ', $user->name)[0] : $user->name
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
   min-height:100vh;background:var(--bg);color:var(--text);
-  font-family:'Montserrat',system-ui,sans-serif;font-size:15px;
+  font-family:'Inter',system-ui,sans-serif;font-size:15px;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
 }
 body{
@@ -125,12 +125,12 @@ a{text-decoration:none;color:inherit}
 .orb{position:absolute;border-radius:50%;filter:blur(90px)}
 .orb-1{
   width:520px;height:520px;top:-15%;right:-10%;
-  background:radial-gradient(circle,rgba(13,207,220,.11) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(201,162,39,.11) 0%,transparent 65%);
   animation:orbf 10s ease-in-out infinite alternate;
 }
 .orb-2{
   width:380px;height:380px;bottom:-15%;left:-8%;
-  background:radial-gradient(circle,rgba(13,207,220,.06) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(201,162,39,.06) 0%,transparent 65%);
   animation:orbf 14s ease-in-out infinite alternate-reverse;
 }
 @keyframes orbf{from{transform:scale(1)}to{transform:scale(1.1) translate(2%,3%)}}
@@ -148,25 +148,25 @@ a{text-decoration:none;color:inherit}
   background:linear-gradient(135deg,var(--cyan),var(--cyan2));
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.375rem;
-  box-shadow:0 0 36px rgba(13,207,220,.3);
+  box-shadow:0 0 36px rgba(201,162,39,.3);
 }
 .logo-box img{height:40px;object-fit:contain}
-.logo-box span{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:#080C18;line-height:1}
+.logo-box span{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:#040F1F;line-height:1}
 
 /* Avatar */
 .avatar{
   width:60px;height:60px;border-radius:50%;
   background:linear-gradient(135deg,var(--cyan),var(--cyan2));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;
-  color:#080C18;margin:0 auto 1rem;
-  box-shadow:0 0 24px rgba(13,207,220,.3);
+  font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;
+  color:#040F1F;margin:0 auto 1rem;
+  box-shadow:0 0 24px rgba(201,162,39,.3);
 }
 
 /* Heading */
 .card-head{text-align:center;margin-bottom:1.75rem}
 .card-title{
-  font-family:'Montserrat',sans-serif;
+  font-family:'Playfair Display',serif;
   font-size:1.5rem;font-weight:800;color:var(--text);margin-bottom:.35rem;
 }
 .card-sub{font-size:.8rem;color:var(--sub);line-height:1.6}
@@ -174,8 +174,8 @@ a{text-decoration:none;color:inherit}
 /* Info box */
 .info-box{
   display:flex;gap:.75rem;align-items:flex-start;
-  background:rgba(13,207,220,.07);
-  border:1px solid rgba(13,207,220,.18);
+  background:rgba(201,162,39,.07);
+  border:1px solid rgba(201,162,39,.18);
   border-radius:12px;padding:.875rem 1rem;margin-bottom:1.5rem;
 }
 .info-box i{color:var(--cyan);font-size:.88rem;flex-shrink:0;margin-top:.15rem}
@@ -202,11 +202,11 @@ a{text-decoration:none;color:inherit}
 .finput{
   width:100%;padding:.85rem 2.6rem .85rem 2.6rem;
   background:var(--inp);border:1.5px solid rgba(255,255,255,.08);border-radius:12px;
-  font-size:.875rem;font-family:'Montserrat',sans-serif;color:var(--text);
+  font-size:.875rem;font-family:'Inter',sans-serif;color:var(--text);
   outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
 }
 .finput::placeholder{color:rgba(255,255,255,.2)}
-.finput:focus{border-color:var(--cyan);background:#161E30;box-shadow:0 0 0 3.5px rgba(13,207,220,.15)}
+.finput:focus{border-color:var(--cyan);background:#161E30;box-shadow:0 0 0 3.5px rgba(201,162,39,.15)}
 .finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--cyan)}
 .finput.err{border-color:#ef4444}
 .finput[readonly]{
@@ -228,14 +228,14 @@ a{text-decoration:none;color:inherit}
 /* Cyan pill button */
 .fbtn{
   width:100%;padding:.92rem 1.5rem;border:none;border-radius:999px;
-  font-size:.97rem;font-weight:700;font-family:'Montserrat',sans-serif;
+  font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.625rem;
   background:linear-gradient(90deg,var(--cyan) 0%,var(--cyan2) 100%);
-  color:#080C18;letter-spacing:.01em;
-  box-shadow:0 6px 28px rgba(13,207,220,.35),0 2px 8px rgba(0,0,0,.3);
+  color:#040F1F;letter-spacing:.01em;
+  box-shadow:0 6px 28px rgba(201,162,39,.35),0 2px 8px rgba(0,0,0,.3);
   transition:filter .2s,box-shadow .2s,transform .1s;margin-top:1.25rem;
 }
-.fbtn:hover{filter:brightness(1.08);box-shadow:0 8px 36px rgba(13,207,220,.5)}
+.fbtn:hover{filter:brightness(1.08);box-shadow:0 8px 36px rgba(201,162,39,.5)}
 .fbtn:active{transform:scale(.975)}
 .fbtn:disabled{opacity:.6;cursor:not-allowed;filter:none}
 
@@ -361,7 +361,7 @@ a{text-decoration:none;color:inherit}
 <script>
 const strengths = @json($t['strengths']);
 const strPh     = @json($t['str_ph']);
-const colors    = ['','#ef4444','#f97316','#eab308','#22c55e','#0DCFDC'];
+const colors    = ['','#ef4444','#f97316','#eab308','#22c55e','#C9A227'];
 const widths    = ['0%','25%','50%','75%','90%','100%'];
 
 function tglPwd(id, btn) {

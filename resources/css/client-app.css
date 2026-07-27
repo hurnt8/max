@@ -2,7 +2,7 @@
   AURELIS CAPITAL GROUP — Mobile Banking App Design System (AURELIS CAPITAL GROUP)
    ================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* ── Variables (clair, thème par défaut) ──────────────────────────── */
 :root {
@@ -11,20 +11,20 @@
   --ca-bg3:         #FFFFFF;
   --ca-bg4:         #F1F2F3;
   --ca-card:        #F1F2F3;
-  --ca-teal:        #B8883E;
-  --ca-teal-l:      #D2B789;
-  --ca-gold:        #B8883E;
-  --ca-gold-l:      #D2B789;
-  --ca-positive:    #059669;
+  --ca-teal:        #C9A227;
+  --ca-teal-l:      #DEC066;
+  --ca-gold:        #C9A227;
+  --ca-gold-l:      #DEC066;
+  --ca-positive:    #0B8F55;
   --ca-negative:    #DC2626;
   --ca-amber:       #D97706;
   --ca-blue:        #2563EB;
   --ca-purple:      #7C3AED;
-  --ca-text:        #04203D;
-  --ca-text-2:      #4A5D73;
-  --ca-text-3:      #95A3B1;
-  --ca-border:      rgba(4,32,61,.10);
-  --ca-border-2:    rgba(4,32,61,.06);
+  --ca-text:        #071A33;
+  --ca-text-2:      #5B6B7D;
+  --ca-text-3:      #A7B0BE;
+  --ca-border:      rgba(7,26,51,.10);
+  --ca-border-2:    rgba(7,26,51,.06);
   --ca-safe-top:    env(safe-area-inset-top, 0px);
   --ca-safe-bottom: env(safe-area-inset-bottom, 0px);
   --ca-radius:      20px;
@@ -34,9 +34,9 @@
   --ca-transition:  .2s cubic-bezier(.4,0,.2,1);
   --ca-outer-bg:    #E4E7EA;
   /* Chrome marine (navbar / héros / carte premium) — constant quel que soit le thème */
-  --ca-navy:        #04203D;
-  --ca-navy-2:      #0A3559;
-  --ca-navy-3:      #12446E;
+  --ca-navy:        #071A33;
+  --ca-navy-2:      #12315C;
+  --ca-navy-3:      #1B4A7A;
   color-scheme: light;
 }
 
@@ -47,11 +47,11 @@
   --ca-bg3:         #112237;
   --ca-bg4:         #162D47;
   --ca-card:        #1A3A5C;
-  --ca-teal:        #B8883E;
-  --ca-teal-l:      #D2B789;
-  --ca-gold:        #B8883E;
-  --ca-gold-l:      #D2B789;
-  --ca-positive:    #00C896;
+  --ca-teal:        #C9A227;
+  --ca-teal-l:      #DEC066;
+  --ca-gold:        #C9A227;
+  --ca-gold-l:      #DEC066;
+  --ca-positive:    #17B573;
   --ca-negative:    #FF5A5A;
   --ca-amber:       #F59E0B;
   --ca-blue:        #4A9EFF;
@@ -62,9 +62,9 @@
   --ca-border:      rgba(255,255,255,.08);
   --ca-border-2:    rgba(255,255,255,.05);
   --ca-outer-bg:    #03080F;
-  --ca-navy:        #04203D;
-  --ca-navy-2:      #0A3559;
-  --ca-navy-3:      #12446E;
+  --ca-navy:        #071A33;
+  --ca-navy-2:      #12315C;
+  --ca-navy-3:      #1B4A7A;
   color-scheme: dark;
 }
 
@@ -76,7 +76,7 @@ html, body {
   height: 100%;
   background: var(--ca-bg);
   color: var(--ca-text);
-  font-family: 'Montserrat', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 15px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -119,7 +119,7 @@ button { font-family: inherit; }
   position: sticky;
   top: 0;
   z-index: 200;
-  background: rgba(4,32,61,.92);
+  background: rgba(7,26,51,.92);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255,255,255,.08);
@@ -134,11 +134,11 @@ button { font-family: inherit; }
   /* Fond transparent sur la page d'accueil : elle repose sur le fond clair
      de la page, pas sur une zone marine — on annule donc le texte blanc
      hérité de .ca-topbar (pensé pour un fond marine opaque). */
-  --ca-text: #04203D;
-  --ca-text-2: #4A5D73;
-  --ca-text-3: #95A3B1;
+  --ca-text: #071A33;
+  --ca-text-2: #5B6B7D;
+  --ca-text-3: #A7B0BE;
   --ca-bg3: #FFFFFF;
-  --ca-border: rgba(4,32,61,.10);
+  --ca-border: rgba(7,26,51,.10);
   background: transparent;
   border-bottom: none;
   -webkit-backdrop-filter: none;
@@ -230,7 +230,7 @@ button { font-family: inherit; }
   padding: 1.4rem 1.5rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 12px 40px rgba(4,32,61,.45), 0 0 0 1px rgba(255,255,255,.08);
+  box-shadow: 0 12px 40px rgba(7,26,51,.45), 0 0 0 1px rgba(255,255,255,.08);
   min-height: 180px;
 }
 
@@ -240,7 +240,7 @@ button { font-family: inherit; }
   top: -60px; right: -60px;
   width: 220px; height: 220px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,136,62,.18) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(201,162,39,.18) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -250,7 +250,7 @@ button { font-family: inherit; }
   bottom: -80px; left: -40px;
   width: 200px; height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,136,62,.12) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(201,162,39,.12) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -267,7 +267,7 @@ button { font-family: inherit; }
 }
 
 .ca-card-name {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   color: rgba(255,255,255,.9);
@@ -281,7 +281,7 @@ button { font-family: inherit; }
 }
 
 .ca-card-balance {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
   font-weight: 800;
   color: #fff;
@@ -317,8 +317,8 @@ button { font-family: inherit; }
   display: inline-flex;
   align-items: center;
   gap: .35rem;
-  background: rgba(184,136,62,.2);
-  border: 1px solid rgba(184,136,62,.35);
+  background: rgba(201,162,39,.2);
+  border: 1px solid rgba(201,162,39,.35);
   border-radius: 99px;
   padding: .25rem .7rem;
   font-size: .72rem;
@@ -383,8 +383,8 @@ button { font-family: inherit; }
   position: relative;
 }
 
-.ca-qa-icon--teal  { background: rgba(184,136,62,.18); border-color: rgba(184,136,62,.3); color: var(--ca-teal-l); }
-.ca-qa-icon--gold  { background: rgba(184,136,62,.15); border-color: rgba(184,136,62,.3); color: var(--ca-gold-l); }
+.ca-qa-icon--teal  { background: rgba(201,162,39,.18); border-color: rgba(201,162,39,.3); color: var(--ca-teal-l); }
+.ca-qa-icon--gold  { background: rgba(201,162,39,.15); border-color: rgba(201,162,39,.3); color: var(--ca-gold-l); }
 .ca-qa-icon--blue  { background: rgba(74,158,255,.15); border-color: rgba(74,158,255,.3); color: var(--ca-blue); }
 .ca-qa-icon--purple{ background: rgba(139,92,246,.15); border-color: rgba(139,92,246,.3); color: var(--ca-purple); }
 
@@ -456,7 +456,7 @@ button { font-family: inherit; }
 }
 
 .ca-txn-amount {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: .9rem;
   font-weight: 700;
   text-align: right;
@@ -491,7 +491,7 @@ button { font-family: inherit; }
 }
 
 .ca-stat-chip__val {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--ca-text);
@@ -518,7 +518,7 @@ button { font-family: inherit; }
   display: block;
 }
 
-.ca-loan-card:hover { border-color: rgba(184,136,62,.3); transform: translateY(-1px); }
+.ca-loan-card:hover { border-color: rgba(201,162,39,.3); transform: translateY(-1px); }
 
 .ca-loan-card__accent {
   height: 3px;
@@ -535,7 +535,7 @@ button { font-family: inherit; }
 }
 
 .ca-loan-card__ref {
-  font-family: 'Montserrat', monospace;
+  font-family: 'Inter', monospace;
   font-size: .78rem;
   font-weight: 700;
   color: var(--ca-gold-l);
@@ -543,7 +543,7 @@ button { font-family: inherit; }
 }
 
 .ca-loan-card__amount {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
   font-weight: 800;
   color: var(--ca-text);
@@ -663,7 +663,7 @@ button { font-family: inherit; }
   text-decoration: none;
 }
 
-.ca-control-btn:hover { background: var(--ca-bg4); border-color: rgba(184,136,62,.3); }
+.ca-control-btn:hover { background: var(--ca-bg4); border-color: rgba(201,162,39,.3); }
 
 .ca-control-btn__icon {
   width: 40px; height: 40px;
@@ -716,7 +716,7 @@ button { font-family: inherit; }
   z-index: 0;
 }
 .ca-step:last-child::before { display: none; }
-.ca-step.done::before { background: rgba(184,136,62,.5); }
+.ca-step.done::before { background: rgba(201,162,39,.5); }
 
 .ca-step__dot {
   width: 28px; height: 28px;
@@ -739,10 +739,10 @@ button { font-family: inherit; }
 }
 
 .ca-step.current .ca-step__dot {
-  background: linear-gradient(135deg, var(--ca-gold), #96702F);
+  background: linear-gradient(135deg, var(--ca-gold), #A3841D);
   border-color: var(--ca-gold-l);
   color: var(--ca-navy);
-  box-shadow: 0 0 0 4px rgba(184,136,62,.2);
+  box-shadow: 0 0 0 4px rgba(201,162,39,.2);
 }
 
 .ca-step__label {
@@ -791,7 +791,7 @@ button { font-family: inherit; }
   color: var(--ca-text-2);
 }
 .ca-table tbody tr:last-child td { border-bottom: none; }
-.ca-table tbody tr:hover td { background: rgba(4,32,61,.03); }
+.ca-table tbody tr:hover td { background: rgba(7,26,51,.03); }
 .ca-table .td-pos  { color: var(--ca-positive); font-weight: 600; }
 .ca-table .td-neg  { color: var(--ca-negative); }
 .ca-table .td-muted{ color: var(--ca-text-3); }
@@ -829,7 +829,7 @@ button { font-family: inherit; }
 }
 
 .ca-amount-display__val {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 3rem;
   font-weight: 800;
   color: var(--ca-text);
@@ -862,12 +862,12 @@ button { font-family: inherit; }
   width: calc(100% - 2.5rem);
   font-size: .85rem;
   color: var(--ca-text-2);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   outline: none;
   transition: var(--ca-transition);
 }
 .ca-note-field::placeholder { color: var(--ca-text-3); }
-.ca-note-field:focus { border-color: rgba(184,136,62,.5); background: var(--ca-bg4); }
+.ca-note-field:focus { border-color: rgba(201,162,39,.5); background: var(--ca-bg4); }
 
 .ca-keypad {
   display: grid;
@@ -884,7 +884,7 @@ button { font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--ca-text);
@@ -922,12 +922,12 @@ button { font-family: inherit; }
   padding: .8rem 1rem;
   font-size: .9rem;
   color: var(--ca-text);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   outline: none;
   transition: var(--ca-transition);
 }
 .ca-form-input::placeholder { color: var(--ca-text-3); }
-.ca-form-input:focus { border-color: rgba(184,136,62,.6); background: var(--ca-bg4); box-shadow: 0 0 0 3px rgba(184,136,62,.1); }
+.ca-form-input:focus { border-color: rgba(201,162,39,.6); background: var(--ca-bg4); box-shadow: 0 0 0 3px rgba(201,162,39,.1); }
 
 /* ── Receive page ─────────────────────────────────────────────────── */
 .ca-iban-card {
@@ -939,7 +939,7 @@ button { font-family: inherit; }
 }
 
 .ca-iban-value {
-  font-family: 'Montserrat', monospace;
+  font-family: 'Inter', monospace;
   font-size: .88rem;
   font-weight: 700;
   color: var(--ca-text);
@@ -953,8 +953,8 @@ button { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: .5rem;
-  background: rgba(184,136,62,.18);
-  border: 1px solid rgba(184,136,62,.3);
+  background: rgba(201,162,39,.18);
+  border: 1px solid rgba(201,162,39,.3);
   border-radius: 99px;
   padding: .45rem .9rem;
   font-size: .78rem;
@@ -963,7 +963,7 @@ button { font-family: inherit; }
   cursor: pointer;
   transition: var(--ca-transition);
 }
-.ca-copy-btn:hover { background: rgba(184,136,62,.28); }
+.ca-copy-btn:hover { background: rgba(201,162,39,.28); }
 .ca-copy-btn.copied { color: var(--ca-positive); border-color: var(--ca-positive); background: rgba(0,200,150,.12); }
 
 /* ── Confirmation screen ──────────────────────────────────────────── */
@@ -996,7 +996,7 @@ button { font-family: inherit; }
 }
 
 .ca-confirm-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--ca-text);
@@ -1021,7 +1021,7 @@ button { font-family: inherit; }
 }
 
 .ca-confirm-amount {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2.25rem;
   font-weight: 800;
   color: var(--ca-text);
@@ -1097,7 +1097,7 @@ button { font-family: inherit; }
 }
 
 .ca-chart-hero__amount {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2.25rem;
   font-weight: 800;
   color: var(--ca-text);
@@ -1127,7 +1127,7 @@ button { font-family: inherit; }
 }
 
 .ca-chart-center-label__val {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--ca-text);
@@ -1176,12 +1176,12 @@ button { font-family: inherit; }
   font-size: 1.75rem;
   color: #fff;
   margin: 0 auto .875rem;
-  border: 3px solid rgba(184,136,62,.35);
-  box-shadow: 0 0 0 6px rgba(184,136,62,.08);
+  border: 3px solid rgba(201,162,39,.35);
+  box-shadow: 0 0 0 6px rgba(201,162,39,.08);
 }
 
 .ca-profile-name {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--ca-text);
@@ -1192,8 +1192,8 @@ button { font-family: inherit; }
   display: inline-flex;
   align-items: center;
   gap: .35rem;
-  background: rgba(184,136,62,.15);
-  border: 1px solid rgba(184,136,62,.3);
+  background: rgba(201,162,39,.15);
+  border: 1px solid rgba(201,162,39,.3);
   border-radius: 99px;
   padding: .2rem .65rem;
   font-size: .7rem;
@@ -1309,19 +1309,19 @@ button { font-family: inherit; }
   transition: var(--ca-transition);
   border: none;
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   letter-spacing: .01em;
 }
 
 .ca-btn--primary {
   background: linear-gradient(135deg, var(--ca-navy-2) 0%, var(--ca-navy) 100%);
   color: #fff;
-  box-shadow: 0 6px 20px rgba(4,32,61,.3);
+  box-shadow: 0 6px 20px rgba(7,26,51,.3);
 }
-.ca-btn--primary:hover { filter: brightness(1.15); box-shadow: 0 8px 28px rgba(4,32,61,.4); }
+.ca-btn--primary:hover { filter: brightness(1.15); box-shadow: 0 8px 28px rgba(7,26,51,.4); }
 
 .ca-btn--gold {
-  background: linear-gradient(135deg, var(--ca-gold), #96702F);
+  background: linear-gradient(135deg, var(--ca-gold), #A3841D);
   color: var(--ca-navy);
 }
 .ca-btn--gold:hover { filter: brightness(1.08); }
@@ -1365,7 +1365,7 @@ button { font-family: inherit; }
 .ca-badge--valid    { background: rgba(74,158,255,.12);  color: var(--ca-blue); }
 .ca-badge--sent     { background: rgba(139,92,246,.12);  color: var(--ca-purple); }
 .ca-badge--signed   { background: rgba(0,200,150,.12);   color: var(--ca-positive); }
-.ca-badge--final    { background: rgba(184,136,62,.15);  color: var(--ca-gold-l); }
+.ca-badge--final    { background: rgba(201,162,39,.15);  color: var(--ca-gold-l); }
 .ca-badge--rejected { background: rgba(255,90,90,.12);   color: var(--ca-negative); }
 
 /* ── Empty state ──────────────────────────────────────────────────── */
@@ -1435,11 +1435,11 @@ button { font-family: inherit; }
   padding-bottom: env(safe-area-inset-bottom, 0px);
 
   /* Fond : chrome marine constant (navbar — accent sombre autorisé par la charte) */
-  background: rgba(4,32,61,.96);
+  background: rgba(7,26,51,.96);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
   backdrop-filter: blur(24px) saturate(160%);
   border-top: 1px solid rgba(255,255,255,.07);
-  box-shadow: 0 -4px 24px rgba(4,32,61,.35);
+  box-shadow: 0 -4px 24px rgba(7,26,51,.35);
 
   /* Layout */
   display: flex;
@@ -1488,7 +1488,7 @@ button { font-family: inherit; }
 
 /* Etat actif */
 .ca-nav-item.active {
-  color: #D2B789;
+  color: #DEC066;
 }
 
 .ca-nav-item.active i {
@@ -1504,8 +1504,8 @@ button { font-family: inherit; }
   right: 25%;
   height: 2.5px;
   border-radius: 0 0 6px 6px;
-  background: linear-gradient(90deg, #D2B789, #B8883E);
-  box-shadow: 0 0 10px rgba(184,136,62,.5);
+  background: linear-gradient(90deg, #DEC066, #C9A227);
+  box-shadow: 0 0 10px rgba(201,162,39,.5);
 }
 
 /* ── Onglet central — FAB ───────────────────────────────────────── */
@@ -1534,7 +1534,7 @@ button { font-family: inherit; }
 }
 
 .ca-nav-item--center.active > span {
-  color: #D2B789;
+  color: #DEC066;
 }
 
 /* Le cercle FAB lui-meme */
@@ -1549,11 +1549,11 @@ button { font-family: inherit; }
   height: 58px;
   border-radius: 50%;
 
-  background: linear-gradient(145deg, #D2B789, #B8883E);
+  background: linear-gradient(145deg, #DEC066, #C9A227);
   box-shadow:
-    0 -6px 20px rgba(184,136,62,.5),
-    0  6px 16px rgba(4,32,61,.55),
-    0  0   0  3.5px rgba(4,32,61,1);  /* anneau "trou" entre cercle et nav */
+    0 -6px 20px rgba(201,162,39,.5),
+    0  6px 16px rgba(7,26,51,.55),
+    0  0   0  3.5px rgba(7,26,51,1);  /* anneau "trou" entre cercle et nav */
 
   display: flex;
   align-items: center;
@@ -1575,11 +1575,11 @@ button { font-family: inherit; }
 }
 
 .ca-nav-item--center.active .ca-nav-center-btn {
-  background: linear-gradient(145deg, #E0C79E, #96702F);
+  background: linear-gradient(145deg, #E0C79E, #A3841D);
   box-shadow:
-    0 -8px 28px rgba(184,136,62,.7),
-    0  8px 20px rgba(4,32,61,.55),
-    0  0   0  3.5px rgba(4,32,61,1);
+    0 -8px 28px rgba(201,162,39,.7),
+    0  8px 20px rgba(7,26,51,.55),
+    0  0   0  3.5px rgba(7,26,51,1);
 }
 
 /* Icone dans le FAB : toujours marine, pas de transform herite */
@@ -1656,9 +1656,9 @@ button { font-family: inherit; }
   }
   .ca-shell {
     min-height: 100vh;
-    box-shadow: 0 0 100px rgba(0,0,0,.7), 0 0 0 1px rgba(184,136,62,.07);
-    border-left:  1px solid rgba(184,136,62,.06);
-    border-right: 1px solid rgba(184,136,62,.06);
+    box-shadow: 0 0 100px rgba(0,0,0,.7), 0 0 0 1px rgba(201,162,39,.07);
+    border-left:  1px solid rgba(201,162,39,.06);
+    border-right: 1px solid rgba(201,162,39,.06);
     position: relative;
   }
   /* Topbar epingle reste dans la coque */

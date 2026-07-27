@@ -108,7 +108,7 @@
             @endif
           </td>
           <td data-label="Solde actuel">
-            <span style="font-family:'Space Grotesk',sans-serif;font-size:.9375rem;font-weight:800;color:{{ $balColor }}">
+            <span style="font-family:'Inter',sans-serif;font-size:.9375rem;font-weight:800;color:{{ $balColor }}">
               {{ number_format($bal, 2, ',', ' ') }}
             </span>
             <span style="font-size:.75rem;color:var(--c-muted);margin-left:.25rem">{{ $cur }}</span>

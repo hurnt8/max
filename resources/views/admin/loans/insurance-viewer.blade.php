@@ -8,14 +8,14 @@
 <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('assets/vendors/fontawesome/css/all.min.css') }}">
 <style>
 :root {
-  --navy:    #04203D;
-  --navy2:   #0A3559;
-  --gold:    #B8883E;
-  --goldd:   #96702F;
+  --navy:    #071A33;
+  --navy2:   #12315C;
+  --gold:    #C9A227;
+  --goldd:   #A3841D;
   --green:   #059669;
   --greend:  #047857;
   --red:     #DC2626;
@@ -27,7 +27,7 @@
   --r:       7px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; font-family: 'Montserrat', sans-serif; overflow: hidden; background: #525659; }
+html, body { height: 100%; font-family: 'Inter', sans-serif; overflow: hidden; background: #525659; }
 
 /* ════════════════ LAYOUT ════════════════ */
 .pv { display: flex; height: 100vh; }
@@ -134,7 +134,7 @@ html, body { height: 100%; font-family: 'Montserrat', sans-serif; overflow: hidd
   border-radius: var(--r);
   font-size: .77rem; font-weight: 600;
   cursor: pointer; text-decoration: none;
-  border: 1px solid; font-family: 'Montserrat', sans-serif;
+  border: 1px solid; font-family: 'Inter', sans-serif;
   transition: background .14s, border-color .14s, color .14s;
   white-space: nowrap; line-height: 1;
   background: none;
@@ -246,7 +246,7 @@ kbd {
   border: none; border-radius: var(--r);
   font-size: .78rem; font-weight: 600;
   text-decoration: none; cursor: pointer;
-  font-family: 'Montserrat', sans-serif; margin-top: .25rem;
+  font-family: 'Inter', sans-serif; margin-top: .25rem;
 }
 .pv-empty-cta:hover { background: var(--navy2); }
 
@@ -287,7 +287,7 @@ kbd {
 .cf-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center;padding:1rem}
 .cf-modal-overlay.open{display:flex}
 .cf-modal{background:var(--navy2);border:1px solid var(--line);border-radius:14px;max-width:400px;width:100%;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.cf-modal-icon{width:40px;height:40px;border-radius:10px;background:rgba(184,136,62,.15);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:.75rem}
+.cf-modal-icon{width:40px;height:40px;border-radius:10px;background:rgba(201,162,39,.15);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:.75rem}
 .cf-modal-title{font-size:.95rem;font-weight:800;color:var(--text);margin-bottom:.5rem}
 .cf-modal-msg{font-size:.8rem;color:var(--sub);line-height:1.6;margin-bottom:1.25rem;white-space:pre-line}
 .cf-modal-actions{display:flex;gap:.5rem;justify-content:flex-end}
