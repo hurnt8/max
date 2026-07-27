@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', $invoice->reference . ' —Solberg Grupo')
+@section('title', $invoice->reference . ' — Solberg Grupo')
 @section('page_title', __('app.invoice_detail'))
 @section('back_btn', true)
 @section('back_url', route('client.app.invoices'))
@@ -158,7 +158,7 @@
 
 @section('content')
 @php
-  $currency = $invoice->currency ?? ($user->currency ?? config('credixa.default_currency', 'EUR'));
+  $currency = $invoice->currency ?? ($user->currency ?? config('solberg.default_currency', 'EUR'));
   $st       = $invoice->status;
 
   $statusTitles = [

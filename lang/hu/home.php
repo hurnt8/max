@@ -176,7 +176,7 @@ return [
         'placeholder' => 'Az Ön e-mail címe',
         'button' => 'Küldés',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Minden jog fenntartva.',
+    'rights_reserved' => '© Solberg Grupo. 2024. Minden jog fenntartva.',
 
     'en' => 'angol',
     'fr' => 'francia',
@@ -196,7 +196,7 @@ return [
     'slide_1' => [
         'title' => ' 15 év tapasztalat · Engedélyes · Válasz 24 órán belül',
         'text1' => 'Finanszírozza összes projektjét,',
-        'text2' => 'akár 500 000 € 24 órán belül.',
+        'text2' => 'akár 5 000 000 € 24 órán belül.',
     ],
     'slide_2' => [
         'title' => 'Okos Hitelek a Világos Jövőért',

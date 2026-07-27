@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.nav_transfer') . ' —Solberg Grupo')
+@section('title', __('app.nav_transfer') . ' — Solberg Grupo')
 @section('page_title', __('app.nav_transfer'))
 
 @section('content')
@@ -90,7 +90,7 @@
 </style>
 @endpush
 
-@php $currency = $user->currency ?? config('credixa.default_currency'); @endphp
+@php $currency = $user->currency ?? config('solberg.default_currency'); @endphp
 
 {{-- Balance hero ── --}}
 <div class="trf-hero">
@@ -108,7 +108,7 @@
   <i class="fas fa-circle-exclamation" style="color:#f87171;margin-top:.1rem;flex-shrink:0"></i>
   <div>
     <div style="font-size:.8rem;font-weight:700;color:#f87171;margin-bottom:.2rem">Envoi bloqué — Solde négatif</div>
-    <div style="font-size:.73rem;color:var(--ca-text-3);line-height:1.5">Votre solde est négatif ({{ number_format((float)$user->balance,2,',',' ') }} {{ $user->currency ?? config('credixa.default_currency') }}). Les virements sont désactivés jusqu'à la régularisation de votre compte.</div>
+    <div style="font-size:.73rem;color:var(--ca-text-3);line-height:1.5">Votre solde est négatif ({{ number_format((float)$user->balance,2,',',' ') }} {{ $user->currency ?? config('solberg.default_currency') }}). Les virements sont désactivés jusqu'à la régularisation de votre compte.</div>
   </div>
 </div>
 @endif

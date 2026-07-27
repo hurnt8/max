@@ -14,5 +14,5 @@ Répondre au client
 Reçu le {{ $message->created_at->format('d/m/Y à H:i') }}
 
 Cordialement,<br>
-**Solberg Grupo**
+** Solberg Grupo**
 @endcomponent

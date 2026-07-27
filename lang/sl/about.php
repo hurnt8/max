@@ -1,19 +1,19 @@
 <?php
 
 return [
-    'banner_title' => 'OdkrijteSolberg Grupo',
+    'banner_title' => 'Odkrijte Solberg Grupo',
     'banner_subtitle' => 'O nas',
     'banner_description' => 'Zahtevajte lažje s fleksibilnimi rešitvami posojil, prilagojenimi vašim finančnim potrebam.',
 
-    'section1_title' => 'Zakaj izbratiSolberg Grupo',
-    'section1_p1' => 'VSolberg Grupo trdno verjamemo, da si vsak zasluži priložnost, da uresniči svoje finančne sanje. Od našega ustanovitve se zavezujemo, da nudimo fleksibilne in dostopne rešitve posojil, ki ustrezajo raznolikim potrebam naših strank. Ne glede na to, ali želite financirati osebni projekt, kupiti avto ali razširiti svoje podjetje, imamo posojilo, ki ga potrebujete.',
+    'section1_title' => 'Zakaj izbrati Solberg Grupo',
+    'section1_p1' => 'V Solberg Grupo trdno verjamemo, da si vsak zasluži priložnost, da uresniči svoje finančne sanje. Od našega ustanovitve se zavezujemo, da nudimo fleksibilne in dostopne rešitve posojil, ki ustrezajo raznolikim potrebam naših strank. Ne glede na to, ali želite financirati osebni projekt, kupiti avto ali razširiti svoje podjetje, imamo posojilo, ki ga potrebujete.',
     'section1_p2' => 'Naše storitve so zasnovane tako, da zagotavljajo brezskrbno izkušnjo, s hitro in enostavno prijavo. Razumemo, da je vsaka stranka edinstvena, zato ponujamo prilagojena posojila, ki se prilagajajo vašim specifičnim potrebam. Poleg tega so naši predani svetovalci vedno tu, da vas usmerjajo na vsakem koraku, tako da ste v celoti podprti od začetka do konca.',
     'proposed' => 'Predlagamo:',
     'check1' => 'Prilagojena posojila glede na vaše specifične potrebe.',
     'check2' => 'Predani svetovalci, ki vam pomagajo na vsakem koraku.',
     'check3' => 'Fleksibilni pogoji odplačevanja, ki ustrezajo vašemu finančnemu stanju.',
     'check4' => 'Posojila brez redne plače.',
-    'section1_p3' => 'VSolberg Grupo je naša naloga, da vam pomagamo doseči vaše finančne cilje s prilagojenimi rešitvami posojil. Pridružite se nam danes in odkrijte, kako vam lahko pomagamo uresničiti vaše projekte.',
+    'section1_p3' => 'V Solberg Grupo je naša naloga, da vam pomagamo doseči vaše finančne cilje s prilagojenimi rešitvami posojil. Pridružite se nam danes in odkrijte, kako vam lahko pomagamo uresničiti vaše projekte.',
     'btn' => 'Najdite svoje idealno posojilo',
 
     'faq_title' => 'Pogosto zastavljena vprašanja',

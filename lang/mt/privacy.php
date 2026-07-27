@@ -3,7 +3,7 @@
 return [
     'title' => 'Politika tal-privatezza',
     'introduction_title' => '1. Introduzzjoni',
-    'introduction_text' => 'Fil-Credixa, aħna impenjati li nipproteġu u nirrispettaw il-privatezza tiegħek. Din il-politika tal-privatezza tispjega kif niġbru, nużaw, niżvelaw u nipproteġu l-informazzjoni personali tiegħek meta tuża l-websajt u s-servizzi tagħna ta’ self online. Billi tuża s-sit tagħna, inti taċċetta l-prattiki deskritti f’din il-politika.',
+    'introduction_text' => 'Fis-Solberg Grupo, aħna impenjati li nipproteġu u nirrispettaw il-privatezza tiegħek. Din il-politika tal-privatezza tispjega kif niġbru, nużaw, niżvelaw u nipproteġu l-informazzjoni personali tiegħek meta tuża l-websajt u s-servizzi tagħna ta’ self online. Billi tuża s-sit tagħna, inti taċċetta l-prattiki deskritti f’din il-politika.',
     'information_collection_title' => '2. Informazzjoni li niġbru',
     'information_collection_text' => 'Nistgħu niġbru u nipproċessaw l-informazzjoni li ġejja dwarek:',
     'information_collection_list' => [
@@ -44,7 +44,7 @@ return [
     'contact_title' => '8. Kuntatt',
     'contact_text' => 'Jekk għandek xi mistoqsijiet, tħassib jew talbiet dwar din il-politika tal-privatezza jew kif nittrattaw l-informazzjoni personali tiegħek, jekk jogħġbok ikkuntattjana fuq:',
     'contact_details' => [
-        'Credixa',
+        'Solberg Grupo',
         'Indirizz: Calcea Victoriei 118 Settur 1 010093 Bukarest',
         'Email: contact@solberggrupo.site',
         'Telefon: +31 6 57341120 ',

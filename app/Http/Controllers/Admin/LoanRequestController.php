@@ -91,7 +91,7 @@ class LoanRequestController extends Controller
         $admin     = Auth::user();
         $myClients = $this->clientsForAdmin($admin);
         $templates  = $this->templatesForAdmin($admin);
-        $currencies = config('credixa.currencies');
+        $currencies = config('solberg.currencies');
         $annualRate = \App\Models\LoanSetting::current()->annual_rate;
         $financingTypes = LoanRequest::FINANCING_TYPES;
 
@@ -265,7 +265,7 @@ class LoanRequestController extends Controller
         $myClients = User::where('type', 'client')
                          ->whereHas('clientLoans', fn($q) => $q->where('admin_id', $admin->id))
                          ->orderBy('name')->get();
-        $currencies = config('credixa.currencies');
+        $currencies = config('solberg.currencies');
         $templates  = $this->templatesForAdmin($admin);
         $financingTypes = LoanRequest::FINANCING_TYPES;
 
@@ -1011,7 +1011,7 @@ class LoanRequestController extends Controller
             if ($isFinalization && $fresh->client_id) {
                 $fresh->client?->increment('balance', (float) $fresh->amount);
 
-                $cur = $fresh->currency ?? config('credixa.default_currency');
+                $cur = $fresh->currency ?? config('solberg.default_currency');
                 ClientNotification::notifyUser(
                     $fresh->client,
                     'credit',

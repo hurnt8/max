@@ -148,7 +148,7 @@ return [
         'placeholder' => 'Your email address',
         'button' => 'Send',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. All rights reserved.',
+    'rights_reserved' => '© Solberg Grupo. 2024. All rights reserved.',
 
     'en' => 'English',
     'fr' => 'French',

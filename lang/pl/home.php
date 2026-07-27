@@ -7,7 +7,7 @@ return [
     'slide_1' => [
         'title' => ' 15 lat doświadczenia · Licencjonowany · Gwarantowana odpowiedź',
         'text1' => 'Sfinansuj wszystkie swoje projekty,',
-        'text2' => 'do 500 000 € w 48h.',
+        'text2' => 'do 5 000 000 € w 48h.',
     ],
     'slide_2' => [
         'title' => 'Inteligentne kredyty na świetlaną przyszłość',
@@ -204,7 +204,7 @@ return [
         'placeholder' => 'Twój adres email',
         'button'      => 'Wyślij',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Wszelkie prawa zastrzeżone.',
+    'rights_reserved' => '© Solberg Grupo. 2024. Wszelkie prawa zastrzeżone.',
 
     'banner_title' => 'Zdobądź idealny kredyt dopasowany do wszystkich Twoich potrzeb online.',
     'banner_text' => 'Miliony ludzi korzystają z Solberg Grupo, aby zrealizować swoje projekty.',

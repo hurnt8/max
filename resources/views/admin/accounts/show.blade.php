@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Compte — ' . $account->name . ' —Solberg Grupo')
+@section('title', 'Compte — ' . $account->name . ' — Solberg Grupo')
 
 @section('content')
 <style>
@@ -76,7 +76,7 @@
 </a>
 
 @php
-  $cur = $account->currency ?? config('credixa.default_currency');
+  $cur = $account->currency ?? config('solberg.default_currency');
   $bal = (float) $account->balance;
   $balColor = $bal >= 0 ? '#4ade80' : '#f87171';
 @endphp

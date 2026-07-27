@@ -380,7 +380,7 @@
 
   {{-- Amount --}}
   <div class="h-balance" x-show="shown" x-transition>
-    <sup>{{ $user->currency ?? config('credixa.default_currency') }}</sup>{{ number_format((float)$user->balance, 2, ',', ' ') }}
+    <sup>{{ $user->currency ?? config('solberg.default_currency') }}</sup>{{ number_format((float)$user->balance, 2, ',', ' ') }}
   </div>
   <div class="h-balance--hidden" x-show="!shown" aria-hidden="true">
     &bull;&bull;&bull;&bull;&bull;&bull;
@@ -394,7 +394,7 @@
     </div>
     <div class="h-card__badge">
       <i class="fas fa-shield-halved" style="font-size:.6rem"></i>
-      {{ $user->currency ?? config('credixa.default_currency') }}
+      {{ $user->currency ?? config('solberg.default_currency') }}
     </div>
   </div>
 </div>

@@ -149,7 +149,7 @@ return [
         'placeholder' => 'Uw e-mailadres',
         'button' => 'Versturen',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Alle rechten voorbehouden.',
+    'rights_reserved' => '© Solberg Grupo. 2024. Alle rechten voorbehouden.',
 
     'en' => 'English',
     'fr' => 'French',

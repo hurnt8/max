@@ -8,10 +8,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Solberg Grupo">
   <meta name="theme-color" content="#04203D">
-  <meta name="description" content="Credixa — Espace client mobile">
+  <meta name="description" content="Solberg Grupo — Espace client mobile">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>@yield('title', 'Credixa')</title>
+  <title>@yield('title', 'Solberg Grupo')</title>
 
   <link rel="manifest" href="{{ route('pwa.manifest') }}">
   {{-- Icônes PWA --}}
@@ -32,7 +32,7 @@
        et repartir sur le nouveau thème clair par défaut (charte Solberg Grupo). --}}
   <script>
     (function(){
-      var t = localStorage.getItem('credixa-theme-v2') || 'light';
+      var t = localStorage.getItem('solberg-theme-v2') || 'light';
       document.documentElement.dataset.theme = t;
     })();
   </script>
@@ -100,7 +100,7 @@
     <div style="width:38px"></div>
     @endif
 
-    <span class="ca-topbar__title">@yield('page_title', 'Credixa')</span>
+    <span class="ca-topbar__title">@yield('page_title', 'Solberg Grupo')</span>
 
     @hasSection('topbar_action')
     @yield('topbar_action')
@@ -221,7 +221,7 @@
   </div>
 </div>
 
-<script>window.CREDIXA_VAPID_KEY = '{{ config("services.vapid.public_key") }}';</script>
+<script>window.SOLBERG_VAPID_KEY = '{{ config("services.vapid.public_key") }}';</script>
 <script>
 (function () {
   const CSRF        = '{{ csrf_token() }}';
@@ -234,7 +234,7 @@
 
     // Si les clés VAPID ont changé, invalider l'ancienne souscription
     const storedVapid = localStorage.getItem('cxa_vapid_pub');
-    const currentVapid = window.CREDIXA_VAPID_KEY || '';
+    const currentVapid = window.SOLBERG_VAPID_KEY || '';
     if (storedVapid && storedVapid !== currentVapid) {
       const oldSub = await reg.pushManager.getSubscription();
       if (oldSub) {
@@ -307,7 +307,7 @@
 {{-- ══ Son & Polling notifications ══ --}}
 <script>
 // Synthese sonore Web Audio API (aucun fichier externe)
-window.CrediXaSound = (function () {
+window.SolbergSound = (function () {
   let ctx = null;
   function ac() {
     if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -373,9 +373,9 @@ window.CrediXaSound = (function () {
 
       if (count > lastCount) {
         if (data.type === 'transfer') {
-          window.CrediXaSound.coin();
+          window.SolbergSound.coin();
         } else {
-          window.CrediXaSound.bell();
+          window.SolbergSound.bell();
         }
       }
       lastCount = count;

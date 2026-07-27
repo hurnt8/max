@@ -41,7 +41,7 @@ class RolesAndPermissionsSeeder extends Seeder
             ['email' => 'superadmin@solberggrupo.site'],
             [
                 'name'     => 'Super Admin',
-                'password' => Hash::make('Credixa@2025!'),
+                'password' => Hash::make('SolbergGrupo@2025!'),
                 'type'     => 'staff',
             ]
         );
@@ -51,7 +51,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $admin = User::firstOrCreate(
             ['email' => 'admin@solberggrupo.site'],
             [
-                'name'     => 'AdminSolberg Grupo',
+                'name'     => 'Admin Solberg Grupo',
                 'password' => Hash::make('Admin@2025!'),
                 'type'     => 'staff',
             ]
@@ -62,7 +62,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $this->command->table(
             ['Role', 'Email', 'Password (change immediately)'],
             [
-                ['super-admin', 'superadmin@solberggrupo.site', 'Credixa@2025!'],
+                ['super-admin', 'superadmin@solberggrupo.site', 'SolbergGrupo@2025!'],
                 ['admin',       'admin@solberggrupo.site',      'Admin@2025!'],
             ]
         );

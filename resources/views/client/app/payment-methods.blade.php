@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.payment_methods') . ' —Solberg Grupo')
+@section('title', __('app.payment_methods') . ' — Solberg Grupo')
 @section('page_title', __('app.payment_methods'))
 @section('back_btn', true)
 @section('back_url', route('client.app.profile'))
@@ -223,12 +223,12 @@
   @endif
   <div class="pm-detail-row">
     <span class="pm-detail-key">{{ __('app.receive_bank') ?? 'Banque' }}</span>
-    <span class="pm-detail-val">Credixa Bank</span>
+    <span class="pm-detail-val">Solberg Grupo Bank</span>
   </div>
   <div class="pm-detail-row">
     <span class="pm-detail-key">{{ __('app.balance') }}</span>
     <span class="pm-detail-val" style="color:var(--ca-positive)">
-      {{ $user->currency ?? config('credixa.default_currency') }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
+      {{ $user->currency ?? config('solberg.default_currency') }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
     </span>
   </div>
 </div>
@@ -246,7 +246,7 @@
   <div class="pm-empty__ico"><i class="fas fa-credit-card"></i></div>
   <div class="pm-empty__title">{{ __('app.not_configured') }}</div>
   <div class="pm-empty__sub">
-    Votre conseillerSolberg Grupo configurera vos coordonnees bancaires<br>lors de la finalisation de votre dossier.
+    Votre conseiller Solberg Grupo configurera vos coordonnees bancaires<br>lors de la finalisation de votre dossier.
   </div>
 </div>
 
@@ -289,7 +289,7 @@ function shareCoords() {
   const iban = '{{ $user->bank_account ?? "" }}';
   const name = '{{ addslashes($user->name) }}';
   const bic  = '{{ $user->bic ?? "" }}';
-  const text = `Coordonnees bancairesSolberg Grupo\nTitulaire : ${name}\nIBAN : ${iban}${bic ? '\nBIC : ' + bic : ''}`;
+  const text = `Coordonnees bancaires Solberg Grupo\nTitulaire : ${name}\nIBAN : ${iban}${bic ? '\nBIC : ' + bic : ''}`;
   if (navigator.share) {
     navigator.share({ title: 'Mes coordonnees bancaires', text });
   } else {

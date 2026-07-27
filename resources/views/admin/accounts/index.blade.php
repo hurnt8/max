@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Comptes clients —Solberg Grupo')
+@section('title', 'Comptes clients — Solberg Grupo')
 @section('page_title', 'Comptes clients')
 
 @section('content')
@@ -7,7 +7,7 @@
   $totalBalance  = $clients->sum('balance');
   $positiveCount = $clients->where('balance', '>', 0)->count();
   $negativeCount = $clients->where('balance', '<', 0)->count();
-  $defaultCur    = config('credixa.default_currency');
+  $defaultCur    = config('solberg.default_currency');
 @endphp
 
 {{-- Page header ── --}}

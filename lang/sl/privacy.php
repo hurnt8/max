@@ -3,7 +3,7 @@
 return [
     'title' => 'Politika zasebnosti',
     'introduction_title' => '1. Uvod',
-    'introduction_text' => 'VSolberg Grupo se zavezujemo, da bomo zaščitili in spoštovali vašo zasebnost. Ta politika zasebnosti pojasnjuje, kako zbiramo, uporabljamo, razkrivamo in zaščitimo vaše osebne informacije, ko uporabljate našo spletno stran in spletne posojilne storitve. Z uporabo naše strani sprejemate prakse, opisane v tej politiki.',
+    'introduction_text' => 'V Solberg Grupo se zavezujemo, da bomo zaščitili in spoštovali vašo zasebnost. Ta politika zasebnosti pojasnjuje, kako zbiramo, uporabljamo, razkrivamo in zaščitimo vaše osebne informacije, ko uporabljate našo spletno stran in spletne posojilne storitve. Z uporabo naše strani sprejemate prakse, opisane v tej politiki.',
     'information_collection_title' => '2. Informacije, ki jih zbiramo',
     'information_collection_text' => 'Zbiramo in obdelujemo lahko naslednje informacije o vas:',
     'information_collection_list' => [
@@ -44,7 +44,7 @@ return [
     'contact_title' => '8. Kontakt',
     'contact_text' => 'Če imate kakršna koli vprašanja, skrbi ali zahteve glede te politike zasebnosti ali načina obravnave vaših osebnih informacij, nas prosimo kontaktirajte na:',
     'contact_details' => [
-        'Credixa',
+        'Solberg Grupo',
         'Naslov: Calcea Victoriei 118, Sektor 1, 010093 Bukarešta',
         'Email: contact@solberggrupo.site',
         'Telefon: +31 6 57341120 ',

@@ -13,7 +13,7 @@ return [
     'check2' => 'Paskirti patarėjai padės jums kiekviename žingsnyje.',
     'check3' => 'Lanksčios grąžinimo sąlygos, atitinkančios jūsų finansinę padėtį',
     'check4' => 'Paskolos be atlyginimo.',
-    'section1_p3' => 'Mūsų „Solberg Grupo“ misija yra padėti jums pasiekti jūsų finansinius tikslus, taikant individualiai pritaikytus paskolų sprendimus. Prisijunkite prie mūsų šiandien ir sužinokite, kaip galime padėti jums paversti jūsų projektus realybe.',
+    'section1_p3' => 'Mūsų „ Solberg Grupo“ misija yra padėti jums pasiekti jūsų finansinius tikslus, taikant individualiai pritaikytus paskolų sprendimus. Prisijunkite prie mūsų šiandien ir sužinokite, kaip galime padėti jums paversti jūsų projektus realybe.',
     'btn' => 'Raskite savo idealią paskolą',
    
     'faq_title' => 'Dažniausiai užduodami klausimai',

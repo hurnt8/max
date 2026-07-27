@@ -21,5 +21,5 @@ Valider le virement
 @endcomponent
 
 Cordialement,<br>
-**Solberg Grupo**
+** Solberg Grupo**
 @endcomponent

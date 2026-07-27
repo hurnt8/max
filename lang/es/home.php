@@ -147,7 +147,7 @@ return [
         'placeholder' => 'Su dirección de correo electrónico',
         'button' => 'Enviar',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Todos los derechos reservados.',
+    'rights_reserved' => '© Solberg Grupo. 2024. Todos los derechos reservados.',
 
     'en' => 'inglés',
     'fr' => 'francés',

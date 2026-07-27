@@ -9,7 +9,7 @@ style="background-image: url({{ asset('assets/images/shapes/footer-bg-1-1.png') 
             <div class="footer-widget footer-widget--about">
                 <a href="{{ route('home', ['locale' => app()->getLocale()]) }}" class="footer-widget__logo">
                     <img src="{{ asset('assets/images/logo new.png') }}" width="190"
-                        alt="Credixa">
+                        alt="Solberg Grupo">
                 </a>
                 <p class="footer-widget__about-text">{{__('home.about_text')}}</p>
                 <!-- /.footer-widget__about-text -->

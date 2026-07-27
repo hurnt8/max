@@ -20,7 +20,7 @@
 @endauth
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
-<title>@yield('title','Dashboard') —Solberg Grupo Invest</title>
+<title>@yield('title','Dashboard') — Solberg Grupo Invest</title>
 <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1201,7 +1201,7 @@ function doInstallPwa() {
     <div style="display:flex;align-items:center;gap:.625rem">
       <img src="/images/icon-192.png" style="width:36px;height:36px;border-radius:8px" alt="">
       <div>
-        <div style="font-size:.8rem;font-weight:700;color:#fff">Credixa Admin</div>
+        <div style="font-size:.8rem;font-weight:700;color:#fff">Solberg Grupo Admin</div>
         <div style="font-size:.68rem;color:rgba(255,255,255,.5)">Installer comme application</div>
       </div>
     </div>

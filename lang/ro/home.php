@@ -169,7 +169,7 @@ return [
     'slide_1' => [
         'title' => ' De 15 ani · Autorizat · Răspuns garantat',
         'text1' => 'Finanțați toate proiectele dumneavoastră,',
-        'text2' => 'până la 500 000 € în 48h.',
+        'text2' => 'până la 5 000 000 € în 48h.',
     ],
     'slide_2' => [
         'title' => 'Împrumuturi Inteligente pentru un Viitor Strălucit',

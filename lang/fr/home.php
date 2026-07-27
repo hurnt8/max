@@ -149,7 +149,7 @@ return [
         'placeholder' => 'Votre adresse e-mail',
         'button' => 'Envoyer',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Tous droits réservés.',
+    'rights_reserved' => '© Solberg Grupo. 2024. Tous droits réservés.',
 
     'en' => 'English',
     'fr' => 'French',
@@ -169,7 +169,7 @@ return [
     'slide_1' => [
         'title' => ' Depuis 15 ans · Agréé · Réponse garantie',
         'text1' => 'Financez tous vos projets,',
-        'text2' => 'jusqu\'à 500 000 € en 48h.',
+        'text2' => 'jusqu\'à 5 000 000 € en 48h.',
     ],
     'slide_2' => [
         'title' => 'Prêts Intelligents pour un Avenir Brillant',

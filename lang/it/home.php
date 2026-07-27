@@ -163,7 +163,7 @@ return [
     'placeholder' => 'Il tuo indirizzo email',
     'button' => 'Invia',
 ],
-'rights_reserved' => '©Solberg Grupo. 2024. Tutti i diritti riservati.',
+'rights_reserved' => '© Solberg Grupo. 2024. Tutti i diritti riservati.',
 
 'en' => 'Inglese',
 'fr' => 'Francese',

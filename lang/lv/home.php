@@ -169,7 +169,7 @@ return [
     'slide_1' => [
         'title' => 'Jau 15 gadus · Sertificēts · Garantēta atbilde',
         'text1' => 'Finansējiet visus savus projektus,',
-        'text2' => 'līdz 500 000 € 24 stundu laikā.',
+        'text2' => 'līdz 5 000 000 € 24 stundu laikā.',
     ],
     'slide_2' => [
         'title' => 'Gudri aizdevumi spožai nākotnei',

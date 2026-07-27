@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.profile_title') . ' —Solberg Grupo')
+@section('title', __('app.profile_title') . ' — Solberg Grupo')
 @section('page_title', __('app.profile_title'))
 @section('back_btn', true)
 @section('back_url', route('client.app.home'))
@@ -25,7 +25,7 @@
   <div>
     <div style="font-size:.65rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.25rem">{{ __('app.balance') }}</div>
     <div style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:800;color:#fff">
-      {{ $user->currency ?? config('credixa.default_currency') }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
+      {{ $user->currency ?? config('solberg.default_currency') }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
     </div>
   </div>
   <div style="font-size:.75rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:.35rem">
@@ -207,7 +207,7 @@
     </div>
     <div style="flex:1;min-width:0">
       <div style="font-size:.875rem;font-weight:700;color:var(--ca-text)">{{ $advisor->name }}</div>
-      <div style="font-size:.7rem;color:var(--ca-text-3);margin-top:.1rem">Votre conseillerSolberg Grupo</div>
+      <div style="font-size:.7rem;color:var(--ca-text-3);margin-top:.1rem">Votre conseiller Solberg Grupo</div>
     </div>
     @if($advisor->phone)
     <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $advisor->phone) }}"
