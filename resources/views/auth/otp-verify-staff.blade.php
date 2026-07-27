@@ -39,7 +39,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
   background:radial-gradient(circle,rgba(201,162,39,.08) 0%,transparent 70%);
   pointer-events:none;
 }
-.auth-left__logo img{height:40px;position:relative;z-index:1}
+.auth-left__logo img{height:56px;position:relative;z-index:1}
 .auth-left__body{position:relative;z-index:1}
 
 .staff-badge{
@@ -75,7 +75,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
   font-size:.8rem;color:#6b7280;text-decoration:none;font-weight:500;transition:color .18s;
 }
 .auth-topbar__back:hover{color:var(--navy)}
-.auth-topbar__logo img{height:34px}
+.auth-topbar__logo img{height:44px}
 
 .auth-form-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:2rem}
 .auth-form-inner{width:100%;max-width:400px;text-align:center}

@@ -8,8 +8,8 @@
 
         <!-- Logo -->
         <a href="{{ route('home', ['locale' => $locale]) }}" class="flex items-center gap-3 flex-shrink-0">
-            <img src="{{ $siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : asset('assets/images/logo-white-icon.png') }}" alt="{{ $siteContact->name }}" class="h-12 lg:h-14 logo-img logo-img--white transition-opacity duration-300">
-            <img src="{{ $siteContact->logo_light_path ? Storage::url($siteContact->logo_light_path) : asset('assets/images/logo-transparent-icon.png') }}" alt="{{ $siteContact->name }}" class="h-10 logo-img logo-img--color transition-opacity duration-300">
+            <img src="{{ $siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : asset('assets/images/logo-white-icon.png') }}" alt="{{ $siteContact->name }}" class="h-14 lg:h-16 logo-img logo-img--white transition-opacity duration-300">
+            <img src="{{ $siteContact->logo_light_path ? Storage::url($siteContact->logo_light_path) : asset('assets/images/logo-transparent-icon.png') }}" alt="{{ $siteContact->name }}" class="h-14 lg:h-16 logo-img logo-img--color transition-opacity duration-300">
         </a>
 
         <!-- Desktop nav -->

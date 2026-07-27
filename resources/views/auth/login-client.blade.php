@@ -173,15 +173,15 @@ a{text-decoration:none;color:inherit}
 
 /* Logo */
 .logo-box{
-  width:74px;height:74px;border-radius:22px;
+  width:92px;height:92px;border-radius:26px;
   background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.5rem;
   box-shadow:0 0 36px rgba(7,26,51,.22);
 }
-.logo-box img{height:40px;object-fit:contain}
+.logo-box img{height:56px;object-fit:contain}
 .logo-box span{
-  font-family:'Inter',sans-serif;font-size:2rem;
+  font-family:'Inter',sans-serif;font-size:2.4rem;
   font-weight:800;color:#fff;line-height:1;
 }
 

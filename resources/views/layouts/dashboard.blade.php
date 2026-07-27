@@ -90,7 +90,7 @@ a { text-decoration:none; }
   border-bottom:1px solid rgba(255,255,255,.06);
   flex-shrink:0;
 }
-.sidebar-brand img { height:34px; width:auto; }
+.sidebar-brand img { height:48px; width:auto; }
 
 .sidebar-user {
   margin:1rem 1rem .25rem;
