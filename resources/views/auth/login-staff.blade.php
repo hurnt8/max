@@ -6,7 +6,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Solberg Admin">
+<meta name="apple-mobile-web-app-title" content="AURELIS CAPITAL GROUP Admin">
 <meta name="theme-color" content="#071A33">
 <link rel="manifest" href="/admin-manifest.json">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -425,7 +425,7 @@ function tglPwd(id, ico) {
   align-items:center;gap:.75rem">
   <img src="/images/icon-192.png" style="width:40px;height:40px;border-radius:10px;flex-shrink:0" alt="">
   <div style="flex:1;min-width:0">
-    <div style="font-size:.825rem;font-weight:700;color:#fff">Credixa Admin</div>
+    <div style="font-size:.825rem;font-weight:700;color:#fff">AURELIS CAPITAL GROUP</div>
     <div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:.1rem">Installer sur votre écran d'accueil</div>
   </div>
   <button id="pwa-install-trigger"
@@ -449,7 +449,7 @@ function tglPwd(id, ico) {
     <div style="display:flex;align-items:center;gap:.625rem">
       <img src="/images/icon-192.png" style="width:36px;height:36px;border-radius:8px" alt="">
       <div>
-        <div style="font-size:.8rem;font-weight:700;color:#fff">Credixa Admin</div>
+        <div style="font-size:.8rem;font-weight:700;color:#fff">AURELIS CAPITAL GROUP</div>
         <div style="font-size:.68rem;color:rgba(255,255,255,.45)">Installer l'application</div>
       </div>
     </div>

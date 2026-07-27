@@ -3,7 +3,7 @@
 return [
     'general_title' => 'AURELIS CAPITAL GROUP – A legjobb online hitelezők Németországban, Spanyolországban, Magyarországon stb.',
     'banner_title' => 'Szerezze meg a tökéletes kölcsönt minden online igényéhez.',
-    'banner_text' => 'Emberek milliói használják a Solberg Grupót projektjeik megvalósítására.',
+    'banner_text' => 'Emberek milliói használják az AURELIS CAPITAL GROUP-ot projektjeik megvalósítására.',
     'get_loan_now' => 'Kölcsön kérése most',
     'popular_loans' => 'Népszerű hiteltípusok:',
     'personal_loan' => 'Személyi kölcsön',
@@ -62,7 +62,7 @@ return [
 
     'custom_loan_services' => 'Használja ki személyre szabott hitelszolgáltatásainkat',
     'reliability_quality' => 'Átláthatóság és megbízhatóság',
-    'reliability_quality_description' => 'A Solberg Grupónál egyértelmű és megbízható hitelezési megoldásokat kínálunk, amelyeket pozitív vásárlói vélemények és teljes átláthatóság támogatnak.',
+    'reliability_quality_description' => 'Az AURELIS CAPITAL GROUP-nál egyértelmű és megbízható hitelezési megoldásokat kínálunk, amelyeket pozitív vásárlói vélemények és teljes átláthatóság támogatnak.',
     'financial_transparency' => 'Nincsenek rejtett költségek',
     'financial_transparency_description' => 'Tekintse át feltételeinket, beszélje meg a díjakat, és csak a hitel jóváhagyása után fizessen.',
     'optimal_security' => 'Biztonság és adatvédelem',
@@ -223,7 +223,7 @@ return [
 
     'about' => [
         'exptitle' => 'év tapasztalat',
-        'sectagline' => 'Üdvözlünk a Solberg Grupónál',
+        'sectagline' => 'Üdvözlünk az AURELIS CAPITAL GROUP-nál',
         'sectitle' => 'Személyi hitelek, hogy valóra váltsd az álmaidat',
         'text1' => '15 éve vagyunk jelen az üzletben, és a legjobb szolgáltatásokat kínáljuk.',
         'text2' => 'A AURELIS CAPITAL GROUP a megbízható platformod hitelekhez, kivételes ügyfélszolgálattal. Elkötelezettek vagyunk abban, hogy egyszerű, biztonságos és gyors pénzügyi megoldásokat kínáljunk.',

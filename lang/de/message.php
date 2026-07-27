@@ -12,13 +12,13 @@ return [
     'month_abbr'           => 'Mon.',
     'optional'             => 'optional',
     'loan_admin_subject'   => 'Neue Kreditanfrage',
-    'loan_admin_intro'     => 'Ein Kunde hat soeben eine Kreditanfrage über die Solberg-Grupo-Website eingereicht.',
+    'loan_admin_intro'     => 'Ein Kunde hat soeben eine Kreditanfrage über die AURELIS CAPITAL GROUP-Website eingereicht.',
 
     'loan_confirm_subject'   => 'Ihre Kreditanfrage wird bearbeitet',
     'loan_confirm_greeting'  => 'Guten Tag :name,',
     'loan_confirm_body'      => 'Wir haben Ihre Kreditanfrage über :amount :currency für eine Laufzeit von :duration Monaten erhalten. Sie wird derzeit von unserem Team bearbeitet.',
     'loan_confirm_footer'    => 'Wir werden uns so schnell wie möglich bei Ihnen melden. Vielen Dank für Ihr Vertrauen.',
-    'loan_confirm_signature' => 'Das Solberg-Grupo-Team',
+    'loan_confirm_signature' => 'Das AURELIS CAPITAL GROUP Team',
     'loan_confirm_noreply'   => 'Diese E-Mail wurde von einer no-reply-Adresse gesendet. Bitte antworten Sie nicht direkt auf diese Nachricht.',
 
     'loan_conditions_title'  => 'Voraussetzungen',
@@ -50,7 +50,7 @@ return [
     'docs_confirm_greeting'  => 'Guten Tag :name,',
     'docs_confirm_body'      => 'Wir haben Ihre Dokumente (Adresse und Ausweisdokument) erhalten. Unser Team wird sie prüfen und sich innerhalb von 24 Stunden bei Ihnen melden.',
     'docs_confirm_footer'    => 'Wir danken Ihnen für Ihr Vertrauen und stehen für Fragen jederzeit zur Verfügung.',
-    'docs_confirm_signature' => 'Das Solberg-Grupo-Team',
+    'docs_confirm_signature' => 'Das AURELIS CAPITAL GROUP Team',
 
     'docs_upload_hint'  => 'Datei per Drag & Drop ablegen oder klicken, um eine Datei auszuwählen',
     'docs_single_photo' => 'Für diese Art von Dokument genügt ein einziges Foto.',

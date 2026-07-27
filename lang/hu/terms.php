@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Bevezetés',
-            'content' => 'Üdvözöljük a Solberg Grupóban. Oldalunk és szolgáltatásaink használatával Ön elfogadja, hogy betartja és magára nézve kötelezőnek tartja az alábbi feltételeket. Kérjük, figyelmesen olvassa el ezeket a feltételeket, mielőtt használná oldalunkat vagy kölcsönt venne fel velünk.',
+            'content' => 'Üdvözöljük az AURELIS CAPITAL GROUP-ban. Oldalunk és szolgáltatásaink használatával Ön elfogadja, hogy betartja és magára nézve kötelezőnek tartja az alábbi feltételeket. Kérjük, figyelmesen olvassa el ezeket a feltételeket, mielőtt használná oldalunkat vagy kölcsönt venne fel velünk.',
         ],
         [
             'title' => '2. az oldal használata',

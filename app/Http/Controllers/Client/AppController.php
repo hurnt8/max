@@ -450,7 +450,7 @@ class AppController extends Controller
     {
         $data = [
             'name'             => config('app.company_name', 'AURELIS CAPITAL GROUP') . ' — Administration',
-            'short_name'       => 'Solberg Admin',
+            'short_name'       => 'AURELIS CAPITAL GROUP Admin',
             'description'      => 'Gérez les prêts, clients et opérations AURELIS CAPITAL GROUP.',
             'start_url'        => '/admin',
             'scope'            => '/',

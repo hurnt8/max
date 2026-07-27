@@ -3,7 +3,7 @@
 return [
     'title' => 'Adatvédelmi szabályzat',
     'introduction_title' => '1. Bevezetés',
-    'introduction_text' => 'A Solberg Grupónál elkötelezettek vagyunk az Ön adatainak védelme és tiszteletben tartása mellett. Ez az adatvédelmi szabályzat elmagyarázza, hogyan gyűjtjük, használjuk, hozzuk nyilvánosságra és védjük személyes adatait, amikor weboldalunkat és online kölcsönzési szolgáltatásainkat használja. Oldalunk használatával Ön elfogadja a jelen szabályzatban leírt gyakorlatot.',
+    'introduction_text' => 'Az AURELIS CAPITAL GROUP-nál elkötelezettek vagyunk az Ön adatainak védelme és tiszteletben tartása mellett. Ez az adatvédelmi szabályzat elmagyarázza, hogyan gyűjtjük, használjuk, hozzuk nyilvánosságra és védjük személyes adatait, amikor weboldalunkat és online kölcsönzési szolgáltatásainkat használja. Oldalunk használatával Ön elfogadja a jelen szabályzatban leírt gyakorlatot.',
     'information_collection_title' => '2. Az általunk gyűjtött információk',
     'information_collection_text' => 'A következő információkat gyűjthetjük és dolgozhatjuk fel Önről:',
     'information_collection_list' => [

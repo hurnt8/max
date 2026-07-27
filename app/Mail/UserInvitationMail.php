@@ -173,7 +173,7 @@ class UserInvitationMail extends Mailable
             'bg' => ['M' => 'Екипът на AURELIS CAPITAL GROUP',    'F' => 'Екипът на AURELIS CAPITAL GROUP',    'N' => 'Екипът на AURELIS CAPITAL GROUP'],
             'hu' => ['M' => 'A AURELIS CAPITAL GROUP csapata',    'F' => 'A AURELIS CAPITAL GROUP csapata',    'N' => 'A AURELIS CAPITAL GROUP csapata'],
             'it' => ['M' => 'Il team AURELIS CAPITAL GROUP',      'F' => 'Il team AURELIS CAPITAL GROUP',      'N' => 'Il team AURELIS CAPITAL GROUP'],
-            'de' => ['M' => 'Das Solberg-Grupo-Team',     'F' => 'Das Solberg-Grupo-Team',     'N' => 'Das Solberg-Grupo-Team'],
+            'de' => ['M' => 'Das AURELIS CAPITAL GROUP Team',     'F' => 'Das AURELIS CAPITAL GROUP Team',     'N' => 'Das AURELIS CAPITAL GROUP Team'],
             'lt' => ['M' => 'AURELIS CAPITAL GROUP komanda',      'F' => 'AURELIS CAPITAL GROUP komanda',      'N' => 'AURELIS CAPITAL GROUP komanda'],
             'ro' => ['M' => 'Echipa AURELIS CAPITAL GROUP',       'F' => 'Echipa AURELIS CAPITAL GROUP',       'N' => 'Echipa AURELIS CAPITAL GROUP'],
             'lv' => ['M' => 'AURELIS CAPITAL GROUP komanda',      'F' => 'AURELIS CAPITAL GROUP komanda',      'N' => 'AURELIS CAPITAL GROUP komanda'],

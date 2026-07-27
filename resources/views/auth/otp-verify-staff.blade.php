@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#071A33">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
-<title>{{ __('auth.otp_title') }} | Solberg Admin</title>
+<title>{{ __('auth.otp_title') }} | AURELIS CAPITAL GROUP Admin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">

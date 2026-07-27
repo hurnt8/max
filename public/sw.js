@@ -3,7 +3,7 @@
    Cache-first assets · Network-first HTML
    Push Notifications VAPID — design fintech pro
    ═══════════════════════════════════════════════════════════════ */
-const CACHE = 'credixa-v10';
+const CACHE = 'aureliscapital-v10';
 const ICON  = '/images/icon-192.png';
 const BADGE = '/images/icon-badge.png';
 const SHELL = ['/app', '/login'];
