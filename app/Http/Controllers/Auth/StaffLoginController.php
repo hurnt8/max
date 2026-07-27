@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\OtpMail;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
@@ -35,11 +36,13 @@ class StaffLoginController extends Controller
 
             if ($user->type !== 'staff') {
                 Auth::logout();
+                Log::warning('StaffLoginController: accès refusé — compte non-staff', ['user_id' => $user->id, 'email' => $user->email, 'type' => $user->type]);
                 return back()->withErrors(['email' => 'Accès refusé. Ce portail est réservé au personnel autorisé.']);
             }
 
             if (!$user->hasAnyRole(['admin', 'super-admin'])) {
                 Auth::logout();
+                Log::warning('StaffLoginController: accès refusé — rôle insuffisant', ['user_id' => $user->id, 'email' => $user->email, 'roles' => $user->getRoleNames()]);
                 return back()->withErrors(['email' => 'Votre compte ne dispose pas des droits nécessaires.']);
             }
 
@@ -63,6 +66,13 @@ class StaffLoginController extends Controller
             }
 
             return redirect()->route('otp.show');
+        }
+
+        $existing = User::where('email', $credentials['email'])->first();
+        if (!$existing) {
+            Log::warning('StaffLoginController: échec connexion — aucun compte pour cet email', ['email' => $credentials['email']]);
+        } else {
+            Log::warning('StaffLoginController: échec connexion — mot de passe incorrect', ['user_id' => $existing->id, 'email' => $existing->email]);
         }
 
         return back()->withErrors(['email' => 'Identifiants incorrects.'])->onlyInput('email');

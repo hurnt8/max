@@ -38,7 +38,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
         // Default super-admin account
         $superAdmin = User::firstOrCreate(
-            ['email' => 'superadmin@aureliscapital.online'],
+            ['email' => 'contact@aureliscapital.online'],
             [
                 'name'     => 'Super Admin',
                 'password' => Hash::make('Credixa@2025!'),
@@ -63,7 +63,7 @@ class RolesAndPermissionsSeeder extends Seeder
             ['Role', 'Email', 'Password (change immediately)'],
             [
                 ['super-admin', 'contact@aureliscapital.online', 'Credixa@2025!'],
-                ['admin',       'no-reply@aureliscapital.online',      'Admin@2025!'],
+                ['admin',       'admin@aureliscapital.online',   'Admin@2025!'],
             ]
         );
     }

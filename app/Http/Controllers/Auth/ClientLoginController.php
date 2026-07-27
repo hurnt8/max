@@ -48,13 +48,22 @@ class ClientLoginController extends Controller
                     ->orWhere('phone', $identifier)
                     ->first();
 
-        if (!$user || !Hash::check($request->input('password'), $user->password)) {
+        if (!$user) {
+            Log::warning('ClientLoginController: échec connexion — aucun compte pour cet identifiant', ['identifier' => $identifier]);
+            return back()
+                ->withErrors(['identifier' => __('auth.failed')])
+                ->onlyInput('identifier');
+        }
+
+        if (!Hash::check($request->input('password'), $user->password)) {
+            Log::warning('ClientLoginController: échec connexion — mot de passe incorrect', ['user_id' => $user->id, 'email' => $user->email]);
             return back()
                 ->withErrors(['identifier' => __('auth.failed')])
                 ->onlyInput('identifier');
         }
 
         if ($user->type !== 'client') {
+            Log::warning('ClientLoginController: accès refusé — compte non-client', ['user_id' => $user->id, 'email' => $user->email, 'type' => $user->type]);
             return back()->withErrors(['identifier' => __('auth.portal_clients_only')]);
         }
 
