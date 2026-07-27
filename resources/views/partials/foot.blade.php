@@ -71,7 +71,7 @@ style="background-image: url({{ asset('assets/images/shapes/footer-bg-1-1.png') 
                     </li>
                     <li>
                         <span class="footer-widget__info__icon"><i class="icon-paper-plane"></i></span>
-                        <a href="mailto:contact@solberggrupo.site">contact@solberggrupo.site</a>
+                        <a href="mailto:contact@aureliscapital.online">contact@aureliscapital.online</a>
                     </li>
                     <li>
                         <span class="footer-widget__info__icon"><i class="icon-telephone"></i></span>

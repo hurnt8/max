@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kontaktas',
-            'content' => 'Jei turite klausimų ar neaiškumų dėl šių taisyklių ir sąlygų, susisiekite su mumis adresu:<br><br>AURELIS CAPITAL GROUP<br>Adresas: Rua de Santo António 33, 7200-175, Portugal<br>El. paštas: contact@solberggrupo.site<br>Telefonas: +31 6 57341120 '
+            'content' => 'Jei turite klausimų ar neaiškumų dėl šių taisyklių ir sąlygų, susisiekite su mumis adresu:<br><br>AURELIS CAPITAL GROUP<br>Adresas: Rua de Santo António 33, 7200-175, Portugal<br>El. paštas: contact@aureliscapital.online<br>Telefonas: +31 6 57341120 '
         ],
     ],
 ];

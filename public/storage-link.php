@@ -2,7 +2,7 @@
 /*
  * Équivalent de : php artisan storage:link
  * À SUPPRIMER après utilisation
- * Accès : https://solberggrupo.site/storage-link.php
+ * Accès : https://aureliscapital.online/storage-link.php
  */
 header('Content-Type: text/plain; charset=utf-8');
 

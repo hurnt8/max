@@ -46,7 +46,7 @@ return [
     'contact_details' => [
         'Credixa',
         'Adresa: Rua de Santo António 33, 7200-175, Portugal',
-        'E-pošta: contact@solberggrupo.site',
+        'E-pošta: contact@aureliscapital.online',
         'Telefon: +31 6 57341120 ',
     ],
 ];

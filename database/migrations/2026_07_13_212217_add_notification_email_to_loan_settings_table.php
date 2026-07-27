@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('loan_settings', function (Blueprint $table) {
-            $table->string('notification_email')->default('contact@solberggrupo.site')->after('max_amount');
+            $table->string('notification_email')->default('contact@aureliscapital.online')->after('max_amount');
         });
     }
 

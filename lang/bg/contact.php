@@ -22,6 +22,6 @@ return [
     'phone_title' => 'Бърз контакт',
     'phone_desc' => '+31 6 57341120 ',
     'mail_title' => 'Имейл за поддръжка',
-    'mail_desc' => 'contact@solberggrupo.site',
+    'mail_desc' => 'contact@aureliscapital.online',
 ];
 

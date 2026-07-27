@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kapcsolatba lépni',
-            'content' => 'Ha bármilyen kérdése vagy aggálya van ezekkel a feltételekkel kapcsolatban, kérjük, lépjen velünk kapcsolatba a következÅ címen:<br><br>Credixa<br>Cím: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@solberggrupo.site<br>Telefon: +31 6 57341120 ',
+            'content' => 'Ha bármilyen kérdése vagy aggálya van ezekkel a feltételekkel kapcsolatban, kérjük, lépjen velünk kapcsolatba a következÅ címen:<br><br>Credixa<br>Cím: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@aureliscapital.online<br>Telefon: +31 6 57341120 ',
         ],
     ],
 ];

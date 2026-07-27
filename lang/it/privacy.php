@@ -46,7 +46,7 @@ return [
 'contact_details' => [
     'AURELIS CAPITAL GROUP',
     'Indirizzo: Rua de Santo António 33, 7200-175, Portogallo',
-    'Email: contact@solberggrupo.site',
+    'Email: contact@aureliscapital.online',
     'Telefono: +31 6 57341120 ',
 ],
 

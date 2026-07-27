@@ -46,7 +46,7 @@ return [
     'contact_details' => [
         'Credixa',
         'Naslov: Calcea Victoriei 118, Sektor 1, 010093 Bukarešta',
-        'Email: contact@solberggrupo.site',
+        'Email: contact@aureliscapital.online',
         'Telefon: +31 6 57341120 ',
     ],
 

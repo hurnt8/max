@@ -1,7 +1,7 @@
 <?php
 /*
  * Script de diagnostic — À SUPPRIMER après vérification
- * Accès : https://solberggrupo.site/diag.php
+ * Accès : https://aureliscapital.online/diag.php
  */
 header('Content-Type: text/plain; charset=utf-8');
 

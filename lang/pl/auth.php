@@ -18,7 +18,7 @@ return [
     'email'               => 'Adres email',
     'email_staff'         => 'Email służbowy',
     'email_ph'            => 'ty@przyklad.com',
-    'email_ph_staff'      => 'agent@solberggrupo.site',
+    'email_ph_staff'      => 'agent@aureliscapital.online',
     'password_label'      => 'Hasło',
     'remember'            => 'Zapamiętaj mnie',
     'remember_staff'      => 'Pozostań zalogowany',

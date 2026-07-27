@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Контакт',
-            'content' => 'Ако имате въпроси или притеснения относно тези общи условия, моля, свържете се с нас на:<br><br>AURELIS CAPITAL GROUP<br>Адрес: Rua de Santo António 33, 7200-175, Португалия<br>Имейл: contact@solberggrupo.site<br>Телефон: +31 6 57341120 '
+            'content' => 'Ако имате въпроси или притеснения относно тези общи условия, моля, свържете се с нас на:<br><br>AURELIS CAPITAL GROUP<br>Адрес: Rua de Santo António 33, 7200-175, Португалия<br>Имейл: contact@aureliscapital.online<br>Телефон: +31 6 57341120 '
         ],
     ],
 

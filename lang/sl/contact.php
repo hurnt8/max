@@ -22,5 +22,5 @@ return [
     'phone_title' => 'Telefon',
     'phone_desc' => '+31 6 57341120 ',
     'mail_title' => 'E-pošta',
-    'mail_desc' => 'contact@solberggrupo.site',
+    'mail_desc' => 'contact@aureliscapital.online',
 ];

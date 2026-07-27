@@ -159,7 +159,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
           <div class="staff-badge__ico"><i class="fas fa-shield-halved"></i></div>
           <div class="staff-badge__text">
             <div class="staff-badge__label">{{ __('auth.staff_restricted') }}</div>
-            <div class="staff-badge__sub">solberggrupo.site &mdash; secure access</div>
+            <div class="staff-badge__sub">aureliscapital.online &mdash; secure access</div>
           </div>
         </div>
         <h2 class="auth-left__title">{{ __('auth.otp_heading') }}</h2>
