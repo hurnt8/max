@@ -15,7 +15,7 @@ return [
     | Devises supportées (liste unique pour tout le projet)
     |--------------------------------------------------------------------------
     */
-    'currencies' => ['EUR', 'GBP', 'CHF', 'NOK', 'SEK', 'DKK', 'PLN', 'CZK', 'HUF', 'RON'],
+    'currencies' => ['EUR', 'GBP', 'CHF', 'NOK', 'SEK', 'DKK', 'PLN', 'CZK', 'HUF', 'RON', 'BRL', 'PEN'],
 
     /*
     |--------------------------------------------------------------------------
@@ -33,6 +33,8 @@ return [
         'CZK' => 'Kč',
         'HUF' => 'Ft',
         'RON' => 'lei',
+        'BRL' => 'R$',
+        'PEN' => 'S/',
     ],
 
 ];
