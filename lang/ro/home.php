@@ -103,6 +103,14 @@ return [
         'location' => 'Brașov, România',
         'months_ago' => 5,
     ],
+    'testimonial_7' => [
+        'quote' => '„Proces de împrumut simplu și eficient. Am fost plăcut surprinsă de rapiditatea aprobării. Mulțumesc întregii echipe!”',
+        'name' => 'Marie C.',
+    ],
+    'testimonial_8' => [
+        'quote' => '„Am avut o experiență excelentă cu acest serviciu de împrumut. Personalul a fost atent și profesionist. Îl recomand fără ezitare!”',
+        'name' => 'Jean L.',
+    ],
 
     'about_title' => 'Alăturați-vă celei mai bune piețe globale pentru profesioniști',
     'about_description' => 'Solberg Grupo este platforma dumneavoastră de încredere pentru obținerea de împrumuturi, cu o experiență excepțională pentru clienți. Ne angajăm să vă oferim soluții financiare simple, sigure și rapide.',

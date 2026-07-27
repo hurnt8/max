@@ -20,7 +20,7 @@ return [
     'label_npi' => 'Número de identificación personal',
     'label_file' => 'Documento de identidad de doble cara',
     'label_objet' => 'Objeto del préstamo',
-    'detalles' => 'Detalles del préstamo',
+    'details' => 'Detalles del préstamo',
 
     'placeholder_name' => 'Tu nombre y apellido',
     'placeholder_email' => 'Ingrese su correo electrónico',
@@ -32,7 +32,6 @@ return [
     'placeholder_salary' => 'Ingrese sus ingresos mensuales',
     'placeholder_amount' => 'Importe del préstamo (€) deseado',
     'placeholder_objet' => 'Describe brevemente el propósito de tu préstamo',
-    'botón' => 'Envía tu solicitud',
     'button' => 'Enviar mi solicitud',
 
     'quote_title'    => 'Su presupuesto estimado',

@@ -34,8 +34,6 @@ return [
     'placeholder_objet' => 'Írd le röviden a kölcsön célját',
     'button' => 'Küldje el kérését',
 
-    'détails' => 'Kölcsön részletei',
-
     'quote_title'    => 'Az Ön becsült ajánlata',
     'quote_monthly'  => 'Becsült havi törlesztőrészlet',
     'quote_total'    => 'Visszafizetendő teljes összeg',

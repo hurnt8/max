@@ -103,6 +103,14 @@ return [
         'location' => 'Strasbourg, France',
         'months_ago' => 5,
     ],
+    'testimonial_7' => [
+        'quote' => '« Processus de prêt simple et efficace. J\'ai été agréablement surprise par la rapidité de l\'approbation. Merci à toute l\'équipe ! »',
+        'name' => 'Marie C.',
+    ],
+    'testimonial_8' => [
+        'quote' => '« J\'ai eu une excellente expérience avec ce service de prêt. Le personnel a été attentif et professionnel. Je le recommande sans hésiter ! »',
+        'name' => 'Jean L.',
+    ],
 
     'about_title' => 'Rejoignez le meilleur marché mondial pour les travailleurs',
     'about_description' => 'Solberg Grupo est votre plateforme de confiance pour obtenir des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',

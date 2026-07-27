@@ -34,8 +34,6 @@ return [
     'placeholder_objet' => 'Trumpai apibūdinkite savo paskolos tikslą',
     'button' => 'Siųsti savo užklausą',
 
-    'détails' => 'Paskolos informacija',
-
     'quote_title'    => 'Jūsų preliminarus pasiūlymas',
     'quote_monthly'  => 'Numatoma mėnesinė įmoka',
     'quote_total'    => 'Iš viso grąžinti',

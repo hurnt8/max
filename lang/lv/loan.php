@@ -20,7 +20,7 @@ return [
     'label_npi' => 'Personas identifikācijas numurs',
     'label_file' => 'Personu apliecinošs dokuments (abas puses)',
     'label_objet' => 'Aizdevuma mērķis',
-    'détails' => 'Aizdevuma dati',
+    'details' => 'Aizdevuma dati',
 
     'placeholder_name' => 'Jūsu vārds un uzvārds',
     'placeholder_email' => 'Ievadiet savu e-pastu',

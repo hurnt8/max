@@ -281,6 +281,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
             'ro' => ['Română',   'png'],
             'lv' => ['Latviešu', 'png'],
             'nl' => ['Nederlands', 'png'],
+            'pt' => ['Português', 'png'],
           ];
         @endphp
         <div class="ls" x-data="{ open: false }">

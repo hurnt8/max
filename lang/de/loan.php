@@ -33,8 +33,6 @@ return [
     'placeholder_objet' => 'Beschreiben Sie kurz den Zweck Ihres Darlehens',
     'button' => 'Anfrage senden',
 
-    'détails' => 'Darlehens Details',
-
     'quote_title'    => 'Ihr geschätztes Angebot',
     'quote_monthly'  => 'Geschätzte monatliche Rate',
     'quote_total'    => 'Gesamtrückzahlung',
