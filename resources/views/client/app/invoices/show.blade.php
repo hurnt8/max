@@ -158,7 +158,7 @@
 
 @section('content')
 @php
-  $currency = $invoice->currency ?? ($user->currency ?? config('AURELIS CAPITAL GROUP.default_currency', 'EUR'));
+  $currency = $invoice->currency ?? ($user->currency ?? config('credixa.default_currency', 'EUR'));
   $st       = $invoice->status;
 
   $statusTitles = [

@@ -7,7 +7,7 @@
   $totalBalance  = $clients->sum('balance');
   $positiveCount = $clients->where('balance', '>', 0)->count();
   $negativeCount = $clients->where('balance', '<', 0)->count();
-  $defaultCur    = config('AURELIS CAPITAL GROUP.default_currency');
+  $defaultCur    = config('credixa.default_currency');
 @endphp
 
 {{-- Page header ── --}}

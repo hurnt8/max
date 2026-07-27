@@ -151,7 +151,7 @@
 @section('content')
 
 @php
-  $currency  = $user->currency ?? config('AURELIS CAPITAL GROUP.default_currency', 'EUR');
+  $currency  = $user->currency ?? config('credixa.default_currency', 'EUR');
   $cntSent   = $invoices->where('status', 'sent')->count();
   $cntPaid   = $invoices->where('status', 'paid')->count();
   $totalPaid = $invoices->where('status', 'paid')->sum('total');
