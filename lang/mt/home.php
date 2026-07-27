@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'general_title' => 'Credixa - L-Aħjar Self Online fil-Ġermanja, Spanja, Ungerija eċċ.',
+    'general_title' => 'AURELIS CAPITAL GROUP - L-Aħjar Self Online fil-Ġermanja, Spanja, Ungerija eċċ.',
     'banner_title' => 'Ikseb is-self perfett għal bżonnijietek online.',
     'banner_text' => 'Miljuni ta’ nies jużawAURELIS CAPITAL GROUP biex iwettqu l-proġetti tagħhom.',
     'get_loan_now' => 'Ikseb self issa',
@@ -54,7 +54,7 @@ return [
 
     'custom_loan_services' => 'Ibbenefika mis-servizzi ta’ self adattati għalik',
     'reliability_quality' => 'Trasparenza u Affidabbiltà',
-    'reliability_quality_description' => 'F’Credixa noffru soluzzjonijiet ta’ self ċari u affidabbli, appoġġjati minn reviżjonijiet pożittivi tal-klijenti u trasparenza sħiħa.',
+    'reliability_quality_description' => 'F’AURELIS CAPITAL GROUP noffru soluzzjonijiet ta’ self ċari u affidabbli, appoġġjati minn reviżjonijiet pożittivi tal-klijenti u trasparenza sħiħa.',
     'financial_transparency' => 'L-ebda spiża moħbija',
     'financial_transparency_description' => 'Reviżjoni tat-termini tagħna, diskussjoni dwar ir-rati, u ħlas biss ladarba s-self tiegħek ikun approvat.',
     'optimal_security' => 'Sigurtà u Privatezza',
@@ -98,7 +98,7 @@ return [
     ],
 
     'about_title' => 'Ingħaqad fl-aqwa pjattaforma għall-ħaddiema globali',
-    'about_description' => 'Credixa hija l-pjattaforma fdati tiegħek biex tikseb self b’esperjenza tal-klijent eċċezzjonali. Aħna impenjati li nipprovdulek soluzzjonijiet finanzjarji sempliċi, siguri u mgħaġġla.',
+    'about_description' => 'AURELIS CAPITAL GROUP hija l-pjattaforma fdati tiegħek biex tikseb self b’esperjenza tal-klijent eċċezzjonali. Aħna impenjati li nipprovdulek soluzzjonijiet finanzjarji sempliċi, siguri u mgħaġġla.',
     'rating' => '4.9/5',
     'rating_description' => 'Il-klijenti jagħtu l-professjonisti',
     'projects_completed' => '+12M',
@@ -190,7 +190,7 @@ return [
         'sectagline' => 'Merħba fil-finanzi tal-ekwità',
         'sectitle' => 'Prestiti personali biex twettqu l-ħolm tiegħek',
         'text1' => 'Ilna 15-il sena f\'dan il-business u nipprovdu l-aħjar servizzi.',
-        'text2' => 'Credixa hija l-pjattaforma affidabbli tiegħek għall-prestiti bi esperjenza tal-klijent eċċezzjonali. Aħna impenjati li nipprovdu soluzzjonijiet finanzjarji sempliċi, siguri u rapidi.',
+        'text2' => 'AURELIS CAPITAL GROUP hija l-pjattaforma affidabbli tiegħek għall-prestiti bi esperjenza tal-klijent eċċezzjonali. Aħna impenjati li nipprovdu soluzzjonijiet finanzjarji sempliċi, siguri u rapidi.',
         'check1' => 'prestitu għall-kumpaniji żgħar',
         'check2' => 'prestitu għall-istudju barra',
         'check3' => 'proċess tal-prestitu veloċi',

@@ -13,7 +13,7 @@ return [
         ],
         [
             'title' => '3. Posojilne storitve',
-            'content' => 'Credixa ponuja različne vrste posojil, da zadosti vašim finančnim potrebam. Vsa posojila so predmet odobritve na podlagi naše ocene vaše kreditne sposobnosti in zmožnosti odplačevanja. Specifični pogoji vsakega posojila, vključno z obrestnimi merami, ročnostmi in pogoji odplačevanja, bodo podrobno opisani v vaši posojilni pogodbi.'
+            'content' => 'AURELIS CAPITAL GROUP ponuja različne vrste posojil, da zadosti vašim finančnim potrebam. Vsa posojila so predmet odobritve na podlagi naše ocene vaše kreditne sposobnosti in zmožnosti odplačevanja. Specifični pogoji vsakega posojila, vključno z obrestnimi merami, ročnostmi in pogoji odplačevanja, bodo podrobno opisani v vaši posojilni pogodbi.'
         ],
         [
             'title' => '4. Stroški pogodbe in zavarovanja',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Omejitev odgovornosti',
-            'content' => 'Credixa ne bo odgovoren za kakršno koli posredno, posebno ali posledično izgubo ali škodo, ki izhaja iz uporabe ali nezmožnosti uporabe naše spletne strani ali storitev, vključno z izgubo dobička, izgubo podatkov ali prekinitev poslovanja, tudi če smo bili obveščeni o možnosti take škode.'
+            'content' => 'AURELIS CAPITAL GROUP ne bo odgovoren za kakršno koli posredno, posebno ali posledično izgubo ali škodo, ki izhaja iz uporabe ali nezmožnosti uporabe naše spletne strani ali storitev, vključno z izgubo dobička, izgubo podatkov ali prekinitev poslovanja, tudi če smo bili obveščeni o možnosti take škode.'
         ],
         [
             'title' => '8. Spremembe pogojev',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kontakt',
-            'content' => 'Če imate kakršna koli vprašanja ali pomisleke glede teh pogojev in določil, nas kontaktirajte na:<br><br>Credixa<br>Naslov: Calcea Victoriei 118, Sector 1, 010093 Bukarešta<br>E-pošta: contact@aureliscapital.online<br>Telefon: +31 6 57341120 '
+            'content' => 'Če imate kakršna koli vprašanja ali pomisleke glede teh pogojev in določil, nas kontaktirajte na:<br><br>AURELIS CAPITAL GROUP<br>Naslov: Calcea Victoriei 118, Sector 1, 010093 Bukarešta<br>E-pošta: contact@aureliscapital.online<br>Telefon: +31 6 57341120 '
         ],
     ],
 ];

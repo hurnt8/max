@@ -7,7 +7,7 @@
 @section('content')
 
 @php
-  $currency      = $user->currency ?? config('credixa.default_currency');
+  $currency      = $user->currency ?? config('AURELIS CAPITAL GROUP.default_currency');
   $totalSchedule = $loans->sum(fn($l) => (float) $l->total_with_interest);
   $totalCapital  = $loans->sum(fn($l) => (float) $l->amount);
   $totalInterest = max(0, $totalSchedule - $totalCapital);

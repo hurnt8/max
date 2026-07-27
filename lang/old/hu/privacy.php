@@ -44,7 +44,7 @@ return [
     'contact_title' => '8. Kapcsolatba lépni',
     'contact_text' => 'Ha bármilyen kérdése, aggálya vagy kérése van ezzel az adatvédelmi szabályzattal vagy azzal kapcsolatban, hogy miként kezeljük személyes adatait, kérjük, lépjen kapcsolatba velünk a következÅ címen:',
     'contact_details' => [
-        "Credixa",
+        "AURELIS CAPITAL GROUP",
         "Cím: Rua de Santo António 33, 7200-175, Portugal",
         "E-mail: contact@aureliscapital.online",
         "Telefon: +31 6 57341120 ",

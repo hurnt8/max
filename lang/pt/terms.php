@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contato',
-            'content' => 'Se você tiver alguma dúvida ou preocupação em relação a estes termos e condições, entre em contato conosco em:<br><br>Credixa<br>Endereço: Calcea Victoriei 118 Setor 1 010093 Bucareste<br>E-mail: contact@aureliscapital.online<br>Telefone: +31 6 57341120 '
+            'content' => 'Se você tiver alguma dúvida ou preocupação em relação a estes termos e condições, entre em contato conosco em:<br><br>AURELIS CAPITAL GROUP<br>Endereço: Calcea Victoriei 118 Setor 1 010093 Bucareste<br>E-mail: contact@aureliscapital.online<br>Telefone: +31 6 57341120 '
         ],
     ],
 

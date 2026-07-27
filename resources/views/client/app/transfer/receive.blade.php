@@ -88,8 +88,8 @@
 
 @php
   $iban = $user->bank_account ?? 'Non renseigné';
-  $bic  = $user->bic ?? 'CREDIXAFR';
-  $currency = $user->currency ?? config('credixa.default_currency');
+  $bic  = $user->bic ?? 'AURELIS CAPITAL GROUPFR';
+  $currency = $user->currency ?? config('AURELIS CAPITAL GROUP.default_currency');
   $shareText = "IBAN : {$iban}\nBIC : {$bic}\nTitulaire : {$user->name}\nBanque :AURELIS CAPITAL GROUP Financial";
 @endphp
 
@@ -115,7 +115,7 @@
   @foreach([
     ['fa-building-columns', __('app.receive_bic'),  $bic],
     ['fa-user',             __('app.receive_name'), $user->name],
-    ['fa-landmark',         __('app.receive_bank'), 'Credixa Financial'],
+    ['fa-landmark',         __('app.receive_bank'), 'AURELIS CAPITAL GROUP Financial'],
     ['fa-coins',            'Devise',               $currency],
     ['fa-envelope',         'Email',                $user->email],
   ] as [$icon, $label, $val])

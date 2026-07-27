@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'general_title' => 'Credixa – geriausi internetiniai skolintojai Vokietijoje, Ispanijoje, Vengrijoje ir kt.',
+    'general_title' => 'AURELIS CAPITAL GROUP – geriausi internetiniai skolintojai Vokietijoje, Ispanijoje, Vengrijoje ir kt.',
     'banner_title' => 'Gaukite tobulą paskolą visiems savo interneto poreikiams.',
     'banner_text' => 'Milijonai žmonių naudojaAURELIS CAPITAL GROUP savo projektams įgyvendinti.',
     'get_loan_now' => 'Gaukite paskolą dabar',
@@ -62,11 +62,11 @@ return [
 
     'custom_loan_services' => 'Pasinaudokite mūsų pritaikytomis paskolų paslaugomis',
     'reliability_quality' => 'Skaidrumas ir patikimumas',
-    'reliability_quality_description' => 'Credixa siūlome aiškius ir patikimus skolinimo sprendimus, paremtus teigiamais klientų atsiliepimais ir visišku skaidrumu.',
+    'reliability_quality_description' => 'AURELIS CAPITAL GROUP siūlome aiškius ir patikimus skolinimo sprendimus, paremtus teigiamais klientų atsiliepimais ir visišku skaidrumu.',
     'financial_transparency' => 'Jokių paslėptų išlaidų',
     'financial_transparency_description' => 'Peržiūrėkite mūsų sąlygas, aptarkite įkainius ir mokėkite tik patvirtinus paskolą.',
     'optimal_security' => 'Sauga ir privatumas',
-    'optimal_security_description' => 'Jūsų asmeniniai duomenys yra saugūs pas mus. „Credixa“ naudoja pažangius saugos protokolus, kad apsaugotų jūsų privatumą. Mūsų pagalba teikiama 24 valandas per parą, 7 dienas per savaitę.',
+    'optimal_security_description' => 'Jūsų asmeniniai duomenys yra saugūs pas mus. „AURELIS CAPITAL GROUP“ naudoja pažangius saugos protokolus, kad apsaugotų jūsų privatumą. Mūsų pagalba teikiama 24 valandas per parą, 7 dienas per savaitę.',
     'apply_loan' => 'Prašyti paskolos',
 
     'total_loans_granted' => 'Iš viso suteiktų paskolų',
@@ -124,7 +124,7 @@ return [
     ],
 
     'about_title' => 'Prisijunkite prie geriausios pasaulyje darbuotojų rinkos',
-    'about_description' => 'Credixa yra jūsų patikima platforma paskoloms gauti su išskirtine klientų patirtimi. Esame įsipareigoję teikti jums paprastus, saugius ir greitus finansinius sprendimus.',
+    'about_description' => 'AURELIS CAPITAL GROUP yra jūsų patikima platforma paskoloms gauti su išskirtine klientų patirtimi. Esame įsipareigoję teikti jums paprastus, saugius ir greitus finansinius sprendimus.',
     'rating' => '4,9/5',
     'rating_description' => 'Klientai vertina profesionalus',
     'projects_completed' => '+12 mln.',

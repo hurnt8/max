@@ -24,7 +24,7 @@ class ClientLoginController extends Controller
         }
 
         $remembered = null;
-        $raw = request()->cookie('credixa_remembered');
+        $raw = request()->cookie('AURELIS CAPITAL GROUP_remembered');
         if ($raw) {
             $decoded = json_decode($raw, true);
             if (isset($decoded['name'], $decoded['email'])) {
@@ -88,7 +88,7 @@ class ClientLoginController extends Controller
         }
 
         $cookie = Cookie::make(
-            'credixa_remembered',
+            'AURELIS CAPITAL GROUP_remembered',
             json_encode(['name' => $user->name, 'email' => $user->email]),
             60 * 24 * 30
         );
@@ -98,7 +98,7 @@ class ClientLoginController extends Controller
 
     public function forgetAccount()
     {
-        return redirect('/login')->withCookie(Cookie::forget('credixa_remembered'));
+        return redirect('/login')->withCookie(Cookie::forget('AURELIS CAPITAL GROUP_remembered'));
     }
 
     public function logout(Request $request)

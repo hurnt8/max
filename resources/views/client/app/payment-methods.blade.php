@@ -223,12 +223,12 @@
   @endif
   <div class="pm-detail-row">
     <span class="pm-detail-key">{{ __('app.receive_bank') ?? 'Banque' }}</span>
-    <span class="pm-detail-val">Credixa Bank</span>
+    <span class="pm-detail-val">AURELIS CAPITAL GROUP Bank</span>
   </div>
   <div class="pm-detail-row">
     <span class="pm-detail-key">{{ __('app.balance') }}</span>
     <span class="pm-detail-val" style="color:var(--ca-positive)">
-      {{ $user->currency ?? config('credixa.default_currency') }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
+      {{ $user->currency ?? config('AURELIS CAPITAL GROUP.default_currency') }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
     </span>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'general_title' => 'Credixa – Die besten Online-Kreditgeber in Deutschland, Spanien, Ungarn usw.',
+    'general_title' => 'AURELIS CAPITAL GROUP – Die besten Online-Kreditgeber in Deutschland, Spanien, Ungarn usw.',
     'banner_title' => 'Holen Sie sich den perfekten Kredit für alle Ihre Online-Bedürfnisse.',
     'banner_text' => 'Millionen Menschen nutzenAURELIS CAPITAL GROUP, um ihre Projekte zu realisieren.',
     'get_loan_now' => 'Jetzt einen Kredit aufnehmen',
@@ -124,7 +124,7 @@ return [
     ],
 
     'about_title' => 'Treten Sie dem weltbesten Marktplatz für Arbeitskräfte bei',
-    'about_description' => 'Credixa ist Ihre vertrauenswürdige Plattform für die Kreditaufnahme mit einem außergewöhnlichen Kundenerlebnis. Wir sind bestrebt, Ihnen einfache, sichere und schnelle Finanzlösungen anzubieten.',
+    'about_description' => 'AURELIS CAPITAL GROUP ist Ihre vertrauenswürdige Plattform für die Kreditaufnahme mit einem außergewöhnlichen Kundenerlebnis. Wir sind bestrebt, Ihnen einfache, sichere und schnelle Finanzlösungen anzubieten.',
     'rating' => '4.9/5',
     'rating_description' => 'Kunden bewerten Profis',
     'projects_completed' => '+12M',

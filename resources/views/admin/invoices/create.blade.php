@@ -53,7 +53,7 @@
               <label class="form-label-pro">Devise *</label>
               <select name="currency" class="form-control-pro" x-model="currency">
                 @foreach($currencies as $cur)
-                <option value="{{ $cur }}" {{ old('currency', config('credixa.default_currency')) === $cur ? 'selected' : '' }}>{{ $cur }}</option>
+                <option value="{{ $cur }}" {{ old('currency', config('AURELIS CAPITAL GROUP.default_currency')) === $cur ? 'selected' : '' }}>{{ $cur }}</option>
                 @endforeach
               </select>
             </div>
@@ -148,7 +148,7 @@
 function invoiceForm() {
   return {
     lines: [],
-    currency: '{{ old('currency', config('credixa.default_currency')) }}',
+    currency: '{{ old('currency', config('AURELIS CAPITAL GROUP.default_currency')) }}',
     taxRate: {{ old('tax_rate', 0) }},
     subtotal: 0, taxAmt: 0, total: 0,
 

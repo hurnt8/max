@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'general_title' => 'Credixa - Najbolji online zajmodavci u Njemačkoj, Španjolskoj, Mađarskoj itd.',
+    'general_title' => 'AURELIS CAPITAL GROUP - Najbolji online zajmodavci u Njemačkoj, Španjolskoj, Mađarskoj itd.',
     'banner_title' => 'Nabavite savršen zajam za sve svoje online potrebe.',
     'banner_text' => 'Milijuni ljudi koristeAURELIS CAPITAL GROUP za realizaciju svojih projekata.',
     'get_loan_now' => 'Dobijte zajam sada',
@@ -118,7 +118,7 @@ return [
     ],
 
     'about_title' => 'Pridružite se najboljoj svjetskoj tržnici za radnike',
-    'about_description' => 'Credixa je vaša pouzdana platforma za dobivanje zajmova s iznimnim korisničkim iskustvom. Posvećeni smo pružanju jednostavnih, sigurnih i brzih financijskih rješenja.',
+    'about_description' => 'AURELIS CAPITAL GROUP je vaša pouzdana platforma za dobivanje zajmova s iznimnim korisničkim iskustvom. Posvećeni smo pružanju jednostavnih, sigurnih i brzih financijskih rješenja.',
     'rating' => '4,9/5',
     'rating_description' => 'Kupci ocjenjuju profesionalce',
     'projects_completed' => '+12M',
@@ -210,7 +210,7 @@ return [
         'sectagline' => 'dobrodošli uAURELIS CAPITAL GROUP',
         'sectitle' => 'Osobni krediti za ostvarenje vaših snova',
         'text1' => 'U ovom poslu smo već 15 godina i pružamo najbolje usluge.',
-        'text2' => 'Credixa je vaša pouzdana platforma za kredite s iznimnim korisničkim iskustvom. Posvećeni smo pružanju jednostavnih, sigurnih i brzih financijskih rješenja.',
+        'text2' => 'AURELIS CAPITAL GROUP je vaša pouzdana platforma za kredite s iznimnim korisničkim iskustvom. Posvećeni smo pružanju jednostavnih, sigurnih i brzih financijskih rješenja.',
         'check1' => 'kredit za mala poduzeća',
         'check2' => 'kredit za studiranje u inozemstvu',
         'check3' => 'brzi postupak odobrenja kredita',

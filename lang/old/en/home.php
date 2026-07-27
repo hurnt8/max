@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'general_title' => 'Credixa - Best online lenders in Germany, Spain, Hungary etc.',
+    'general_title' => 'AURELIS CAPITAL GROUP - Best online lenders in Germany, Spain, Hungary etc.',
     'banner_title' => 'Get the perfect loan for all your online needs.',
     'banner_text' => 'Millions of people useAURELIS CAPITAL GROUP to realize their projects.',
     'get_loan_now' => 'Get a loan now',
@@ -124,7 +124,7 @@ return [
     ],
 
     'about_title' => 'Join the world\'s best marketplace for workers',
-    'about_description' => 'Credixa is your trusted platform for obtaining loans with an exceptional customer experience. We are committed to providing you with simple, secure and fast financial solutions.',
+    'about_description' => 'AURELIS CAPITAL GROUP is your trusted platform for obtaining loans with an exceptional customer experience. We are committed to providing you with simple, secure and fast financial solutions.',
     'rating' => '4.9/5',
     'rating_description' => 'Customers rate professionals',
     'projects_completed' => '+12M',

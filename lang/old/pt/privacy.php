@@ -44,7 +44,7 @@ return [
     'contact_title' => '8. Contato',
     'contact_text' => 'Se você tiver alguma dúvida, preocupação ou solicitação relacionada a esta política de privacidade ou como tratamos suas informações pessoais, entre em contato conosco em:',
     'contact_details' => [
-        'Credixa',
+        'AURELIS CAPITAL GROUP',
         'Endereço: Calcea Victoriei 118 Sector 1 010093 Bucareste',
         'E-mail: contact@aureliscapital.online',
         'Telefone: +31 6 57341120 ',

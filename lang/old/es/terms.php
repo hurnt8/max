@@ -13,7 +13,7 @@ return [
         ],
         [
             'title' => '3. Servicios de préstamo',
-            'content' => 'Credixa ofrece varios tipos de préstamos para satisfacer sus necesidades financieras. Todos los préstamos están sujetos a aprobación basada en nuestra evaluación de su solvencia y capacidad de pago. Los términos específicos de cada préstamo, incluidas las tasas de interés, los vencimientos y los términos de pago, se detallarán en su contrato de préstamo.',
+            'content' => 'AURELIS CAPITAL GROUP ofrece varios tipos de préstamos para satisfacer sus necesidades financieras. Todos los préstamos están sujetos a aprobación basada en nuestra evaluación de su solvencia y capacidad de pago. Los términos específicos de cada préstamo, incluidas las tasas de interés, los vencimientos y los términos de pago, se detallarán en su contrato de préstamo.',
         ],
         [
             'title' => '4. Costos de contrato y seguro',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Limitación de responsabilidad',
-            'content' => 'Credixa no será responsable de ninguna pérdida o daño indirecto, especial o consecuente que surja del uso o la imposibilidad de usar nuestro sitio o servicios, incluida la pérdida de ganancias, la pérdida de datos o la interrupción del negocio, incluso si Se nos ha advertido de la posibilidad de que se produzcan tales daños.'
+            'content' => 'AURELIS CAPITAL GROUP no será responsable de ninguna pérdida o daño indirecto, especial o consecuente que surja del uso o la imposibilidad de usar nuestro sitio o servicios, incluida la pérdida de ganancias, la pérdida de datos o la interrupción del negocio, incluso si Se nos ha advertido de la posibilidad de que se produzcan tales daños.'
         ],
         [
             'title' => '8. Cambios en los términos',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contactar',
-            'content' => 'Si tiene alguna pregunta o inquietud con respecto a estos términos y condiciones, contáctenos en:<br><br>Credixa<br>Dirección: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@aureliscapital.online<br>Teléfono: +31 6 57341120 ]'
+            'content' => 'Si tiene alguna pregunta o inquietud con respecto a estos términos y condiciones, contáctenos en:<br><br>AURELIS CAPITAL GROUP<br>Dirección: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@aureliscapital.online<br>Teléfono: +31 6 57341120 ]'
         ],
     ],
 ];

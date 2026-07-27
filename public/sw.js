@@ -112,9 +112,9 @@ const TYPE_CONFIG = {
 
 self.addEventListener('push', e => {
     const defaults = {
-        title: 'Credixa',
+        title: 'AURELIS CAPITAL GROUP',
         body:  '',
-        tag:   'credixa',
+        tag:   'AURELIS CAPITAL GROUP',
         url:   '/app/notifications',
         type:  'system',
     };
@@ -126,7 +126,7 @@ self.addEventListener('push', e => {
 
     const cfg = TYPE_CONFIG[data.type] || TYPE_CONFIG[data.tag] || TYPE_CONFIG.system;
 
-    const notifTitle = data.title || 'Credixa';
+    const notifTitle = data.title || 'AURELIS CAPITAL GROUP';
     const notifBody  = data.body  || '';
 
     e.waitUntil(
@@ -135,7 +135,7 @@ self.addEventListener('push', e => {
             icon:               ICON,
             badge:              BADGE,
             vibrate:            [100, 60, 100, 60, 300],
-            tag:                data.tag  || 'credixa-notif',
+            tag:                data.tag  || 'AURELIS CAPITAL GROUP-notif',
             renotify:           true,
             requireInteraction: false,
             timestamp:          Date.now(),

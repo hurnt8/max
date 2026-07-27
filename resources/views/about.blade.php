@@ -60,7 +60,7 @@
             <div class="col-lg-6 wow fadeInLeft" data-wow-duration="900ms">
                 <div class="about-image-wrap">
                     <img src="{{ asset('assets/images/about/about-1-1.jpg') }}"
-                         alt="Credixa" class="about-image-main">
+                         alt="AURELIS CAPITAL GROUP" class="about-image-main">
                     <img src="{{ asset('assets/images/about/about-1-2.jpg') }}"
                          alt="" class="about-image-secondary"
                          style="width:38%;right:1rem;bottom:1rem;">

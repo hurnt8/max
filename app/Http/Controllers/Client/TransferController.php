@@ -70,7 +70,7 @@ class TransferController extends Controller
                     'reference'        => Transfer::generateReference(),
                     'type'             => 'send',
                     'amount'           => $amount,
-                    'currency'         => $fresh->currency ?? config('credixa.default_currency'),
+                    'currency'         => $fresh->currency ?? config('AURELIS CAPITAL GROUP.default_currency'),
                     'beneficiary_name' => $validated['beneficiary_name'],
                     'beneficiary_iban' => $validated['beneficiary_iban'],
                     'note'             => $validated['note'] ?? null,

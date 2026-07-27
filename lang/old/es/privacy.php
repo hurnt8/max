@@ -44,7 +44,7 @@ return [
     'contact_title' => '8. Contactar',
     'contact_text' => 'Si tiene alguna pregunta, inquietud o solicitud con respecto a esta política de privacidad o cómo tratamos su información personal, contáctenos en:',
     'contact_details' => [
-        'Credixa',
+        'AURELIS CAPITAL GROUP',
         'Dirección: Rua de Santo António 33, 7200-175, Portugal',
         'Correo electrónico: contact@aureliscapital.online',
         'Teléfono: +31 6 57341120 ',

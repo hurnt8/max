@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'general_title' => 'Credixa – A legjobb online hitelezők Németországban, Spanyolországban, Magyarországon stb.',
+    'general_title' => 'AURELIS CAPITAL GROUP – A legjobb online hitelezők Németországban, Spanyolországban, Magyarországon stb.',
     'banner_title' => 'Szerezze meg a tökéletes kölcsönt minden online igényéhez.',
     'banner_text' => 'Emberek milliói használják aAURELIS CAPITAL GROUP-ot projektjeik megvalósítására.',
     'get_loan_now' => 'Kölcsön kérése most',

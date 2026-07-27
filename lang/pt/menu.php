@@ -25,5 +25,5 @@ return [
     'newsletter_title' => 'Fique informado sobre as nossas ofertas',
     'subscribe' => 'Subscrever',
     'read_more' => 'Saber mais',
-    'footer_desc' => 'Credixa é o seu parceiro de confiança para soluções de financiamento rápidas, flexíveis e personalizadas em toda a Europa.',
+    'footer_desc' => 'AURELIS CAPITAL GROUP é o seu parceiro de confiança para soluções de financiamento rápidas, flexíveis e personalizadas em toda a Europa.',
 ];

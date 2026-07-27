@@ -338,7 +338,7 @@ html,body{
 <div id="ld" role="status">
   <div class="ld-bar"></div>
   <div class="ld-logo">
-    <img src="/images/icon-192.png" alt="Credixa">
+    <img src="/images/icon-192.png" alt="AURELIS CAPITAL GROUP">
     <div class="ld-ring"></div>
   </div>
   <p class="ld-lbl">{{ __('auth.otp_verifying') ?? 'Vérification…' }}</p>

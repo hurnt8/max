@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'general_title' => 'Credixa - Najboljši spletni posojilodajalci v Nemčiji, Španiji, Madžarski itd.',
+    'general_title' => 'AURELIS CAPITAL GROUP - Najboljši spletni posojilodajalci v Nemčiji, Španiji, Madžarski itd.',
     'banner_title' => 'Pridobite popolno posojilo za vse vaše spletne potrebe.',
     'banner_text' => 'Milijoni ljudi uporabljajoAURELIS CAPITAL GROUP za uresničitev svojih projektov.',
     'get_loan_now' => 'Pridobite posojilo zdaj',
@@ -111,7 +111,7 @@ return [
     ],
 
     'about_title' => 'Pridružite se najboljšemu svetovnemu trgu za delavce',
-    'about_description' => 'Credixa je vaša zaupanja vredna platforma za pridobivanje posojil z izjemno izkušnjo strank. Zavezani smo, da vam nudimo preproste, varne in hitre finančne rešitve.',
+    'about_description' => 'AURELIS CAPITAL GROUP je vaša zaupanja vredna platforma za pridobivanje posojil z izjemno izkušnjo strank. Zavezani smo, da vam nudimo preproste, varne in hitre finančne rešitve.',
     'rating' => '4.9/5',
     'rating_description' => 'Stranke ocenjujejo strokovnjake',
     'projects_completed' => '+12M',

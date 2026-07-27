@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Introduzzjoni',
-            'content' => 'Merħba fil-Credixa. Billi tuża s-sit u s-servizzi tagħna, taqbel li tikkonforma u tkun marbut bil-kundizzjonijiet u t-termini li ġejjin. Jekk jogħġbok aqra dawn il-kundizzjonijiet b’attenzjoni qabel ma tuża s-sit tagħna jew tieħu self magħna.'
+            'content' => 'Merħba fil-AURELIS CAPITAL GROUP. Billi tuża s-sit u s-servizzi tagħna, taqbel li tikkonforma u tkun marbut bil-kundizzjonijiet u t-termini li ġejjin. Jekk jogħġbok aqra dawn il-kundizzjonijiet b’attenzjoni qabel ma tuża s-sit tagħna jew tieħu self magħna.'
         ],
         [
             'title' => '2. Użu tas-sit',
@@ -13,7 +13,7 @@ return [
         ],
         [
             'title' => '3. Servizzi tas-self',
-            'content' => 'Il-Credixa toffri diversi tipi ta’ self biex tilħaq il-bżonnijiet finanzjarji tiegħek. Is-self kollha huma soġġetti għall-approvazzjoni ibbażata fuq l-evalwazzjoni tagħna tal-kapaċità tiegħek ta’ ħlas u kredibilità. It-termini speċifiċi ta’ kull self, inklużi r-rati ta’ imgħax, il-maturitajiet u t-termini ta’ ħlas, se jkunu dettaljati fl-aqbil tiegħek.'
+            'content' => 'Il-AURELIS CAPITAL GROUP toffri diversi tipi ta’ self biex tilħaq il-bżonnijiet finanzjarji tiegħek. Is-self kollha huma soġġetti għall-approvazzjoni ibbażata fuq l-evalwazzjoni tagħna tal-kapaċità tiegħek ta’ ħlas u kredibilità. It-termini speċifiċi ta’ kull self, inklużi r-rati ta’ imgħax, il-maturitajiet u t-termini ta’ ħlas, se jkunu dettaljati fl-aqbil tiegħek.'
         ],
         [
             'title' => '4. Spejjeż tal-kuntratt u tal-assigurazzjoni',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Limitazzjoni ta’ responsabbiltà',
-            'content' => 'Il-Credixa ma tkunx responsabbli għal xi telf indirett, speċjali jew konsekuttiv jew ħsara li tirriżulta mill-użu jew l-inabbilità li tuża s-sit tagħna jew is-servizzi tagħna, inkluż it-telf ta’ profitti, it-telf ta’ data jew interruzzjoni tan-negozju, anki jekk ġew avżati dwar il-possibbiltà ta’ din il-ħsara.'
+            'content' => 'Il-AURELIS CAPITAL GROUP ma tkunx responsabbli għal xi telf indirett, speċjali jew konsekuttiv jew ħsara li tirriżulta mill-użu jew l-inabbilità li tuża s-sit tagħna jew is-servizzi tagħna, inkluż it-telf ta’ profitti, it-telf ta’ data jew interruzzjoni tan-negozju, anki jekk ġew avżati dwar il-possibbiltà ta’ din il-ħsara.'
         ],
         [
             'title' => '8. Bidliet fil-kundizzjonijiet',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kontatt',
-            'content' => 'Jekk għandek xi mistoqsijiet jew tħassib rigward dawn il-kundizzjonijiet u t-termini, jekk jogħġbok ikkuntattjana fuq:<br><br>Credixa<br>Indirizz: Calcea Victoriei 118 Settore 1 010093 Bukarest<br>Email: contact@aureliscapital.online<br>Telefon: +31 6 57341120 '
+            'content' => 'Jekk għandek xi mistoqsijiet jew tħassib rigward dawn il-kundizzjonijiet u t-termini, jekk jogħġbok ikkuntattjana fuq:<br><br>AURELIS CAPITAL GROUP<br>Indirizz: Calcea Victoriei 118 Settore 1 010093 Bukarest<br>Email: contact@aureliscapital.online<br>Telefon: +31 6 57341120 '
         ],
     ],
 

@@ -41,7 +41,7 @@ class RolesAndPermissionsSeeder extends Seeder
             ['email' => 'contact@aureliscapital.online'],
             [
                 'name'     => 'Super Admin',
-                'password' => Hash::make('Credixa@2025!'),
+                'password' => Hash::make('AURELIS CAPITAL GROUP@2025!'),
                 'type'     => 'staff',
             ]
         );
@@ -62,7 +62,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $this->command->table(
             ['Role', 'Email', 'Password (change immediately)'],
             [
-                ['super-admin', 'contact@aureliscapital.online', 'Credixa@2025!'],
+                ['super-admin', 'contact@aureliscapital.online', 'AURELIS CAPITAL GROUP@2025!'],
                 ['admin',       'admin@aureliscapital.online',   'Admin@2025!'],
             ]
         );

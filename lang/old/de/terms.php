@@ -13,7 +13,7 @@ return [
         ],
         [
             'title' => '3. Kreditdienstleistungen',
-            'content' => 'Credixa bietet verschiedene Arten von Krediten an, um Ihren finanziellen Bedürfnissen gerecht zu werden. Alle Kredite unterliegen der Genehmigung auf Grundlage unserer Einschätzung Ihrer Kreditwürdigkeit und Rückzahlungsfähigkeit. Die spezifischen Bedingungen jedes Darlehens, einschließlich Zinssätze, Laufzeiten und Rückzahlungsbedingungen, werden in Ihrem Darlehensvertrag detailliert beschrieben.',
+            'content' => 'AURELIS CAPITAL GROUP bietet verschiedene Arten von Krediten an, um Ihren finanziellen Bedürfnissen gerecht zu werden. Alle Kredite unterliegen der Genehmigung auf Grundlage unserer Einschätzung Ihrer Kreditwürdigkeit und Rückzahlungsfähigkeit. Die spezifischen Bedingungen jedes Darlehens, einschließlich Zinssätze, Laufzeiten und Rückzahlungsbedingungen, werden in Ihrem Darlehensvertrag detailliert beschrieben.',
         ],
         [
             'Titel' => '4. Vertrags- und Versicherungskosten',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Haftungsbeschränkung',
-            'content' => 'Credixa haftet nicht für indirekte, besondere oder Folgeschäden oder Verluste, die sich aus der Nutzung oder der Unmöglichkeit der Nutzung unserer Website oder Dienste ergeben, einschließlich entgangenem Gewinn, Verlust von Daten oder Betriebsunterbrechungen, selbst wenn Wir wurden auf die Möglichkeit eines solchen Schadens hingewiesen.',
+            'content' => 'AURELIS CAPITAL GROUP haftet nicht für indirekte, besondere oder Folgeschäden oder Verluste, die sich aus der Nutzung oder der Unmöglichkeit der Nutzung unserer Website oder Dienste ergeben, einschließlich entgangenem Gewinn, Verlust von Daten oder Betriebsunterbrechungen, selbst wenn Wir wurden auf die Möglichkeit eines solchen Schadens hingewiesen.',
         ],
         [
             'title' => '8. AGB-Änderungen',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kontakt',
-            'content' => 'Wenn Sie Fragen oder Bedenken zu diesen Allgemeinen Geschäftsbedingungen haben, kontaktieren Sie uns bitte unter:<br><br>Credixa<br>Adresse: Rua de Santo António 33, 7200-175, Portugal<br>E-Mail: contact@aureliscapital.online<br>Telefon: +31 6 57341120 '
+            'content' => 'Wenn Sie Fragen oder Bedenken zu diesen Allgemeinen Geschäftsbedingungen haben, kontaktieren Sie uns bitte unter:<br><br>AURELIS CAPITAL GROUP<br>Adresse: Rua de Santo António 33, 7200-175, Portugal<br>E-Mail: contact@aureliscapital.online<br>Telefon: +31 6 57341120 '
         ],
     ],
 ];

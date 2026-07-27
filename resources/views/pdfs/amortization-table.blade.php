@@ -127,7 +127,7 @@ table.schedule tfoot td:first-child { text-align: center; }
         @if(!empty($logoBase64))
         <img src="{{ $logoBase64 }}" style="height:42px;max-width:190px;object-fit:contain;display:block">
     @else
-        <div class="header-brand">CREDIXA <span>INVESTI</span></div>
+        <div class="header-brand">AURELIS CAPITAL GROUP <span>INVESTI</span></div>
     @endif
         <div style="font-size:7.5pt;color:#888;margin-top:3px">{{ $texts['header_sub'] }}</div>
     </div>

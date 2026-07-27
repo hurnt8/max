@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'general_title' => 'Credixa - Os melhores credores online na Alemanha, Espanha, Hungria, etc.',
+    'general_title' => 'AURELIS CAPITAL GROUP - Os melhores credores online na Alemanha, Espanha, Hungria, etc.',
     'banner_title' => 'Obtenha o empréstimo perfeito para todas as suas necessidades online.',
     'banner_text' => 'Milhões de pessoas usam aAURELIS CAPITAL GROUP para realizar seus projetos.',
     'get_loan_now' => 'Obtenha um empréstimo agora',

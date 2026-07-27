@@ -44,7 +44,7 @@ return [
     'contact_title' => '8. Kontakt',
     'contact_text' => 'Če imate kakršna koli vprašanja, skrbi ali zahteve glede te politike zasebnosti ali načina obravnave vaših osebnih informacij, nas prosimo kontaktirajte na:',
     'contact_details' => [
-        'Credixa',
+        'AURELIS CAPITAL GROUP',
         'Naslov: Calcea Victoriei 118, Sektor 1, 010093 Bukarešta',
         'Email: contact@aureliscapital.online',
         'Telefon: +31 6 57341120 ',

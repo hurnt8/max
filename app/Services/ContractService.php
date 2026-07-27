@@ -285,7 +285,7 @@ class ContractService
             '{frais_admin}'     => 'Frais administratifs',
             '{compte_bancaire}' => 'Coordonnées bancaires',
             '{date}'            => 'Date de validation',
-            '{societe}'         => 'Nom de la société (CREDIXA INVESTI)',
+            '{societe}'         => 'Nom de la société (AURELIS CAPITAL GROUP INVESTI)',
         ];
     }
 
@@ -361,12 +361,12 @@ class ContractService
             '{objet}'           => $loan->objet ?? '',
             '{montant_lettres}' => NumberToWordsConverter::convert((float) $loan->amount, $locale),
             '{typefinance}'     => $financingTypeLabel,
-            '{agent_suivi}'     => $loan->agent_suivi ?: ($admin?->name ?? 'CREDIXA INVESTI'),
+            '{agent_suivi}'     => $loan->agent_suivi ?: ($admin?->name ?? 'AURELIS CAPITAL GROUP INVESTI'),
             '{directeur}'       => $loan->directeur ?? '',
             '{notaire}'         => $loan->notaire ?? '',
             '{montant}'         => number_format((float)$loan->amount, 2, ',', ' '),
             '{montant_totalavecinteret}' => number_format((float)$loan->total_with_interest, 2, ',', ' '),
-            '{devise}'          => $loan->currency ?? config('credixa.default_currency'),
+            '{devise}'          => $loan->currency ?? config('AURELIS CAPITAL GROUP.default_currency'),
             '{duree}'           => $loan->darly ?? '',
             '{mensualite}'      => number_format((float)$loan->monthly_payment, 2, ',', ' '),
             '{montant_mensualite}' => number_format((float)$loan->monthly_payment, 2, ',', ' '),
@@ -384,7 +384,7 @@ class ContractService
             '{date}'            => $loan->validated_at
                                     ? $loan->validated_at->format('d/m/Y')
                                     : now()->format('d/m/Y'),
-            '{societe}'         => 'CREDIXA INVESTI',
+            '{societe}'         => 'AURELIS CAPITAL GROUP INVESTI',
         ], $genderVars, $extraVars);
     }
 

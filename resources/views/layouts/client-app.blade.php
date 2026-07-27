@@ -36,7 +36,7 @@
        et repartir sur le nouveau thème clair par défaut (charte AURELIS CAPITAL GROUP). --}}
   <script>
     (function(){
-      var t = localStorage.getItem('credixa-theme-v2') || 'light';
+      var t = localStorage.getItem('AURELIS CAPITAL GROUP-theme-v2') || 'light';
       document.documentElement.dataset.theme = t;
     })();
   </script>
@@ -104,7 +104,7 @@
     <div style="width:38px"></div>
     @endif
 
-    <span class="ca-topbar__title">@yield('page_title', 'Credixa')</span>
+    <span class="ca-topbar__title">@yield('page_title', 'AURELIS CAPITAL GROUP')</span>
 
     @hasSection('topbar_action')
     @yield('topbar_action')
@@ -225,7 +225,7 @@
   </div>
 </div>
 
-<script>window.CREDIXA_VAPID_KEY = '{{ config("services.vapid.public_key") }}';</script>
+<script>window.AURELIS CAPITAL GROUP_VAPID_KEY = '{{ config("services.vapid.public_key") }}';</script>
 <script>
 (function () {
   const CSRF        = '{{ csrf_token() }}';
@@ -238,7 +238,7 @@
 
     // Si les clés VAPID ont changé, invalider l'ancienne souscription
     const storedVapid = localStorage.getItem('cxa_vapid_pub');
-    const currentVapid = window.CREDIXA_VAPID_KEY || '';
+    const currentVapid = window.AURELIS CAPITAL GROUP_VAPID_KEY || '';
     if (storedVapid && storedVapid !== currentVapid) {
       const oldSub = await reg.pushManager.getSubscription();
       if (oldSub) {
@@ -311,7 +311,7 @@
 {{-- ══ Son & Polling notifications ══ --}}
 <script>
 // Synthese sonore Web Audio API (aucun fichier externe)
-window.CrediXaSound = (function () {
+window.AURELIS CAPITAL GROUPSound = (function () {
   let ctx = null;
   function ac() {
     if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -377,9 +377,9 @@ window.CrediXaSound = (function () {
 
       if (count > lastCount) {
         if (data.type === 'transfer') {
-          window.CrediXaSound.coin();
+          window.AURELIS CAPITAL GROUPSound.coin();
         } else {
-          window.CrediXaSound.bell();
+          window.AURELIS CAPITAL GROUPSound.bell();
         }
       }
       lastCount = count;

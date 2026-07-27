@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'general_title' => 'Credixa - Los mejores prestamistas online en Alemania, España, Hungría, etc.',
+    'general_title' => 'AURELIS CAPITAL GROUP - Los mejores prestamistas online en Alemania, España, Hungría, etc.',
     'banner_title' => 'Obtenga el préstamo perfecto para todas sus necesidades en línea.',
     'banner_text' => 'Millones de personas utilizanAURELIS CAPITAL GROUP para realizar sus proyectos.',
     'get_loan_now' => 'Obtener un préstamo ahora',
@@ -124,7 +124,7 @@ return [
     ],
 
     'about_title' => 'Únase al mejor mercado para trabajadores del mundo',
-    'about_description' => 'Credixa es su plataforma confiable para obtener préstamos con una experiencia de cliente excepcional. Estamos comprometidos a brindarle soluciones financieras simples, seguras y rápidas.',
+    'about_description' => 'AURELIS CAPITAL GROUP es su plataforma confiable para obtener préstamos con una experiencia de cliente excepcional. Estamos comprometidos a brindarle soluciones financieras simples, seguras y rápidas.',
     'rating' => '4,9/5',
     'rating_description' => 'Los clientes califican a los profesionales',
     'projects_completed' => '+12M',

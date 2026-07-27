@@ -76,7 +76,7 @@
 </a>
 
 @php
-  $cur = $account->currency ?? config('credixa.default_currency');
+  $cur = $account->currency ?? config('AURELIS CAPITAL GROUP.default_currency');
   $bal = (float) $account->balance;
   $balColor = $bal >= 0 ? '#4ade80' : '#f87171';
 @endphp

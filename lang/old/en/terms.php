@@ -13,7 +13,7 @@ return [
         ],
         [
             'title' => '3. Loan services',
-            'content' => 'Credixa offers various types of loans to meet your financial needs. All loans are subject to approval based on our assessment of your creditworthiness and repayment capacity. The specific terms of each loan, including interest rates, maturities and repayment terms, will be detailed in your loan agreement.'
+            'content' => 'AURELIS CAPITAL GROUP offers various types of loans to meet your financial needs. All loans are subject to approval based on our assessment of your creditworthiness and repayment capacity. The specific terms of each loan, including interest rates, maturities and repayment terms, will be detailed in your loan agreement.'
         ],
         [
             'title' => '4. Contract and insurance costs',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Limitation of liability',
-            'content' => 'Credixa will not be liable for any indirect, special or consequential loss or damage arising out of the use of or inability to use our site or services, including loss of profits, loss data loss or business interruption, even if we have been advised of the possibility of such damage.'
+            'content' => 'AURELIS CAPITAL GROUP will not be liable for any indirect, special or consequential loss or damage arising out of the use of or inability to use our site or services, including loss of profits, loss data loss or business interruption, even if we have been advised of the possibility of such damage.'
         ],
         [
             'title' => '8. Changes to terms',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contact',
-            'content' => 'If you have any questions or concerns regarding these terms and conditions, please contact us at:<br><br>Credixa<br>Address: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@aureliscapital.online<br>Phone: +31 6 57341120 '
+            'content' => 'If you have any questions or concerns regarding these terms and conditions, please contact us at:<br><br>AURELIS CAPITAL GROUP<br>Address: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@aureliscapital.online<br>Phone: +31 6 57341120 '
         ],
     ],
 ];

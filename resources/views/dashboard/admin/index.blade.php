@@ -301,7 +301,7 @@
 {{-- ── HERO ── --}}
 <div class="adb-hero">
   <div class="adb-hero-left">
-    <div class="adb-hero-tag">Credixa — Espace Administrateur</div>
+    <div class="adb-hero-tag">AURELIS CAPITAL GROUP — Espace Administrateur</div>
     <div class="adb-hero-title">Bonjour, {{ Auth::user()->name }} 👋</div>
     <div class="adb-hero-sub">{{ now()->isoFormat('dddd D MMMM YYYY') }}</div>
     <button id="adb-pwa-btn" class="adb-pwa-btn" aria-label="Installer l'application">

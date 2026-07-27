@@ -300,7 +300,7 @@ kbd {
     <a href="{{ route($panelPrefix.'.loans.show', $loan) }}" class="s-brand">
       <div class="s-logo">CI</div>
       <div class="s-brand-wrap">
-        <span class="s-brand-name">Credixa Invest</span>
+        <span class="s-brand-name">AURELIS CAPITAL GROUP Invest</span>
         <span class="s-brand-hint">Portail de gestion</span>
       </div>
     </a>

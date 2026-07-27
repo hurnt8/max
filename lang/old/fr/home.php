@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'general_title' => 'Credixa - Meilleurs prêteurs en ligne en Allemagne, Espagne, Houngrie etc.',
+    'general_title' => 'AURELIS CAPITAL GROUP - Meilleurs prêteurs en ligne en Allemagne, Espagne, Houngrie etc.',
     'banner_title' => 'Obtenez le prêt parfait pour tous vos besoins en ligne.',
     'banner_text' => 'Des millions de personnes utilisentAURELIS CAPITAL GROUP pour réaliser leurs projets.',
     'get_loan_now' => 'Obtenez un prêt maintenant',
@@ -124,7 +124,7 @@ return [
     ],
 
     'about_title' => 'Rejoignez le meilleur marché mondial pour les travailleurs',
-    'about_description' => 'Credixa est votre plateforme de confiance pour obtenir des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
+    'about_description' => 'AURELIS CAPITAL GROUP est votre plateforme de confiance pour obtenir des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
     'rating' => '4.9/5',
     'rating_description' => 'Les clients évaluent les professionnels',
     'projects_completed' => '+12M',
