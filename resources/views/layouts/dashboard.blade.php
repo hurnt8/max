@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+@php
+  $siteContact = \App\Models\SiteContact::current();
+  $pwaIcon     = $siteContact->pwa_icon_path ? Storage::url($siteContact->pwa_icon_path) : null;
+@endphp
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="theme-color" content="#071A33">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="AURELIS CAPITAL GROUP Admin">
+<meta name="apple-mobile-web-app-title" content="{{ $siteContact->name }} Admin">
 <meta name="mobile-web-app-capable" content="yes">
 @auth
   @if(Auth::user()->hasAnyRole(['admin','super-admin']))
@@ -18,9 +22,9 @@
 @else
 <link rel="manifest" href="/admin-manifest.json">
 @endauth
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
-<title>@yield('title','Dashboard') : AURELIS CAPITAL GROUP Invest</title>
+<link rel="apple-touch-icon" sizes="180x180" href="{{ $pwaIcon ?? '/images/apple-touch-icon.png' }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ $pwaIcon ?? '/images/icon-192.png' }}">
+<title>@yield('title','Dashboard') : {{ $siteContact->name }}</title>
 <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -734,7 +738,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
 
   <div class="sidebar-brand">
     <a href="{{ route('home',['locale'=>app()->getLocale()]) }}">
-      <img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="AURELIS CAPITAL GROUP">
+      <img src="{{ $siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : asset('assets/images/logo-white-icon.png') }}" alt="{{ $siteContact->name }}">
     </a>
   </div>
 
@@ -1200,9 +1204,9 @@ function doInstallPwa() {
     border:1px solid rgba(200,169,81,.3)">
   <div style="display:flex;align-items:center;justify-content:space-between">
     <div style="display:flex;align-items:center;gap:.625rem">
-      <img src="/images/icon-192.png" style="width:36px;height:36px;border-radius:8px" alt="">
+      <img src="{{ $pwaIcon ?? '/images/icon-192.png' }}" style="width:36px;height:36px;border-radius:8px" alt="">
       <div>
-        <div style="font-size:.8rem;font-weight:700;color:#fff">AURELIS CAPITAL GROUP</div>
+        <div style="font-size:.8rem;font-weight:700;color:#fff">{{ $siteContact->name }}</div>
         <div style="font-size:.68rem;color:rgba(255,255,255,.5)">Installer comme application</div>
       </div>
     </div>

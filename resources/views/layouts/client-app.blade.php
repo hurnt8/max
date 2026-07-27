@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" dir="ltr">
 <head>
+  @php
+    $siteContact = \App\Models\SiteContact::current();
+    $pwaIcon     = $siteContact->pwa_icon_path ? Storage::url($siteContact->pwa_icon_path) : null;
+  @endphp
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="AURELIS CAPITAL GROUP">
+  <meta name="apple-mobile-web-app-title" content="{{ $siteContact->name }}">
   <meta name="theme-color" content="#071A33">
-  <meta name="description" content="Credixa — Espace client mobile">
+  <meta name="description" content="{{ $siteContact->name }} — Espace client mobile">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>@yield('title', 'Credixa')</title>
+  <title>@yield('title', $siteContact->name)</title>
 
   <link rel="manifest" href="{{ route('pwa.manifest') }}">
   {{-- Icônes PWA --}}
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/images/icon-512.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ $pwaIcon ?? '/images/apple-touch-icon.png' }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ $pwaIcon ?? '/images/icon-512.png' }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ $pwaIcon ?? '/images/icon-192.png' }}">
   {{-- Couvre favicon.ico vide pour les navigateurs/crawlers qui le demandent --}}
-  <link rel="shortcut icon" href="/images/icon-192.png" type="image/png">
+  <link rel="shortcut icon" href="{{ $pwaIcon ?? '/images/icon-192.png' }}" type="image/png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +48,7 @@
 
 {{-- ══ SPLASH SCREEN ══ --}}
 <div id="cxa-splash" aria-hidden="true">
-  <img src="/assets/images/logo-white.png" alt="AURELIS CAPITAL GROUP" id="cxa-splash-logo">
+  <img src="{{ $pwaIcon ?? '/assets/images/logo-white.png' }}" alt="{{ $siteContact->name }}" id="cxa-splash-logo">
 </div>
 <style>
 #cxa-splash{

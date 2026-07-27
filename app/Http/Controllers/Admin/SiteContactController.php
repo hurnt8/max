@@ -27,10 +27,11 @@ class SiteContactController extends Controller
             'email'     => ['nullable', 'email', 'max:255'],
             'logo_light' => ['nullable', 'image', 'max:2048'],
             'logo_dark'  => ['nullable', 'image', 'max:2048'],
+            'pwa_icon'   => ['nullable', 'image', 'max:2048'],
         ]);
 
         $contact = SiteContact::current();
-        $contact->update(collect($validated)->except(['logo_light', 'logo_dark'])->all());
+        $contact->update(collect($validated)->except(['logo_light', 'logo_dark', 'pwa_icon'])->all());
 
         $this->handleLogoUploads($request, $contact);
 
@@ -42,6 +43,7 @@ class SiteContactController extends Controller
         $logoFields = [
             'logo_light' => 'logo_light_path',
             'logo_dark'  => 'logo_dark_path',
+            'pwa_icon'   => 'pwa_icon_path',
         ];
 
         foreach ($logoFields as $input => $column) {

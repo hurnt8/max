@@ -8,12 +8,14 @@ use App\Models\AccountMovement;
 use App\Models\ClientNotification;
 use App\Models\Invoice;
 use App\Models\LoanRequest;
+use App\Models\SiteContact;
 use App\Models\Transfer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class AppController extends Controller
 {
@@ -396,9 +398,16 @@ class AppController extends Controller
 
     public function manifest()
     {
+        $siteContact = SiteContact::current();
+        $brandName   = $siteContact->name;
+        $icon        = $siteContact->pwa_icon_path ? Storage::url($siteContact->pwa_icon_path) : null;
+        $iconTouch   = $icon ?? '/images/apple-touch-icon.png';
+        $icon192     = $icon ?? '/images/icon-192.png';
+        $icon512     = $icon ?? '/images/icon-512.png';
+
         $data = [
-            'name'             => config('app.company_name', 'AURELIS CAPITAL GROUP') . ' — Espace Client',
-            'short_name'       => 'AURELIS CAPITAL GROUP',
+            'name'             => $brandName . ' — Espace Client',
+            'short_name'       => $brandName,
             'description'      => 'Gérez vos prêts, virements et documents en toute sécurité.',
             'start_url'        => '/app',
             'scope'            => '/app',
@@ -409,11 +418,11 @@ class AppController extends Controller
             'lang'             => app()->getLocale(),
             'categories'       => ['finance', 'business'],
             'icons'            => [
-                ['src' => '/images/apple-touch-icon.png', 'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
-                ['src' => '/images/icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => $iconTouch, 'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon192,   'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon192,   'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => $icon512,   'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon512,   'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
             ],
             'shortcuts' => [
                 [
@@ -421,21 +430,21 @@ class AppController extends Controller
                     'short_name' => 'Dossiers',
                     'url'        => '/app/loans',
                     'description'=> 'Consulter mes demandes de prêt',
-                    'icons'      => [['src' => '/images/icon-192.png', 'sizes' => '192x192']],
+                    'icons'      => [['src' => $icon192, 'sizes' => '192x192']],
                 ],
                 [
                     'name'       => 'Virements',
                     'short_name' => 'Virements',
                     'url'        => '/app/transfers',
                     'description'=> 'Effectuer ou suivre mes virements',
-                    'icons'      => [['src' => '/images/icon-192.png', 'sizes' => '192x192']],
+                    'icons'      => [['src' => $icon192, 'sizes' => '192x192']],
                 ],
                 [
                     'name'       => 'Support',
                     'short_name' => 'Support',
                     'url'        => '/app/support',
                     'description'=> 'Contacter le support client',
-                    'icons'      => [['src' => '/images/icon-192.png', 'sizes' => '192x192']],
+                    'icons'      => [['src' => $icon192, 'sizes' => '192x192']],
                 ],
             ],
         ];
@@ -448,10 +457,17 @@ class AppController extends Controller
 
     public function adminManifest()
     {
+        $siteContact = SiteContact::current();
+        $brandName   = $siteContact->name;
+        $icon        = $siteContact->pwa_icon_path ? Storage::url($siteContact->pwa_icon_path) : null;
+        $iconTouch   = $icon ?? '/images/apple-touch-icon.png';
+        $icon192     = $icon ?? '/images/icon-192.png';
+        $icon512     = $icon ?? '/images/icon-512.png';
+
         $data = [
-            'name'             => config('app.company_name', 'AURELIS CAPITAL GROUP') . ' — Administration',
-            'short_name'       => 'AURELIS CAPITAL GROUP Admin',
-            'description'      => 'Gérez les prêts, clients et opérations AURELIS CAPITAL GROUP.',
+            'name'             => $brandName . ' — Administration',
+            'short_name'       => $brandName . ' Admin',
+            'description'      => 'Gérez les prêts, clients et opérations ' . $brandName . '.',
             'start_url'        => '/admin',
             'scope'            => '/',
             'display'          => 'standalone',
@@ -461,11 +477,11 @@ class AppController extends Controller
             'lang'             => app()->getLocale(),
             'categories'       => ['finance', 'business'],
             'icons'            => [
-                ['src' => '/images/apple-touch-icon.png', 'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
-                ['src' => '/images/icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => $iconTouch, 'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon192,   'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon192,   'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => $icon512,   'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon512,   'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
             ],
             'shortcuts' => [
                 [
@@ -473,14 +489,14 @@ class AppController extends Controller
                     'short_name'  => 'Dashboard',
                     'url'         => '/admin',
                     'description' => 'Vue d\'ensemble admin',
-                    'icons'       => [['src' => '/images/icon-192.png', 'sizes' => '192x192']],
+                    'icons'       => [['src' => $icon192, 'sizes' => '192x192']],
                 ],
                 [
                     'name'        => 'Demandes de prêt',
                     'short_name'  => 'Prêts',
                     'url'         => '/admin/loans',
                     'description' => 'Gérer les demandes de prêt',
-                    'icons'       => [['src' => '/images/icon-192.png', 'sizes' => '192x192']],
+                    'icons'       => [['src' => $icon192, 'sizes' => '192x192']],
                 ],
             ],
         ];

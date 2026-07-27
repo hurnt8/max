@@ -50,6 +50,17 @@
             @endif
             <input type="file" name="logo_dark" accept="image/*" class="form-control-pro">
           </div>
+          <div class="col-sm-6">
+            <label class="form-label-pro">Icône PWA (application mobile)</label>
+            @if($contact->pwa_icon_path)
+            <div class="mb-2">
+              <img src="{{ Storage::url($contact->pwa_icon_path) }}" alt="Icône PWA" style="max-height:48px;max-width:48px;background:#f0f2f5;padding:.4rem;border-radius:8px">
+              <label class="ms-2" style="font-size:.8rem"><input type="checkbox" name="remove_pwa_icon" value="1"> Supprimer</label>
+            </div>
+            @endif
+            <input type="file" name="pwa_icon" accept="image/*" class="form-control-pro">
+            <div class="form-text" style="font-size:.72rem;color:var(--c-muted)">Image carrée, recommandé ≥ 512×512px — utilisée comme icône de l'application (écran d'accueil mobile, notifications).</div>
+          </div>
         </div>
       </div>
     </div>

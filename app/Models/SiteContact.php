@@ -10,6 +10,7 @@ class SiteContact extends Model
         'name',
         'logo_light_path',
         'logo_dark_path',
+        'pwa_icon_path',
         'address_1',
         'address_2',
         'address_3',
