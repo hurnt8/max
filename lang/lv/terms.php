@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Ievads',
-            'content' => 'Laipni lūdzam Solberg Grupo. Izmantojot mūsu vietni un pakalpojumus, jūs piekrītat ievērot un būt saistīts ar šādiem noteikumiem un nosacījumiem. Lūdzu, uzmanīgi izlasiet šos noteikumus, pirms izmantojat mūsu vietni vai slēdzat aizdevuma līgumu ar mums.'
+            'content' => 'Laipni lūdzam AURELIS CAPITAL GROUP. Izmantojot mūsu vietni un pakalpojumus, jūs piekrītat ievērot un būt saistīts ar šādiem noteikumiem un nosacījumiem. Lūdzu, uzmanīgi izlasiet šos noteikumus, pirms izmantojat mūsu vietni vai slēdzat aizdevuma līgumu ar mums.'
         ],
         [
             'title' => '2. Vietnes izmantošana',
@@ -13,11 +13,11 @@ return [
         ],
         [
             'title' => '3. Aizdevumu pakalpojumi',
-            'content' => 'Solberg Grupo piedāvā dažādus aizdevumu veidus jūsu finansiālo vajadzību apmierināšanai. Visi aizdevumi ir pakļauti apstiprināšanai, pamatojoties uz mūsu veikto jūsu maksātspējas un atmaksas kapacitātes novērtējumu. Katra aizdevuma konkrētie noteikumi, tostarp procentu likmes, termiņi un atmaksas kārtība, tiks detalizēti norādīti jūsu aizdevuma līgumā.'
+            'content' => 'AURELIS CAPITAL GROUP piedāvā dažādus aizdevumu veidus jūsu finansiālo vajadzību apmierināšanai. Visi aizdevumi ir pakļauti apstiprināšanai, pamatojoties uz mūsu veikto jūsu maksātspējas un atmaksas kapacitātes novērtējumu. Katra aizdevuma konkrētie noteikumi, tostarp procentu likmes, termiņi un atmaksas kārtība, tiks detalizēti norādīti jūsu aizdevuma līgumā.'
         ],
         [
             'title' => '4. Līguma un apdrošināšanas maksas',
-            'content' => 'Slēdzot aizdevuma līgumu ar Solberg Grupo, var tikt piemērotas līguma un apdrošināšanas maksas. Šīs maksas sedz administratīvās izmaksas, kas saistītas ar jūsu aizdevuma noformēšanu un pārvaldību. Precīza informācija par šīm maksām būs skaidri norādīta jūsu aizdevuma līgumā. Jums ir pienākums samaksāt šīs maksas saskaņā ar norādītajiem nosacījumiem.'
+            'content' => 'Slēdzot aizdevuma līgumu ar AURELIS CAPITAL GROUP, var tikt piemērotas līguma un apdrošināšanas maksas. Šīs maksas sedz administratīvās izmaksas, kas saistītas ar jūsu aizdevuma noformēšanu un pārvaldību. Precīza informācija par šīm maksām būs skaidri norādīta jūsu aizdevuma līgumā. Jums ir pienākums samaksāt šīs maksas saskaņā ar norādītajiem nosacījumiem.'
         ],
         [
             'title' => '5. Konfidencialitāte',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Atbildības ierobežojums',
-            'content' => 'Solberg Grupo nav atbildīga par netiešiem, īpašiem vai izrietošiem zaudējumiem vai kaitējumiem, kas radušies mūsu vietnes vai pakalpojumu izmantošanas vai nespējas tos izmantot rezultātā, tostarp peļņas zaudējumu, datu zudumu vai darbības pārtraukumu, pat ja mums bijis paziņots par šādu zaudējumu iespējamību.'
+            'content' => 'AURELIS CAPITAL GROUP nav atbildīga par netiešiem, īpašiem vai izrietošiem zaudējumiem vai kaitējumiem, kas radušies mūsu vietnes vai pakalpojumu izmantošanas vai nespējas tos izmantot rezultātā, tostarp peļņas zaudējumu, datu zudumu vai darbības pārtraukumu, pat ja mums bijis paziņots par šādu zaudējumu iespējamību.'
         ],
         [
             'title' => '8. Noteikumu izmaiņas',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kontakti',
-            'content' => 'Ja jums ir jautājumi vai bažas par šiem noteikumiem un nosacījumiem, lūdzu, sazinieties ar mums:<br><br>Solberg Grupo<br>Adrese: Rua de Santo António 33, 7200-175, Portugāle<br>E-pasts: contact@solberggrupo.eu<br>Tālrunis: +31 6 57341120 '
+            'content' => 'Ja jums ir jautājumi vai bažas par šiem noteikumiem un nosacījumiem, lūdzu, sazinieties ar mums:<br><br>AURELIS CAPITAL GROUP<br>Adrese: Rua de Santo António 33, 7200-175, Portugāle<br>E-pasts: contact@solberggrupo.eu<br>Tālrunis: +31 6 57341120 '
         ],
     ],
 ];

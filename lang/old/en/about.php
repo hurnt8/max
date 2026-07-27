@@ -1,19 +1,19 @@
 <?php
 
 return [
-    'banner_title' => 'DiscoverSolberg Grupo',
+    'banner_title' => 'DiscoverAURELIS CAPITAL GROUP',
     'banner_subtitle' => 'About us',
     'banner_description' => 'Borrow more easily with flexible loan solutions adapted to your financial needs.',
 
-    'section1_title' => 'Why chooseSolberg Grupo',
-    'section1_p1' => 'AtSolberg Grupo, we firmly believe that everyone deserves a chance to realize their financial dreams. Since our inception, we have been committed to providing flexible and accessible lending solutions to meet the diverse needs of our customers. Whether you are looking to finance a personal project, buy a car, or expand your business, we have the loan you need.',
+    'section1_title' => 'Why chooseAURELIS CAPITAL GROUP',
+    'section1_p1' => 'AtAURELIS CAPITAL GROUP, we firmly believe that everyone deserves a chance to realize their financial dreams. Since our inception, we have been committed to providing flexible and accessible lending solutions to meet the diverse needs of our customers. Whether you are looking to finance a personal project, buy a car, or expand your business, we have the loan you need.',
     'section1_p2' => 'Our services are designed to provide a hassle-free experience, with a quick and easy application process. We understand that every client is unique, which is why we offer personalized loans that adapt to your specific needs. In addition, our dedicated advisors are always there to guide you every step of the way, ensuring you are fully supported from start to finish.',
     'proposed' => 'We propose:',
     'check1' => 'Personalized loans according to your specific needs.',
     'check2' => 'Dedicated advisors to help you every step of the way.',
     'check3' => 'Flexible repayment terms to suit your financial situation',
     'check4' => 'Loans without you having a paycheck.',
-    'section1_p3' => 'AtSolberg Grupo, our mission is to help you achieve your financial goals with tailor-made loan solutions. Join us today and find out how we can help you make your projects a reality.',
+    'section1_p3' => 'AtAURELIS CAPITAL GROUP, our mission is to help you achieve your financial goals with tailor-made loan solutions. Join us today and find out how we can help you make your projects a reality.',
     'btn' => 'Find Your Ideal Loan',
 
     'faq_title' => 'Frequently Asked Questions',

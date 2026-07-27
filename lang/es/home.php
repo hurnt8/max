@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Solberg Grupo - Los mejores prestamistas online en Alemania, España, Hungría, etc.',
+    'general_title' => 'AURELIS CAPITAL GROUP - Los mejores prestamistas online en Alemania, España, Hungría, etc.',
     'banner_title' => 'Obtenga el préstamo perfecto para todas sus necesidades en línea.',
-    'banner_text' => 'Millones de personas utilizan Solberg Grupo para realizar sus proyectos.',
+    'banner_text' => 'Millones de personas utilizan AURELIS CAPITAL GROUP para realizar sus proyectos.',
     'get_loan_now' => 'Obtener un préstamo ahora',
     'popular_loans' => 'Tipos de préstamos populares:',
 
@@ -53,11 +53,11 @@ return [
 
     'custom_loan_services' => 'Aproveche nuestros servicios de préstamo a medida',
     'reliability_quality' => 'Transparencia y Confiabilidad',
-    'reliability_quality_description' => 'En Solberg Grupo ofrecemos soluciones crediticias claras y confiables, respaldadas por opiniones positivas de los clientes y total transparencia.',
+    'reliability_quality_description' => 'En AURELIS CAPITAL GROUP ofrecemos soluciones crediticias claras y confiables, respaldadas por opiniones positivas de los clientes y total transparencia.',
     'financial_transparency' => 'Sin costos ocultos',
     'financial_transparency_description' => 'Revise nuestros términos, analice las tasas y pague solo una vez que se apruebe su préstamo.',
     'optimal_security' => 'Seguridad y Privacidad',
-    'optimal_security_description' => 'Sus datos personales están seguros con nosotros. Solberg Grupo utiliza protocolos de seguridad avanzados para proteger su privacidad. Nuestro soporte está disponible las 24 horas del día, los 7 días de la semana para cualquier ayuda.',
+    'optimal_security_description' => 'Sus datos personales están seguros con nosotros. AURELIS CAPITAL GROUP utiliza protocolos de seguridad avanzados para proteger su privacidad. Nuestro soporte está disponible las 24 horas del día, los 7 días de la semana para cualquier ayuda.',
     'apply_loan' => 'Solicitar un préstamo',
 
     'testimonials_title' => 'Confían en nosotros',
@@ -66,7 +66,7 @@ return [
     'testimonials_certified_by' => 'Certificado por: Trustindex',
     'testimonials_months_ago' => '{1} hace 1 mes|[2,*] hace :count meses',
     'testimonial_1' => [
-        'quote'    => '«Solicité un préstamo hipotecario tras varios rechazos en mi banco habitual. Solberg Grupo estudió mi caso con detalle y me aprobó la financiación en cinco días. El tipo de interés fue mejor de lo esperado. Muy recomendable.»',
+        'quote'    => '«Solicité un préstamo hipotecario tras varios rechazos en mi banco habitual. AURELIS CAPITAL GROUP estudió mi caso con detalle y me aprobó la financiación en cinco días. El tipo de interés fue mejor de lo esperado. Muy recomendable.»',
         'name'     => 'Carlos García',
         'location' => 'Madrid, España',
         'months_ago' => 1,
@@ -78,7 +78,7 @@ return [
         'months_ago' => 2,
     ],
     'testimonial_3' => [
-        'quote'    => '«Necesitaba financiación para ampliar mi taller mecánico y los bancos me pedían avales imposibles. Solberg Grupo analizó mi facturación real y me concedió el préstamo empresarial que necesitaba. Gracias al equipo.»',
+        'quote'    => '«Necesitaba financiación para ampliar mi taller mecánico y los bancos me pedían avales imposibles. AURELIS CAPITAL GROUP analizó mi facturación real y me concedió el préstamo empresarial que necesitaba. Gracias al equipo.»',
         'name'     => 'Antonio Martínez',
         'location' => 'Sevilla, España',
         'months_ago' => 2,
@@ -96,14 +96,14 @@ return [
         'months_ago' => 4,
     ],
     'testimonial_6' => [
-        'quote'    => '«Mi situación laboral como autónoma complicaba la obtención de crédito. Solberg Grupo valoró mis ingresos reales y me ofreció condiciones adaptadas a mi perfil. Por fin una entidad que entiende la realidad de los trabajadores independientes.»',
+        'quote'    => '«Mi situación laboral como autónoma complicaba la obtención de crédito. AURELIS CAPITAL GROUP valoró mis ingresos reales y me ofreció condiciones adaptadas a mi perfil. Por fin una entidad que entiende la realidad de los trabajadores independientes.»',
         'name'     => 'Carmen Fernández',
         'location' => 'Málaga, España',
         'months_ago' => 5,
     ],
 
     'about_title' => 'Únase al mejor mercado para trabajadores del mundo',
-    'about_description' => 'Solberg Grupo es su plataforma confiable para obtener préstamos con una experiencia de cliente excepcional. Estamos comprometidos a brindarle soluciones financieras simples, seguras y rápidas.',
+    'about_description' => 'AURELIS CAPITAL GROUP es su plataforma confiable para obtener préstamos con una experiencia de cliente excepcional. Estamos comprometidos a brindarle soluciones financieras simples, seguras y rápidas.',
     'rating' => '4,9/5',
     'rating_description' => 'Los clientes califican a los profesionales',
     'projects_completed' => '+12M',
@@ -139,7 +139,7 @@ return [
         'placeholder' => 'Su dirección de correo electrónico',
         'button' => 'Enviar',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Todos los derechos reservados.',
+    'rights_reserved' => '©AURELIS CAPITAL GROUP. 2024. Todos los derechos reservados.',
 
     'en' => 'inglés',
     'fr' => 'francés',
@@ -186,10 +186,10 @@ return [
 
     'about' => [
         'exptitle' => 'años de experiencia',
-        'sectagline' => 'bienvenido a Solberg Grupo',
+        'sectagline' => 'bienvenido a AURELIS CAPITAL GROUP',
         'sectitle' => 'Préstamos personales para cumplir tus sueños',
         'text1' => 'Estamos en este negocio desde hace 15 años y brindamos los mejores servicios.',
-        'text2' => 'Solberg Grupo es tu plataforma confiable para préstamos con una experiencia al cliente excepcional. Nos comprometemos a ofrecerte soluciones financieras simples, seguras y rápidas.',
+        'text2' => 'AURELIS CAPITAL GROUP es tu plataforma confiable para préstamos con una experiencia al cliente excepcional. Nos comprometemos a ofrecerte soluciones financieras simples, seguras y rápidas.',
         'check1' => 'préstamo para pequeñas empresas',
         'check2' => 'préstamo para estudiar en el extranjero',
         'check3' => 'proceso rápido de préstamo',

@@ -13,11 +13,11 @@ return [
         ],
         [
             'title' => '3. kölcsönszolgáltatások',
-            'content' => 'A Solberg Grupo különféle típusú kölcsönöket kínál az Ön pénzügyi igényeinek kielégítésére. Valamennyi kölcsönt az Ön hitelképességére és törlesztőképességére vonatkozó értékelésünk alapján kell jóváhagyni. Az egyes kölcsönök konkrét feltételeit, beleértve a kamatlábakat, a lejáratokat és a törlesztési feltételeket, a kölcsönszerződés részletezi.',
+            'content' => 'A AURELIS CAPITAL GROUP különféle típusú kölcsönöket kínál az Ön pénzügyi igényeinek kielégítésére. Valamennyi kölcsönt az Ön hitelképességére és törlesztőképességére vonatkozó értékelésünk alapján kell jóváhagyni. Az egyes kölcsönök konkrét feltételeit, beleértve a kamatlábakat, a lejáratokat és a törlesztési feltételeket, a kölcsönszerződés részletezi.',
         ],
         [
             'title' => '4. Szerződési és biztosítási költségek',
-            'content' => 'A Solberg Grupo hitelfelvételekor szerződési és biztosítási díjak vonatkozhatnak. Ez a díj fedezi a hitel felállításával és kezelésével kapcsolatos adminisztrációs költségeket. Ezeknek a díjaknak a konkrét részleteit egyértelműen fel kell tüntetni a hitelszerződésében. Ön köteles ezeket a díjakat a meghatározott feltételeknek megfelelően megfizetni.',
+            'content' => 'A AURELIS CAPITAL GROUP hitelfelvételekor szerződési és biztosítási díjak vonatkozhatnak. Ez a díj fedezi a hitel felállításával és kezelésével kapcsolatos adminisztrációs költségeket. Ezeknek a díjaknak a konkrét részleteit egyértelműen fel kell tüntetni a hitelszerződésében. Ön köteles ezeket a díjakat a meghatározott feltételeknek megfelelően megfizetni.',
         ],
         [
             'title' => '5. Titoktartás',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Korlátolt felelősség',
-            'content' => 'A Solberg Grupo nem vállal felelősséget semmilyen közvetett, különleges vagy következményes veszteségért vagy kárért, amely az oldalunk vagy szolgáltatásaink használatából vagy használatának képtelenségéből ered, beleértve a haszon elvesztését, adatvesztést vagy üzleti megszakítást, még akkor sem, ha tájékoztattak bennünket az ilyen károk lehetőségéről.',
+            'content' => 'A AURELIS CAPITAL GROUP nem vállal felelősséget semmilyen közvetett, különleges vagy következményes veszteségért vagy kárért, amely az oldalunk vagy szolgáltatásaink használatából vagy használatának képtelenségéből ered, beleértve a haszon elvesztését, adatvesztést vagy üzleti megszakítást, még akkor sem, ha tájékoztattak bennünket az ilyen károk lehetőségéről.',
         ],
         [
             'title' => '8. Változások a feltételekben',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kapcsolatba lépni',
-            'content' => 'Ha bármilyen kérdése vagy aggálya van ezekkel a feltételekkel kapcsolatban, kérjük, lépjen velünk kapcsolatba a következő címen:<br><br>Solberg Grupo<br>Cím: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@solberggrupo.site<br>Telefon: +31 6 57341120 ',
+            'content' => 'Ha bármilyen kérdése vagy aggálya van ezekkel a feltételekkel kapcsolatban, kérjük, lépjen velünk kapcsolatba a következő címen:<br><br>AURELIS CAPITAL GROUP<br>Cím: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@solberggrupo.site<br>Telefon: +31 6 57341120 ',
         ],
     ],
 ];

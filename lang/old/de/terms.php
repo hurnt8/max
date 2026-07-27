@@ -5,7 +5,7 @@ return [
     'Abschnitte' => [
         [
             'Titel' => '1. Einführung',
-            'content' => 'Willkommen beiSolberg Grupo. Durch die Nutzung unserer Website und Dienste erklären Sie sich mit den folgenden Geschäftsbedingungen einverstanden und an diese gebunden. Bitte lesen Sie diese Bedingungen sorgfältig durch, bevor Sie unsere Website nutzen oder einen Kredit bei uns aufnehmen.',
+            'content' => 'Willkommen beiAURELIS CAPITAL GROUP. Durch die Nutzung unserer Website und Dienste erklären Sie sich mit den folgenden Geschäftsbedingungen einverstanden und an diese gebunden. Bitte lesen Sie diese Bedingungen sorgfältig durch, bevor Sie unsere Website nutzen oder einen Kredit bei uns aufnehmen.',
         ],
         [
             'Titel' => '2. Nutzung der Website',
@@ -17,7 +17,7 @@ return [
         ],
         [
             'Titel' => '4. Vertrags- und Versicherungskosten',
-            'content' => 'Bei der Aufnahme eines Kredits beiSolberg Grupo können Vertrags- und Versicherungsgebühren anfallen. Diese Gebühr deckt die Verwaltungskosten ab, die mit der Einrichtung und Verwaltung Ihres Kredits verbunden sind. Die genauen Einzelheiten dieser Gebühren werden in Ihrem Darlehensvertrag klar dargelegt. Sie sind verpflichtet, diese Gebühren gemäß den angegebenen Bedingungen zu zahlen.',
+            'content' => 'Bei der Aufnahme eines Kredits beiAURELIS CAPITAL GROUP können Vertrags- und Versicherungsgebühren anfallen. Diese Gebühr deckt die Verwaltungskosten ab, die mit der Einrichtung und Verwaltung Ihres Kredits verbunden sind. Die genauen Einzelheiten dieser Gebühren werden in Ihrem Darlehensvertrag klar dargelegt. Sie sind verpflichtet, diese Gebühren gemäß den angegebenen Bedingungen zu zahlen.',
         ],
         [
             'title' => '5. Vertraulichkeit',

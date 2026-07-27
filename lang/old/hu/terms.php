@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Bevezetés',
-            'content' => 'Üdvözöljük aSolberg Grupoban. Oldalunk és szolgáltatásaink használatával Ön elfogadja, hogy betartja és magára nézve kötelezÅnek tartja az alábbi feltételeket. Kérjük, figyelmesen olvassa el ezeket a feltételeket, mielÅtt használná oldalunkat vagy kölcsönt venne fel velünk.',
+            'content' => 'Üdvözöljük aAURELIS CAPITAL GROUPban. Oldalunk és szolgáltatásaink használatával Ön elfogadja, hogy betartja és magára nézve kötelezÅnek tartja az alábbi feltételeket. Kérjük, figyelmesen olvassa el ezeket a feltételeket, mielÅtt használná oldalunkat vagy kölcsönt venne fel velünk.',
         ],
         [
             'title' => '2. az oldal használata',
@@ -13,11 +13,11 @@ return [
         ],
         [
             'title' => '3. kölcsönszolgáltatások',
-            'content' => 'ASolberg Grupo különféle típusú kölcsönöket kínál az Ön pénzügyi igényeinek kielégítésére. Valamennyi kölcsönt az Ön hitelképességére és törlesztÅképességére vonatkozó értékelésünk alapján kell jóváhagyni. Az egyes kölcsönök konkrét feltételeit, beleértve a kamatlábakat, a lejáratokat és a törlesztési feltételeket, a kölcsönszerzÅdés részletezi.',
+            'content' => 'AAURELIS CAPITAL GROUP különféle típusú kölcsönöket kínál az Ön pénzügyi igényeinek kielégítésére. Valamennyi kölcsönt az Ön hitelképességére és törlesztÅképességére vonatkozó értékelésünk alapján kell jóváhagyni. Az egyes kölcsönök konkrét feltételeit, beleértve a kamatlábakat, a lejáratokat és a törlesztési feltételeket, a kölcsönszerzÅdés részletezi.',
         ],
         [
             'title' => '4. SzerzÅdési és biztosítási költségek',
-            'content' => 'ASolberg Grupo hitelfelvételekor szerzÅdési és biztosítási díjak vonatkozhatnak. Ez a díj fedezi a hitel felállításával és kezelésével kapcsolatos adminisztrációs költségeket. Ezeknek a díjaknak a konkrét részleteit egyértelmÅ±en fel kell tüntetni a hitelszerzÅdésében. Ön köteles ezeket a díjakat a meghatározott feltételeknek megfelelÅen megfizetni.',
+            'content' => 'AAURELIS CAPITAL GROUP hitelfelvételekor szerzÅdési és biztosítási díjak vonatkozhatnak. Ez a díj fedezi a hitel felállításával és kezelésével kapcsolatos adminisztrációs költségeket. Ezeknek a díjaknak a konkrét részleteit egyértelmÅ±en fel kell tüntetni a hitelszerzÅdésében. Ön köteles ezeket a díjakat a meghatározott feltételeknek megfelelÅen megfizetni.',
         ],
         [
             'title' => '5. Titoktartás',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Korlátolt felelÅsség',
-            'content' => 'ASolberg Grupo nem vállal felelÅsséget semmilyen közvetett, különleges vagy következményes veszteségért vagy kárért, amely az oldalunk vagy szolgáltatásaink használatából vagy használatának képtelenségébÅl ered, beleértve a haszon elvesztését, adatvesztést vagy üzleti megszakítást, még akkor sem, ha tájékoztattak bennünket az ilyen károk lehetÅségérÅl.',
+            'content' => 'AAURELIS CAPITAL GROUP nem vállal felelÅsséget semmilyen közvetett, különleges vagy következményes veszteségért vagy kárért, amely az oldalunk vagy szolgáltatásaink használatából vagy használatának képtelenségébÅl ered, beleértve a haszon elvesztését, adatvesztést vagy üzleti megszakítást, még akkor sem, ha tájékoztattak bennünket az ilyen károk lehetÅségérÅl.',
         ],
         [
             'title' => '8. Változások a feltételekben',

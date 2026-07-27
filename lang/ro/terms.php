@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Introducere',
-            'content' => 'Bine ați venit pe Solberg Grupo. Prin utilizarea site-ului și a serviciilor noastre, sunteți de acord să respectați și să fiți obligat de următorii termeni și condiții. Vă rugăm să citiți cu atenție acești termeni înainte de a utiliza site-ul nostru sau de a contracta un împrumut cu noi.'
+            'content' => 'Bine ați venit pe AURELIS CAPITAL GROUP. Prin utilizarea site-ului și a serviciilor noastre, sunteți de acord să respectați și să fiți obligat de următorii termeni și condiții. Vă rugăm să citiți cu atenție acești termeni înainte de a utiliza site-ul nostru sau de a contracta un împrumut cu noi.'
         ],
         [
             'title' => '2. Utilizarea site-ului',
@@ -13,11 +13,11 @@ return [
         ],
         [
             'title' => '3. Servicii de creditare',
-            'content' => 'Solberg Grupo oferă diverse tipuri de împrumuturi pentru a răspunde nevoilor dumneavoastră financiare. Toate împrumuturile sunt supuse aprobării, pe baza evaluării de către noi a bonității și capacității dumneavoastră de rambursare. Termenii specifici ai fiecărui împrumut, inclusiv ratele dobânzii, scadențele și modalitățile de rambursare, vor fi detaliați în contractul dumneavoastră de împrumut.'
+            'content' => 'AURELIS CAPITAL GROUP oferă diverse tipuri de împrumuturi pentru a răspunde nevoilor dumneavoastră financiare. Toate împrumuturile sunt supuse aprobării, pe baza evaluării de către noi a bonității și capacității dumneavoastră de rambursare. Termenii specifici ai fiecărui împrumut, inclusiv ratele dobânzii, scadențele și modalitățile de rambursare, vor fi detaliați în contractul dumneavoastră de împrumut.'
         ],
         [
             'title' => '4. Taxe de contract și asigurare',
-            'content' => 'La contractarea unui împrumut la Solberg Grupo, pot fi aplicate taxe de contract și de asigurare. Aceste taxe acoperă costurile administrative asociate cu inițierea și gestionarea împrumutului dumneavoastră. Detaliile specifice ale acestor taxe vor fi indicate clar în contractul dumneavoastră de împrumut. Sunteți obligat să plătiți aceste taxe în conformitate cu modalitățile precizate.'
+            'content' => 'La contractarea unui împrumut la AURELIS CAPITAL GROUP, pot fi aplicate taxe de contract și de asigurare. Aceste taxe acoperă costurile administrative asociate cu inițierea și gestionarea împrumutului dumneavoastră. Detaliile specifice ale acestor taxe vor fi indicate clar în contractul dumneavoastră de împrumut. Sunteți obligat să plătiți aceste taxe în conformitate cu modalitățile precizate.'
         ],
         [
             'title' => '5. Confidențialitate',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Limitarea răspunderii',
-            'content' => 'Solberg Grupo nu poate fi ținut responsabil pentru pierderi sau daune indirecte, speciale sau subsecvente rezultate din utilizarea sau incapacitatea de a utiliza site-ul sau serviciile noastre, inclusiv pierderea de profit, pierderea de date sau întreruperea activității, chiar dacă am fost informați despre posibilitatea unor astfel de daune.'
+            'content' => 'AURELIS CAPITAL GROUP nu poate fi ținut responsabil pentru pierderi sau daune indirecte, speciale sau subsecvente rezultate din utilizarea sau incapacitatea de a utiliza site-ul sau serviciile noastre, inclusiv pierderea de profit, pierderea de date sau întreruperea activității, chiar dacă am fost informați despre posibilitatea unor astfel de daune.'
         ],
         [
             'title' => '8. Modificări ale termenilor',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contact',
-            'content' => 'Dacă aveți întrebări sau nelămuriri privind acești termeni și condiții, vă rugăm să ne contactați la:<br><br>Solberg Grupo<br>Adresă: Rua de Santo António 33, 7200-175, Portugalia<br>E-mail: contact@solberggrupo.eu<br>Telefon: +31 6 57341120 '
+            'content' => 'Dacă aveți întrebări sau nelămuriri privind acești termeni și condiții, vă rugăm să ne contactați la:<br><br>AURELIS CAPITAL GROUP<br>Adresă: Rua de Santo António 33, 7200-175, Portugalia<br>E-mail: contact@solberggrupo.eu<br>Telefon: +31 6 57341120 '
         ],
     ],
 ];

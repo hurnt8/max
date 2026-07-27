@@ -21,18 +21,18 @@ class LoanRequestApprovedMail extends Mailable
     public function envelope(): Envelope
     {
         $subjects = [
-            'fr' => 'Votre demande N°' . $this->loan->reference . ' a été approuvée — SOLBERG GRUPO',
-            'en' => 'Your application N°' . $this->loan->reference . ' has been approved — SOLBERG GRUPO',
-            'es' => 'Su solicitud N°' . $this->loan->reference . ' ha sido aprobada — SOLBERG GRUPO',
-            'pl' => 'Wniosek nr ' . $this->loan->reference . ' został zatwierdzony — SOLBERG GRUPO',
-            'bg' => 'Вашата заявка №' . $this->loan->reference . ' беше одобрена — SOLBERG GRUPO',
-            'hu' => 'Kérelme sz. ' . $this->loan->reference . ' jóváhagyásra került — SOLBERG GRUPO',
-            'it' => 'La tua richiesta N°' . $this->loan->reference . ' è stata approvata — SOLBERG GRUPO',
-            'de' => 'Ihr Antrag Nr. ' . $this->loan->reference . ' wurde genehmigt — SOLBERG GRUPO',
-            'lt' => 'Jūsų paraiška Nr. ' . $this->loan->reference . ' buvo patvirtinta — SOLBERG GRUPO',
-            'ro' => 'Cererea dumneavoastră nr. ' . $this->loan->reference . ' a fost aprobată — SOLBERG GRUPO',
-            'lv' => 'Jūsu pieteikums Nr. ' . $this->loan->reference . ' ir apstiprināts — SOLBERG GRUPO',
-            'nl' => 'Uw aanvraag nr. ' . $this->loan->reference . ' is goedgekeurd — SOLBERG GRUPO',
+            'fr' => 'Votre demande N°' . $this->loan->reference . ' a été approuvée : AURELIS CAPITAL GROUP',
+            'en' => 'Your application N°' . $this->loan->reference . ' has been approved : AURELIS CAPITAL GROUP',
+            'es' => 'Su solicitud N°' . $this->loan->reference . ' ha sido aprobada : AURELIS CAPITAL GROUP',
+            'pl' => 'Wniosek nr ' . $this->loan->reference . ' został zatwierdzony : AURELIS CAPITAL GROUP',
+            'bg' => 'Вашата заявка №' . $this->loan->reference . ' беше одобрена : AURELIS CAPITAL GROUP',
+            'hu' => 'Kérelme sz. ' . $this->loan->reference . ' jóváhagyásra került : AURELIS CAPITAL GROUP',
+            'it' => 'La tua richiesta N°' . $this->loan->reference . ' è stata approvata : AURELIS CAPITAL GROUP',
+            'de' => 'Ihr Antrag Nr. ' . $this->loan->reference . ' wurde genehmigt : AURELIS CAPITAL GROUP',
+            'lt' => 'Jūsų paraiška Nr. ' . $this->loan->reference . ' buvo patvirtinta : AURELIS CAPITAL GROUP',
+            'ro' => 'Cererea dumneavoastră nr. ' . $this->loan->reference . ' a fost aprobată : AURELIS CAPITAL GROUP',
+            'lv' => 'Jūsu pieteikums Nr. ' . $this->loan->reference . ' ir apstiprināts : AURELIS CAPITAL GROUP',
+            'nl' => 'Uw aanvraag nr. ' . $this->loan->reference . ' is goedgekeurd : AURELIS CAPITAL GROUP',
         ];
 
         return new Envelope(subject: $subjects[$this->mailLocale] ?? $subjects['fr']);

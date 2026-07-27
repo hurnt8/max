@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.nav_transfer') . ' —Solberg Grupo')
+@section('title', __('app.nav_transfer') . ' : AURELIS CAPITAL GROUP')
 @section('page_title', __('app.nav_transfer'))
 
 @section('content')

@@ -1,19 +1,19 @@
 <?php
 
 return [
-    'banner_title' => 'Entdecken Sie Solberg Grupo',
+    'banner_title' => 'Entdecken Sie AURELIS CAPITAL GROUP',
     'banner_subtitle' => 'Über uns',
     'banner_description' => 'Leihen Sie sich leichter Geld mit flexiblen Kreditlösungen, die auf Ihre finanziellen Bedürfnisse zugeschnitten sind.',
 
-    'section1_title' => 'Warum Solberg Grupo wählen',
-    'section1_p1' => 'Bei Solberg Grupo glauben wir fest daran, dass jeder eine Chance verdient, seine finanziellen Träume zu verwirklichen. Seit unserer Gründung setzen wir uns dafür ein, flexible und zugängliche Kreditlösungen anzubieten, um die vielfältigen Bedürfnisse unserer Kunden zu erfüllen. Ob Sie ein persönliches Projekt finanzieren, ein Auto kaufen oder Ihr Unternehmen erweitern möchten – wir haben den passenden Kredit für Sie.',
+    'section1_title' => 'Warum AURELIS CAPITAL GROUP wählen',
+    'section1_p1' => 'Bei AURELIS CAPITAL GROUP glauben wir fest daran, dass jeder eine Chance verdient, seine finanziellen Träume zu verwirklichen. Seit unserer Gründung setzen wir uns dafür ein, flexible und zugängliche Kreditlösungen anzubieten, um die vielfältigen Bedürfnisse unserer Kunden zu erfüllen. Ob Sie ein persönliches Projekt finanzieren, ein Auto kaufen oder Ihr Unternehmen erweitern möchten – wir haben den passenden Kredit für Sie.',
     'section1_p2' => 'Unsere Dienstleistungen sind so gestaltet, dass sie einen reibungslosen, schnellen und einfachen Antragsprozess gewährleisten. Wir wissen, dass jeder Kunde einzigartig ist, deshalb bieten wir individuelle Kredite an, die sich an Ihre spezifischen Bedürfnisse anpassen. Darüber hinaus stehen Ihnen unsere engagierten Berater bei jedem Schritt zur Seite, damit Sie von Anfang bis Ende umfassend unterstützt werden.',
     'proposed' => 'Wir bieten Ihnen:',
     'check1' => 'Individuelle Kredite, abgestimmt auf Ihre spezifischen Bedürfnisse.',
     'check2' => 'Persönliche Berater, die Ihnen bei jedem Schritt helfen.',
     'check3' => 'Flexible Rückzahlungsbedingungen, passend zu Ihrer finanziellen Situation',
     'check4' => 'Kredite ohne Gehaltsnachweis.',
-    'section1_p3' => 'Die Mission von Solberg Grupo ist es, Ihnen zu helfen, Ihre finanziellen Ziele mit maßgeschneiderten Kreditlösungen zu erreichen. Werden Sie noch heute Teil unserer Community und erfahren Sie, wie wir Ihnen helfen können, Ihre Projekte zu verwirklichen.',
+    'section1_p3' => 'Die Mission von AURELIS CAPITAL GROUP ist es, Ihnen zu helfen, Ihre finanziellen Ziele mit maßgeschneiderten Kreditlösungen zu erreichen. Werden Sie noch heute Teil unserer Community und erfahren Sie, wie wir Ihnen helfen können, Ihre Projekte zu verwirklichen.',
     'btn' => 'Finden Sie Ihren idealen Kredit',
 
     'faq_title' => 'Häufig gestellte Fragen',

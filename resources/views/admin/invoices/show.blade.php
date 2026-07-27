@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', $invoice->reference . ' — FactureSolberg Grupo')
+@section('title', $invoice->reference . ' — FactureAURELIS CAPITAL GROUP')
 
 @section('content')
 <style>

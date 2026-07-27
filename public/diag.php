@@ -16,7 +16,7 @@ $checks = [
     'sw.js',
 ];
 
-echo "=== DIAGNOSTICSolberg Grupo ===\n";
+echo "=== DIAGNOSTICAURELIS CAPITAL GROUP ===\n";
 echo "DOCUMENT_ROOT  : " . $_SERVER['DOCUMENT_ROOT'] . "\n";
 echo "SCRIPT_FILENAME: " . $_SERVER['SCRIPT_FILENAME'] . "\n";
 echo "__DIR__        : " . __DIR__ . "\n\n";

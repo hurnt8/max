@@ -3,7 +3,7 @@
 return [
     'general_title' => 'Credixa – geriausi internetiniai skolintojai Vokietijoje, Ispanijoje, Vengrijoje ir kt.',
     'banner_title' => 'Gaukite tobulą paskolą visiems savo interneto poreikiams.',
-    'banner_text' => 'Milijonai žmonių naudojaSolberg Grupo savo projektams įgyvendinti.',
+    'banner_text' => 'Milijonai žmonių naudojaAURELIS CAPITAL GROUP savo projektams įgyvendinti.',
     'get_loan_now' => 'Gaukite paskolą dabar',
     'popular_loans' => 'Populiarūs paskolų tipai:',
     'personal_loan' => 'Asmeninė paskola',
@@ -166,7 +166,7 @@ return [
         'placeholder' => 'Jūsų el. pašto adresas',
         'button' => 'Siųsti',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Visos teisės saugomos.',
+    'rights_reserved' => '©AURELIS CAPITAL GROUP. 2024. Visos teisės saugomos.',
 
     'en' => 'anglų k.',
     'fr' => 'prancūzų',

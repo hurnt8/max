@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Support clients —Solberg Grupo')
+@section('title', 'Support clients : AURELIS CAPITAL GROUP')
 @section('page_title', 'Support')
 
 @push('styles')

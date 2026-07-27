@@ -12,13 +12,13 @@ return [
     'month_abbr'           => 'mėn.',
     'optional'             => 'neprivaloma',
     'loan_admin_subject'   => 'Nauja paskolos paraiška',
-    'loan_admin_intro'     => 'Klientas ką tik pateikė paskolos paraišką per Solberg Grupo svetainę.',
+    'loan_admin_intro'     => 'Klientas ką tik pateikė paskolos paraišką per AURELIS CAPITAL GROUP svetainę.',
 
     'loan_confirm_subject'   => 'Jūsų paskolos paraiška yra nagrinėjama',
     'loan_confirm_greeting'  => 'Sveiki, :name,',
     'loan_confirm_body'      => 'Gavome jūsų paskolos paraišką :amount :currency sumai :duration mėnesių laikotarpiui. Šiuo metu ją nagrinėja mūsų komanda.',
     'loan_confirm_footer'    => 'Susisieksime su jumis kuo greičiau. Dėkojame, kad pasitikite mumis.',
-    'loan_confirm_signature' => 'Solberg Grupo komanda',
+    'loan_confirm_signature' => 'AURELIS CAPITAL GROUP komanda',
     'loan_confirm_noreply'   => 'Šis el. laiškas išsiųstas iš no-reply adreso. Prašome tiesiogiai neatsakyti į šį pranešimą.',
 
     'loan_conditions_title'  => 'Reikalavimai',
@@ -50,7 +50,7 @@ return [
     'docs_confirm_greeting'  => 'Sveiki, :name,',
     'docs_confirm_body'      => 'Gavome jūsų dokumentus (adresą ir asmens tapatybės dokumentą). Mūsų komanda juos peržiūrės ir susisieks su jumis per 24 valandas.',
     'docs_confirm_footer'    => 'Dėkojame už pasitikėjimą ir esame pasirengę atsakyti į bet kokius klausimus.',
-    'docs_confirm_signature' => 'Solberg Grupo komanda',
+    'docs_confirm_signature' => 'AURELIS CAPITAL GROUP komanda',
 
     'docs_upload_hint'  => 'Nuvilkite failą arba spustelėkite, kad jį pasirinktumėte',
     'docs_single_photo' => 'Šiam dokumento tipui pakanka vienos nuotraukos.',

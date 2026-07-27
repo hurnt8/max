@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', __('menu.home')) |Solberg Grupo</title>
+    <title>@yield('title', __('menu.home')) |AURELIS CAPITAL GROUP</title>
     <meta name="description" content="Credixa — solutions de financement rapides, flexibles et personnalisées à travers l'Europe.">
     <link rel="canonical" href="{{ url()->current() }}">
     @foreach (['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv'] as $l)
@@ -11,7 +11,7 @@
     @endforeach
     <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 
-    <!-- Fonts: Montserrat (Solberg Grupo) -->
+    <!-- Fonts: Montserrat (AURELIS CAPITAL GROUP) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">

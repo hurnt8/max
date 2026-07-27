@@ -17,7 +17,7 @@ return [
         ],
         [
             'title' => '4. Spejjeż tal-kuntratt u tal-assigurazzjoni',
-            'content' => 'Meta tieħu self ma’Solberg Grupo, jistgħu jiġu applikati spejjeż tal-kuntratt u tal-assigurazzjoni. Dan il-miżien jkopri l-ispejjeż amministrattivi assoċjati mal-impostazzjoni u l-amministrazzjoni tas-self tiegħek. Id-dettalji speċifiċi ta’ dawn l-ispejjeż se jkunu ċari fl-aqbil tiegħek. Int mitlub li tħallas dawn il-miżati skond it-termini speċifikati.'
+            'content' => 'Meta tieħu self ma’AURELIS CAPITAL GROUP, jistgħu jiġu applikati spejjeż tal-kuntratt u tal-assigurazzjoni. Dan il-miżien jkopri l-ispejjeż amministrattivi assoċjati mal-impostazzjoni u l-amministrazzjoni tas-self tiegħek. Id-dettalji speċifiċi ta’ dawn l-ispejjeż se jkunu ċari fl-aqbil tiegħek. Int mitlub li tħallas dawn il-miżati skond it-termini speċifikati.'
         ],
         [
             'title' => '5. Kunfidenzjalità',

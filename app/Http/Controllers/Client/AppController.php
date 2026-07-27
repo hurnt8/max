@@ -397,8 +397,8 @@ class AppController extends Controller
     public function manifest()
     {
         $data = [
-            'name'             => config('app.company_name', 'Solberg Grupo') . ' — Espace Client',
-            'short_name'       => 'Solberg Grupo',
+            'name'             => config('app.company_name', 'AURELIS CAPITAL GROUP') . ' — Espace Client',
+            'short_name'       => 'AURELIS CAPITAL GROUP',
             'description'      => 'Gérez vos prêts, virements et documents en toute sécurité.',
             'start_url'        => '/app',
             'scope'            => '/app',
@@ -449,9 +449,9 @@ class AppController extends Controller
     public function adminManifest()
     {
         $data = [
-            'name'             => config('app.company_name', 'Solberg Grupo') . ' — Administration',
+            'name'             => config('app.company_name', 'AURELIS CAPITAL GROUP') . ' — Administration',
             'short_name'       => 'Solberg Admin',
-            'description'      => 'Gérez les prêts, clients et opérations Solberg Grupo.',
+            'description'      => 'Gérez les prêts, clients et opérations AURELIS CAPITAL GROUP.',
             'start_url'        => '/admin',
             'scope'            => '/',
             'display'          => 'standalone',

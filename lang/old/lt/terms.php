@@ -5,7 +5,7 @@ return [
     'skyriai' => [
         [
             'title' => '1. Ä®vadas',
-            'content' => 'Sveiki atvykÄ Ä¯Solberg Grupo. Naudodamiesi mÅ«sÅ³ svetaine ir paslaugomis, sutinkate laikytis toliau nurodytÅ³ sÄlygÅ³ ir bÅ«ti jÅ³ saistomos. Prašome atidÅ¾iai perskaityti šias sÄlygas prieš naudodamiesi mÅ«sÅ³ svetaine arba imdami paskolÄ su mumis.',
+            'content' => 'Sveiki atvykÄ Ä¯AURELIS CAPITAL GROUP. Naudodamiesi mÅ«sÅ³ svetaine ir paslaugomis, sutinkate laikytis toliau nurodytÅ³ sÄlygÅ³ ir bÅ«ti jÅ³ saistomos. Prašome atidÅ¾iai perskaityti šias sÄlygas prieš naudodamiesi mÅ«sÅ³ svetaine arba imdami paskolÄ su mumis.',
         ],
         [
             'title' => '2. SvetainÄs naudojimas',
@@ -17,7 +17,7 @@ return [
         ],
         [
             'title' => '4. Sutarties ir draudimo išlaidos',
-            'content' => 'Išimant paskolÄ suSolberg Grupo, gali bÅ«ti taikomi sutarties ir draudimo mokesÄiai. Šis mokestis padengia administracines išlaidas, susijusias su paskolos nustatymu ir valdymu. Konkreti informacija apie šiuos mokesÄius bus aiškiai nurodyta jÅ«sÅ³ paskolos sutartyje. Šiuos mokesÄius privalote sumokÄti pagal nurodytas sÄlygas.',
+            'content' => 'Išimant paskolÄ suAURELIS CAPITAL GROUP, gali bÅ«ti taikomi sutarties ir draudimo mokesÄiai. Šis mokestis padengia administracines išlaidas, susijusias su paskolos nustatymu ir valdymu. Konkreti informacija apie šiuos mokesÄius bus aiškiai nurodyta jÅ«sÅ³ paskolos sutartyje. Šiuos mokesÄius privalote sumokÄti pagal nurodytas sÄlygas.',
         ],
         [
             'title' => '5. Konfidencialumas',

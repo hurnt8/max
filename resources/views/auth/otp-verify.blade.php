@@ -6,12 +6,12 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Solberg Grupo">
+<meta name="apple-mobile-web-app-title" content="AURELIS CAPITAL GROUP">
 <meta name="theme-color" content="#F7F8F9">
 <link rel="manifest" href="{{ route('pwa.manifest') }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
-<title>{{ __('auth.otp_title') }} —Solberg Grupo</title>
+<title>{{ __('auth.otp_title') }} : AURELIS CAPITAL GROUP</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -365,7 +365,7 @@ html,body{
     </a>
     <a href="{{ url('/') }}" class="topbar__logo">
       <img src="{{ asset('assets/images/logo-transparent-icon.png') }}"
-           onerror="this.style.display='none'" alt="Solberg Grupo">
+           onerror="this.style.display='none'" alt="AURELIS CAPITAL GROUP">
     </a>
   </div>
 

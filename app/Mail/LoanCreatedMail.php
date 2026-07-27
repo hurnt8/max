@@ -24,18 +24,18 @@ class LoanCreatedMail extends Mailable
     public function envelope(): Envelope
     {
         $subjects = [
-            'fr' => 'Votre dossier de financement N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'pl' => 'Twój wniosek o finansowanie nr ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'en' => 'Your financing file N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'es' => 'Su expediente de financiación N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'bg' => 'Вашето досие за финансиране №' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'hu' => 'Finanszírozási ügye sz. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'it' => 'La tua pratica di finanziamento N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'de' => 'Ihre Finanzierungsakte Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'lt' => 'Jūsų finansavimo byla Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'ro' => 'Dosarul dumneavoastră de finanțare nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'lv' => 'Jūsu finansējuma lieta Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'nl' => 'Uw financieringsdossier Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'fr' => 'Votre dossier de financement N°' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'pl' => 'Twój wniosek o finansowanie nr ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'en' => 'Your financing file N°' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'es' => 'Su expediente de financiación N°' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'bg' => 'Вашето досие за финансиране №' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'hu' => 'Finanszírozási ügye sz. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'it' => 'La tua pratica di finanziamento N°' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'de' => 'Ihre Finanzierungsakte Nr. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'lt' => 'Jūsų finansavimo byla Nr. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'ro' => 'Dosarul dumneavoastră de finanțare nr. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'lv' => 'Jūsu finansējuma lieta Nr. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'nl' => 'Uw financieringsdossier Nr. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
         ];
 
         return new Envelope(subject: $subjects[$this->locale] ?? $subjects['fr']);

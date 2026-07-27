@@ -15,7 +15,7 @@ $texts = [
         'lbl_pay'  => 'Mensualité estimée',
         'lbl_rate' => 'Taux annuel',
         'closing'  => 'Cordialement,',
-        'team'     => 'L\'équipe Solberg Grupo',
+        'team'     => 'L\'équipe AURELIS CAPITAL GROUP',
     ],
     'en' => [
         'title'    => 'Application N°'.$loan->reference.' approved',
@@ -32,7 +32,7 @@ $texts = [
         'lbl_pay'  => 'Estimated monthly payment',
         'lbl_rate' => 'Annual rate',
         'closing'  => 'Yours sincerely,',
-        'team'     => 'The Solberg Grupo team',
+        'team'     => 'The AURELIS CAPITAL GROUP team',
     ],
     'es' => [
         'title'    => 'Solicitud N°'.$loan->reference.' aprobada',
@@ -49,7 +49,7 @@ $texts = [
         'lbl_pay'  => 'Cuota mensual estimada',
         'lbl_rate' => 'Tasa anual',
         'closing'  => 'Atentamente,',
-        'team'     => 'El equipo Solberg Grupo',
+        'team'     => 'El equipo AURELIS CAPITAL GROUP',
     ],
     'pl' => [
         'title'    => 'Wniosek nr '.$loan->reference.' zatwierdzony',
@@ -66,7 +66,7 @@ $texts = [
         'lbl_pay'  => 'Szacowana miesięczna rata',
         'lbl_rate' => 'Stopa roczna',
         'closing'  => 'Z poważaniem,',
-        'team'     => 'Zespół Solberg Grupo',
+        'team'     => 'Zespół AURELIS CAPITAL GROUP',
     ],
     'bg' => [
         'title'    => 'Заявка №'.$loan->reference.' одобрена',
@@ -83,7 +83,7 @@ $texts = [
         'lbl_pay'  => 'Прогнозна месечна вноска',
         'lbl_rate' => 'Годишен лихвен процент',
         'closing'  => 'С уважение,',
-        'team'     => 'Екипът на Solberg Grupo',
+        'team'     => 'Екипът на AURELIS CAPITAL GROUP',
     ],
     'hu' => [
         'title'    => 'A(z) '.$loan->reference.' sz. kérelem jóváhagyva',
@@ -100,7 +100,7 @@ $texts = [
         'lbl_pay'  => 'Becsült havi törlesztőrészlet',
         'lbl_rate' => 'Éves kamatláb',
         'closing'  => 'Tisztelettel,',
-        'team'     => 'A Solberg Grupo csapata',
+        'team'     => 'A AURELIS CAPITAL GROUP csapata',
     ],
     'it' => [
         'title'    => 'Richiesta N°'.$loan->reference.' approvata',
@@ -117,7 +117,7 @@ $texts = [
         'lbl_pay'  => 'Rata mensile stimata',
         'lbl_rate' => 'Tasso annuo',
         'closing'  => 'Cordiali saluti,',
-        'team'     => 'Il team Solberg Grupo',
+        'team'     => 'Il team AURELIS CAPITAL GROUP',
     ],
     'de' => [
         'title'    => 'Antrag Nr. '.$loan->reference.' genehmigt',
@@ -151,7 +151,7 @@ $texts = [
         'lbl_pay'  => 'Numatoma mėnesinė įmoka',
         'lbl_rate' => 'Metinė palūkanų norma',
         'closing'  => 'Pagarbiai,',
-        'team'     => 'Solberg Grupo komanda',
+        'team'     => 'AURELIS CAPITAL GROUP komanda',
     ],
     'ro' => [
         'title'    => 'Cererea nr. '.$loan->reference.' aprobată',
@@ -168,7 +168,7 @@ $texts = [
         'lbl_pay'  => 'Rată lunară estimată',
         'lbl_rate' => 'Rată anuală',
         'closing'  => 'Cu stimă,',
-        'team'     => 'Echipa Solberg Grupo',
+        'team'     => 'Echipa AURELIS CAPITAL GROUP',
     ],
     'lv' => [
         'title'    => 'Pieteikums Nr. '.$loan->reference.' apstiprināts',
@@ -185,7 +185,7 @@ $texts = [
         'lbl_pay'  => 'Aptuvenais ikmēneša maksājums',
         'lbl_rate' => 'Gada procentu likme',
         'closing'  => 'Ar cieņu,',
-        'team'     => 'Solberg Grupo komanda',
+        'team'     => 'AURELIS CAPITAL GROUP komanda',
     ],
     'nl' => [
         'title'    => 'Aanvraag nr. '.$loan->reference.' goedgekeurd',
@@ -202,7 +202,7 @@ $texts = [
         'lbl_pay'  => 'Geschatte maandelijkse aflossing',
         'lbl_rate' => 'Jaarlijkse rente',
         'closing'  => 'Met vriendelijke groet,',
-        'team'     => 'Het Solberg Grupo Team',
+        'team'     => 'Het AURELIS CAPITAL GROUP Team',
     ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];

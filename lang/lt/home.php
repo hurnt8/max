@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Solberg Grupo – geriausi internetiniai skolintojai Vokietijoje, Ispanijoje, Vengrijoje ir kt.',
+    'general_title' => 'AURELIS CAPITAL GROUP – geriausi internetiniai skolintojai Vokietijoje, Ispanijoje, Vengrijoje ir kt.',
     'banner_title' => 'Gaukite tobulą paskolą visiems savo interneto poreikiams.',
-    'banner_text' => 'Milijonai žmonių naudoja Solberg Grupo savo projektams įgyvendinti.',
+    'banner_text' => 'Milijonai žmonių naudoja AURELIS CAPITAL GROUP savo projektams įgyvendinti.',
     'get_loan_now' => 'Gaukite paskolą dabar',
     'popular_loans' => 'Populiarūs paskolų tipai:',
     'personal_loan' => 'Asmeninė paskola',
@@ -62,11 +62,11 @@ return [
 
     'custom_loan_services' => 'Pasinaudokite mūsų pritaikytomis paskolų paslaugomis',
     'reliability_quality' => 'Skaidrumas ir patikimumas',
-    'reliability_quality_description' => 'Solberg Grupo siūlome aiškius ir patikimus skolinimo sprendimus, paremtus teigiamais klientų atsiliepimais ir visišku skaidrumu.',
+    'reliability_quality_description' => 'AURELIS CAPITAL GROUP siūlome aiškius ir patikimus skolinimo sprendimus, paremtus teigiamais klientų atsiliepimais ir visišku skaidrumu.',
     'financial_transparency' => 'Jokių paslėptų išlaidų',
     'financial_transparency_description' => 'Peržiūrėkite mūsų sąlygas, aptarkite įkainius ir mokėkite tik patvirtinus paskolą.',
     'optimal_security' => 'Sauga ir privatumas',
-    'optimal_security_description' => 'Jūsų asmeniniai duomenys yra saugūs pas mus. „Solberg Grupo“ naudoja pažangius saugos protokolus, kad apsaugotų jūsų privatumą. Mūsų pagalba teikiama 24 valandas per parą, 7 dienas per savaitę.',
+    'optimal_security_description' => 'Jūsų asmeniniai duomenys yra saugūs pas mus. „AURELIS CAPITAL GROUP“ naudoja pažangius saugos protokolus, kad apsaugotų jūsų privatumą. Mūsų pagalba teikiama 24 valandas per parą, 7 dienas per savaitę.',
     'apply_loan' => 'Prašyti paskolos',
 
 
@@ -134,7 +134,7 @@ return [
     ],
 
     'about_title' => 'Prisijunkite prie geriausios pasaulyje darbuotojų rinkos',
-    'about_description' => 'Solberg Grupo yra jūsų patikima platforma paskoloms gauti su išskirtine klientų patirtimi. Esame įsipareigoję teikti jums paprastus, saugius ir greitus finansinius sprendimus.',
+    'about_description' => 'AURELIS CAPITAL GROUP yra jūsų patikima platforma paskoloms gauti su išskirtine klientų patirtimi. Esame įsipareigoję teikti jums paprastus, saugius ir greitus finansinius sprendimus.',
     'rating' => '4,9/5',
     'rating_description' => 'Klientai vertina profesionalus',
     'projects_completed' => '+12 mln.',
@@ -176,7 +176,7 @@ return [
         'placeholder' => 'Jūsų el. pašto adresas',
         'button' => 'Siųsti',
     ],
-    'rights_reserved' => '© Solberg Grupo. 2024. Visos teisės saugomos.',
+    'rights_reserved' => '© AURELIS CAPITAL GROUP. 2024. Visos teisės saugomos.',
 
     'en' => 'anglų k.',
     'fr' => 'prancūzų',
@@ -223,10 +223,10 @@ return [
 
     'about' => [
         'exptitle' => 'metų patirtis',
-        'sectagline' => 'sveiki atvykę į Solberg Grupo',
+        'sectagline' => 'sveiki atvykę į AURELIS CAPITAL GROUP',
         'sectitle' => 'Asmeninės paskolos jūsų svajonėms įgyvendinti',
         'text1' => 'Šioje srityje dirbame jau 15 metų ir siūlome geriausias paslaugas.',
-        'text2' => 'Solberg Grupo yra jūsų patikima platforma paskoloms gauti su išskirtine klientų patirtimi. Esame įsipareigoję pasiūlyti jums paprastus, saugius ir greitus finansinius sprendimus.',
+        'text2' => 'AURELIS CAPITAL GROUP yra jūsų patikima platforma paskoloms gauti su išskirtine klientų patirtimi. Esame įsipareigoję pasiūlyti jums paprastus, saugius ir greitus finansinius sprendimus.',
         'check1' => 'paskola smulkiajam verslui',
         'check2' => 'paskola studijoms užsienyje',
         'check3' => 'greitas paskolos procesas',

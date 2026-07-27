@@ -195,7 +195,7 @@ table.schedule tfoot td:first-child { text-align: center; }
     </tfoot>
 </table>
 
-<div class="footer">{{ $texts['footer'] }} —Solberg Grupo INVESTI © {{ now()->format('Y') }}</div>
+<div class="footer">{{ $texts['footer'] }} : AURELIS CAPITAL GROUP INVESTI © {{ now()->format('Y') }}</div>
 
 </body>
 </html>

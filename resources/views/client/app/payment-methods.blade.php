@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.payment_methods') . ' —Solberg Grupo')
+@section('title', __('app.payment_methods') . ' : AURELIS CAPITAL GROUP')
 @section('page_title', __('app.payment_methods'))
 @section('back_btn', true)
 @section('back_url', route('client.app.profile'))
@@ -159,7 +159,7 @@
   <div class="pm-card__top">
     <div class="pm-card__brand">
       <i class="fas fa-landmark" style="margin-right:.3rem;font-size:.58rem"></i>
-     Solberg Grupo &nbsp;·&nbsp; {{ __('app.account_num') }}
+     AURELIS CAPITAL GROUP &nbsp;·&nbsp; {{ __('app.account_num') }}
     </div>
     <div class="pm-card__chip" aria-hidden="true"></div>
   </div>
@@ -246,7 +246,7 @@
   <div class="pm-empty__ico"><i class="fas fa-credit-card"></i></div>
   <div class="pm-empty__title">{{ __('app.not_configured') }}</div>
   <div class="pm-empty__sub">
-    Votre conseillerSolberg Grupo configurera vos coordonnees bancaires<br>lors de la finalisation de votre dossier.
+    Votre conseillerAURELIS CAPITAL GROUP configurera vos coordonnees bancaires<br>lors de la finalisation de votre dossier.
   </div>
 </div>
 
@@ -289,7 +289,7 @@ function shareCoords() {
   const iban = '{{ $user->bank_account ?? "" }}';
   const name = '{{ addslashes($user->name) }}';
   const bic  = '{{ $user->bic ?? "" }}';
-  const text = `Coordonnees bancairesSolberg Grupo\nTitulaire : ${name}\nIBAN : ${iban}${bic ? '\nBIC : ' + bic : ''}`;
+  const text = `Coordonnees bancairesAURELIS CAPITAL GROUP\nTitulaire : ${name}\nIBAN : ${iban}${bic ? '\nBIC : ' + bic : ''}`;
   if (navigator.share) {
     navigator.share({ title: 'Mes coordonnees bancaires', text });
   } else {

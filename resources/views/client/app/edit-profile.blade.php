@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.edit_profile') . ' —Solberg Grupo')
+@section('title', __('app.edit_profile') . ' : AURELIS CAPITAL GROUP')
 @section('page_title', __('app.edit_profile'))
 @section('back_btn', true)
 @section('back_url', route('client.app.profile'))

@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.receive_title') . ' —Solberg Grupo')
+@section('title', __('app.receive_title') . ' : AURELIS CAPITAL GROUP')
 @section('page_title', __('app.receive_title'))
 @section('back_btn', true)
 @section('back_url', route('client.app.transfers'))
@@ -90,7 +90,7 @@
   $iban = $user->bank_account ?? 'Non renseigné';
   $bic  = $user->bic ?? 'CREDIXAFR';
   $currency = $user->currency ?? config('credixa.default_currency');
-  $shareText = "IBAN : {$iban}\nBIC : {$bic}\nTitulaire : {$user->name}\nBanque :Solberg Grupo Financial";
+  $shareText = "IBAN : {$iban}\nBIC : {$bic}\nTitulaire : {$user->name}\nBanque :AURELIS CAPITAL GROUP Financial";
 @endphp
 
 {{-- Hero ── --}}
@@ -133,14 +133,14 @@
 <div style="margin:.875rem 1.25rem;padding:.75rem 1rem;background:rgba(27,138,122,.06);border:1px solid rgba(27,138,122,.18);border-radius:14px;display:flex;align-items:flex-start;gap:.5rem">
   <i class="fas fa-circle-info" style="color:var(--ca-teal-l);font-size:.8rem;margin-top:.1rem;flex-shrink:0"></i>
   <span style="font-size:.75rem;color:var(--ca-text-3);line-height:1.5">
-    Partagez ces coordonnées bancaires pour recevoir des fonds directement sur votre compteSolberg Grupo.
+    Partagez ces coordonnées bancaires pour recevoir des fonds directement sur votre compteAURELIS CAPITAL GROUP.
   </span>
 </div>
 
 {{-- Actions ── --}}
 <div class="ca-btn-wrap">
   <button class="ca-btn ca-btn--primary"
-          onclick="if(navigator.share){navigator.share({title:'Mes coordonnéesSolberg Grupo',text:`{{ addslashes($shareText) }}`}).catch(()=>{})}else{copyIban(null,'{{ addslashes($shareText) }}',true)}">
+          onclick="if(navigator.share){navigator.share({title:'Mes coordonnéesAURELIS CAPITAL GROUP',text:`{{ addslashes($shareText) }}`}).catch(()=>{})}else{copyIban(null,'{{ addslashes($shareText) }}',true)}">
     <i class="fas fa-share-nodes"></i> {{ __('app.share_details') }}
   </button>
 </div>

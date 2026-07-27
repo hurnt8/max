@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'banner_title' => 'AtraskSolberg Grupo',
+    'banner_title' => 'AtraskAURELIS CAPITAL GROUP',
     'banner_subtitle' => 'Apie mus',
     'banner_description' => 'Skolinkites lengviau naudodamiesi lanksčiais paskolų sprendimais, pritaikytais jūsų finansiniams poreikiams.',
    
-    'section1_title' => 'Kodėl verta rinktisSolberg Grupo',
-    'section1_p1' => 'MesSolberg Grupo tvirtai tikime, kad kiekvienas nusipelno galimybės įgyvendinti savo finansines svajones. Nuo pat savo veiklos pradžios esame įsipareigoję teikti lanksčius ir prieinamus skolinimo sprendimus, kad patenkintume įvairius mūsų klientų poreikius. Nesvarbu, ar norite finansuoti asmeninį projektą, įsigyti automobilį ar išplėsti savo verslą, mes turime jums reikalingą paskolą.',
+    'section1_title' => 'Kodėl verta rinktisAURELIS CAPITAL GROUP',
+    'section1_p1' => 'MesAURELIS CAPITAL GROUP tvirtai tikime, kad kiekvienas nusipelno galimybės įgyvendinti savo finansines svajones. Nuo pat savo veiklos pradžios esame įsipareigoję teikti lanksčius ir prieinamus skolinimo sprendimus, kad patenkintume įvairius mūsų klientų poreikius. Nesvarbu, ar norite finansuoti asmeninį projektą, įsigyti automobilį ar išplėsti savo verslą, mes turime jums reikalingą paskolą.',
     'section1_p2' => 'Mūsų paslaugos sukurtos taip, kad būtų užtikrintas be vargo, greitas ir paprastas paraiškų teikimo procesas. Suprantame, kad kiekvienas klientas yra unikalus, todėl siūlome individualizuotas paskolas, kurios prisitaiko prie konkrečių jūsų poreikių. Be to, mūsų atsidavę patarėjai visada padės jums kiekviename žingsnyje, užtikrindami, kad nuo pradžios iki pabaigos jus visapusiškai palaikytų.',
     'proposed' => 'Mes siūlome:',
     'check1' => 'Suasmenintos paskolos pagal jūsų konkrečius poreikius.',

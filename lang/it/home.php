@@ -1,9 +1,9 @@
 <?php
 
 return [
-  'general_title' => 'Solberg Grupo - I migliori prestatori online in Germania, Spagna, Ungheria, ecc.',
+  'general_title' => 'AURELIS CAPITAL GROUP - I migliori prestatori online in Germania, Spagna, Ungheria, ecc.',
 'banner_title' => 'Ottieni il prestito perfetto per tutte le tue esigenze online.',
-'banner_text' => 'Milioni di persone usano Solberg Grupo per realizzare i loro progetti.',
+'banner_text' => 'Milioni di persone usano AURELIS CAPITAL GROUP per realizzare i loro progetti.',
 'get_loan_now' => 'Ottieni un prestito ora',
 'popular_loans' => 'Tipi di prestiti popolari:',
 'personal_loan' => 'Prestito personale',
@@ -62,11 +62,11 @@ return [
 
 'custom_loan_services' => 'Approfitta dei nostri servizi di prestito su misura',
 'reliability_quality' => 'Trasparenza e Affidabilità',
-'reliability_quality_description' => 'In Solberg Grupo offriamo soluzioni di prestito chiare e affidabili, supportate da recensioni positive dei clienti e completa trasparenza.',
+'reliability_quality_description' => 'In AURELIS CAPITAL GROUP offriamo soluzioni di prestito chiare e affidabili, supportate da recensioni positive dei clienti e completa trasparenza.',
 'financial_transparency' => 'Nessun Costo Nascosto',
 'financial_transparency_description' => 'Rivedi i nostri termini, discuti i tassi e paga solo una volta approvato il tuo prestito.',
 'optimal_security' => 'Sicurezza e Privacy',
-'optimal_security_description' => 'I tuoi dati personali sono al sicuro con noi. Solberg Grupo utilizza protocolli di sicurezza avanzati per proteggere la tua privacy. Il nostro supporto è disponibile 24/7 per qualsiasi assistenza.',
+'optimal_security_description' => 'I tuoi dati personali sono al sicuro con noi. AURELIS CAPITAL GROUP utilizza protocolli di sicurezza avanzati per proteggere la tua privacy. Il nostro supporto è disponibile 24/7 per qualsiasi assistenza.',
 'apply_loan' => 'Richiedi un prestito',
 
 'testimonials_title' => 'Si fidano di noi',
@@ -121,7 +121,7 @@ return [
 
 
     'about_title' => 'Unisciti al miglior marketplace mondiale per lavoratori',
-'about_description' => 'Solberg Grupo è la tua piattaforma di fiducia per ottenere prestiti con un’esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.',
+'about_description' => 'AURELIS CAPITAL GROUP è la tua piattaforma di fiducia per ottenere prestiti con un’esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.',
 'rating' => '4.9/5',
 'rating_description' => 'I clienti valutano i professionisti',
 'projects_completed' => '+12M',
@@ -163,7 +163,7 @@ return [
     'placeholder' => 'Il tuo indirizzo email',
     'button' => 'Invia',
 ],
-'rights_reserved' => '©Solberg Grupo. 2024. Tutti i diritti riservati.',
+'rights_reserved' => '©AURELIS CAPITAL GROUP. 2024. Tutti i diritti riservati.',
 
 'en' => 'Inglese',
 'fr' => 'Francese',
@@ -210,10 +210,10 @@ return [
 
 'about' => [
     'exptitle' => 'anni di esperienza',
-    'sectagline' => 'benvenuto in Solberg Grupo',
+    'sectagline' => 'benvenuto in AURELIS CAPITAL GROUP',
     'sectitle' => 'Prestiti personali per realizzare i tuoi sogni',
     'text1' => 'Siamo in questo settore da 15 anni e forniamo i migliori servizi.',
-    'text2' => 'Solberg Grupo è la tua piattaforma di fiducia per prestiti con un’esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.',
+    'text2' => 'AURELIS CAPITAL GROUP è la tua piattaforma di fiducia per prestiti con un’esperienza cliente eccezionale. Siamo impegnati a offrirti soluzioni finanziarie semplici, sicure e veloci.',
     'check1' => 'prestito per piccole imprese',
     'check2' => 'prestito per studiare all’estero',
     'check3' => 'processo di prestito rapido',

@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'           => 'Moje konto Solberg Grupo',
+    'title'           => 'Moje konto AURELIS CAPITAL GROUP',
     'greeting'        => 'Czesc',
     'language'        => 'Jezyk',
     'welcome_back'    => 'Witamy z powrotem',
@@ -288,7 +288,7 @@ return [
     'funded_title'           => 'Finansowanie przyznane',
     'funded_body'            => 'Kwota :amount :currency została przelana na Państwa konto.',
     'rejected_title'         => 'Wniosek nie został zaakceptowany',
-    'contact_advisor'        => 'Skontaktuj się z doradcą Solberg Grupo, aby uzyskać więcej informacji.',
+    'contact_advisor'        => 'Skontaktuj się z doradcą AURELIS CAPITAL GROUP, aby uzyskać więcej informacji.',
     'file_progress'          => 'Postęp wniosku',
     'financing_breakdown'    => 'Podział kapitał / odsetki',
     'total_credit_cost'      => 'Całkowity koszt kredytu',

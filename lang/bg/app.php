@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'           => 'Моето пространство Solberg Grupo',
+    'title'           => 'Моето пространство AURELIS CAPITAL GROUP',
     'greeting'        => 'Здравей',
     'language'        => 'Език',
     'welcome_back'    => 'Добре дошли отново',
@@ -295,7 +295,7 @@ return [
     'funded_title'           => 'Финансирането е отпуснато',
     'funded_body'            => 'Сумата от :amount :currency беше преведена по сметката ви.',
     'rejected_title'         => 'Заявката не е приета',
-    'contact_advisor'        => 'Свържете се с вашия консултант от Solberg Grupo за повече информация.',
+    'contact_advisor'        => 'Свържете се с вашия консултант от AURELIS CAPITAL GROUP за повече информация.',
     'file_progress'          => 'Напредък на досието',
     'financing_breakdown'    => 'Разпределение главница / лихва',
     'total_credit_cost'      => 'Обща стойност на кредита',

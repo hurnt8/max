@@ -19,12 +19,12 @@ return [
 
     'client_login_title'  => 'Клиентска зона',
     'client_login_sub'    => 'Влезте в профила си, за да получите достъп до досиетата си',
-    'client_brand_title'  => 'Вашето клиентско<br>пространство Solberg Grupo',
+    'client_brand_title'  => 'Вашето клиентско<br>пространство AURELIS CAPITAL GROUP',
     'client_brand_sub'    => 'Проследявайте заявките си, управлявайте профила си и получавайте достъп до всичките си документи напълно сигурно.',
 
     'staff_login_title'   => 'Административен портал',
     'staff_login_sub'     => 'Достъпен единствено за упълномощен персонал',
-    'staff_brand_title'   => 'Администрация<br>Solberg Grupo',
+    'staff_brand_title'   => 'Администрация<br>AURELIS CAPITAL GROUP',
     'staff_brand_sub'     => 'Защитен достъп до инструментите за управление, проследяване на досиета и администриране на потребители.',
 
     'email'               => 'Имейл адрес',
@@ -40,7 +40,7 @@ return [
     'staff_portal_link'   => 'Портал за служители / администратори',
     'client_portal_link'  => 'Клиентска зона',
     'staff_restricted'    => 'Ограничен достъп — само за упълномощен персонал',
-    'staff_notice'        => 'Този портал е предназначен само за служители на Solberg Grupo. Всички влизания се записват.',
+    'staff_notice'        => 'Този портал е предназначен само за служители на AURELIS CAPITAL GROUP. Всички влизания се записват.',
     'or_staff'            => 'Служител или администратор ли сте?',
     'or_client'           => 'Клиент ли сте?',
 
@@ -92,34 +92,34 @@ return [
     'account_unblocked'                   => 'Профилът ви беше успешно отблокиран. Вече можете да влезете.',
     'unblock_invalid'                     => 'Тази връзка за отблокиране е невалидна или е изтекла. Свържете се с поддръжката.',
 
-    'account_blocked_email_subject'       => 'Вашият профил в Solberg Grupo беше блокиран',
+    'account_blocked_email_subject'       => 'Вашият профил в AURELIS CAPITAL GROUP беше блокиран',
     'account_blocked_email_title'         => 'Временно блокиран профил',
     'account_blocked_email_intro'         => 'Профилът ви беше временно блокиран поради няколко неуспешни опита за вход.',
     'account_blocked_email_reason_title'  => 'Защо е блокиран профилът?',
     'account_blocked_email_reason_body'   => '4 грешни OTP кода бяха въведени последователно при опит за вход в профила ви. От съображения за сигурност достъпът беше временно спрян.',
     'account_blocked_email_btn'           => 'Отблокирай моя профил',
     'account_blocked_email_fallback'      => 'Ако бутонът не работи, копирайте тази връзка в браузъра си:',
-    'account_blocked_email_notice'        => 'Ако не сте инициирали тези опити, не натискайте тази връзка и се свържете незабавно с поддръжката на Solberg Grupo.',
+    'account_blocked_email_notice'        => 'Ако не сте инициирали тези опити, не натискайте тази връзка и се свържете незабавно с поддръжката на AURELIS CAPITAL GROUP.',
     'account_blocked_email_footer'        => 'Връзката е валидна 48 часа.',
 
     // OTP email
-    'otp_email_subject'      => 'Вашият код за вход — Solberg Grupo',
+    'otp_email_subject'      => 'Вашият код за вход : AURELIS CAPITAL GROUP',
     'otp_email_title'        => 'Код за потвърждение',
     'otp_email_intro'        => 'Ето вашия еднократен код за вход. Не го споделяйте с никого.',
     'otp_email_code_label'   => 'Вашият код',
     'otp_email_expiry'       => 'Този код изтича след 10 минути.',
     'otp_email_notice_title' => 'Важна информация за сигурността',
-    'otp_email_notice_body'  => 'Solberg Grupo никога няма да поиска този код по телефон или съобщение. Ако не сте заявявали този код, игнорирайте този имейл.',
+    'otp_email_notice_body'  => 'AURELIS CAPITAL GROUP никога няма да поиска този код по телефон или съобщение. Ако не сте заявявали този код, игнорирайте този имейл.',
     'otp_email_footer'       => 'Ако не сте заявявали този код, игнорирайте този имейл.',
 
     // Банер за инсталиране на PWA (страници за вход)
     'pwa_install_title' => 'Инсталирайте приложението',
     'pwa_install_hint'  => 'Бърз достъп · Известия · Офлайн режим',
     'pwa_install_btn'   => 'Инсталирай',
-    'pwa_ios_title'     => 'Инсталирайте приложението на Solberg Grupo на вашия iPhone',
+    'pwa_ios_title'     => 'Инсталирайте приложението на AURELIS CAPITAL GROUP на вашия iPhone',
     'pwa_ios_step1'     => 'Докоснете <strong>Споделяне</strong> в Safari',
     'pwa_ios_step2'     => 'Изберете <strong>На началния екран</strong>',
-    'pwa_ios_step3'     => 'Докоснете <strong>Добави</strong> — готово!',
+    'pwa_ios_step3'     => 'Докоснете <strong>Добави</strong>  готово!',
     'pwa_close'         => 'Затвори',
 
 ];

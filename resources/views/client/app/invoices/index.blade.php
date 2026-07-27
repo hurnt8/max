@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.invoices_title') . ' —Solberg Grupo')
+@section('title', __('app.invoices_title') . ' : AURELIS CAPITAL GROUP')
 @section('page_title', __('app.invoices_title'))
 @section('back_btn', true)
 @section('back_url', route('client.app.home'))

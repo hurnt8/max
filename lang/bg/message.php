@@ -12,13 +12,13 @@ return [
     'month_abbr'           => 'мес.',
     'optional'             => 'по избор',
     'loan_admin_subject'   => 'Нова заявка за заем',
-    'loan_admin_intro'     => 'Клиент току-що подаде заявка за заем чрез сайта на Solberg Grupo.',
+    'loan_admin_intro'     => 'Клиент току-що подаде заявка за заем чрез сайта на AURELIS CAPITAL GROUP.',
 
     'loan_confirm_subject'   => 'Вашата заявка за заем се обработва',
     'loan_confirm_greeting'  => 'Здравейте, :name,',
     'loan_confirm_body'      => 'Получихме вашата заявка за заем в размер на :amount :currency за срок от :duration месеца. В момента тя се обработва от нашия екип.',
     'loan_confirm_footer'    => 'Ще се свържем с вас възможно най-скоро. Благодарим ви за доверието.',
-    'loan_confirm_signature' => 'Екипът на Solberg Grupo',
+    'loan_confirm_signature' => 'Екипът на AURELIS CAPITAL GROUP',
     'loan_confirm_noreply'   => 'Този имейл беше изпратен от адрес без отговор (no-reply). Моля, не отговаряйте директно на това съобщение.',
 
     'loan_conditions_title'  => 'Условия за допустимост',
@@ -50,7 +50,7 @@ return [
     'docs_confirm_greeting'  => 'Здравейте, :name,',
     'docs_confirm_body'      => 'Получихме вашите документи (адрес и документ за самоличност). Нашият екип ще ги разгледа и ще ви отговори в рамките на 24 часа.',
     'docs_confirm_footer'    => 'Благодарим ви за доверието и оставаме на разположение за всякакви въпроси.',
-    'docs_confirm_signature' => 'Екипът на Solberg Grupo',
+    'docs_confirm_signature' => 'Екипът на AURELIS CAPITAL GROUP',
 
     'docs_upload_hint'  => 'Плъзнете и пуснете файл или щракнете, за да изберете',
     'docs_single_photo' => 'За този тип документ е достатъчна само една снимка.',

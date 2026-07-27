@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Modifier un réseau social — Solberg Grupo')
+@section('title', 'Modifier un réseau social — AURELIS CAPITAL GROUP')
 @section('page_title', 'Modifier un réseau social')
 
 @section('content')

@@ -3,7 +3,7 @@
 return [
     'general_title' => 'Credixa - L-Aħjar Self Online fil-Ġermanja, Spanja, Ungerija eċċ.',
     'banner_title' => 'Ikseb is-self perfett għal bżonnijietek online.',
-    'banner_text' => 'Miljuni ta’ nies jużawSolberg Grupo biex iwettqu l-proġetti tagħhom.',
+    'banner_text' => 'Miljuni ta’ nies jużawAURELIS CAPITAL GROUP biex iwettqu l-proġetti tagħhom.',
     'get_loan_now' => 'Ikseb self issa',
     'popular_loans' => 'Tipi popolari ta’ self:',
     'personal_loan' => 'Self personali',
@@ -58,7 +58,7 @@ return [
     'financial_transparency' => 'L-ebda spiża moħbija',
     'financial_transparency_description' => 'Reviżjoni tat-termini tagħna, diskussjoni dwar ir-rati, u ħlas biss ladarba s-self tiegħek ikun approvat.',
     'optimal_security' => 'Sigurtà u Privatezza',
-    'optimal_security_description' => 'Id-dejta personali tiegħek hija sigura magħna.Solberg Grupo juża protokolli avvanzati tas-sigurtà biex jipproteġi l-privatezza tiegħek. L-appoġġ tagħna huwa disponibbli 24/7 għal kull għajnuna.',
+    'optimal_security_description' => 'Id-dejta personali tiegħek hija sigura magħna.AURELIS CAPITAL GROUP juża protokolli avvanzati tas-sigurtà biex jipproteġi l-privatezza tiegħek. L-appoġġ tagħna huwa disponibbli 24/7 għal kull għajnuna.',
     'apply_loan' => 'Applika għal self',
 
     'total_loans_granted' => 'Total tas-Self Mogħti',
@@ -145,7 +145,7 @@ return [
         'placeholder' => 'L-indirizz tal-email tiegħek',
         'button' => 'Ibgħat',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Id-drittijiet kollha riservati.',
+    'rights_reserved' => '©AURELIS CAPITAL GROUP. 2024. Id-drittijiet kollha riservati.',
 
     'en' => 'Ingliż',
     'fr' => 'Franċiż',

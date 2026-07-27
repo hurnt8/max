@@ -21,18 +21,18 @@ class InvoiceMail extends Mailable
         $locale = $this->invoice->client->locale ?? 'fr';
 
         $subjects = [
-            'fr' => 'Facture ' . $ref . ' — SOLBERG GRUPO',
-            'en' => 'Invoice ' . $ref . ' — SOLBERG GRUPO',
-            'es' => 'Factura ' . $ref . ' — SOLBERG GRUPO',
-            'pl' => 'Faktura ' . $ref . ' — SOLBERG GRUPO',
-            'bg' => 'Фактура ' . $ref . ' — SOLBERG GRUPO',
-            'hu' => 'Számla ' . $ref . ' — SOLBERG GRUPO',
-            'it' => 'Fattura ' . $ref . ' — SOLBERG GRUPO',
-            'de' => 'Rechnung ' . $ref . ' — SOLBERG GRUPO',
-            'lt' => 'Sąskaita faktūra ' . $ref . ' — SOLBERG GRUPO',
-            'ro' => 'Factura ' . $ref . ' — SOLBERG GRUPO',
-            'lv' => 'Rēķins ' . $ref . ' — SOLBERG GRUPO',
-            'nl' => 'Factuur ' . $ref . ' — SOLBERG GRUPO',
+            'fr' => 'Facture ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'en' => 'Invoice ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'es' => 'Factura ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'pl' => 'Faktura ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'bg' => 'Фактура ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'hu' => 'Számla ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'it' => 'Fattura ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'de' => 'Rechnung ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'lt' => 'Sąskaita faktūra ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'ro' => 'Factura ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'lv' => 'Rēķins ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'nl' => 'Factuur ' . $ref . ' : AURELIS CAPITAL GROUP',
         ];
 
         return new Envelope(subject: $subjects[$locale] ?? $subjects['fr']);

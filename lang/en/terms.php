@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Introduction',
-            'content' => 'Welcome to Solberg Grupo. By using our site and services, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our site or taking out a loan with us.'
+            'content' => 'Welcome to AURELIS CAPITAL GROUP. By using our site and services, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our site or taking out a loan with us.'
         ],
         [
             'title' => '2. Use of the site',
@@ -13,11 +13,11 @@ return [
         ],
         [
             'title' => '3. Loan services',
-            'content' => 'Solberg Grupo offers various types of loans to meet your financial needs. All loans are subject to approval based on our assessment of your creditworthiness and repayment capacity. The specific terms of each loan, including interest rates, maturities and repayment terms, will be detailed in your loan agreement.'
+            'content' => 'AURELIS CAPITAL GROUP offers various types of loans to meet your financial needs. All loans are subject to approval based on our assessment of your creditworthiness and repayment capacity. The specific terms of each loan, including interest rates, maturities and repayment terms, will be detailed in your loan agreement.'
         ],
         [
             'title' => '4. Contract and insurance costs',
-            'content' => 'When taking out a loan with Solberg Grupo, contract and insurance fees may be applied. This fee covers the administrative costs associated with setting up and managing your loan. The specific details of these fees will be clearly stated in your loan agreement. You are required to pay these charges in accordance with the terms specified.'
+            'content' => 'When taking out a loan with AURELIS CAPITAL GROUP, contract and insurance fees may be applied. This fee covers the administrative costs associated with setting up and managing your loan. The specific details of these fees will be clearly stated in your loan agreement. You are required to pay these charges in accordance with the terms specified.'
         ],
         [
             'title' => '5. Confidentiality',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Limitation of liability',
-            'content' => 'Solberg Grupo will not be liable for any indirect, special or consequential loss or damage arising out of the use of or inability to use our site or services, including loss of profits, loss data loss or business interruption, even if we have been advised of the possibility of such damage.'
+            'content' => 'AURELIS CAPITAL GROUP will not be liable for any indirect, special or consequential loss or damage arising out of the use of or inability to use our site or services, including loss of profits, loss data loss or business interruption, even if we have been advised of the possibility of such damage.'
         ],
         [
             'title' => '8. Changes to terms',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contact',
-            'content' => 'If you have any questions or concerns regarding these terms and conditions, please contact us at:<br><br>Solberg Grupo<br>Address: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@solberggrupo.site<br>Phone: +31 6 57341120 '
+            'content' => 'If you have any questions or concerns regarding these terms and conditions, please contact us at:<br><br>AURELIS CAPITAL GROUP<br>Address: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@solberggrupo.site<br>Phone: +31 6 57341120 '
         ],
     ],
 ];

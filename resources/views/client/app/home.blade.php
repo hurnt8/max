@@ -365,7 +365,7 @@
   <div class="h-card__top">
     <div class="h-card__brand">
       <i class="fas fa-landmark" style="font-size:.6rem;margin-right:.3rem"></i>
-     Solberg Grupo &nbsp;·&nbsp; {{ __('app.account_num') }}
+     AURELIS CAPITAL GROUP &nbsp;·&nbsp; {{ __('app.account_num') }}
     </div>
     <div class="h-card__chip" aria-hidden="true"></div>
   </div>

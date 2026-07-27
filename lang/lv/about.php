@@ -1,19 +1,19 @@
 <?php
 
 return [
-    'banner_title' => 'Iepazīstiet Solberg Grupo',
+    'banner_title' => 'Iepazīstiet AURELIS CAPITAL GROUP',
     'banner_subtitle' => 'Par mums',
     'banner_description' => 'Aizņemieties vienkāršāk ar elastīgiem aizdevuma risinājumiem, kas pielāgoti jūsu finansiālajām vajadzībām.',
 
-    'section1_title' => 'Kāpēc izvēlēties Solberg Grupo',
-    'section1_p1' => 'Solberg Grupo mēs stingri ticam, ka ikvienam pienākas iespēja piepildīt savus finansiālos sapņus. Kopš mūsu darbības sākuma esam apņēmušies nodrošināt elastīgus un pieejamus aizdevuma risinājumus, lai apmierinātu mūsu klientu dažādās vajadzības. Vai vēlaties finansēt personīgu projektu, iegādāties automašīnu vai attīstīt savu uzņēmumu — mums ir aizdevums, kas jums nepieciešams.',
+    'section1_title' => 'Kāpēc izvēlēties AURELIS CAPITAL GROUP',
+    'section1_p1' => 'AURELIS CAPITAL GROUP mēs stingri ticam, ka ikvienam pienākas iespēja piepildīt savus finansiālos sapņus. Kopš mūsu darbības sākuma esam apņēmušies nodrošināt elastīgus un pieejamus aizdevuma risinājumus, lai apmierinātu mūsu klientu dažādās vajadzības. Vai vēlaties finansēt personīgu projektu, iegādāties automašīnu vai attīstīt savu uzņēmumu — mums ir aizdevums, kas jums nepieciešams.',
     'section1_p2' => 'Mūsu pakalpojumi ir izstrādāti, lai nodrošinātu ērtu pieredzi ar vienkāršu un ātru pieteikšanās procesu. Mēs saprotam, ka katrs klients ir unikāls, tāpēc piedāvājam individuāli pielāgotus aizdevumus, kas atbilst jūsu konkrētajām vajadzībām. Turklāt mūsu personīgie konsultanti vienmēr ir gatavi jūs vadīt katrā solī, nodrošinot pilnvērtīgu atbalstu no sākuma līdz beigām.',
     'proposed' => 'Mēs piedāvājam:',
     'check1' => 'Individuāli pielāgotus aizdevumus atbilstoši jūsu konkrētajām vajadzībām.',
     'check2' => 'Personīgus konsultantus, kas palīdz jums katrā procesa posmā.',
     'check3' => 'Elastīgus atmaksas nosacījumus, kas pielāgojas jūsu finansiālajai situācijai',
     'check4' => 'Aizdevumus arī bez algas lapiņas uzrādīšanas.',
-    'section1_p3' => 'Solberg Grupo misija ir palīdzēt jums sasniegt savus finansiālos mērķus ar individuāli pielāgotiem aizdevuma risinājumiem. Pievienojieties mums jau šodien un uzziniet, kā mēs varam palīdzēt jums īstenot savus projektus.',
+    'section1_p3' => 'AURELIS CAPITAL GROUP misija ir palīdzēt jums sasniegt savus finansiālos mērķus ar individuāli pielāgotiem aizdevuma risinājumiem. Pievienojieties mums jau šodien un uzziniet, kā mēs varam palīdzēt jums īstenot savus projektus.',
     'btn' => 'Atrodiet sev ideālo aizdevumu',
 
     'faq_title' => 'Biežāk uzdotie jautājumi',

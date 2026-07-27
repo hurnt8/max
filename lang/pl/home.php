@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'general_title' => 'Solberg Grupo – Najlepsze kredyty online w Europie.',
+    'general_title' => 'AURELIS CAPITAL GROUP – Najlepsze kredyty online w Europie.',
     'hero_subtitle' => 'Bez skomplikowanych procedur, bez ukrytych opłat. Od 15 lat finansujemy projekty osobiste, nieruchomości, samochodowe i biznesowe z pełną przejrzystością i szybkością.',
 
     'slide_1' => [
@@ -34,10 +34,10 @@ return [
 
     'about' => [
         'exptitle' => 'lat doświadczenia',
-        'sectagline' => 'Witamy w Solberg Grupo',
+        'sectagline' => 'Witamy w AURELIS CAPITAL GROUP',
         'sectitle' => 'Kredyty osobiste spełniające Twoje marzenia',
         'text1' => 'Działamy w tej branży od 15 lat i oferujemy najlepsze usługi.',
-        'text2' => 'Solberg Grupo to Twoja zaufana platforma kredytowa z wyjątkową obsługą klienta. Jesteśmy zobowiązani do zapewniania prostych, bezpiecznych i szybkich rozwiązań finansowych.',
+        'text2' => 'AURELIS CAPITAL GROUP to Twoja zaufana platforma kredytowa z wyjątkową obsługą klienta. Jesteśmy zobowiązani do zapewniania prostych, bezpiecznych i szybkich rozwiązań finansowych.',
         'check1' => 'kredyt dla małych firm',
         'check2' => 'kredyt na studia za granicą',
         'check3' => 'szybki proces kredytowy',
@@ -127,7 +127,7 @@ return [
     'testimonials_certified_by' => 'Certyfikowane przez: Trustindex',
     'testimonials_months_ago' => '{1} 1 miesiąc temu|[2,4] :count miesiące temu|[5,*] :count miesięcy temu',
     'testimonial_1' => [
-        'quote'    => '„Starałem się o kredyt hipoteczny po kilku odmowach w polskich bankach. Solberg Grupo przeanalizowała moją sytuację rzetelnie i przyznała finansowanie w ciągu tygodnia. Oprocentowanie przerosło moje oczekiwania. Polecam z całego serca."',
+        'quote'    => '„Starałem się o kredyt hipoteczny po kilku odmowach w polskich bankach. AURELIS CAPITAL GROUP przeanalizowała moją sytuację rzetelnie i przyznała finansowanie w ciągu tygodnia. Oprocentowanie przerosło moje oczekiwania. Polecam z całego serca."',
         'name'     => 'Piotr Kowalski',
         'location' => 'Warszawa, Polska',
         'months_ago' => 1,
@@ -139,7 +139,7 @@ return [
         'months_ago' => 2,
     ],
     'testimonial_3' => [
-        'quote'    => '„Prowadziłem działalność gospodarczą i potrzebowałem kapitału na nowe urządzenia. Solberg Grupo oceniła moje realne przychody i przyznała kredyt firmowy w 48 godzin. Profesjonalizm na najwyższym poziomie."',
+        'quote'    => '„Prowadziłem działalność gospodarczą i potrzebowałem kapitału na nowe urządzenia. AURELIS CAPITAL GROUP oceniła moje realne przychody i przyznała kredyt firmowy w 48 godzin. Profesjonalizm na najwyższym poziomie."',
         'name'     => 'Marek Nowak',
         'location' => 'Gdańsk, Polska',
         'months_ago' => 2,
@@ -151,7 +151,7 @@ return [
         'months_ago' => 3,
     ],
     'testimonial_5' => [
-        'quote'    => '„Szukałem kredytu samochodowego i porównałem kilka ofert. Solberg Grupo zaoferowała najniższe RRSO i najprostszą procedurę. Auto odebrałem po tygodniu od złożenia wniosku. Bardzo polecam."',
+        'quote'    => '„Szukałem kredytu samochodowego i porównałem kilka ofert. AURELIS CAPITAL GROUP zaoferowała najniższe RRSO i najprostszą procedurę. Auto odebrałem po tygodniu od złożenia wniosku. Bardzo polecam."',
         'name'     => 'Tomasz Lewandowski',
         'location' => 'Poznań, Polska',
         'months_ago' => 4,
@@ -196,5 +196,5 @@ return [
         'placeholder' => 'Twój adres email',
         'button'      => 'Wyślij',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Wszelkie prawa zastrzeżone.',
+    'rights_reserved' => '©AURELIS CAPITAL GROUP. 2024. Wszelkie prawa zastrzeżone.',
 ];

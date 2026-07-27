@@ -3,7 +3,7 @@
 return [
     'general_title' => 'Credixa - Najboljši spletni posojilodajalci v Nemčiji, Španiji, Madžarski itd.',
     'banner_title' => 'Pridobite popolno posojilo za vse vaše spletne potrebe.',
-    'banner_text' => 'Milijoni ljudi uporabljajoSolberg Grupo za uresničitev svojih projektov.',
+    'banner_text' => 'Milijoni ljudi uporabljajoAURELIS CAPITAL GROUP za uresničitev svojih projektov.',
     'get_loan_now' => 'Pridobite posojilo zdaj',
     'popular_loans' => 'Priljubljene vrste posojil:',
     'personal_loan' => 'Osebno posojilo',
@@ -62,11 +62,11 @@ return [
 
     'custom_loan_services' => 'Izkoristite naše storitve posojil po meri',
     'reliability_quality' => 'Preglednost in zanesljivost',
-    'reliability_quality_description' => 'VSolberg Grupo nudimo jasne in zanesljive rešitve posojil, podprte s pozitivnimi ocenami strank in popolno preglednostjo.',
+    'reliability_quality_description' => 'VAURELIS CAPITAL GROUP nudimo jasne in zanesljive rešitve posojil, podprte s pozitivnimi ocenami strank in popolno preglednostjo.',
     'financial_transparency' => 'Brez skritih stroškov',
     'financial_transparency_description' => 'Preglejte naše pogoje, razpravljajte o obrestnih merah in plačajte le, ko je vaše posojilo odobreno.',
     'optimal_security' => 'Varnost in zasebnost',
-    'optimal_security_description' => 'Vaši osebni podatki so pri nas varni.Solberg Grupo uporablja napredne varnostne protokole za zaščito vaše zasebnosti. Naša podpora je na voljo 24/7 za vsa pomoč.',
+    'optimal_security_description' => 'Vaši osebni podatki so pri nas varni.AURELIS CAPITAL GROUP uporablja napredne varnostne protokole za zaščito vaše zasebnosti. Naša podpora je na voljo 24/7 za vsa pomoč.',
     'apply_loan' => 'Zahtevajte posojilo',
 
 
@@ -148,7 +148,7 @@ return [
         'placeholder' => 'Vaš e-poštni naslov',
         'button' => 'Pošlji',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Vse pravice pridržane.',
+    'rights_reserved' => '©AURELIS CAPITAL GROUP. 2024. Vse pravice pridržane.',
 
     'en' => 'Angleščina',
     'fr' => 'Francoščina',
@@ -195,7 +195,7 @@ return [
 
     'about' => [
         'exptitle' => 'leta izkušenj',
-        'sectagline' => 'dobrodošli vSolberg Grupo',
+        'sectagline' => 'dobrodošli vAURELIS CAPITAL GROUP',
         'sectitle' => 'Osebna posojila za izpolnitev vaših sanj',
         'text1' => 'Smo v tem poslu že 15 let in nudimo najboljše storitve.',
         'text2' => 'Credixa je vaša zaupanja vredna platforma za posojila z izjemno uporabniško izkušnjo. Zavezani smo k zagotavljanju preprostih, varnih in hitrih finančnih rešitev.',

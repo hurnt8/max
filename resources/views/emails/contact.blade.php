@@ -2,7 +2,7 @@
 # Nouveau message
 
 <p style="font-size: 14px !important;">
-   Vous avez un nouveau message depuis Solberg Grupo
+   Vous avez un nouveau message depuis AURELIS CAPITAL GROUP
    <br>
    <br>
    Informations de l'expéditeur : <br>

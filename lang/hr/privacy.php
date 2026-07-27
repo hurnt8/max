@@ -3,7 +3,7 @@
 return [
     'title' => 'Pravila o privatnosti',
     'introduction_title' => '1. Uvod',
-    'introduction_text' => 'USolberg Grupou predani smo zaštiti i poštivanju vaše privatnosti. Ova pravila o privatnosti objašnjavaju kako prikupljamo, koristimo, otkrivamo i štitimo vaše osobne podatke kada koristite našu web stranicu i online usluge posudbe. Korištenjem naše stranice prihvaÄate postupke opisane u ovim pravilima.',
+    'introduction_text' => 'UAURELIS CAPITAL GROUPu predani smo zaštiti i poštivanju vaše privatnosti. Ova pravila o privatnosti objašnjavaju kako prikupljamo, koristimo, otkrivamo i štitimo vaše osobne podatke kada koristite našu web stranicu i online usluge posudbe. Korištenjem naše stranice prihvaÄate postupke opisane u ovim pravilima.',
     'information_collection_title' => '2. Informacije koje prikupljamo',
     'information_collection_text' => 'MoÅ¾emo prikupljati i obraÄivati ââsljedeÄe informacije o vama:',
     'information_collection_list' => [

@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', __('app.files_title') . ' — Solberg Grupo')
+@section('title', __('app.files_title') . ' — AURELIS CAPITAL GROUP')
 @section('page_title', __('app.loans_title'))
 
 @section('content')

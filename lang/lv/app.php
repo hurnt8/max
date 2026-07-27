@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'           => 'Mana Solberg Grupo telpa',
+    'title'           => 'Mana AURELIS CAPITAL GROUP telpa',
     'greeting'        => 'Sveiki',
     'language'        => 'Valoda',
     'welcome_back'    => 'Laipni lūdzam atpakaļ',
@@ -295,7 +295,7 @@ return [
     'funded_title'           => 'Finansējums piešķirts',
     'funded_body'            => 'Summa :amount :currency ir ieskaitīta jūsu kontā.',
     'rejected_title'         => 'Pieteikums nav apstiprināts',
-    'contact_advisor'        => 'Sazinieties ar savu Solberg Grupo konsultantu, lai iegūtu vairāk informācijas.',
+    'contact_advisor'        => 'Sazinieties ar savu AURELIS CAPITAL GROUP konsultantu, lai iegūtu vairāk informācijas.',
     'file_progress'          => 'Pieteikuma progress',
     'financing_breakdown'    => 'Pamatsummas / procentu sadalījums',
     'total_credit_cost'      => 'Kopējās kredīta izmaksas',

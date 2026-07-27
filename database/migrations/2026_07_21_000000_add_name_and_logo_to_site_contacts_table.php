@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('site_contacts', function (Blueprint $table) {
-            $table->string('name')->default('Solberg Grupo')->after('id');
+            $table->string('name')->default('AURELIS CAPITAL GROUP')->after('id');
             $table->string('logo_light_path')->nullable()->after('name');
             $table->string('logo_dark_path')->nullable()->after('logo_light_path');
         });

@@ -3,7 +3,7 @@
 return [
     'title' => 'Politika zasebnosti',
     'introduction_title' => '1. Uvod',
-    'introduction_text' => 'VSolberg Grupo se zavezujemo, da bomo zaščitili in spoštovali vašo zasebnost. Ta politika zasebnosti pojasnjuje, kako zbiramo, uporabljamo, razkrivamo in zaščitimo vaše osebne informacije, ko uporabljate našo spletno stran in spletne posojilne storitve. Z uporabo naše strani sprejemate prakse, opisane v tej politiki.',
+    'introduction_text' => 'VAURELIS CAPITAL GROUP se zavezujemo, da bomo zaščitili in spoštovali vašo zasebnost. Ta politika zasebnosti pojasnjuje, kako zbiramo, uporabljamo, razkrivamo in zaščitimo vaše osebne informacije, ko uporabljate našo spletno stran in spletne posojilne storitve. Z uporabo naše strani sprejemate prakse, opisane v tej politiki.',
     'information_collection_title' => '2. Informacije, ki jih zbiramo',
     'information_collection_text' => 'Zbiramo in obdelujemo lahko naslednje informacije o vas:',
     'information_collection_list' => [

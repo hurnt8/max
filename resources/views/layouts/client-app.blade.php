@@ -6,7 +6,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Solberg Grupo">
+  <meta name="apple-mobile-web-app-title" content="AURELIS CAPITAL GROUP">
   <meta name="theme-color" content="#04203D">
   <meta name="description" content="Credixa — Espace client mobile">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -29,7 +29,7 @@
 
   {{-- Init theme AVANT le rendu pour éviter le flash blanc/noir.
        Clé renommée (v2) pour ignorer un ancien 'dark' déjà stocké côté client
-       et repartir sur le nouveau thème clair par défaut (charte Solberg Grupo). --}}
+       et repartir sur le nouveau thème clair par défaut (charte AURELIS CAPITAL GROUP). --}}
   <script>
     (function(){
       var t = localStorage.getItem('credixa-theme-v2') || 'light';
@@ -44,7 +44,7 @@
 
 {{-- ══ SPLASH SCREEN ══ --}}
 <div id="cxa-splash" aria-hidden="true">
-  <img src="/assets/images/logo-white.png" alt="Solberg Grupo" id="cxa-splash-logo">
+  <img src="/assets/images/logo-white.png" alt="AURELIS CAPITAL GROUP" id="cxa-splash-logo">
 </div>
 <style>
 #cxa-splash{

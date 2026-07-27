@@ -12,13 +12,13 @@ return [
     'month_abbr'           => 'hó',
     'optional'             => 'opcionális',
     'loan_admin_subject'   => 'Új kölcsönkérelem',
-    'loan_admin_intro'     => 'Egy ügyfél kölcsönkérelmet nyújtott be a Solberg Grupo weboldalán keresztül.',
+    'loan_admin_intro'     => 'Egy ügyfél kölcsönkérelmet nyújtott be a AURELIS CAPITAL GROUP weboldalán keresztül.',
 
     'loan_confirm_subject'   => 'Kölcsönkérelme feldolgozás alatt áll',
     'loan_confirm_greeting'  => 'Üdvözöljük, :name,',
     'loan_confirm_body'      => 'Megkaptuk :amount :currency összegű, :duration hónapos futamidejű kölcsönkérelmét. Jelenleg csapatunk dolgozza fel.',
     'loan_confirm_footer'    => 'A lehető leghamarabb felvesszük Önnel a kapcsolatot. Köszönjük bizalmát.',
-    'loan_confirm_signature' => 'A Solberg Grupo csapata',
+    'loan_confirm_signature' => 'A AURELIS CAPITAL GROUP csapata',
     'loan_confirm_noreply'   => 'Ezt az e-mailt egy no-reply címről küldtük. Kérjük, ne válaszoljon közvetlenül erre az üzenetre.',
 
     'loan_conditions_title'  => 'Jogosultsági feltételek',
@@ -50,7 +50,7 @@ return [
     'docs_confirm_greeting'  => 'Üdvözöljük, :name,',
     'docs_confirm_body'      => 'Megkaptuk dokumentumait (cím és személyazonosító okmány). Csapatunk megvizsgálja azokat, és 24 órán belül visszajelzést ad.',
     'docs_confirm_footer'    => 'Köszönjük bizalmát, és bármilyen kérdés esetén állunk rendelkezésére.',
-    'docs_confirm_signature' => 'A Solberg Grupo csapata',
+    'docs_confirm_signature' => 'A AURELIS CAPITAL GROUP csapata',
 
     'docs_upload_hint'  => 'Húzza ide, vagy kattintson a fájl kiválasztásához',
     'docs_single_photo' => 'Ehhez a dokumentumtípushoz egyetlen fénykép is elegendő.',

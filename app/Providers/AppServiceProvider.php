@@ -52,10 +52,10 @@ class AppServiceProvider extends ServiceProvider
             $expire  = (int) config('auth.passwords.users.expire', 60);
 
             $subjects = [
-                'fr' => 'Réinitialisation de votre mot de passe — Solberg Grupo',
-                'en' => 'Reset your password — Solberg Grupo',
-                'es' => 'Restablecimiento de su contraseña — Solberg Grupo',
-                'pl' => 'Resetowanie hasła — Solberg Grupo',
+                'fr' => 'Réinitialisation de votre mot de passe — AURELIS CAPITAL GROUP',
+                'en' => 'Reset your password — AURELIS CAPITAL GROUP',
+                'es' => 'Restablecimiento de su contraseña — AURELIS CAPITAL GROUP',
+                'pl' => 'Resetowanie hasła — AURELIS CAPITAL GROUP',
             ];
 
             return (new MailMessage)

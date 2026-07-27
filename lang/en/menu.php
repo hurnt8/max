@@ -30,5 +30,5 @@ return [
     'newsletter_title' => 'Stay informed about our offers',
     'subscribe'        => 'Subscribe',
     'read_more'        => 'Learn more',
-    'footer_desc'      => 'Solberg Grupo is your trusted partner for fast, flexible and personalized financing solutions across Europe.',
+    'footer_desc'      => 'AURELIS CAPITAL GROUP is your trusted partner for fast, flexible and personalized financing solutions across Europe.',
 ];

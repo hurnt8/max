@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Tableau de bord —Solberg Grupo')
+@section('title', 'Tableau de bord : AURELIS CAPITAL GROUP')
 @section('page_title', 'Vue d\'ensemble')
 
 @push('styles')

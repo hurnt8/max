@@ -4,10 +4,10 @@ $gender = $user->gender ?? 'N';
 
 $texts = [
     'fr' => [
-        'title'       => 'Activation de compte —Solberg Grupo Invest',
+        'title'       => 'Activation de compte : AURELIS CAPITAL GROUP Invest',
         'greeting'    => ['M' => 'Cher Monsieur', 'F' => 'Chère Madame', 'N' => 'Bonjour'],
         'subtitle'    => 'Définissez votre mot de passe pour activer votre accès',
-        'info_title'  => 'Votre compteSolberg Grupo Invest',
+        'info_title'  => 'Votre compteAURELIS CAPITAL GROUP Invest',
         'info_body'   => 'a été créé par votre conseiller. Choisissez un mot de passe sécurisé pour accéder à votre espace personnel.',
         'email_label' => 'Adresse email',
         'pw_label'    => 'Nouveau mot de passe',
@@ -21,10 +21,10 @@ $texts = [
         'strengths'   => ['', 'Très faible', 'Faible', 'Moyen', 'Fort', 'Très fort'],
     ],
     'en' => [
-        'title'       => 'Account Activation —Solberg Grupo Invest',
+        'title'       => 'Account Activation : AURELIS CAPITAL GROUP Invest',
         'greeting'    => ['M' => 'Dear Mr.', 'F' => 'Dear Ms.', 'N' => 'Hello'],
         'subtitle'    => 'Set your password to activate your account',
-        'info_title'  => 'YourSolberg Grupo Invest account',
+        'info_title'  => 'YourAURELIS CAPITAL GROUP Invest account',
         'info_body'   => 'was created by your advisor. Choose a secure password to access your personal space.',
         'email_label' => 'Email address',
         'pw_label'    => 'New password',
@@ -38,10 +38,10 @@ $texts = [
         'strengths'   => ['', 'Very weak', 'Weak', 'Fair', 'Strong', 'Very strong'],
     ],
     'es' => [
-        'title'       => 'Activación de cuenta —Solberg Grupo Invest',
+        'title'       => 'Activación de cuenta : AURELIS CAPITAL GROUP Invest',
         'greeting'    => ['M' => 'Estimado Sr.', 'F' => 'Estimada Sra.', 'N' => 'Hola'],
         'subtitle'    => 'Establezca su contraseña para activar su cuenta',
-        'info_title'  => 'Su cuenta deSolberg Grupo Invest',
+        'info_title'  => 'Su cuenta deAURELIS CAPITAL GROUP Invest',
         'info_body'   => 'fue creada por su asesor. Elija una contraseña segura para acceder a su espacio personal.',
         'email_label' => 'Correo electrónico',
         'pw_label'    => 'Nueva contraseña',
@@ -55,10 +55,10 @@ $texts = [
         'strengths'   => ['', 'Muy débil', 'Débil', 'Regular', 'Fuerte', 'Muy fuerte'],
     ],
     'pl' => [
-        'title'       => 'Aktywacja konta —Solberg Grupo Invest',
+        'title'       => 'Aktywacja konta : AURELIS CAPITAL GROUP Invest',
         'greeting'    => ['M' => 'Szanowny Panie', 'F' => 'Szanowna Pani', 'N' => 'Witaj'],
         'subtitle'    => 'Ustaw hasło, aby aktywować dostęp do konta',
-        'info_title'  => 'Twoje kontoSolberg Grupo Invest',
+        'info_title'  => 'Twoje kontoAURELIS CAPITAL GROUP Invest',
         'info_body'   => 'zostało utworzone przez Twojego doradcę. Wybierz bezpieczne hasło, aby uzyskać dostęp do swojego osobistego obszaru.',
         'email_label' => 'Adres e-mail',
         'pw_label'    => 'Nowe hasło',
@@ -267,7 +267,7 @@ a{text-decoration:none;color:inherit}
   <div class="logo-box">
     <img src="{{ asset('assets/images/logo-white-icon.png') }}"
          onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-         alt="Solberg Grupo">
+         alt="AURELIS CAPITAL GROUP">
     <span style="display:none">SG</span>
   </div>
 
@@ -356,7 +356,7 @@ a{text-decoration:none;color:inherit}
 
 </div>
 
-<div class="copy">&copy; {{ date('Y') }}Solberg Grupo Invest</div>
+<div class="copy">&copy; {{ date('Y') }}AURELIS CAPITAL GROUP Invest</div>
 
 <script>
 const strengths = @json($t['strengths']);

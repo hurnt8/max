@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Paramètres de prêt — Solberg Grupo')
+@section('title', 'Paramètres de prêt — AURELIS CAPITAL GROUP')
 @section('page_title', 'Paramètres de prêt')
 
 @section('content')

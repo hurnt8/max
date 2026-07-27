@@ -3,7 +3,7 @@
 return [
     'title' => 'Konfidencialitātes politika',
     'introduction_title' => '1. Ievads',
-    'introduction_text' => 'Solberg Grupo apņemas aizsargāt un cienīt jūsu privātumu. Šī konfidencialitātes politika izskaidro, kā mēs vācam, izmantojam, izpaužam un aizsargājam jūsu personas datus, kad izmantojat mūsu tīmekļa vietni un tiešsaistes aizdevumu pakalpojumus. Izmantojot mūsu vietni, jūs piekrītat šajā politikā aprakstītajai praksei.',
+    'introduction_text' => 'AURELIS CAPITAL GROUP apņemas aizsargāt un cienīt jūsu privātumu. Šī konfidencialitātes politika izskaidro, kā mēs vācam, izmantojam, izpaužam un aizsargājam jūsu personas datus, kad izmantojat mūsu tīmekļa vietni un tiešsaistes aizdevumu pakalpojumus. Izmantojot mūsu vietni, jūs piekrītat šajā politikā aprakstītajai praksei.',
     'information_collection_title' => '2. Informācija, ko mēs vācam',
     'information_collection_text' => 'Mēs varam vākt un apstrādāt šādu informāciju par jums:',
     'information_collection_list' => [
@@ -44,7 +44,7 @@ return [
     'contact_title' => '8. Kontakti',
     'contact_text' => 'Ja jums ir jautājumi, bažas vai pieprasījumi saistībā ar šo konfidencialitātes politiku vai to, kā mēs apstrādājam jūsu personas datus, lūdzu, sazinieties ar mums:',
     'contact_details' => [
-        'Solberg Grupo',
+        'AURELIS CAPITAL GROUP',
         'Adrese: Rua de Santo António 33, 7200-175, Portugāle',
         'E-pasts: contact@solberggrupo.eu',
         'Tālrunis: +31 6 57341120 ',

@@ -10,7 +10,7 @@ $texts = [
         'ignore'   => 'Si vous n\'êtes pas à l\'origine de cette demande, aucune action n\'est requise — votre mot de passe reste inchangé.',
         'fallback' => 'Si le bouton ne fonctionne pas, copiez ce lien dans votre navigateur :',
         'closing'  => 'Cordialement,',
-        'team'     => 'L\'équipe Solberg Grupo',
+        'team'     => 'L\'équipe AURELIS CAPITAL GROUP',
     ],
     'en' => [
         'title'    => 'Password reset',
@@ -22,7 +22,7 @@ $texts = [
         'ignore'   => 'If you did not request this, no further action is required — your password remains unchanged.',
         'fallback' => 'If the button does not work, copy this link into your browser:',
         'closing'  => 'Kind regards,',
-        'team'     => 'The Solberg Grupo team',
+        'team'     => 'The AURELIS CAPITAL GROUP team',
     ],
     'es' => [
         'title'    => 'Restablecimiento de contraseña',
@@ -34,7 +34,7 @@ $texts = [
         'ignore'   => 'Si no ha sido usted quien lo solicitó, no es necesaria ninguna acción — su contraseña no cambiará.',
         'fallback' => 'Si el botón no funciona, copie este enlace en su navegador:',
         'closing'  => 'Atentamente,',
-        'team'     => 'El equipo Solberg Grupo',
+        'team'     => 'El equipo AURELIS CAPITAL GROUP',
     ],
     'pl' => [
         'title'    => 'Resetowanie hasła',
@@ -46,7 +46,7 @@ $texts = [
         'ignore'   => 'Jeśli to nie Ty złożyłeś/aś tę prośbę, nie musisz nic robić — Twoje hasło pozostanie bez zmian.',
         'fallback' => 'Jeśli przycisk nie działa, skopiuj ten link do przeglądarki:',
         'closing'  => 'Z poważaniem,',
-        'team'     => 'Zespół Solberg Grupo',
+        'team'     => 'Zespół AURELIS CAPITAL GROUP',
     ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];

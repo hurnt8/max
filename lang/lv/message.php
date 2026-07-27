@@ -12,13 +12,13 @@ return [
     'month_abbr'           => 'mēn.',
     'optional'             => 'neobligāti',
     'loan_admin_subject'   => 'Jauns aizdevuma pieteikums',
-    'loan_admin_intro'     => 'Klients tikko iesniedza aizdevuma pieteikumu Solberg Grupo vietnē.',
+    'loan_admin_intro'     => 'Klients tikko iesniedza aizdevuma pieteikumu AURELIS CAPITAL GROUP vietnē.',
 
     'loan_confirm_subject'   => 'Jūsu aizdevuma pieteikums tiek izskatīts',
     'loan_confirm_greeting'  => 'Sveiki, :name,',
     'loan_confirm_body'      => 'Mēs esam saņēmuši jūsu aizdevuma pieteikumu par summu :amount :currency uz :duration mēnešiem. To pašlaik izskata mūsu komanda.',
     'loan_confirm_footer'    => 'Mēs ar jums sazināsimies pēc iespējas ātrāk. Paldies par uzticēšanos.',
-    'loan_confirm_signature' => 'Solberg Grupo komanda',
+    'loan_confirm_signature' => 'AURELIS CAPITAL GROUP komanda',
     'loan_confirm_noreply'   => 'Šis e-pasts ir nosūtīts no adreses, uz kuru netiek pieņemtas atbildes. Lūdzu, neatbildiet tieši uz šo ziņojumu.',
 
     'loan_conditions_title'  => 'Atbilstības nosacījumi',
@@ -50,7 +50,7 @@ return [
     'docs_confirm_greeting'  => 'Sveiki, :name,',
     'docs_confirm_body'      => 'Mēs esam saņēmuši jūsu dokumentus (adresi un personu apliecinošu dokumentu). Mūsu komanda tos izskatīs un sniegs atbildi 24 stundu laikā.',
     'docs_confirm_footer'    => 'Paldies par jūsu uzticēšanos. Mēs esam pieejami, ja jums rodas kādi jautājumi.',
-    'docs_confirm_signature' => 'Solberg Grupo komanda',
+    'docs_confirm_signature' => 'AURELIS CAPITAL GROUP komanda',
 
     'docs_upload_hint'  => 'Velciet un nometiet vai noklikšķiniet, lai izvēlētos failu',
     'docs_single_photo' => 'Šim dokumenta veidam pietiek ar vienu fotogrāfiju.',

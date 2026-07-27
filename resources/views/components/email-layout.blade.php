@@ -105,7 +105,7 @@ p.closing strong{color:#111827;font-size:.92rem}
   {{-- ── Footer ── --}}
   <div class="footer">
     <p>
-      &copy; {{ date('Y') }}Solberg Grupo Invest
+      &copy; {{ date('Y') }}AURELIS CAPITAL GROUP Invest
       @if($footerNote)
       &nbsp;·&nbsp; {{ $footerNote }}
       @endif

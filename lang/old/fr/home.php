@@ -3,7 +3,7 @@
 return [
     'general_title' => 'Credixa - Meilleurs prêteurs en ligne en Allemagne, Espagne, Houngrie etc.',
     'banner_title' => 'Obtenez le prêt parfait pour tous vos besoins en ligne.',
-    'banner_text' => 'Des millions de personnes utilisentSolberg Grupo pour réaliser leurs projets.',
+    'banner_text' => 'Des millions de personnes utilisentAURELIS CAPITAL GROUP pour réaliser leurs projets.',
     'get_loan_now' => 'Obtenez un prêt maintenant',
     'popular_loans' => 'Types de prêts populaires:',
     'personal_loan' => 'Prêt personnel',
@@ -62,11 +62,11 @@ return [
 
     'custom_loan_services' => 'Tirez profit de nos services de prêt sur mesure',
     'reliability_quality' => 'Transparence et Fiabilité',
-    'reliability_quality_description' => 'ChezSolberg Grupo, nous offrons des solutions de prêt claires et fiables, soutenues par des avis clients positifs et une transparence totale.',
+    'reliability_quality_description' => 'ChezAURELIS CAPITAL GROUP, nous offrons des solutions de prêt claires et fiables, soutenues par des avis clients positifs et une transparence totale.',
     'financial_transparency' => 'Aucun Coût Caché',
     'financial_transparency_description' => 'Examinez nos conditions, discutez des taux, et ne payez qu\'une fois votre prêt approuvé.',
     'optimal_security' => 'Sécurité et Confidentialité',
-    'optimal_security_description' => 'Vos données personnelles sont en sécurité avec nous.Solberg Grupo utilise des protocoles de sécurité avancés pour protéger votre vie privée. Notre support est disponible 24/7 pour toute assistance.',
+    'optimal_security_description' => 'Vos données personnelles sont en sécurité avec nous.AURELIS CAPITAL GROUP utilise des protocoles de sécurité avancés pour protéger votre vie privée. Notre support est disponible 24/7 pour toute assistance.',
     'apply_loan' => 'Demander un prêt',
 
     'total_loans_granted' => 'Total Prêts Accordés',
@@ -166,7 +166,7 @@ return [
         'placeholder' => 'Votre adresse e-mail',
         'button' => 'Envoyer',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Tous droits réservés.',
+    'rights_reserved' => '©AURELIS CAPITAL GROUP. 2024. Tous droits réservés.',
 
     'en' => 'English',
     'fr' => 'French',

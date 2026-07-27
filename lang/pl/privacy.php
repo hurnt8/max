@@ -3,7 +3,7 @@
 return [
     'title' => 'Polityka prywatności',
     'introduction_title' => '1. Wprowadzenie',
-    'introduction_text' => 'W Solberg Grupo zobowiązujemy się chronić i szanować Twoją prywatność. Niniejsza polityka prywatności wyjaśnia, w jaki sposób zbieramy, wykorzystujemy, ujawniamy i chronimy Twoje dane osobowe podczas korzystania z naszej strony internetowej i usług kredytowych online. Korzystając z naszej strony, akceptujesz praktyki opisane w niniejszej polityce.',
+    'introduction_text' => 'W AURELIS CAPITAL GROUP zobowiązujemy się chronić i szanować Twoją prywatność. Niniejsza polityka prywatności wyjaśnia, w jaki sposób zbieramy, wykorzystujemy, ujawniamy i chronimy Twoje dane osobowe podczas korzystania z naszej strony internetowej i usług kredytowych online. Korzystając z naszej strony, akceptujesz praktyki opisane w niniejszej polityce.',
     'information_collection_title' => '2. Informacje, które zbieramy',
     'information_collection_text' => 'Możemy zbierać i przetwarzać następujące informacje na Twój temat:',
     'information_collection_list' => [
@@ -44,7 +44,7 @@ return [
     'contact_title' => '8. Kontakt',
     'contact_text' => 'Jeśli masz pytania, wątpliwości lub prośby dotyczące niniejszej polityki prywatności lub sposobu, w jaki przetwarzamy Twoje dane osobowe, skontaktuj się z nami:',
     'contact_details' => [
-        'Solberg Grupo',
+        'AURELIS CAPITAL GROUP',
         'Adres: Rua de Santo António 33, 7200-175, Portugalia',
         'E-mail: contact@solberggrupo.site',
         'Telefon: +31 6 57341120 ',

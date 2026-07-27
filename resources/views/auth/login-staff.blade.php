@@ -11,7 +11,7 @@
 <link rel="manifest" href="/admin-manifest.json">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
-<title>{{ __('auth.staff_login_title') }} |Solberg Grupo</title>
+<title>{{ __('auth.staff_login_title') }} |AURELIS CAPITAL GROUP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -224,7 +224,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
     <div class="auth-left w-100">
 
       <div class="auth-left__logo">
-        <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="Solberg Grupo"></a>
+        <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="AURELIS CAPITAL GROUP"></a>
       </div>
 
       <div class="auth-left__body">
@@ -246,7 +246,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
       </div>
 
       <div class="auth-left__copy">
-        &copy; {{ date('Y') }}Solberg Grupo Invest &nbsp;&middot;&nbsp;
+        &copy; {{ date('Y') }}AURELIS CAPITAL GROUP Invest &nbsp;&middot;&nbsp;
         <a href="{{ url('/fr/terms') }}">CGU</a> &nbsp;&middot;&nbsp;
         <a href="{{ url('/fr/privacy') }}">Confidentialité</a>
       </div>
@@ -263,7 +263,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
         </a>
 
         <a href="{{ url('/') }}" class="auth-topbar__logo d-lg-none">
-          <img src="{{ asset('assets/images/logo-transparent-icon.png') }}" alt="Solberg Grupo">
+          <img src="{{ asset('assets/images/logo-transparent-icon.png') }}" alt="AURELIS CAPITAL GROUP">
         </a>
 
         @php
@@ -371,7 +371,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
       </div>
 
       <div class="auth-footer">
-        &copy; {{ date('Y') }}Solberg Grupo Invest &nbsp;&middot;&nbsp;
+        &copy; {{ date('Y') }}AURELIS CAPITAL GROUP Invest &nbsp;&middot;&nbsp;
         <a href="{{ url('/fr/terms') }}">CGU</a> &nbsp;&middot;&nbsp;
         <a href="{{ url('/fr/privacy') }}">Confidentialité</a>
       </div>

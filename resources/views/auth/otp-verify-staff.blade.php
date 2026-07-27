@@ -152,7 +152,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
   <div class="col-lg-5 d-none d-lg-flex">
     <div class="auth-left w-100">
       <div class="auth-left__logo">
-        <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="Solberg Grupo"></a>
+        <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="AURELIS CAPITAL GROUP"></a>
       </div>
       <div class="auth-left__body">
         <div class="staff-badge">
@@ -165,7 +165,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
         <h2 class="auth-left__title">{{ __('auth.otp_heading') }}</h2>
         <p class="auth-left__sub">{{ __('auth.otp_subtitle') }}</p>
       </div>
-      <div class="auth-left__copy">&copy; {{ date('Y') }} Solberg Grupo Invest</div>
+      <div class="auth-left__copy">&copy; {{ date('Y') }} AURELIS CAPITAL GROUP Invest</div>
     </div>
   </div>
 
@@ -177,7 +177,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
           <i class="fas fa-arrow-left"></i> {{ __('auth.otp_back') }}
         </a>
         <a href="{{ url('/') }}" class="auth-topbar__logo d-lg-none">
-          <img src="{{ asset('assets/images/logo-transparent-icon.png') }}" alt="Solberg Grupo">
+          <img src="{{ asset('assets/images/logo-transparent-icon.png') }}" alt="AURELIS CAPITAL GROUP">
         </a>
       </div>
 
@@ -219,7 +219,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
         </div>
       </div>
 
-      <div class="auth-footer">&copy; {{ date('Y') }} Solberg Grupo Invest</div>
+      <div class="auth-footer">&copy; {{ date('Y') }} AURELIS CAPITAL GROUP Invest</div>
     </div>
   </div>
 

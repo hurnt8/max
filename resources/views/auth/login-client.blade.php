@@ -6,14 +6,14 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Solberg Grupo">
+<meta name="apple-mobile-web-app-title" content="AURELIS CAPITAL GROUP">
 <meta name="theme-color" content="#F7F8F9">
 <link rel="manifest" href="{{ route('pwa.manifest') }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/images/icon-512.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
 <link rel="shortcut icon" href="/images/icon-192.png" type="image/png">
-<title>{{ __('auth.client_login_title') }} — Solberg Grupo</title>
+<title>{{ __('auth.client_login_title') }} — AURELIS CAPITAL GROUP</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -249,7 +249,7 @@ a{text-decoration:none;color:inherit}
 .fforgot{font-size:.78rem;font-weight:600;color:var(--gold2);transition:opacity .18s}
 .fforgot:hover{opacity:.75}
 
-/* Bouton primaire — marine (charte Solberg Grupo) */
+/* Bouton primaire — marine (charte AURELIS CAPITAL GROUP) */
 .fbtn{
   width:100%;padding:.95rem 1.5rem;border:none;border-radius:999px;
   font-size:.97rem;font-weight:700;font-family:'Montserrat',sans-serif;
@@ -381,7 +381,7 @@ a{text-decoration:none;color:inherit}
 <div id="ld" role="status" aria-label="Connexion en cours">
   <div class="ld-bar"></div>
   <div class="ld-logo">
-    <img src="/images/icon-192.png" alt="Solberg Grupo"
+    <img src="/images/icon-192.png" alt="AURELIS CAPITAL GROUP"
          style="width:48px;height:48px;object-fit:contain;border-radius:10px">
     <div class="ld-ring"></div>
   </div>
@@ -442,7 +442,7 @@ a{text-decoration:none;color:inherit}
       <div class="logo-box">
         <img src="{{ asset('assets/images/logo-white-icon.png') }}"
              onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-             alt="Solberg Grupo">
+             alt="AURELIS CAPITAL GROUP">
         <span style="display:none">SG</span>
       </div>
 
@@ -549,7 +549,7 @@ a{text-decoration:none;color:inherit}
     </button>
     <div class="pwa-inner">
       <div class="pwa-icon">
-        <img src="/images/icon-192.png" alt="Solberg Grupo">
+        <img src="/images/icon-192.png" alt="AURELIS CAPITAL GROUP">
       </div>
       <div class="pwa-text">
         <div class="pwa-title">{{ __('auth.pwa_install_title') }}</div>
@@ -586,7 +586,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <div class="pg-foot">
-    &copy; {{ date('Y') }} Solberg Grupo &nbsp;·&nbsp;
+    &copy; {{ date('Y') }} AURELIS CAPITAL GROUP &nbsp;·&nbsp;
     <a href="{{ url('/'.app()->getLocale().'/terms') }}">{{ __('menu.terms') }}</a> &nbsp;·&nbsp;
     <a href="{{ url('/'.app()->getLocale().'/privacy') }}">{{ __('menu.privacy') }}</a>
   </div>

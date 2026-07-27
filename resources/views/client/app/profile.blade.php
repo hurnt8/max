@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.profile_title') . ' —Solberg Grupo')
+@section('title', __('app.profile_title') . ' : AURELIS CAPITAL GROUP')
 @section('page_title', __('app.profile_title'))
 @section('back_btn', true)
 @section('back_url', route('client.app.home'))
@@ -207,7 +207,7 @@
     </div>
     <div style="flex:1;min-width:0">
       <div style="font-size:.875rem;font-weight:700;color:var(--ca-text)">{{ $advisor->name }}</div>
-      <div style="font-size:.7rem;color:var(--ca-text-3);margin-top:.1rem">Votre conseillerSolberg Grupo</div>
+      <div style="font-size:.7rem;color:var(--ca-text-3);margin-top:.1rem">Votre conseillerAURELIS CAPITAL GROUP</div>
     </div>
     @if($advisor->phone)
     <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $advisor->phone) }}"
@@ -248,7 +248,7 @@
 
 {{-- Version --}}
 <div style="text-align:center;padding:1.5rem;font-size:.7rem;color:var(--ca-text-3)">
- Solberg Grupo Mobile &nbsp;&bull;&nbsp; v2.0.0
+ AURELIS CAPITAL GROUP Mobile &nbsp;&bull;&nbsp; v2.0.0
 </div>
 
 @endsection

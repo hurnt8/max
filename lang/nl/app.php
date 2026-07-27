@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'           => 'Mijn Solberg Grupo omgeving',
+    'title'           => 'Mijn AURELIS CAPITAL GROUP omgeving',
     'greeting'        => 'Hallo',
     'language'        => 'Taal',
     'welcome_back'    => 'Welkom terug',
@@ -315,7 +315,7 @@ return [
     'funded_title'           => 'Financiering toegekend',
     'funded_body'            => 'Het bedrag van :amount :currency is op uw rekening gestort.',
     'rejected_title'         => 'Aanvraag niet aanvaard',
-    'contact_advisor'        => 'Neem contact op met uw adviseur van Solberg Grupo voor meer informatie.',
+    'contact_advisor'        => 'Neem contact op met uw adviseur van AURELIS CAPITAL GROUP voor meer informatie.',
     'file_progress'          => 'Voortgang van het dossier',
     'financing_breakdown'    => 'Verdeling kapitaal / rente',
     'total_credit_cost'      => 'Totale kredietkosten',

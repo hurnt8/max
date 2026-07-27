@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', $loan->reference . ' —Solberg Grupo')
+@section('title', $loan->reference . ' : AURELIS CAPITAL GROUP')
 @section('page_title', $loan->reference)
 @section('back_btn', true)
 @section('back_url', route('client.app.loans'))

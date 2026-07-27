@@ -3,7 +3,7 @@
 return [
     'title' => 'Politique de confidentialité',
     'introduction_title' => '1. Introduction',
-    'introduction_text' => 'ChezSolberg Grupo, nous nous engageons à protéger et à respecter votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations personnelles lorsque vous utilisez notre site web et nos services de prêt en ligne. En utilisant notre site, vous acceptez les pratiques décrites dans cette politique.',
+    'introduction_text' => 'ChezAURELIS CAPITAL GROUP, nous nous engageons à protéger et à respecter votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations personnelles lorsque vous utilisez notre site web et nos services de prêt en ligne. En utilisant notre site, vous acceptez les pratiques décrites dans cette politique.',
     'information_collection_title' => '2. Informations que nous collectons',
     'information_collection_text' => 'Nous pouvons collecter et traiter les informations suivantes vous concernant :',
     'information_collection_list' => [

@@ -3,7 +3,7 @@
 return [
     'general_title' => 'Credixa – Die besten Online-Kreditgeber in Deutschland, Spanien, Ungarn usw.',
     'banner_title' => 'Holen Sie sich den perfekten Kredit für alle Ihre Online-Bedürfnisse.',
-    'banner_text' => 'Millionen Menschen nutzenSolberg Grupo, um ihre Projekte zu realisieren.',
+    'banner_text' => 'Millionen Menschen nutzenAURELIS CAPITAL GROUP, um ihre Projekte zu realisieren.',
     'get_loan_now' => 'Jetzt einen Kredit aufnehmen',
     'popular_loans' => 'Beliebte Kreditarten:',
     'personal_loan' => 'Privatkredit',
@@ -62,11 +62,11 @@ return [
 
     'custom_loan_services' => 'Nutzen Sie unsere maßgeschneiderten Kreditdienstleistungen',
     'reliability_quality' => 'Transparenz und Zuverlässigkeit',
-    'reliability_quality_description' => 'BeiSolberg Grupo bieten wir klare und zuverlässige Kreditlösungen, gestützt auf positive Kundenbewertungen und vollständige Transparenz.',
+    'reliability_quality_description' => 'BeiAURELIS CAPITAL GROUP bieten wir klare und zuverlässige Kreditlösungen, gestützt auf positive Kundenbewertungen und vollständige Transparenz.',
     'financial_transparency' => 'Keine versteckten Kosten',
     'financial_transparency_description' => 'Überprüfen Sie unsere Bedingungen, besprechen Sie die Zinssätze und zahlen Sie erst, wenn Ihr Kredit genehmigt wurde.',
     'optimal_security' => 'Sicherheit und Datenschutz',
-    'optimal_security_description' => 'Ihre persönlichen Daten sind bei uns sicher.Solberg Grupo verwendet fortschrittliche Sicherheitsprotokolle, um Ihre Privatsphäre zu schützen. Unser Support steht Ihnen rund um die Uhr für jede Hilfe zur Verfügung.',
+    'optimal_security_description' => 'Ihre persönlichen Daten sind bei uns sicher.AURELIS CAPITAL GROUP verwendet fortschrittliche Sicherheitsprotokolle, um Ihre Privatsphäre zu schützen. Unser Support steht Ihnen rund um die Uhr für jede Hilfe zur Verfügung.',
     'apply_loan' => 'Darlehen beantragen',
 
     'total_loans_granted' => 'Gesamtsumme der gewährten Kredite',
@@ -166,7 +166,7 @@ return [
         'placeholder' => 'Ihre E-Mail-Adresse',
         'button' => 'Senden',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Alle Rechte vorbehalten.',
+    'rights_reserved' => '©AURELIS CAPITAL GROUP. 2024. Alle Rechte vorbehalten.',
 
     'en' => 'Englisch',
     'fr' => 'Französisch',

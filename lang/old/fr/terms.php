@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Introduction',
-            'content' => 'Bienvenue surSolberg Grupo. En utilisant notre site et nos services, vous acceptez de vous conformer et d\'être lié par les termes et conditions suivants. Veuillez lire attentivement ces termes avant d\'utiliser notre site ou de contracter un prêt avec nous.'
+            'content' => 'Bienvenue surAURELIS CAPITAL GROUP. En utilisant notre site et nos services, vous acceptez de vous conformer et d\'être lié par les termes et conditions suivants. Veuillez lire attentivement ces termes avant d\'utiliser notre site ou de contracter un prêt avec nous.'
         ],
         [
             'title' => '2. Utilisation du site',
@@ -17,7 +17,7 @@ return [
         ],
         [
             'title' => '4. Frais de contrat et d\'assurance',
-            'content' => 'Lors de la souscription d\'un prêt chezSolberg Grupo, des frais de contrat et d\'assurance peuvent être appliqués. Ces frais couvrent les coûts administratifs associés à la mise en place et à la gestion de votre prêt. Les détails spécifiques de ces frais seront clairement indiqués dans votre contrat de prêt. Vous êtes tenu de payer ces frais conformément aux modalités précisées.'
+            'content' => 'Lors de la souscription d\'un prêt chezAURELIS CAPITAL GROUP, des frais de contrat et d\'assurance peuvent être appliqués. Ces frais couvrent les coûts administratifs associés à la mise en place et à la gestion de votre prêt. Les détails spécifiques de ces frais seront clairement indiqués dans votre contrat de prêt. Vous êtes tenu de payer ces frais conformément aux modalités précisées.'
         ],
         [
             'title' => '5. Confidentialité',

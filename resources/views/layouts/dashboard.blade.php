@@ -20,7 +20,7 @@
 @endauth
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
-<title>@yield('title','Dashboard') —Solberg Grupo Invest</title>
+<title>@yield('title','Dashboard') : AURELIS CAPITAL GROUP Invest</title>
 <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="{{ asset('assets/vendors/fontawesome/css/all.min.css') }}">
 <style>
 /* ═══════════════════════════════════════════════
-  Solberg Grupo INVEST — DESIGN SYSTEM v2
+  AURELIS CAPITAL GROUP INVEST — DESIGN SYSTEM v2
    ═══════════════════════════════════════════════ */
 :root {
   --c-navy:       #04203D;
@@ -733,7 +733,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
 
   <div class="sidebar-brand">
     <a href="{{ route('home',['locale'=>app()->getLocale()]) }}">
-      <img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="Solberg Grupo">
+      <img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="AURELIS CAPITAL GROUP">
     </a>
   </div>
 

@@ -12,13 +12,13 @@ return [
     'month_abbr'           => 'mes',
     'optional'             => 'opcional',
     'loan_admin_subject'   => 'Nueva solicitud de préstamo',
-    'loan_admin_intro'     => 'Un cliente acaba de enviar una solicitud de préstamo a través del sitio web de Solberg Grupo.',
+    'loan_admin_intro'     => 'Un cliente acaba de enviar una solicitud de préstamo a través del sitio web de AURELIS CAPITAL GROUP.',
 
     'loan_confirm_subject'   => 'Su solicitud de préstamo está siendo procesada',
     'loan_confirm_greeting'  => 'Hola :name,',
     'loan_confirm_body'      => 'Hemos recibido su solicitud de préstamo por un importe de :amount :currency a lo largo de :duration meses. Actualmente está siendo procesada por nuestro equipo.',
     'loan_confirm_footer'    => 'Nos pondremos en contacto con usted a la mayor brevedad posible. Gracias por confiar en nosotros.',
-    'loan_confirm_signature' => 'El equipo de Solberg Grupo',
+    'loan_confirm_signature' => 'El equipo de AURELIS CAPITAL GROUP',
     'loan_confirm_noreply'   => 'Este correo fue enviado desde una dirección no-reply. Por favor no responda directamente a este mensaje.',
 
     'loan_conditions_title'  => 'Condiciones de elegibilidad',
@@ -50,7 +50,7 @@ return [
     'docs_confirm_greeting'  => 'Hola :name,',
     'docs_confirm_body'      => 'Hemos recibido sus documentos (dirección y documento de identidad). Nuestro equipo los revisará y le dará una respuesta en un plazo de 24 horas.',
     'docs_confirm_footer'    => 'Gracias por su confianza y quedamos a su disposición para cualquier pregunta.',
-    'docs_confirm_signature' => 'El equipo de Solberg Grupo',
+    'docs_confirm_signature' => 'El equipo de AURELIS CAPITAL GROUP',
 
     'docs_upload_hint'  => 'Arrastre y suelte o haga clic para elegir un archivo',
     'docs_single_photo' => 'Para este tipo de documento, basta con una sola foto.',

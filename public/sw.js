@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-  Solberg Grupo — Service Worker v10 (Solberg Grupo)
+  AURELIS CAPITAL GROUP — Service Worker v10 (AURELIS CAPITAL GROUP)
    Cache-first assets · Network-first HTML
    Push Notifications VAPID — design fintech pro
    ═══════════════════════════════════════════════════════════════ */

@@ -25,18 +25,18 @@ class SignedContractAcknowledgementMail extends Mailable
     public function envelope(): Envelope
     {
         $subjects = [
-            'fr' => 'Réception de votre contrat signé N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'pl' => 'Potwierdzenie otrzymania podpisanej umowy nr ' . $this->loan->reference,
-            'en' => 'Receipt of your signed contract N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'es' => 'Recepción de su contrato firmado N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'bg' => 'Получаване на вашия подписан договор №' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'hu' => 'Aláírt szerződésének beérkezése sz. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'it' => 'Ricezione del tuo contratto firmato N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'de' => 'Eingang Ihres unterschriebenen Vertrags Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'lt' => 'Jūsų pasirašytos sutarties Nr. ' . $this->loan->reference . ' gavimas — SOLBERG GRUPO',
-            'ro' => 'Primirea contractului dumneavoastră semnat nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'lv' => 'Jūsu parakstītā līguma Nr. ' . $this->loan->reference . ' saņemšana — SOLBERG GRUPO',
-            'nl' => 'Ontvangst van uw ondertekend contract nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'fr' => 'Réception de votre contrat signé N°' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'pl' => 'Potwierdzenie otrzymania podpisanej umowy nr ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'en' => 'Receipt of your signed contract N°' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'es' => 'Recepción de su contrato firmado N°' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'bg' => 'Получаване на вашия подписан договор №' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'hu' => 'Aláírt szerződésének beérkezése sz. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'it' => 'Ricezione del tuo contratto firmato N°' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'de' => 'Eingang Ihres unterschriebenen Vertrags Nr. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'lt' => 'Jūsų pasirašytos sutarties Nr. ' . $this->loan->reference . ' gavimas : AURELIS CAPITAL GROUP',
+            'ro' => 'Primirea contractului dumneavoastră semnat nr. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'lv' => 'Jūsu parakstītā līguma Nr. ' . $this->loan->reference . ' saņemšana : AURELIS CAPITAL GROUP',
+            'nl' => 'Ontvangst van uw ondertekend contract nr. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
         ];
 
         return new Envelope(subject: $subjects[$this->mailLocale] ?? $subjects['fr']);
