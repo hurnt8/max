@@ -196,7 +196,7 @@ return [
     'slide_1' => [
         'title' => ' 15 év tapasztalat · Engedélyes · Válasz 24 órán belül',
         'text1' => 'Finanszírozza összes projektjét,',
-        'text2' => 'akár 500 000 € 24 órán belül.',
+        'text2' => 'akár 5 000 000 € 24 órán belül.',
     ],
     'slide_2' => [
         'title' => 'Okos Hitelek a Világos Jövőért',

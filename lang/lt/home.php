@@ -196,7 +196,7 @@ return [
     'slide_1' => [
         'title' => ' 15 metų patirtis · Licencijuota · Atsakymas per 48h',
         'text1' => 'Finansuokite visus projektus,',
-        'text2' => 'iki 500 000 € per 48h.',
+        'text2' => 'iki 5 000 000 € per 48h.',
     ],
     'slide_2' => [
         'title' => 'Išmanios paskolos šviesiai ateičiai',

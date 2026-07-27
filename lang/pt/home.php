@@ -169,7 +169,7 @@ return [
     'slide_1' => [
         'title' => ' 15 anos de experiência · Autorizado · Resposta em 48h',
         'text1' => 'Financie todos os seus projetos,',
-        'text2' => 'até 500 000 € em 48h.',
+        'text2' => 'até 5 000 000 € em 48h.',
     ],
     'slide_2' => [
         'title' => 'Empréstimos Inteligentes para Futuros Brilhantes',

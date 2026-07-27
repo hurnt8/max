@@ -137,7 +137,7 @@
                         <div class="hero-trust__icon"><i class="fas fa-euro-sign"></i></div>
                         <div>
                             <div class="hero-trust__label">{{ __('home.total_loan_amount_granted') }}</div>
-                            <div class="hero-trust__value">500 000 €</div>
+                            <div class="hero-trust__value">5 000 000 €</div>
                         </div>
                     </div>
                     {{-- Carte 3 : expérience --}}

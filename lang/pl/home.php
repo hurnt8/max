@@ -7,7 +7,7 @@ return [
     'slide_1' => [
         'title' => ' 15 lat doświadczenia · Licencjonowany · Gwarantowana odpowiedź',
         'text1' => 'Sfinansuj wszystkie swoje projekty,',
-        'text2' => 'do 500 000 € w 48h.',
+        'text2' => 'do 5 000 000 € w 48h.',
     ],
     'slide_2' => [
         'title' => 'Inteligentne kredyty na świetlaną przyszłość',
@@ -27,7 +27,7 @@ return [
 
     'infos' => [
         'item1' => 'szybka akceptacja',
-        'item2' => '500 000+ klientów',
+        'item2' => '5 000 000+ klientów',
         'item3' => '6 walut do wyboru',
         'item4' => 'elastyczne płatności',
     ],
