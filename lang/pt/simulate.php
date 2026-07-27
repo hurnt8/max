@@ -17,10 +17,10 @@ return [
     'table' => 'Tabela de amortização:',
     'table_month' => 'Mês',
     'pay_table' => 'Pagamento mensal (€)',
-    'table_primal' => 'Principal (€)',
+    'table_primal' => 'Capital (€)',
     'table_interest' => 'Juros (€)',
     'table_solde' => 'Saldo restante (€)',
-    'terms' => 'Conditions d\'utilisation',
+    'terms' => 'Termos de utilização',
     'total' => 'Valor total do reembolso',
     'termos' => 'Termo de Utilização',
 ];

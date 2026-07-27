@@ -19,7 +19,7 @@ return [
     'terms' => 'Termos de utilização',
     'privacy' => 'Política de privacidade',
     'quick_links' => 'Links rápidos',
-    'addresses' => 'Adresses',
+    'addresses' => 'Moradas',
     'rights_reserved' => 'Todos os direitos reservados.',
     'email_placeholder' => 'O seu endereço de email',
     'newsletter_title' => 'Fique informado sobre as nossas ofertas',
