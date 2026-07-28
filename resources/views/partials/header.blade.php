@@ -8,8 +8,8 @@
 
         <!-- Logo -->
         <a href="{{ route('home', ['locale' => $locale]) }}" class="flex items-center gap-3 flex-shrink-0">
-            <img src="{{ $siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : asset('assets/images/logo-white-icon.png') }}" alt="{{ $siteContact->name }}" class="h-12 sm:h-14 lg:h-16 w-auto max-w-[180px] sm:max-w-[220px] object-contain logo-img logo-img--white transition-opacity duration-300">
-            <img src="{{ $siteContact->logo_light_path ? Storage::url($siteContact->logo_light_path) : asset('assets/images/logo-transparent-icon.png') }}" alt="{{ $siteContact->name }}" class="h-12 sm:h-14 lg:h-16 w-auto max-w-[180px] sm:max-w-[220px] object-contain logo-img logo-img--color transition-opacity duration-300">
+            <img src="{{ $siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : asset('assets/images/logo-white-icon.png') }}" alt="{{ $siteContact->name }}" class="h-14 sm:h-16 lg:h-16 w-auto max-w-[200px] sm:max-w-[240px] object-contain logo-img logo-img--white transition-opacity duration-300">
+            <img src="{{ $siteContact->logo_light_path ? Storage::url($siteContact->logo_light_path) : asset('assets/images/logo-transparent-icon.png') }}" alt="{{ $siteContact->name }}" class="h-14 sm:h-16 lg:h-16 w-auto max-w-[200px] sm:max-w-[240px] object-contain logo-img logo-img--color transition-opacity duration-300">
         </a>
 
         <!-- Desktop nav -->
