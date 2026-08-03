@@ -53,7 +53,7 @@ class AccountController extends Controller
             'note'   => 'nullable|string|max:255',
         ]);
 
-        $cur = $account->currency ?? config('credixa.default_currency');
+        $cur = $account->currency ?? \App\Models\Currency::defaultCode();
 
         DB::transaction(function () use ($account, $validated, $cur) {
             $before = (float) $account->balance;
@@ -94,7 +94,7 @@ class AccountController extends Controller
             'note'   => 'nullable|string|max:255',
         ]);
 
-        $cur    = $account->currency ?? config('credixa.default_currency');
+        $cur    = $account->currency ?? \App\Models\Currency::defaultCode();
         $before = (float) $account->balance;
 
         DB::transaction(function () use ($account, $validated, $before, $cur) {
@@ -123,7 +123,7 @@ class AccountController extends Controller
             );
         });
 
-        return back()->with('success', 'Compte débité de ' . number_format($validated['amount'], 2, ',', ' ') . ' ' . ($account->currency ?? config('credixa.default_currency')) . '.');
+        return back()->with('success', 'Compte débité de ' . number_format($validated['amount'], 2, ',', ' ') . ' ' . ($account->currency ?? \App\Models\Currency::defaultCode()) . '.');
     }
 
     private function authorizeAccount(User $client): void

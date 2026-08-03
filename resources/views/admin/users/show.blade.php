@@ -438,7 +438,7 @@
             <div class="col-md-4">
               <label class="form-label-pro">Devise</label>
               <select name="currency" class="form-control-pro">
-                @foreach(config('credixa.currencies') as $cur)
+                @foreach(\App\Models\Currency::codes() as $cur)
                 <option value="{{ $cur }}" {{ old('currency', $user->currency) === $cur ? 'selected' : '' }}>{{ $cur }}</option>
                 @endforeach
               </select>

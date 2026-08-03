@@ -89,7 +89,7 @@
 @php
   $iban = $user->bank_account ?? 'Non renseigné';
   $bic  = $user->bic ?? 'AURELIS CAPITAL GROUPFR';
-  $currency = $user->currency ?? config('credixa.default_currency');
+  $currency = $user->currency ?? \App\Models\Currency::defaultCode();
   $shareText = "IBAN : {$iban}\nBIC : {$bic}\nTitulaire : {$user->name}\nBanque :AURELIS CAPITAL GROUP Financial";
 @endphp
 

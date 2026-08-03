@@ -80,7 +80,7 @@
 <script>
 document.addEventListener('alpine:init', () => {
     Alpine.data('loanForm', () => ({
-        selCurrency: 'EUR',
+        selCurrency: '{{ \App\Models\Currency::defaultCode() }}',
         selAmount:   null,
         customAmt:   '',
         selDuration: null,
@@ -93,37 +93,15 @@ document.addEventListener('alpine:init', () => {
         monthAbbr:   "{{ __('message.month_abbr') }}",
         locale:      "{{ str_replace('_','-',app()->getLocale()) }}",
 
-        currencies: [
-            { code:'EUR', symbol:'€',   flag:'🇪🇺', name:'Euro'                    },
-            { code:'GBP', symbol:'£',   flag:'🇬🇧', name:'Livre sterling (GBP)'    },
-            { code:'CHF', symbol:'CHF', flag:'🇨🇭', name:'Franc suisse (CHF)'      },
-            { code:'NOK', symbol:'kr',  flag:'🇳🇴', name:'Couronne norvégienne (NOK)' },
-            { code:'SEK', symbol:'kr',  flag:'🇸🇪', name:'Couronne suédoise (SEK)' },
-            { code:'DKK', symbol:'kr',  flag:'🇩🇰', name:'Couronne danoise (DKK)'  },
-            { code:'PLN', symbol:'zł',  flag:'🇵🇱', name:'Złoty (PLN)'             },
-            { code:'CZK', symbol:'Kč',  flag:'🇨🇿', name:'Couronne tchèque (CZK)'  },
-            { code:'HUF', symbol:'Ft',  flag:'🇭🇺', name:'Forint (HUF)'            },
-            { code:'RON', symbol:'lei', flag:'🇷🇴', name:'Leu roumain (RON)'       },
-            { code:'BRL', symbol:'R$',  flag:'🇧🇷', name:'Real brésilien (BRL)'    },
-            { code:'PEN', symbol:'S/',  flag:'🇵🇪', name:'Sol péruvien (PEN)'      },
-        ],
+        currencies: @json($currencies->map(fn ($c) => [
+            'code'    => $c->code,
+            'symbol'  => $c->symbol,
+            'flag'    => $c->flag_emoji,
+            'name'    => $c->name,
+            'amounts' => $c->preset_amounts,
+        ])),
 
-        amountsByCurrency: {
-            EUR:[1000,3000,5000,10000,20000,50000,75000,95000],
-            GBP:[1000,2500,5000,10000,20000,40000,65000,80000],
-            CHF:[1000,3000,5000,10000,20000,50000,75000,95000],
-            NOK:[10000,30000,50000,100000,200000,500000,750000,950000],
-            SEK:[10000,30000,50000,100000,200000,500000,750000,950000],
-            DKK:[7000,20000,35000,75000,150000,375000,550000,700000],
-            PLN:[5000,10000,20000,50000,100000,200000,350000,500000],
-            CZK:[25000,75000,125000,250000,500000,1000000,1500000,2000000],
-            HUF:[500000,1000000,2000000,4000000,8000000,20000000,30000000,40000000],
-            RON:[5000,15000,25000,50000,100000,250000,375000,475000],
-            BRL:[6000,18000,30000,60000,120000,300000,450000,570000],
-            PEN:[4000,12000,20000,40000,80000,200000,300000,380000],
-        },
-
-        get amounts()  { return this.amountsByCurrency[this.selCurrency] || this.amountsByCurrency['EUR']; },
+        get amounts()  { return (this.currency && this.currency.amounts) || []; },
         get currency() { return this.currencies.find(c => c.code === this.selCurrency) || this.currencies[0]; },
 
         get amount() {

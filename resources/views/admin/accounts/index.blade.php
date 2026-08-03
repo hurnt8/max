@@ -7,7 +7,7 @@
   $totalBalance  = $clients->sum('balance');
   $positiveCount = $clients->where('balance', '>', 0)->count();
   $negativeCount = $clients->where('balance', '<', 0)->count();
-  $defaultCur    = config('credixa.default_currency');
+  $defaultCur    = \App\Models\Currency::defaultCode();
 @endphp
 
 {{-- Page header ── --}}

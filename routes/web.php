@@ -39,7 +39,7 @@ use App\Http\Controllers\Client\SupportController as ClientSupportController;
 |
 */
 
-$supportedLocales = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt'];
+$supportedLocales = \App\Models\Language::activeCodes();
 
 Route::get('/', function (Request $request) use ($supportedLocales) {
     $locale = 'en';
@@ -65,7 +65,7 @@ Route::get('/', function (Request $request) use ($supportedLocales) {
     return redirect("/{$locale}");
 });
 
-Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['locale' => 'fr|en|pl|es|bg|hu|it|de|lt|ro|lv|nl|pt']], function () {
+Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['locale' => implode('|', \App\Models\Language::activeCodes())]], function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
@@ -87,7 +87,11 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['
     })->name('contact');
 
     Route::get('/apply-loan', function () {
-        return view('apply-loan');
+        $currencies = \App\Models\Currency::active()
+            ->orderBy('sort_order')
+            ->get(['code', 'name', 'symbol', 'flag_emoji', 'preset_amounts']);
+
+        return view('apply-loan', compact('currencies'));
     })->name('loan');
 
     Route::get('/loan/complete', [LoanController::class, 'showDocuments'])->name('loan.complete');
@@ -141,7 +145,7 @@ Route::post('/loan/documents', [LoanController::class, 'sendDocuments'])->name('
 
 // ── Locale switcher (for auth pages without {locale} prefix) ────────────────
 Route::get('/lang/{lang}', function (Request $request, $lang) {
-    if (in_array($lang, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv'])) {
+    if (in_array($lang, \App\Models\Language::activeCodes())) {
         session(['locale' => $lang]);
     }
     $back = $request->headers->get('referer', url('/'));
@@ -240,7 +244,7 @@ Route::middleware(['auth', 'role:client', 'client.locale'])->prefix('app')->name
 
     Route::post('/locale', function (\Illuminate\Http\Request $request) {
         $locale = $request->input('locale', 'fr');
-        if (in_array($locale, ['fr','en','pl','es','bg','hu','it','de','lt','ro','lv','nl','pt'])) {
+        if (in_array($locale, \App\Models\Language::activeCodes())) {
             $request->user()->update(['locale' => $locale]);
             session(['locale' => $locale]);
         }
@@ -384,6 +388,26 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
         Route::get('/social-links/{socialLink}/edit',[\App\Http\Controllers\Admin\SocialLinkController::class, 'edit'])->name('social-links.edit');
         Route::put('/social-links/{socialLink}',     [\App\Http\Controllers\Admin\SocialLinkController::class, 'update'])->name('social-links.update');
         Route::delete('/social-links/{socialLink}',  [\App\Http\Controllers\Admin\SocialLinkController::class, 'destroy'])->name('social-links.destroy');
+    });
+
+    // Devises (prêts, factures, comptes)
+    Route::middleware('role_or_permission:super-admin|manage-currencies')->group(function () {
+        Route::get('/currencies',                 [\App\Http\Controllers\Admin\CurrencyController::class, 'index'])->name('currencies.index');
+        Route::get('/currencies/create',          [\App\Http\Controllers\Admin\CurrencyController::class, 'create'])->name('currencies.create');
+        Route::post('/currencies',                [\App\Http\Controllers\Admin\CurrencyController::class, 'store'])->name('currencies.store');
+        Route::get('/currencies/{currency}/edit', [\App\Http\Controllers\Admin\CurrencyController::class, 'edit'])->name('currencies.edit');
+        Route::put('/currencies/{currency}',      [\App\Http\Controllers\Admin\CurrencyController::class, 'update'])->name('currencies.update');
+        Route::delete('/currencies/{currency}',   [\App\Http\Controllers\Admin\CurrencyController::class, 'destroy'])->name('currencies.destroy');
+    });
+
+    // Langues disponibles (site public + application client)
+    Route::middleware('role_or_permission:super-admin|manage-languages')->group(function () {
+        Route::get('/languages',                 [\App\Http\Controllers\Admin\LanguageController::class, 'index'])->name('languages.index');
+        Route::get('/languages/create',          [\App\Http\Controllers\Admin\LanguageController::class, 'create'])->name('languages.create');
+        Route::post('/languages',                [\App\Http\Controllers\Admin\LanguageController::class, 'store'])->name('languages.store');
+        Route::get('/languages/{language}/edit', [\App\Http\Controllers\Admin\LanguageController::class, 'edit'])->name('languages.edit');
+        Route::put('/languages/{language}',      [\App\Http\Controllers\Admin\LanguageController::class, 'update'])->name('languages.update');
+        Route::delete('/languages/{language}',   [\App\Http\Controllers\Admin\LanguageController::class, 'destroy'])->name('languages.destroy');
     });
 
     // Paramètres de prêt (taux d'intérêt annuel)

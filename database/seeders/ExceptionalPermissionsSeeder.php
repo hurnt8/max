@@ -18,6 +18,8 @@ class ExceptionalPermissionsSeeder extends Seeder
         'manage-loan-settings'          => 'Paramètres de prêt',
         'manage-site-contacts'          => 'Coordonnées du site',
         'manage-social-links'           => 'Réseaux sociaux',
+        'manage-currencies'             => 'Devises',
+        'manage-languages'              => 'Langues',
     ];
 
     public function run(): void

@@ -158,7 +158,7 @@
 
 @section('content')
 @php
-  $currency = $invoice->currency ?? ($user->currency ?? config('credixa.default_currency', 'EUR'));
+  $currency = $invoice->currency ?? ($user->currency ?? \App\Models\Currency::defaultCode());
   $st       = $invoice->status;
 
   $statusTitles = [

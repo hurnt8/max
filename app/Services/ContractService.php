@@ -366,7 +366,7 @@ class ContractService
             '{notaire}'         => $loan->notaire ?? '',
             '{montant}'         => number_format((float)$loan->amount, 2, ',', ' '),
             '{montant_totalavecinteret}' => number_format((float)$loan->total_with_interest, 2, ',', ' '),
-            '{devise}'          => $loan->currency ?? config('credixa.default_currency'),
+            '{devise}'          => $loan->currency ?? \App\Models\Currency::defaultCode(),
             '{duree}'           => $loan->darly ?? '',
             '{mensualite}'      => number_format((float)$loan->monthly_payment, 2, ',', ' '),
             '{montant_mensualite}' => number_format((float)$loan->monthly_payment, 2, ',', ' '),

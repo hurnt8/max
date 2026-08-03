@@ -76,7 +76,7 @@
 </a>
 
 @php
-  $cur = $account->currency ?? config('credixa.default_currency');
+  $cur = $account->currency ?? \App\Models\Currency::defaultCode();
   $bal = (float) $account->balance;
   $balColor = $bal >= 0 ? '#4ade80' : '#f87171';
 @endphp

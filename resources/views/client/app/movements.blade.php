@@ -42,7 +42,7 @@
 </style>
 
 @php
-  $cur      = $user->currency ?? config('credixa.default_currency');
+  $cur      = $user->currency ?? \App\Models\Currency::defaultCode();
   $totalIn  = $merged->where('type','credit')->where('status','completed')->sum('amount');
   $totalOut = $merged->where('type','debit')->where('status','completed')->sum('amount');
 @endphp

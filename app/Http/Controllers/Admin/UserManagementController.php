@@ -128,7 +128,7 @@ class UserManagementController extends Controller
             'date_delivre'     => $data['date_delivre'] ?? null,
             'tax_number'       => $data['tax_number'] ?? null,
             'activity'         => $data['activity'] ?? null,
-            'currency'         => $data['currency'] ?? config('credixa.default_currency'),
+            'currency'         => $data['currency'] ?? \App\Models\Currency::defaultCode(),
             'locale'           => $data['locale'] ?? 'fr',
         ]);
 
