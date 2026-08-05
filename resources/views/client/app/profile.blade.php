@@ -168,7 +168,7 @@
       <div class="ca-settings-item__right" @click="toggle()">
         <i class="fas fa-chevron-right"></i>
       </div>
-      <div x-show="open" @click.outside="close()" x-transition
+      <div x-show="open" x-cloak @click.outside="close()" x-transition
            style="position:fixed;bottom:calc(var(--ca-nav-h) + 1rem);left:1.25rem;right:1.25rem;background:var(--ca-bg4);border:1px solid var(--ca-border);border-radius:var(--ca-radius-md);overflow:hidden;z-index:600;box-shadow:0 -8px 32px rgba(0,0,0,.4)">
         @foreach(['fr'=>'Francais','en'=>'English','pl'=>'Polski','es'=>'Espanol','bg'=>'Balgarski','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuviu','ro'=>'Romana','lv'=>'Latviesu','nl'=>'Nederlands','pt'=>'Portugues'] as $lc => $label)
         <form method="POST" action="{{ route('client.app.locale') }}">

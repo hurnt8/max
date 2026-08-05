@@ -225,7 +225,7 @@
   </div>
 </div>
 
-<script>window.AURELIS CAPITAL GROUP_VAPID_KEY = '{{ config("services.vapid.public_key") }}';</script>
+<script>window.CXA_VAPID_KEY = '{{ config("services.vapid.public_key") }}';</script>
 <script>
 (function () {
   const CSRF        = '{{ csrf_token() }}';
@@ -238,7 +238,7 @@
 
     // Si les clés VAPID ont changé, invalider l'ancienne souscription
     const storedVapid = localStorage.getItem('cxa_vapid_pub');
-    const currentVapid = window.AURELIS CAPITAL GROUP_VAPID_KEY || '';
+    const currentVapid = window.CXA_VAPID_KEY || '';
     if (storedVapid && storedVapid !== currentVapid) {
       const oldSub = await reg.pushManager.getSubscription();
       if (oldSub) {
@@ -311,7 +311,7 @@
 {{-- ══ Son & Polling notifications ══ --}}
 <script>
 // Synthese sonore Web Audio API (aucun fichier externe)
-window.AURELIS CAPITAL GROUPSound = (function () {
+window.CxaSound = (function () {
   let ctx = null;
   function ac() {
     if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -377,9 +377,9 @@ window.AURELIS CAPITAL GROUPSound = (function () {
 
       if (count > lastCount) {
         if (data.type === 'transfer') {
-          window.AURELIS CAPITAL GROUPSound.coin();
+          window.CxaSound.coin();
         } else {
-          window.AURELIS CAPITAL GROUPSound.bell();
+          window.CxaSound.bell();
         }
       }
       lastCount = count;

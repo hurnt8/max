@@ -19,7 +19,7 @@
       <button class="h-topbtn" @click="toggle()" title="{{ __('app.language') }}">
         <i class="fas fa-globe"></i>
       </button>
-      <div x-show="open" @click.outside="close()" x-transition
+      <div x-show="open" x-cloak @click.outside="close()" x-transition
            style="position:absolute;right:0;top:48px;background:var(--ca-bg4);border:1px solid var(--ca-border);border-radius:14px;min-width:144px;overflow:hidden;z-index:500;box-shadow:0 12px 40px rgba(0,0,0,.45)">
         @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','bg'=>'Български','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuvių','ro'=>'Română','lv'=>'Latviešu','nl'=>'Nederlands'] as $lc => $label)
         <form method="POST" action="{{ route('client.app.locale') }}">

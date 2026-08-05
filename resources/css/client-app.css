@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
 
+/* ── Cache les éléments x-show tant qu'Alpine.js n'a pas fini de s'initialiser
+      (évite le flash du menu déroulant visible avant hydratation) ──────────── */
+[x-cloak] { display: none !important; }
+
 /* ── Variables (clair, thème par défaut) ──────────────────────────── */
 :root {
   --ca-bg:          #F7F8F9;

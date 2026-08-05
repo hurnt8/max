@@ -8,7 +8,7 @@
     "src": "resources/css/app.css"
   },
   "resources/css/client-app.css": {
-    "file": "assets/client-app-e5e58294.css",
+    "file": "assets/client-app-8266435b.css",
     "isEntry": true,
     "src": "resources/css/client-app.css"
   },
@@ -23,7 +23,7 @@
     "src": "resources/js/app.js"
   },
   "resources/js/client-app.js": {
-    "file": "assets/client-app-541e95ea.js",
+    "file": "assets/client-app-72514acf.js",
     "imports": [
       "_chart-ad2aba2b.js"
     ],

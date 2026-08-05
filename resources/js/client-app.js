@@ -55,7 +55,7 @@ Alpine.data('keypad', (initial = '') => ({
 const PUSH_VAPID_LS_KEY = 'cxa_vapid_pub';
 
 function pushVapidKey() {
-    return window.AURELIS CAPITAL GROUP_VAPID_KEY || '';
+    return window.CXA_VAPID_KEY || '';
 }
 
 function vapidKeyChanged() {
