@@ -9,7 +9,7 @@
 <form method="POST" action="{{ route('client.app.notifications.read-all') }}" id="readAllForm">
   @csrf
   <button type="submit" style="background:none;border:none;font-size:.75rem;font-weight:700;color:var(--ca-teal-l);cursor:pointer;padding:.5rem .25rem;font-family:inherit;letter-spacing:.01em">
-    Tout lire
+    {{ __('app.mark_all_read') }}
   </button>
 </form>
 @endif
@@ -143,11 +143,11 @@
 @php
   $unreadCount = $notifications->whereNull('read_at')->count();
   $iconMap = [
-    'transfer'    => ['cls' => 'nx-ico--transfer', 'fa' => 'fas fa-paper-plane',   'pill' => 'nx-type--transfer', 'lbl' => 'Virement'],
-    'loan_update' => ['cls' => 'nx-ico--loan',     'fa' => 'fas fa-file-contract', 'pill' => 'nx-type--loan',     'lbl' => 'Dossier'],
-    'credit'      => ['cls' => 'nx-ico--credit',   'fa' => 'fas fa-circle-plus',   'pill' => 'nx-type--credit',   'lbl' => 'Crédit'],
-    'debit'       => ['cls' => 'nx-ico--debit',    'fa' => 'fas fa-circle-minus',  'pill' => 'nx-type--debit',    'lbl' => 'Débit'],
-    'system'      => ['cls' => 'nx-ico--system',   'fa' => 'fas fa-bell',          'pill' => 'nx-type--system',   'lbl' => 'Système'],
+    'transfer'    => ['cls' => 'nx-ico--transfer', 'fa' => 'fas fa-paper-plane',   'pill' => 'nx-type--transfer', 'lbl' => __('app.notif_transfer')],
+    'loan_update' => ['cls' => 'nx-ico--loan',     'fa' => 'fas fa-file-contract', 'pill' => 'nx-type--loan',     'lbl' => __('app.notif_loan_update')],
+    'credit'      => ['cls' => 'nx-ico--credit',   'fa' => 'fas fa-circle-plus',   'pill' => 'nx-type--credit',   'lbl' => __('app.notif_credit')],
+    'debit'       => ['cls' => 'nx-ico--debit',    'fa' => 'fas fa-circle-minus',  'pill' => 'nx-type--debit',    'lbl' => __('app.notif_debit')],
+    'system'      => ['cls' => 'nx-ico--system',   'fa' => 'fas fa-bell',          'pill' => 'nx-type--system',   'lbl' => __('app.notif_system')],
   ];
 @endphp
 
@@ -162,17 +162,17 @@
 {{-- Filter pills ── --}}
 <div class="nx-filters" x-data="{active:'all'}">
   <button class="nx-filter" :class="active==='all'?'active':''" @click="active='all';filterNotifs('all')">
-    <span>Toutes</span>
+    <span>{{ __('app.notif_filter_all') }}</span>
     <span class="nx-unread-count">{{ $notifications->count() }}</span>
   </button>
   @if($unreadCount > 0)
   <button class="nx-filter" :class="active==='unread'?'active':''" @click="active='unread';filterNotifs('unread')">
     <span class="nx-filter__dot"></span>
-    Non lues
+    {{ __('app.notif_filter_unread') }}
     <span class="nx-unread-count">{{ $unreadCount }}</span>
   </button>
   @endif
-  @foreach(['credit' => 'Crédits', 'debit' => 'Débits', 'transfer' => 'Virements', 'loan_update' => 'Dossiers'] as $type => $label)
+  @foreach(['credit' => __('app.notif_filter_credits'), 'debit' => __('app.notif_filter_debits'), 'transfer' => __('app.cat_transfers'), 'loan_update' => __('app.nav_loans')] as $type => $label)
     @if($notifications->where('type', $type)->isNotEmpty())
     <button class="nx-filter" :class="active==='{{ $type }}'?'active':''" @click="active='{{ $type }}';filterNotifs('{{ $type }}')">
       {{ $label }}
@@ -198,8 +198,8 @@
 
 @if($date !== $prevDate)
 <div class="nx-date-sep" data-filter-sep="{{ $n->type }}" data-unread="{{ $unread ? 'true' : 'false' }}">
-  @if($n->created_at->isToday()) Aujourd'hui
-  @elseif($n->created_at->isYesterday()) Hier
+  @if($n->created_at->isToday()) {{ __('app.mv_today') }}
+  @elseif($n->created_at->isYesterday()) {{ __('app.mv_yesterday') }}
   @else {{ $n->created_at->isoFormat('dddd D MMMM') }}
   @endif
 </div>

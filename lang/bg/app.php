@@ -224,6 +224,12 @@ return [
     'notif_transfer'       => 'Превод',
     'notif_loan_update'    => 'Досие',
     'notif_system'         => 'Система',
+    'notif_credit' => 'Кредит',
+    'notif_debit' => 'Дебит',
+    'notif_filter_all' => 'Всички',
+    'notif_filter_unread' => 'Непрочетени',
+    'notif_filter_credits' => 'Кредити',
+    'notif_filter_debits' => 'Дебити',
 
     // Заглавия и съдържание на известията
     'notif_transfer_approved'      => 'Преводът е одобрен',

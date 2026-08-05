@@ -224,6 +224,12 @@ return [
     'notif_transfer'       => 'Transfer',
     'notif_loan_update'    => 'File',
     'notif_system'         => 'System',
+    'notif_credit' => 'Credit',
+    'notif_debit' => 'Debit',
+    'notif_filter_all' => 'All',
+    'notif_filter_unread' => 'Unread',
+    'notif_filter_credits' => 'Credits',
+    'notif_filter_debits' => 'Debits',
 
     // Notification titles and bodies
     'notif_transfer_approved'      => 'Transfer approved',

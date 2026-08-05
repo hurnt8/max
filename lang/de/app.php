@@ -224,6 +224,12 @@ return [
     'notif_transfer'       => 'Überweisung',
     'notif_loan_update'    => 'Akte',
     'notif_system'         => 'System',
+    'notif_credit' => 'Gutschrift',
+    'notif_debit' => 'Belastung',
+    'notif_filter_all' => 'Alle',
+    'notif_filter_unread' => 'Ungelesen',
+    'notif_filter_credits' => 'Gutschriften',
+    'notif_filter_debits' => 'Belastungen',
 
     // Notification titles and bodies
     'notif_transfer_approved'      => 'Überweisung genehmigt',

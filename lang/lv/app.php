@@ -224,6 +224,12 @@ return [
     'notif_transfer'       => 'Pārskaitījums',
     'notif_loan_update'    => 'Pieteikums',
     'notif_system'         => 'Sistēma',
+    'notif_credit' => 'Kredīts',
+    'notif_debit' => 'Debets',
+    'notif_filter_all' => 'Visi',
+    'notif_filter_unread' => 'Nelasītas',
+    'notif_filter_credits' => 'Kredīti',
+    'notif_filter_debits' => 'Debeti',
 
     // Notification titles and bodies
     'notif_transfer_approved'      => 'Pārskaitījums apstiprināts',

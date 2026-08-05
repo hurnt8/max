@@ -224,6 +224,12 @@ return [
     'notif_transfer'       => 'Bonifico',
     'notif_loan_update'    => 'Pratica',
     'notif_system'         => 'Sistema',
+    'notif_credit' => 'Accredito',
+    'notif_debit' => 'Addebito',
+    'notif_filter_all' => 'Tutte',
+    'notif_filter_unread' => 'Non lette',
+    'notif_filter_credits' => 'Accrediti',
+    'notif_filter_debits' => 'Addebiti',
 
     // Titoli e testi delle notifiche
     'notif_transfer_approved'      => 'Bonifico approvato',

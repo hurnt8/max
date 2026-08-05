@@ -222,6 +222,12 @@ return [
     'notif_transfer'       => 'Transferencia',
     'notif_loan_update'    => 'Expediente',
     'notif_system'         => 'Sistema',
+    'notif_credit' => 'Crédito',
+    'notif_debit' => 'Débito',
+    'notif_filter_all' => 'Todas',
+    'notif_filter_unread' => 'No leídas',
+    'notif_filter_credits' => 'Créditos',
+    'notif_filter_debits' => 'Débitos',
 
     'notif_transfer_approved'      => 'Transferencia aprobada',
     'notif_transfer_approved_body' => 'Su transferencia :reference de :amount :currency a :name ha sido aprobada.',

@@ -224,6 +224,12 @@ return [
     'notif_transfer'       => 'Transfer',
     'notif_loan_update'    => 'Dosar',
     'notif_system'         => 'Sistem',
+    'notif_credit' => 'Credit',
+    'notif_debit' => 'Debit',
+    'notif_filter_all' => 'Toate',
+    'notif_filter_unread' => 'Necitite',
+    'notif_filter_credits' => 'Credite',
+    'notif_filter_debits' => 'Debite',
 
     // Notification titles and bodies
     'notif_transfer_approved'      => 'Transfer aprobat',

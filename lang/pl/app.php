@@ -222,6 +222,12 @@ return [
     'notif_transfer'       => 'Przelew',
     'notif_loan_update'    => 'Wniosek',
     'notif_system'         => 'System',
+    'notif_credit' => 'Uznanie',
+    'notif_debit' => 'Obciążenie',
+    'notif_filter_all' => 'Wszystkie',
+    'notif_filter_unread' => 'Nieprzeczytane',
+    'notif_filter_credits' => 'Uznania',
+    'notif_filter_debits' => 'Obciążenia',
 
     'notif_transfer_approved'      => 'Przelew zatwierdzony',
     'notif_transfer_approved_body' => 'Twoj przelew :reference na kwote :amount :currency do :name zostal zatwierdzony.',

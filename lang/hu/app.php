@@ -224,6 +224,12 @@ return [
     'notif_transfer'       => 'Átutalás',
     'notif_loan_update'    => 'Ügy',
     'notif_system'         => 'Rendszer',
+    'notif_credit' => 'Jóváírás',
+    'notif_debit' => 'Terhelés',
+    'notif_filter_all' => 'Összes',
+    'notif_filter_unread' => 'Olvasatlan',
+    'notif_filter_credits' => 'Jóváírások',
+    'notif_filter_debits' => 'Terhelések',
 
     // Értesítések címei és szövegei
     'notif_transfer_approved'      => 'Átutalás jóváhagyva',

@@ -13,6 +13,13 @@ $palettes = [
     'red'    => ['btn'=>'#B91C1C', 'code'=>'#B91C1C'],
 ];
 $p = $palettes[$accent] ?? $palettes['teal'];
+
+$siteContact = \App\Models\SiteContact::current();
+$emailLogo   = $siteContact->pwa_icon_path
+    ? \Illuminate\Support\Facades\Storage::url($siteContact->pwa_icon_path)
+    : ($siteContact->logo_dark_path
+        ? \Illuminate\Support\Facades\Storage::url($siteContact->logo_dark_path)
+        : url('images/icon-192.png'));
 @endphp
 <!DOCTYPE html>
 <html lang="fr">
@@ -87,7 +94,7 @@ p.closing strong{color:#111827;font-size:.92rem}
   {{-- ── Header ── --}}
   <div class="hdr">
     <div class="logo-outer">
-      <img src="{{ url('images/icon-192.png') }}" alt="AURELIS CAPITAL GROUP" width="60" height="60">
+      <img src="{{ $emailLogo }}" alt="{{ $siteContact->name }}" width="60" height="60">
     </div>
     <h1 class="hdr-title">{{ $title }}</h1>
     @if($subtitle)

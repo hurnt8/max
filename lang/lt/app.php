@@ -224,6 +224,12 @@ return [
     'notif_transfer'       => 'Pervedimas',
     'notif_loan_update'    => 'Byla',
     'notif_system'         => 'Sistema',
+    'notif_credit' => 'Kreditas',
+    'notif_debit' => 'Debetas',
+    'notif_filter_all' => 'Visi',
+    'notif_filter_unread' => 'Neskaityti',
+    'notif_filter_credits' => 'Kreditai',
+    'notif_filter_debits' => 'Debetai',
 
     // Notification titles and bodies
     'notif_transfer_approved'      => 'Pervedimas patvirtintas',
