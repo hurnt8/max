@@ -87,10 +87,13 @@
 @endpush
 
 @php
-  $iban = $user->bank_account ?? 'Non renseigné';
-  $bic  = $user->bic ?? 'AURELIS CAPITAL GROUPFR';
-  $currency = $user->currency ?? config('credixa.default_currency');
-  $shareText = "IBAN : {$iban}\nBIC : {$bic}\nTitulaire : {$user->name}\nBanque :AURELIS CAPITAL GROUP Financial";
+  $siteContact = \App\Models\SiteContact::current();
+  $brand     = $siteContact->name;
+  $bankName  = $brand . ' Financial';
+  $iban      = $user->bank_account ?? __('app.not_provided');
+  $bic       = $user->bic ?? strtoupper(\Illuminate\Support\Str::slug($brand, '')) . 'FR';
+  $currency  = $user->currency ?? config('credixa.default_currency');
+  $shareText = __('app.receive_iban') . " : {$iban}\n" . __('app.receive_bic') . " : {$bic}\n" . __('app.receive_name') . " : {$user->name}\n" . __('app.receive_bank') . " : {$bankName}";
 @endphp
 
 {{-- Hero ── --}}
@@ -115,9 +118,9 @@
   @foreach([
     ['fa-building-columns', __('app.receive_bic'),  $bic],
     ['fa-user',             __('app.receive_name'), $user->name],
-    ['fa-landmark',         __('app.receive_bank'), 'AURELIS CAPITAL GROUP Financial'],
-    ['fa-coins',            'Devise',               $currency],
-    ['fa-envelope',         'Email',                $user->email],
+    ['fa-landmark',         __('app.receive_bank'), $bankName],
+    ['fa-coins',            __('app.currency_label'), $currency],
+    ['fa-envelope',         __('auth.email'),       $user->email],
   ] as [$icon, $label, $val])
   <div class="rcv-row">
     <div class="rcv-row__left">
@@ -133,14 +136,14 @@
 <div style="margin:.875rem 1.25rem;padding:.75rem 1rem;background:rgba(27,138,122,.06);border:1px solid rgba(27,138,122,.18);border-radius:14px;display:flex;align-items:flex-start;gap:.5rem">
   <i class="fas fa-circle-info" style="color:var(--ca-teal-l);font-size:.8rem;margin-top:.1rem;flex-shrink:0"></i>
   <span style="font-size:.75rem;color:var(--ca-text-3);line-height:1.5">
-    Partagez ces coordonnées bancaires pour recevoir des fonds directement sur votre compteAURELIS CAPITAL GROUP.
+    {{ __('app.receive_notice', ['brand' => $brand]) }}
   </span>
 </div>
 
 {{-- Actions ── --}}
 <div class="ca-btn-wrap">
   <button class="ca-btn ca-btn--primary"
-          onclick="if(navigator.share){navigator.share({title:'Mes coordonnéesAURELIS CAPITAL GROUP',text:`{{ addslashes($shareText) }}`}).catch(()=>{})}else{copyIban(null,'{{ addslashes($shareText) }}',true)}">
+          onclick="if(navigator.share){navigator.share({title:'{{ addslashes(__('app.receive_share_title', ['brand' => $brand])) }}',text:`{{ addslashes($shareText) }}`}).catch(()=>{})}else{copyIban(null,'{{ addslashes($shareText) }}',true)}">
     <i class="fas fa-share-nodes"></i> {{ __('app.share_details') }}
   </button>
 </div>
@@ -149,7 +152,7 @@
 
 <div class="ca-btn-wrap" style="padding-top:0">
   <a href="{{ route('client.app.transfers') }}" class="ca-btn ca-btn--ghost">
-    <i class="fas fa-arrow-left"></i> Retour aux virements
+    <i class="fas fa-arrow-left"></i> {{ __('app.back_to_transfers') }}
   </a>
 </div>
 
@@ -162,7 +165,7 @@ function copyIban(btn, text, silent) {
     if (btn) {
       btn.classList.add('rcv-copy-btn--ok');
       document.getElementById('copyIcon').className = 'fas fa-check';
-      document.getElementById('copyTxt').textContent = 'Copié !';
+      document.getElementById('copyTxt').textContent = '{{ __("app.copied") }}';
       setTimeout(() => {
         btn.classList.remove('rcv-copy-btn--ok');
         document.getElementById('copyIcon').className = 'fas fa-copy';

@@ -63,7 +63,7 @@
 
 {{-- Actions rapides --}}
 <div class="ca-settings-group">
-  <div class="ca-settings-label">{{ __('app.account_settings') }}</div>
+  <div class="ca-settings-label">{{ __('app.quick_actions') }}</div>
   <div class="ca-settings-list">
     <a href="{{ route('client.app.profile.edit') }}" class="ca-settings-item" style="text-decoration:none">
       <div class="ca-settings-item__icon" style="background:rgba(27,138,122,.18);color:var(--ca-teal-l)">
@@ -101,12 +101,12 @@
       <div class="ca-settings-item__text">
         @php $supportUnread = \App\Models\SupportMessage::where('client_id', Auth::id())->where('sender_type','admin')->whereNull('read_at')->count(); @endphp
         <div class="ca-settings-item__label" style="display:flex;align-items:center;gap:.5rem">
-          Support
+          {{ __('app.support_title') }}
           @if($supportUnread > 0)
           <span style="min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--ca-purple);color:#fff;font-size:.6rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center">{{ $supportUnread }}</span>
           @endif
         </div>
-        <div class="ca-settings-item__sub">Contacter votre conseiller</div>
+        <div class="ca-settings-item__sub">{{ __('app.contact_your_advisor') }}</div>
       </div>
       <div class="ca-settings-item__right"><i class="fas fa-chevron-right"></i></div>
     </a>
@@ -126,7 +126,7 @@
       </div>
       <div class="ca-settings-item__text">
         <div class="ca-settings-item__label">{{ __('app.notifications') }}</div>
-        <div class="ca-settings-item__sub" x-show="blocked" style="color:var(--ca-negative);font-size:.68rem">Bloquées dans les paramètres du navigateur</div>
+        <div class="ca-settings-item__sub" x-show="blocked" style="color:var(--ca-negative);font-size:.68rem">{{ __('app.push_denied') }}</div>
       </div>
       <div class="ca-settings-item__right">
         <label class="ca-toggle" @click.prevent="toggle()">
@@ -145,7 +145,7 @@
       </div>
       <div class="ca-settings-item__text">
         <div class="ca-settings-item__label">{{ __('app.dark_mode') }}</div>
-        <div class="ca-settings-item__sub" x-text="isDark ? 'Dark' : 'Light'"></div>
+        <div class="ca-settings-item__sub" x-text="isDark ? '{{ __('app.theme_dark_label') }}' : '{{ __('app.theme_light_label') }}'"></div>
       </div>
       <div class="ca-settings-item__right">
         <label class="ca-toggle">
@@ -196,7 +196,7 @@
 @endphp
 @if($advisor)
 <div class="ca-settings-group">
-  <div class="ca-settings-label">Mon conseiller</div>
+  <div class="ca-settings-label">{{ __('app.loan_advisor') }}</div>
   <div style="margin:0 1.25rem;background:var(--ca-bg3);border:1px solid var(--ca-border);border-radius:var(--ca-radius-md);padding:1rem 1.125rem;display:flex;align-items:center;gap:.875rem">
     <div style="width:46px;height:46px;border-radius:50%;flex-shrink:0;
       background:linear-gradient(135deg,rgba(27,138,122,.35),rgba(27,138,122,.12));
@@ -207,7 +207,7 @@
     </div>
     <div style="flex:1;min-width:0">
       <div style="font-size:.875rem;font-weight:700;color:var(--ca-text)">{{ $advisor->name }}</div>
-      <div style="font-size:.7rem;color:var(--ca-text-3);margin-top:.1rem">Votre conseillerAURELIS CAPITAL GROUP</div>
+      <div style="font-size:.7rem;color:var(--ca-text-3);margin-top:.1rem">{{ __('app.advisor_subtitle') }}</div>
     </div>
     @if($advisor->phone)
     <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $advisor->phone) }}"
@@ -222,7 +222,7 @@
     @else
     <div style="font-size:.72rem;color:var(--ca-text-3);text-align:center;line-height:1.4">
       <i class="fas fa-phone-slash" style="display:block;margin-bottom:.25rem;opacity:.4"></i>
-      Non défini
+      {{ __('app.not_provided') }}
     </div>
     @endif
   </div>
@@ -247,8 +247,9 @@
 </div>
 
 {{-- Version --}}
+@php $siteContact = \App\Models\SiteContact::current(); @endphp
 <div style="text-align:center;padding:1.5rem;font-size:.7rem;color:var(--ca-text-3)">
- AURELIS CAPITAL GROUP Mobile &nbsp;&bull;&nbsp; v2.0.0
+ {{ $siteContact->name }} Mobile &nbsp;&bull;&nbsp; v2.0.0
 </div>
 
 @endsection
