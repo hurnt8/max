@@ -250,6 +250,7 @@ Route::middleware(['auth', 'role:client', 'client.locale'])->prefix('app')->name
 Route::get('/manifest.json',       [ClientAppController::class, 'manifest'])->name('pwa.manifest');
 Route::get('/admin-manifest.json', [ClientAppController::class, 'adminManifest'])->name('pwa.admin-manifest');
 Route::get('/sw.js',               [ClientAppController::class, 'serviceWorker'])->name('pwa.sw');
+Route::get('/pwa-icon/{size}/{purpose}.png', [ClientAppController::class, 'pwaIconAsset'])->name('pwa.icon');
 
 Route::get('/storage/{path}', function (string $path) {
     $file = storage_path('app/public/' . $path);

@@ -400,10 +400,7 @@ class AppController extends Controller
     {
         $siteContact = SiteContact::current();
         $brandName   = $siteContact->name;
-        $icon        = $siteContact->pwa_icon_path ? Storage::url($siteContact->pwa_icon_path) : null;
-        $iconTouch   = $icon ?? '/images/apple-touch-icon.png';
-        $icon192     = $icon ?? '/images/icon-192.png';
-        $icon512     = $icon ?? '/images/icon-512.png';
+        [$iconTouch, $icon192, $icon192msk, $icon512, $icon512msk] = $this->pwaIconSet($siteContact);
 
         $data = [
             'name'             => $brandName . ' — Espace Client',
@@ -418,11 +415,11 @@ class AppController extends Controller
             'lang'             => app()->getLocale(),
             'categories'       => ['finance', 'business'],
             'icons'            => [
-                ['src' => $iconTouch, 'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => $icon192,   'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => $icon192,   'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
-                ['src' => $icon512,   'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => $icon512,   'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => $iconTouch,   'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon192,     'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon192msk,  'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => $icon512,     'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon512msk,  'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
             ],
             'shortcuts' => [
                 [
@@ -459,10 +456,7 @@ class AppController extends Controller
     {
         $siteContact = SiteContact::current();
         $brandName   = $siteContact->name;
-        $icon        = $siteContact->pwa_icon_path ? Storage::url($siteContact->pwa_icon_path) : null;
-        $iconTouch   = $icon ?? '/images/apple-touch-icon.png';
-        $icon192     = $icon ?? '/images/icon-192.png';
-        $icon512     = $icon ?? '/images/icon-512.png';
+        [$iconTouch, $icon192, $icon192msk, $icon512, $icon512msk] = $this->pwaIconSet($siteContact);
 
         $data = [
             'name'             => $brandName . ' — Administration',
@@ -477,11 +471,11 @@ class AppController extends Controller
             'lang'             => app()->getLocale(),
             'categories'       => ['finance', 'business'],
             'icons'            => [
-                ['src' => $iconTouch, 'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => $icon192,   'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => $icon192,   'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
-                ['src' => $icon512,   'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => $icon512,   'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => $iconTouch,  'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon192,    'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon192msk, 'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => $icon512,    'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => $icon512msk, 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
             ],
             'shortcuts' => [
                 [
@@ -504,6 +498,99 @@ class AppController extends Controller
         return response()->json($data, 200, [
             'Content-Type'  => 'application/manifest+json',
             'Cache-Control' => 'public, max-age=3600',
+        ]);
+    }
+
+    /**
+     * Retourne les 5 URLs d'icônes du manifeste (180 any, 192 any, 192 maskable,
+     * 512 any, 512 maskable). Sans icône PWA personnalisée, on sert directement
+     * les fichiers statiques (déjà aux bonnes dimensions). Avec une icône
+     * personnalisée, on génère des variantes réellement redimensionnées via
+     * /pwa-icon/{size}/{purpose} — l'ancien code déclarait 3 tailles différentes
+     * pour un seul et même fichier, ce qui n'est jamais la bonne taille réelle
+     * (source connue de plantages du "WebAPK" Android à l'installation/ouverture).
+     */
+    private function pwaIconSet(SiteContact $siteContact): array
+    {
+        $hasCustom = $siteContact->pwa_icon_path && Storage::disk('public')->exists($siteContact->pwa_icon_path);
+
+        if (!$hasCustom) {
+            return [
+                '/images/apple-touch-icon.png',
+                '/images/icon-192.png',
+                '/images/icon-192.png',
+                '/images/icon-512.png',
+                '/images/icon-512.png',
+            ];
+        }
+
+        return [
+            route('pwa.icon', ['size' => 180, 'purpose' => 'any']),
+            route('pwa.icon', ['size' => 192, 'purpose' => 'any']),
+            route('pwa.icon', ['size' => 192, 'purpose' => 'maskable']),
+            route('pwa.icon', ['size' => 512, 'purpose' => 'any']),
+            route('pwa.icon', ['size' => 512, 'purpose' => 'maskable']),
+        ];
+    }
+
+    /**
+     * Sert l'icône PWA personnalisée redimensionnée à la taille demandée.
+     * En "maskable", le logo est réduit dans une zone de sécurité centrale
+     * (~66%) sur un fond plein, pour éviter que le masque adaptatif d'Android
+     * ne rogne le contenu important.
+     */
+    public function pwaIconAsset(int $size, string $purpose)
+    {
+        abort_unless(in_array($size, [180, 192, 512], true), 404);
+        abort_unless(in_array($purpose, ['any', 'maskable'], true), 404);
+
+        $siteContact = SiteContact::current();
+        if (!$siteContact->pwa_icon_path || !Storage::disk('public')->exists($siteContact->pwa_icon_path)) {
+            abort(404);
+        }
+
+        $srcPath = Storage::disk('public')->path($siteContact->pwa_icon_path);
+        $info    = @getimagesize($srcPath);
+        if (!$info) {
+            abort(404);
+        }
+
+        $src = match ($info['mime']) {
+            'image/png'  => @imagecreatefrompng($srcPath),
+            'image/jpeg' => @imagecreatefromjpeg($srcPath),
+            'image/webp' => function_exists('imagecreatefromwebp') ? @imagecreatefromwebp($srcPath) : null,
+            'image/gif'  => @imagecreatefromgif($srcPath),
+            default      => null,
+        };
+        if (!$src) {
+            abort(404);
+        }
+
+        $canvas = imagecreatetruecolor($size, $size);
+        imagesavealpha($canvas, true);
+
+        if ($purpose === 'maskable') {
+            // Fond plein (thème sombre de l'app) — jamais de transparence sur un maskable
+            $bg = imagecolorallocate($canvas, 7, 26, 51); // #071A33
+            imagefill($canvas, 0, 0, $bg);
+            $inner  = (int) round($size * 0.66);
+            $offset = (int) round(($size - $inner) / 2);
+            imagecopyresampled($canvas, $src, $offset, $offset, 0, 0, $inner, $inner, imagesx($src), imagesy($src));
+        } else {
+            $transparent = imagecolorallocatealpha($canvas, 0, 0, 0, 127);
+            imagefill($canvas, 0, 0, $transparent);
+            imagecopyresampled($canvas, $src, 0, 0, 0, 0, $size, $size, imagesx($src), imagesy($src));
+        }
+        imagedestroy($src);
+
+        ob_start();
+        imagepng($canvas);
+        $png = ob_get_clean();
+        imagedestroy($canvas);
+
+        return response($png, 200, [
+            'Content-Type'  => 'image/png',
+            'Cache-Control' => 'public, max-age=86400',
         ]);
     }
 

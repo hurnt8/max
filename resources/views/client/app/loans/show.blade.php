@@ -376,11 +376,11 @@ table.ds-table td.td-rem{color:var(--ca-text-3)}
       <tbody>
         @foreach($loan->amortization_schedule as $row)
         <tr>
-          <td data-label="N°" class="td-num">{{ $row['month'] }}</td>
-          <td data-label="Mensualité" class="td-pay">{{ number_format($row['payment'],2,',',' ') }}</td>
-          <td data-label="Capital" class="td-cap">{{ number_format($row['principal'],2,',',' ') }}</td>
-          <td data-label="Intérêts" class="td-int">{{ number_format($row['interest'],2,',',' ') }}</td>
-          <td data-label="Solde" class="td-rem">{{ number_format($row['balance'],2,',',' ') }}</td>
+          <td data-label="{{ __('app.amort_num') }}" class="td-num">{{ $row['month'] }}</td>
+          <td data-label="{{ __('app.monthly') }}" class="td-pay">{{ number_format($row['payment'],2,',',' ') }}</td>
+          <td data-label="{{ __('app.loan_capital') }}" class="td-cap">{{ number_format($row['principal'],2,',',' ') }}</td>
+          <td data-label="{{ __('app.loan_interest') }}" class="td-int">{{ number_format($row['interest'],2,',',' ') }}</td>
+          <td data-label="{{ __('app.amort_remaining') }}" class="td-rem">{{ number_format($row['balance'],2,',',' ') }}</td>
         </tr>
         @endforeach
       </tbody>
