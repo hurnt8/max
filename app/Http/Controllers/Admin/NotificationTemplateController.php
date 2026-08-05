@@ -42,7 +42,7 @@ class NotificationTemplateController extends Controller
         $data = $request->validate([
             'name'    => 'required|string|max:255',
             'type'    => 'required|in:' . implode(',', array_keys(NotificationTemplate::TYPES)),
-            'locale'  => ['required', 'in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
+            'locale'  => ['required', 'in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
                 Rule::unique('notification_templates')->where(fn($q) => $q->where('type', $request->type)),
             ],
             'subject' => 'nullable|required_unless:type,' . NotificationTemplate::TYPE_CONDITIONS . '|string|max:255',
@@ -75,7 +75,7 @@ class NotificationTemplateController extends Controller
         $data = $request->validate([
             'name'    => 'required|string|max:255',
             'type'    => 'required|in:' . implode(',', array_keys(NotificationTemplate::TYPES)),
-            'locale'  => ['required', 'in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
+            'locale'  => ['required', 'in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
                 Rule::unique('notification_templates')
                     ->where(fn($q) => $q->where('type', $request->type))
                     ->ignore($notificationTemplate->id),

@@ -4,6 +4,8 @@
   @php
     $siteContact = \App\Models\SiteContact::current();
     $pwaIcon     = $siteContact->pwa_icon_path ? Storage::url($siteContact->pwa_icon_path) : null;
+    // Écran de démarrage : à défaut d'icône PWA dédiée, utiliser le logo de marque (fond sombre)
+    $splashLogo  = $pwaIcon ?? ($siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : null);
   @endphp
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -48,7 +50,7 @@
 
 {{-- ══ SPLASH SCREEN ══ --}}
 <div id="cxa-splash" aria-hidden="true">
-  <img src="{{ $pwaIcon ?? '/assets/images/logo-white.png' }}" alt="{{ $siteContact->name }}" id="cxa-splash-logo">
+  <img src="{{ $splashLogo ?? '/assets/images/logo-white.png' }}" alt="{{ $siteContact->name }}" id="cxa-splash-logo">
 </div>
 <style>
 #cxa-splash{

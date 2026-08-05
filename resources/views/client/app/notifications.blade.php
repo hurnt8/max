@@ -8,8 +8,9 @@
 @if($notifications->isNotEmpty())
 <form method="POST" action="{{ route('client.app.notifications.read-all') }}" id="readAllForm">
   @csrf
-  <button type="submit" style="background:none;border:none;font-size:.75rem;font-weight:700;color:var(--ca-teal-l);cursor:pointer;padding:.5rem .25rem;font-family:inherit;letter-spacing:.01em">
-    {{ __('app.mark_all_read') }}
+  <button type="submit" class="ca-topbar__action" style="background:var(--ca-bg3);color:var(--ca-teal-l)"
+          title="{{ __('app.mark_all_read') }}" aria-label="{{ __('app.mark_all_read') }}">
+    <i class="fas fa-check-double"></i>
   </button>
 </form>
 @endif

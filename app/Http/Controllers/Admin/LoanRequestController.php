@@ -114,7 +114,7 @@ class LoanRequestController extends Controller
             'client_date_delivre' => 'nullable|date',
             'client_tax_number' => 'nullable|string|max:60',
             'client_activity'   => 'nullable|string|max:255',
-            'client_locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
+            'client_locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
             'client_currency'   => 'nullable|string|max:10',
             // Prêt
             'amount'            => 'required|numeric|min:100',
@@ -294,7 +294,7 @@ class LoanRequestController extends Controller
             'notaire'               => 'nullable|string|max:255',
             'special_conditions'    => 'nullable|string',
             'contract_template_id'  => 'nullable|exists:contract_templates,id',
-            'contract_language'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
+            'contract_language'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
             'extra_fields'         => 'nullable|array',
             'extra_fields.*'       => 'nullable|string|max:500',
         ]);
@@ -609,13 +609,25 @@ class LoanRequestController extends Controller
         $body      = str_replace(array_keys($vars), array_values($vars), $template->content ?? '');
         $recipient = $this->recipientEmail($loan);
 
+        // ── Générer le tableau d'amortissement en PDF (langue du dossier) ─────
+        $amortPdfPath = null;
+        try {
+            $amortPdfPath = $this->pdfService->generateAmortizationPdf($loan, $locale);
+        } catch (\Throwable $e) {
+            Log::warning('Amortization PDF generation failed for ' . $loan->reference . ': ' . $e->getMessage());
+        }
+
         try {
             Mail::to($recipient)->send(
-                new LoanValidationNotificationMail($loan, $subject, $body, $notificationPdfAbs)
+                new LoanValidationNotificationMail($loan, $subject, $body, $notificationPdfAbs, $amortPdfPath)
             );
         } catch (\Throwable $e) {
             Log::error('LoanValidationNotificationMail failed for ' . $loan->reference . ': ' . $e->getMessage());
             return 'Erreur lors de l\'envoi de la notification : ' . $e->getMessage();
+        } finally {
+            if ($amortPdfPath && file_exists($amortPdfPath)) {
+                @unlink($amortPdfPath);
+            }
         }
 
         $old = ['status' => $loan->status];
@@ -891,6 +903,33 @@ class LoanRequestController extends Controller
             'Content-Type'        => 'application/pdf',
             'Content-Disposition' => 'inline; filename="Notification_' . $loan->reference . '.pdf"',
         ]);
+    }
+
+    /**
+     * Génère à la volée le tableau d'amortissement (langue du dossier) et l'affiche.
+     * Document calculé automatiquement — pas d'upload nécessaire.
+     */
+    public function previewAmortizationPdf(LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+
+        if (empty($loan->amortization_schedule)) {
+            return back()->with('error', 'Aucun tableau d\'amortissement disponible pour ce dossier.');
+        }
+
+        $locale = $loan->contract_language ?? 'fr';
+
+        try {
+            $absPath = $this->pdfService->generateAmortizationPdf($loan, $locale);
+        } catch (\Throwable $e) {
+            Log::error('Amortization PDF generation failed for ' . $loan->reference . ': ' . $e->getMessage());
+            return back()->with('error', 'Erreur lors de la génération du tableau d\'amortissement.');
+        }
+
+        return response()->file($absPath, [
+            'Content-Type'        => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="Tableau_Amortissement_' . $loan->reference . '.pdf"',
+        ])->deleteFileAfterSend(true);
     }
 
     public function resendContractEmail(LoanRequest $loan)

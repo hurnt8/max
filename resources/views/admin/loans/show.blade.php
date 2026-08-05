@@ -649,6 +649,34 @@ $tpl = $loan->contractTemplate;
           </div>
         </div>
 
+        {{-- Tableau d'amortissement (généré automatiquement) --}}
+        <div class="card-pro">
+          <div class="card-pro-hdr">
+            <div class="card-pro-title">
+              <span class="icon-dot" style="background:#0891b2"></span>Tableau d'amortissement
+            </div>
+          </div>
+          <div class="card-pro-body" style="display:flex;flex-direction:column;gap:.875rem">
+            @if(!empty($loan->amortization_schedule))
+            <div class="ld-pdf-file">
+              <i class="fas fa-file-pdf" style="color:#0891b2;font-size:1.3rem;flex-shrink:0"></i>
+              <div style="flex:1;min-width:0">
+                <div class="ld-pdf-file-name">Amortissement_{{ $loan->reference }}.pdf</div>
+                <div class="ld-pdf-file-sub"><i class="fas fa-sync-alt"></i> Généré automatiquement ({{ strtoupper($loan->contract_language ?? 'FR') }})</div>
+              </div>
+              <a href="{{ route($panelPrefix.'.loans.amortization.pdf',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" target="_blank" title="Visualiser / Télécharger">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+            @else
+            <div class="ld-warn-box">
+              <i class="fas fa-exclamation-triangle" style="color:#F59E0B;flex-shrink:0"></i>
+              <span><strong>Indisponible.</strong> Aucun échéancier calculé pour ce dossier.</span>
+            </div>
+            @endif
+          </div>
+        </div>
+
         {{-- Modèle de contrat --}}
         <div class="card-pro">
           <div class="card-pro-hdr">
