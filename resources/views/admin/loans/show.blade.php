@@ -115,9 +115,6 @@
 .ld-tl-meta{font-size:.72rem;color:var(--c-muted);margin-top:.15rem}
 .ld-tl-time{font-size:.68rem;color:var(--c-muted);white-space:nowrap;flex-shrink:0;margin-top:.2rem}
 
-/* ── Amortization ── */
-.ld-amort-wrap{max-height:360px;overflow-y:auto;overflow-x:auto;border-top:1px solid var(--c-border)}
-
 /* ── DOCX table ── */
 .ld-docx-table th,.ld-docx-table td{padding:.65rem .875rem;font-size:.78rem}
 
@@ -529,12 +526,6 @@ $tpl = $loan->contractTemplate;
         <span class="ld-tab-badge">{{ $loan->history->count() }}</span>
         @endif
       </button>
-      @if($loan->amortization_schedule)
-      <button class="ld-tab-btn" onclick="ldTab(this,'tab-amort')">
-        <i class="fas fa-table"></i> Amortissement
-        <span class="ld-tab-badge">{{ count($loan->amortization_schedule) }}</span>
-      </button>
-      @endif
     </div>
 
     {{-- ── TAB : DÉTAILS ── --}}
@@ -646,34 +637,6 @@ $tpl = $loan->contractTemplate;
               @enderror
             </form>
 
-          </div>
-        </div>
-
-        {{-- Tableau d'amortissement (généré automatiquement) --}}
-        <div class="card-pro">
-          <div class="card-pro-hdr">
-            <div class="card-pro-title">
-              <span class="icon-dot" style="background:#0891b2"></span>Tableau d'amortissement
-            </div>
-          </div>
-          <div class="card-pro-body" style="display:flex;flex-direction:column;gap:.875rem">
-            @if(!empty($loan->amortization_schedule))
-            <div class="ld-pdf-file">
-              <i class="fas fa-file-pdf" style="color:#0891b2;font-size:1.3rem;flex-shrink:0"></i>
-              <div style="flex:1;min-width:0">
-                <div class="ld-pdf-file-name">Amortissement_{{ $loan->reference }}.pdf</div>
-                <div class="ld-pdf-file-sub"><i class="fas fa-sync-alt"></i> Généré automatiquement ({{ strtoupper($loan->contract_language ?? 'FR') }})</div>
-              </div>
-              <a href="{{ route($panelPrefix.'.loans.amortization.pdf',$loan) }}" class="btn-ghost btn-sm-pro" style="padding:.3rem .5rem" target="_blank" title="Visualiser / Télécharger">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-            @else
-            <div class="ld-warn-box">
-              <i class="fas fa-exclamation-triangle" style="color:#F59E0B;flex-shrink:0"></i>
-              <span><strong>Indisponible.</strong> Aucun échéancier calculé pour ce dossier.</span>
-            </div>
-            @endif
           </div>
         </div>
 
@@ -1163,47 +1126,6 @@ $tpl = $loan->contractTemplate;
         </div>
       </div>
     </div>{{-- /tab-history --}}
-
-    {{-- ── TAB : AMORTISSEMENT ── --}}
-    @if($loan->amortization_schedule)
-    <div class="ld-tab-pane" id="tab-amort">
-      <div class="card-pro">
-        <div class="card-pro-hdr">
-          <div class="card-pro-title">
-            <span class="icon-dot"></span>Tableau d'amortissement
-            <span style="font-size:.75rem;color:var(--c-muted);font-weight:400;margin-left:.375rem">
-              · {{ count($loan->amortization_schedule) }} échéances
-              · Intérêts totaux : {{ number_format($loan->total_cost,2,',',' ') }} {{ $loan->currency }}
-            </span>
-          </div>
-        </div>
-        <div class="ld-amort-wrap">
-          <table class="pro-table" style="width:100%">
-            <thead style="position:sticky;top:0;z-index:1;background:#fafbfc">
-              <tr>
-                <th>N°</th>
-                <th>Mensualité</th>
-                <th>Capital</th>
-                <th>Intérêts</th>
-                <th>Solde restant</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach($loan->amortization_schedule as $row)
-              <tr>
-                <td data-label="N°" style="color:var(--c-muted);font-size:.75rem">{{ $row['month'] }}</td>
-                <td data-label="Mensualité" style="font-weight:700">{{ number_format($row['payment'],2,',',' ') }} {{ $loan->currency }}</td>
-                <td data-label="Capital">{{ number_format($row['principal'],2,',',' ') }} {{ $loan->currency }}</td>
-                <td data-label="Intérêts" style="color:#ef4444">{{ number_format($row['interest'],2,',',' ') }} {{ $loan->currency }}</td>
-                <td data-label="Solde restant" style="color:var(--c-muted)">{{ number_format($row['balance'],2,',',' ') }} {{ $loan->currency }}</td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    @endif
 
   </div>{{-- /contenu tabs --}}
 </div>{{-- /ld-layout --}}

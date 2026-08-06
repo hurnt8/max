@@ -83,6 +83,7 @@
 .lc-doctab-btn--notification.active{color:#fff;background:#0ea5e9;border-color:#0ea5e9}
 .lc-doctab-btn--contrat.active{color:#fff;background:#dc2626;border-color:#dc2626}
 .lc-doctab-btn--assurance.active{color:#fff;background:#16a34a;border-color:#16a34a}
+.lc-doctab-btn--amortissement.active{color:#fff;background:#0891b2;border-color:#0891b2}
 .lc-doctab-pane{display:none}
 .lc-doctab-pane.active{display:block}
 </style>
@@ -552,6 +553,11 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
         <i class="fas fa-shield-alt"></i> Assurance
         @if($loan->insurance_pdf_path)<span class="lc-doctab-badge">PDF</span>@endif
       </button>
+      <button type="button" class="lc-doctab-btn lc-doctab-btn--amortissement"
+              onclick="lcDocTab(this,'amortissement')">
+        <i class="fas fa-table"></i> Amortissement
+        @if(!empty($loan->amortization_schedule))<span class="lc-doctab-badge">PDF</span>@endif
+      </button>
     </div>
 
     <div class="lc-pdf-card" style="border-radius:0 12px 12px 12px">
@@ -659,6 +665,42 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
           <i class="fas fa-shield-alt" style="font-size:3rem;margin-bottom:.75rem;opacity:.2;color:#16a34a"></i>
           <div style="font-size:.9rem;font-weight:600;color:var(--c-navy)">Aucune attestation disponible</div>
           <div style="font-size:.78rem;color:var(--c-muted);margin-top:.3rem">Uploadez l'attestation d'assurance dans le panneau gauche</div>
+        </div>
+        @endif
+      </div>
+
+      {{-- Pane Amortissement --}}
+      <div class="lc-doctab-pane" data-pane="amortissement">
+        <div class="lc-pdf-toolbar">
+          <div class="lc-pdf-title">
+            <i class="fas fa-table" style="color:#0891b2"></i>
+            Tableau d'amortissement
+            <span class="lc-lang-badge" style="background:#ECFEFF;border-color:#A5F3FC;color:#0E7490">{{ strtoupper($loan->contract_language ?? 'FR') }}</span>
+          </div>
+          @if(!empty($loan->amortization_schedule))
+          <div class="lc-pdf-actions">
+            <a href="{{ route($panelPrefix.'.loans.amortization.pdf', $loan) }}" class="btn-ghost btn-sm-pro" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Nouvel onglet
+            </a>
+            <a href="{{ route($panelPrefix.'.loans.amortization.pdf', $loan) }}"
+               download="Tableau_Amortissement_{{ $loan->reference }}.pdf" class="btn-ghost btn-sm-pro">
+              <i class="fas fa-download"></i> Télécharger
+            </a>
+          </div>
+          @endif
+        </div>
+
+        @if(!empty($loan->amortization_schedule))
+        <iframe
+          data-src="{{ route($panelPrefix.'.loans.amortization.pdf', $loan) }}"
+          class="lc-pdf-frame"
+          title="Tableau d'amortissement {{ $loan->reference }}"
+        ></iframe>
+        @else
+        <div class="lc-pdf-placeholder">
+          <i class="fas fa-table" style="font-size:3rem;margin-bottom:.75rem;opacity:.2;color:#0891b2"></i>
+          <div style="font-size:.9rem;font-weight:600;color:var(--c-navy)">Aucun échéancier disponible</div>
+          <div style="font-size:.78rem;color:var(--c-muted);margin-top:.3rem">Le montant, la durée et le taux doivent être renseignés pour ce dossier.</div>
         </div>
         @endif
       </div>
