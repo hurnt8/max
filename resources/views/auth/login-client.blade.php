@@ -414,7 +414,7 @@ a{text-decoration:none;color:inherit}
     {{-- Language switcher --}}
     @php
       $cur   = app()->getLocale();
-      $langs = ['fr'=>['Français','png'],'en'=>['English','png'],'pl'=>['Polski','svg'],'es'=>['Español','png'],'bg'=>['Български','png'],'hu'=>['Magyar','png'],'it'=>['Italiano','png'],'de'=>['Deutsch','png'],'lt'=>['Lietuvių','png'],'ro'=>['Română','png'],'lv'=>['Latviešu','png'],'nl'=>['Nederlands','png']];
+      $langs = ['fr'=>['Français','png'],'en'=>['English','png'],'pl'=>['Polski','svg'],'es'=>['Español','png'],'bg'=>['Български','png'],'hu'=>['Magyar','png'],'it'=>['Italiano','png'],'de'=>['Deutsch','png'],'lt'=>['Lietuvių','png'],'ro'=>['Română','png'],'lv'=>['Latviešu','png'],'nl'=>['Nederlands','png'],'pt'=>['Português','png']];
     @endphp
     <div class="ls" x-data="{open:false}">
       <button class="ls__btn" type="button"
