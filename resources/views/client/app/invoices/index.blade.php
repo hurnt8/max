@@ -180,7 +180,7 @@
 <div class="inv-strip">
   <div class="inv-chip">
     <div class="inv-chip__val">{{ $invoices->count() }}</div>
-    <div class="inv-chip__lbl">Total</div>
+    <div class="inv-chip__lbl">{{ __('app.invoice_total') }}</div>
   </div>
   <div class="inv-chip">
     <div class="inv-chip__val inv-chip__val--amber">{{ $cntSent }}</div>
@@ -197,7 +197,7 @@
   <a href="{{ route('client.app.invoices') }}"
      class="inv-pill {{ $filter === 'all' ? 'active' : '' }}">
     <i class="fas fa-list-ul" style="font-size:.6rem"></i>
-    Tout ({{ $invoices->count() }})
+    {{ __('app.invoice_filter_all') }} ({{ $invoices->count() }})
   </a>
   <a href="{{ route('client.app.invoices', ['filter' => 'sent']) }}"
      class="inv-pill inv-pill--sent {{ $filter === 'sent' ? 'active' : '' }}">

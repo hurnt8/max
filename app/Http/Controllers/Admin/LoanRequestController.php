@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Mail\LoanValidatedMail;
 use App\Mail\SignedContractAcknowledgementMail;
 use App\Mail\LoanValidationNotificationMail;
+use App\Mail\LoanFinalizedMail;
+use App\Mail\LoanRejectedMail;
 use App\Models\ClientNotification;
 use App\Models\ContractTemplate;
 use App\Models\LoanHistory;
@@ -1012,6 +1014,14 @@ class LoanRequestController extends Controller
             'status' => 'required|in:' . implode(',', LoanRequest::STATUSES),
         ]);
 
+        // "Finalisée" et "Rejetée" ont leurs propres actions dédiées (finalize()/reject())
+        // — l'une crédite le compte client, l'autre exige un motif ; toutes deux envoient
+        // un email. On bloque ce raccourci générique pour éviter de les déclencher sans
+        // passer par ces garde-fous.
+        if (in_array($data['status'], [LoanRequest::STATUS_FINALIZED, LoanRequest::STATUS_REJECTED], true)) {
+            return back()->with('error', 'Utilisez le bouton dédié ("Finaliser" ou "Rejeter le dossier") pour ce changement de statut.');
+        }
+
         $old = ['status' => $loan->status];
 
         // ── Passage en "validé" : envoie la notification (modèle selon la langue) ─
@@ -1034,21 +1044,56 @@ class LoanRequestController extends Controller
                 ->with('success', 'Contrat envoyé à ' . $this->recipientEmail($loan) . '.');
         }
 
-        // ── Autres changements de statut ──────────────────────────────────
-        $isFinalization = $data['status'] === LoanRequest::STATUS_FINALIZED
-            && $old['status'] !== LoanRequest::STATUS_FINALIZED;
+        // ── Autres changements de statut (draft, pending, contract_signed) ──
+        $loan->update(['status' => $data['status']]);
+        $this->logHistory($loan, 'status_changed', $old, ['status' => $data['status']]);
 
-        DB::transaction(function () use ($loan, $data, $old, $isFinalization) {
-            // Verrou pessimiste pour éviter double-crédit en cas de double-clic
+        return back()->with('success', 'Statut mis à jour.');
+    }
+
+    /**
+     * Finalise le dossier : exige "Contrat signé" comme statut de départ, permet de
+     * choisir la date de début des remboursements et de créditer (ou non) le compte
+     * client d'un montant modifiable. Envoie un email au client dans la langue du dossier.
+     */
+    public function finalize(Request $request, LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+
+        if (!$loan->canBeFinalized()) {
+            return back()->with('error', 'Impossible de finaliser : le contrat doit d\'abord être signé (statut "Contrat signé").');
+        }
+
+        $data = $request->validate([
+            'repayment_start_date' => 'required|date',
+            'credit_account'       => 'nullable|boolean',
+            'credit_amount'        => 'nullable|numeric|min:0',
+        ]);
+
+        $creditAccount = $request->boolean('credit_account');
+        $creditAmount  = $creditAccount
+            ? (float) ($data['credit_amount'] ?? $loan->amount)
+            : 0.0;
+
+        $old = ['status' => $loan->status];
+        $alreadyFinalized = false;
+
+        DB::transaction(function () use ($loan, $data, $old, $creditAccount, $creditAmount, &$alreadyFinalized) {
+            // Verrou pessimiste pour éviter double-crédit (et double-email) en cas de double-clic
             $fresh = LoanRequest::lockForUpdate()->find($loan->id);
-            if ($isFinalization && $fresh->status === LoanRequest::STATUS_FINALIZED) {
+            if ($fresh->status === LoanRequest::STATUS_FINALIZED) {
+                $alreadyFinalized = true;
                 return; // déjà finalisé, on ignore
             }
 
-            $fresh->update(['status' => $data['status']]);
+            $fresh->update([
+                'status'       => LoanRequest::STATUS_FINALIZED,
+                'finalized_at' => now(),
+                'start_date'   => $data['repayment_start_date'],
+            ]);
 
-            if ($isFinalization && $fresh->client_id) {
-                $fresh->client?->increment('balance', (float) $fresh->amount);
+            if ($creditAccount && $fresh->client_id) {
+                $fresh->client?->increment('balance', $creditAmount);
 
                 $cur = $fresh->currency ?? config('credixa.default_currency');
                 ClientNotification::notifyUser(
@@ -1056,17 +1101,80 @@ class LoanRequestController extends Controller
                     'credit',
                     'app.notif_loan_funded',
                     'app.notif_loan_funded_body',
-                    ['amount' => number_format((float) $fresh->amount, 2, ',', ' '), 'currency' => $cur],
-                    ['loan_id' => $fresh->id, 'amount' => $fresh->amount, 'currency' => $cur]
+                    ['amount' => number_format($creditAmount, 2, ',', ' '), 'currency' => $cur],
+                    ['loan_id' => $fresh->id, 'amount' => $creditAmount, 'currency' => $cur]
                 );
             }
 
-            $this->logHistory($fresh, 'status_changed', $old, ['status' => $data['status']]);
+            $this->logHistory($fresh, 'finalized', $old, [
+                'status'          => $fresh->status,
+                'credited'        => $creditAccount,
+                'credited_amount' => $creditAmount,
+            ]);
         });
 
         $loan->refresh();
 
-        return back()->with('success', 'Statut mis à jour.');
+        if ($alreadyFinalized) {
+            return redirect()->route($this->panelPrefix().'.loans.show', $loan)
+                ->with('success', 'Dossier déjà finalisé.');
+        }
+
+        if ($loan->client_id) {
+            try {
+                Mail::to($this->recipientEmail($loan))->send(new LoanFinalizedMail(
+                    $loan,
+                    \Illuminate\Support\Carbon::parse($data['repayment_start_date'])->format('d/m/Y'),
+                    $creditAccount,
+                    $creditAmount
+                ));
+            } catch (\Throwable $e) {
+                Log::error('LoanFinalizedMail failed for ' . $loan->reference . ': ' . $e->getMessage());
+                return redirect()->route($this->panelPrefix().'.loans.show', $loan)
+                    ->with('success', 'Dossier finalisé. (Email non envoyé — vérifiez la configuration mail.)');
+            }
+        }
+
+        return redirect()->route($this->panelPrefix().'.loans.show', $loan)
+            ->with('success', 'Dossier finalisé' . ($creditAccount ? ' et compte crédité' : '') . '.');
+    }
+
+    /**
+     * Rejette le dossier avec un motif obligatoire, et envoie un email au client
+     * dans la langue du dossier incluant ce motif.
+     */
+    public function reject(Request $request, LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+
+        $data = $request->validate([
+            'rejection_reason' => 'required|string|max:2000',
+        ]);
+
+        $old = ['status' => $loan->status];
+
+        $loan->update([
+            'status'            => LoanRequest::STATUS_REJECTED,
+            'rejected_at'       => now(),
+            'rejection_reason'  => $data['rejection_reason'],
+        ]);
+
+        $this->logHistory($loan, 'rejected', $old, ['status' => $loan->status, 'reason' => $data['rejection_reason']]);
+
+        $mailSent = true;
+        if ($loan->client_id) {
+            try {
+                Mail::to($this->recipientEmail($loan))->send(new LoanRejectedMail($loan, $data['rejection_reason']));
+            } catch (\Throwable $e) {
+                Log::error('LoanRejectedMail failed for ' . $loan->reference . ': ' . $e->getMessage());
+                $mailSent = false;
+            }
+        }
+
+        $msg = 'Dossier rejeté.';
+        $msg .= $mailSent ? ' Email envoyé au client.' : ' (Email non envoyé — vérifiez la configuration mail.)';
+
+        return redirect()->route($this->panelPrefix().'.loans.show', $loan)->with('success', $msg);
     }
 
     public function destroy(LoanRequest $loan)

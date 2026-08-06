@@ -38,13 +38,13 @@ class LoanValidationNotificationMail extends Mailable
 
         if ($this->pdfPath && file_exists($this->pdfPath)) {
             $attachments[] = Attachment::fromPath($this->pdfPath)
-                ->as('Contrat_' . $this->loan->reference . '.pdf')
+                ->as($this->loan->documentFileName('notification'))
                 ->withMime('application/pdf');
         }
 
         if ($this->amortizationPdfPath && file_exists($this->amortizationPdfPath)) {
             $attachments[] = Attachment::fromPath($this->amortizationPdfPath)
-                ->as('Tableau_Amortissement_' . $this->loan->reference . '.pdf')
+                ->as($this->loan->documentFileName('amortization'))
                 ->withMime('application/pdf');
         }
 

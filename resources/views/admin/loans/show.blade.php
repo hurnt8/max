@@ -71,6 +71,8 @@
 .ld-warn-box{background:#FFFBEB;border:1px solid #FDE68A;border-left:3px solid #F59E0B;border-radius:8px;padding:.625rem .75rem;font-size:.78rem;color:#78350F;display:flex;gap:.5rem;align-items:flex-start}
 
 /* ── Status select row ── */
+.ld-form-group{margin-bottom:.6rem}
+.ld-form-group label{display:block;margin-bottom:.25rem}
 .ld-status-row{display:flex;gap:.4rem}
 .ld-status-row select{flex:1;font-size:.8rem}
 .ld-status-row button{padding:.5rem .7rem;flex-shrink:0}
@@ -490,6 +492,7 @@ $tpl = $loan->contractTemplate;
           <div class="ld-status-row">
             <select name="status" class="form-control-pro">
               @foreach(\App\Models\LoanRequest::STATUSES as $s)
+                @continue(in_array($s, [\App\Models\LoanRequest::STATUS_FINALIZED, \App\Models\LoanRequest::STATUS_REJECTED]))
               <option value="{{ $s }}" {{ $loan->status===$s?'selected':'' }}>
                 {{ $statusLabels[$s] ?? ucfirst($s) }}
               </option>
@@ -498,6 +501,47 @@ $tpl = $loan->contractTemplate;
             <button type="submit" class="btn-navy" title="Enregistrer"><i class="fas fa-save"></i></button>
           </div>
         </form>
+
+        @if($loan->canBeFinalized())
+        <hr class="ld-divider">
+        <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--c-muted);margin-bottom:.35rem">Finaliser le dossier</div>
+        <form action="{{ route($panelPrefix.'.loans.finalize', $loan) }}" method="POST"
+              data-confirm="Finaliser ce dossier ? Le compte client sera crédité si l'option est cochée, et un email lui sera envoyé.">
+          @csrf
+          <div class="ld-form-group">
+            <label class="form-label-pro" style="font-size:.72rem">Début des remboursements</label>
+            <input type="date" name="repayment_start_date" class="form-control-pro"
+                   value="{{ ($loan->start_date ?? now())->format('Y-m-d') }}" required>
+          </div>
+          <div style="display:flex;align-items:center;gap:.4rem;margin:.6rem 0">
+            <input type="checkbox" name="credit_account" value="1" id="creditAccount" checked
+                   onchange="document.getElementById('creditAmountGroup').style.display=this.checked?'block':'none'">
+            <label for="creditAccount" style="font-size:.78rem;color:var(--c-navy);font-weight:600;margin:0">Créditer le compte client</label>
+          </div>
+          <div class="ld-form-group" id="creditAmountGroup">
+            <label class="form-label-pro" style="font-size:.72rem">Montant à créditer ({{ $loan->currency }})</label>
+            <input type="number" step="0.01" min="0" name="credit_amount" class="form-control-pro" value="{{ $loan->amount }}">
+          </div>
+          <button type="submit" class="btn-navy ld-btn-full" style="margin-top:.5rem;background:#059669;border-color:#059669">
+            <i class="fas fa-flag-checkered"></i> Finaliser
+          </button>
+        </form>
+        @endif
+
+        @if(!in_array($loan->status, [\App\Models\LoanRequest::STATUS_FINALIZED, \App\Models\LoanRequest::STATUS_REJECTED]))
+        <hr class="ld-divider">
+        <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--c-muted);margin-bottom:.35rem">Rejeter le dossier</div>
+        <form action="{{ route($panelPrefix.'.loans.reject', $loan) }}" method="POST"
+              data-confirm="Rejeter ce dossier ? Un email sera envoyé au client avec le motif indiqué.">
+          @csrf
+          <div class="ld-form-group">
+            <textarea name="rejection_reason" class="form-control-pro" rows="3" placeholder="Motif du refus (envoyé au client)" required></textarea>
+          </div>
+          <button type="submit" class="btn-navy ld-btn-full" style="margin-top:.5rem;background:#dc2626;border-color:#dc2626">
+            <i class="fas fa-ban"></i> Rejeter le dossier
+          </button>
+        </form>
+        @endif
 
       </div>
     </div>

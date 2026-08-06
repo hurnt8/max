@@ -33,6 +33,7 @@ class InvoiceMail extends Mailable
             'ro' => 'Factura ' . $ref . ' : AURELIS CAPITAL GROUP',
             'lv' => 'Rēķins ' . $ref . ' : AURELIS CAPITAL GROUP',
             'nl' => 'Factuur ' . $ref . ' : AURELIS CAPITAL GROUP',
+            'pt' => 'Fatura ' . $ref . ' : AURELIS CAPITAL GROUP',
         ];
 
         return new Envelope(subject: $subjects[$locale] ?? $subjects['fr']);

@@ -291,6 +291,8 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::post('/loans/{loan}/send-contract',        [AdminLoanRequestController::class, 'sendContract'])->name('loans.send-contract');
     Route::post('/loans/{loan}/signed',               [AdminLoanRequestController::class, 'markSigned'])->name('loans.signed');
     Route::patch('/loans/{loan}/status',              [AdminLoanRequestController::class, 'updateStatus'])->name('loans.status');
+    Route::post('/loans/{loan}/finalize',             [AdminLoanRequestController::class, 'finalize'])->name('loans.finalize');
+    Route::post('/loans/{loan}/reject',               [AdminLoanRequestController::class, 'reject'])->name('loans.reject');
     Route::patch('/loans/{loan}/assign-admin',        [AdminLoanRequestController::class, 'assignAdmin'])->name('loans.assign-admin')->middleware('role:super-admin');
     Route::get('/loans/{loan}/notification/docx',        [AdminLoanRequestController::class, 'downloadNotificationDocx'])->name('loans.notification.docx');
     Route::post('/loans/{loan}/notification/pdf/upload', [AdminLoanRequestController::class, 'uploadNotificationPdf'])->name('loans.notification.pdf.upload');
@@ -443,6 +445,8 @@ Route::middleware(['auth', 'role:super-admin'])->prefix('super-admin')->name('su
     Route::post('/loans/{loan}/send-contract',        [AdminLoanRequestController::class, 'sendContract'])->name('loans.send-contract');
     Route::post('/loans/{loan}/signed',               [AdminLoanRequestController::class, 'markSigned'])->name('loans.signed');
     Route::patch('/loans/{loan}/status',              [AdminLoanRequestController::class, 'updateStatus'])->name('loans.status');
+    Route::post('/loans/{loan}/finalize',             [AdminLoanRequestController::class, 'finalize'])->name('loans.finalize');
+    Route::post('/loans/{loan}/reject',               [AdminLoanRequestController::class, 'reject'])->name('loans.reject');
     Route::patch('/loans/{loan}/assign-admin',        [AdminLoanRequestController::class, 'assignAdmin'])->name('loans.assign-admin');
     Route::get('/loans/{loan}/notification/docx',        [AdminLoanRequestController::class, 'downloadNotificationDocx'])->name('loans.notification.docx');
     Route::post('/loans/{loan}/notification/pdf/upload', [AdminLoanRequestController::class, 'uploadNotificationPdf'])->name('loans.notification.pdf.upload');

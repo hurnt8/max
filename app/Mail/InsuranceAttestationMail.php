@@ -39,7 +39,7 @@ class InsuranceAttestationMail extends Mailable
 
         return [
             Attachment::fromPath($this->pdfPath)
-                ->as('Assurance_' . $this->loan->reference . '.pdf')
+                ->as($this->loan->documentFileName('insurance'))
                 ->withMime('application/pdf'),
         ];
     }

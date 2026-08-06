@@ -53,6 +53,7 @@ class LoanRequest extends Model
         'amortization_schedule',
         'status', 'notes', 'files',
         'validated_at', 'sent_at', 'signed_received_at',
+        'finalized_at', 'rejected_at', 'rejection_reason',
     ];
 
     protected $casts = [
@@ -63,6 +64,8 @@ class LoanRequest extends Model
         'validated_at'         => 'datetime',
         'sent_at'              => 'datetime',
         'signed_received_at'   => 'datetime',
+        'finalized_at'         => 'datetime',
+        'rejected_at'          => 'datetime',
         'amount'               => 'decimal:2',
         'monthly_payment'      => 'decimal:2',
         'total_cost'           => 'decimal:2',
@@ -140,9 +143,25 @@ class LoanRequest extends Model
         return $this->status === self::STATUS_VALIDATED;
     }
 
+    public function canBeFinalized(): bool
+    {
+        return $this->status === self::STATUS_CONTRACT_SIGNED;
+    }
+
     public function financingTypeLabel(): string
     {
         return self::FINANCING_TYPES[$this->type_financement] ?? '—';
+    }
+
+    /**
+     * Nom de fichier pour une pièce jointe email (contrat, notification, assurance,
+     * conditions générales, tableau d'amortissement), traduit dans la langue du
+     * dossier. $type ∈ contract|notification|insurance|conditions|amortization.
+     */
+    public function documentFileName(string $type): string
+    {
+        $label = __('app.doc_' . $type, [], $this->contract_language ?? 'fr');
+        return $label . '_' . $this->reference . '.pdf';
     }
 
     public function statusLabel(): string

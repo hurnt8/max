@@ -176,7 +176,7 @@
                        ? __('app.invoice_due') . ' : ' . $invoice->due_date->format('d/m/Y')
                        : '',
       'paid'      => $invoice->paid_at
-                       ? __('app.invoice_status_paid') . ' le ' . $invoice->paid_at->format('d/m/Y')
+                       ? __('app.invoice_paid_on', ['date' => $invoice->paid_at->format('d/m/Y')])
                        : '',
       'cancelled' => '',
   ];
@@ -228,7 +228,7 @@
         {{ $invoice->due_date->format('d/m/Y') }}
         @if($invoice->due_date->isPast() && $st === 'sent')
           <span style="font-size:.65rem;font-weight:700;background:rgba(239,68,68,.15);color:#f87171;padding:.1rem .4rem;border-radius:6px;margin-left:.3rem">
-            En retard
+            {{ __('app.invoice_overdue') }}
           </span>
         @endif
       </span>
@@ -261,7 +261,7 @@
         <span><i class="fas fa-xmark" style="font-size:.55rem"></i> {{ $item['quantity'] }}</span>
         @endif
         @if(isset($item['unit_price']))
-        <span>{{ number_format($item['unit_price'], 2, ',', ' ') }} {{ $currency }} / unité</span>
+        <span>{{ number_format($item['unit_price'], 2, ',', ' ') }} {{ $currency }} / {{ __('app.per_unit') }}</span>
         @endif
       </div>
     </div>
