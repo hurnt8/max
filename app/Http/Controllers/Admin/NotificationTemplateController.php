@@ -145,6 +145,7 @@ class NotificationTemplateController extends Controller
             'fr' => 'Français', 'en' => 'Anglais', 'pl' => 'Polonais', 'es' => 'Espagnol',
             'bg' => 'Bulgare', 'hu' => 'Hongrois', 'it' => 'Italien', 'de' => 'Allemand',
             'lt' => 'Lituanien', 'ro' => 'Roumain', 'lv' => 'Letton', 'nl' => 'Néerlandais',
+            'pt' => 'Portugais',
         ];
     }
 }

@@ -182,6 +182,8 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
 .f-check{display:flex;align-items:center;gap:.45rem}
 .f-check input{width:14px;height:14px;accent-color:var(--navy);cursor:pointer;flex-shrink:0}
 .f-check label{font-size:.78rem;color:#6b7280;cursor:pointer;user-select:none}
+.f-forgot{font-size:.78rem;color:var(--navy);font-weight:600;transition:color .15s}
+.f-forgot:hover{color:var(--gold)}
 
 .btn-auth{
   width:100%;padding:.8rem;border:none;border-radius:10px;
@@ -360,6 +362,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
                 <input type="checkbox" id="remember" name="remember">
                 <label for="remember">{{ __('auth.remember_staff') }}</label>
               </div>
+              <a href="{{ route('staff.password.request') }}" class="f-forgot">{{ __('auth.forgot_password') }}</a>
             </div>
 
             <button type="submit" class="btn-auth">
