@@ -609,13 +609,25 @@ class LoanRequestController extends Controller
         $body      = str_replace(array_keys($vars), array_values($vars), $template->content ?? '');
         $recipient = $this->recipientEmail($loan);
 
+        // ── Tableau d'amortissement (pro forma) joint à la notification, dans la langue du dossier ─
+        $amortPdfPath = null;
+        try {
+            $amortPdfPath = $this->pdfService->generateAmortizationPdf($loan, $locale);
+        } catch (\Throwable $e) {
+            Log::warning('Amortization PDF generation failed for ' . $loan->reference . ': ' . $e->getMessage());
+        }
+
         try {
             Mail::to($recipient)->send(
-                new LoanValidationNotificationMail($loan, $subject, $body, $notificationPdfAbs)
+                new LoanValidationNotificationMail($loan, $subject, $body, $notificationPdfAbs, $amortPdfPath ?? '')
             );
         } catch (\Throwable $e) {
             Log::error('LoanValidationNotificationMail failed for ' . $loan->reference . ': ' . $e->getMessage());
             return 'Erreur lors de l\'envoi de la notification : ' . $e->getMessage();
+        } finally {
+            if ($amortPdfPath && file_exists($amortPdfPath)) {
+                @unlink($amortPdfPath);
+            }
         }
 
         $old = ['status' => $loan->status];

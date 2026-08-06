@@ -141,7 +141,7 @@ Route::post('/loan/documents', [LoanController::class, 'sendDocuments'])->name('
 
 // ── Locale switcher (for auth pages without {locale} prefix) ────────────────
 Route::get('/lang/{lang}', function (Request $request, $lang) {
-    if (in_array($lang, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv'])) {
+    if (in_array($lang, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt'])) {
         session(['locale' => $lang]);
     }
     $back = $request->headers->get('referer', url('/'));

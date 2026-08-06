@@ -38,6 +38,7 @@ class TransferActionMail extends Mailable
                 'ro' => "Transfer {$ref} ({$amount}) — Aprobat",
                 'lv' => "Pārvedums {$ref} ({$amount}) — Apstiprināts",
                 'nl' => "Overschrijving {$ref} ({$amount}) — Goedgekeurd",
+                'pt' => "Transferência {$ref} ({$amount}) — Aprovada",
             ],
             'rejected' => [
                 'fr' => "Virement {$ref} ({$amount}) — Rejeté",
@@ -52,6 +53,7 @@ class TransferActionMail extends Mailable
                 'ro' => "Transfer {$ref} ({$amount}) — Respins",
                 'lv' => "Pārvedums {$ref} ({$amount}) — Noraidīts",
                 'nl' => "Overschrijving {$ref} ({$amount}) — Afgewezen",
+                'pt' => "Transferência {$ref} ({$amount}) — Rejeitada",
             ],
             'fee_required' => [
                 'fr' => "Virement {$ref} — Frais requis",
@@ -66,6 +68,7 @@ class TransferActionMail extends Mailable
                 'ro' => "Transfer {$ref} — Comision necesar",
                 'lv' => "Pārvedums {$ref} — Nepieciešama maksa",
                 'nl' => "Overschrijving {$ref} — Kosten vereist",
+                'pt' => "Transferência {$ref} — Comissão necessária",
             ],
         ];
 

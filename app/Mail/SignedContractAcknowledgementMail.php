@@ -37,6 +37,7 @@ class SignedContractAcknowledgementMail extends Mailable
             'ro' => 'Primirea contractului dumneavoastră semnat nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
             'lv' => 'Jūsu parakstītā līguma Nr. ' . $this->loan->reference . ' saņemšana — SOLBERG GRUPO',
             'nl' => 'Ontvangst van uw ondertekend contract nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'pt' => 'Receção do seu contrato assinado N.º' . $this->loan->reference . ' — SOLBERG GRUPO',
         ];
 
         return new Envelope(subject: $subjects[$this->mailLocale] ?? $subjects['fr']);

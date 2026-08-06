@@ -33,6 +33,7 @@ class InvoiceMail extends Mailable
             'ro' => 'Factura ' . $ref . ' — SOLBERG GRUPO',
             'lv' => 'Rēķins ' . $ref . ' — SOLBERG GRUPO',
             'nl' => 'Factuur ' . $ref . ' — SOLBERG GRUPO',
+            'pt' => 'Fatura ' . $ref . ' — SOLBERG GRUPO',
         ];
 
         return new Envelope(subject: $subjects[$locale] ?? $subjects['fr']);
