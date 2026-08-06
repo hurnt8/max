@@ -106,6 +106,8 @@ document.addEventListener('alpine:init', () => {
             { code:'RON', symbol:'lei', flag:'🇷🇴', name:'Leu roumain (RON)'       },
             { code:'BRL', symbol:'R$',  flag:'🇧🇷', name:'Real brésilien (BRL)'    },
             { code:'PEN', symbol:'S/',  flag:'🇵🇪', name:'Sol péruvien (PEN)'      },
+            { code:'USD', symbol:'$',   flag:'🇺🇸', name:'Dollar américain (USD)'  },
+            { code:'CAD', symbol:'CA$', flag:'🇨🇦', name:'Dollar canadien (CAD)'   },
         ],
 
         amountsByCurrency: {
@@ -121,6 +123,8 @@ document.addEventListener('alpine:init', () => {
             RON:[5000,15000,25000,50000,100000,250000,375000,475000],
             BRL:[6000,18000,30000,60000,120000,300000,450000,570000],
             PEN:[4000,12000,20000,40000,80000,200000,300000,380000],
+            USD:[1000,3000,5000,10000,20000,50000,75000,95000],
+            CAD:[1000,3000,5000,10000,20000,50000,75000,95000],
         },
 
         get amounts()  { return this.amountsByCurrency[this.selCurrency] || this.amountsByCurrency['EUR']; },
