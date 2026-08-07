@@ -307,6 +307,12 @@ class AppController extends Controller
         }
 
         $user->update(['email' => $pending['email']]);
+
+        // Synchroniser l'email sur tous les dossiers de ce client
+        LoanRequest::where('client_id', $user->id)->update([
+            'email' => $pending['email'],
+        ]);
+
         Cache::forget('profile_otp_' . $user->id);
         session()->forget('profile_pending');
 
