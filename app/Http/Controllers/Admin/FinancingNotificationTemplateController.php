@@ -65,7 +65,7 @@ class FinancingNotificationTemplateController extends Controller
     {
         return view('admin.financing-notification-templates.edit', [
             'template'  => $financingNotificationTemplate,
-            'variables' => $this->contractService->variableDescriptions(),
+            'variables' => $this->financingVariableDescriptions(),
             'types'     => FinancingNotificationTemplate::TYPES,
         ]);
     }
@@ -130,6 +130,19 @@ class FinancingNotificationTemplateController extends Controller
         return response()->download(
             $absPath,
             Str::slug($financingNotificationTemplate->name) . '_v' . $financingNotificationTemplate->docx_version . '.docx'
+        );
+    }
+
+    /**
+     * Variables disponibles pour un dossier de financement — le référentiel partagé
+     * avec les modèles "Prêt" inclut des balises de remboursement (durée, taux,
+     * mensualité) sans objet ici puisqu'un financement n'est pas remboursable.
+     */
+    private function financingVariableDescriptions(): array
+    {
+        return array_diff_key(
+            $this->contractService->variableDescriptions(),
+            array_flip(['{duree}', '{taux}', '{mensualite}', '{montant_mensualite}', '{montant_totalavecinteret}'])
         );
     }
 

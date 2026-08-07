@@ -14,9 +14,7 @@ use App\Models\FinancingRequest;
 use App\Models\FinancingRequestHistory;
 use App\Models\User;
 use App\Services\FinancingDocxService;
-use App\Services\FinancingPdfService;
 use App\Services\FinancingVariableResolver;
-use App\Services\LoanService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -28,8 +26,6 @@ use Illuminate\Support\Str;
 class FinancingRequestController extends Controller
 {
     public function __construct(
-        private LoanService              $loanService,
-        private FinancingPdfService      $pdfService,
         private FinancingDocxService     $docxService,
         private FinancingVariableResolver $variableResolver,
     ) {}
@@ -94,10 +90,9 @@ class FinancingRequestController extends Controller
         $myClients  = $this->clientsForAdmin($admin);
         $templates  = $this->templatesForAdmin($admin);
         $currencies = config('credixa.currencies');
-        $annualRate = \App\Models\LoanSetting::current()->annual_rate;
         $financingTypes = FinancingRequest::FINANCING_TYPES;
 
-        return view('admin.financings.create', compact('myClients', 'templates', 'currencies', 'annualRate', 'financingTypes'));
+        return view('admin.financings.create', compact('myClients', 'templates', 'currencies', 'financingTypes'));
     }
 
     public function store(Request $request)
@@ -112,9 +107,8 @@ class FinancingRequestController extends Controller
             'client_address'    => 'nullable|string|max:500',
             'client_locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
             'client_currency'   => 'nullable|string|max:10',
-            // Financement
+            // Financement (non remboursable : pas de durée ni de taux)
             'amount'            => 'required|numeric|min:100',
-            'duration_months'   => 'required|integer|min:1|max:360',
             'objet'             => 'nullable|string|max:255',
             'financing_type'    => 'nullable|in:' . implode(',', array_keys(FinancingRequest::FINANCING_TYPES)),
             'subject'           => 'nullable|string|max:2000',
@@ -137,7 +131,6 @@ class FinancingRequestController extends Controller
             'client_email.required_if' => 'L\'email du client est obligatoire pour un nouveau client.',
             'client_id.required_if'    => 'Veuillez sélectionner un client existant.',
             'amount.required'          => 'Le montant est obligatoire.',
-            'duration_months.required' => 'La durée est obligatoire.',
         ]);
 
         $admin = Auth::user();
@@ -149,16 +142,8 @@ class FinancingRequestController extends Controller
             }
         }
 
-        $annualRate = \App\Models\LoanSetting::current()->annual_rate;
-
-        $calc = $this->loanService->calculateAll(
-            (float) $data['amount'],
-            (float) $annualRate,
-            (int) $data['duration_months']
-        );
-
         $financing = DB::transaction(
-            function () use ($data, $admin, $calc, $annualRate) {
+            function () use ($data, $admin) {
                 if ($data['client_mode'] === 'new') {
                     $token  = Str::random(64);
                     $client = User::create([
@@ -191,10 +176,8 @@ class FinancingRequestController extends Controller
                     'phone'                => $client->phone ?? $data['client_phone'] ?? null,
                     'address'              => $client->address ?? $data['client_address'] ?? null,
                     'amount'               => $data['amount'],
-                    'interest_rate'        => $annualRate,
                     'currency'             => $client->currency ?? $data['currency'],
                     'start_date'           => $data['start_date'] ?? now()->toDateString(),
-                    'duration_months'      => $data['duration_months'],
                     'objet'                => $data['objet'] ?? null,
                     'financing_type'       => $data['financing_type'] ?? null,
                     'subject'              => $data['subject'] ?? null,
@@ -204,10 +187,6 @@ class FinancingRequestController extends Controller
                     'agent_suivi'          => $data['agent_suivi'] ?? null,
                     'directeur'            => $data['directeur'] ?? null,
                     'notaire'              => $data['notaire'] ?? null,
-                    'monthly_payment'      => $calc['monthly_payment'],
-                    'total_cost'           => $calc['total_cost'],
-                    'total_with_interest'  => $calc['total_with_interest'],
-                    'amortization_schedule'=> $calc['amortization_schedule'],
                     'contract_language'    => $locale,
                     'status'               => FinancingRequest::STATUS_DRAFT,
                     'extra_fields'         => !empty($data['extra_fields']) ? $data['extra_fields'] : null,
@@ -258,7 +237,6 @@ class FinancingRequestController extends Controller
 
         $data = $request->validate([
             'amount'               => 'required|numeric|min:100',
-            'duration_months'      => 'required|integer|min:1|max:360',
             'objet'                => 'nullable|string|max:255',
             'financing_type'       => 'nullable|in:' . implode(',', array_keys(FinancingRequest::FINANCING_TYPES)),
             'subject'              => 'nullable|string|max:2000',
@@ -278,22 +256,14 @@ class FinancingRequestController extends Controller
             'extra_fields.*'       => 'nullable|string|max:500',
         ]);
 
-        $old = $financing->only(['amount', 'duration_months', 'status', 'contract_template_id']);
-
-        $calc = $this->loanService->calculateAll(
-            (float) $data['amount'], (float) $financing->interest_rate, (int) $data['duration_months']
-        );
+        $old = $financing->only(['amount', 'status', 'contract_template_id']);
 
         $financing->update(array_merge($data, [
-            'monthly_payment'      => $calc['monthly_payment'],
-            'total_cost'           => $calc['total_cost'],
-            'total_with_interest'  => $calc['total_with_interest'],
-            'amortization_schedule'=> $calc['amortization_schedule'],
             'contract_language'    => $data['contract_language'] ?? $financing->contract_language ?? 'fr',
             'extra_fields'         => !empty($data['extra_fields']) ? $data['extra_fields'] : null,
         ]));
 
-        $this->logHistory($financing, 'updated', $old, $financing->only(['amount', 'duration_months', 'status', 'contract_template_id']));
+        $this->logHistory($financing, 'updated', $old, $financing->only(['amount', 'status', 'contract_template_id']));
 
         return redirect()->route($this->panelPrefix().'.financings.show', $financing)
                          ->with('success', 'Dossier mis à jour.');
@@ -477,33 +447,6 @@ class FinancingRequestController extends Controller
         ]);
     }
 
-    /**
-     * Génère à la volée le tableau d'amortissement (langue du dossier) et l'affiche.
-     * Document calculé automatiquement — pas d'upload nécessaire.
-     */
-    public function previewAmortizationPdf(FinancingRequest $financing)
-    {
-        $this->authorizeAccess($financing);
-
-        if (empty($financing->amortization_schedule)) {
-            return back()->with('error', 'Aucun tableau d\'amortissement disponible pour ce dossier.');
-        }
-
-        $locale = $financing->contract_language ?? 'fr';
-
-        try {
-            $absPath = $this->pdfService->generateAmortizationPdf($financing, $locale);
-        } catch (\Throwable $e) {
-            Log::error('Amortization PDF generation failed for ' . $financing->reference . ': ' . $e->getMessage());
-            return back()->with('error', 'Erreur lors de la génération du tableau d\'amortissement.');
-        }
-
-        return response()->file($absPath, [
-            'Content-Type'        => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="Tableau_Amortissement_' . $financing->reference . '.pdf"',
-        ])->deleteFileAfterSend(true);
-    }
-
     // ── Cycle de statut ───────────────────────────────────────────────────────────
 
     public function validateFinancing(FinancingRequest $financing)
@@ -599,8 +542,9 @@ class FinancingRequestController extends Controller
 
     /**
      * Finalise le dossier : exige "Contrat signé" comme statut de départ, permet de
-     * choisir la date de début des remboursements et de créditer (ou non) le compte
-     * client d'un montant modifiable. Envoie un email au client dans la langue du dossier.
+     * choisir la date de versement et de créditer (ou non) le compte client d'un
+     * montant modifiable — financement non remboursable, aucun échéancier associé.
+     * Envoie un email au client dans la langue du dossier.
      */
     public function finalize(Request $request, FinancingRequest $financing)
     {
@@ -611,9 +555,9 @@ class FinancingRequestController extends Controller
         }
 
         $data = $request->validate([
-            'repayment_start_date' => 'required|date',
-            'credit_account'       => 'nullable|boolean',
-            'credit_amount'        => 'nullable|numeric|min:0',
+            'disbursement_date' => 'required|date',
+            'credit_account'    => 'nullable|boolean',
+            'credit_amount'     => 'nullable|numeric|min:0',
         ]);
 
         $creditAccount = $request->boolean('credit_account');
@@ -634,7 +578,7 @@ class FinancingRequestController extends Controller
             $fresh->update([
                 'status'       => FinancingRequest::STATUS_FINALIZED,
                 'finalized_at' => now(),
-                'start_date'   => $data['repayment_start_date'],
+                'start_date'   => $data['disbursement_date'],
             ]);
 
             if ($creditAccount && $fresh->client_id) {
@@ -659,7 +603,7 @@ class FinancingRequestController extends Controller
             try {
                 Mail::to($this->recipientEmail($financing))->send(new FinancingFinalizedMail(
                     $financing,
-                    \Illuminate\Support\Carbon::parse($data['repayment_start_date'])->format('d/m/Y'),
+                    \Illuminate\Support\Carbon::parse($data['disbursement_date'])->format('d/m/Y'),
                     $creditAccount,
                     $creditAmount
                 ));
@@ -821,24 +765,13 @@ class FinancingRequestController extends Controller
         $body      = str_replace(array_keys($vars), array_values($vars), $template->content ?? '');
         $recipient = $this->recipientEmail($financing);
 
-        $amortPdfPath = null;
-        try {
-            $amortPdfPath = $this->pdfService->generateAmortizationPdf($financing, $locale);
-        } catch (\Throwable $e) {
-            Log::warning('Amortization PDF generation failed for ' . $financing->reference . ': ' . $e->getMessage());
-        }
-
         try {
             Mail::to($recipient)->send(
-                new FinancingValidationNotificationMail($financing, $subject, $body, $notificationPdfAbs, $amortPdfPath)
+                new FinancingValidationNotificationMail($financing, $subject, $body, $notificationPdfAbs)
             );
         } catch (\Throwable $e) {
             Log::error('FinancingValidationNotificationMail failed for ' . $financing->reference . ': ' . $e->getMessage());
             return 'Erreur lors de l\'envoi de la notification : ' . $e->getMessage();
-        } finally {
-            if ($amortPdfPath && file_exists($amortPdfPath)) {
-                @unlink($amortPdfPath);
-            }
         }
 
         $old = ['status' => $financing->status];
@@ -853,9 +786,8 @@ class FinancingRequestController extends Controller
     }
 
     /**
-     * Génère le tableau d'amortissement, envoie le contrat (FinancingValidatedMail)
-     * et passe le dossier au statut "contract_sent". Retourne un message d'erreur
-     * ou null en cas de succès.
+     * Envoie le contrat (FinancingValidatedMail) et passe le dossier au statut
+     * "contract_sent". Retourne un message d'erreur ou null en cas de succès.
      */
     private function sendContractStep(FinancingRequest $financing): ?string
     {
@@ -877,24 +809,12 @@ class FinancingRequestController extends Controller
         $locale    = $financing->contract_language ?? 'fr';
         $recipient = $this->recipientEmail($financing);
 
-        set_time_limit(180);
-        $amortPdfPath = null;
-        try {
-            $amortPdfPath = $this->pdfService->generateAmortizationPdf($financing, $locale);
-        } catch (\Throwable $e) {
-            Log::warning('Amortization PDF generation failed for ' . $financing->reference . ': ' . $e->getMessage());
-        }
-
         try {
             Mail::to($recipient)->send(
-                new FinancingValidatedMail($financing, $content['subject'], $content['body'], $contractPdfAbs, $amortPdfPath ?? '')
+                new FinancingValidatedMail($financing, $content['subject'], $content['body'], $contractPdfAbs)
             );
         } catch (\Throwable $e) {
             Log::error('FinancingValidatedMail failed for ' . $financing->reference . ': ' . $e->getMessage());
-        } finally {
-            if ($amortPdfPath && file_exists($amortPdfPath)) {
-                @unlink($amortPdfPath);
-            }
         }
 
         $financing->update([

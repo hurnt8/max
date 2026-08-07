@@ -127,7 +127,7 @@
       <div class="inv-brand-name">AURELIS CAPITAL GROUP INVESTI</div>
       <div class="inv-brand-sub">
         Organisme de financement<br>
-        contact@AURELIS CAPITAL GROUP.com
+        contact@aureliscapital.online
       </div>
     </div>
     <div class="inv-meta">

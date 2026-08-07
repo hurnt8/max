@@ -43,14 +43,12 @@ class FinancingRequest extends Model
         'reference', 'archive_ref',
         'admin_id', 'client_id', 'contract_template_id', 'insurance_template_id',
         'name', 'email', 'phone', 'address',
-        'amount', 'interest_rate', 'currency', 'start_date',
-        'monthly_payment', 'total_cost', 'total_with_interest',
+        'amount', 'currency', 'start_date',
         'admin_fees', 'frais_assurance', 'date_fin_assurance', 'bank_account', 'agent_suivi', 'directeur', 'notaire',
-        'duration_months', 'objet', 'financing_type', 'subject', 'npi',
+        'objet', 'financing_type', 'subject', 'npi',
         'extra_fields',
         'special_conditions',
         'contract_content', 'contract_pdf_path', 'insurance_pdf_path', 'notification_pdf_path', 'conditions_pdf_path', 'contract_language',
-        'amortization_schedule',
         'status', 'notes', 'files',
         'validated_at', 'sent_at', 'signed_received_at',
         'finalized_at', 'rejected_at', 'rejection_reason',
@@ -59,7 +57,6 @@ class FinancingRequest extends Model
     protected $casts = [
         'files'                => 'array',
         'extra_fields'         => 'array',
-        'amortization_schedule'=> 'array',
         'start_date'           => 'date',
         'validated_at'         => 'datetime',
         'sent_at'              => 'datetime',
@@ -67,14 +64,9 @@ class FinancingRequest extends Model
         'finalized_at'         => 'datetime',
         'rejected_at'          => 'datetime',
         'amount'               => 'decimal:2',
-        'monthly_payment'      => 'decimal:2',
-        'total_cost'           => 'decimal:2',
-        'total_with_interest'  => 'decimal:2',
         'admin_fees'           => 'decimal:2',
         'frais_assurance'      => 'decimal:2',
         'date_fin_assurance'   => 'date',
-        'interest_rate'        => 'decimal:2',
-        'duration_months'      => 'decimal:2',
         'bank_account'         => \App\Casts\SafeEncrypted::class,
         'npi'                  => \App\Casts\SafeEncrypted::class,
     ];
@@ -151,8 +143,8 @@ class FinancingRequest extends Model
 
     /**
      * Nom de fichier pour une pièce jointe email (contrat, notification, assurance,
-     * conditions générales, tableau d'amortissement), traduit dans la langue du
-     * dossier. $type ∈ contract|notification|insurance|conditions|amortization.
+     * conditions générales), traduit dans la langue du dossier.
+     * $type ∈ contract|notification|insurance|conditions.
      */
     public function documentFileName(string $type): string
     {

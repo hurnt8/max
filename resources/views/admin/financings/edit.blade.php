@@ -9,7 +9,7 @@
 <div class="d-flex align-items-start justify-content-between flex-wrap gap-3 page-hdr">
   <div>
     <h4>Modifier — <span style="font-family:monospace;color:var(--c-gold)">{{ $financing->reference }}</span></h4>
-    <p>Les calculs seront automatiquement régénérés à la sauvegarde</p>
+    <p>Financement non remboursable</p>
   </div>
   <a href="{{ route($panelPrefix.'.financings.show',$financing) }}" class="btn-ghost btn-sm-pro">
     <i class="fas fa-arrow-left"></i> Retour
@@ -20,7 +20,8 @@
 <div class="flash flash-err mb-4"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first() }}</div>
 @endif
 
-<form action="{{ route($panelPrefix.'.financings.update',$financing) }}" method="POST" x-data="financingForm()" x-init="calc()">
+<form action="{{ route($panelPrefix.'.financings.update',$financing) }}" method="POST"
+      x-data="{ currency: '{{ old('currency',$financing->currency??'EUR') }}' }">
 @csrf @method('PUT')
 <div class="row g-4">
 
@@ -158,30 +159,20 @@
       <div class="card-pro-body">
         <div class="row g-3">
           <div class="col-sm-6">
-            <label class="form-label-pro">Montant *</label>
+            <label class="form-label-pro">Montant accordé *</label>
             <div class="d-flex gap-2">
               <input type="number" name="amount" class="form-control-pro"
-                     value="{{ old('amount',$financing->amount) }}" step="100" min="100"
-                     x-model.number="amount" @input="calc()" style="flex:1">
+                     value="{{ old('amount',$financing->amount) }}" step="100" min="100" style="flex:1">
               <select name="currency" class="form-control-pro" style="width:90px;flex-shrink:0" x-model="currency">
                 @foreach($currencies as $cur)
                 <option value="{{ $cur }}" {{ old('currency',$financing->currency)===$cur?'selected':'' }}>{{ $cur }}</option>
                 @endforeach
               </select>
             </div>
+            <p class="form-help">Financement non remboursable — montant accordé en une fois, sans échéancier</p>
           </div>
           <div class="col-sm-6">
-            <label class="form-label-pro">Durée (mois) *</label>
-            <input type="number" name="duration_months" class="form-control-pro"
-                   value="{{ old('duration_months',$financing->duration_months) }}" min="1" max="360"
-                   x-model.number="duration" @input="calc()">
-          </div>
-          <div class="col-sm-6">
-            <label class="form-label-pro">Taux d'intérêt annuel</label>
-            <input type="text" class="form-control-pro" value="{{ number_format((float) $financing->interest_rate, 2) }} %" readonly style="background:var(--c-bg)">
-          </div>
-          <div class="col-sm-6">
-            <label class="form-label-pro">Date de première échéance</label>
+            <label class="form-label-pro">Date de versement prévue</label>
             <input type="date" name="start_date" class="form-control-pro"
                    value="{{ old('start_date',$financing->start_date?->format('Y-m-d')) }}">
           </div>
@@ -206,49 +197,6 @@
       </div>
     </div>
 
-    {{-- Simulation --}}
-    <div class="summary-box mb-4">
-      <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:1rem">
-        Simulation mise à jour
-      </div>
-      <div class="row g-3">
-        <div class="col-sm-4">
-          <div class="summary-box__label">Mensualité</div>
-          <div class="summary-box__val" x-text="fmt(monthly)+' '+currency">—</div>
-        </div>
-        <div class="col-sm-4">
-          <div class="summary-box__label">Coût crédit</div>
-          <div class="summary-box__val" style="color:rgba(255,255,255,.7)" x-text="fmt(totalCost)+' '+currency">—</div>
-        </div>
-        <div class="col-sm-4">
-          <div class="summary-box__label">Total remboursement</div>
-          <div class="summary-box__val" style="color:rgba(255,255,255,.7)" x-text="fmt(totalInterest)+' '+currency">—</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-pro mb-4" x-show="schedule.length > 0">
-      <div class="card-pro-hdr">
-        <div class="card-pro-title"><span class="icon-dot"></span>Aperçu des 5 premières échéances</div>
-      </div>
-      <table class="pro-table w-100">
-        <thead>
-          <tr><th>Mois</th><th>Mensualité</th><th>Capital</th><th>Intérêts</th><th>Solde restant</th></tr>
-        </thead>
-        <tbody>
-          <template x-for="row in schedule.slice(0,5)" :key="row.month">
-            <tr>
-              <td x-text="row.month" style="color:var(--c-muted)"></td>
-              <td x-text="fmt(row.payment)+' '+currency" style="font-weight:600"></td>
-              <td x-text="fmt(row.principal)+' '+currency"></td>
-              <td x-text="fmt(row.interest)+' '+currency" style="color:var(--c-red)"></td>
-              <td x-text="fmt(row.balance)+' '+currency" style="color:var(--c-muted)"></td>
-            </tr>
-          </template>
-        </tbody>
-      </table>
-    </div>
-
     <div class="d-flex justify-content-end gap-3">
       <a href="{{ route($panelPrefix.'.financings.show',$financing) }}" class="btn-ghost">Annuler</a>
       <button type="submit" class="btn-navy">
@@ -259,31 +207,3 @@
 </div>
 </form>
 @endsection
-
-@push('scripts')
-<script>
-function financingForm(){
-  return {
-    amount:{{ old('amount',$financing->amount??0) }}, duration:{{ old('duration_months',$financing->duration_months??12) }},
-    rate:{{ (float) $financing->interest_rate }}, currency:'{{ old('currency',$financing->currency??'EUR') }}',
-    monthly:0, totalCost:0, totalInterest:0, schedule:[],
-    calc(){
-      if(!this.amount||!this.duration){this.monthly=0;return;}
-      const r=this.rate/100/12,n=this.duration,P=this.amount;
-      const m=r===0?P/n:(P*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
-      this.monthly=Math.round(m*100)/100;
-      this.totalInterest=Math.round(m*n*100)/100;
-      this.totalCost=Math.round((this.totalInterest-P)*100)/100;
-      let bal=P;this.schedule=[];
-      for(let i=1;i<=n;i++){
-        const int=Math.round(bal*r*100)/100;
-        const prin=Math.round((m-int)*100)/100;
-        bal=Math.max(0,Math.round((bal-prin)*100)/100);
-        this.schedule.push({month:i,payment:m,principal:prin,interest:int,balance:bal});
-      }
-    },
-    fmt(v){return new Intl.NumberFormat('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2}).format(v||0);}
-  }
-}
-</script>
-@endpush

@@ -324,7 +324,6 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::get('/financings/{financing}/notification/docx',        [FinancingRequestController::class, 'downloadNotificationDocx'])->name('financings.notification.docx');
     Route::post('/financings/{financing}/notification/pdf/upload', [FinancingRequestController::class, 'uploadNotificationPdf'])->name('financings.notification.pdf.upload');
     Route::get('/financings/{financing}/notification/pdf',          [FinancingRequestController::class, 'previewNotificationPdf'])->name('financings.notification.pdf');
-    Route::get('/financings/{financing}/amortization/pdf',          [FinancingRequestController::class, 'previewAmortizationPdf'])->name('financings.amortization.pdf');
 
     // Modèles de contrats — Financement (indépendants des modèles "Prêt")
     Route::get('/financing-contract-templates',                                        [FinancingContractTemplateController::class, 'index'])->name('financing-contract-templates.index');

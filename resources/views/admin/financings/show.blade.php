@@ -116,13 +116,9 @@
         <div class="card-pro-title"><span class="icon-dot"></span>Paramètres du financement</div>
       </div>
       <div class="card-pro-body">
-        <div class="fs-info-row"><span class="fs-info-label">Montant</span><span class="fs-info-val">{{ number_format((float)$financing->amount,2,',',' ') }} {{ $financing->currency }}</span></div>
-        <div class="fs-info-row"><span class="fs-info-label">Durée</span><span class="fs-info-val">{{ $financing->duration_months }} mois</span></div>
-        <div class="fs-info-row"><span class="fs-info-label">Taux annuel</span><span class="fs-info-val">{{ $financing->interest_rate }} %</span></div>
-        <div class="fs-info-row"><span class="fs-info-label">Mensualité</span><span class="fs-info-val">{{ number_format((float)$financing->monthly_payment,2,',',' ') }} {{ $financing->currency }}</span></div>
-        <div class="fs-info-row"><span class="fs-info-label">Coût total des intérêts</span><span class="fs-info-val">{{ number_format((float)$financing->total_cost,2,',',' ') }} {{ $financing->currency }}</span></div>
-        <div class="fs-info-row"><span class="fs-info-label">Total à rembourser</span><span class="fs-info-val">{{ number_format((float)$financing->total_with_interest,2,',',' ') }} {{ $financing->currency }}</span></div>
-        <div class="fs-info-row"><span class="fs-info-label">Date de première échéance</span><span class="fs-info-val">{{ $financing->start_date?->format('d/m/Y') ?? '—' }}</span></div>
+        <div class="fs-info-row"><span class="fs-info-label">Montant accordé</span><span class="fs-info-val">{{ number_format((float)$financing->amount,2,',',' ') }} {{ $financing->currency }}</span></div>
+        <div class="fs-info-row"><span class="fs-info-label">Remboursement</span><span class="fs-info-val" style="color:#166534">Non remboursable</span></div>
+        <div class="fs-info-row"><span class="fs-info-label">Date de versement</span><span class="fs-info-val">{{ $financing->start_date?->format('d/m/Y') ?? '—' }}</span></div>
         <div class="fs-info-row"><span class="fs-info-label">Type de financement</span><span class="fs-info-val">{{ $financing->financingTypeLabel() }}</span></div>
         <div class="fs-info-row"><span class="fs-info-label">Objet</span><span class="fs-info-val">{{ $financing->objet ?: '—' }}</span></div>
         @if($financing->special_conditions)
@@ -133,34 +129,6 @@
         @endif
       </div>
     </div>
-
-    {{-- Tableau d'amortissement --}}
-    @if($financing->amortization_schedule && count($financing->amortization_schedule))
-    <div class="card-pro mb-4">
-      <div class="card-pro-hdr">
-        <div class="card-pro-title"><span class="icon-dot"></span>Tableau d'amortissement</div>
-        <span style="font-size:.72rem;color:var(--c-muted)">{{ count($financing->amortization_schedule) }} échéances</span>
-      </div>
-      <div style="max-height:340px;overflow-y:auto">
-        <table class="pro-table w-100">
-          <thead>
-            <tr><th>Mois</th><th>Mensualité</th><th>Capital</th><th>Intérêts</th><th>Solde restant</th></tr>
-          </thead>
-          <tbody>
-            @foreach($financing->amortization_schedule as $row)
-            <tr>
-              <td style="color:var(--c-muted)">{{ $row['month'] }}</td>
-              <td style="font-weight:600">{{ number_format($row['payment'],2,',',' ') }} {{ $financing->currency }}</td>
-              <td>{{ number_format($row['principal'],2,',',' ') }} {{ $financing->currency }}</td>
-              <td style="color:var(--c-red)">{{ number_format($row['interest'],2,',',' ') }} {{ $financing->currency }}</td>
-              <td style="color:var(--c-muted)">{{ number_format($row['balance'],2,',',' ') }} {{ $financing->currency }}</td>
-            </tr>
-            @endforeach
-          </tbody>
-        </table>
-      </div>
-    </div>
-    @endif
 
     {{-- Documents --}}
     <div class="card-pro mb-4">
@@ -226,14 +194,6 @@
           <p class="form-help">1. Générez le DOCX rempli <i class="fas fa-file-word"></i>, 2. convertissez-le en PDF, 3. uploadez-le ici.</p>
           @endif
         </div>
-
-        @if($financing->amortization_schedule && count($financing->amortization_schedule))
-        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--c-border)">
-          <a href="{{ route($panelPrefix.'.financings.amortization.pdf',$financing) }}" target="_blank" class="btn-ghost btn-sm-pro">
-            <i class="fas fa-table"></i> Voir le tableau d'amortissement (PDF)
-          </a>
-        </div>
-        @endif
 
       </div>
     </div>
@@ -345,8 +305,8 @@
         </div>
         <div class="modal-body" style="padding:1.5rem">
           <div class="mb-3">
-            <label class="form-label-pro">Date de début des remboursements *</label>
-            <input type="date" name="repayment_start_date" class="form-control-pro"
+            <label class="form-label-pro">Date de versement des fonds *</label>
+            <input type="date" name="disbursement_date" class="form-control-pro"
                    value="{{ now()->format('Y-m-d') }}" required>
           </div>
           <div class="mb-3">

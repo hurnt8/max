@@ -80,7 +80,7 @@ class FinancingContractTemplateController extends Controller
 
         return view('admin.financing-contract-templates.edit', [
             'template'    => $financingContractTemplate,
-            'variables'   => $this->contractService->variableDescriptions(),
+            'variables'   => $this->financingVariableDescriptions(),
             'admins'      => $admins,
             'assignedIds' => $assignedIds,
         ]);
@@ -135,7 +135,7 @@ class FinancingContractTemplateController extends Controller
     {
         $this->authorizeTemplate($financingContractTemplate);
 
-        $knownKeys = array_keys($this->contractService->variableDescriptions());
+        $knownKeys = array_keys($this->financingVariableDescriptions());
 
         preg_match_all('/\{([a-zA-Z][a-zA-Z0-9_]*)\}/', $financingContractTemplate->content ?? '', $m);
         $contentTags = array_values(array_unique($m[0] ?? []));
@@ -222,5 +222,18 @@ class FinancingContractTemplateController extends Controller
         $hasAccess = $financingContractTemplate->is_default
             || $financingContractTemplate->assignedAdmins()->where('users.id', $user->id)->exists();
         abort_unless($hasAccess, 403, 'Accès non autorisé à ce modèle.');
+    }
+
+    /**
+     * Variables disponibles pour un dossier de financement — le référentiel partagé
+     * avec les modèles "Prêt" inclut des balises de remboursement (durée, taux,
+     * mensualité) sans objet ici puisqu'un financement n'est pas remboursable.
+     */
+    private function financingVariableDescriptions(): array
+    {
+        return array_diff_key(
+            $this->contractService->variableDescriptions(),
+            array_flip(['{duree}', '{taux}', '{mensualite}', '{montant_mensualite}', '{montant_totalavecinteret}'])
+        );
     }
 }

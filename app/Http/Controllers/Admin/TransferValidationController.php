@@ -163,9 +163,10 @@ class TransferValidationController extends Controller
 
         $client   = $transfer->user;
         $currency = $transfer->currency;
+        $texts    = $this->feeInvoiceTexts($client->locale ?? 'fr', $transfer->reference);
 
-        DB::transaction(function () use ($transfer, $data, $client, $currency, $request) {
-            $desc = $data['description'] ?: 'Frais de traitement pour le virement ' . $transfer->reference;
+        DB::transaction(function () use ($transfer, $data, $client, $currency, $request, $texts) {
+            $desc = $data['description'] ?: $texts['description'];
 
             $invoice = Invoice::create([
                 'reference'   => Invoice::generateReference(),
@@ -180,7 +181,7 @@ class TransferValidationController extends Controller
                 'issue_date'  => now()->toDateString(),
                 'due_date'    => now()->addDays(7)->toDateString(),
                 'description' => $desc,
-                'note'        => 'Facture liée au virement ' . $transfer->reference,
+                'note'        => $texts['note'],
                 'items'       => [[
                     'description' => $desc,
                     'quantity'    => 1,
@@ -246,5 +247,36 @@ class TransferValidationController extends Controller
             || $client->clientLoans()->where('admin_id', $adminId)->exists();
 
         abort_unless($isManaged, 403, 'Accès non autorisé à ce virement.');
+    }
+
+    /**
+     * Texte par défaut (description + note) de la facture de frais liée à un virement,
+     * dans la langue du client — le contenu de la facture est stocké tel quel en base
+     * (pas une clé de traduction), donc il doit être résolu dans la bonne langue ici.
+     */
+    private function feeInvoiceTexts(string $locale, string $reference): array
+    {
+        $texts = [
+            'fr' => ['description' => 'Frais de traitement pour le virement %s', 'note' => 'Facture liée au virement %s'],
+            'en' => ['description' => 'Processing fees for transfer %s', 'note' => 'Invoice linked to transfer %s'],
+            'es' => ['description' => 'Gastos de tramitación de la transferencia %s', 'note' => 'Factura vinculada a la transferencia %s'],
+            'pl' => ['description' => 'Opłata za realizację przelewu %s', 'note' => 'Faktura powiązana z przelewem %s'],
+            'bg' => ['description' => 'Такса за обработка на превод %s', 'note' => 'Фактура, свързана с превод %s'],
+            'hu' => ['description' => 'Feldolgozási díj a(z) %s átutaláshoz', 'note' => 'A(z) %s átutaláshoz kapcsolódó számla'],
+            'it' => ['description' => 'Spese di gestione per il bonifico %s', 'note' => 'Fattura collegata al bonifico %s'],
+            'de' => ['description' => 'Bearbeitungsgebühr für die Überweisung %s', 'note' => 'Rechnung zur Überweisung %s'],
+            'lt' => ['description' => 'Apdorojimo mokestis už pervedimą %s', 'note' => 'Sąskaita faktūra, susijusi su pervedimu %s'],
+            'ro' => ['description' => 'Taxe de procesare pentru transferul %s', 'note' => 'Factură asociată transferului %s'],
+            'lv' => ['description' => 'Apstrādes maksa par pārvedumu %s', 'note' => 'Rēķins, kas saistīts ar pārvedumu %s'],
+            'nl' => ['description' => 'Verwerkingskosten voor de overschrijving %s', 'note' => 'Factuur gekoppeld aan de overschrijving %s'],
+            'pt' => ['description' => 'Taxas de processamento da transferência %s', 'note' => 'Fatura associada à transferência %s'],
+        ];
+
+        $t = $texts[$locale] ?? $texts['fr'];
+
+        return [
+            'description' => sprintf($t['description'], $reference),
+            'note'        => sprintf($t['note'], $reference),
+        ];
     }
 }

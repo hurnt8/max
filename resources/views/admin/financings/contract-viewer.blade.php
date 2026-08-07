@@ -292,20 +292,20 @@ kbd {
 
     <div class="s-meta">
       <div>
-        <div class="s-meta-lbl">Capital</div>
+        <div class="s-meta-lbl">Montant</div>
         <div class="s-meta-val gold">{{ number_format($financing->amount, 0, ',', ' ') }} {{ $financing->currency }}</div>
       </div>
       <div>
-        <div class="s-meta-lbl">Durée</div>
-        <div class="s-meta-val">{{ $financing->duration_months }} mois</div>
+        <div class="s-meta-lbl">Remboursement</div>
+        <div class="s-meta-val">Non remboursable</div>
       </div>
       <div>
         <div class="s-meta-lbl">Langue</div>
         <div class="s-meta-val">{{ strtoupper($financing->contract_language ?? 'FR') }}</div>
       </div>
       <div>
-        <div class="s-meta-lbl">Taux</div>
-        <div class="s-meta-val">{{ $financing->interest_rate }} %</div>
+        <div class="s-meta-lbl">Versement</div>
+        <div class="s-meta-val">{{ $financing->start_date?->format('d/m/Y') ?? '—' }}</div>
       </div>
     </div>
 

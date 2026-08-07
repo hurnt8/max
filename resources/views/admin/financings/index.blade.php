@@ -283,7 +283,7 @@ $currentStatus = request('status','');
           <th>Client</th>
           @if($isSuperAdmin)<th>Admin</th>@endif
           <th>Montant</th>
-          <th>Mensualité</th>
+          <th>Versement</th>
           <th>Statut</th>
           <th>Date</th>
           <th style="text-align:right;padding-right:1.25rem">Actions</th>
@@ -340,14 +340,12 @@ $currentStatus = request('status','');
               <span style="font-size:.68rem;font-weight:500;color:var(--c-muted)">{{ $financing->currency }}</span>
             </div>
             <div>
-              <span class="fi-duration"><i class="fas fa-calendar-alt" style="font-size:.55rem"></i> {{ $financing->duration_months }} mois</span>
-              <span class="fi-rate">{{ $financing->interest_rate }}%</span>
+              <span class="fi-duration"><i class="fas fa-hand-holding-dollar" style="font-size:.55rem"></i> Non remboursable</span>
             </div>
           </td>
 
-          <td data-label="Mensualité">
-            <div class="fi-monthly">{{ number_format((float)$financing->monthly_payment,2,',',' ') }}</div>
-            <div class="fi-monthly-cur">{{ $financing->currency }}/mois</div>
+          <td data-label="Versement">
+            <div class="fi-monthly">{{ $financing->start_date?->format('d/m/Y') ?? '—' }}</div>
           </td>
 
           <td data-label="Statut">

@@ -13,6 +13,7 @@ class InvitationController extends Controller
     public function show(string $token)
     {
         $user = User::where('invitation_token', $token)->firstOrFail();
+        app()->setLocale($user->locale ?? 'fr');
 
         return view('auth.invitation', compact('user', 'token'));
     }
@@ -20,6 +21,7 @@ class InvitationController extends Controller
     public function activate(Request $request, string $token)
     {
         $user = User::where('invitation_token', $token)->firstOrFail();
+        app()->setLocale($user->locale ?? 'fr');
 
         $request->validate([
             'password'              => 'required|min:8|confirmed',
