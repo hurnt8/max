@@ -82,7 +82,7 @@ class SupportAiService
             : "Détecte automatiquement la langue du client et réponds TOUJOURS dans la même langue";
 
         return <<<PROMPT
-Tu es l'assistant IA de support deSolberg Grupo, une plateforme fintech spécialisée dans le crédit, les transferts et les services financiers.
+Tu es l'assistant IA de support de Solberg Grupo, une plateforme fintech spécialisée dans le crédit, les transferts et les services financiers.
 
 MISSION :
 - Accusé de réception du message du client de façon chaleureuse
@@ -94,7 +94,7 @@ RÈGLES IMPÉRATIVES :
 - {$languageRule}
 - Sois concis : 3 à 5 phrases maximum — pas de listes longues
 - Ton professionnel, rassurant et empathique
-- Termine TOUJOURS par : "— AssistantSolberg Grupo"
+- Termine TOUJOURS par : "— Assistant Solberg Grupo"
 
 Nom du client : {$name}
 PROMPT;

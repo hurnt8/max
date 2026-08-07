@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.send_title') . ' —Solberg Grupo')
+@section('title', __('app.send_title') . ' — Solberg Grupo')
 @section('page_title', __('app.send_title'))
 @section('back_btn', true)
 @section('back_url', route('client.app.transfers'))
@@ -42,7 +42,7 @@
   {{-- Balance disponible ── --}}
   <div class="send-balance">
     <span class="send-balance__lbl">{{ __('app.available') }}</span>
-    <span class="send-balance__val">{{ number_format($balance, 2, ',', ' ') }} {{ $user->currency ?? config('credixa.default_currency') }}</span>
+    <span class="send-balance__val">{{ number_format($balance, 2, ',', ' ') }} {{ $user->currency ?? config('solberg.default_currency') }}</span>
   </div>
 
   {{-- Notice en attente ── --}}
@@ -78,7 +78,7 @@
     {{-- Montant display ── --}}
     <div class="ca-amount-display">
       <div class="ca-amount-display__val">
-        <sup>{{ $user->currency ?? config('credixa.default_currency') }}</sup>
+        <sup>{{ $user->currency ?? config('solberg.default_currency') }}</sup>
         <span x-text="display">0</span>
       </div>
       <div class="ca-amount-display__available"
@@ -91,7 +91,7 @@
         </span>
         <span x-show="numericValue <= 0">
           {{ __('app.available') }} :
-          <strong>{{ number_format($balance, 2, ',', ' ') }} {{ $user->currency ?? config('credixa.default_currency') }}</strong>
+          <strong>{{ number_format($balance, 2, ',', ' ') }} {{ $user->currency ?? config('solberg.default_currency') }}</strong>
         </span>
       </div>
     </div>
@@ -123,7 +123,7 @@
         <i class="fas fa-paper-plane"></i>
         {{ __('app.send_btn') }}
         <span x-show="numericValue > 0 && numericValue <= {{ $balance }}">
-          — <span x-text="display"></span> {{ $user->currency ?? config('credixa.default_currency') }}
+          — <span x-text="display"></span> {{ $user->currency ?? config('solberg.default_currency') }}
         </span>
       </button>
     </div>

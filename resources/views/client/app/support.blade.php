@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', 'Support —Solberg Grupo')
+@section('title', 'Support — Solberg Grupo')
 @section('no_bottom_nav', '1')
 
 {{-- ── Topbar custom plein écran ── --}}
@@ -15,7 +15,7 @@
       <span class="sc-online-dot"></span>
     </div>
     <div>
-      <div class="sc-agent-name">SupportSolberg Grupo</div>
+      <div class="sc-agent-name">Support Solberg Grupo</div>
       <div class="sc-agent-status">
         <span class="sc-pulse"></span> En ligne
       </div>

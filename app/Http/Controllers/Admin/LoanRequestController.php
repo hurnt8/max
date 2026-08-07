@@ -91,7 +91,7 @@ class LoanRequestController extends Controller
         $admin     = Auth::user();
         $myClients = $this->clientsForAdmin($admin);
         $templates  = $this->templatesForAdmin($admin);
-        $currencies = config('credixa.currencies');
+        $currencies = config('solberg.currencies');
         $annualRate = \App\Models\LoanSetting::current()->annual_rate;
         $financingTypes = LoanRequest::FINANCING_TYPES;
 
@@ -114,7 +114,7 @@ class LoanRequestController extends Controller
             'client_date_delivre' => 'nullable|date',
             'client_tax_number' => 'nullable|string|max:60',
             'client_activity'   => 'nullable|string|max:255',
-            'client_locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
+            'client_locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
             'client_currency'   => 'nullable|string|max:10',
             // Prêt
             'amount'            => 'required|numeric|min:100',
@@ -265,7 +265,7 @@ class LoanRequestController extends Controller
         $myClients = User::where('type', 'client')
                          ->whereHas('clientLoans', fn($q) => $q->where('admin_id', $admin->id))
                          ->orderBy('name')->get();
-        $currencies = config('credixa.currencies');
+        $currencies = config('solberg.currencies');
         $templates  = $this->templatesForAdmin($admin);
         $financingTypes = LoanRequest::FINANCING_TYPES;
 
@@ -294,7 +294,7 @@ class LoanRequestController extends Controller
             'notaire'               => 'nullable|string|max:255',
             'special_conditions'    => 'nullable|string',
             'contract_template_id'  => 'nullable|exists:contract_templates,id',
-            'contract_language'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
+            'contract_language'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
             'extra_fields'         => 'nullable|array',
             'extra_fields.*'       => 'nullable|string|max:500',
         ]);
@@ -609,13 +609,25 @@ class LoanRequestController extends Controller
         $body      = str_replace(array_keys($vars), array_values($vars), $template->content ?? '');
         $recipient = $this->recipientEmail($loan);
 
+        // ── Tableau d'amortissement (pro forma) joint à la notification, dans la langue du dossier ─
+        $amortPdfPath = null;
+        try {
+            $amortPdfPath = $this->pdfService->generateAmortizationPdf($loan, $locale);
+        } catch (\Throwable $e) {
+            Log::warning('Amortization PDF generation failed for ' . $loan->reference . ': ' . $e->getMessage());
+        }
+
         try {
             Mail::to($recipient)->send(
-                new LoanValidationNotificationMail($loan, $subject, $body, $notificationPdfAbs)
+                new LoanValidationNotificationMail($loan, $subject, $body, $notificationPdfAbs, $amortPdfPath ?? '')
             );
         } catch (\Throwable $e) {
             Log::error('LoanValidationNotificationMail failed for ' . $loan->reference . ': ' . $e->getMessage());
             return 'Erreur lors de l\'envoi de la notification : ' . $e->getMessage();
+        } finally {
+            if ($amortPdfPath && file_exists($amortPdfPath)) {
+                @unlink($amortPdfPath);
+            }
         }
 
         $old = ['status' => $loan->status];
@@ -1011,7 +1023,7 @@ class LoanRequestController extends Controller
             if ($isFinalization && $fresh->client_id) {
                 $fresh->client?->increment('balance', (float) $fresh->amount);
 
-                $cur = $fresh->currency ?? config('credixa.default_currency');
+                $cur = $fresh->currency ?? config('solberg.default_currency');
                 ClientNotification::notifyUser(
                     $fresh->client,
                     'credit',

@@ -20,7 +20,7 @@ return [
     'label_npi' => 'Persoonlijk identificatienummer',
     'label_file' => 'Identiteitsbewijs (voor- en achterzijde)',
     'label_objet' => 'Doel van de lening',
-    'détails' => 'Leningdetails',
+    'details' => 'Leningdetails',
 
     'placeholder_name' => 'Uw naam en voornamen',
     'placeholder_email' => 'Voer uw e-mailadres in',

@@ -103,6 +103,14 @@ return [
         'location' => 'Jūrmala, Latvija',
         'months_ago' => 5,
     ],
+    'testimonial_7' => [
+        'quote' => '"Vienkāršs un efektīvs aizdevuma process. Biju patīkami pārsteigta par apstiprinājuma ātrumu. Paldies visai komandai!"',
+        'name' => 'Marie C.',
+    ],
+    'testimonial_8' => [
+        'quote' => '"Man bija lieliska pieredze ar šo aizdevumu pakalpojumu. Personāls bija uzmanīgs un profesionāls. Iesaku bez vilcināšanās!"',
+        'name' => 'Jean L.',
+    ],
 
     'about_title' => 'Pievienojieties labākajam pasaules tirgum darbiniekiem',
     'about_description' => 'Solberg Grupo ir jūsu uzticamā platforma aizdevumu saņemšanai ar izcilu klientu pieredzi. Mēs apņemamies nodrošināt jums vienkāršus, drošus un ātrus finanšu risinājumus.',
@@ -161,7 +169,7 @@ return [
     'slide_1' => [
         'title' => 'Jau 15 gadus · Sertificēts · Garantēta atbilde',
         'text1' => 'Finansējiet visus savus projektus,',
-        'text2' => 'līdz 500 000 € 24 stundu laikā.',
+        'text2' => 'līdz 5 000 000 € 24 stundu laikā.',
     ],
     'slide_2' => [
         'title' => 'Gudri aizdevumi spožai nākotnei',

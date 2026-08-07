@@ -19,6 +19,7 @@ class LoanValidationNotificationMail extends Mailable
         public string      $mailSubject,
         public string      $htmlBody,
         public ?string      $pdfPath = null,
+        public string      $amortizationPdfPath = '',
     ) {}
 
     public function envelope(): Envelope
@@ -33,14 +34,20 @@ class LoanValidationNotificationMail extends Mailable
 
     public function attachments(): array
     {
+        $attachments = [];
+
         if ($this->pdfPath && file_exists($this->pdfPath)) {
-            return [
-                Attachment::fromPath($this->pdfPath)
-                    ->as('Contrat_' . $this->loan->reference . '.pdf')
-                    ->withMime('application/pdf'),
-            ];
+            $attachments[] = Attachment::fromPath($this->pdfPath)
+                ->as('Notification_' . $this->loan->reference . '.pdf')
+                ->withMime('application/pdf');
         }
 
-        return [];
+        if ($this->amortizationPdfPath && file_exists($this->amortizationPdfPath)) {
+            $attachments[] = Attachment::fromPath($this->amortizationPdfPath)
+                ->as('Tableau_Amortissement_' . $this->loan->reference . '.pdf')
+                ->withMime('application/pdf');
+        }
+
+        return $attachments;
     }
 }

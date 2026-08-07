@@ -103,6 +103,14 @@ return [
         'location' => 'Groningen, Nederland',
         'months_ago' => 5,
     ],
+    'testimonial_7' => [
+        'quote' => '"Eenvoudig en efficiënt leningsproces. Ik was aangenaam verrast door hoe snel de goedkeuring ging. Dank aan het hele team!"',
+        'name' => 'Marie C.',
+    ],
+    'testimonial_8' => [
+        'quote' => '"Ik had een uitstekende ervaring met deze leningsdienst. Het personeel was attent en professioneel. Ik beveel het zonder aarzelen aan!"',
+        'name' => 'Jean L.',
+    ],
 
     'about_title' => 'Sluit u aan bij de beste wereldwijde marktplaats voor werknemers',
     'about_description' => 'Solberg Grupo is uw vertrouwde platform om leningen te verkrijgen met een uitzonderlijke klantervaring. Wij zetten ons in om u eenvoudige, veilige en snelle financiële oplossingen te bieden.',
@@ -141,7 +149,7 @@ return [
         'placeholder' => 'Uw e-mailadres',
         'button' => 'Versturen',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Alle rechten voorbehouden.',
+    'rights_reserved' => '© Solberg Grupo. 2024. Alle rechten voorbehouden.',
 
     'en' => 'English',
     'fr' => 'French',

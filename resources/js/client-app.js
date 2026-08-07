@@ -55,7 +55,7 @@ Alpine.data('keypad', (initial = '') => ({
 const PUSH_VAPID_LS_KEY = 'cxa_vapid_pub';
 
 function pushVapidKey() {
-    return window.CREDIXA_VAPID_KEY || '';
+    return window.SOLBERG_VAPID_KEY || '';
 }
 
 function vapidKeyChanged() {
@@ -179,7 +179,7 @@ Alpine.data('togglePref', () => ({
 Alpine.data('themeToggle', () => ({
     isDark: false,
     init() {
-        const saved = localStorage.getItem('credixa-theme-v2') || 'light';
+        const saved = localStorage.getItem('solberg-theme-v2') || 'light';
         this.isDark = saved === 'dark';
         document.documentElement.dataset.theme = saved;
     },
@@ -187,7 +187,7 @@ Alpine.data('themeToggle', () => ({
         this.isDark = !this.isDark;
         const theme = this.isDark ? 'dark' : 'light';
         document.documentElement.dataset.theme = theme;
-        localStorage.setItem('credixa-theme-v2', theme);
+        localStorage.setItem('solberg-theme-v2', theme);
     },
 }));
 

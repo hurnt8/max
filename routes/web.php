@@ -11,6 +11,8 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\InvitationController;
 use App\Http\Controllers\Auth\StaffLoginController;
+use App\Http\Controllers\Auth\StaffForgotPasswordController;
+use App\Http\Controllers\Auth\StaffResetPasswordController;
 use App\Http\Controllers\Dashboard\ClientDashboardController;
 use App\Http\Controllers\Dashboard\AdminDashboardController;
 use App\Http\Controllers\Dashboard\SuperAdminDashboardController;
@@ -39,7 +41,7 @@ use App\Http\Controllers\Client\SupportController as ClientSupportController;
 |
 */
 
-$supportedLocales = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl'];
+$supportedLocales = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt'];
 
 Route::get('/', function (Request $request) use ($supportedLocales) {
     $locale = 'en';
@@ -65,7 +67,7 @@ Route::get('/', function (Request $request) use ($supportedLocales) {
     return redirect("/{$locale}");
 });
 
-Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['locale' => 'fr|en|pl|es|bg|hu|it|de|lt|ro|lv|nl']], function () {
+Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['locale' => 'fr|en|pl|es|bg|hu|it|de|lt|ro|lv|nl|pt']], function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
@@ -141,7 +143,7 @@ Route::post('/loan/documents', [LoanController::class, 'sendDocuments'])->name('
 
 // ── Locale switcher (for auth pages without {locale} prefix) ────────────────
 Route::get('/lang/{lang}', function (Request $request, $lang) {
-    if (in_array($lang, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv'])) {
+    if (in_array($lang, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt'])) {
         session(['locale' => $lang]);
     }
     $back = $request->headers->get('referer', url('/'));
@@ -178,6 +180,12 @@ Route::post('/reset-password',         [ResetPasswordController::class, 'reset']
 Route::get('/staff/login',  [StaffLoginController::class, 'showLoginForm'])->name('staff.login')->middleware('guest');
 Route::post('/staff/login', [StaffLoginController::class, 'login'])->name('staff.login.submit')->middleware(['guest', 'throttle:5,1']);
 Route::post('/staff/logout',[StaffLoginController::class, 'logout'])->name('staff.logout');
+
+// Forgot / reset password (staff / admin)
+Route::get('/staff/forgot-password',         [StaffForgotPasswordController::class, 'show'])->name('staff.password.request')->middleware('guest');
+Route::post('/staff/forgot-password',        [StaffForgotPasswordController::class, 'send'])->name('staff.password.email')->middleware(['guest', 'throttle:5,1']);
+Route::get('/staff/reset-password/{token}',  [StaffResetPasswordController::class, 'show'])->name('staff.password.reset')->middleware('guest');
+Route::post('/staff/reset-password',         [StaffResetPasswordController::class, 'reset'])->name('staff.password.update')->middleware(['guest', 'throttle:5,1']);
 
 // ── Client dashboard ────────────────────────────────────────────────────────
 Route::middleware(['auth', 'role:client'])->prefix('dashboard')->name('client.')->group(function () {
@@ -240,7 +248,7 @@ Route::middleware(['auth', 'role:client', 'client.locale'])->prefix('app')->name
 
     Route::post('/locale', function (\Illuminate\Http\Request $request) {
         $locale = $request->input('locale', 'fr');
-        if (in_array($locale, ['fr','en','pl','es','bg','hu','it','de','lt','ro','lv','nl'])) {
+        if (in_array($locale, ['fr','en','pl','es','bg','hu','it','de','lt','ro','lv','nl','pt'])) {
             $request->user()->update(['locale' => $locale]);
             session(['locale' => $locale]);
         }

@@ -1,8 +1,14 @@
 @php
+$portal = $portal ?? 'client';
+$subs = [
+    'fr' => ['client' => 'Espace Client Sécurisé', 'staff' => 'Espace Administrateur Sécurisé'],
+    'en' => ['client' => 'Secure Client Area',      'staff' => 'Secure Administrator Area'],
+    'es' => ['client' => 'Área de Cliente Segura',  'staff' => 'Área de Administrador Segura'],
+    'pl' => ['client' => 'Bezpieczna Strefa Klienta','staff' => 'Bezpieczna Strefa Administratora'],
+];
 $texts = [
     'fr' => [
         'title'    => 'Réinitialisation du mot de passe',
-        'sub'      => 'Espace Client Sécurisé',
         'greeting' => 'Bonjour ' . ($user->name ?? '') . ',',
         'intro'    => 'Vous avez demandé la réinitialisation de votre mot de passe. Cliquez sur le bouton ci-dessous pour en choisir un nouveau.',
         'button'   => 'Réinitialiser le mot de passe',
@@ -14,7 +20,6 @@ $texts = [
     ],
     'en' => [
         'title'    => 'Password reset',
-        'sub'      => 'Secure Client Area',
         'greeting' => 'Hello ' . ($user->name ?? '') . ',',
         'intro'    => 'You requested a password reset. Click the button below to choose a new one.',
         'button'   => 'Reset password',
@@ -26,7 +31,6 @@ $texts = [
     ],
     'es' => [
         'title'    => 'Restablecimiento de contraseña',
-        'sub'      => 'Área de Cliente Segura',
         'greeting' => 'Hola ' . ($user->name ?? '') . ',',
         'intro'    => 'Ha solicitado restablecer su contraseña. Haga clic en el botón de abajo para elegir una nueva.',
         'button'   => 'Restablecer contraseña',
@@ -38,7 +42,6 @@ $texts = [
     ],
     'pl' => [
         'title'    => 'Resetowanie hasła',
-        'sub'      => 'Bezpieczna Strefa Klienta',
         'greeting' => 'Witaj ' . ($user->name ?? '') . ',',
         'intro'    => 'Poprosiłeś/aś o zresetowanie hasła. Kliknij poniższy przycisk, aby ustawić nowe.',
         'button'   => 'Zresetuj hasło',
@@ -50,10 +53,11 @@ $texts = [
     ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];
+$sub = ($subs[$locale] ?? $subs['fr'])[$portal] ?? ($subs['fr'][$portal] ?? $subs['fr']['client']);
 @endphp
 <x-email-layout
     :title="$t['title']"
-    :subtitle="$t['sub']"
+    :subtitle="$sub"
     accent="teal"
 >
 

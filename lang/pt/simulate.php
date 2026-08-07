@@ -22,6 +22,6 @@ return [
     'table_primal' => 'Principal (€)',
     'table_interest' => 'Juros (€)',
     'table_solde' => 'Saldo restante (€)',
-    'termos' => 'Termo de Utilização',
+    'terms' => 'Termos de Utilização',
     'total' => 'Valor total do reembolso',
 ];

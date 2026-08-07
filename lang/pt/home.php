@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Credixa - Os melhores credores online na Alemanha, Espanha, Hungria, etc.',
+    'general_title' => 'Solberg Grupo - Os melhores credores online na Alemanha, Espanha, Hungria, etc.',
     'banner_title' => 'Obtenha o empréstimo perfeito para todas as suas necessidades online.',
-    'banner_text' => 'Milhões de pessoas usam aSolberg Grupo para realizar seus projetos.',
+    'banner_text' => 'Milhões de pessoas usam a Solberg Grupo para realizar seus projetos.',
     'get_loan_now' => 'Obtenha um empréstimo agora',
     'popular_loans' => 'Tipos de empréstimos populares:',
     'personal_loan' => 'Empréstimo pessoal',
@@ -62,40 +62,55 @@ return [
 
     'custom_loan_services' => 'Aproveite nossos serviços de empréstimo sob medida',
     'reliability_quality' => 'Transparência e Confiabilidade',
-    'reliability_quality_description' => 'NaSolberg Grupo, oferecemos soluções de empréstimo claras e confiáveis, respaldadas por avaliações positivas de clientes e total transparência.',
+    'reliability_quality_description' => 'Na Solberg Grupo, oferecemos soluções de empréstimo claras e confiáveis, respaldadas por avaliações positivas de clientes e total transparência.',
     'financial_transparency' => 'Sem Custos Ocultos',
     'financial_transparency_description' => 'Revise nossos termos, discuta taxas e pague apenas após a aprovação do seu empréstimo.',
     'optimal_security' => 'Segurança e Privacidade',
-    'optimal_security_description' => 'Seus dados pessoais estão seguros conosco. ASolberg Grupo utiliza protocolos de segurança avançados para proteger sua privacidade. Nosso suporte está disponível 24/7 para qualquer assistência.',
+    'optimal_security_description' => 'Seus dados pessoais estão seguros conosco. A Solberg Grupo utiliza protocolos de segurança avançados para proteger sua privacidade. Nosso suporte está disponível 24/7 para qualquer assistência.',
     'apply_loan' => 'Solicitar um empréstimo',
 
 
     'testimonials_title' => 'Depoimentos',
     'testimonials_description' => 'Descubra o que nossos clientes dizem sobre nós.',
+    'testimonials_rating_badge' => '4.9 | Fornecedor mais bem avaliado em 2026',
+    'testimonials_certified_by' => 'Certificado por: Trustindex',
+    'testimonials_months_ago' => '{1} há 1 mês|[2,*] há :count meses',
     'testimonial_1' => [
         'quote' => '"Estou muito satisfeita com o serviço. O processo de solicitação de empréstimo foi rápido e fácil. Recebi a aprovação em apenas alguns dias, e as taxas eram competitivas. Muito obrigada!"',
         'name' => 'Julie B.',
+        'location' => 'Lisboa, Portugal',
+        'months_ago' => 1,
     ],
     'testimonial_2' => [
         'quote' => '"Recomendo muito este serviço de empréstimo. A equipe foi muito profissional e prestativa. Eles responderam todas as minhas perguntas e tornaram o processo sem estresse. Obrigada pelo excelente serviço!"',
         'name' => 'Pierre L.',
+        'location' => 'Porto, Portugal',
+        'months_ago' => 2,
     ],
     'testimonial_3' => [
         'quote' => '"O processo de solicitação de empréstimo foi transparente e eficiente. Recebi conselhos profissionais e personalizados durante todo o processo. Agradeço a toda a equipe pelo excelente trabalho!"',
         'name' => 'Sophie D.',
+        'location' => 'Braga, Portugal',
+        'months_ago' => 2,
     ],
     'testimonial_4' => [
         'quote' => '"Obter um empréstimo com esta empresa foi uma experiência sem complicações. A equipe foi amigável e conhecedora, e o processo foi rápido e eficiente. Recomendo muito!"',
         'name' => 'Marc F.',
+        'location' => 'Coimbra, Portugal',
+        'months_ago' => 3,
     ],
     'testimonial_5' => [
         'quote' => '"Excelente atendimento ao cliente! Fui guiada em cada etapa do processo de empréstimo e minhas perguntas foram respondidas rapidamente. Estou muito satisfeita com o resultado final."',
         'name' => 'Nathalie P.',
+        'location' => 'Faro, Portugal',
+        'months_ago' => 4,
     ],
 
     'testimonial_6' => [
         'quote' => '"Taxa de juros muito boa e processo rápido. Eu recomendo muito este serviço para quem precisa de um empréstimo rápido e confiável."',
         'name' => 'Luc M.',
+        'location' => 'Setúbal, Portugal',
+        'months_ago' => 5,
     ],
     'testimonial_7' => [
         'quote' => '"Processo de empréstimo simples e eficiente. Fui agradavelmente surpreendida pela rapidez da aprovação. Obrigada a toda a equipe!"',
@@ -107,7 +122,7 @@ return [
     ],
 
     'about_title' => 'Junte-se ao melhor marketplace do mundo para trabalhadores',
-    'about_description' => 'ASolberg Grupo é sua plataforma confiável para obtenção de empréstimos com uma experiência excepcional ao cliente. Estamos comprometidos em fornecer soluções financeiras simples, seguras e rápidas.',
+    'about_description' => 'A Solberg Grupo é sua plataforma confiável para obtenção de empréstimos com uma experiência excepcional ao cliente. Estamos comprometidos em fornecer soluções financeiras simples, seguras e rápidas.',
     'rating' => '4.9/5',
     'rating_description' => 'Os clientes avaliam os profissionais',
     'projects_completed' => '+12M',
@@ -149,7 +164,7 @@ return [
         'placeholder' => 'Seu endereço de email',
         'button' => 'Enviar',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Todos os direitos reservados.',
+    'rights_reserved' => '© Solberg Grupo. 2024. Todos os direitos reservados.',
 
     'en' => 'Inglês',
     'fr' => 'Francês',
@@ -169,7 +184,7 @@ return [
     'slide_1' => [
         'title' => ' 15 anos de experiência · Autorizado · Resposta em 48h',
         'text1' => 'Financie todos os seus projetos,',
-        'text2' => 'até 500 000 € em 48h.',
+        'text2' => 'até 5 000 000 € em 48h.',
     ],
     'slide_2' => [
         'title' => 'Empréstimos Inteligentes para Futuros Brilhantes',
@@ -196,19 +211,33 @@ return [
 
     'about' => [
         'exptitle' => 'ano de experiência',
-        'sectagline' => 'bem-vindo àSolberg Grupo',
+        'sectagline' => 'bem-vindo à Solberg Grupo',
         'sectitle' => 'Empréstimos pessoais para realizar os seus sonhos',
         'text1' => 'Estamos neste negócio há 15 anos e oferecemos os melhores serviços.',
-        'text2' => 'ASolberg Grupo é a sua plataforma confiável para empréstimos com uma experiência de cliente excecional. Estamos comprometidos em fornecer soluções financeiras simples, seguras e rápidas.',
+        'text2' => 'A Solberg Grupo é a sua plataforma confiável para empréstimos com uma experiência de cliente excecional. Estamos comprometidos em fornecer soluções financeiras simples, seguras e rápidas.',
         'check1' => 'empréstimo para pequenas empresas',
         'check2' => 'empréstimo para estudar no estrangeiro',
         'check3' => 'processo de empréstimo rápido',
         'check4' => 'taxas muito baixas',
+        'engage1_title' => 'Licenciado e Regulamentado',
+        'engage1_desc'  => 'Instituição de crédito certificada, a operar segundo as normas europeias. Os seus dados e processo estão protegidos em cada etapa.',
+        'engage2_title' => 'Resposta Garantida em 48h',
+        'engage2_desc'  => 'Processo 100% online, sem necessidade de visitar uma agência. Decisão entregue no prazo de 48 horas.',
+        'engage3_title' => 'Multi-moeda e Multi-país',
+        'engage3_desc'  => 'Financiamento disponível na moeda do seu país, adaptado ao seu projeto.',
     ],
 
     'services' => [
         'sectagline' => 'o que estamos a oferecer',
         'sectitle' => 'Fornecemos os melhores serviços para o seu empréstimo',
+        'cta_title' => 'Pronto para começar o seu projeto financeiro?',
+        'cta_text' => 'A nossa equipa está disponível para o apoiar no seu pedido de financiamento.',
+    ],
+
+    'faq_cta' => [
+        'label' => 'Suporte',
+        'title' => 'Não encontrou a sua resposta?',
+        'text' => 'A nossa equipa está disponível de segunda a sábado para o ajudar.',
     ],
 
     'simulate' => [
@@ -280,6 +309,16 @@ return [
             'desc2' => 'Combine múltiplas dívidas em um único pagamento mensal fácil, ajudando a simplificar e gerir melhor as suas finanças.',
             'title3' => 'Melhoria da casa',
             'desc3' => 'Renove ou melhore a sua casa, adicionando valor e conforto ao seu espaço de vida sem o peso financeiro.',
+            'title4' => 'Financie a sua educação',
+            'desc4' => 'Invista no seu futuro: propinas, formação profissional ou mudança de carreira — sem comprometer o seu dia a dia.',
+            'title5' => 'Viagens e férias',
+            'desc5' => 'Explore o mundo com tranquilidade. Financie a viagem dos seus sonhos sem tocar nas suas poupanças.',
+            'title6' => 'Casamento e eventos familiares',
+            'desc6' => 'Celebre os momentos mais importantes da vida sem stress financeiro. Planeie o evento dos seus sonhos ao seu próprio ritmo.',
+            'title7' => 'Despesas médicas e de saúde',
+            'desc7' => 'Enfrente despesas de saúde inesperadas com confiança. Cubra tratamentos, operações ou equipamento médico rapidamente.',
+            'title8' => 'Criação de empresa e investimento',
+            'desc8' => 'Dê vida ao seu projeto empreendedor ou expanda o seu negócio com financiamento rápido e flexível.',
         ],
         'btn_text' => 'Saber Mais',
         'btn_icon' => 'icon-next',
@@ -291,6 +330,7 @@ return [
     'total_loan_amount_granted' => 'Montante disponível',
     'average_approval_time' => 'Resposta garantida',
     'member' => 'Clientes financiados',
+    'years_experience' => 'Anos de experiência',
     'day' => 'Dias',
 
     'cta_title2' => 'Obtenha o empréstimo que precisa rapidamente.',
@@ -299,5 +339,9 @@ return [
 
     'about_text' => 'Oferecemos soluções de empréstimos personalizadas para ajudá-lo a alcançar os seus objetivos financeiros. Opções rápidas, seguras e flexíveis, desenhadas para satisfazer as suas necessidades exclusivas.',
     'get' => 'Entre em contacto',
+
+    'partners_label' => 'Os nossos parceiros',
+    'partners_title' => 'Bancos parceiros',
+    'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
 ];

@@ -8,8 +8,8 @@
 
         <!-- Logo -->
         <a href="{{ route('home', ['locale' => $locale]) }}" class="flex items-center gap-3 flex-shrink-0">
-            <img src="{{ $siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : asset('assets/images/logo-white-icon.png') }}" alt="{{ $siteContact->name }}" class="h-12 lg:h-14 logo-img logo-img--white transition-opacity duration-300">
-            <img src="{{ $siteContact->logo_light_path ? Storage::url($siteContact->logo_light_path) : asset('assets/images/logo-transparent-icon.png') }}" alt="{{ $siteContact->name }}" class="h-10 logo-img logo-img--color transition-opacity duration-300">
+            <img src="{{ $siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : asset('assets/images/logo-white-icon.png') }}" alt="{{ $siteContact->name }}" class="h-14 sm:h-16 lg:h-16 w-auto max-w-[200px] sm:max-w-[240px] object-contain logo-img logo-img--white transition-opacity duration-300">
+            <img src="{{ $siteContact->logo_light_path ? Storage::url($siteContact->logo_light_path) : asset('assets/images/logo-transparent-icon.png') }}" alt="{{ $siteContact->name }}" class="h-14 sm:h-16 lg:h-16 w-auto max-w-[200px] sm:max-w-[240px] object-contain logo-img logo-img--color transition-opacity duration-300">
         </a>
 
         <!-- Desktop nav -->
@@ -55,7 +55,7 @@
                     x-transition:enter-start="opacity-0 translate-y-1"
                     x-transition:enter-end="opacity-100 translate-y-0"
                     class="absolute right-0 mt-2 w-36 bg-white rounded-xl shadow-card-hover border border-gray-100 py-1.5 z-50" style="display:none">
-                    @foreach (['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl'] as $l)
+                    @foreach (['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt'] as $l)
                     @if ($l !== $locale)
                     <a href="{{ route($route ?? 'home', ['locale' => $l]) }}"
                         class="flex items-center gap-2.5 px-3.5 py-2.5 text-sm font-medium text-gray-700 hover:bg-cream hover:text-navy transition-colors duration-150 rounded-lg mx-1">

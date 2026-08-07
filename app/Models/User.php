@@ -48,6 +48,18 @@ class User extends Authenticatable
         return 'uuid';
     }
 
+    // Le personnel (admin/super-admin) reçoit un email de réinitialisation dédié,
+    // avec un lien vers l'espace staff plutôt que l'espace client.
+    public function sendPasswordResetNotification($token): void
+    {
+        if ($this->type === 'staff') {
+            $this->notify(new \App\Notifications\StaffResetPasswordNotification($token));
+            return;
+        }
+
+        parent::sendPasswordResetNotification($token);
+    }
+
     // Demandes créées par cet admin
     public function createdLoans()
     {

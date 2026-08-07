@@ -101,6 +101,14 @@ return [
         'location' => 'Málaga, España',
         'months_ago' => 5,
     ],
+    'testimonial_7' => [
+        'quote' => '«Proceso de préstamo simple y eficiente. Me sorprendió gratamente la rapidez de la aprobación. ¡Gracias a todo el equipo!»',
+        'name' => 'Marie C.',
+    ],
+    'testimonial_8' => [
+        'quote' => '«Tuve una experiencia excelente con este servicio de préstamos. El personal fue atento y profesional. ¡Lo recomiendo sin dudarlo!»',
+        'name' => 'Jean L.',
+    ],
 
     'about_title' => 'Únase al mejor mercado para trabajadores del mundo',
     'about_description' => 'Solberg Grupo es su plataforma confiable para obtener préstamos con una experiencia de cliente excepcional. Estamos comprometidos a brindarle soluciones financieras simples, seguras y rápidas.',
@@ -139,7 +147,7 @@ return [
         'placeholder' => 'Su dirección de correo electrónico',
         'button' => 'Enviar',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Todos los derechos reservados.',
+    'rights_reserved' => '© Solberg Grupo. 2024. Todos los derechos reservados.',
 
     'en' => 'inglés',
     'fr' => 'francés',

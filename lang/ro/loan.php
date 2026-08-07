@@ -19,7 +19,7 @@ return [
     'label_npi' => 'Cod numeric personal',
     'label_file' => 'Act de identitate față-verso',
     'label_objet' => 'Scopul împrumutului',
-    'détails' => 'Detaliile împrumutului',
+    'details' => 'Detaliile împrumutului',
 
     'placeholder_name' => 'Numele și prenumele dumneavoastră',
     'placeholder_email' => 'Introduceți adresa dumneavoastră de e-mail',

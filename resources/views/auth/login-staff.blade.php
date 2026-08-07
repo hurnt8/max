@@ -11,7 +11,7 @@
 <link rel="manifest" href="/admin-manifest.json">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
-<title>{{ __('auth.staff_login_title') }} |Solberg Grupo</title>
+<title>{{ __('auth.staff_login_title') }} | Solberg Grupo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -182,6 +182,8 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
 .f-check{display:flex;align-items:center;gap:.45rem}
 .f-check input{width:14px;height:14px;accent-color:var(--navy);cursor:pointer;flex-shrink:0}
 .f-check label{font-size:.78rem;color:#6b7280;cursor:pointer;user-select:none}
+.f-forgot{font-size:.78rem;color:var(--navy);font-weight:600;transition:color .15s}
+.f-forgot:hover{color:var(--gold)}
 
 .btn-auth{
   width:100%;padding:.8rem;border:none;border-radius:10px;
@@ -246,7 +248,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
       </div>
 
       <div class="auth-left__copy">
-        &copy; {{ date('Y') }}Solberg Grupo Invest &nbsp;&middot;&nbsp;
+        &copy; {{ date('Y') }} Solberg Grupo Invest &nbsp;&middot;&nbsp;
         <a href="{{ url('/fr/terms') }}">CGU</a> &nbsp;&middot;&nbsp;
         <a href="{{ url('/fr/privacy') }}">Confidentialité</a>
       </div>
@@ -281,6 +283,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
             'ro' => ['Română',   'png'],
             'lv' => ['Latviešu', 'png'],
             'nl' => ['Nederlands', 'png'],
+            'pt' => ['Português', 'png'],
           ];
         @endphp
         <div class="ls" x-data="{ open: false }">
@@ -359,6 +362,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
                 <input type="checkbox" id="remember" name="remember">
                 <label for="remember">{{ __('auth.remember_staff') }}</label>
               </div>
+              <a href="{{ route('staff.password.request') }}" class="f-forgot">{{ __('auth.forgot_password') }}</a>
             </div>
 
             <button type="submit" class="btn-auth">
@@ -371,7 +375,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;min-height:100vh;displa
       </div>
 
       <div class="auth-footer">
-        &copy; {{ date('Y') }}Solberg Grupo Invest &nbsp;&middot;&nbsp;
+        &copy; {{ date('Y') }} Solberg Grupo Invest &nbsp;&middot;&nbsp;
         <a href="{{ url('/fr/terms') }}">CGU</a> &nbsp;&middot;&nbsp;
         <a href="{{ url('/fr/privacy') }}">Confidentialité</a>
       </div>
@@ -425,7 +429,7 @@ function tglPwd(id, ico) {
   align-items:center;gap:.75rem">
   <img src="/images/icon-192.png" style="width:40px;height:40px;border-radius:10px;flex-shrink:0" alt="">
   <div style="flex:1;min-width:0">
-    <div style="font-size:.825rem;font-weight:700;color:#fff">Credixa Admin</div>
+    <div style="font-size:.825rem;font-weight:700;color:#fff">Solberg Grupo Admin</div>
     <div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:.1rem">Installer sur votre écran d'accueil</div>
   </div>
   <button id="pwa-install-trigger"
@@ -449,7 +453,7 @@ function tglPwd(id, ico) {
     <div style="display:flex;align-items:center;gap:.625rem">
       <img src="/images/icon-192.png" style="width:36px;height:36px;border-radius:8px" alt="">
       <div>
-        <div style="font-size:.8rem;font-weight:700;color:#fff">Credixa Admin</div>
+        <div style="font-size:.8rem;font-weight:700;color:#fff">Solberg Grupo Admin</div>
         <div style="font-size:.68rem;color:rgba(255,255,255,.45)">Installer l'application</div>
       </div>
     </div>

@@ -102,6 +102,14 @@ return [
         'location' => 'Leeds, United Kingdom',
         'months_ago' => 5,
     ],
+    'testimonial_7' => [
+        'quote' => '"Simple and efficient loan process. I was pleasantly surprised by how fast the approval was. Thanks to the whole team!"',
+        'name' => 'Marie C.',
+    ],
+    'testimonial_8' => [
+        'quote' => '"I had an excellent experience with this loan service. The staff were attentive and professional. I recommend it without hesitation!"',
+        'name' => 'Jean L.',
+    ],
 
     'about_title' => 'Join the world\'s best marketplace for workers',
     'about_description' => 'Solberg Grupo is your trusted platform for obtaining loans with an exceptional customer experience. We are committed to providing you with simple, secure and fast financial solutions.',
@@ -140,7 +148,7 @@ return [
         'placeholder' => 'Your email address',
         'button' => 'Send',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. All rights reserved.',
+    'rights_reserved' => '© Solberg Grupo. 2024. All rights reserved.',
 
     'en' => 'English',
     'fr' => 'French',

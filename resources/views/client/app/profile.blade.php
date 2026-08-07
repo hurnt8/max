@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.profile_title') . ' —Solberg Grupo')
+@section('title', __('app.profile_title') . ' — Solberg Grupo')
 @section('page_title', __('app.profile_title'))
 @section('back_btn', true)
 @section('back_url', route('client.app.home'))
@@ -25,7 +25,7 @@
   <div>
     <div style="font-size:.65rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.25rem">{{ __('app.balance') }}</div>
     <div style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:800;color:#fff">
-      {{ $user->currency ?? config('credixa.default_currency') }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
+      {{ $user->currency ?? config('solberg.default_currency') }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
     </div>
   </div>
   <div style="font-size:.75rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:.35rem">
@@ -163,14 +163,14 @@
       </div>
       <div class="ca-settings-item__text">
         <div class="ca-settings-item__label">{{ __('app.language_pref') }}</div>
-        <div class="ca-settings-item__sub">{{ ['fr'=>'Francais','en'=>'English','pl'=>'Polski','es'=>'Espanol','bg'=>'Balgarski','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuviu','ro'=>'Romana','lv'=>'Latviesu','nl'=>'Nederlands'][app()->getLocale()] ?? app()->getLocale() }}</div>
+        <div class="ca-settings-item__sub">{{ ['fr'=>'Francais','en'=>'English','pl'=>'Polski','es'=>'Espanol','bg'=>'Balgarski','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuviu','ro'=>'Romana','lv'=>'Latviesu','nl'=>'Nederlands','pt'=>'Portugues'][app()->getLocale()] ?? app()->getLocale() }}</div>
       </div>
       <div class="ca-settings-item__right" @click="toggle()">
         <i class="fas fa-chevron-right"></i>
       </div>
       <div x-show="open" @click.outside="close()" x-transition
            style="position:fixed;bottom:calc(var(--ca-nav-h) + 1rem);left:1.25rem;right:1.25rem;background:var(--ca-bg4);border:1px solid var(--ca-border);border-radius:var(--ca-radius-md);overflow:hidden;z-index:600;box-shadow:0 -8px 32px rgba(0,0,0,.4)">
-        @foreach(['fr'=>'Francais','en'=>'English','pl'=>'Polski','es'=>'Espanol','bg'=>'Balgarski','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuviu','ro'=>'Romana','lv'=>'Latviesu','nl'=>'Nederlands'] as $lc => $label)
+        @foreach(['fr'=>'Francais','en'=>'English','pl'=>'Polski','es'=>'Espanol','bg'=>'Balgarski','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuviu','ro'=>'Romana','lv'=>'Latviesu','nl'=>'Nederlands','pt'=>'Portugues'] as $lc => $label)
         <form method="POST" action="{{ route('client.app.locale') }}">
           @csrf
           <input type="hidden" name="locale" value="{{ $lc }}">
@@ -207,7 +207,7 @@
     </div>
     <div style="flex:1;min-width:0">
       <div style="font-size:.875rem;font-weight:700;color:var(--ca-text)">{{ $advisor->name }}</div>
-      <div style="font-size:.7rem;color:var(--ca-text-3);margin-top:.1rem">Votre conseillerSolberg Grupo</div>
+      <div style="font-size:.7rem;color:var(--ca-text-3);margin-top:.1rem">Votre conseiller Solberg Grupo</div>
     </div>
     @if($advisor->phone)
     <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $advisor->phone) }}"

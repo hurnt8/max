@@ -185,7 +185,7 @@ class AppController extends Controller
     {
         $user      = Auth::user();
         $validated = $request->validate([
-            'locale' => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
+            'locale' => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
             'phone'  => 'nullable|string|max:30',
         ]);
 
@@ -500,7 +500,7 @@ class AppController extends Controller
     public function serviceWorker()
     {
         $js = <<<'JS'
-const CACHE = 'credixa-v8';
+const CACHE = 'solberg-v8';
 const ICON  = '/images/icon-192.png';
 const BADGE = '/images/icon-badge.png';
 const SHELL = ['/app', '/login'];
@@ -568,16 +568,16 @@ self.addEventListener('fetch', e => {
 
 /* ── Push notifications ── */
 self.addEventListener('push', e => {
-    let data = { title: 'Credixa', body: '' };
+    let data = { title: 'Solberg Grupo', body: '' };
     try { data = e.data ? e.data.json() : data; } catch (_) {}
 
     e.waitUntil(
-        self.registration.showNotification(data.title || 'Credixa', {
+        self.registration.showNotification(data.title || 'Solberg Grupo', {
             body:    data.body  || '',
             icon:    ICON,
             badge:   BADGE,
             vibrate: [200, 100, 200],
-            tag:     data.tag || 'credixa-notif',
+            tag:     data.tag || 'solberg-notif',
             renotify: true,
             data:    { url: data.url || '/app/notifications' },
         })

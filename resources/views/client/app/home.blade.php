@@ -21,7 +21,7 @@
       </button>
       <div x-show="open" @click.outside="close()" x-transition
            style="position:absolute;right:0;top:48px;background:var(--ca-bg4);border:1px solid var(--ca-border);border-radius:14px;min-width:144px;overflow:hidden;z-index:500;box-shadow:0 12px 40px rgba(0,0,0,.45)">
-        @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','bg'=>'Български','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuvių','ro'=>'Română','lv'=>'Latviešu','nl'=>'Nederlands'] as $lc => $label)
+        @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','bg'=>'Български','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuvių','ro'=>'Română','lv'=>'Latviešu','nl'=>'Nederlands','pt'=>'Português'] as $lc => $label)
         <form method="POST" action="{{ route('client.app.locale') }}">
           @csrf<input type="hidden" name="locale" value="{{ $lc }}">
           <button type="submit" style="width:100%;padding:.6rem 1rem;background:none;border:none;color:{{ app()->getLocale()===$lc?'var(--ca-teal-l)':'var(--ca-text-2)' }};font-size:.82rem;text-align:left;cursor:pointer;font-family:inherit;font-weight:{{ app()->getLocale()===$lc?'700':'400' }}">
@@ -380,7 +380,7 @@
 
   {{-- Amount --}}
   <div class="h-balance" x-show="shown" x-transition>
-    <sup>{{ $user->currency ?? config('credixa.default_currency') }}</sup>{{ number_format((float)$user->balance, 2, ',', ' ') }}
+    <sup>{{ $user->currency ?? config('solberg.default_currency') }}</sup>{{ number_format((float)$user->balance, 2, ',', ' ') }}
   </div>
   <div class="h-balance--hidden" x-show="!shown" aria-hidden="true">
     &bull;&bull;&bull;&bull;&bull;&bull;
@@ -394,7 +394,7 @@
     </div>
     <div class="h-card__badge">
       <i class="fas fa-shield-halved" style="font-size:.6rem"></i>
-      {{ $user->currency ?? config('credixa.default_currency') }}
+      {{ $user->currency ?? config('solberg.default_currency') }}
     </div>
   </div>
 </div>

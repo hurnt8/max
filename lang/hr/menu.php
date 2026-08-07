@@ -29,5 +29,5 @@ return [
     'newsletter_title' => 'Budite informirani o našim ponudama',
     'subscribe'        => 'Pretplatite se',
     'read_more'        => 'Saznajte više',
-    'footer_desc'      => 'Credixa vaš je pouzdani partner za brza, fleksibilna i personalizirana financijska rješenja diljem Europe.',
+    'footer_desc'      => 'Solberg Grupo je vaš pouzdani partner za brza, fleksibilna i personalizirana financijska rješenja diljem Europe.',
 ];

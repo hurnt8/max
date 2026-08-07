@@ -103,6 +103,14 @@ return [
         'location' => 'Strasbourg, France',
         'months_ago' => 5,
     ],
+    'testimonial_7' => [
+        'quote' => '« Processus de prêt simple et efficace. J\'ai été agréablement surprise par la rapidité de l\'approbation. Merci à toute l\'équipe ! »',
+        'name' => 'Marie C.',
+    ],
+    'testimonial_8' => [
+        'quote' => '« J\'ai eu une excellente expérience avec ce service de prêt. Le personnel a été attentif et professionnel. Je le recommande sans hésiter ! »',
+        'name' => 'Jean L.',
+    ],
 
     'about_title' => 'Rejoignez le meilleur marché mondial pour les travailleurs',
     'about_description' => 'Solberg Grupo est votre plateforme de confiance pour obtenir des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
@@ -141,7 +149,7 @@ return [
         'placeholder' => 'Votre adresse e-mail',
         'button' => 'Envoyer',
     ],
-    'rights_reserved' => '©Solberg Grupo. 2024. Tous droits réservés.',
+    'rights_reserved' => '© Solberg Grupo. 2024. Tous droits réservés.',
 
     'en' => 'English',
     'fr' => 'French',
@@ -161,7 +169,7 @@ return [
     'slide_1' => [
         'title' => ' Depuis 15 ans · Agréé · Réponse garantie',
         'text1' => 'Financez tous vos projets,',
-        'text2' => 'jusqu\'à 500 000 € en 48h.',
+        'text2' => 'jusqu\'à 5 000 000 € en 48h.',
     ],
     'slide_2' => [
         'title' => 'Prêts Intelligents pour un Avenir Brillant',

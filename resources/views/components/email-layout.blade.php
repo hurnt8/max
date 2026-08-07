@@ -1,5 +1,5 @@
 @props([
-    'title'      => 'Credixa Invest',
+    'title'      => 'Solberg Grupo',
     'subtitle'   => 'Espace Client Sécurisé',
     'accent'     => 'teal',   // teal | green | orange | red
     'footerNote' => null,
@@ -87,7 +87,7 @@ p.closing strong{color:#111827;font-size:.92rem}
   {{-- ── Header ── --}}
   <div class="hdr">
     <div class="logo-outer">
-      <img src="{{ url('images/icon-192.png') }}" alt="Credixa" width="60" height="60">
+      <img src="{{ url('images/icon-192.png') }}" alt="Solberg Grupo" width="60" height="60">
     </div>
     <h1 class="hdr-title">{{ $title }}</h1>
     @if($subtitle)
@@ -105,7 +105,7 @@ p.closing strong{color:#111827;font-size:.92rem}
   {{-- ── Footer ── --}}
   <div class="footer">
     <p>
-      &copy; {{ date('Y') }}Solberg Grupo Invest
+      &copy; {{ date('Y') }} Solberg Grupo Invest
       @if($footerNote)
       &nbsp;·&nbsp; {{ $footerNote }}
       @endif

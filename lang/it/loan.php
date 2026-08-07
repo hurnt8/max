@@ -33,8 +33,6 @@ return [
 'placeholder_objet' => 'Descrivi brevemente lo scopo del tuo prestito',
 'button' => 'Invia la tua richiesta',
 
-'détails' => 'Dettagli del prestito',
-
 'quote_title'    => 'Il tuo preventivo stimato',
 'quote_monthly'  => 'Rata mensile stimata',
 'quote_total'    => 'Totale da rimborsare',

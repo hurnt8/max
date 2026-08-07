@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.transfer_pending_title') . ' —Solberg Grupo')
+@section('title', __('app.transfer_pending_title') . ' — Solberg Grupo')
 @section('page_title', __('app.confirm_title'))
 
 @section('topbar_action')

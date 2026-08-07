@@ -102,7 +102,7 @@ class UserManagementController extends Controller
             'tax_number' => 'nullable|string|max:60',
             'activity'   => 'nullable|string|max:255',
             'currency'   => 'nullable|string|max:10',
-            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
+            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
         ]);
 
         // Non-super-admins cannot assign the super-admin role
@@ -128,7 +128,7 @@ class UserManagementController extends Controller
             'date_delivre'     => $data['date_delivre'] ?? null,
             'tax_number'       => $data['tax_number'] ?? null,
             'activity'         => $data['activity'] ?? null,
-            'currency'         => $data['currency'] ?? config('credixa.default_currency'),
+            'currency'         => $data['currency'] ?? config('solberg.default_currency'),
             'locale'           => $data['locale'] ?? 'fr',
         ]);
 
@@ -165,7 +165,7 @@ class UserManagementController extends Controller
             'tax_number' => 'nullable|string|max:60',
             'activity'   => 'nullable|string|max:255',
             'currency'   => 'nullable|string|max:10',
-            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl',
+            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
         ]);
 
         if (! $isSuperAdmin && ! in_array($data['role'], self::ADMIN_ALLOWED_ROLES)) {

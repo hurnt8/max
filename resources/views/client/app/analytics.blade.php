@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.analytics_title') . ' —Solberg Grupo')
+@section('title', __('app.analytics_title') . ' — Solberg Grupo')
 @section('page_title', __('app.analytics_title'))
 @section('back_btn', true)
 @section('back_url', route('client.app.home'))
@@ -7,7 +7,7 @@
 @section('content')
 
 @php
-  $currency      = $user->currency ?? config('credixa.default_currency');
+  $currency      = $user->currency ?? config('solberg.default_currency');
   $totalSchedule = $loans->sum(fn($l) => (float) $l->total_with_interest);
   $totalCapital  = $loans->sum(fn($l) => (float) $l->amount);
   $totalInterest = max(0, $totalSchedule - $totalCapital);

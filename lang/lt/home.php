@@ -66,7 +66,7 @@ return [
     'financial_transparency' => 'Jokių paslėptų išlaidų',
     'financial_transparency_description' => 'Peržiūrėkite mūsų sąlygas, aptarkite įkainius ir mokėkite tik patvirtinus paskolą.',
     'optimal_security' => 'Sauga ir privatumas',
-    'optimal_security_description' => 'Jūsų asmeniniai duomenys yra saugūs pas mus. „Solberg Grupo“ naudoja pažangius saugos protokolus, kad apsaugotų jūsų privatumą. Mūsų pagalba teikiama 24 valandas per parą, 7 dienas per savaitę.',
+    'optimal_security_description' => 'Jūsų asmeniniai duomenys yra saugūs pas mus. „ Solberg Grupo“ naudoja pažangius saugos protokolus, kad apsaugotų jūsų privatumą. Mūsų pagalba teikiama 24 valandas per parą, 7 dienas per savaitę.',
     'apply_loan' => 'Prašyti paskolos',
 
 
@@ -196,7 +196,7 @@ return [
     'slide_1' => [
         'title' => ' 15 metų patirtis · Licencijuota · Atsakymas per 48h',
         'text1' => 'Finansuokite visus projektus,',
-        'text2' => 'iki 500 000 € per 48h.',
+        'text2' => 'iki 5 000 000 € per 48h.',
     ],
     'slide_2' => [
         'title' => 'Išmanios paskolos šviesiai ateičiai',

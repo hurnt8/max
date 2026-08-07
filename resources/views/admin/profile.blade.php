@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Mon Profil —Solberg Grupo')
+@section('title', 'Mon Profil — Solberg Grupo')
 @section('page_title', 'Mon Profil')
 
 @section('content')

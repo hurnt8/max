@@ -20,7 +20,7 @@ return [
     'label_npi' => 'Numéro d\'identification personnelles',
     'label_file' => 'Pièce d\'identité recto verso',
     'label_objet' => 'Objet du prêt',
-    'détails' => 'Détails du prêt',
+    'details' => 'Détails du prêt',
 
     'placeholder_name' => 'Votre nom et prénoms',
     'placeholder_email' => 'Entrer votre e-mail',

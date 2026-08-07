@@ -11,7 +11,7 @@
 <link rel="manifest" href="{{ route('pwa.manifest') }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
-<title>{{ __('auth.otp_title') }} —Solberg Grupo</title>
+<title>{{ __('auth.otp_title') }} — Solberg Grupo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -338,7 +338,7 @@ html,body{
 <div id="ld" role="status">
   <div class="ld-bar"></div>
   <div class="ld-logo">
-    <img src="/images/icon-192.png" alt="Credixa">
+    <img src="/images/icon-192.png" alt="Solberg Grupo">
     <div class="ld-ring"></div>
   </div>
   <p class="ld-lbl">{{ __('auth.otp_verifying') ?? 'Vérification…' }}</p>

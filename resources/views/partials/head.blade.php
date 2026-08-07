@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', __('menu.home')) |Solberg Grupo</title>
-    <meta name="description" content="Credixa — solutions de financement rapides, flexibles et personnalisées à travers l'Europe.">
+    <title>@yield('title', __('menu.home')) | Solberg Grupo</title>
+    <meta name="description" content="Solberg Grupo — solutions de financement rapides, flexibles et personnalisées à travers l'Europe.">
     <link rel="canonical" href="{{ url()->current() }}">
-    @foreach (['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv'] as $l)
+    @foreach (['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt'] as $l)
     <link rel="alternate" hreflang="{{ $l }}" href="{{ url($l) }}">
     @endforeach
     <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">

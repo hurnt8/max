@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', $invoice->reference . ' — FactureSolberg Grupo')
+@section('title', $invoice->reference . ' — Facture Solberg Grupo')
 
 @section('content')
 <style>
@@ -124,10 +124,10 @@
   {{-- Top: brand + ref --}}
   <div class="inv-top">
     <div class="inv-brand">
-      <div class="inv-brand-name">CREDIXA INVESTI</div>
+      <div class="inv-brand-name"> Solberg Grupo</div>
       <div class="inv-brand-sub">
         Organisme de financement<br>
-        contact@credixa.com
+        contact@solberggrupo.site
       </div>
     </div>
     <div class="inv-meta">
@@ -152,7 +152,7 @@
   <div class="inv-parties">
     <div>
       <div class="inv-party-lbl">Émetteur</div>
-      <div class="inv-party-name">CREDIXA INVESTI</div>
+      <div class="inv-party-name">SOLBERG GRUPO</div>
       <div class="inv-party-info">Agent : {{ $invoice->admin->name }}</div>
     </div>
     <div>
