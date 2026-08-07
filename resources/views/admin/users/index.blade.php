@@ -4,6 +4,26 @@
 
 @section('content')
 
+@if ($errors->any())
+<div class="flash flash-err">
+  <i class="fas fa-exclamation-triangle"></i>
+  <div>
+    <strong>Impossible d'enregistrer :</strong>
+    <ul style="margin:.25rem 0 0 1.1rem;padding:0">
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+</div>
+@endif
+
+@if(session('success'))
+<div class="flash" style="background:#ECFDF5;border:1px solid #A7F3D0;color:#065F46;padding:.875rem 1.125rem;border-radius:10px;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem">
+  <i class="fas fa-check-circle"></i> {{ session('success') }}
+</div>
+@endif
+
 {{-- En-tête --}}
 <div class="page-hdr-row">
   <div class="page-hdr">
@@ -208,6 +228,7 @@
 
               <form action="{{ route('admin.users.update',$user) }}" method="POST">
                 @csrf @method('PUT')
+                <input type="hidden" name="_edit_user_id" value="{{ $user->id }}">
                 <div class="modal-body" style="padding:1.5rem">
                   <div class="row g-3">
                     <div class="col-md-6">
@@ -562,3 +583,16 @@
 </div>
 
 @endsection
+
+@if ($errors->any() && old('_edit_user_id'))
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.getElementById('editModal{{ old('_edit_user_id') }}');
+  if (el && typeof bootstrap !== 'undefined') {
+    bootstrap.Modal.getOrCreateInstance(el).show();
+  }
+});
+</script>
+@endpush
+@endif

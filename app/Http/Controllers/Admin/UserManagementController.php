@@ -173,8 +173,10 @@ class UserManagementController extends Controller
         }
 
         // Mémoriser les anciennes valeurs avant mise à jour
-        $oldEmail = $user->email;
-        $oldName  = $user->name;
+        $oldEmail   = $user->email;
+        $oldName    = $user->name;
+        $oldPhone   = $user->phone;
+        $oldAddress = $user->address;
 
         $user->update([
             'name'       => $data['name'],
@@ -195,12 +197,24 @@ class UserManagementController extends Controller
 
         $user->syncRoles([$data['role']]);
 
-        // Synchroniser email et nom sur tous les dossiers de ce client
-        if ($user->hasRole('client') && ($data['email'] !== $oldEmail || $data['name'] !== $oldName)) {
-            \App\Models\LoanRequest::where('client_id', $user->id)->update([
-                'email' => $data['email'],
-                'name'  => $data['name'],
-            ]);
+        // Synchroniser les coordonnées (copiées à la création) sur tous les dossiers
+        // de ce client — prêts et financements — pour qu'elles restent à jour.
+        $newPhone   = $data['phone'] ?? $user->phone;
+        $newAddress = $data['address'] ?? $user->address;
+        $contactChanged = $data['email'] !== $oldEmail
+            || $data['name'] !== $oldName
+            || $newPhone !== $oldPhone
+            || $newAddress !== $oldAddress;
+
+        if ($user->hasRole('client') && $contactChanged) {
+            $syncData = [
+                'email'   => $data['email'],
+                'name'    => $data['name'],
+                'phone'   => $newPhone,
+                'address' => $newAddress,
+            ];
+            \App\Models\LoanRequest::where('client_id', $user->id)->update($syncData);
+            \App\Models\FinancingRequest::where('client_id', $user->id)->update($syncData);
         }
 
         return back()->with('success', "Utilisateur {$user->name} mis à jour.");

@@ -82,4 +82,15 @@ class User extends Authenticatable
             'contract_template_id'
         );
     }
+
+    // Modèles de contrat "Financement" attribués à cet admin
+    public function assignedFinancingTemplates()
+    {
+        return $this->belongsToMany(
+            FinancingContractTemplate::class,
+            'admin_financing_template',
+            'admin_id',
+            'financing_template_id'
+        );
+    }
 }

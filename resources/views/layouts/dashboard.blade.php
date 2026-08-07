@@ -806,6 +806,20 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
         <i class="fas fa-percentage icon"></i> Paramètres de prêt
       </a>
 
+      <span class="sidebar-label">Financements</span>
+      <a href="{{ route('admin.financings.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.financings*') ? 'active':'' }}">
+        <i class="fas fa-sack-dollar icon"></i> Traitement des financements
+      </a>
+      <a href="{{ route('admin.financing-contract-templates.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.financing-contract-templates*') ? 'active':'' }}">
+        <i class="fas fa-file-signature icon"></i> Modèles de contrats
+      </a>
+      <a href="{{ route('admin.financing-notification-templates.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.financing-notification-templates*') ? 'active':'' }}">
+        <i class="fas fa-bell icon"></i> Modèles de notification
+      </a>
+
       @hasanyrole(['super-admin'])
       <span class="sidebar-label">Administration</span>
       <a href="{{ route('super-admin.roles') }}"
@@ -877,6 +891,22 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
       @can('manage-notification-templates')
       <a href="{{ route('admin.notification-templates.index') }}"
          class="sidebar-link {{ request()->routeIs('admin.notification-templates*') ? 'active':'' }}">
+        <i class="fas fa-bell icon"></i> Modèles de notification
+      </a>
+      @endcan
+
+      <span class="sidebar-label">Financements</span>
+      <a href="{{ route('admin.financings.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.financings*') ? 'active':'' }}">
+        <i class="fas fa-sack-dollar icon"></i> Traitement des financements
+      </a>
+      <a href="{{ route('admin.financing-contract-templates.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.financing-contract-templates*') ? 'active':'' }}">
+        <i class="fas fa-file-signature icon"></i> Modèles de contrats
+      </a>
+      @can('manage-notification-templates')
+      <a href="{{ route('admin.financing-notification-templates.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.financing-notification-templates*') ? 'active':'' }}">
         <i class="fas fa-bell icon"></i> Modèles de notification
       </a>
       @endcan

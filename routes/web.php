@@ -16,6 +16,9 @@ use App\Http\Controllers\Dashboard\AdminDashboardController;
 use App\Http\Controllers\Dashboard\SuperAdminDashboardController;
 use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\Admin\LoanRequestController as AdminLoanRequestController;
+use App\Http\Controllers\Admin\FinancingRequestController;
+use App\Http\Controllers\Admin\FinancingContractTemplateController;
+use App\Http\Controllers\Admin\FinancingNotificationTemplateController;
 use App\Http\Controllers\Admin\ContractTemplateController;
 use App\Http\Controllers\Admin\NotificationTemplateController;
 use App\Http\Controllers\SuperAdmin\LoanRequestController as SuperAdminLoanRequestController;
@@ -298,6 +301,54 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::post('/loans/{loan}/notification/pdf/upload', [AdminLoanRequestController::class, 'uploadNotificationPdf'])->name('loans.notification.pdf.upload');
     Route::get('/loans/{loan}/notification/pdf',          [AdminLoanRequestController::class, 'previewNotificationPdf'])->name('loans.notification.pdf');
     Route::get('/loans/{loan}/amortization/pdf',          [AdminLoanRequestController::class, 'previewAmortizationPdf'])->name('loans.amortization.pdf');
+
+    // Gestion des dossiers de financement (espace séparé des demandes de prêt, config propre)
+    Route::get('/financings',                    [FinancingRequestController::class, 'index'])->name('financings.index');
+    Route::get('/financings/create',              [FinancingRequestController::class, 'create'])->name('financings.create');
+    Route::post('/financings',                    [FinancingRequestController::class, 'store'])->name('financings.store');
+    Route::get('/financings/{financing}',         [FinancingRequestController::class, 'show'])->name('financings.show');
+    Route::get('/financings/{financing}/edit',    [FinancingRequestController::class, 'edit'])->name('financings.edit');
+    Route::put('/financings/{financing}',         [FinancingRequestController::class, 'update'])->name('financings.update');
+    Route::delete('/financings/{financing}',      [FinancingRequestController::class, 'destroy'])->name('financings.destroy');
+    Route::get('/financings/{financing}/contract/pdf',         [FinancingRequestController::class, 'previewPdf'])->name('financings.contract.pdf');
+    Route::get('/financings/{financing}/contract/viewer',      [FinancingRequestController::class, 'contractViewer'])->name('financings.contract.viewer');
+    Route::post('/financings/{financing}/contract/pdf/upload', [FinancingRequestController::class, 'uploadContractPdf'])->name('financings.contract.pdf.upload');
+    Route::get('/financings/{financing}/contract/docx',        [FinancingRequestController::class, 'downloadDocx'])->name('financings.contract.docx');
+    Route::post('/financings/{financing}/validate',            [FinancingRequestController::class, 'validateFinancing'])->name('financings.validate');
+    Route::post('/financings/{financing}/send-contract',       [FinancingRequestController::class, 'sendContract'])->name('financings.send-contract');
+    Route::post('/financings/{financing}/signed',               [FinancingRequestController::class, 'markSigned'])->name('financings.signed');
+    Route::patch('/financings/{financing}/status',              [FinancingRequestController::class, 'updateStatus'])->name('financings.status');
+    Route::post('/financings/{financing}/finalize',             [FinancingRequestController::class, 'finalize'])->name('financings.finalize');
+    Route::post('/financings/{financing}/reject',               [FinancingRequestController::class, 'reject'])->name('financings.reject');
+    Route::patch('/financings/{financing}/assign-admin',        [FinancingRequestController::class, 'assignAdmin'])->name('financings.assign-admin')->middleware('role:super-admin');
+    Route::get('/financings/{financing}/notification/docx',        [FinancingRequestController::class, 'downloadNotificationDocx'])->name('financings.notification.docx');
+    Route::post('/financings/{financing}/notification/pdf/upload', [FinancingRequestController::class, 'uploadNotificationPdf'])->name('financings.notification.pdf.upload');
+    Route::get('/financings/{financing}/notification/pdf',          [FinancingRequestController::class, 'previewNotificationPdf'])->name('financings.notification.pdf');
+    Route::get('/financings/{financing}/amortization/pdf',          [FinancingRequestController::class, 'previewAmortizationPdf'])->name('financings.amortization.pdf');
+
+    // Modèles de contrats — Financement (indépendants des modèles "Prêt")
+    Route::get('/financing-contract-templates',                                        [FinancingContractTemplateController::class, 'index'])->name('financing-contract-templates.index');
+    Route::get('/financing-contract-templates/create',                                 [FinancingContractTemplateController::class, 'create'])->name('financing-contract-templates.create');
+    Route::post('/financing-contract-templates',                                       [FinancingContractTemplateController::class, 'store'])->name('financing-contract-templates.store');
+    Route::get('/financing-contract-templates/{financingContractTemplate}/edit',       [FinancingContractTemplateController::class, 'edit'])->name('financing-contract-templates.edit');
+    Route::put('/financing-contract-templates/{financingContractTemplate}',            [FinancingContractTemplateController::class, 'update'])->name('financing-contract-templates.update');
+    Route::delete('/financing-contract-templates/{financingContractTemplate}',         [FinancingContractTemplateController::class, 'destroy'])->name('financing-contract-templates.destroy');
+    Route::get('/financing-contract-templates/{financingContractTemplate}/missing-vars', [FinancingContractTemplateController::class, 'missingVars'])->name('financing-contract-templates.missing-vars');
+    Route::post('/financing-contract-templates/{financingContractTemplate}/docx',         [FinancingContractTemplateController::class, 'uploadDocx'])->name('financing-contract-templates.docx.upload');
+    Route::get('/financing-contract-templates/{financingContractTemplate}/docx/download', [FinancingContractTemplateController::class, 'downloadDocx'])->name('financing-contract-templates.docx.download');
+    Route::get('/financing-contract-templates/{financingContractTemplate}/docx/preview',  [FinancingContractTemplateController::class, 'previewDocx'])->name('financing-contract-templates.docx.preview');
+
+    // Modèles de notification — Financement, mêmes règles d'accès que "Prêt"
+    Route::middleware('role_or_permission:super-admin|manage-notification-templates')->group(function () {
+        Route::get('/financing-notification-templates',                                    [FinancingNotificationTemplateController::class, 'index'])->name('financing-notification-templates.index');
+        Route::get('/financing-notification-templates/create',                             [FinancingNotificationTemplateController::class, 'create'])->name('financing-notification-templates.create');
+        Route::post('/financing-notification-templates',                                   [FinancingNotificationTemplateController::class, 'store'])->name('financing-notification-templates.store');
+        Route::get('/financing-notification-templates/{financingNotificationTemplate}/edit', [FinancingNotificationTemplateController::class, 'edit'])->name('financing-notification-templates.edit');
+        Route::put('/financing-notification-templates/{financingNotificationTemplate}',      [FinancingNotificationTemplateController::class, 'update'])->name('financing-notification-templates.update');
+        Route::delete('/financing-notification-templates/{financingNotificationTemplate}',   [FinancingNotificationTemplateController::class, 'destroy'])->name('financing-notification-templates.destroy');
+        Route::post('/financing-notification-templates/{financingNotificationTemplate}/docx',         [FinancingNotificationTemplateController::class, 'uploadDocx'])->name('financing-notification-templates.docx.upload');
+        Route::get('/financing-notification-templates/{financingNotificationTemplate}/docx/download', [FinancingNotificationTemplateController::class, 'downloadDocx'])->name('financing-notification-templates.docx.download');
+    });
 
     // Modèles de contrats
     Route::get('/contract-templates',                                  [ContractTemplateController::class, 'index'])->name('contract-templates.index');
