@@ -108,6 +108,15 @@ $texts = [
         'closing' => 'Met vriendelijke groet,',
         'team'    => 'Het team van Solberg Grupo',
     ],
+    'pt' => [
+        'title'   => 'Contrato N.º'.$loan->reference.' recebido',
+        'sub'     => 'Confirmação de receção',
+        'greeting'=> 'Exmo./Exma. '.$loan->name.',',
+        'intro'   => 'Confirmamos a receção do seu contrato de empréstimo assinado (Referência: <strong>'.$loan->reference.'</strong>).',
+        'next'    => 'A nossa equipa de gestão irá proceder ao tratamento final do seu processo. Os dados da conta e as modalidades de pagamento ser-lhe-ão comunicados no prazo de <strong>24 a 48 horas</strong>.',
+        'closing' => 'Atenciosamente,',
+        'team'    => 'A equipa Solberg Grupo',
+    ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];
 @endphp

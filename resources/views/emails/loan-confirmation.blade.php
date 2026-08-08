@@ -168,6 +168,20 @@ $texts = [
         'closing'    => 'Met vriendelijke groet,',
         'team'       => 'Het Solberg Grupo Team',
     ],
+    'pt' => [
+        'title'      => 'Pedido de empréstimo recebido',
+        'sub'        => 'Solberg Grupo',
+        'greeting'   => 'Olá '.$data['name'].',',
+        'body'       => 'Recebemos o seu pedido de empréstimo no montante de <strong>'.number_format($data['amount'], 0, ',', ' ').' '.($data['currency'] ?? 'EUR').'</strong> em <strong>'.$data['darly'].' meses</strong>. Está atualmente a ser processado pela nossa equipa.',
+        'cond_title' => 'Condições de elegibilidade',
+        'cond_body'  => 'Para obter um empréstimo, é necessário ter pelo menos 18 anos, auferir um rendimento mensal estável e poder reembolsar de acordo com as condições estabelecidas.',
+        'btn_intro'  => 'Para finalizar o seu processo, clique no botão abaixo para nos enviar a sua morada completa e uma cópia do seu documento de identificação.',
+        'btn_label'  => 'Completar o meu pedido',
+        'footer'     => 'Entraremos em contacto consigo o mais brevemente possível. Obrigado pela sua confiança.',
+        'noreply'    => 'Este email foi enviado a partir de um endereço no-reply. Não responda diretamente.',
+        'closing'    => 'Atenciosamente,',
+        'team'       => 'A equipa Solberg Grupo',
+    ],
 ];
 $t = $texts[$lang] ?? $texts['fr'];
 @endphp
