@@ -51,6 +51,15 @@ class UserInvitationMail extends Mailable
         'nl' => ['M' => 'Activering van uw account : AURELIS CAPITAL GROUP',
                  'F' => 'Activering van uw account : AURELIS CAPITAL GROUP',
                  'N' => 'Activeer uw account : AURELIS CAPITAL GROUP'],
+        'pt' => ['M' => 'Ativação da sua conta : AURELIS CAPITAL GROUP',
+                 'F' => 'Ativação da sua conta : AURELIS CAPITAL GROUP',
+                 'N' => 'Ative a sua conta : AURELIS CAPITAL GROUP'],
+        'sk' => ['M' => 'Aktivácia vášho účtu : AURELIS CAPITAL GROUP',
+                 'F' => 'Aktivácia vášho účtu : AURELIS CAPITAL GROUP',
+                 'N' => 'Aktivujte si účet : AURELIS CAPITAL GROUP'],
+        'el' => ['M' => 'Ενεργοποίηση του λογαριασμού σας : AURELIS CAPITAL GROUP',
+                 'F' => 'Ενεργοποίηση του λογαριασμού σας : AURELIS CAPITAL GROUP',
+                 'N' => 'Ενεργοποιήστε τον λογαριασμό σας : AURELIS CAPITAL GROUP'],
     ];
 
     // ── Labels du bouton selon la locale ────────────────────────────────────
@@ -67,6 +76,9 @@ class UserInvitationMail extends Mailable
         'ro' => 'Activează-mi contul',
         'lv' => 'Aktivizēt manu kontu',
         'nl' => 'Mijn account activeren',
+        'pt' => 'Ativar minha conta',
+        'sk' => 'Aktivovať môj účet',
+        'el' => 'Ενεργοποίηση του λογαριασμού μου',
     ];
 
     // ── Corps principal selon la locale ─────────────────────────────────────
@@ -119,6 +131,18 @@ class UserInvitationMail extends Mailable
             'intro'  => 'Een adviseur van **{NOM_ENTREPRISE}** heeft zojuist uw persoonlijke klantomgeving aangemaakt.',
             'action' => 'Om toegang te krijgen tot uw omgeving en uw financieringsdossiers te volgen, **activeert u uw account** door op onderstaande knop te klikken.',
         ],
+        'pt' => [
+            'intro'  => 'Um consultor da **{NOM_ENTREPRISE}** acabou de criar o seu espaço de cliente pessoal.',
+            'action' => 'Para aceder ao seu espaço e acompanhar os seus processos de financiamento, **ative a sua conta** clicando no botão abaixo.',
+        ],
+        'sk' => [
+            'intro'  => 'Poradca spoločnosti **{NOM_ENTREPRISE}** práve vytvoril váš osobný klientsky priestor.',
+            'action' => 'Ak chcete získať prístup k svojmu priestoru a sledovať svoje spisy financovania, **aktivujte si účet** kliknutím na tlačidlo nižšie.',
+        ],
+        'el' => [
+            'intro'  => 'Ένας σύμβουλος της **{NOM_ENTREPRISE}** μόλις δημιούργησε τον προσωπικό σας χώρο πελάτη.',
+            'action' => 'Για να αποκτήσετε πρόσβαση στον χώρο σας και να παρακολουθείτε τους φακέλους χρηματοδότησής σας, **ενεργοποιήστε τον λογαριασμό σας** κάνοντας κλικ στο παρακάτω κουμπί.',
+        ],
     ];
 
     // ── Valeurs des balises selon [locale][genre] ────────────────────────────
@@ -136,6 +160,9 @@ class UserInvitationMail extends Mailable
             'ro' => ['M' => 'Stimate',    'F' => 'Stimată',   'N' => 'Bună ziua'],
             'lv' => ['M' => 'Godātais',   'F' => 'Godātā',    'N' => 'Sveiki'],
             'nl' => ['M' => 'Geachte',    'F' => 'Geachte',   'N' => 'Beste'],
+            'pt' => ['M' => 'Caro',       'F' => 'Cara',      'N' => 'Olá'],
+            'sk' => ['M' => 'Vážený',     'F' => 'Vážená',    'N' => 'Dobrý deň'],
+            'el' => ['M' => 'Αγαπητέ',    'F' => 'Αγαπητή',   'N' => 'Γεια σας'],
         ],
         '{SALUTATION}' => [
             'fr' => ['M' => 'Monsieur',   'F' => 'Madame',    'N' => ''],
@@ -150,6 +177,9 @@ class UserInvitationMail extends Mailable
             'ro' => ['M' => 'Domnule',    'F' => 'Doamnă',    'N' => ''],
             'lv' => ['M' => 'Kungs',      'F' => 'Kundze',    'N' => ''],
             'nl' => ['M' => 'heer',       'F' => 'mevrouw',   'N' => ''],
+            'pt' => ['M' => 'Senhor',     'F' => 'Senhora',   'N' => ''],
+            'sk' => ['M' => 'pán',        'F' => 'pani',      'N' => ''],
+            'el' => ['M' => 'Κύριε',      'F' => 'Κυρία',     'N' => ''],
         ],
         '{FORMULE_POLITESSE}' => [
             'fr' => ['M' => 'Cordialement',    'F' => 'Cordialement',    'N' => 'Cordialement'],
@@ -164,6 +194,9 @@ class UserInvitationMail extends Mailable
             'ro' => ['M' => 'Cu stimă',        'F' => 'Cu stimă',        'N' => 'Cu respect'],
             'lv' => ['M' => 'Ar cieņu',        'F' => 'Ar cieņu',        'N' => 'Ar cieņu'],
             'nl' => ['M' => 'Met vriendelijke groet', 'F' => 'Met vriendelijke groet', 'N' => 'Vriendelijke groeten'],
+            'pt' => ['M' => 'Atenciosamente',  'F' => 'Atenciosamente',  'N' => 'Atenciosamente'],
+            'sk' => ['M' => 'S pozdravom',     'F' => 'S pozdravom',     'N' => 'S pozdravom'],
+            'el' => ['M' => 'Με εκτίμηση',     'F' => 'Με εκτίμηση',     'N' => 'Με εκτίμηση'],
         ],
         '{EQUIPE}' => [
             'fr' => ['M' => "L'équipe AURELIS CAPITAL GROUP",     'F' => "L'équipe AURELIS CAPITAL GROUP",     'N' => "L'équipe AURELIS CAPITAL GROUP"],
@@ -178,6 +211,9 @@ class UserInvitationMail extends Mailable
             'ro' => ['M' => 'Echipa AURELIS CAPITAL GROUP',       'F' => 'Echipa AURELIS CAPITAL GROUP',       'N' => 'Echipa AURELIS CAPITAL GROUP'],
             'lv' => ['M' => 'AURELIS CAPITAL GROUP komanda',      'F' => 'AURELIS CAPITAL GROUP komanda',      'N' => 'AURELIS CAPITAL GROUP komanda'],
             'nl' => ['M' => 'Het AURELIS CAPITAL GROUP Team',     'F' => 'Het AURELIS CAPITAL GROUP Team',     'N' => 'Het AURELIS CAPITAL GROUP Team'],
+            'pt' => ['M' => 'A equipa AURELIS CAPITAL GROUP',     'F' => 'A equipa AURELIS CAPITAL GROUP',     'N' => 'A equipa AURELIS CAPITAL GROUP'],
+            'sk' => ['M' => 'Tím AURELIS CAPITAL GROUP',          'F' => 'Tím AURELIS CAPITAL GROUP',          'N' => 'Tím AURELIS CAPITAL GROUP'],
+            'el' => ['M' => 'Η ομάδα AURELIS CAPITAL GROUP',      'F' => 'Η ομάδα AURELIS CAPITAL GROUP',      'N' => 'Η ομάδα AURELIS CAPITAL GROUP'],
         ],
         '{NOTICE_PERSONNEL}' => [
             'fr' => ['M' => "Ce lien d'activation est **personnel et unique**. Il expire dès que vous avez défini votre mot de passe.",
@@ -216,6 +252,15 @@ class UserInvitationMail extends Mailable
             'nl' => ['M' => 'Deze activeringslink is **persoonlijk en uniek**. Hij vervalt zodra u uw wachtwoord heeft ingesteld.',
                      'F' => 'Deze activeringslink is **persoonlijk en uniek**. Hij vervalt zodra u uw wachtwoord heeft ingesteld.',
                      'N' => 'Deze activeringslink is **persoonlijk en uniek**. Hij vervalt zodra u uw wachtwoord heeft ingesteld.'],
+            'pt' => ['M' => 'Este link de ativação é **pessoal e único**. Expira assim que definir a sua palavra-passe.',
+                     'F' => 'Este link de ativação é **pessoal e único**. Expira assim que definir a sua palavra-passe.',
+                     'N' => 'Este link de ativação é **pessoal e único**. Expira assim que definir a sua palavra-passe.'],
+            'sk' => ['M' => 'Tento aktivačný odkaz je **osobný a jedinečný**. Jeho platnosť vyprší hneď po nastavení hesla.',
+                     'F' => 'Tento aktivačný odkaz je **osobný a jedinečný**. Jeho platnosť vyprší hneď po nastavení hesla.',
+                     'N' => 'Tento aktivačný odkaz je **osobný a jedinečný**. Jeho platnosť vyprší hneď po nastavení hesla.'],
+            'el' => ['M' => 'Αυτός ο σύνδεσμος ενεργοποίησης είναι **προσωπικός και μοναδικός**. Λήγει μόλις ορίσετε τον κωδικό πρόσβασής σας.',
+                     'F' => 'Αυτός ο σύνδεσμος ενεργοποίησης είναι **προσωπικός και μοναδικός**. Λήγει μόλις ορίσετε τον κωδικό πρόσβασής σας.',
+                     'N' => 'Αυτός ο σύνδεσμος ενεργοποίησης είναι **προσωπικός και μοναδικός**. Λήγει μόλις ορίσετε τον κωδικό πρόσβασής σας.'],
         ],
         '{NOTICE_IGNORE}' => [
             'fr' => ['M' => "Si vous n'êtes pas à l'origine de cette création de compte, vous pouvez ignorer cet email.",
@@ -254,6 +299,15 @@ class UserInvitationMail extends Mailable
             'nl' => ['M' => "Als u niet zelf om het aanmaken van dit account heeft gevraagd, kunt u deze e-mail negeren.",
                      'F' => "Als u niet zelf om het aanmaken van dit account heeft gevraagd, kunt u deze e-mail negeren.",
                      'N' => "Als u niet zelf om het aanmaken van dit account heeft gevraagd, kunt u deze e-mail negeren."],
+            'pt' => ['M' => "Se não foi você que solicitou a criação desta conta, pode ignorar este email.",
+                     'F' => "Se não foi você que solicitou a criação desta conta, pode ignorar este email.",
+                     'N' => "Se não foi você que solicitou a criação desta conta, pode ignorar este email."],
+            'sk' => ['M' => "Ak ste nežiadali o vytvorenie tohto účtu, môžete tento email ignorovať.",
+                     'F' => "Ak ste nežiadali o vytvorenie tohto účtu, môžete tento email ignorovať.",
+                     'N' => "Ak ste nežiadali o vytvorenie tohto účtu, môžete tento email ignorovať."],
+            'el' => ['M' => "Εάν δεν ζητήσατε εσείς τη δημιουργία αυτού του λογαριασμού, μπορείτε να αγνοήσετε αυτό το email.",
+                     'F' => "Εάν δεν ζητήσατε εσείς τη δημιουργία αυτού του λογαριασμού, μπορείτε να αγνοήσετε αυτό το email.",
+                     'N' => "Εάν δεν ζητήσατε εσείς τη δημιουργία αυτού του λογαριασμού, μπορείτε να αγνοήσετε αυτό το email."],
         ],
     ];
 

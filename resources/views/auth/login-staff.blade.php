@@ -286,6 +286,8 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
             'lv' => ['Latviešu', 'png'],
             'nl' => ['Nederlands', 'png'],
             'pt' => ['Português', 'png'],
+            'sk' => ['Slovenčina', 'png'],
+            'el' => ['Ελληνικά',  'png'],
           ];
         @endphp
         <div class="ls" x-data="{ open: false }">

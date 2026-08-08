@@ -1,0 +1,52 @@
+<?php
+
+return [
+    'title' => 'Zásady ochrany osobných údajov',
+    'introduction_title' => '1. Úvod',
+    'introduction_text' => 'V AURELIS CAPITAL GROUP sa zaväzujeme chrániť a rešpektovať vaše súkromie. Tieto zásady ochrany osobných údajov vysvetľujú, ako zhromažďujeme, používame, zverejňujeme a chránime vaše osobné údaje, keď používate našu webovú stránku a naše služby online úverov. Používaním našej stránky súhlasíte s postupmi opísanými v týchto zásadách.',
+    'information_collection_title' => '2. Informácie, ktoré zhromažďujeme',
+    'information_collection_text' => 'Môžeme zhromažďovať a spracúvať nasledujúce informácie o vás:',
+    'information_collection_list' => [
+        'Informácie, ktoré nám poskytnete priamo, ako je vaše meno, adresa, e-mailová adresa, telefónne číslo, finančné údaje atď.',
+        'Informácie zhromaždené automaticky pri používaní našej stránky, vrátane vašej IP adresy, typu prehliadača, navštívených stránok a dĺžky vašej návštevy.',
+        'Informácie od tretích strán, ako sú úverové agentúry, obchodní partneri alebo verejné zdroje.',
+    ],
+    'information_use_title' => '3. Použitie vašich informácií',
+    'information_use_text' => 'Zhromaždené informácie používame na:',
+    'information_use_list' => [
+        'Poskytovanie a správu našich úverových služieb, vrátane posúdenia vašej spôsobilosti na úver a správy vášho účtu.',
+        'Zlepšovanie našej webovej stránky a služieb, najmä analýzou spôsobu, akým používate našu stránku, a prispôsobovaním vášho zážitku.',
+        'Komunikáciu s vami, najmä pri informovaní o stave vašej žiadosti o úver, aktualizáciách našich služieb a propagačných ponukách.',
+        'Plnenie našich právnych a regulačných povinností.',
+    ],
+    'information_sharing_title' => '4. Zdieľanie vašich informácií',
+    'information_sharing_text' => 'Vaše osobné údaje môžeme zdieľať s:',
+    'information_sharing_list' => [
+        'Našimi partnermi a poskytovateľmi služieb, ktorí nám pomáhajú poskytovať a zlepšovať naše úverové služby.',
+        'Úverovými agentúrami a inými finančnými inštitúciami na posúdenie vašej bonity a riadenie finančných rizík.',
+        'Regulačnými a vládnymi orgánmi, ak to vyžaduje zákon.',
+        'Tretími stranami v rámci obchodnej transakcie, ako je fúzia, akvizícia alebo predaj majetku.',
+    ],
+    'information_security_title' => '5. Bezpečnosť vašich informácií',
+    'information_security_text' => 'Zavádzame vhodné technické a organizačné bezpečnostné opatrenia na ochranu vašich osobných údajov pred stratou, zneužitím, neoprávneným prístupom, zverejnením, zmenou a zničením. Absolútnu bezpečnosť informácií prenášaných cez internet však nemožno zaručiť.',
+    'your_rights_title' => '6. Vaše práva',
+    'your_rights_text' => 'Máte právo:',
+    'your_rights_list' => [
+        'Získať prístup k svojim osobným údajom, ktoré uchovávame.',
+        'Požiadať o opravu svojich osobných údajov, ak sú nepresné alebo neúplné.',
+        'Požiadať o vymazanie svojich osobných údajov, s výhradou určitých podmienok.',
+        'Namietať proti spracovaniu svojich osobných údajov za určitých okolností.',
+        'Kedykoľvek odvolať svoj súhlas so spracovaním svojich osobných údajov, ak je spracovanie založené na vašom súhlase.',
+    ],
+    'your_rights_contact' => 'Ak si chcete uplatniť svoje práva, kontaktujte nás na e-mailovej adrese uvedenej v časti „Kontakt“ nižšie.',
+    'policy_updates_title' => '7. Zmeny týchto zásad ochrany osobných údajov',
+    'policy_updates_text' => 'Tieto zásady ochrany osobných údajov môžeme z času na čas aktualizovať, aby odzrkadľovali zmeny v našich postupoch a službách. Odporúčame vám pravidelne navštevovať túto stránku, aby ste boli informovaní o aktualizáciách. Dátum poslednej aktualizácie je uvedený v hornej časti týchto zásad.',
+    'contact_title' => '8. Kontakt',
+    'contact_text' => 'Ak máte otázky, pripomienky alebo požiadavky týkajúce sa týchto zásad ochrany osobných údajov alebo spôsobu, akým spracúvame vaše osobné údaje, kontaktujte nás na:',
+    'contact_details' => [
+        'AURELIS CAPITAL GROUP',
+        'Adresa: Rua de Santo António 33, 7200-175, Portugalsko',
+        'E-mail: contact@aureliscapital.online',
+        'Telefón: +31 6 57341120 ',
+    ],
+];

@@ -44,7 +44,7 @@ class FinancingContractTemplateController extends Controller
         $data = $request->validate([
             'name'       => 'required|string|max:255',
             'is_default' => 'boolean',
-            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
+            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt,sk,el',
         ]);
 
         $isDefault = $data['is_default'] ?? false;
@@ -93,7 +93,7 @@ class FinancingContractTemplateController extends Controller
         $data = $request->validate([
             'name'       => 'required|string|max:255',
             'is_default' => 'boolean',
-            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
+            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt,sk,el',
         ]);
 
         $isSuperAdmin = Auth::user()->hasRole('super-admin');

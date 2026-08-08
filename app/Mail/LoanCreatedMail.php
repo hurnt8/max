@@ -36,6 +36,9 @@ class LoanCreatedMail extends Mailable
             'ro' => 'Dosarul dumneavoastră de finanțare nr. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
             'lv' => 'Jūsu finansējuma lieta Nr. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
             'nl' => 'Uw financieringsdossier Nr. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'pt' => 'O seu processo de financiamento N.º' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'sk' => 'Váš spis financovania č. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
+            'el' => 'Ο φάκελος χρηματοδότησής σας αρ. ' . $this->loan->reference . ' : AURELIS CAPITAL GROUP',
         ];
 
         return new Envelope(subject: $subjects[$this->locale] ?? $subjects['fr']);

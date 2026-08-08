@@ -105,7 +105,7 @@ class FinancingRequestController extends Controller
             'client_email'      => 'required_if:client_mode,new|nullable|email|unique:users,email',
             'client_phone'      => 'nullable|string|max:50',
             'client_address'    => 'nullable|string|max:500',
-            'client_locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
+            'client_locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt,sk,el',
             'client_currency'   => 'nullable|string|max:10',
             // Financement (non remboursable : pas de durée ni de taux)
             'amount'            => 'required|numeric|min:100',
@@ -251,7 +251,7 @@ class FinancingRequestController extends Controller
             'notaire'              => 'nullable|string|max:255',
             'special_conditions'   => 'nullable|string',
             'contract_template_id' => 'nullable|exists:financing_contract_templates,id',
-            'contract_language'    => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
+            'contract_language'    => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt,sk,el',
             'extra_fields'         => 'nullable|array',
             'extra_fields.*'       => 'nullable|string|max:500',
         ]);

@@ -108,6 +108,33 @@ $texts = [
         'closing' => 'Met vriendelijke groet,',
         'team'    => 'Het team van AURELIS CAPITAL GROUP',
     ],
+    'pt' => [
+        'title'   => 'Contrato N.º'.$loan->reference.' recebido',
+        'sub'     => 'Confirmação de receção',
+        'greeting'=> 'Caro(a) '.$loan->name.',',
+        'intro'   => 'Confirmamos a receção do seu contrato de empréstimo assinado (Referência: <strong>'.$loan->reference.'</strong>).',
+        'next'    => 'A nossa equipa de gestão irá proceder ao tratamento final do seu processo. Os dados da conta de pagamento ser-lhe-ão comunicados dentro de <strong>24 a 48 horas</strong>.',
+        'closing' => 'Atenciosamente,',
+        'team'    => 'A equipa AURELIS CAPITAL GROUP',
+    ],
+    'sk' => [
+        'title'   => 'Zmluva č. '.$loan->reference.' prijatá',
+        'sub'     => 'Potvrdenie o prijatí',
+        'greeting'=> 'Vážený/á '.$loan->name.',',
+        'intro'   => 'Potvrdzujeme prijatie vašej podpísanej úverovej zmluvy (Referencia: <strong>'.$loan->reference.'</strong>).',
+        'next'    => 'Náš tím správy pristúpi k finálnemu spracovaniu vášho spisu. Údaje o účte vám oznámime do <strong>24 až 48 hodín</strong>.',
+        'closing' => 'S pozdravom,',
+        'team'    => 'Tím AURELIS CAPITAL GROUP',
+    ],
+    'el' => [
+        'title'   => 'Η σύμβαση αρ. '.$loan->reference.' ελήφθη',
+        'sub'     => 'Βεβαίωση παραλαβής',
+        'greeting'=> 'Αγαπητέ/ή '.$loan->name.',',
+        'intro'   => 'Επιβεβαιώνουμε την παραλαβή της υπογεγραμμένης δανειακής σας σύμβασης (Αναφορά: <strong>'.$loan->reference.'</strong>).',
+        'next'    => 'Η ομάδα διαχείρισής μας θα προχωρήσει στην τελική επεξεργασία του φακέλου σας. Τα στοιχεία του λογαριασμού θα σας κοινοποιηθούν εντός <strong>24 έως 48 ωρών</strong>.',
+        'closing' => 'Με εκτίμηση,',
+        'team'    => 'Η ομάδα AURELIS CAPITAL GROUP',
+    ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];
 @endphp

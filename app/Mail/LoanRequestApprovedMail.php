@@ -33,6 +33,9 @@ class LoanRequestApprovedMail extends Mailable
             'ro' => 'Cererea dumneavoastră nr. ' . $this->loan->reference . ' a fost aprobată : AURELIS CAPITAL GROUP',
             'lv' => 'Jūsu pieteikums Nr. ' . $this->loan->reference . ' ir apstiprināts : AURELIS CAPITAL GROUP',
             'nl' => 'Uw aanvraag nr. ' . $this->loan->reference . ' is goedgekeurd : AURELIS CAPITAL GROUP',
+            'pt' => 'O seu pedido N.º' . $this->loan->reference . ' foi aprovado : AURELIS CAPITAL GROUP',
+            'sk' => 'Vaša žiadosť č. ' . $this->loan->reference . ' bola schválená : AURELIS CAPITAL GROUP',
+            'el' => 'Η αίτησή σας αρ. ' . $this->loan->reference . ' εγκρίθηκε : AURELIS CAPITAL GROUP',
         ];
 
         return new Envelope(subject: $subjects[$this->mailLocale] ?? $subjects['fr']);

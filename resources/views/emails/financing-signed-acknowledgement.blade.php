@@ -117,6 +117,24 @@ $texts = [
         'closing' => 'Atenciosamente,',
         'team'    => 'A equipa AURELIS CAPITAL GROUP',
     ],
+    'sk' => [
+        'title'   => 'Zmluva č. '.$financing->reference.' prijatá',
+        'sub'     => 'Potvrdenie o prijatí',
+        'greeting'=> 'Vážený/á '.$financing->name.',',
+        'intro'   => 'Potvrdzujeme prijatie vašej podpísanej zmluvy o financovaní (Referencia: <strong>'.$financing->reference.'</strong>).',
+        'next'    => 'Náš tím správy pristúpi k finálnemu spracovaniu vášho spisu. Údaje o účte vám oznámime do <strong>24 až 48 hodín</strong>.',
+        'closing' => 'S pozdravom,',
+        'team'    => 'Tím AURELIS CAPITAL GROUP',
+    ],
+    'el' => [
+        'title'   => 'Η σύμβαση αρ. '.$financing->reference.' ελήφθη',
+        'sub'     => 'Βεβαίωση παραλαβής',
+        'greeting'=> 'Αγαπητέ/ή '.$financing->name.',',
+        'intro'   => 'Επιβεβαιώνουμε την παραλαβή της υπογεγραμμένης σύμβασης χρηματοδότησής σας (Αναφορά: <strong>'.$financing->reference.'</strong>).',
+        'next'    => 'Η ομάδα διαχείρισής μας θα προχωρήσει στην τελική επεξεργασία του φακέλου σας. Τα στοιχεία του λογαριασμού θα σας κοινοποιηθούν εντός <strong>24 έως 48 ωρών</strong>.',
+        'closing' => 'Με εκτίμηση,',
+        'team'    => 'Η ομάδα AURELIS CAPITAL GROUP',
+    ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];
 @endphp

@@ -37,6 +37,8 @@ class LoanRejectedMail extends Mailable
             'lv' => "Lieta {$ref} — Pieteikums noraidīts",
             'nl' => "Dossier {$ref} — Aanvraag afgewezen",
             'pt' => "Processo {$ref} — Pedido recusado",
+            'sk' => "Spis {$ref} — Žiadosť zamietnutá",
+            'el' => "Φάκελος {$ref} — Η αίτηση απορρίφθηκε",
         ];
 
         return new Envelope(subject: $subjects[$locale] ?? $subjects['fr']);

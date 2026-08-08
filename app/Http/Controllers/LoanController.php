@@ -60,7 +60,7 @@ class LoanController extends Controller
         $data['currency'] = $data['currency'] ?? config('credixa.default_currency');
 
         $locale = $request->input('locale', 'fr');
-        if (!in_array($locale, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt'])) {
+        if (!in_array($locale, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'sk', 'el'])) {
             $locale = 'fr';
         }
         App::setLocale($locale);
@@ -94,7 +94,7 @@ class LoanController extends Controller
     public function sendDocuments(Request $request)
     {
         $locale = $request->input('locale', 'fr');
-        if (!in_array($locale, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt'], true)) {
+        if (!in_array($locale, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'sk', 'el'], true)) {
             $locale = 'fr';
         }
         App::setLocale($locale);

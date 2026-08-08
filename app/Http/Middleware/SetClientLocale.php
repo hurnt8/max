@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SetClientLocale
 {
-    private const SUPPORTED = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt'];
+    private const SUPPORTED = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'sk', 'el'];
 
     public function handle(Request $request, Closure $next): Response
     {

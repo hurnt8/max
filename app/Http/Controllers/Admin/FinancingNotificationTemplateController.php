@@ -42,7 +42,7 @@ class FinancingNotificationTemplateController extends Controller
         $data = $request->validate([
             'name'    => 'required|string|max:255',
             'type'    => 'required|in:' . implode(',', array_keys(FinancingNotificationTemplate::TYPES)),
-            'locale'  => ['required', 'in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
+            'locale'  => ['required', 'in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt,sk,el',
                 Rule::unique('financing_notification_templates')->where(fn($q) => $q->where('type', $request->type)),
             ],
             'subject' => 'nullable|required_unless:type,' . FinancingNotificationTemplate::TYPE_CONDITIONS . '|string|max:255',
@@ -75,7 +75,7 @@ class FinancingNotificationTemplateController extends Controller
         $data = $request->validate([
             'name'    => 'required|string|max:255',
             'type'    => 'required|in:' . implode(',', array_keys(FinancingNotificationTemplate::TYPES)),
-            'locale'  => ['required', 'in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
+            'locale'  => ['required', 'in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt,sk,el',
                 Rule::unique('financing_notification_templates')
                     ->where(fn($q) => $q->where('type', $request->type))
                     ->ignore($financingNotificationTemplate->id),
@@ -152,7 +152,7 @@ class FinancingNotificationTemplateController extends Controller
             'fr' => 'Français', 'en' => 'Anglais', 'pl' => 'Polonais', 'es' => 'Espagnol',
             'bg' => 'Bulgare', 'hu' => 'Hongrois', 'it' => 'Italien', 'de' => 'Allemand',
             'lt' => 'Lituanien', 'ro' => 'Roumain', 'lv' => 'Letton', 'nl' => 'Néerlandais',
-            'pt' => 'Portugais',
+            'pt' => 'Portugais', 'sk' => 'Slovaque', 'el' => 'Grec',
         ];
     }
 }

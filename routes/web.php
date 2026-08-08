@@ -42,7 +42,7 @@ use App\Http\Controllers\Client\SupportController as ClientSupportController;
 |
 */
 
-$supportedLocales = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt'];
+$supportedLocales = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'sk', 'el'];
 
 Route::get('/', function (Request $request) use ($supportedLocales) {
     $locale = 'en';
@@ -68,7 +68,7 @@ Route::get('/', function (Request $request) use ($supportedLocales) {
     return redirect("/{$locale}");
 });
 
-Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['locale' => 'fr|en|pl|es|bg|hu|it|de|lt|ro|lv|nl|pt']], function () {
+Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['locale' => 'fr|en|pl|es|bg|hu|it|de|lt|ro|lv|nl|pt|sk|el']], function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
@@ -243,7 +243,7 @@ Route::middleware(['auth', 'role:client', 'client.locale'])->prefix('app')->name
 
     Route::post('/locale', function (\Illuminate\Http\Request $request) {
         $locale = $request->input('locale', 'fr');
-        if (in_array($locale, ['fr','en','pl','es','bg','hu','it','de','lt','ro','lv','nl','pt'])) {
+        if (in_array($locale, ['fr','en','pl','es','bg','hu','it','de','lt','ro','lv','nl','pt','sk','el'])) {
             $request->user()->update(['locale' => $locale]);
             session(['locale' => $locale]);
         }

@@ -270,6 +270,8 @@ class TransferValidationController extends Controller
             'lv' => ['description' => 'Apstrādes maksa par pārvedumu %s', 'note' => 'Rēķins, kas saistīts ar pārvedumu %s'],
             'nl' => ['description' => 'Verwerkingskosten voor de overschrijving %s', 'note' => 'Factuur gekoppeld aan de overschrijving %s'],
             'pt' => ['description' => 'Taxas de processamento da transferência %s', 'note' => 'Fatura associada à transferência %s'],
+            'sk' => ['description' => 'Poplatok za spracovanie prevodu %s', 'note' => 'Faktúra súvisiaca s prevodom %s'],
+            'el' => ['description' => 'Έξοδα επεξεργασίας για το έμβασμα %s', 'note' => 'Τιμολόγιο που σχετίζεται με το έμβασμα %s'],
         ];
 
         $t = $texts[$locale] ?? $texts['fr'];

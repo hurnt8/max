@@ -102,7 +102,7 @@ class UserManagementController extends Controller
             'tax_number' => 'nullable|string|max:60',
             'activity'   => 'nullable|string|max:255',
             'currency'   => 'nullable|string|max:10',
-            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
+            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt,sk,el',
         ]);
 
         // Non-super-admins cannot assign the super-admin role
@@ -165,7 +165,7 @@ class UserManagementController extends Controller
             'tax_number' => 'nullable|string|max:60',
             'activity'   => 'nullable|string|max:255',
             'currency'   => 'nullable|string|max:10',
-            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
+            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt,sk,el',
         ]);
 
         if (! $isSuperAdmin && ! in_array($data['role'], self::ADMIN_ALLOWED_ROLES)) {

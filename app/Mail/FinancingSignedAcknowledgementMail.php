@@ -38,6 +38,8 @@ class FinancingSignedAcknowledgementMail extends Mailable
             'lv' => 'Jūsu parakstītā līguma Nr. ' . $this->financing->reference . ' saņemšana : AURELIS CAPITAL GROUP',
             'nl' => 'Ontvangst van uw ondertekend contract nr. ' . $this->financing->reference . ' : AURELIS CAPITAL GROUP',
             'pt' => 'Receção do seu contrato assinado N.º' . $this->financing->reference . ' : AURELIS CAPITAL GROUP',
+            'sk' => 'Prijatie vašej podpísanej zmluvy č. ' . $this->financing->reference . ' : AURELIS CAPITAL GROUP',
+            'el' => 'Λήψη της υπογεγραμμένης σύμβασής σας αρ. ' . $this->financing->reference . ' : AURELIS CAPITAL GROUP',
         ];
 
         return new Envelope(subject: $subjects[$this->mailLocale] ?? $subjects['fr']);

@@ -39,6 +39,8 @@ class LoanFinalizedMail extends Mailable
             'lv' => "Lieta {$ref} — Līdzekļi izmaksāti",
             'nl' => "Dossier {$ref} — Financiering vrijgegeven",
             'pt' => "Processo {$ref} — Fundos liberados",
+            'sk' => "Spis {$ref} — Prostriedky uvoľnené",
+            'el' => "Φάκελος {$ref} — Τα κεφάλαια αποδεσμεύτηκαν",
         ];
 
         return new Envelope(subject: $subjects[$locale] ?? $subjects['fr']);

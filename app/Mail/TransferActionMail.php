@@ -38,6 +38,9 @@ class TransferActionMail extends Mailable
                 'ro' => "Transfer {$ref} ({$amount}) — Aprobat",
                 'lv' => "Pārvedums {$ref} ({$amount}) — Apstiprināts",
                 'nl' => "Overschrijving {$ref} ({$amount}) — Goedgekeurd",
+                'pt' => "Transferência {$ref} ({$amount}) — Aprovada",
+                'sk' => "Prevod {$ref} ({$amount}) — Schválený",
+                'el' => "Έμβασμα {$ref} ({$amount}) — Εγκρίθηκε",
             ],
             'rejected' => [
                 'fr' => "Virement {$ref} ({$amount}) — Rejeté",
@@ -52,6 +55,9 @@ class TransferActionMail extends Mailable
                 'ro' => "Transfer {$ref} ({$amount}) — Respins",
                 'lv' => "Pārvedums {$ref} ({$amount}) — Noraidīts",
                 'nl' => "Overschrijving {$ref} ({$amount}) — Afgewezen",
+                'pt' => "Transferência {$ref} ({$amount}) — Rejeitada",
+                'sk' => "Prevod {$ref} ({$amount}) — Zamietnutý",
+                'el' => "Έμβασμα {$ref} ({$amount}) — Απορρίφθηκε",
             ],
             'fee_required' => [
                 'fr' => "Virement {$ref} — Frais requis",
@@ -66,6 +72,9 @@ class TransferActionMail extends Mailable
                 'ro' => "Transfer {$ref} — Comision necesar",
                 'lv' => "Pārvedums {$ref} — Nepieciešama maksa",
                 'nl' => "Overschrijving {$ref} — Kosten vereist",
+                'pt' => "Transferência {$ref} — Taxas necessárias",
+                'sk' => "Prevod {$ref} — Vyžadujú sa poplatky",
+                'el' => "Έμβασμα {$ref} — Απαιτούνται χρεώσεις",
             ],
         ];
 

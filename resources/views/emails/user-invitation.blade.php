@@ -11,6 +11,10 @@ $titles = [
     'lt' => 'Aktyvuokite savo paskyrą',
     'ro' => 'Activați-vă contul',
     'lv' => 'Aktivizējiet savu kontu',
+    'nl' => 'Activeer uw account',
+    'pt' => 'Ative a sua conta',
+    'sk' => 'Aktivujte si účet',
+    'el' => 'Ενεργοποιήστε τον λογαριασμό σας',
 ];
 $subs = [
     'fr' => 'AURELIS CAPITAL GROUP — Espace client',
@@ -24,6 +28,10 @@ $subs = [
     'lt' => 'AURELIS CAPITAL GROUP — Kliento sritis',
     'ro' => 'AURELIS CAPITAL GROUP — Spațiul de client',
     'lv' => 'AURELIS CAPITAL GROUP — Klienta zona',
+    'nl' => 'AURELIS CAPITAL GROUP — Klantomgeving',
+    'pt' => 'AURELIS CAPITAL GROUP — Área de cliente',
+    'sk' => 'AURELIS CAPITAL GROUP — Klientska zóna',
+    'el' => 'AURELIS CAPITAL GROUP — Χώρος πελάτη',
 ];
 $notices = [
     'fr' => 'Si vous n\'êtes pas à l\'origine de cette création de compte, vous pouvez ignorer cet email.',
@@ -37,6 +45,10 @@ $notices = [
     'lt' => 'Jei ne jūs inicijavote šios paskyros sukūrimą, galite ignoruoti šį el. laišką.',
     'ro' => 'Dacă nu dumneavoastră ați inițiat crearea acestui cont, puteți ignora acest e-mail.',
     'lv' => 'Ja šī konta izveide nav notikusi pēc jūsu pieprasījuma, varat ignorēt šo e-pastu.',
+    'nl' => 'Als u niet zelf om het aanmaken van dit account heeft gevraagd, kunt u deze e-mail negeren.',
+    'pt' => 'Se não foi você que solicitou a criação desta conta, pode ignorar este email.',
+    'sk' => 'Ak ste nežiadali o vytvorenie tohto účtu, môžete tento email ignorovať.',
+    'el' => 'Εάν δεν ζητήσατε εσείς τη δημιουργία αυτού του λογαριασμού, μπορείτε να αγνοήσετε αυτό το email.',
 ];
 $title  = $titles[$locale]  ?? $titles['fr'];
 $sub    = $subs[$locale]    ?? $subs['fr'];
@@ -62,7 +74,7 @@ $notice = $notices[$locale] ?? $notices['fr'];
 
   <p class="url-fallback">
     @php
-    $fallbacks = ['fr'=>'Si le bouton ne fonctionne pas, copiez ce lien :','en'=>'If the button does not work, copy this link:','es'=>'Si el botón no funciona, copie este enlace:','pl'=>'Jeśli przycisk nie działa, skopiuj ten link:','bg'=>'Ако бутонът не работи, копирайте тази връзка:','hu'=>'Ha a gomb nem működik, másolja be ezt a linket:','it'=>'Se il pulsante non funziona, copia questo link:','de'=>'Wenn die Schaltfläche nicht funktioniert, kopieren Sie diesen Link:','lt'=>'Jei mygtukas neveikia, nukopijuokite šią nuorodą:','ro'=>'Dacă butonul nu funcționează, copiați acest link:','lv'=>'Ja poga nedarbojas, nokopējiet šo saiti:','nl'=>'Als de knop niet werkt, kopieer dan deze link:'];
+    $fallbacks = ['fr'=>'Si le bouton ne fonctionne pas, copiez ce lien :','en'=>'If the button does not work, copy this link:','es'=>'Si el botón no funciona, copie este enlace:','pl'=>'Jeśli przycisk nie działa, skopiuj ten link:','bg'=>'Ако бутонът не работи, копирайте тази връзка:','hu'=>'Ha a gomb nem működik, másolja be ezt a linket:','it'=>'Se il pulsante non funziona, copia questo link:','de'=>'Wenn die Schaltfläche nicht funktioniert, kopieren Sie diesen Link:','lt'=>'Jei mygtukas neveikia, nukopijuokite šią nuorodą:','ro'=>'Dacă butonul nu funcționează, copiați acest link:','lv'=>'Ja poga nedarbojas, nokopējiet šo saiti:','nl'=>'Als de knop niet werkt, kopieer dan deze link:','pt'=>'Se o botão não funcionar, copie este link:','sk'=>'Ak tlačidlo nefunguje, skopírujte tento odkaz:','el'=>'Εάν το κουμπί δεν λειτουργεί, αντιγράψτε αυτόν τον σύνδεσμο:'];
     @endphp
     {{ $fallbacks[$locale] ?? $fallbacks['fr'] }}<br>
     <a href="{{ $activationUrl }}">{{ $activationUrl }}</a>
