@@ -124,7 +124,7 @@ class SupportController extends Controller
                 AdminNotification::forAdmin($adminId, 'support', 'Message de ' . $client->name, $preview, ['client_id' => $client->id]);
                 $admin = User::find($adminId);
                 if ($admin) {
-                    Mail::to($admin->email)->send(new AdminSupportMail($client, $msg));
+                    Mail::to($admin->email)->send(new AdminSupportMail($client, $msg, $admin->locale));
                 }
             } catch (\Throwable $e) {
                 \Illuminate\Support\Facades\Log::warning('SupportNotify failed for admin ' . $adminId, ['error' => $e->getMessage()]);

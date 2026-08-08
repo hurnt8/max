@@ -56,6 +56,15 @@ class AppServiceProvider extends ServiceProvider
                 'en' => 'Reset your password — Solberg Grupo',
                 'es' => 'Restablecimiento de su contraseña — Solberg Grupo',
                 'pl' => 'Resetowanie hasła — Solberg Grupo',
+                'bg' => 'Нулиране на паролата ви — Solberg Grupo',
+                'hu' => 'Jelszó visszaállítása — Solberg Grupo',
+                'it' => 'Reimposta la tua password — Solberg Grupo',
+                'de' => 'Zurücksetzen Ihres Passworts — Solberg Grupo',
+                'lt' => 'Slaptažodžio atkūrimas — Solberg Grupo',
+                'ro' => 'Resetarea parolei dumneavoastră — Solberg Grupo',
+                'lv' => 'Paroles atiestatīšana — Solberg Grupo',
+                'nl' => 'Uw wachtwoord opnieuw instellen — Solberg Grupo',
+                'pt' => 'Redefinição da sua palavra-passe — Solberg Grupo',
             ];
 
             return (new MailMessage)

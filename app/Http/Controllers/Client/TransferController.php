@@ -124,7 +124,7 @@ class TransferController extends Controller
 
             $admin = User::find($adminId);
             if ($admin) {
-                Mail::to($admin->email)->send(new AdminTransferMail($client, $transfer));
+                Mail::to($admin->email)->send(new AdminTransferMail($client, $transfer, $admin->locale));
             }
         }
     }

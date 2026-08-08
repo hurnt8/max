@@ -21,7 +21,7 @@ class OtpMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: __('auth.otp_email_subject'),
+            subject: __('auth.otp_email_subject', [], $this->user->locale ?? 'fr'),
         );
     }
 

@@ -926,12 +926,36 @@ class LoanRequestController extends Controller
         }
 
         $recipient = $this->recipientEmail($loan);
+        $locale    = $loan->contract_language ?? 'fr';
+
+        // ── Régénérer le tableau d'amortissement, comme lors de l'envoi initial ─
+        set_time_limit(180);
+        $amortPdfPath = null;
+        try {
+            $amortPdfPath = $this->pdfService->generateAmortizationPdf($loan, $locale);
+        } catch (\Throwable $e) {
+            Log::warning('Amortization PDF generation failed for ' . $loan->reference . ': ' . $e->getMessage());
+        }
+
+        // ── Conditions générales : PDF uploadé pour ce dossier, comme lors de l'envoi initial ─
+        $conditionsPdfAbs = $loan->conditions_pdf_path
+            ? storage_path('app/private/' . $loan->conditions_pdf_path)
+            : null;
+        if ($conditionsPdfAbs && !file_exists($conditionsPdfAbs)) {
+            $conditionsPdfAbs = null;
+        }
 
         try {
-            Mail::to($recipient)->send(new LoanValidatedMail($loan, $content['subject'], $content['body'], $pdfAbs));
+            Mail::to($recipient)->send(
+                new LoanValidatedMail($loan, $content['subject'], $content['body'], $pdfAbs, $amortPdfPath ?? '', $conditionsPdfAbs ?? '')
+            );
         } catch (\Throwable $e) {
             Log::error('resendContractEmail failed for ' . $loan->reference . ': ' . $e->getMessage());
             return back()->with('error', 'Erreur lors de l\'envoi de l\'email : ' . $e->getMessage());
+        } finally {
+            if ($amortPdfPath && file_exists($amortPdfPath)) {
+                @unlink($amortPdfPath);
+            }
         }
 
         $this->logHistory($loan, 'contract_edited', [], ['action' => 'email_with_pdf_resent', 'recipient' => $recipient]);
