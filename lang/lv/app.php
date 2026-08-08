@@ -230,6 +230,8 @@ return [
     'notif_loan_contract_body'     => 'Jūsu līgums :reference ir nosūtīts uz jūsu e-pasta adresi. Lūdzu, parakstiet to un nosūtiet atpakaļ.',
     'notif_loan_funded'            => 'Finansējums izmaksāts',
     'notif_loan_funded_body'       => ':amount :currency ir ieskaitīti jūsu kontā.',
+    'notif_loan_finalized'         => 'Lieta pabeigta',
+    'notif_loan_finalized_body'    => 'Jūsu lieta :reference ir pabeigta.',
     'notif_loan_signed'            => 'Parakstītais līgums saņemts',
     'notif_loan_signed_body'       => 'Jūsu parakstītais līgums :reference ir saņemts. Jūsu pieteikums tiek finalizēts.',
     'notif_loan_rejected'          => 'Pieprasījums noraidīts',

@@ -227,6 +227,8 @@ return [
     'notif_loan_contract_body'     => 'Twoja umowa :reference zostala wyslana na Twoj adres e-mail. Podpisz ja i odesl.',
     'notif_loan_funded'            => 'Finansowanie uruchomione',
     'notif_loan_funded_body'       => ':amount :currency zostalo zaksiegowane na Twoim koncie.',
+    'notif_loan_finalized'         => 'Wniosek sfinalizowany',
+    'notif_loan_finalized_body'    => 'Twoj wniosek :reference zostal sfinalizowany.',
     'notif_loan_signed'            => 'Podpisana umowa otrzymana',
     'notif_loan_signed_body'       => 'Twoja podpisana umowa :reference zostala otrzymana. Twoj wniosek jest finalizowany.',
     'notif_loan_rejected'          => 'Wniosek odrzucony',

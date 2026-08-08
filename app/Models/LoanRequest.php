@@ -52,7 +52,7 @@ class LoanRequest extends Model
         'contract_content', 'contract_pdf_path', 'insurance_pdf_path', 'notification_pdf_path', 'conditions_pdf_path', 'contract_language',
         'amortization_schedule',
         'status', 'notes', 'files',
-        'validated_at', 'sent_at', 'signed_received_at',
+        'validated_at', 'sent_at', 'signed_received_at', 'finalized_at',
     ];
 
     protected $casts = [
@@ -63,6 +63,7 @@ class LoanRequest extends Model
         'validated_at'         => 'datetime',
         'sent_at'              => 'datetime',
         'signed_received_at'   => 'datetime',
+        'finalized_at'         => 'datetime',
         'amount'               => 'decimal:2',
         'monthly_payment'      => 'decimal:2',
         'total_cost'           => 'decimal:2',
@@ -138,6 +139,11 @@ class LoanRequest extends Model
     public function canSendContract(): bool
     {
         return $this->status === self::STATUS_VALIDATED;
+    }
+
+    public function canFinalize(): bool
+    {
+        return $this->status === self::STATUS_CONTRACT_SIGNED;
     }
 
     public function financingTypeLabel(): string

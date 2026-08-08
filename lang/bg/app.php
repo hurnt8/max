@@ -230,6 +230,8 @@ return [
     'notif_loan_contract_body'     => 'Вашият договор :reference беше изпратен на имейл адреса ви. Моля, подпишете го и го върнете.',
     'notif_loan_funded'            => 'Финансирането е изплатено',
     'notif_loan_funded_body'       => ':amount :currency бяха преведени по сметката ви.',
+    'notif_loan_finalized'         => 'Досието е финализирано',
+    'notif_loan_finalized_body'    => 'Вашето досие :reference беше финализирано.',
     'notif_loan_signed'            => 'Подписаният договор е получен',
     'notif_loan_signed_body'       => 'Вашият подписан договор :reference беше получен. Досието ви се финализира.',
     'notif_loan_rejected'          => 'Заявката е отхвърлена',

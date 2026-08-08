@@ -230,6 +230,8 @@ return [
     'notif_loan_contract_body'     => 'A(z) :reference számú szerződését elküldtük az e-mail címére. Kérjük, írja alá és küldje vissza.',
     'notif_loan_funded'            => 'Finanszírozás folyósítva',
     'notif_loan_funded_body'       => ':amount :currency került jóváírásra a számláján.',
+    'notif_loan_finalized'         => 'Ügy véglegesítve',
+    'notif_loan_finalized_body'    => 'A(z) :reference számú ügye véglegesítésre került.',
     'notif_loan_signed'            => 'Aláírt szerződés beérkezett',
     'notif_loan_signed_body'       => 'A(z) :reference számú aláírt szerződése beérkezett. Ügyét véglegesítjük.',
     'notif_loan_rejected'          => 'Kérelem elutasítva',

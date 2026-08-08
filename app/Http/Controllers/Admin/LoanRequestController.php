@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\LoanFinalizedMail;
 use App\Mail\LoanValidatedMail;
 use App\Mail\SignedContractAcknowledgementMail;
 use App\Mail\LoanValidationNotificationMail;
+use App\Models\AccountMovement;
 use App\Models\ClientNotification;
 use App\Models\ContractTemplate;
 use App\Models\LoanHistory;
@@ -1031,23 +1033,73 @@ class LoanRequestController extends Controller
                 ->with('success', 'Contrat envoyé à ' . $this->recipientEmail($loan) . '.');
         }
 
-        // ── Autres changements de statut ──────────────────────────────────
-        $isFinalization = $data['status'] === LoanRequest::STATUS_FINALIZED
-            && $old['status'] !== LoanRequest::STATUS_FINALIZED;
+        // ── La finalisation passe obligatoirement par le bouton dédié : elle
+        // implique un email et un choix explicite de crédit du compte, ce que
+        // ce sélecteur générique ne permet pas de collecter.
+        if ($data['status'] === LoanRequest::STATUS_FINALIZED && $old['status'] !== LoanRequest::STATUS_FINALIZED) {
+            return back()->with('error', 'Utilisez le bouton "Finaliser le dossier" pour finaliser (il permet de choisir si le compte client doit être crédité).');
+        }
 
-        DB::transaction(function () use ($loan, $data, $old, $isFinalization) {
+        // ── Autres changements de statut ──────────────────────────────────
+        DB::transaction(function () use ($loan, $data, $old) {
+            $loan->update(['status' => $data['status']]);
+            $this->logHistory($loan, 'status_changed', $old, ['status' => $data['status']]);
+        });
+
+        $loan->refresh();
+
+        return back()->with('success', 'Statut mis à jour.');
+    }
+
+    /**
+     * Finalise un dossier (statut "contract_signed" → "finalized") : envoie un
+     * email de confirmation au client et, si demandé par l'admin, crédite son
+     * compte du montant du prêt (avec traçabilité via AccountMovement).
+     */
+    public function finalizeLoan(Request $request, LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+        abort_unless($loan->canFinalize(), 403, 'Le dossier ne peut être finalisé qu\'après réception du contrat signé.');
+
+        $data            = $request->validate(['credit_account' => 'nullable|boolean']);
+        $creditRequested = (bool) ($data['credit_account'] ?? false);
+
+        $old              = ['status' => $loan->status];
+        $credited         = false;
+        $alreadyFinalized = false;
+
+        DB::transaction(function () use ($loan, $old, $creditRequested, &$credited, &$alreadyFinalized) {
             // Verrou pessimiste pour éviter double-crédit en cas de double-clic
             $fresh = LoanRequest::lockForUpdate()->find($loan->id);
-            if ($isFinalization && $fresh->status === LoanRequest::STATUS_FINALIZED) {
-                return; // déjà finalisé, on ignore
+            if ($fresh->status === LoanRequest::STATUS_FINALIZED) {
+                $alreadyFinalized = true;
+                return;
             }
 
-            $fresh->update(['status' => $data['status']]);
+            $fresh->update([
+                'status'       => LoanRequest::STATUS_FINALIZED,
+                'finalized_at' => now(),
+            ]);
 
-            if ($isFinalization && $fresh->client_id) {
-                $fresh->client?->increment('balance', (float) $fresh->amount);
+            $cur = $fresh->currency ?? config('solberg.default_currency');
 
-                $cur = $fresh->currency ?? config('solberg.default_currency');
+            if ($creditRequested && $fresh->client_id) {
+                $before = (float) $fresh->client->balance;
+                $fresh->client->increment('balance', (float) $fresh->amount);
+
+                AccountMovement::create([
+                    'user_id'        => $fresh->client_id,
+                    'admin_id'       => Auth::id(),
+                    'type'           => 'credit',
+                    'amount'         => $fresh->amount,
+                    'currency'       => $cur,
+                    'balance_before' => $before,
+                    'balance_after'  => $before + (float) $fresh->amount,
+                    'note'           => 'Déboursement prêt ' . $fresh->reference,
+                ]);
+
+                $credited = true;
+
                 ClientNotification::notifyUser(
                     $fresh->client,
                     'credit',
@@ -1056,14 +1108,40 @@ class LoanRequestController extends Controller
                     ['amount' => number_format((float) $fresh->amount, 2, ',', ' '), 'currency' => $cur],
                     ['loan_id' => $fresh->id, 'amount' => $fresh->amount, 'currency' => $cur]
                 );
+            } elseif ($fresh->client_id) {
+                ClientNotification::notifyUser(
+                    $fresh->client,
+                    'loan_update',
+                    'app.notif_loan_finalized',
+                    'app.notif_loan_finalized_body',
+                    ['reference' => $fresh->reference],
+                    ['loan_id' => $fresh->id]
+                );
             }
 
-            $this->logHistory($fresh, 'status_changed', $old, ['status' => $data['status']]);
+            $this->logHistory($fresh, 'finalized', $old, ['status' => $fresh->status, 'credited' => $credited]);
         });
+
+        if ($alreadyFinalized) {
+            return back()->with('error', 'Ce dossier est déjà finalisé.');
+        }
 
         $loan->refresh();
 
-        return back()->with('success', 'Statut mis à jour.');
+        $recipient = $this->recipientEmail($loan);
+        $locale    = $loan->contract_language ?? 'fr';
+        $mailSent  = true;
+        try {
+            Mail::to($recipient)->send(new LoanFinalizedMail($loan, $credited, $locale));
+        } catch (\Throwable $e) {
+            Log::error('LoanFinalizedMail failed for ' . $loan->reference . ': ' . $e->getMessage());
+            $mailSent = false;
+        }
+
+        $msg = 'Dossier finalisé' . ($credited ? ' — compte client crédité.' : '.');
+        $msg .= $mailSent ? ' Email envoyé au client.' : ' (Email non envoyé — vérifiez la configuration mail.)';
+
+        return back()->with('success', $msg);
     }
 
     public function destroy(LoanRequest $loan)

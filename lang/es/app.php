@@ -227,6 +227,8 @@ return [
     'notif_loan_contract_body'     => 'Su contrato :reference ha sido enviado a su correo electronico. Por favor firmelo y devuelvalo.',
     'notif_loan_funded'            => 'Financiacion desembolsada',
     'notif_loan_funded_body'       => ':amount :currency han sido depositados en su cuenta.',
+    'notif_loan_finalized'         => 'Expediente finalizado',
+    'notif_loan_finalized_body'    => 'Su expediente :reference ha sido finalizado.',
     'notif_loan_signed'            => 'Contrato firmado recibido',
     'notif_loan_signed_body'       => 'Su contrato firmado :reference ha sido recibido. Su expediente esta siendo finalizado.',
     'notif_loan_rejected'          => 'Solicitud rechazada',

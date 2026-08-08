@@ -431,6 +431,27 @@ $tpl = $loan->contractTemplate;
         </form>
         @endif
 
+        @if($loan->canFinalize())
+        <form action="{{ route($panelPrefix.'.loans.finalize', $loan) }}" method="POST"
+              data-confirm="Finaliser ce dossier ? Un email de confirmation sera envoyé au client.">
+          @csrf
+          @if($loan->client_id)
+          <label style="display:flex;align-items:flex-start;gap:.45rem;font-size:.8rem;color:var(--c-muted);margin-bottom:.5rem;cursor:pointer">
+            <input type="checkbox" name="credit_account" value="1" checked style="margin-top:.2rem">
+            <span>Créditer le compte client de <strong>{{ number_format((float) $loan->amount, 2, ',', ' ') }} {{ $loan->currency ?? config('solberg.default_currency') }}</strong></span>
+          </label>
+          @else
+          <div class="ld-warn-box" style="margin-bottom:.5rem">
+            <i class="fas fa-info-circle" style="color:#6B7280;flex-shrink:0;margin-top:.1rem"></i>
+            <span>Aucun compte client rattaché — seul l'email de finalisation sera envoyé.</span>
+          </div>
+          @endif
+          <button class="btn-navy ld-btn-full" style="background:#111827;border-color:#111827">
+            <i class="fas fa-flag-checkered"></i> Finaliser le dossier
+          </button>
+        </form>
+        @endif
+
         @if($loan->status === 'contract_sent')
         <form action="{{ route($panelPrefix.'.loans.contract.pdf.resend',$loan) }}" method="POST"
               data-confirm="Renvoyer le contrat à {{ $loan->email }} ?">
@@ -487,12 +508,14 @@ $tpl = $loan->contractTemplate;
 
         <hr class="ld-divider">
 
+        @if($loan->status !== \App\Models\LoanRequest::STATUS_FINALIZED)
         <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--c-muted);margin-bottom:.35rem">Changer le statut</div>
         <form action="{{ route($panelPrefix.'.loans.status', $loan) }}" method="POST">
           @csrf @method('PATCH')
           <div class="ld-status-row">
             <select name="status" class="form-control-pro">
               @foreach(\App\Models\LoanRequest::STATUSES as $s)
+              @continue($s === \App\Models\LoanRequest::STATUS_FINALIZED)
               <option value="{{ $s }}" {{ $loan->status===$s?'selected':'' }}>
                 {{ $statusLabels[$s] ?? ucfirst($s) }}
               </option>
@@ -501,6 +524,7 @@ $tpl = $loan->contractTemplate;
             <button type="submit" class="btn-navy" title="Enregistrer"><i class="fas fa-save"></i></button>
           </div>
         </form>
+        @endif
 
       </div>
     </div>

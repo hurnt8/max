@@ -230,6 +230,8 @@ return [
     'notif_loan_contract_body'     => 'Jūsų sutartis :reference išsiųsta jūsų el. pašto adresu. Prašome ją pasirašyti ir grąžinti.',
     'notif_loan_funded'            => 'Finansavimas išmokėtas',
     'notif_loan_funded_body'       => ':amount :currency buvo pervesta į jūsų sąskaitą.',
+    'notif_loan_finalized'         => 'Byla užbaigta',
+    'notif_loan_finalized_body'    => 'Jūsų byla :reference buvo užbaigta.',
     'notif_loan_signed'            => 'Gauta pasirašyta sutartis',
     'notif_loan_signed_body'       => 'Gauta jūsų pasirašyta sutartis :reference. Jūsų byla baigiama tvarkyti.',
     'notif_loan_rejected'          => 'Paraiška atmesta',

@@ -250,6 +250,8 @@ return [
     'notif_loan_contract_body'     => 'O seu contrato :reference foi enviado para o seu endereço de email. Assine-o e devolva-o, por favor.',
     'notif_loan_funded'            => 'Financiamento disponibilizado',
     'notif_loan_funded_body'       => ':amount :currency foram depositados na sua conta.',
+    'notif_loan_finalized'         => 'Processo finalizado',
+    'notif_loan_finalized_body'    => 'O seu processo :reference foi finalizado.',
     'notif_loan_signed'            => 'Contrato assinado recebido',
     'notif_loan_signed_body'       => 'O seu contrato assinado :reference foi recebido. O seu dossiê está a ser finalizado.',
     'notif_loan_rejected'          => 'Pedido recusado',

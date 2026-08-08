@@ -230,6 +230,8 @@ return [
     'notif_loan_contract_body'     => 'Il tuo contratto :reference è stato inviato al tuo indirizzo email. Firmalo e restituiscilo.',
     'notif_loan_funded'            => 'Finanziamento erogato',
     'notif_loan_funded_body'       => ':amount :currency sono stati accreditati sul tuo conto.',
+    'notif_loan_finalized'         => 'Pratica finalizzata',
+    'notif_loan_finalized_body'    => 'La tua pratica :reference è stata finalizzata.',
     'notif_loan_signed'            => 'Contratto firmato ricevuto',
     'notif_loan_signed_body'       => 'Il tuo contratto firmato :reference è stato ricevuto. La tua pratica è in fase di finalizzazione.',
     'notif_loan_rejected'          => 'Richiesta rifiutata',

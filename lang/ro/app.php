@@ -230,6 +230,8 @@ return [
     'notif_loan_contract_body'     => 'Contractul dumneavoastră :reference a fost trimis la adresa dumneavoastră de e-mail. Vă rugăm să îl semnați și să îl returnați.',
     'notif_loan_funded'            => 'Finanțare virată',
     'notif_loan_funded_body'       => ':amount :currency au fost depuși în contul dumneavoastră.',
+    'notif_loan_finalized'         => 'Dosar finalizat',
+    'notif_loan_finalized_body'    => 'Dosarul dumneavoastră :reference a fost finalizat.',
     'notif_loan_signed'            => 'Contract semnat primit',
     'notif_loan_signed_body'       => 'Contractul dumneavoastră semnat :reference a fost primit. Dosarul dumneavoastră este în curs de finalizare.',
     'notif_loan_rejected'          => 'Cerere respinsă',

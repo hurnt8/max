@@ -230,6 +230,8 @@ return [
     'notif_loan_contract_body'     => 'Ihr Vertrag :reference wurde an Ihre E-Mail-Adresse gesendet. Bitte unterschreiben Sie ihn und senden Sie ihn zurück.',
     'notif_loan_funded'            => 'Finanzierung ausgezahlt',
     'notif_loan_funded_body'       => ':amount :currency wurde auf Ihr Konto überwiesen.',
+    'notif_loan_finalized'         => 'Akte abgeschlossen',
+    'notif_loan_finalized_body'    => 'Ihre Akte :reference wurde abgeschlossen.',
     'notif_loan_signed'            => 'Unterzeichneter Vertrag erhalten',
     'notif_loan_signed_body'       => 'Ihr unterzeichneter Vertrag :reference wurde erhalten. Ihre Akte wird finalisiert.',
     'notif_loan_rejected'          => 'Antrag abgelehnt',

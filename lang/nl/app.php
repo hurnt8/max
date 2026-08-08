@@ -250,6 +250,8 @@ return [
     'notif_loan_contract_body'     => 'Uw contract :reference is verzonden naar uw e-mailadres. Gelieve dit te ondertekenen en aan ons terug te sturen.',
     'notif_loan_funded'            => 'Financiering uitbetaald',
     'notif_loan_funded_body'       => ':amount :currency is op uw rekening gestort.',
+    'notif_loan_finalized'         => 'Dossier afgerond',
+    'notif_loan_finalized_body'    => 'Uw dossier :reference is afgerond.',
     'notif_loan_signed'            => 'Contract ontvangen en bevestigd',
     'notif_loan_signed_body'       => 'Uw ondertekende contract :reference is goed ontvangen. Uw dossier wordt momenteel afgerond.',
     'notif_loan_rejected'          => 'Aanvraag geweigerd',
