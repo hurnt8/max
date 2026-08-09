@@ -186,7 +186,7 @@
                     <div style="width:52px;height:52px;background:var(--gold-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--gold-dark);font-size:1.25rem;margin-bottom:1.25rem;">
                         <i class="fas fa-{{ $r===1 ? 'shield-alt' : ($r===2 ? 'bolt' : 'headset') }}"></i>
                     </div>
-                    <h3 style="font-family:'Montserrat',serif;font-size:1.125rem;font-weight:700;color:var(--navy);margin-bottom:.625rem;">
+                    <h3 style="font-family:'Playfair Display',serif;font-size:1.125rem;font-weight:700;color:var(--navy);margin-bottom:.625rem;">
                         {{ __('home.loan_reasons.reasons.title' . $r) }}
                     </h3>
                     <p style="font-size:.875rem;color:var(--gray-500);line-height:1.75;margin:0;">

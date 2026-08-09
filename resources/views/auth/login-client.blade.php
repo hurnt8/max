@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Solberg Grupo">
-<meta name="theme-color" content="#F7F8F9">
+<meta name="theme-color" content="#080C18">
 <link rel="manifest" href="{{ route('pwa.manifest') }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/images/icon-512.png">
@@ -17,32 +17,32 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <style>
 :root{
-  --bg:   #F7F8F9;
-  --bg2:  #FFFFFF;
-  --card: #FFFFFF;
-  --inp:  #F7F8F9;
-  --navy: #04203D;
-  --navy2:#0A3559;
-  --gold: #B8883E;
-  --gold2:#96702F;
-  --text: #04203D;
-  --sub:  #4A5D73;
-  --muted:#95A3B1;
-  --bdr:  #DBDDDE;
+  --bg:   #080C18;
+  --bg2:  #0C1120;
+  --card: #0E1626;
+  --inp:  #141C2E;
+  --navy: #0B1A2E;
+  --navy2:#112237;
+  --gold: #C8A951;
+  --gold2:#A8893A;
+  --text: #FFFFFF;
+  --sub:  rgba(255,255,255,.52);
+  --muted:rgba(255,255,255,.28);
+  --bdr:  rgba(255,255,255,.09);
   /* Compat: le reste de la feuille référence encore --cyan/--cyan2 pour ses accents ponctuels */
-  --cyan: #B8883E;
-  --cyan2:#96702F;
+  --cyan: #0DCFDC;
+  --cyan2:#09B5C8;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
   height:100%;background:var(--bg);color:var(--text);
-  font-family:'Montserrat',system-ui,sans-serif;font-size:15px;
+  font-family:'Inter',system-ui,sans-serif;font-size:15px;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
 }
 body{min-height:100vh;overflow-x:hidden}
@@ -71,15 +71,15 @@ a{text-decoration:none;color:inherit}
   background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   margin-bottom:1.5rem;position:relative;
-  box-shadow:0 0 40px rgba(4,32,61,.25);
+  box-shadow:0 0 40px rgba(11,26,46,.25);
 }
 .ld-logo span{
-  font-family:'Montserrat',sans-serif;font-size:2rem;
+  font-family:'Space Grotesk',sans-serif;font-size:2rem;
   font-weight:800;color:#fff;
 }
 .ld-ring{
   position:absolute;inset:-8px;border-radius:30px;
-  border:2px solid rgba(4,32,61,.15);border-top-color:var(--gold);
+  border:2px solid rgba(11,26,46,.15);border-top-color:var(--gold);
   animation:spin .9s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -98,12 +98,12 @@ a{text-decoration:none;color:inherit}
 .orb{position:absolute;border-radius:50%;filter:blur(90px)}
 .orb-1{
   width:480px;height:480px;top:-10%;right:-8%;
-  background:radial-gradient(circle,rgba(184,136,62,.09) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(200,169,81,.09) 0%,transparent 65%);
   animation:orbf 10s ease-in-out infinite alternate;
 }
 .orb-2{
   width:360px;height:360px;bottom:-15%;left:-8%;
-  background:radial-gradient(circle,rgba(4,32,61,.05) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(11,26,46,.05) 0%,transparent 65%);
   animation:orbf 14s ease-in-out infinite alternate-reverse;
 }
 @keyframes orbf{from{transform:scale(1)}to{transform:scale(1.1) translate(2%,3%)}}
@@ -131,13 +131,13 @@ a{text-decoration:none;color:inherit}
   font-size:.76rem;font-weight:600;color:var(--navy);
   transition:border-color .18s,background .18s;
 }
-.ls__btn:hover{border-color:var(--gold);background:#F3E8D6}
+.ls__btn:hover{border-color:var(--gold);background:#F5E9C8}
 .ls__btn img{width:18px;height:12px;object-fit:cover;border-radius:2px}
 .ls__chevron{font-size:.48rem;transition:transform .2s;color:var(--muted)}
 .ls__menu{
   position:absolute;right:0;top:calc(100% + .5rem);
   background:#fff;border:1.5px solid var(--bdr);
-  border-radius:12px;box-shadow:0 16px 48px rgba(4,32,61,.14);
+  border-radius:12px;box-shadow:0 16px 48px rgba(11,26,46,.14);
   padding:.35rem;min-width:148px;z-index:1000;
 }
 .ls__opt{
@@ -148,7 +148,7 @@ a{text-decoration:none;color:inherit}
 }
 .ls__opt:hover{background:var(--inp);color:var(--navy)}
 .ls__opt img{width:18px;height:12px;object-fit:cover;border-radius:2px}
-.ls__opt.cur{background:#F3E8D6;color:var(--gold2)}
+.ls__opt.cur{background:#F5E9C8;color:var(--gold2)}
 
 /* ── Center wrapper ── */
 .page-wrap{
@@ -164,7 +164,7 @@ a{text-decoration:none;color:inherit}
   width:100%;max-width:400px;
   background:var(--card);border:1px solid var(--bdr);border-radius:20px;
   padding:2.25rem 2rem;
-  box-shadow:0 4px 24px rgba(4,32,61,.06),0 16px 48px rgba(4,32,61,.08);
+  box-shadow:0 4px 24px rgba(11,26,46,.06),0 16px 48px rgba(11,26,46,.08);
 }
 
 /* Logo */
@@ -173,18 +173,18 @@ a{text-decoration:none;color:inherit}
   background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.5rem;
-  box-shadow:0 0 36px rgba(4,32,61,.22);
+  box-shadow:0 0 36px rgba(11,26,46,.22);
 }
 .logo-box img{height:40px;object-fit:contain}
 .logo-box span{
-  font-family:'Montserrat',sans-serif;font-size:2rem;
+  font-family:'Space Grotesk',sans-serif;font-size:2rem;
   font-weight:800;color:#fff;line-height:1;
 }
 
 /* Heading */
 .card-head{text-align:center;margin-bottom:2rem}
 .card-title{
-  font-family:'Montserrat',sans-serif;
+  font-family:'Space Grotesk',sans-serif;
   font-size:1.5rem;font-weight:600;color:var(--navy);
   text-transform:uppercase;letter-spacing:.05em;
   margin-bottom:.5rem;
@@ -217,13 +217,13 @@ a{text-decoration:none;color:inherit}
   background:var(--inp);
   border:1.5px solid var(--bdr);
   border-radius:12px;
-  font-size:.88rem;font-family:'Montserrat',sans-serif;color:var(--text);
+  font-size:.88rem;font-family:'Inter',sans-serif;color:var(--text);
   outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
 }
 .finput::placeholder{color:var(--muted)}
 .finput:focus{
   border-color:var(--navy);background:#fff;
-  box-shadow:0 0 0 3.5px rgba(4,32,61,.08);
+  box-shadow:0 0 0 3.5px rgba(11,26,46,.08);
 }
 .finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--navy)}
 .finput.err{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.13)}
@@ -252,16 +252,16 @@ a{text-decoration:none;color:inherit}
 /* Bouton primaire — marine (charte Solberg Grupo) */
 .fbtn{
   width:100%;padding:.95rem 1.5rem;border:none;border-radius:999px;
-  font-size:.97rem;font-weight:700;font-family:'Montserrat',sans-serif;
+  font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.625rem;
   background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 100%);
   color:#fff;letter-spacing:.01em;
-  box-shadow:0 6px 28px rgba(4,32,61,.28),0 2px 8px rgba(4,32,61,.15);
+  box-shadow:0 6px 28px rgba(11,26,46,.28),0 2px 8px rgba(11,26,46,.15);
   transition:filter .2s,box-shadow .2s,transform .1s;
 }
 .fbtn:hover{
   filter:brightness(1.2);
-  box-shadow:0 8px 36px rgba(4,32,61,.35),0 2px 10px rgba(4,32,61,.2);
+  box-shadow:0 8px 36px rgba(11,26,46,.35),0 2px 10px rgba(11,26,46,.2);
 }
 .fbtn:active{transform:scale(.975)}
 .fbtn:disabled{opacity:.6;cursor:not-allowed;filter:none}
@@ -285,9 +285,9 @@ a{text-decoration:none;color:inherit}
   width:72px;height:72px;border-radius:50%;
   background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Montserrat',sans-serif;font-size:1.45rem;font-weight:800;
+  font-family:'Space Grotesk',sans-serif;font-size:1.45rem;font-weight:800;
   color:#fff;letter-spacing:.02em;
-  box-shadow:0 0 0 4px rgba(4,32,61,.1);
+  box-shadow:0 0 0 4px rgba(11,26,46,.1);
 }
 .qname{font-size:.93rem;font-weight:700;color:var(--text)}
 .qemail{font-size:.78rem;color:var(--sub)}
@@ -314,8 +314,8 @@ a{text-decoration:none;color:inherit}
   display:none;
   position:relative;z-index:10;
   margin:0 1.25rem .5rem;
-  background:linear-gradient(135deg,rgba(184,136,62,.1),rgba(184,136,62,.04));
-  border:1.5px solid rgba(184,136,62,.3);
+  background:linear-gradient(135deg,rgba(200,169,81,.1),rgba(200,169,81,.04));
+  border:1.5px solid rgba(200,169,81,.3);
   border-radius:16px;
   padding:.875rem 1rem;
   animation:fadeUp .4s ease .4s both;
@@ -325,7 +325,7 @@ a{text-decoration:none;color:inherit}
   width:42px;height:42px;border-radius:12px;flex-shrink:0;
   background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 14px rgba(4,32,61,.25);
+  box-shadow:0 4px 14px rgba(11,26,46,.25);
 }
 .pwa-icon img{width:26px;height:26px;object-fit:contain;border-radius:6px}
 .pwa-text{flex:1;min-width:0}
@@ -336,8 +336,8 @@ a{text-decoration:none;color:inherit}
   background:linear-gradient(135deg,var(--navy2),var(--navy));
   color:#fff;border:none;border-radius:999px;
   padding:.42rem .9rem;font-size:.75rem;font-weight:700;
-  cursor:pointer;white-space:nowrap;font-family:'Montserrat',sans-serif;
-  box-shadow:0 4px 14px rgba(4,32,61,.25);
+  cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif;
+  box-shadow:0 4px 14px rgba(11,26,46,.25);
   transition:filter .18s,transform .1s;
 }
 .pwa-btn:hover{filter:brightness(1.15)}
@@ -354,7 +354,7 @@ a{text-decoration:none;color:inherit}
 #pwa-ios{
   display:none;
   margin:0 1.25rem .5rem;
-  background:rgba(184,136,62,.06);border:1.5px solid rgba(184,136,62,.2);
+  background:rgba(200,169,81,.06);border:1.5px solid rgba(200,169,81,.2);
   border-radius:16px;padding:.875rem 1rem;
   font-size:.76rem;color:var(--sub);line-height:1.7;
   animation:fadeUp .4s ease .4s both;position:relative;z-index:10;

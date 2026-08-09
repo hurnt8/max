@@ -10,7 +10,7 @@
 
 /* ── Hero ── */
 .adb-hero {
-  background: linear-gradient(135deg, #04203D 0%, #12446E 60%, #0A3559 100%);
+  background: linear-gradient(135deg, #0B1A2E 0%, #162D47 60%, #112237 100%);
   border-radius: 16px;
   padding: 1.875rem 2rem;
   margin-bottom: 1.5rem;
@@ -295,7 +295,7 @@
     $offset += $len;
   }
 
-  $avatarPalette = ['#2563EB','#059669','#D97706','#7C3AED','#DC2626','#0D9488','#B8883E'];
+  $avatarPalette = ['#2563EB','#059669','#D97706','#7C3AED','#DC2626','#0D9488','#C8A951'];
 @endphp
 
 {{-- ── HERO ── --}}
@@ -433,7 +433,7 @@
             transform="rotate(-90 {{ $cx }} {{ $cy }})"/>
           @endif
           @endforeach
-          <text x="{{ $cx }}" y="{{ $cy - 3 }}" text-anchor="middle" font-size="15" font-weight="800" fill="#04203D">{{ $stats['total_loans'] }}</text>
+          <text x="{{ $cx }}" y="{{ $cy - 3 }}" text-anchor="middle" font-size="15" font-weight="800" fill="#0B1A2E">{{ $stats['total_loans'] }}</text>
           <text x="{{ $cx }}" y="{{ $cy + 12 }}" text-anchor="middle" font-size="7.5" fill="#9CA3AF">dossiers</text>
         </svg>
         <div class="adb-ring-legend">

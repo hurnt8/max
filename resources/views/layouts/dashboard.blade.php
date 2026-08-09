@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<meta name="theme-color" content="#04203D">
+<meta name="theme-color" content="#0B1A2E">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Solberg Admin">
@@ -24,7 +24,7 @@
 <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/vendors/fontawesome/css/all.min.css') }}">
 <style>
@@ -32,16 +32,16 @@
   Solberg Grupo INVEST — DESIGN SYSTEM v2
    ═══════════════════════════════════════════════ */
 :root {
-  --c-navy:       #04203D;
-  --c-navy-2:     #0A3559;
-  --c-navy-3:     #12446E;
-  --c-gold:       #B8883E;
-  --c-gold-d:     #96702F;
-  --c-gold-l:     #D2B789;
+  --c-navy:       #0B1A2E;
+  --c-navy-2:     #112237;
+  --c-navy-3:     #162D47;
+  --c-gold:       #C8A951;
+  --c-gold-d:     #A8893A;
+  --c-gold-l:     #D4B96A;
   --c-bg:         #F7F8F9;
   --c-surface:    #FFFFFF;
   --c-border:     #DBDDDE;
-  --c-text:       #04203D;
+  --c-text:       #0B1A2E;
   --c-muted:      #95A3B1;
   --c-green:      #059669;
   --c-green-l:    #D1FAE5;
@@ -57,13 +57,13 @@
   --topbar-h:     64px;
   --radius:       12px;
   --radius-sm:    8px;
-  --shadow:       0 1px 3px rgba(4,32,61,.06), 0 4px 16px rgba(4,32,61,.07);
-  --shadow-sm:    0 1px 2px rgba(4,32,61,.05);
+  --shadow:       0 1px 3px rgba(11,26,46,.06), 0 4px 16px rgba(11,26,46,.07);
+  --shadow-sm:    0 1px 2px rgba(11,26,46,.05);
   --transition:   all .2s ease;
 }
 
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:'Montserrat',sans-serif; font-weight:400; background:var(--c-bg); color:var(--c-text); font-size:.875rem; line-height:1.6; min-height:100vh; -webkit-font-smoothing:antialiased; }
+body { font-family:'Inter',sans-serif; font-weight:400; background:var(--c-bg); color:var(--c-text); font-size:.875rem; line-height:1.6; min-height:100vh; -webkit-font-smoothing:antialiased; }
 a { text-decoration:none; }
 
 /* ─── SCROLLBAR ─── */
@@ -708,12 +708,12 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
 }
 
 /* ═══════════════ MODAL DE CONFIRMATION (global) ═══════════════ */
-.cf-modal-overlay{display:none;position:fixed;inset:0;background:rgba(4,32,61,.55);z-index:99999;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(2px)}
+.cf-modal-overlay{display:none;position:fixed;inset:0;background:rgba(11,26,46,.55);z-index:99999;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(2px)}
 .cf-modal-overlay.open{display:flex}
 .cf-modal{background:#fff;border-radius:14px;max-width:420px;width:100%;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.28);animation:cfPop .16s ease}
 @keyframes cfPop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
 .cf-modal-icon{width:44px;height:44px;border-radius:12px;background:#FEF9EC;color:var(--c-gold-d,#a88830);display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:.875rem}
-.cf-modal-title{font-size:1rem;font-weight:800;color:var(--c-navy,#04203D);margin-bottom:.5rem}
+.cf-modal-title{font-size:1rem;font-weight:800;color:var(--c-navy,#0B1A2E);margin-bottom:.5rem}
 .cf-modal-msg{font-size:.85rem;color:var(--c-muted,#6b7280);line-height:1.6;margin-bottom:1.5rem;white-space:pre-line}
 .cf-modal-actions{display:flex;gap:.6rem;justify-content:flex-end}
 </style>

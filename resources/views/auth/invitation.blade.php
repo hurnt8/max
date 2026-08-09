@@ -91,7 +91,7 @@ $salutationName = ($gender === 'N') ? explode(' ', $user->name)[0] : $user->name
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -108,7 +108,7 @@ $salutationName = ($gender === 'N') ? explode(' ', $user->name)[0] : $user->name
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
   min-height:100vh;background:var(--bg);color:var(--text);
-  font-family:'Montserrat',system-ui,sans-serif;font-size:15px;
+  font-family:'Inter', system-ui, sans-serif;font-size:15px;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
 }
 body{
@@ -151,14 +151,14 @@ a{text-decoration:none;color:inherit}
   box-shadow:0 0 36px rgba(13,207,220,.3);
 }
 .logo-box img{height:40px;object-fit:contain}
-.logo-box span{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:#080C18;line-height:1}
+.logo-box span{font-family:'Inter',sans-serif;font-size:2rem;font-weight:800;color:#080C18;line-height:1}
 
 /* Avatar */
 .avatar{
   width:60px;height:60px;border-radius:50%;
   background:linear-gradient(135deg,var(--cyan),var(--cyan2));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;
+  font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;
   color:#080C18;margin:0 auto 1rem;
   box-shadow:0 0 24px rgba(13,207,220,.3);
 }
@@ -166,7 +166,7 @@ a{text-decoration:none;color:inherit}
 /* Heading */
 .card-head{text-align:center;margin-bottom:1.75rem}
 .card-title{
-  font-family:'Montserrat',sans-serif;
+  font-family:'Inter',sans-serif;
   font-size:1.5rem;font-weight:800;color:var(--text);margin-bottom:.35rem;
 }
 .card-sub{font-size:.8rem;color:var(--sub);line-height:1.6}
@@ -202,7 +202,7 @@ a{text-decoration:none;color:inherit}
 .finput{
   width:100%;padding:.85rem 2.6rem .85rem 2.6rem;
   background:var(--inp);border:1.5px solid rgba(255,255,255,.08);border-radius:12px;
-  font-size:.875rem;font-family:'Montserrat',sans-serif;color:var(--text);
+  font-size:.875rem;font-family:'Inter',sans-serif;color:var(--text);
   outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
 }
 .finput::placeholder{color:rgba(255,255,255,.2)}
@@ -228,7 +228,7 @@ a{text-decoration:none;color:inherit}
 /* Cyan pill button */
 .fbtn{
   width:100%;padding:.92rem 1.5rem;border:none;border-radius:999px;
-  font-size:.97rem;font-weight:700;font-family:'Montserrat',sans-serif;
+  font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.625rem;
   background:linear-gradient(90deg,var(--cyan) 0%,var(--cyan2) 100%);
   color:#080C18;letter-spacing:.01em;

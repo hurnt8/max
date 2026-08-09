@@ -51,7 +51,7 @@
 # Boxed Home
 --------------------------------------------------------------*/
 :root {
-  --easilon-font: "Montserrat", sans-serif;
+  --easilon-font: "Inter", sans-serif;
   --easilon-text: #82828A;
   --easilon-text-rgb: 130, 130, 138;
   --easilon-base: #d8ab3d;
@@ -287,7 +287,7 @@
 # Common
 --------------------------------------------------------------*/
 body {
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-weight: 500;
   font-size: 16px;
   color: var(--easilon-text, #82828A);
@@ -322,7 +322,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-black, #000000);
 }
 @media (max-width: 575px) {
@@ -520,7 +520,7 @@ h6 {
   border: none;
   outline: none !important;
   padding: 20px 21px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   text-align: center;
   font-size: 15px;
   font-weight: 600;
@@ -668,7 +668,7 @@ h6 {
 }
 .sec-title__tagline {
   margin-bottom: 0;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-weight: 600;
   font-size: 16px;
   color: var(--easilon-base, #d8ab3d);
@@ -677,7 +677,7 @@ h6 {
 }
 .sec-title__title {
   margin: 0;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 45px;
   font-weight: 700;
   color: var(--easilon-black, #000000);
@@ -807,7 +807,7 @@ h6 {
   position: absolute;
   bottom: calc(100% + 8px);
   right: 0;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 16px;
   color: var(--easilon-text, #82828A);
   font-weight: 500;
@@ -1202,7 +1202,7 @@ h6 {
 /* ui datepicker */
 .ui-datepicker.ui-widget-content {
   border: 1px solid var(--easilon-border-color, #E6E6ED);
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-base, #d8ab3d);
   font-weight: 500;
   font-size: 16px;
@@ -1227,17 +1227,17 @@ h6 {
   background-image: none;
   background-color: var(--easilon-base, #d8ab3d);
   color: var(--easilon-white, #ffffff);
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
 }
 
 .ui-datepicker-calendar th span {
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-black, #000000);
 }
 .ui-datepicker-calendar td {
   background-color: var(--easilon-white, #ffffff);
   background-image: none;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-white, #ffffff);
 }
 .ui-datepicker-calendar td a {
@@ -2774,7 +2774,7 @@ h6 {
   position: relative;
 }
 .main-menu .main-menu__list li ul li > a {
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 14px;
   line-height: 26px;
   color: var(--easilon-black, #000000);
@@ -2957,7 +2957,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 .demo-one__title {
   margin: 0;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   text-transform: none;
   font-size: 16px !important;
   color: var(--easilon-black, #000000);
@@ -3210,7 +3210,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .mobile-nav__content .main-menu__list li > a {
   display: flex;
   justify-content: space-between;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   line-height: 30px;
   color: var(--easilon-white, #ffffff);
   font-size: 15px;
@@ -3661,7 +3661,7 @@ body.megamenu-popup-active .mobile-nav__content {
   position: relative;
   display: block;
   width: 100% !important;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
 }
 .form-one .bootstrap-select > .dropdown-toggle::after {
   display: none;
@@ -3677,7 +3677,7 @@ body.megamenu-popup-active .mobile-nav__content {
   padding: 0;
   padding-left: 20px;
   padding-right: 20px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-text, #82828A) !important;
   text-transform: none;
   font-size: 14px;
@@ -3709,7 +3709,7 @@ body.megamenu-popup-active .mobile-nav__content {
   font-size: 14px;
   font-weight: 500;
   padding: 10px 22px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-black, #000000);
   background-color: var(--easilon-white2, #F6F6F8);
   text-transform: none;
@@ -3732,7 +3732,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 .form-one label {
   margin-bottom: 11px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 16px;
   color: var(--easilon-black, #000000);
   font-weight: 500;
@@ -3745,7 +3745,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .form-one textarea {
   display: block;
   width: 100%;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-text, #82828A);
   font-size: 14px;
   font-weight: 500;
@@ -4462,7 +4462,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 .sidebar-one__title {
   position: relative;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 25px;
   color: var(--easilon-white, #ffffff);
   font-weight: 700;
@@ -4546,7 +4546,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .sidebar-one__newsletter__input {
   outline: 0;
   border: 0;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 14px;
   color: var(--easilon-white, #ffffff);
   width: calc(100% - 45px);
@@ -4691,7 +4691,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .sidebar__posts__meta a {
   display: inline-flex;
   align-items: center;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-text, #82828A);
   font-size: 12px;
   font-weight: 500;
@@ -4815,7 +4815,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 .sidebar__tags a {
   background-color: var(--easilon-white, #ffffff);
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 14px;
   color: var(--easilon-black, #000000);
   line-height: 16px;
@@ -4869,7 +4869,7 @@ li:hover .sidebar__comments__icon {
 }
 .sidebar__comments__title {
   margin: 0;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 16px;
   line-height: 1.562;
   font-weight: 500;
@@ -4933,7 +4933,7 @@ li:hover .sidebar__comments__icon {
   justify-content: space-between;
   gap: 15px;
   padding: 21.5px 0 22.5px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 20px;
   color: var(--easilon-black, #000000);
   font-weight: 600;
@@ -5637,7 +5637,7 @@ li:hover .sidebar__comments__icon {
 .main-slider-one__carousel.owl-carousel .owl-dots .owl-dot span::after {
   content: "0" counter(sliderCount);
   counter-increment: sliderCount;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 14px;
   line-height: 1.142;
   text-align: center;
@@ -6111,7 +6111,7 @@ li:hover .sidebar__comments__icon {
 .main-slider-two__carousel.owl-carousel .owl-dots .owl-dot span::after {
   content: "0" counter(sliderCount);
   counter-increment: sliderCount;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 14px;
   line-height: 1.142;
   text-align: center;
@@ -6697,7 +6697,7 @@ li:hover .sidebar__comments__icon {
 .main-slider-three__carousel-counter__text {
   margin-left: auto;
   position: relative;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 14px;
   line-height: 1.142;
   text-align: center;
@@ -8118,7 +8118,7 @@ li:hover .sidebar__comments__icon {
 }
 .services-one__slide__text {
   margin: 0;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 65px;
   font-weight: 700;
   line-height: 1;
@@ -8833,7 +8833,7 @@ li:hover .sidebar__comments__icon {
 }
 .service-details__list li {
   position: relative;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 16px;
   color: var(--easilon-black, #000000);
   font-weight: 600;
@@ -9047,7 +9047,7 @@ li:hover .sidebar__comments__icon {
   background-color: var(--easilon-base, #d8ab3d);
 }
 .team-details__info li a {
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-text, #82828A);
   font-size: 16px;
   font-weight: 500;
@@ -10809,7 +10809,7 @@ li:hover .sidebar__comments__icon {
   text-align: center;
 }
 .login-page__signin__title {
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 15px;
   color: var(--easilon-text, #82828A);
   font-weight: 700;
@@ -11231,7 +11231,7 @@ li:hover .sidebar__comments__icon {
 }
 .apply-loan__form label {
   margin-bottom: 16px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 15px;
   color: var(--easilon-black, #000000);
   font-weight: 600;
@@ -11245,7 +11245,7 @@ li:hover .sidebar__comments__icon {
 .apply-loan__form textarea {
   display: block;
   width: 100%;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-text, #82828A);
   font-size: 15px;
   font-weight: 500;
@@ -11288,7 +11288,7 @@ li:hover .sidebar__comments__icon {
   position: relative;
   display: block;
   width: 100% !important;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
 }
 .apply-loan__form .bootstrap-select > .dropdown-toggle::after {
   display: none;
@@ -11304,7 +11304,7 @@ li:hover .sidebar__comments__icon {
   padding: 0;
   padding-left: 28px;
   padding-right: 28px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-text, #82828A) !important;
   text-transform: none;
   font-size: 15px;
@@ -11353,7 +11353,7 @@ li:hover .sidebar__comments__icon {
   font-size: 14px;
   font-weight: 500;
   padding: 10px 22px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-black, #000000);
   background-color: var(--easilon-white, #ffffff);
   text-transform: none;
@@ -12191,7 +12191,7 @@ li:hover .sidebar__comments__icon {
   display: inline-block;
   cursor: pointer;
   padding: 6.5px 9.5px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 16px;
   font-weight: 500;
   color: var(--easilon-white, #ffffff);
@@ -12716,7 +12716,7 @@ li:hover .sidebar__comments__icon {
 .download-app-one__btn__title {
   display: block;
   margin-bottom: 3px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-weight: 700;
   font-size: 14px;
   color: var(--easilon-black, #000000);
@@ -13167,7 +13167,7 @@ li:hover .sidebar__comments__icon {
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-base, #d8ab3d);
   text-transform: none;
   font-weight: 600;
@@ -13591,7 +13591,7 @@ li:hover .sidebar__comments__icon {
 }
 .blog-details__categories__btn {
   padding: 9px 12.2px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 14px;
   font-weight: 500;
   color: var(--easilon-text, #82828A);
@@ -13624,7 +13624,7 @@ li:hover .sidebar__comments__icon {
 }
 .blog-details__tags__box a:not(:last-of-type)::after {
   content: ",";
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 14px;
   color: var(--easilon-text, #82828A);
   line-height: 1;
@@ -13729,7 +13729,7 @@ li:hover .sidebar__comments__icon {
   outline: 0;
   top: 1px;
   padding: 5px 12.6px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 14px;
   font-weight: 600;
   color: var(--easilon-white, #ffffff);
@@ -13911,7 +13911,7 @@ li:hover .sidebar__comments__icon {
   line-height: 14px;
   border: none;
   outline: none;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   padding: 0;
   text-align: center;
   background-color: transparent;
@@ -14021,7 +14021,7 @@ li:hover .sidebar__comments__icon {
   margin: 0;
 }
 .product__showing-sort .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   position: relative;
   display: block;
   width: 100%;
@@ -14050,7 +14050,7 @@ li:hover .sidebar__comments__icon {
   padding: 0;
   padding-left: 16px;
   padding-right: 38px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-black2, #141414) !important;
   text-transform: none;
   font-size: 16px;
@@ -14087,7 +14087,7 @@ li:hover .sidebar__comments__icon {
   font-size: 14px;
   font-weight: 500;
   padding: 5px 16px 6px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-black, #000000);
   background-color: var(--easilon-white2, #F6F6F8);
   text-transform: none;
@@ -14371,7 +14371,7 @@ li:hover .sidebar__comments__icon {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-base, #d8ab3d);
   outline: none;
   font-size: 16px;
@@ -14577,7 +14577,7 @@ li:hover .sidebar__comments__icon {
   border-bottom: 1px solid var(--easilon-border-color, #E6E6ED);
 }
 .cart-page__table thead tr th {
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 20px;
   color: var(--easilon-black, #000000);
   line-height: 1;
@@ -14596,7 +14596,7 @@ li:hover .sidebar__comments__icon {
   padding-right: 0;
 }
 .cart-page__table tbody tr td {
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 16px;
   font-weight: 700;
   color: var(--easilon-base, #d8ab3d);
@@ -14719,7 +14719,7 @@ li:hover .sidebar__comments__icon {
   height: 62px;
   border: none;
   font-size: 16px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-text, #82828A);
   font-weight: 400;
   line-height: normal;
@@ -14781,7 +14781,7 @@ li:hover .sidebar__comments__icon {
   justify-content: space-between;
   gap: 15px;
   font-size: 18px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-black, #000000);
   text-transform: none;
   font-weight: 700;
@@ -14886,7 +14886,7 @@ li:hover .sidebar__comments__icon {
   margin-bottom: 37px;
 }
 .checkout-page__control label {
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 16px;
   color: var(--easilon-black, #000000);
   font-weight: 500;
@@ -14906,7 +14906,7 @@ li:hover .sidebar__comments__icon {
   outline: none;
   font-size: 14px;
   color: var(--easilon-text, #82828A);
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   display: block;
   line-height: normal;
   font-weight: 400;
@@ -14923,7 +14923,7 @@ li:hover .sidebar__comments__icon {
   position: relative;
   display: block;
   width: 100% !important;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
 }
 .checkout-page__control .bootstrap-select > .dropdown-toggle::after {
   display: none;
@@ -14939,7 +14939,7 @@ li:hover .sidebar__comments__icon {
   padding: 0;
   padding-left: 20px;
   padding-right: 20px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-text, #82828A) !important;
   text-transform: none;
   font-size: 14px;
@@ -14971,7 +14971,7 @@ li:hover .sidebar__comments__icon {
   font-size: 14px;
   font-weight: 400;
   padding: 10px 22px;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-weight: 500;
   color: var(--easilon-black, #000000);
   background-color: var(--easilon-white2, #F6F6F8);
@@ -15029,7 +15029,7 @@ li:hover .sidebar__comments__icon {
   margin: 0 0 0;
 }
 .checkout-page__order-table thead tr th {
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   font-size: 20px;
   color: var(--easilon-black, #000000);
   text-transform: none;
@@ -15049,7 +15049,7 @@ li:hover .sidebar__comments__icon {
 .checkout-page__order-table tbody tr td.pro__title, .checkout-page__order-table tbody tr td.pro__price {
   font-size: 16px;
   line-height: normal;
-  font-family: var(--easilon-font, "Montserrat", sans-serif);
+  font-family: var(--easilon-font, "Inter", sans-serif);
   color: var(--easilon-text, #82828A);
   font-weight: 500;
   text-transform: none;
