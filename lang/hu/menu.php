@@ -30,5 +30,5 @@ return [
     'newsletter_title' => 'Legyen tájékozott ajánlatainkról',
     'subscribe'        => 'Feliratkozás',
     'read_more'        => 'Tudjon meg többet',
-    'footer_desc'      => 'A Solberg Grupo megbízható partnere a gyors, rugalmas és személyre szabott finanszírozási megoldásoknak szerte Európában.',
+    'footer_desc'      => 'A ' . site_name() . ' megbízható partnere a gyors, rugalmas és személyre szabott finanszírozási megoldásoknak szerte Európában.',
 ];

@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Uvod',
-            'content' => 'Dobro došli u Solberg Grupo. Korištenjem naše stranice i usluga suglasni ste da Äete se pridrÅ¾avati sljedeÄih uvjeta i odredbi te biti vezani njima. Molimo paÅ¾ljivo proÄitajte ove uvjete prije korištenja naše stranice ili podizanja kredita kod nas.'
+            'content' => 'Dobro došli u ' . site_name() . '. Korištenjem naše stranice i usluga suglasni ste da Äete se pridrÅ¾avati sljedeÄih uvjeta i odredbi te biti vezani njima. Molimo paÅ¾ljivo proÄitajte ove uvjete prije korištenja naše stranice ili podizanja kredita kod nas.'
         ],
         [
             'title' => '2. Korištenje stranice',
@@ -13,11 +13,11 @@ return [
         ],
         [
             'title' => '3. Usluge zajmova',
-            'content' => 'Solberg Grupo nudi razliÄite vrste zajmova kako bi zadovoljio vaše financijske potrebe. Svi krediti podlijeÅ¾u odobravanju na temelju naše procjene vaše kreditne sposobnosti i moguÄnosti otplate. Posebni uvjeti svakog zajma, ukljuÄujuÄi kamatne stope, rokove dospijeÄa i uvjete otplate, bit Äe detaljno navedeni u vašem ugovoru o zajmu.'
+            'content' => site_name() . ' nudi razliÄite vrste zajmova kako bi zadovoljio vaše financijske potrebe. Svi krediti podlijeÅ¾u odobravanju na temelju naše procjene vaše kreditne sposobnosti i moguÄnosti otplate. Posebni uvjeti svakog zajma, ukljuÄujuÄi kamatne stope, rokove dospijeÄa i uvjete otplate, bit Äe detaljno navedeni u vašem ugovoru o zajmu.'
         ],
         [
             'title' => '4. Troškovi ugovora i osiguranja',
-            'content' => 'Prilikom podizanja kredita kod Solberg Grupoa mogu se primijeniti naknade za ugovor i osiguranje. Ova naknada pokriva administrativne troškove povezane s postavljanjem i upravljanjem vašim kreditom. Konkretni detalji ovih naknada bit Äe jasno navedeni u vašem ugovoru o zajmu. DuÅ¾ni ste platiti ove naknade u skladu s navedenim uvjetima.'
+            'content' => 'Prilikom podizanja kredita kod ' . site_name() . 'a mogu se primijeniti naknade za ugovor i osiguranje. Ova naknada pokriva administrativne troškove povezane s postavljanjem i upravljanjem vašim kreditom. Konkretni detalji ovih naknada bit Äe jasno navedeni u vašem ugovoru o zajmu. DuÅ¾ni ste platiti ove naknade u skladu s navedenim uvjetima.'
         ],
         [
             'title' => '5. Povjerljivost',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kontakt',
-            'content' => 'Ako imate bilo kakvih pitanja ili nedoumica u vezi s ovim odredbama i uvjetima, kontaktirajte nas na:<br><br>Solberg Grupo<br>Adresa: Rua de Santo António 33, 7200-175, Portugal<br>E-pošta: contact@solberggrupo.site<br>Telefon: +31 6 57341120 '
+            'content' => 'Ako imate bilo kakvih pitanja ili nedoumica u vezi s ovim odredbama i uvjetima, kontaktirajte nas na:<br><br>' . site_name() . '<br>Adresa: Rua de Santo António 33, 7200-175, Portugal<br>E-pošta: contact@solberggrupo.site<br>Telefon: +31 6 57341120 '
         ],
 
     ],

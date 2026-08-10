@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Solberg Grupo - Beste online kredietverstrekkers in Duitsland, Spanje, Hongarije enz.',
+    'general_title' => site_name() . ' - Beste online kredietverstrekkers in Duitsland, Spanje, Hongarije enz.',
     'banner_title' => 'Krijg de perfecte lening voor al uw behoeften, online.',
-    'banner_text' => 'Miljoenen mensen gebruiken Solberg Grupo om hun projecten te realiseren.',
+    'banner_text' => 'Miljoenen mensen gebruiken ' . site_name() . ' om hun projecten te realiseren.',
     'get_loan_now' => 'Vraag nu een lening aan',
     'popular_loans' => 'Populaire soorten leningen:',
 
@@ -54,11 +54,11 @@ return [
 
     'custom_loan_services' => 'Profiteer van onze leendiensten op maat',
     'reliability_quality' => 'Transparantie en betrouwbaarheid',
-    'reliability_quality_description' => 'Bij Solberg Grupo bieden wij duidelijke en betrouwbare leenoplossingen, ondersteund door positieve klantbeoordelingen en volledige transparantie.',
+    'reliability_quality_description' => 'Bij ' . site_name() . ' bieden wij duidelijke en betrouwbare leenoplossingen, ondersteund door positieve klantbeoordelingen en volledige transparantie.',
     'financial_transparency' => 'Geen verborgen kosten',
     'financial_transparency_description' => 'Bekijk onze voorwaarden, bespreek de tarieven en betaal pas zodra uw lening is goedgekeurd.',
     'optimal_security' => 'Veiligheid en vertrouwelijkheid',
-    'optimal_security_description' => 'Uw persoonlijke gegevens zijn bij ons veilig. Solberg Grupo gebruikt geavanceerde beveiligingsprotocollen om uw privacy te beschermen. Onze ondersteuning is 24/7 beschikbaar voor alle hulp die u nodig heeft.',
+    'optimal_security_description' => 'Uw persoonlijke gegevens zijn bij ons veilig. ' . site_name() . ' gebruikt geavanceerde beveiligingsprotocollen om uw privacy te beschermen. Onze ondersteuning is 24/7 beschikbaar voor alle hulp die u nodig heeft.',
     'apply_loan' => 'Lening aanvragen',
 
 
@@ -74,7 +74,7 @@ return [
         'months_ago' => 1,
     ],
     'testimonial_2' => [
-        'quote' => '"Na twee afwijzingen bij een traditionele bank kreeg ik binnen 48 uur een persoonlijke lening via Solberg Grupo. Het team heeft mijn aanvraag serieus en met begrip behandeld. Ontzettend bedankt!"',
+        'quote' => '"Na twee afwijzingen bij een traditionele bank kreeg ik binnen 48 uur een persoonlijke lening via ' . site_name() . '. Het team heeft mijn aanvraag serieus en met begrip behandeld. Ontzettend bedankt!"',
         'name'  => 'Sanne Jansen',
         'location' => 'Rotterdam, Nederland',
         'months_ago' => 2,
@@ -92,7 +92,7 @@ return [
         'months_ago' => 3,
     ],
     'testimonial_5' => [
-        'quote' => '"Duidelijke simulator, eenvoudig dossier, overschrijving ontvangen binnen drie werkdagen. Ik moest dringend een verbouwing financieren en Solberg Grupo stond precies op het juiste moment klaar."',
+        'quote' => '"Duidelijke simulator, eenvoudig dossier, overschrijving ontvangen binnen drie werkdagen. Ik moest dringend een verbouwing financieren en ' . site_name() . ' stond precies op het juiste moment klaar."',
         'name'  => 'Sophie Mulder',
         'location' => 'Eindhoven, Nederland',
         'months_ago' => 4,
@@ -113,7 +113,7 @@ return [
     ],
 
     'about_title' => 'Sluit u aan bij de beste wereldwijde marktplaats voor werknemers',
-    'about_description' => 'Solberg Grupo is uw vertrouwde platform om leningen te verkrijgen met een uitzonderlijke klantervaring. Wij zetten ons in om u eenvoudige, veilige en snelle financiële oplossingen te bieden.',
+    'about_description' => site_name() . ' is uw vertrouwde platform om leningen te verkrijgen met een uitzonderlijke klantervaring. Wij zetten ons in om u eenvoudige, veilige en snelle financiële oplossingen te bieden.',
     'rating' => '4,9/5',
     'rating_description' => 'Klanten beoordelen de professionals',
     'projects_completed' => '+12M',
@@ -149,7 +149,7 @@ return [
         'placeholder' => 'Uw e-mailadres',
         'button' => 'Versturen',
     ],
-    'rights_reserved' => '© Solberg Grupo. 2024. Alle rechten voorbehouden.',
+    'rights_reserved' => '© ' . site_name() . '. 2024. Alle rechten voorbehouden.',
 
     'en' => 'English',
     'fr' => 'French',
@@ -198,10 +198,10 @@ return [
     // About
     'about' => [
         'exptitle' => 'jaar ervaring',
-        'sectagline' => 'welkom bij Solberg Grupo',
+        'sectagline' => 'welkom bij ' . site_name(),
         'sectitle' => 'Persoonlijke leningen om uw dromen te realiseren',
         'text1' => 'Wij zijn al 15 jaar actief in deze sector en bieden de beste diensten.',
-        'text2' => 'Solberg Grupo is uw vertrouwde platform voor leningen met een uitzonderlijke klantervaring. Wij zetten ons in om u eenvoudige, veilige en snelle financiële oplossingen te bieden.',
+        'text2' => site_name() . ' is uw vertrouwde platform voor leningen met een uitzonderlijke klantervaring. Wij zetten ons in om u eenvoudige, veilige en snelle financiële oplossingen te bieden.',
         'check1' => 'lening voor kleine ondernemingen',
         'check2' => 'lening om in het buitenland te studeren',
         'check3' => 'snel leenproces',

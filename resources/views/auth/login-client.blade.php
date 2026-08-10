@@ -6,14 +6,14 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Solberg Grupo">
+<meta name="apple-mobile-web-app-title" content="{{ site_name() }}">
 <meta name="theme-color" content="#080C18">
 <link rel="manifest" href="{{ route('pwa.manifest') }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/images/icon-512.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
 <link rel="shortcut icon" href="/images/icon-192.png" type="image/png">
-<title>{{ __('auth.client_login_title') }} — Solberg Grupo</title>
+<title>{{ __('auth.client_login_title') }} — {{ site_name() }}</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -545,7 +545,7 @@ a{text-decoration:none;color:inherit}
     </button>
     <div class="pwa-inner">
       <div class="pwa-icon">
-        <img src="/images/icon-192.png" alt="Solberg Grupo">
+        <img src="/images/icon-192.png" alt="{{ site_name() }}">
       </div>
       <div class="pwa-text">
         <div class="pwa-title">{{ __('auth.pwa_install_title') }}</div>
@@ -582,7 +582,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <div class="pg-foot">
-    &copy; {{ date('Y') }} Solberg Grupo &nbsp;·&nbsp;
+    &copy; {{ date('Y') }} {{ site_name() }} &nbsp;·&nbsp;
     <a href="{{ url('/'.app()->getLocale().'/terms') }}">{{ __('menu.terms') }}</a> &nbsp;·&nbsp;
     <a href="{{ url('/'.app()->getLocale().'/privacy') }}">{{ __('menu.privacy') }}</a>
   </div>

@@ -1,19 +1,19 @@
 <?php
 
 return [
-    'banner_title' => 'Ontdek Solberg Grupo',
+    'banner_title' => 'Ontdek ' . site_name(),
     'banner_subtitle' => 'Over ons',
     'banner_description' => 'Leen eenvoudiger met flexibele leenoplossingen die zijn afgestemd op uw financiële behoeften.',
 
-    'section1_title' => 'Waarom kiezen voor Solberg Grupo',
-    'section1_p1' => 'Bij Solberg Grupo geloven wij oprecht dat iedereen recht heeft op een kans om zijn financiële dromen te verwezenlijken. Sinds onze oprichting zetten wij ons in om flexibele en toegankelijke leenoplossingen te bieden die inspelen op de uiteenlopende behoeften van onze klanten. Of u nu een persoonlijk project wilt financieren, een auto wilt kopen of uw onderneming wilt laten groeien, wij hebben de lening die bij u past.',
+    'section1_title' => 'Waarom kiezen voor ' . site_name(),
+    'section1_p1' => 'Bij ' . site_name() . ' geloven wij oprecht dat iedereen recht heeft op een kans om zijn financiële dromen te verwezenlijken. Sinds onze oprichting zetten wij ons in om flexibele en toegankelijke leenoplossingen te bieden die inspelen op de uiteenlopende behoeften van onze klanten. Of u nu een persoonlijk project wilt financieren, een auto wilt kopen of uw onderneming wilt laten groeien, wij hebben de lening die bij u past.',
     'section1_p2' => 'Onze diensten zijn ontworpen om een probleemloze ervaring te bieden, met een eenvoudige en snelle aanvraagprocedure. Wij begrijpen dat elke klant uniek is, daarom bieden wij persoonlijke leningen aan die zijn afgestemd op uw specifieke behoeften. Bovendien staan onze toegewijde adviseurs altijd voor u klaar om u bij elke stap te begeleiden, zodat u van begin tot eind volledig wordt bijgestaan.',
     'proposed' => 'Wij bieden u:',
     'check1' => 'Persoonlijke leningen die zijn afgestemd op uw specifieke behoeften.',
     'check2' => 'Toegewijde adviseurs die u bij elke stap van het proces bijstaan.',
     'check3' => 'Flexibele terugbetalingsvoorwaarden die zich aanpassen aan uw financiële situatie',
     'check4' => 'Leningen zonder dat u over een loonstrook hoeft te beschikken.',
-    'section1_p3' => 'Bij Solberg Grupo is het onze missie om u te helpen uw financiële doelen te bereiken met leenoplossingen op maat. Word vandaag nog klant bij ons en ontdek hoe wij u kunnen helpen uw plannen te verwezenlijken.',
+    'section1_p3' => 'Bij ' . site_name() . ' is het onze missie om u te helpen uw financiële doelen te bereiken met leenoplossingen op maat. Word vandaag nog klant bij ons en ontdek hoe wij u kunnen helpen uw plannen te verwezenlijken.',
     'btn' => 'Vind Uw Ideale Lening',
 
     'faq_title' => 'Veelgestelde Vragen',

@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', __('app.loan_ref').' '.$loan->reference.' — Solberg Grupo')
+@section('title', __('app.loan_ref').' '.$loan->reference.' — ' . site_name())
 @section('page_title', __('app.loan_ref').' '.$loan->reference)
 
 @push('styles')

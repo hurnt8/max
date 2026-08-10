@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Ajouter un réseau social — Solberg Grupo')
+@section('title', 'Ajouter un réseau social — ' . site_name())
 @section('page_title', 'Ajouter un réseau social')
 
 @section('content')

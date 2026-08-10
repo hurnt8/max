@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Solberg Grupo - Os melhores credores online na Alemanha, Espanha, Hungria, etc.',
+    'general_title' => site_name() . ' - Os melhores credores online na Alemanha, Espanha, Hungria, etc.',
     'banner_title' => 'Obtenha o empréstimo perfeito para todas as suas necessidades online.',
-    'banner_text' => 'Milhões de pessoas usam a Solberg Grupo para realizar seus projetos.',
+    'banner_text' => 'Milhões de pessoas usam a ' . site_name() . ' para realizar seus projetos.',
     'get_loan_now' => 'Obtenha um empréstimo agora',
     'popular_loans' => 'Tipos de empréstimos populares:',
     'personal_loan' => 'Empréstimo pessoal',
@@ -62,11 +62,11 @@ return [
 
     'custom_loan_services' => 'Aproveite nossos serviços de empréstimo sob medida',
     'reliability_quality' => 'Transparência e Confiabilidade',
-    'reliability_quality_description' => 'Na Solberg Grupo, oferecemos soluções de empréstimo claras e confiáveis, respaldadas por avaliações positivas de clientes e total transparência.',
+    'reliability_quality_description' => 'Na ' . site_name() . ', oferecemos soluções de empréstimo claras e confiáveis, respaldadas por avaliações positivas de clientes e total transparência.',
     'financial_transparency' => 'Sem Custos Ocultos',
     'financial_transparency_description' => 'Revise nossos termos, discuta taxas e pague apenas após a aprovação do seu empréstimo.',
     'optimal_security' => 'Segurança e Privacidade',
-    'optimal_security_description' => 'Seus dados pessoais estão seguros conosco. A Solberg Grupo utiliza protocolos de segurança avançados para proteger sua privacidade. Nosso suporte está disponível 24/7 para qualquer assistência.',
+    'optimal_security_description' => 'Seus dados pessoais estão seguros conosco. A ' . site_name() . ' utiliza protocolos de segurança avançados para proteger sua privacidade. Nosso suporte está disponível 24/7 para qualquer assistência.',
     'apply_loan' => 'Solicitar um empréstimo',
 
 
@@ -122,7 +122,7 @@ return [
     ],
 
     'about_title' => 'Junte-se ao melhor marketplace do mundo para trabalhadores',
-    'about_description' => 'A Solberg Grupo é sua plataforma confiável para obtenção de empréstimos com uma experiência excepcional ao cliente. Estamos comprometidos em fornecer soluções financeiras simples, seguras e rápidas.',
+    'about_description' => 'A ' . site_name() . ' é sua plataforma confiável para obtenção de empréstimos com uma experiência excepcional ao cliente. Estamos comprometidos em fornecer soluções financeiras simples, seguras e rápidas.',
     'rating' => '4.9/5',
     'rating_description' => 'Os clientes avaliam os profissionais',
     'projects_completed' => '+12M',
@@ -164,7 +164,7 @@ return [
         'placeholder' => 'Seu endereço de email',
         'button' => 'Enviar',
     ],
-    'rights_reserved' => '© Solberg Grupo. 2024. Todos os direitos reservados.',
+    'rights_reserved' => '© ' . site_name() . '. 2024. Todos os direitos reservados.',
 
     'en' => 'Inglês',
     'fr' => 'Francês',
@@ -211,10 +211,10 @@ return [
 
     'about' => [
         'exptitle' => 'ano de experiência',
-        'sectagline' => 'bem-vindo à Solberg Grupo',
+        'sectagline' => 'bem-vindo à ' . site_name(),
         'sectitle' => 'Empréstimos pessoais para realizar os seus sonhos',
         'text1' => 'Estamos neste negócio há 15 anos e oferecemos os melhores serviços.',
-        'text2' => 'A Solberg Grupo é a sua plataforma confiável para empréstimos com uma experiência de cliente excecional. Estamos comprometidos em fornecer soluções financeiras simples, seguras e rápidas.',
+        'text2' => 'A ' . site_name() . ' é a sua plataforma confiável para empréstimos com uma experiência de cliente excecional. Estamos comprometidos em fornecer soluções financeiras simples, seguras e rápidas.',
         'check1' => 'empréstimo para pequenas empresas',
         'check2' => 'empréstimo para estudar no estrangeiro',
         'check3' => 'processo de empréstimo rápido',

@@ -52,19 +52,19 @@ class AppServiceProvider extends ServiceProvider
             $expire  = (int) config('auth.passwords.users.expire', 60);
 
             $subjects = [
-                'fr' => 'Réinitialisation de votre mot de passe — Solberg Grupo',
-                'en' => 'Reset your password — Solberg Grupo',
-                'es' => 'Restablecimiento de su contraseña — Solberg Grupo',
-                'pl' => 'Resetowanie hasła — Solberg Grupo',
-                'bg' => 'Нулиране на паролата ви — Solberg Grupo',
-                'hu' => 'Jelszó visszaállítása — Solberg Grupo',
-                'it' => 'Reimposta la tua password — Solberg Grupo',
-                'de' => 'Zurücksetzen Ihres Passworts — Solberg Grupo',
-                'lt' => 'Slaptažodžio atkūrimas — Solberg Grupo',
-                'ro' => 'Resetarea parolei dumneavoastră — Solberg Grupo',
-                'lv' => 'Paroles atiestatīšana — Solberg Grupo',
-                'nl' => 'Uw wachtwoord opnieuw instellen — Solberg Grupo',
-                'pt' => 'Redefinição da sua palavra-passe — Solberg Grupo',
+                'fr' => 'Réinitialisation de votre mot de passe — ' . site_name(),
+                'en' => 'Reset your password — ' . site_name(),
+                'es' => 'Restablecimiento de su contraseña — ' . site_name(),
+                'pl' => 'Resetowanie hasła — ' . site_name(),
+                'bg' => 'Нулиране на паролата ви — ' . site_name(),
+                'hu' => 'Jelszó visszaállítása — ' . site_name(),
+                'it' => 'Reimposta la tua password — ' . site_name(),
+                'de' => 'Zurücksetzen Ihres Passworts — ' . site_name(),
+                'lt' => 'Slaptažodžio atkūrimas — ' . site_name(),
+                'ro' => 'Resetarea parolei dumneavoastră — ' . site_name(),
+                'lv' => 'Paroles atiestatīšana — ' . site_name(),
+                'nl' => 'Uw wachtwoord opnieuw instellen — ' . site_name(),
+                'pt' => 'Redefinição da sua palavra-passe — ' . site_name(),
             ];
 
             return (new MailMessage)

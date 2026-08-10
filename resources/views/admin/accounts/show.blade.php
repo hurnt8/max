@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Compte — ' . $account->name . ' — Solberg Grupo')
+@section('title', 'Compte — ' . $account->name . ' — ' . site_name())
 
 @section('content')
 <style>

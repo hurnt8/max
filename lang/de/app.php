@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'           => 'Mein Solberg Grupo Bereich',
+    'title'           => 'Mein ' . site_name() . ' Bereich',
     'greeting'        => 'Hallo',
     'language'        => 'Sprache',
     'welcome_back'    => 'Willkommen zurück',
@@ -297,7 +297,7 @@ return [
     'funded_title'           => 'Finanzierung bewilligt',
     'funded_body'            => 'Der Betrag von :amount :currency wurde auf Ihr Konto überwiesen.',
     'rejected_title'         => 'Antrag nicht angenommen',
-    'contact_advisor'        => 'Wenden Sie sich an Ihren Solberg Grupo Berater für weitere Informationen.',
+    'contact_advisor'        => 'Wenden Sie sich an Ihren ' . site_name() . ' Berater für weitere Informationen.',
     'file_progress'          => 'Fortschritt der Akte',
     'financing_breakdown'    => 'Aufschlüsselung Kapital / Zinsen',
     'total_credit_cost'      => 'Gesamtkosten des Kredits',

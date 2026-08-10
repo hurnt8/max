@@ -31,5 +31,5 @@ return [
     'newsletter_title' => 'Blijf op de hoogte van onze aanbiedingen',
     'subscribe'        => "Abonneren",
     'read_more'        => 'Meer weten',
-    'footer_desc'      => "Solberg Grupo is uw betrouwbare partner voor snelle, flexibele en persoonlijke financieringsoplossingen in heel Europa.",
+    'footer_desc'      => site_name() . " is uw betrouwbare partner voor snelle, flexibele en persoonlijke financieringsoplossingen in heel Europa.",
 ];

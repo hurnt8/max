@@ -31,5 +31,5 @@ return [
     'newsletter_title' => 'Uzziniet pirmais par mūsu piedāvājumiem',
     'subscribe'        => 'Abonēt',
     'read_more'        => 'Uzzināt vairāk',
-    'footer_desc'      => 'Solberg Grupo ir jūsu uzticamais partneris ātriem, elastīgiem un individuāli pielāgotiem finansējuma risinājumiem visā Eiropā.',
+    'footer_desc'      => site_name() . ' ir jūsu uzticamais partneris ātriem, elastīgiem un individuāli pielāgotiem finansējuma risinājumiem visā Eiropā.',
 ];

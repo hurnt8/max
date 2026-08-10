@@ -12,13 +12,13 @@ return [
     'month_abbr'           => 'mesi',
     'optional'             => 'facoltativo',
     'loan_admin_subject'   => 'Nuova richiesta di prestito',
-    'loan_admin_intro'     => 'Un cliente ha appena inviato una richiesta di prestito tramite il sito Solberg Grupo.',
+    'loan_admin_intro'     => 'Un cliente ha appena inviato una richiesta di prestito tramite il sito ' . site_name() . '.',
 
     'loan_confirm_subject'   => 'La tua richiesta di prestito è in fase di elaborazione',
     'loan_confirm_greeting'  => 'Ciao :name,',
     'loan_confirm_body'      => 'Abbiamo ricevuto la tua richiesta di prestito di :amount :currency su :duration mesi. È attualmente in fase di elaborazione da parte del nostro team.',
     'loan_confirm_footer'    => 'Ti contatteremo il prima possibile. Grazie per la fiducia accordataci.',
-    'loan_confirm_signature' => 'Il team Solberg Grupo',
+    'loan_confirm_signature' => 'Il team ' . site_name(),
     'loan_confirm_noreply'   => 'Questa email è stata inviata da un indirizzo no-reply. Ti preghiamo di non rispondere direttamente a questo messaggio.',
 
     'loan_conditions_title'  => 'Condizioni di ammissibilità',
@@ -50,7 +50,7 @@ return [
     'docs_confirm_greeting'  => 'Ciao :name,',
     'docs_confirm_body'      => 'Abbiamo ricevuto correttamente i tuoi documenti (indirizzo e documento d\'identità). Il nostro team li esaminerà e ti risponderà entro 24 ore.',
     'docs_confirm_footer'    => 'Ti ringraziamo per la fiducia e restiamo a tua disposizione per qualsiasi domanda.',
-    'docs_confirm_signature' => 'Il team Solberg Grupo',
+    'docs_confirm_signature' => 'Il team ' . site_name(),
 
     'docs_upload_hint'  => 'Trascina e rilascia oppure clicca per scegliere un file',
     'docs_single_photo' => 'Per questo tipo di documento è sufficiente una sola foto.',

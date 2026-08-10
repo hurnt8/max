@@ -1,19 +1,19 @@
 <?php
 
 return [
-    'banner_title' => 'Descoperiți Solberg Grupo',
+    'banner_title' => 'Descoperiți ' . site_name(),
     'banner_subtitle' => 'Despre noi',
     'banner_description' => 'Împrumutați mai simplu cu soluții de creditare flexibile, adaptate nevoilor dumneavoastră financiare.',
 
-    'section1_title' => 'De ce să alegeți Solberg Grupo',
-    'section1_p1' => 'La Solberg Grupo, credem cu tărie că fiecare persoană merită șansa de a-și îndeplini visurile financiare. Încă de la înființare, ne-am angajat să oferim soluții de creditare flexibile și accesibile pentru a răspunde nevoilor variate ale clienților noștri. Fie că doriți să finanțați un proiect personal, să cumpărați o mașină sau să vă dezvoltați afacerea, avem împrumutul potrivit pentru dumneavoastră.',
+    'section1_title' => 'De ce să alegeți ' . site_name(),
+    'section1_p1' => 'La ' . site_name() . ', credem cu tărie că fiecare persoană merită șansa de a-și îndeplini visurile financiare. Încă de la înființare, ne-am angajat să oferim soluții de creditare flexibile și accesibile pentru a răspunde nevoilor variate ale clienților noștri. Fie că doriți să finanțați un proiect personal, să cumpărați o mașină sau să vă dezvoltați afacerea, avem împrumutul potrivit pentru dumneavoastră.',
     'section1_p2' => 'Serviciile noastre sunt concepute pentru a oferi o experiență fără bătăi de cap, cu un proces de cerere simplu și rapid. Înțelegem că fiecare client este unic, motiv pentru care oferim împrumuturi personalizate, adaptate nevoilor dumneavoastră specifice. În plus, consilierii noștri dedicați sunt mereu alături de dumneavoastră la fiecare etapă, asigurându-vă un sprijin complet de la început până la final.',
     'proposed' => 'Vă oferim:',
     'check1' => 'Împrumuturi personalizate în funcție de nevoile dumneavoastră specifice.',
     'check2' => 'Consilieri dedicați care vă ajută la fiecare etapă a procesului.',
     'check3' => 'Condiții de rambursare flexibile, adaptate situației dumneavoastră financiare',
     'check4' => 'Împrumuturi fără a fi necesar să dispuneți de un fluturaș de salariu.',
-    'section1_p3' => 'La Solberg Grupo, misiunea noastră este să vă ajutăm să vă atingeți obiectivele financiare prin soluții de creditare personalizate. Alăturați-vă nouă chiar astăzi și descoperiți cum vă putem ajuta să vă concretizați proiectele.',
+    'section1_p3' => 'La ' . site_name() . ', misiunea noastră este să vă ajutăm să vă atingeți obiectivele financiare prin soluții de creditare personalizate. Alăturați-vă nouă chiar astăzi și descoperiți cum vă putem ajuta să vă concretizați proiectele.',
     'btn' => 'Găsiți Împrumutul Ideal',
 
     'faq_title' => 'Întrebări Frecvente',

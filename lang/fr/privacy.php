@@ -3,7 +3,7 @@
 return [
     'title' => 'Politique de confidentialité',
     'introduction_title' => '1. Introduction',
-    'introduction_text' => 'Chez Solberg Grupo, nous nous engageons à protéger et à respecter votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations personnelles lorsque vous utilisez notre site web et nos services de prêt en ligne. En utilisant notre site, vous acceptez les pratiques décrites dans cette politique.',
+    'introduction_text' => 'Chez ' . site_name() . ', nous nous engageons à protéger et à respecter votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations personnelles lorsque vous utilisez notre site web et nos services de prêt en ligne. En utilisant notre site, vous acceptez les pratiques décrites dans cette politique.',
     'information_collection_title' => '2. Informations que nous collectons',
     'information_collection_text' => 'Nous pouvons collecter et traiter les informations suivantes vous concernant :',
     'information_collection_list' => [
@@ -44,7 +44,7 @@ return [
     'contact_title' => '8. Contact',
     'contact_text' => 'Si vous avez des questions, des préoccupations ou des demandes concernant cette politique de confidentialité ou la façon dont nous traitons vos informations personnelles, veuillez nous contacter à :',
     'contact_details' => [
-        'Solberg Grupo',
+        site_name(),
         'Adresse : Rua de Santo António 33, 7200-175, Portugal',
         'E-mail : contact@solberggrupo.site',
         'Téléphone : +31 6 57341120 ',

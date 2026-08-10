@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', __('menu.home')) | Solberg Grupo</title>
-    <meta name="description" content="Solberg Grupo — solutions de financement rapides, flexibles et personnalisées à travers l'Europe.">
+    <title>@yield('title', __('menu.home')) | {{ site_name() }}</title>
+    <meta name="description" content="{{ site_name() }} — solutions de financement rapides, flexibles et personnalisées à travers l'Europe.">
     <link rel="canonical" href="{{ url()->current() }}">
     @foreach (['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'hr'] as $l)
     <link rel="alternate" hreflang="{{ $l }}" href="{{ url($l) }}">

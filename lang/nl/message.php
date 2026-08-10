@@ -12,13 +12,13 @@ return [
     'month_abbr'           => 'mnd',
     'optional'             => 'optioneel',
     'loan_admin_subject'   => 'Nieuwe leningaanvraag',
-    'loan_admin_intro'     => 'Een klant heeft zojuist een leningaanvraag ingediend via de website van Solberg Grupo.',
+    'loan_admin_intro'     => 'Een klant heeft zojuist een leningaanvraag ingediend via de website van ' . site_name() . '.',
 
     'loan_confirm_subject'   => 'Uw leningaanvraag wordt verwerkt',
     'loan_confirm_greeting'  => 'Beste :name,',
     'loan_confirm_body'      => 'Wij hebben uw leningaanvraag van :amount :currency over :duration maanden in goede orde ontvangen. Deze wordt momenteel door ons team verwerkt.',
     'loan_confirm_footer'    => 'Wij nemen zo spoedig mogelijk contact met u op. Hartelijk dank voor uw vertrouwen.',
-    'loan_confirm_signature' => 'Het team van Solberg Grupo',
+    'loan_confirm_signature' => 'Het team van ' . site_name(),
     'loan_confirm_noreply'   => 'Deze e-mail is verzonden vanaf een no-reply-adres. Reageer niet rechtstreeks op dit bericht.',
 
     'loan_conditions_title'  => 'Toelatingsvoorwaarden',
@@ -50,7 +50,7 @@ return [
     'docs_confirm_greeting'  => 'Beste :name,',
     'docs_confirm_body'      => 'Wij hebben uw documenten (adres en identiteitsbewijs) in goede orde ontvangen. Ons team zal ze beoordelen en u binnen 24 uur een terugkoppeling geven.',
     'docs_confirm_footer'    => 'Wij danken u voor uw vertrouwen en staan tot uw beschikking voor eventuele vragen.',
-    'docs_confirm_signature' => 'Het team van Solberg Grupo',
+    'docs_confirm_signature' => 'Het team van ' . site_name(),
 
     'docs_upload_hint'  => 'Sleep en zet neer, of klik om een bestand te kiezen',
     'docs_single_photo' => 'Voor dit type document volstaat één foto.',

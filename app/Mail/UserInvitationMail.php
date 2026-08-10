@@ -14,47 +14,52 @@ class UserInvitationMail extends Mailable
     use Queueable, SerializesModels;
 
     // ── Sujets de l'email selon [locale][genre] ──────────────────────────────
-    private const SUBJECTS = [
-        'fr' => ['M' => 'Activation de votre compte — Solberg Grupo',
-                 'F' => 'Activation de votre compte — Solberg Grupo',
-                 'N' => 'Activez votre compte — Solberg Grupo'],
-        'en' => ['M' => 'Activate your account — Solberg Grupo',
-                 'F' => 'Activate your account — Solberg Grupo',
-                 'N' => 'Activate your account — Solberg Grupo'],
-        'es' => ['M' => 'Activación de su cuenta — Solberg Grupo',
-                 'F' => 'Activación de su cuenta — Solberg Grupo',
-                 'N' => 'Active su cuenta — Solberg Grupo'],
-        'pl' => ['M' => 'Aktywacja Twojego konta — Solberg Grupo',
-                 'F' => 'Aktywacja Twojego konta — Solberg Grupo',
-                 'N' => 'Aktywuj swoje konto — Solberg Grupo'],
-        'bg' => ['M' => 'Активиране на вашия профил — Solberg Grupo',
-                 'F' => 'Активиране на вашия профил — Solberg Grupo',
-                 'N' => 'Активирайте профила си — Solberg Grupo'],
-        'hu' => ['M' => 'Fiókja aktiválása — Solberg Grupo',
-                 'F' => 'Fiókja aktiválása — Solberg Grupo',
-                 'N' => 'Aktiválja fiókját — Solberg Grupo'],
-        'it' => ['M' => 'Attivazione del tuo account — Solberg Grupo',
-                 'F' => 'Attivazione del tuo account — Solberg Grupo',
-                 'N' => 'Attiva il tuo account — Solberg Grupo'],
-        'de' => ['M' => 'Aktivierung Ihres Kontos — Solberg Grupo',
-                 'F' => 'Aktivierung Ihres Kontos — Solberg Grupo',
-                 'N' => 'Aktivieren Sie Ihr Konto — Solberg Grupo'],
-        'lt' => ['M' => 'Jūsų paskyros aktyvinimas — Solberg Grupo',
-                 'F' => 'Jūsų paskyros aktyvinimas — Solberg Grupo',
-                 'N' => 'Aktyvuokite savo paskyrą — Solberg Grupo'],
-        'ro' => ['M' => 'Activarea contului dumneavoastră — Solberg Grupo',
-                 'F' => 'Activarea contului dumneavoastră — Solberg Grupo',
-                 'N' => 'Activați-vă contul — Solberg Grupo'],
-        'lv' => ['M' => 'Jūsu konta aktivizēšana — Solberg Grupo',
-                 'F' => 'Jūsu konta aktivizēšana — Solberg Grupo',
-                 'N' => 'Aktivizējiet savu kontu — Solberg Grupo'],
-        'nl' => ['M' => 'Activering van uw account — Solberg Grupo',
-                 'F' => 'Activering van uw account — Solberg Grupo',
-                 'N' => 'Activeer uw account — Solberg Grupo'],
-        'pt' => ['M' => 'Ativação da sua conta — Solberg Grupo',
-                 'F' => 'Ativação da sua conta — Solberg Grupo',
-                 'N' => 'Ative a sua conta — Solberg Grupo'],
-    ];
+    private array $subjects;
+
+    private function subjectsArray(): array
+    {
+        return [
+        'fr' => ['M' => 'Activation de votre compte — ' . site_name(),
+                 'F' => 'Activation de votre compte — ' . site_name(),
+                 'N' => 'Activez votre compte — ' . site_name()],
+        'en' => ['M' => 'Activate your account — ' . site_name(),
+                 'F' => 'Activate your account — ' . site_name(),
+                 'N' => 'Activate your account — ' . site_name()],
+        'es' => ['M' => 'Activación de su cuenta — ' . site_name(),
+                 'F' => 'Activación de su cuenta — ' . site_name(),
+                 'N' => 'Active su cuenta — ' . site_name()],
+        'pl' => ['M' => 'Aktywacja Twojego konta — ' . site_name(),
+                 'F' => 'Aktywacja Twojego konta — ' . site_name(),
+                 'N' => 'Aktywuj swoje konto — ' . site_name()],
+        'bg' => ['M' => 'Активиране на вашия профил — ' . site_name(),
+                 'F' => 'Активиране на вашия профил — ' . site_name(),
+                 'N' => 'Активирайте профила си — ' . site_name()],
+        'hu' => ['M' => 'Fiókja aktiválása — ' . site_name(),
+                 'F' => 'Fiókja aktiválása — ' . site_name(),
+                 'N' => 'Aktiválja fiókját — ' . site_name()],
+        'it' => ['M' => 'Attivazione del tuo account — ' . site_name(),
+                 'F' => 'Attivazione del tuo account — ' . site_name(),
+                 'N' => 'Attiva il tuo account — ' . site_name()],
+        'de' => ['M' => 'Aktivierung Ihres Kontos — ' . site_name(),
+                 'F' => 'Aktivierung Ihres Kontos — ' . site_name(),
+                 'N' => 'Aktivieren Sie Ihr Konto — ' . site_name()],
+        'lt' => ['M' => 'Jūsų paskyros aktyvinimas — ' . site_name(),
+                 'F' => 'Jūsų paskyros aktyvinimas — ' . site_name(),
+                 'N' => 'Aktyvuokite savo paskyrą — ' . site_name()],
+        'ro' => ['M' => 'Activarea contului dumneavoastră — ' . site_name(),
+                 'F' => 'Activarea contului dumneavoastră — ' . site_name(),
+                 'N' => 'Activați-vă contul — ' . site_name()],
+        'lv' => ['M' => 'Jūsu konta aktivizēšana — ' . site_name(),
+                 'F' => 'Jūsu konta aktivizēšana — ' . site_name(),
+                 'N' => 'Aktivizējiet savu kontu — ' . site_name()],
+        'nl' => ['M' => 'Activering van uw account — ' . site_name(),
+                 'F' => 'Activering van uw account — ' . site_name(),
+                 'N' => 'Activeer uw account — ' . site_name()],
+        'pt' => ['M' => 'Ativação da sua conta — ' . site_name(),
+                 'F' => 'Ativação da sua conta — ' . site_name(),
+                 'N' => 'Ative a sua conta — ' . site_name()],
+        ];
+    }
 
     // ── Labels du bouton selon la locale ────────────────────────────────────
     private const BTN_LABELS = [
@@ -177,19 +182,19 @@ class UserInvitationMail extends Mailable
             'pt' => ['M' => 'Atenciosamente',  'F' => 'Atenciosamente',  'N' => 'Cumprimentos'],
         ],
         '{EQUIPE}' => [
-            'fr' => ['M' => "L'équipe Solberg Grupo",     'F' => "L'équipe Solberg Grupo",     'N' => "L'équipe Solberg Grupo"],
-            'en' => ['M' => 'The Solberg Grupo Team',     'F' => 'The Solberg Grupo Team',     'N' => 'The Solberg Grupo Team'],
-            'es' => ['M' => 'El equipo de Solberg Grupo', 'F' => 'El equipo de Solberg Grupo', 'N' => 'El equipo de Solberg Grupo'],
-            'pl' => ['M' => 'Zespół Solberg Grupo',       'F' => 'Zespół Solberg Grupo',       'N' => 'Zespół Solberg Grupo'],
-            'bg' => ['M' => 'Екипът на Solberg Grupo',    'F' => 'Екипът на Solberg Grupo',    'N' => 'Екипът на Solberg Grupo'],
-            'hu' => ['M' => 'A Solberg Grupo csapata',    'F' => 'A Solberg Grupo csapata',    'N' => 'A Solberg Grupo csapata'],
-            'it' => ['M' => 'Il team Solberg Grupo',      'F' => 'Il team Solberg Grupo',      'N' => 'Il team Solberg Grupo'],
+            'fr' => ['M' => "L'équipe " . site_name(),     'F' => "L'équipe ' . site_name() . '",     'N' => "L'équipe " . site_name()],
+            'en' => ['M' => 'The ' . site_name() . ' Team',     'F' => 'The ' . site_name() . ' Team',     'N' => 'The ' . site_name() . ' Team'],
+            'es' => ['M' => 'El equipo de ' . site_name(), 'F' => 'El equipo de ' . site_name(), 'N' => 'El equipo de ' . site_name()],
+            'pl' => ['M' => 'Zespół ' . site_name(),       'F' => 'Zespół ' . site_name(),       'N' => 'Zespół ' . site_name()],
+            'bg' => ['M' => 'Екипът на ' . site_name(),    'F' => 'Екипът на ' . site_name(),    'N' => 'Екипът на ' . site_name()],
+            'hu' => ['M' => 'A ' . site_name() . ' csapata',    'F' => 'A ' . site_name() . ' csapata',    'N' => 'A ' . site_name() . ' csapata'],
+            'it' => ['M' => 'Il team ' . site_name(),      'F' => 'Il team ' . site_name(),      'N' => 'Il team ' . site_name()],
             'de' => ['M' => 'Das Solberg-Grupo-Team',     'F' => 'Das Solberg-Grupo-Team',     'N' => 'Das Solberg-Grupo-Team'],
-            'lt' => ['M' => 'Solberg Grupo komanda',      'F' => 'Solberg Grupo komanda',      'N' => 'Solberg Grupo komanda'],
-            'ro' => ['M' => 'Echipa Solberg Grupo',       'F' => 'Echipa Solberg Grupo',       'N' => 'Echipa Solberg Grupo'],
-            'lv' => ['M' => 'Solberg Grupo komanda',      'F' => 'Solberg Grupo komanda',      'N' => 'Solberg Grupo komanda'],
-            'nl' => ['M' => 'Het Solberg Grupo Team',     'F' => 'Het Solberg Grupo Team',     'N' => 'Het Solberg Grupo Team'],
-            'pt' => ['M' => 'A equipa Solberg Grupo',     'F' => 'A equipa Solberg Grupo',     'N' => 'A equipa Solberg Grupo'],
+            'lt' => ['M' => site_name() . ' komanda',      'F' => site_name() . ' komanda',      'N' => site_name() . ' komanda'],
+            'ro' => ['M' => 'Echipa ' . site_name(),       'F' => 'Echipa ' . site_name(),       'N' => 'Echipa ' . site_name()],
+            'lv' => ['M' => site_name() . ' komanda',      'F' => site_name() . ' komanda',      'N' => site_name() . ' komanda'],
+            'nl' => ['M' => 'Het ' . site_name() . ' Team',     'F' => 'Het ' . site_name() . ' Team',     'N' => 'Het ' . site_name() . ' Team'],
+            'pt' => ['M' => 'A equipa ' . site_name(),     'F' => 'A equipa ' . site_name(),     'N' => 'A equipa ' . site_name()],
         ],
         '{NOTICE_PERSONNEL}' => [
             'fr' => ['M' => "Ce lien d'activation est **personnel et unique**. Il expire dès que vous avez défini votre mot de passe.",
@@ -278,14 +283,16 @@ class UserInvitationMail extends Mailable
     public function __construct(
         public User   $user,
         public string $activationUrl,
-    ) {}
+    ) {
+        $this->subjects = $this->subjectsArray();
+    }
 
     public function envelope(): Envelope
     {
         $locale  = $this->user->locale  ?? 'fr';
         $gender  = $this->user->gender  ?? 'N';
-        $subject = self::SUBJECTS[$locale][$gender]
-                ?? self::SUBJECTS['fr']['N'];
+        $subject = $this->subjects[$locale][$gender]
+                ?? $this->subjects['fr']['N'];
 
         return new Envelope(subject: $subject);
     }
@@ -306,7 +313,7 @@ class UserInvitationMail extends Mailable
         $resolved['{NOM_COMPLET}']     = $this->user->name;
         $resolved['{EMAIL}']           = $this->user->email;
         $resolved['{LIEN_ACTIVATION}'] = $this->activationUrl;
-        $resolved['{NOM_ENTREPRISE}']  = 'Solberg Grupo';
+        $resolved['{NOM_ENTREPRISE}']  = site_name();
 
         $body = self::BODY[$locale] ?? self::BODY['fr'];
         $resolved['{INTRO_CORPS}']  = $this->applyReplacements($body['intro'],  $resolved);

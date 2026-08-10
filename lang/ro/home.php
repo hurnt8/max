@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Solberg Grupo - Cei mai buni creditori online din Germania, Spania, Ungaria etc.',
+    'general_title' => site_name() . ' - Cei mai buni creditori online din Germania, Spania, Ungaria etc.',
     'banner_title' => 'Obțineți împrumutul perfect pentru toate nevoile dumneavoastră, online.',
-    'banner_text' => 'Milioane de persoane folosesc Solberg Grupo pentru a-și realiza proiectele.',
+    'banner_text' => 'Milioane de persoane folosesc ' . site_name() . ' pentru a-și realiza proiectele.',
     'get_loan_now' => 'Obțineți un împrumut acum',
     'popular_loans' => 'Tipuri de împrumuturi populare:',
 
@@ -54,11 +54,11 @@ return [
 
     'custom_loan_services' => 'Beneficiați de serviciile noastre de creditare personalizate',
     'reliability_quality' => 'Transparență și Fiabilitate',
-    'reliability_quality_description' => 'La Solberg Grupo, oferim soluții de creditare clare și fiabile, susținute de recenzii pozitive ale clienților și transparență totală.',
+    'reliability_quality_description' => 'La ' . site_name() . ', oferim soluții de creditare clare și fiabile, susținute de recenzii pozitive ale clienților și transparență totală.',
     'financial_transparency' => 'Fără Costuri Ascunse',
     'financial_transparency_description' => 'Analizați condițiile noastre, discutați despre rate și plătiți doar după aprobarea împrumutului dumneavoastră.',
     'optimal_security' => 'Securitate și Confidențialitate',
-    'optimal_security_description' => 'Datele dumneavoastră personale sunt în siguranță la noi. Solberg Grupo utilizează protocoale de securitate avansate pentru a vă proteja viața privată. Asistența noastră este disponibilă 24/7 pentru orice nelămurire.',
+    'optimal_security_description' => 'Datele dumneavoastră personale sunt în siguranță la noi. ' . site_name() . ' utilizează protocoale de securitate avansate pentru a vă proteja viața privată. Asistența noastră este disponibilă 24/7 pentru orice nelămurire.',
     'apply_loan' => 'Solicitați un împrumut',
 
 
@@ -74,7 +74,7 @@ return [
         'months_ago' => 1,
     ],
     'testimonial_2' => [
-        'quote' => '„După două refuzuri din partea unei bănci tradiționale, Solberg Grupo mi-a acordat un împrumut personal în 48 de ore. Echipa a știut să îmi analizeze dosarul cu seriozitate și bunăvoință. Mulțumesc enorm!”',
+        'quote' => '„După două refuzuri din partea unei bănci tradiționale, ' . site_name() . ' mi-a acordat un împrumut personal în 48 de ore. Echipa a știut să îmi analizeze dosarul cu seriozitate și bunăvoință. Mulțumesc enorm!”',
         'name'  => 'Andrei Ionescu',
         'location' => 'Cluj-Napoca, România',
         'months_ago' => 2,
@@ -92,7 +92,7 @@ return [
         'months_ago' => 3,
     ],
     'testimonial_5' => [
-        'quote' => '„Simulator clar, dosar simplu, transfer primit în trei zile lucrătoare. Aveam nevoie să finanțez niște lucrări urgente, iar Solberg Grupo a fost prezent la momentul potrivit.”',
+        'quote' => '„Simulator clar, dosar simplu, transfer primit în trei zile lucrătoare. Aveam nevoie să finanțez niște lucrări urgente, iar ' . site_name() . ' a fost prezent la momentul potrivit.”',
         'name'  => 'Cristina Stan',
         'location' => 'Constanța, România',
         'months_ago' => 4,
@@ -113,7 +113,7 @@ return [
     ],
 
     'about_title' => 'Alăturați-vă celei mai bune piețe globale pentru profesioniști',
-    'about_description' => 'Solberg Grupo este platforma dumneavoastră de încredere pentru obținerea de împrumuturi, cu o experiență excepțională pentru clienți. Ne angajăm să vă oferim soluții financiare simple, sigure și rapide.',
+    'about_description' => site_name() . ' este platforma dumneavoastră de încredere pentru obținerea de împrumuturi, cu o experiență excepțională pentru clienți. Ne angajăm să vă oferim soluții financiare simple, sigure și rapide.',
     'rating' => '4.9/5',
     'rating_description' => 'Clienții evaluează profesioniștii',
     'projects_completed' => '+12M',
@@ -149,7 +149,7 @@ return [
         'placeholder' => 'Adresa dumneavoastră de e-mail',
         'button' => 'Trimite',
     ],
-    'rights_reserved' => '© Solberg Grupo. 2024. Toate drepturile rezervate.',
+    'rights_reserved' => '© ' . site_name() . '. 2024. Toate drepturile rezervate.',
 
     'en' => 'Engleză',
     'fr' => 'Franceză',
@@ -198,10 +198,10 @@ return [
     // About
     'about' => [
         'exptitle' => 'ani de experiență',
-        'sectagline' => 'bine ați venit la Solberg Grupo',
+        'sectagline' => 'bine ați venit la ' . site_name(),
         'sectitle' => 'Împrumuturi personale pentru a vă îndeplini visurile',
         'text1' => 'Suntem activi în acest domeniu de 15 ani și oferim cele mai bune servicii.',
-        'text2' => 'Solberg Grupo este platforma dumneavoastră de încredere pentru împrumuturi, cu o experiență excepțională pentru clienți. Ne angajăm să vă oferim soluții financiare simple, sigure și rapide.',
+        'text2' => site_name() . ' este platforma dumneavoastră de încredere pentru împrumuturi, cu o experiență excepțională pentru clienți. Ne angajăm să vă oferim soluții financiare simple, sigure și rapide.',
         'check1' => 'împrumut pentru afaceri mici',
         'check2' => 'împrumut pentru studii în străinătate',
         'check3' => 'proces de creditare rapid',

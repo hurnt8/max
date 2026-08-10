@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Įvadas',
-            'content' => 'Sveiki atvykę į Solberg Grupo. Naudodamiesi mūsų svetaine ir paslaugomis, sutinkate laikytis toliau nurodytų sąlygų ir būti jų saistomos. Prašome atidžiai perskaityti šias sąlygas prieš naudodamiesi mūsų svetaine arba imdami paskolą su mumis.',
+            'content' => 'Sveiki atvykę į ' . site_name() . '. Naudodamiesi mūsų svetaine ir paslaugomis, sutinkate laikytis toliau nurodytų sąlygų ir būti jų saistomos. Prašome atidžiai perskaityti šias sąlygas prieš naudodamiesi mūsų svetaine arba imdami paskolą su mumis.',
         ],
         [
             'title' => '2. Svetainės naudojimas',
@@ -13,11 +13,11 @@ return [
         ],
         [
             'title' => '3. Paskolų paslaugos',
-            'content' => 'Solberg Grupo siūlo įvairių tipų paskolas, kad patenkintų jūsų finansinius poreikius. Visos paskolos turi būti patvirtintos, remiantis mūsų įvertinimu apie jūsų kreditingumą ir grąžinimo galimybes. Konkrečios kiekvienos paskolos sąlygos, įskaitant palūkanų normas, terminus ir grąžinimo sąlygas, bus išsamiai nurodytos jūsų paskolos sutartyje.',
+            'content' => site_name() . ' siūlo įvairių tipų paskolas, kad patenkintų jūsų finansinius poreikius. Visos paskolos turi būti patvirtintos, remiantis mūsų įvertinimu apie jūsų kreditingumą ir grąžinimo galimybes. Konkrečios kiekvienos paskolos sąlygos, įskaitant palūkanų normas, terminus ir grąžinimo sąlygas, bus išsamiai nurodytos jūsų paskolos sutartyje.',
         ],
         [
             'title' => '4. Sutarties ir draudimo išlaidos',
-            'content' => 'Išimant paskolą su Solberg Grupo, gali būti taikomi sutarties ir draudimo mokesčiai. Šis mokestis padengia administracines išlaidas, susijusias su paskolos nustatymu ir valdymu. Konkreti informacija apie šiuos mokesčius bus aiškiai nurodyta jūsų paskolos sutartyje. Šiuos mokesčius privalote sumokėti pagal nurodytas sąlygas.',
+            'content' => 'Išimant paskolą su ' . site_name() . ', gali būti taikomi sutarties ir draudimo mokesčiai. Šis mokestis padengia administracines išlaidas, susijusias su paskolos nustatymu ir valdymu. Konkreti informacija apie šiuos mokesčius bus aiškiai nurodyta jūsų paskolos sutartyje. Šiuos mokesčius privalote sumokėti pagal nurodytas sąlygas.',
         ],
         [
             'title' => '5. Konfidencialumas',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Atsakomybės apribojimas',
-            'content' => 'Solberg Grupo nebus atsakinga už jokius netiesioginius, specialius ar pasekminius nuostolius ar žalą, atsiradusią dėl mūsų svetainės ar paslaugų naudojimo arba negalėjimo ja naudotis, įskaitant pelno praradimą, duomenų praradimą ar verslo nutraukimą, net jei buvome informuoti apie tokios žalos galimybę.',
+            'content' => site_name() . ' nebus atsakinga už jokius netiesioginius, specialius ar pasekminius nuostolius ar žalą, atsiradusią dėl mūsų svetainės ar paslaugų naudojimo arba negalėjimo ja naudotis, įskaitant pelno praradimą, duomenų praradimą ar verslo nutraukimą, net jei buvome informuoti apie tokios žalos galimybę.',
         ],
         [
             'title' => '8. Sąlygų pakeitimai',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kontaktas',
-            'content' => 'Jei turite klausimų ar neaiškumų dėl šių taisyklių ir sąlygų, susisiekite su mumis adresu:<br><br>Solberg Grupo<br>Adresas: Rua de Santo António 33, 7200-175, Portugal<br>El. paštas: contact@solberggrupo.site<br>Telefonas: +31 6 57341120 '
+            'content' => 'Jei turite klausimų ar neaiškumų dėl šių taisyklių ir sąlygų, susisiekite su mumis adresu:<br><br>' . site_name() . '<br>Adresas: Rua de Santo António 33, 7200-175, Portugal<br>El. paštas: contact@solberggrupo.site<br>Telefonas: +31 6 57341120 '
         ],
     ],
 ];

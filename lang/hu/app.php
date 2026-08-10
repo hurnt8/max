@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'           => 'Saját Solberg Grupo fiókom',
+    'title'           => 'Saját ' . site_name() . ' fiókom',
     'greeting'        => 'Üdvözöljük',
     'language'        => 'Nyelv',
     'welcome_back'    => 'Üdvözöljük ismét',
@@ -297,7 +297,7 @@ return [
     'funded_title'           => 'Finanszírozás jóváhagyva',
     'funded_body'            => ':amount :currency összeget írtunk jóvá a számláján.',
     'rejected_title'         => 'A kérelem nem került elfogadásra',
-    'contact_advisor'        => 'További információért forduljon Solberg Grupo tanácsadójához.',
+    'contact_advisor'        => 'További információért forduljon ' . site_name() . ' tanácsadójához.',
     'file_progress'          => 'Ügy előrehaladása',
     'financing_breakdown'    => 'Tőke / kamat megoszlás',
     'total_credit_cost'      => 'A hitel teljes költsége',

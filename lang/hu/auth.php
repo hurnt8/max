@@ -19,12 +19,12 @@ return [
 
     'client_login_title'  => 'Ügyfélfiók',
     'client_login_sub'    => 'Jelentkezzen be az ügyei eléréséhez',
-    'client_brand_title'  => 'Az Ön Solberg Grupo<br>ügyfélfiókja',
+    'client_brand_title'  => 'Az Ön ' . site_name() . '<br>ügyfélfiókja',
     'client_brand_sub'    => 'Kövesse nyomon kérelmeit, kezelje profilját, és férjen hozzá minden dokumentumához teljes biztonságban.',
 
     'staff_login_title'   => 'Adminisztrációs portál',
     'staff_login_sub'     => 'Kizárólag jogosult munkatársak számára',
-    'staff_brand_title'   => 'Solberg Grupo<br>Adminisztráció',
+    'staff_brand_title'   => site_name() . '<br>Adminisztráció',
     'staff_brand_sub'     => 'Biztonságos hozzáférés az ügykezelési, nyomon követési és felhasználó-adminisztrációs eszközökhöz.',
 
     'email'               => 'E-mail cím',
@@ -40,7 +40,7 @@ return [
     'staff_portal_link'   => 'Munkatársi / adminisztrátori portál',
     'client_portal_link'  => 'Ügyfélfiók',
     'staff_restricted'    => 'Korlátozott hozzáférés — kizárólag jogosult munkatársak',
-    'staff_notice'        => 'Ez a portál kizárólag a Solberg Grupo munkatársai számára érhető el. Minden bejelentkezés naplózásra kerül.',
+    'staff_notice'        => 'Ez a portál kizárólag a ' . site_name() . ' munkatársai számára érhető el. Minden bejelentkezés naplózásra kerül.',
     'or_staff'            => 'Munkatárs vagy adminisztrátor?',
     'or_client'           => 'Ön ügyfél?',
 
@@ -92,31 +92,31 @@ return [
     'account_unblocked'                   => 'Fiókja sikeresen feloldásra került. Most már bejelentkezhet.',
     'unblock_invalid'                     => 'Ez a feloldó link érvénytelen vagy lejárt. Vegye fel a kapcsolatot ügyfélszolgálatunkkal.',
 
-    'account_blocked_email_subject'       => 'Solberg Grupo fiókja zárolásra került',
+    'account_blocked_email_subject'       => site_name() . ' fiókja zárolásra került',
     'account_blocked_email_title'         => 'Ideiglenesen zárolt fiók',
     'account_blocked_email_intro'         => 'Fiókját több helytelen bejelentkezési kísérlet miatt ideiglenesen zároltuk.',
     'account_blocked_email_reason_title'  => 'Miért történt a zárolás?',
     'account_blocked_email_reason_body'   => 'A fiókjába történő bejelentkezési kísérlet során 4 helytelen OTP kódot adtak meg egymás után. Biztonsági okokból a hozzáférést felfüggesztettük.',
     'account_blocked_email_btn'           => 'Fiókom feloldása',
     'account_blocked_email_fallback'      => 'Ha a gomb nem működik, másolja be ezt a linket böngészőjébe:',
-    'account_blocked_email_notice'        => 'Ha nem Ön kezdeményezte ezeket a próbálkozásokat, ne kattintson erre a linkre, és azonnal vegye fel a kapcsolatot a Solberg Grupo ügyfélszolgálatával.',
+    'account_blocked_email_notice'        => 'Ha nem Ön kezdeményezte ezeket a próbálkozásokat, ne kattintson erre a linkre, és azonnal vegye fel a kapcsolatot a ' . site_name() . ' ügyfélszolgálatával.',
     'account_blocked_email_footer'        => 'A link 48 óráig érvényes.',
 
     // OTP email
-    'otp_email_subject'      => 'Bejelentkezési kódja — Solberg Grupo',
+    'otp_email_subject'      => 'Bejelentkezési kódja — ' . site_name(),
     'otp_email_title'        => 'Megerősítő kód',
     'otp_email_intro'        => 'Íme az egyszer használatos bejelentkezési kódja. Ne ossza meg senkivel.',
     'otp_email_code_label'   => 'Az Ön kódja',
     'otp_email_expiry'       => 'Ez a kód 10 perc múlva lejár.',
     'otp_email_notice_title' => 'Fontos biztonsági figyelmeztetés',
-    'otp_email_notice_body'  => 'A Solberg Grupo soha nem kéri el ezt a kódot telefonon vagy üzenetben. Ha nem Ön kérte ezt a kódot, hagyja figyelmen kívül ezt az e-mailt.',
+    'otp_email_notice_body'  => 'A ' . site_name() . ' soha nem kéri el ezt a kódot telefonon vagy üzenetben. Ha nem Ön kérte ezt a kódot, hagyja figyelmen kívül ezt az e-mailt.',
     'otp_email_footer'       => 'Ha nem Ön kérte ezt a kódot, hagyja figyelmen kívül ezt az e-mailt.',
 
     // PWA telepítési banner (bejelentkezési oldalak)
     'pwa_install_title' => 'Alkalmazás telepítése',
     'pwa_install_hint'  => 'Gyors elérés · Értesítések · Offline mód',
     'pwa_install_btn'   => 'Telepítés',
-    'pwa_ios_title'     => 'Telepítse a Solberg Grupo alkalmazást iPhone-jára',
+    'pwa_ios_title'     => 'Telepítse a ' . site_name() . ' alkalmazást iPhone-jára',
     'pwa_ios_step1'     => 'Koppintson a <strong>Megosztás</strong> gombra a Safariban',
     'pwa_ios_step2'     => 'Válassza a <strong>Főképernyőhöz adás</strong> lehetőséget',
     'pwa_ios_step3'     => 'Koppintson a <strong>Hozzáadás</strong> gombra — kész!',

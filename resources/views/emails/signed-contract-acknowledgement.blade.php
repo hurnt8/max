@@ -7,7 +7,7 @@ $texts = [
         'intro'   => 'Nous accusons bonne réception de votre contrat de prêt signé (Référence : <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Notre équipe de gestion va procéder au traitement final de votre dossier. Les coordonnées du compte et les modalités de versement vous seront communiquées sous <strong>24 à 48 heures</strong>.',
         'closing' => 'Cordialement,',
-        'team'    => "L'équipe Solberg Grupo",
+        'team'    => "L'équipe " . site_name(),
     ],
     'en' => [
         'title'   => 'Contract N°'.$loan->reference.' received',
@@ -16,7 +16,7 @@ $texts = [
         'intro'   => 'We confirm receipt of your signed loan contract (Reference: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Our management team will proceed with the final processing of your file. Payment account details will be communicated within <strong>24 to 48 hours</strong>.',
         'closing' => 'Yours sincerely,',
-        'team'    => 'The Solberg Grupo team',
+        'team'    => 'The ' . site_name() . ' team',
     ],
     'es' => [
         'title'   => 'Contrato N°'.$loan->reference.' recibido',
@@ -25,7 +25,7 @@ $texts = [
         'intro'   => 'Confirmamos la recepción de su contrato de préstamo firmado (Referencia: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Nuestro equipo de gestión procederá al tratamiento final de su expediente. Los datos de la cuenta de pago le serán comunicados en <strong>24 a 48 horas</strong>.',
         'closing' => 'Atentamente,',
-        'team'    => 'El equipo Solberg Grupo',
+        'team'    => 'El equipo ' . site_name(),
     ],
     'pl' => [
         'title'   => 'Umowa nr '.$loan->reference.' odebrana',
@@ -34,7 +34,7 @@ $texts = [
         'intro'   => 'Potwierdzamy otrzymanie Państwa podpisanej umowy pożyczkowej (Nr referencyjny: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Nasz zespół przystąpi do ostatecznego rozpatrzenia Państwa wniosku. Dane rachunku bankowego zostaną przekazane w ciągu <strong>24 do 48 godzin</strong>.',
         'closing' => 'Z poważaniem,',
-        'team'    => 'Zespół Solberg Grupo',
+        'team'    => 'Zespół ' . site_name(),
     ],
     'bg' => [
         'title'   => 'Договор №'.$loan->reference.' получен',
@@ -43,7 +43,7 @@ $texts = [
         'intro'   => 'Потвърждаваме получаването на вашия подписан договор за заем (Референция: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Нашият екип за управление ще пристъпи към окончателната обработка на вашето досие. Данните на сметката ще ви бъдат съобщени в рамките на <strong>24 до 48 часа</strong>.',
         'closing' => 'С уважение,',
-        'team'    => 'Екипът на Solberg Grupo',
+        'team'    => 'Екипът на ' . site_name(),
     ],
     'hu' => [
         'title'   => 'A(z) '.$loan->reference.' sz. szerződés beérkezett',
@@ -52,7 +52,7 @@ $texts = [
         'intro'   => 'Visszaigazoljuk aláírt kölcsönszerződésének beérkezését (Hivatkozási szám: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Ügykezelő csapatunk elvégzi ügye végleges feldolgozását. A fizetési számla adatait <strong>24–48 órán belül</strong> közöljük Önnel.',
         'closing' => 'Tisztelettel,',
-        'team'    => 'A Solberg Grupo csapata',
+        'team'    => 'A ' . site_name() . ' csapata',
     ],
     'it' => [
         'title'   => 'Contratto N°'.$loan->reference.' ricevuto',
@@ -61,7 +61,7 @@ $texts = [
         'intro'   => 'Confermiamo la ricezione del tuo contratto di prestito firmato (Riferimento: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Il nostro team di gestione procederà alla lavorazione finale della tua pratica. I dati del conto ti saranno comunicati entro <strong>24-48 ore</strong>.',
         'closing' => 'Cordiali saluti,',
-        'team'    => 'Il team Solberg Grupo',
+        'team'    => 'Il team ' . site_name(),
     ],
     'de' => [
         'title'   => 'Vertrag Nr. '.$loan->reference.' eingegangen',
@@ -79,7 +79,7 @@ $texts = [
         'intro'   => 'Patvirtiname jūsų pasirašytos paskolos sutarties gavimą (Nuoroda: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Mūsų valdymo komanda atliks galutinį jūsų bylos apdorojimą. Sąskaitos duomenys jums bus pateikti per <strong>24–48 valandas</strong>.',
         'closing' => 'Pagarbiai,',
-        'team'    => 'Solberg Grupo komanda',
+        'team'    => site_name() . ' komanda',
     ],
     'ro' => [
         'title'   => 'Contractul nr. '.$loan->reference.' primit',
@@ -88,7 +88,7 @@ $texts = [
         'intro'   => 'Confirmăm primirea contractului dumneavoastră de împrumut semnat (Referință: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Echipa noastră de gestiune va proceda la procesarea finală a dosarului dumneavoastră. Datele contului vă vor fi comunicate în <strong>24 până la 48 de ore</strong>.',
         'closing' => 'Cu stimă,',
-        'team'    => 'Echipa Solberg Grupo',
+        'team'    => 'Echipa ' . site_name(),
     ],
     'lv' => [
         'title'   => 'Līgums Nr. '.$loan->reference.' saņemts',
@@ -97,7 +97,7 @@ $texts = [
         'intro'   => 'Apstiprinām jūsu parakstītā aizdevuma līguma saņemšanu (Atsauce: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Mūsu pārvaldības komanda veiks jūsu lietas galīgo apstrādi. Konta dati jums tiks paziņoti <strong>24 līdz 48 stundu</strong> laikā.',
         'closing' => 'Ar cieņu,',
-        'team'    => 'Solberg Grupo komanda',
+        'team'    => site_name() . ' komanda',
     ],
     'nl' => [
         'title'   => 'Contract nr. '.$loan->reference.' ontvangen',
@@ -106,7 +106,7 @@ $texts = [
         'intro'   => 'Wij bevestigen de ontvangst van uw ondertekende leningsovereenkomst (Referentie: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Ons beheerteam zal overgaan tot de definitieve verwerking van uw dossier. De gegevens van de betaalrekening worden u binnen <strong>24 tot 48 uur</strong> meegedeeld.',
         'closing' => 'Met vriendelijke groet,',
-        'team'    => 'Het team van Solberg Grupo',
+        'team'    => 'Het team van ' . site_name(),
     ],
     'pt' => [
         'title'   => 'Contrato N.º'.$loan->reference.' recebido',
@@ -115,7 +115,7 @@ $texts = [
         'intro'   => 'Confirmamos a receção do seu contrato de empréstimo assinado (Referência: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'A nossa equipa de gestão irá proceder ao tratamento final do seu processo. Os dados da conta e as modalidades de pagamento ser-lhe-ão comunicados no prazo de <strong>24 a 48 horas</strong>.',
         'closing' => 'Atenciosamente,',
-        'team'    => 'A equipa Solberg Grupo',
+        'team'    => 'A equipa ' . site_name(),
     ],
     'hr' => [
         'title'   => 'Ugovor br. '.$loan->reference.' primljen',
@@ -124,7 +124,7 @@ $texts = [
         'intro'   => 'Potvrđujemo primitak vašeg potpisanog ugovora o kreditu (Referenca: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Naš tim za upravljanje pristupit će konačnoj obradi vašeg dosjea. Podaci o računu bit će vam dostavljeni u roku od <strong>24 do 48 sati</strong>.',
         'closing' => 'S poštovanjem,',
-        'team'    => 'Tim Solberg Grupo',
+        'team'    => 'Tim ' . site_name(),
     ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];

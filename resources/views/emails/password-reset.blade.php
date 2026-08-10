@@ -26,7 +26,7 @@ $texts = [
         'ignore'   => 'Si vous n\'êtes pas à l\'origine de cette demande, aucune action n\'est requise — votre mot de passe reste inchangé.',
         'fallback' => 'Si le bouton ne fonctionne pas, copiez ce lien dans votre navigateur :',
         'closing'  => 'Cordialement,',
-        'team'     => 'L\'équipe Solberg Grupo',
+        'team'     => 'L\'équipe ' . site_name(),
     ],
     'en' => [
         'title'    => 'Password reset',
@@ -37,7 +37,7 @@ $texts = [
         'ignore'   => 'If you did not request this, no further action is required — your password remains unchanged.',
         'fallback' => 'If the button does not work, copy this link into your browser:',
         'closing'  => 'Kind regards,',
-        'team'     => 'The Solberg Grupo team',
+        'team'     => 'The ' . site_name() . ' team',
     ],
     'es' => [
         'title'    => 'Restablecimiento de contraseña',
@@ -48,7 +48,7 @@ $texts = [
         'ignore'   => 'Si no ha sido usted quien lo solicitó, no es necesaria ninguna acción — su contraseña no cambiará.',
         'fallback' => 'Si el botón no funciona, copie este enlace en su navegador:',
         'closing'  => 'Atentamente,',
-        'team'     => 'El equipo Solberg Grupo',
+        'team'     => 'El equipo ' . site_name(),
     ],
     'pl' => [
         'title'    => 'Resetowanie hasła',
@@ -59,7 +59,7 @@ $texts = [
         'ignore'   => 'Jeśli to nie Ty złożyłeś/aś tę prośbę, nie musisz nic robić — Twoje hasło pozostanie bez zmian.',
         'fallback' => 'Jeśli przycisk nie działa, skopiuj ten link do przeglądarki:',
         'closing'  => 'Z poważaniem,',
-        'team'     => 'Zespół Solberg Grupo',
+        'team'     => 'Zespół ' . site_name(),
     ],
     'bg' => [
         'title'    => 'Нулиране на паролата',
@@ -70,7 +70,7 @@ $texts = [
         'ignore'   => 'Ако не сте вие направили тази заявка, не е необходимо действие — паролата ви остава непроменена.',
         'fallback' => 'Ако бутонът не работи, копирайте тази връзка в браузъра си:',
         'closing'  => 'С уважение,',
-        'team'     => 'Екипът на Solberg Grupo',
+        'team'     => 'Екипът на ' . site_name(),
     ],
     'hu' => [
         'title'    => 'Jelszó visszaállítása',
@@ -81,7 +81,7 @@ $texts = [
         'ignore'   => 'Ha nem Ön kérte ezt, nincs szükség további teendőre — jelszava változatlan marad.',
         'fallback' => 'Ha a gomb nem működik, másolja be ezt a hivatkozást a böngészőjébe:',
         'closing'  => 'Tisztelettel,',
-        'team'     => 'A Solberg Grupo csapata',
+        'team'     => 'A ' . site_name() . ' csapata',
     ],
     'it' => [
         'title'    => 'Reimposta password',
@@ -92,7 +92,7 @@ $texts = [
         'ignore'   => 'Se non hai effettuato tu questa richiesta, non è necessaria alcuna azione — la tua password rimane invariata.',
         'fallback' => 'Se il pulsante non funziona, copia questo link nel tuo browser:',
         'closing'  => 'Cordiali saluti,',
-        'team'     => 'Il team Solberg Grupo',
+        'team'     => 'Il team ' . site_name(),
     ],
     'de' => [
         'title'    => 'Passwort zurücksetzen',
@@ -114,7 +114,7 @@ $texts = [
         'ignore'   => 'Jei ne jūs pateikėte šį prašymą, jokių veiksmų atlikti nereikia — jūsų slaptažodis liks nepakeistas.',
         'fallback' => 'Jei mygtukas neveikia, nukopijuokite šią nuorodą į naršyklę:',
         'closing'  => 'Pagarbiai,',
-        'team'     => 'Solberg Grupo komanda',
+        'team'     => site_name() . ' komanda',
     ],
     'ro' => [
         'title'    => 'Resetarea parolei',
@@ -125,7 +125,7 @@ $texts = [
         'ignore'   => 'Dacă nu dumneavoastră ați făcut această solicitare, nu este necesară nicio acțiune — parola dumneavoastră rămâne neschimbată.',
         'fallback' => 'Dacă butonul nu funcționează, copiați acest link în browser:',
         'closing'  => 'Cu stimă,',
-        'team'     => 'Echipa Solberg Grupo',
+        'team'     => 'Echipa ' . site_name(),
     ],
     'lv' => [
         'title'    => 'Paroles atiestatīšana',
@@ -136,7 +136,7 @@ $texts = [
         'ignore'   => 'Ja šo pieprasījumu neveicāt jūs, nekāda darbība nav nepieciešama — jūsu parole paliks nemainīga.',
         'fallback' => 'Ja poga nedarbojas, ielīmējiet šo saiti savā pārlūkprogrammā:',
         'closing'  => 'Ar cieņu,',
-        'team'     => 'Solberg Grupo komanda',
+        'team'     => site_name() . ' komanda',
     ],
     'nl' => [
         'title'    => 'Wachtwoord opnieuw instellen',
@@ -147,7 +147,7 @@ $texts = [
         'ignore'   => 'Als u dit niet heeft aangevraagd, hoeft u niets te doen — uw wachtwoord blijft ongewijzigd.',
         'fallback' => 'Als de knop niet werkt, kopieer deze link dan naar uw browser:',
         'closing'  => 'Met vriendelijke groet,',
-        'team'     => 'Het team van Solberg Grupo',
+        'team'     => 'Het team van ' . site_name(),
     ],
     'pt' => [
         'title'    => 'Redefinição de palavra-passe',
@@ -158,7 +158,7 @@ $texts = [
         'ignore'   => 'Se não foi você que fez este pedido, não é necessária qualquer ação — a sua palavra-passe permanece inalterada.',
         'fallback' => 'Se o botão não funcionar, copie este link para o seu navegador:',
         'closing'  => 'Atenciosamente,',
-        'team'     => 'A equipa Solberg Grupo',
+        'team'     => 'A equipa ' . site_name(),
     ],
     'hr' => [
         'title'    => 'Poništavanje lozinke',
@@ -169,7 +169,7 @@ $texts = [
         'ignore'   => 'Ako niste vi zatražili ovo, nije potrebna nikakva radnja — vaša lozinka ostaje nepromijenjena.',
         'fallback' => 'Ako gumb ne radi, kopirajte ovu poveznicu u preglednik:',
         'closing'  => 'S poštovanjem,',
-        'team'     => 'Tim Solberg Grupo',
+        'team'     => 'Tim ' . site_name(),
     ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];

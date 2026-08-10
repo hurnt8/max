@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Solberg Grupo - Meilleurs prêteurs en ligne en Allemagne, Espagne, Houngrie etc.',
+    'general_title' => site_name() . ' - Meilleurs prêteurs en ligne en Allemagne, Espagne, Houngrie etc.',
     'banner_title' => 'Obtenez le prêt parfait pour tous vos besoins en ligne.',
-    'banner_text' => 'Des millions de personnes utilisent Solberg Grupo pour réaliser leurs projets.',
+    'banner_text' => 'Des millions de personnes utilisent ' . site_name() . ' pour réaliser leurs projets.',
     'get_loan_now' => 'Obtenez un prêt maintenant',
     'popular_loans' => 'Types de prêts populaires:',
 
@@ -54,11 +54,11 @@ return [
 
     'custom_loan_services' => 'Tirez profit de nos services de prêt sur mesure',
     'reliability_quality' => 'Transparence et Fiabilité',
-    'reliability_quality_description' => 'Chez Solberg Grupo, nous offrons des solutions de prêt claires et fiables, soutenues par des avis clients positifs et une transparence totale.',
+    'reliability_quality_description' => 'Chez ' . site_name() . ', nous offrons des solutions de prêt claires et fiables, soutenues par des avis clients positifs et une transparence totale.',
     'financial_transparency' => 'Aucun Coût Caché',
     'financial_transparency_description' => 'Examinez nos conditions, discutez des taux, et ne payez qu\'une fois votre prêt approuvé.',
     'optimal_security' => 'Sécurité et Confidentialité',
-    'optimal_security_description' => 'Vos données personnelles sont en sécurité avec nous. Solberg Grupo utilise des protocoles de sécurité avancés pour protéger votre vie privée. Notre support est disponible 24/7 pour toute assistance.',
+    'optimal_security_description' => 'Vos données personnelles sont en sécurité avec nous. ' . site_name() . ' utilise des protocoles de sécurité avancés pour protéger votre vie privée. Notre support est disponible 24/7 pour toute assistance.',
     'apply_loan' => 'Demander un prêt',
 
 
@@ -74,7 +74,7 @@ return [
         'months_ago' => 1,
     ],
     'testimonial_2' => [
-        'quote' => '« Après deux refus en banque traditionnelle, Solberg Grupo m\'a accordé un prêt personnel en 48 h. L\'équipe a su étudier mon dossier avec sérieux et bienveillance. Merci infiniment ! »',
+        'quote' => '« Après deux refus en banque traditionnelle, ' . site_name() . ' m\'a accordé un prêt personnel en 48 h. L\'équipe a su étudier mon dossier avec sérieux et bienveillance. Merci infiniment ! »',
         'name'  => 'Isabelle Dupont',
         'location' => 'Lyon, France',
         'months_ago' => 2,
@@ -92,7 +92,7 @@ return [
         'months_ago' => 3,
     ],
     'testimonial_5' => [
-        'quote' => '« Simulateur clair, dossier simple, virement reçu en trois jours ouvrés. J\'avais besoin de financer des travaux urgents et Solberg Grupo a répondu présent au bon moment. »',
+        'quote' => '« Simulateur clair, dossier simple, virement reçu en trois jours ouvrés. J\'avais besoin de financer des travaux urgents et ' . site_name() . ' a répondu présent au bon moment. »',
         'name'  => 'Aurélien Leclerc',
         'location' => 'Nantes, France',
         'months_ago' => 4,
@@ -113,7 +113,7 @@ return [
     ],
 
     'about_title' => 'Rejoignez le meilleur marché mondial pour les travailleurs',
-    'about_description' => 'Solberg Grupo est votre plateforme de confiance pour obtenir des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
+    'about_description' => site_name() . ' est votre plateforme de confiance pour obtenir des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
     'rating' => '4.9/5',
     'rating_description' => 'Les clients évaluent les professionnels',
     'projects_completed' => '+12M',
@@ -149,7 +149,7 @@ return [
         'placeholder' => 'Votre adresse e-mail',
         'button' => 'Envoyer',
     ],
-    'rights_reserved' => '© Solberg Grupo. 2024. Tous droits réservés.',
+    'rights_reserved' => '© ' . site_name() . '. 2024. Tous droits réservés.',
 
     'en' => 'English',
     'fr' => 'French',
@@ -198,10 +198,10 @@ return [
     // About
     'about' => [
         'exptitle' => 'années d\'expérience',
-        'sectagline' => 'bienvenue chez Solberg Grupo',
+        'sectagline' => 'bienvenue chez ' . site_name(),
         'sectitle' => 'Prêts personnels pour réaliser vos rêves',
         'text1' => 'Nous sommes dans ce domaine depuis 15 ans et offrons les meilleurs services.',
-        'text2' => 'Solberg Grupo est votre plateforme de confiance pour des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
+        'text2' => site_name() . ' est votre plateforme de confiance pour des prêts avec une expérience client exceptionnelle. Nous nous engageons à vous fournir des solutions financières simples, sécurisées et rapides.',
         'check1' => 'prêt pour petite entreprise',
         'check2' => 'prêt pour étudier à l\'étranger',
         'check3' => 'processus de prêt rapide',

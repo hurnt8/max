@@ -3,7 +3,7 @@
 return [
     'title' => 'Privatumo politika',
     'introduction_title' => '1. Įvadas',
-    'introduction_text' => 'Solberg Grupo mes įsipareigojame saugoti ir gerbti jūsų privatumą. Šioje privatumo politikoje paaiškinama, kaip mes renkame, naudojame, atskleidžiame ir saugome jūsų asmeninę informaciją, kai naudojatės mūsų svetaine ir skolinimo internetu paslaugomis. Naudodamiesi mūsų svetaine sutinkate su šioje politikoje aprašyta praktika.',
+    'introduction_text' => site_name() . ' mes įsipareigojame saugoti ir gerbti jūsų privatumą. Šioje privatumo politikoje paaiškinama, kaip mes renkame, naudojame, atskleidžiame ir saugome jūsų asmeninę informaciją, kai naudojatės mūsų svetaine ir skolinimo internetu paslaugomis. Naudodamiesi mūsų svetaine sutinkate su šioje politikoje aprašyta praktika.',
     'information_collection_title' => '2. Informacija, kurią renkame',
     'information_collection_text' => 'Mes galime rinkti ir apdoroti šią informaciją apie jus:',
     'information_collection_list' => [
@@ -44,7 +44,7 @@ return [
     'contact_title' => '8. Kontaktas',
     'contact_text' => 'Jei turite klausimų, rūpesčių ar prašymų dėl šios privatumo politikos arba kaip elgiamės su jūsų asmenine informacija, susisiekite su mumis adresu:',
     'contact_details' => [
-        'Solberg Grupo',
+        site_name(),
         'Adresas: Rua de Santo António 33, 7200-175, Portugal',
         'El. paštas: contact@solberggrupo.site',
         'Telefonas: +31 6 57341120 ',

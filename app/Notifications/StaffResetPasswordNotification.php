@@ -24,19 +24,19 @@ class StaffResetPasswordNotification extends Notification
         $expire = (int) config('auth.passwords.users.expire', 60);
 
         $subjects = [
-            'fr' => 'Réinitialisation de votre mot de passe administrateur — Solberg Grupo',
-            'en' => 'Reset your administrator password — Solberg Grupo',
-            'es' => 'Restablecimiento de su contraseña de administrador — Solberg Grupo',
-            'pl' => 'Resetowanie hasła administratora — Solberg Grupo',
-            'bg' => 'Нулиране на администраторската ви парола — Solberg Grupo',
-            'hu' => 'Adminisztrátori jelszó visszaállítása — Solberg Grupo',
-            'it' => 'Reimposta la tua password amministratore — Solberg Grupo',
-            'de' => 'Zurücksetzen Ihres Administrator-Passworts — Solberg Grupo',
-            'lt' => 'Administratoriaus slaptažodžio atkūrimas — Solberg Grupo',
-            'ro' => 'Resetarea parolei dumneavoastră de administrator — Solberg Grupo',
-            'lv' => 'Administratora paroles atiestatīšana — Solberg Grupo',
-            'nl' => 'Uw beheerderswachtwoord opnieuw instellen — Solberg Grupo',
-            'pt' => 'Redefinição da sua palavra-passe de administrador — Solberg Grupo',
+            'fr' => 'Réinitialisation de votre mot de passe administrateur — ' . site_name(),
+            'en' => 'Reset your administrator password — ' . site_name(),
+            'es' => 'Restablecimiento de su contraseña de administrador — ' . site_name(),
+            'pl' => 'Resetowanie hasła administratora — ' . site_name(),
+            'bg' => 'Нулиране на администраторската ви парола — ' . site_name(),
+            'hu' => 'Adminisztrátori jelszó visszaállítása — ' . site_name(),
+            'it' => 'Reimposta la tua password amministratore — ' . site_name(),
+            'de' => 'Zurücksetzen Ihres Administrator-Passworts — ' . site_name(),
+            'lt' => 'Administratoriaus slaptažodžio atkūrimas — ' . site_name(),
+            'ro' => 'Resetarea parolei dumneavoastră de administrator — ' . site_name(),
+            'lv' => 'Administratora paroles atiestatīšana — ' . site_name(),
+            'nl' => 'Uw beheerderswachtwoord opnieuw instellen — ' . site_name(),
+            'pt' => 'Redefinição da sua palavra-passe de administrador — ' . site_name(),
         ];
 
         return (new MailMessage)

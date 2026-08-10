@@ -27,19 +27,19 @@ class AdminSupportMail extends Mailable
     public function envelope(): Envelope
     {
         $subjects = [
-            'fr' => 'Nouveau message de ' . $this->client->name . ' — Support Solberg Grupo',
-            'en' => 'New message from ' . $this->client->name . ' — Solberg Grupo Support',
-            'es' => 'Nuevo mensaje de ' . $this->client->name . ' — Soporte Solberg Grupo',
-            'pl' => 'Nowa wiadomość od ' . $this->client->name . ' — Wsparcie Solberg Grupo',
-            'bg' => 'Ново съобщение от ' . $this->client->name . ' — Поддръжка Solberg Grupo',
-            'hu' => 'Új üzenet — ' . $this->client->name . ' — Solberg Grupo ügyfélszolgálat',
-            'it' => 'Nuovo messaggio da ' . $this->client->name . ' — Assistenza Solberg Grupo',
-            'de' => 'Neue Nachricht von ' . $this->client->name . ' — Solberg Grupo Support',
-            'lt' => 'Naujas pranešimas nuo ' . $this->client->name . ' — Solberg Grupo pagalba',
-            'ro' => 'Mesaj nou de la ' . $this->client->name . ' — Suport Solberg Grupo',
-            'lv' => 'Jauns ziņojums no ' . $this->client->name . ' — Solberg Grupo atbalsts',
-            'nl' => 'Nieuw bericht van ' . $this->client->name . ' — Solberg Grupo Support',
-            'pt' => 'Nova mensagem de ' . $this->client->name . ' — Suporte Solberg Grupo',
+            'fr' => 'Nouveau message de ' . $this->client->name . ' — Support ' . site_name(),
+            'en' => 'New message from ' . $this->client->name . ' — ' . site_name() . ' Support',
+            'es' => 'Nuevo mensaje de ' . $this->client->name . ' — Soporte ' . site_name(),
+            'pl' => 'Nowa wiadomość od ' . $this->client->name . ' — Wsparcie ' . site_name(),
+            'bg' => 'Ново съобщение от ' . $this->client->name . ' — Поддръжка ' . site_name(),
+            'hu' => 'Új üzenet — ' . $this->client->name . ' — ' . site_name() . ' ügyfélszolgálat',
+            'it' => 'Nuovo messaggio da ' . $this->client->name . ' — Assistenza ' . site_name(),
+            'de' => 'Neue Nachricht von ' . $this->client->name . ' — ' . site_name() . ' Support',
+            'lt' => 'Naujas pranešimas nuo ' . $this->client->name . ' — ' . site_name() . ' pagalba',
+            'ro' => 'Mesaj nou de la ' . $this->client->name . ' — Suport ' . site_name(),
+            'lv' => 'Jauns ziņojums no ' . $this->client->name . ' — ' . site_name() . ' atbalsts',
+            'nl' => 'Nieuw bericht van ' . $this->client->name . ' — ' . site_name() . ' Support',
+            'pt' => 'Nova mensagem de ' . $this->client->name . ' — Suporte ' . site_name(),
         ];
 
         return new Envelope(

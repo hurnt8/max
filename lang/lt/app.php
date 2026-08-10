@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'           => 'Mano Solberg Grupo erdvė',
+    'title'           => 'Mano ' . site_name() . ' erdvė',
     'greeting'        => 'Sveiki',
     'language'        => 'Kalba',
     'welcome_back'    => 'Sveiki sugrįžę',
@@ -297,7 +297,7 @@ return [
     'funded_title'           => 'Finansavimas suteiktas',
     'funded_body'            => 'Suma :amount :currency buvo pervesta į jūsų sąskaitą.',
     'rejected_title'         => 'Paraiška nepriimta',
-    'contact_advisor'        => 'Dėl išsamesnės informacijos susisiekite su savo Solberg Grupo konsultantu.',
+    'contact_advisor'        => 'Dėl išsamesnės informacijos susisiekite su savo ' . site_name() . ' konsultantu.',
     'file_progress'          => 'Bylos eiga',
     'financing_breakdown'    => 'Pagrindinės sumos / palūkanų pasiskirstymas',
     'total_credit_cost'      => 'Bendra kredito kaina',

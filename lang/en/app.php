@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'           => 'My Solberg Grupo Space',
+    'title'           => 'My ' . site_name() . ' Space',
     'greeting'        => 'Hello',
     'language'        => 'Language',
     'welcome_back'    => 'Welcome back',
@@ -297,7 +297,7 @@ return [
     'funded_title'           => 'Financing granted',
     'funded_body'            => 'The amount of :amount :currency has been paid into your account.',
     'rejected_title'         => 'Application not accepted',
-    'contact_advisor'        => 'Contact your Solberg Grupo advisor for more information.',
+    'contact_advisor'        => 'Contact your ' . site_name() . ' advisor for more information.',
     'file_progress'          => 'File progress',
     'financing_breakdown'    => 'Principal / interest breakdown',
     'total_credit_cost'      => 'Total cost of credit',

@@ -1,5 +1,5 @@
 @props([
-    'title'      => 'Solberg Grupo',
+    'title'      => site_name(),
     'subtitle'   => 'Espace Client Sécurisé',
     'accent'     => 'teal',   // teal | green | orange | red
     'footerNote' => null,
@@ -103,7 +103,7 @@ p.closing strong{color:#111827;font-size:.92rem}
   {{-- ── Footer ── --}}
   <div class="footer">
     <p>
-      &copy; {{ date('Y') }} Solberg Grupo Invest
+      &copy; {{ date('Y') }} {{ site_name() }}
       @if($footerNote)
       &nbsp;·&nbsp; {{ $footerNote }}
       @endif

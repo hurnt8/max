@@ -19,12 +19,12 @@ return [
 
     'client_login_title'  => 'Espace Client',
     'client_login_sub'    => 'Connectez-vous pour accéder à vos dossiers',
-    'client_brand_title'  => 'Votre espace<br>client Solberg Grupo',
+    'client_brand_title'  => 'Votre espace<br>client ' . site_name(),
     'client_brand_sub'    => 'Suivez vos demandes, gérez votre profil et accédez à tous vos documents en toute sécurité.',
 
     'staff_login_title'   => 'Portail Administration',
     'staff_login_sub'     => 'Réservé exclusivement au personnel autorisé',
-    'staff_brand_title'   => 'Administration<br>Solberg Grupo',
+    'staff_brand_title'   => 'Administration<br>' . site_name(),
     'staff_brand_sub'     => 'Accès sécurisé aux outils de gestion, de suivi des dossiers et d\'administration des utilisateurs.',
 
     'email'               => 'Adresse email',
@@ -40,7 +40,7 @@ return [
     'staff_portal_link'   => 'Portail agent / administrateur',
     'client_portal_link'  => 'Espace client',
     'staff_restricted'    => 'Accès restreint — Personnel autorisé',
-    'staff_notice'        => 'Ce portail est réservé aux agents Solberg Grupo. Toutes les connexions sont journalisées.',
+    'staff_notice'        => 'Ce portail est réservé aux agents ' . site_name() . '. Toutes les connexions sont journalisées.',
     'or_staff'            => 'Vous êtes agent ou admin ?',
     'or_client'           => 'Vous êtes client ?',
 
@@ -92,31 +92,31 @@ return [
     'account_unblocked'                   => 'Votre compte a été débloqué avec succès. Vous pouvez maintenant vous connecter.',
     'unblock_invalid'                     => 'Ce lien de déblocage est invalide ou a expiré. Contactez le support.',
 
-    'account_blocked_email_subject'       => 'Votre compte Solberg Grupo a été bloqué',
+    'account_blocked_email_subject'       => 'Votre compte ' . site_name() . ' a été bloqué',
     'account_blocked_email_title'         => 'Compte temporairement bloqué',
     'account_blocked_email_intro'         => 'Votre compte a été temporairement bloqué suite à plusieurs tentatives de connexion incorrectes.',
     'account_blocked_email_reason_title'  => 'Pourquoi ce blocage ?',
     'account_blocked_email_reason_body'   => '4 codes OTP incorrects ont été saisis consécutivement lors d\'une tentative de connexion à votre compte. Par mesure de sécurité, l\'accès a été suspendu.',
     'account_blocked_email_btn'           => 'Débloquer mon compte',
     'account_blocked_email_fallback'      => 'Si le bouton ne fonctionne pas, copiez ce lien dans votre navigateur :',
-    'account_blocked_email_notice'        => 'Si vous n\'êtes pas à l\'origine de ces tentatives, ne cliquez pas sur ce lien et contactez immédiatement le support Solberg Grupo.',
+    'account_blocked_email_notice'        => 'Si vous n\'êtes pas à l\'origine de ces tentatives, ne cliquez pas sur ce lien et contactez immédiatement le support ' . site_name() . '.',
     'account_blocked_email_footer'        => 'Lien valable 48 heures.',
 
     // OTP email
-    'otp_email_subject'      => 'Votre code de connexion — Solberg Grupo',
+    'otp_email_subject'      => 'Votre code de connexion — ' . site_name(),
     'otp_email_title'        => 'Code de vérification',
     'otp_email_intro'        => 'Voici votre code de connexion à usage unique. Ne le communiquez à personne.',
     'otp_email_code_label'   => 'Votre code',
     'otp_email_expiry'       => 'Ce code expire dans 10 minutes.',
     'otp_email_notice_title' => 'Sécurité importante',
-    'otp_email_notice_body'  => 'Solberg Grupo ne vous demandera jamais ce code par téléphone ou par message. Si vous n\'avez pas demandé ce code, ignorez cet email.',
+    'otp_email_notice_body'  => site_name() . ' ne vous demandera jamais ce code par téléphone ou par message. Si vous n\'avez pas demandé ce code, ignorez cet email.',
     'otp_email_footer'       => 'Si vous n\'avez pas demandé ce code, ignorez cet email.',
 
     // Bannière d'installation PWA (pages de connexion)
     'pwa_install_title' => 'Installer l\'application',
     'pwa_install_hint'  => 'Accès rapide · Notifications · Mode hors-ligne',
     'pwa_install_btn'   => 'Installer',
-    'pwa_ios_title'     => 'Installer l\'app Solberg Grupo sur votre iPhone',
+    'pwa_ios_title'     => 'Installer l\'app ' . site_name() . ' sur votre iPhone',
     'pwa_ios_step1'     => 'Appuyez sur <strong>Partager</strong> dans Safari',
     'pwa_ios_step2'     => 'Choisissez <strong>Sur l\'écran d\'accueil</strong>',
     'pwa_ios_step3'     => 'Appuyez sur <strong>Ajouter</strong> — c\'est fait !',

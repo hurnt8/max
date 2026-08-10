@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Transferts — Solberg Grupo')
+@section('title', 'Transferts — ' . site_name())
 @section('page_title', 'Transferts clients')
 
 @section('content')

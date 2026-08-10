@@ -256,7 +256,7 @@ $serviceNav = [
             <div class="col-lg-6 wow fadeInLeft" data-wow-duration="1000ms">
                 <div class="about-image-wrap">
                     <img src="{{ asset('assets/images/about/about-3-1.jpg') }}"
-                         alt="Solberg Grupo — conseiller financier" class="about-image-main">
+                         alt="{{ site_name() }} — conseiller financier" class="about-image-main">
                     <img src="{{ asset('assets/images/about/about-3-3.jpg') }}"
                          alt="Conseiller avec clients" class="about-image-secondary"
                          style="width:38%;right:1rem;bottom:1rem;">

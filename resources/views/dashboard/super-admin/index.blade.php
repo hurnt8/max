@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Super Administration — Solberg Grupo')
+@section('title', 'Super Administration — ' . site_name())
 @section('page_title', 'Vue d\'ensemble système')
 
 @push('styles')

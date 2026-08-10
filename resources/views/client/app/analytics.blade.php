@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.analytics_title') . ' — Solberg Grupo')
+@section('title', __('app.analytics_title') . ' — ' . site_name())
 @section('page_title', __('app.analytics_title'))
 @section('back_btn', true)
 @section('back_url', route('client.app.home'))

@@ -11,7 +11,7 @@
             {{-- ── Colonne marque (toujours visible) ── --}}
             <div class="col-lg-3 col-md-6">
                 <a href="{{ route('home', ['locale' => $locale]) }}" class="d-inline-block mb-4">
-                    <x-logo variant="full" theme="dark" size="lg" :dark="$siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : null" :alt="$siteContact->name" class="footer-logo" />
+                    <x-logo variant="full" theme="dark" size="lg" :dark="$siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : null" :name="$siteContact->name" class="footer-logo" />
                 </a>
                 <p class="footer-desc">@lang('menu.footer_desc')</p>
                 <div class="footer-social">

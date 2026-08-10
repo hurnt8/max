@@ -5,10 +5,25 @@
     'href'    => null,     // optionnel : enrobe dans <a href="...">
     'light'   => null,     // override admin : SiteContact::current()->logo_light_path (URL resolue)
     'dark'    => null,     // override admin : SiteContact::current()->logo_dark_path (URL resolue)
-    'alt'     => 'Solberg Grupo',
+    'name'    => null,     // nom du site : si omis, recupere SiteContact::current()->name
+    'alt'     => null,
 ])
 
 @php
+    $siteName = $name ?: (\App\Models\SiteContact::current()->name ?: site_name());
+    $alt      = $alt ?: $siteName;
+
+    $words = preg_split('/\s+/', trim($siteName)) ?: [];
+    if (count($words) >= 2) {
+        $initials = mb_strtoupper(mb_substr($words[0], 0, 1) . mb_substr($words[1], 0, 1));
+        $firstWord = $words[0];
+        $restWords = implode(' ', array_slice($words, 1));
+    } else {
+        $initials = mb_strtoupper(mb_substr($siteName, 0, 2));
+        $firstWord = $siteName;
+        $restWords = null;
+    }
+
     $overrideSrc = $theme === 'dark' ? $dark : $light;
     $box   = ['sm' => 32, 'md' => 44, 'lg' => 64][$size] ?? 44;
     $isDark = $theme === 'dark';
@@ -32,11 +47,11 @@
         style="display:inline-flex;align-items:center;gap:{{ $gap }}px;line-height:1;text-decoration:none">
         <svg width="{{ $box }}" height="{{ $box }}" viewBox="0 0 44 44" role="img" aria-label="{{ $alt }}" style="flex-shrink:0;display:block">
             <rect width="44" height="44" rx="10" fill="{{ $badgeBg }}"/>
-            <text x="22" y="29" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="19" fill="{{ $badgeFg }}">SG</text>
+            <text x="22" y="29" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="19" fill="{{ $badgeFg }}">{{ $initials }}</text>
         </svg>
         @if($variant === 'full')
         <span style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:{{ $wsize }}px;color:{{ $wordColor }};white-space:nowrap">
-            Solberg <span style="color:#C8A951">Grupo</span>
+            {{ $firstWord }}@if($restWords) <span style="color:#C8A951">{{ $restWords }}</span>@endif
         </span>
         @endif
     </{{ $tag }}>

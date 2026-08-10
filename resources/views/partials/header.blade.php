@@ -9,10 +9,10 @@
         <!-- Logo -->
         <a href="{{ route('home', ['locale' => $locale]) }}" class="flex items-center gap-3 flex-shrink-0">
             <span class="logo-img logo-img--white">
-                <x-logo variant="full" theme="dark" size="lg" :dark="$siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : null" :alt="$siteContact->name" />
+                <x-logo variant="full" theme="dark" size="lg" :dark="$siteContact->logo_dark_path ? Storage::url($siteContact->logo_dark_path) : null" :name="$siteContact->name" />
             </span>
             <span class="logo-img logo-img--color">
-                <x-logo variant="full" theme="light" size="lg" :light="$siteContact->logo_light_path ? Storage::url($siteContact->logo_light_path) : null" :alt="$siteContact->name" />
+                <x-logo variant="full" theme="light" size="lg" :light="$siteContact->logo_light_path ? Storage::url($siteContact->logo_light_path) : null" :name="$siteContact->name" />
             </span>
         </a>
 

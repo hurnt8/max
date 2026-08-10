@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Solberg Grupo - Najbolji online zajmodavci u Njemačkoj, Španjolskoj, Mađarskoj itd.',
+    'general_title' => site_name() . ' - Najbolji online zajmodavci u Njemačkoj, Španjolskoj, Mađarskoj itd.',
     'banner_title' => 'Nabavite savršen zajam za sve svoje online potrebe.',
-    'banner_text' => 'Milijuni ljudi koriste Solberg Grupo za realizaciju svojih projekata.',
+    'banner_text' => 'Milijuni ljudi koriste ' . site_name() . ' za realizaciju svojih projekata.',
     'get_loan_now' => 'Dobijte zajam sada',
     'popular_loans' => 'Popularne vrste kredita:',
     'personal_loan' => 'Osobni zajam',
@@ -62,11 +62,11 @@ return [
 
     'custom_loan_services' => 'Iskoristite naše usluge zajma po mjeri',
     'reliability_quality' => 'Transparentnost i pouzdanost',
-    'reliability_quality_description' => 'U Solberg Grupou nudimo jasna i pouzdana kreditna rješenja, potkrijepljena pozitivnim ocjenama kupaca i potpunom transparentnošću.',
+    'reliability_quality_description' => 'U ' . site_name() . 'u nudimo jasna i pouzdana kreditna rješenja, potkrijepljena pozitivnim ocjenama kupaca i potpunom transparentnošću.',
     'financial_transparency' => 'Nema skrivenih troškova',
     'financial_transparency_description' => 'Pregledajte naše uvjete, porazgovarajte o stopama i platite tek kada vaš zajam bude odobren.',
     'optimal_security' => 'Sigurnost i privatnost',
-    'optimal_security_description' => 'Vaši osobni podaci kod nas su sigurni. Solberg Grupo koristi napredne sigurnosne protokole za zaštitu vaše privatnosti. Naša podrška dostupna je 24/7 za bilo kakvu pomoć.',
+    'optimal_security_description' => 'Vaši osobni podaci kod nas su sigurni. ' . site_name() . ' koristi napredne sigurnosne protokole za zaštitu vaše privatnosti. Naša podrška dostupna je 24/7 za bilo kakvu pomoć.',
     'apply_loan' => 'Zahtjev za zajam',
 
     'testimonials_title' => 'Svjedočanstva',
@@ -118,7 +118,7 @@ return [
     ],
 
     'about_title' => 'Pridružite se najboljoj svjetskoj tržnici za radnike',
-    'about_description' => 'Solberg Grupo je vaša pouzdana platforma za dobivanje zajmova s iznimnim korisničkim iskustvom. Posvećeni smo pružanju jednostavnih, sigurnih i brzih financijskih rješenja.',
+    'about_description' => site_name() . ' je vaša pouzdana platforma za dobivanje zajmova s iznimnim korisničkim iskustvom. Posvećeni smo pružanju jednostavnih, sigurnih i brzih financijskih rješenja.',
     'rating' => '4,9/5',
     'rating_description' => 'Kupci ocjenjuju profesionalce',
     'projects_completed' => '+12M',
@@ -160,7 +160,7 @@ return [
         'placeholder' => 'Vaša adresa e-pošte',
         'button' => 'Pošalji',
     ],
-    'rights_reserved' => '© Solberg Grupo. 2024. Sva prava pridržana.',
+    'rights_reserved' => '© ' . site_name() . '. 2024. Sva prava pridržana.',
 
     'en' => 'engleski',
     'fr' => 'francuski',
@@ -207,10 +207,10 @@ return [
 
     'about' => [
         'exptitle' => 'godina iskustva',
-        'sectagline' => 'dobrodošli u Solberg Grupo',
+        'sectagline' => 'dobrodošli u ' . site_name(),
         'sectitle' => 'Osobni krediti za ostvarenje vaših snova',
         'text1' => 'U ovom poslu smo već 15 godina i pružamo najbolje usluge.',
-        'text2' => 'Solberg Grupo je vaša pouzdana platforma za kredite s iznimnim korisničkim iskustvom. Posvećeni smo pružanju jednostavnih, sigurnih i brzih financijskih rješenja.',
+        'text2' => site_name() . ' je vaša pouzdana platforma za kredite s iznimnim korisničkim iskustvom. Posvećeni smo pružanju jednostavnih, sigurnih i brzih financijskih rješenja.',
         'check1' => 'kredit za mala poduzeća',
         'check2' => 'kredit za studiranje u inozemstvu',
         'check3' => 'brzi postupak odobrenja kredita',

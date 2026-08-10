@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'           => 'Moj prostor Solberg Grupo',
+    'title'           => 'Moj prostor ' . site_name(),
     'greeting'        => 'Pozdrav',
     'language'        => 'Jezik',
     'welcome_back'    => 'Dobrodošli natrag',
@@ -317,7 +317,7 @@ return [
     'funded_title'           => 'Financiranje odobreno',
     'funded_body'            => 'Iznos od :amount :currency uplaćen je na vaš račun.',
     'rejected_title'         => 'Zahtjev nije prihvaćen',
-    'contact_advisor'        => 'Kontaktirajte svog savjetnika Solberg Grupo za više informacija.',
+    'contact_advisor'        => 'Kontaktirajte svog savjetnika ' . site_name() . ' za više informacija.',
     'file_progress'          => 'Napredak dosjea',
     'financing_breakdown'    => 'Raspodjela glavnice / kamata',
     'total_credit_cost'      => 'Ukupni trošak kredita',

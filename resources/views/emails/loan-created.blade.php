@@ -22,7 +22,7 @@ $texts = [
         'next_2'       => '2. Signez-le et renvoyez-le à notre équipe par email.',
         'next_3'       => '3. Une fois reçu, les coordonnées bancaires vous seront communiquées pour le versement des fonds.',
         'closing'      => 'Nous restons à votre disposition pour toute question.',
-        'team'         => 'L\'équipe Solberg Grupo',
+        'team'         => 'L\'équipe ' . site_name(),
     ],
     'pl' => [
         'greeting'     => 'Szanowny/a ' . $loan->name . ',',
@@ -44,7 +44,7 @@ $texts = [
         'next_2'       => '2. Proszę ją podpisać i odesłać do naszego zespołu.',
         'next_3'       => '3. Po otrzymaniu podpisanej umowy przekażemy dane bankowe do wypłaty środków.',
         'closing'      => 'Pozostajemy do Państwa dyspozycji w razie jakichkolwiek pytań.',
-        'team'         => 'Zespół Solberg Grupo',
+        'team'         => 'Zespół ' . site_name(),
     ],
     'en' => [
         'greeting'     => 'Dear ' . $loan->name . ',',
@@ -66,7 +66,7 @@ $texts = [
         'next_2'       => '2. Sign it and return it to our team by email.',
         'next_3'       => '3. Once received, our team will send you the bank details for fund transfer.',
         'closing'      => 'We remain at your disposal for any questions.',
-        'team'         => 'The Solberg Grupo team',
+        'team'         => 'The ' . site_name() . ' team',
     ],
     'es' => [
         'greeting'     => 'Estimado/a ' . $loan->name . ',',
@@ -88,7 +88,7 @@ $texts = [
         'next_2'       => '2. Fírmelo y envíelo a nuestro equipo por correo electrónico.',
         'next_3'       => '3. Una vez recibido, le comunicaremos los datos bancarios para la transferencia de fondos.',
         'closing'      => 'Quedamos a su disposición para cualquier consulta.',
-        'team'         => 'El equipo Solberg Grupo',
+        'team'         => 'El equipo ' . site_name(),
     ],
     'bg' => [
         'greeting'     => 'Уважаеми/а ' . $loan->name . ',',
@@ -110,7 +110,7 @@ $texts = [
         'next_2'       => '2. Подпишете го и го изпратете обратно на нашия екип по имейл.',
         'next_3'       => '3. След получаването му ще ви изпратим банковите данни за превода на средствата.',
         'closing'      => 'Оставаме на разположение за всякакви въпроси.',
-        'team'         => 'Екипът на Solberg Grupo',
+        'team'         => 'Екипът на ' . site_name(),
     ],
     'hu' => [
         'greeting'     => 'Tisztelt ' . $loan->name . '!',
@@ -132,7 +132,7 @@ $texts = [
         'next_2'       => '2. Írja alá, és küldje vissza csapatunknak e-mailben.',
         'next_3'       => '3. A kézhezvétel után csapatunk elküldi Önnek a banki adatokat az összeg átutalásához.',
         'closing'      => 'Bármilyen kérdés esetén állunk rendelkezésére.',
-        'team'         => 'A Solberg Grupo csapata',
+        'team'         => 'A ' . site_name() . ' csapata',
     ],
     'it' => [
         'greeting'     => 'Gentile ' . $loan->name . ',',
@@ -154,7 +154,7 @@ $texts = [
         'next_2'       => '2. Firmalo e restituiscilo al nostro team via email.',
         'next_3'       => '3. Una volta ricevuto, il nostro team ti invierà i dati bancari per il bonifico dei fondi.',
         'closing'      => 'Restiamo a tua disposizione per qualsiasi domanda.',
-        'team'         => 'Il team Solberg Grupo',
+        'team'         => 'Il team ' . site_name(),
     ],
     'de' => [
         'greeting'     => 'Sehr geehrte Damen und Herren ' . $loan->name . ',',
@@ -198,7 +198,7 @@ $texts = [
         'next_2'       => '2. Pasirašykite ją ir grąžinkite mūsų komandai el. paštu.',
         'next_3'       => '3. Gavus sutartį, jums bus atsiųsti banko duomenys lėšų pervedimui.',
         'closing'      => 'Esame pasirengę atsakyti į bet kokius jūsų klausimus.',
-        'team'         => 'Solberg Grupo komanda',
+        'team'         => site_name() . ' komanda',
     ],
     'ro' => [
         'greeting'     => 'Stimate/Stimată ' . $loan->name . ',',
@@ -220,7 +220,7 @@ $texts = [
         'next_2'       => '2. Semnați-l și trimiteți-l înapoi echipei noastre prin e-mail.',
         'next_3'       => '3. După primire, vă vom comunica datele bancare pentru virarea fondurilor.',
         'closing'      => 'Rămânem la dispoziția dumneavoastră pentru orice întrebare.',
-        'team'         => 'Echipa Solberg Grupo',
+        'team'         => 'Echipa ' . site_name(),
     ],
     'lv' => [
         'greeting'     => 'Godātais/Godātā ' . $loan->name . ',',
@@ -242,7 +242,7 @@ $texts = [
         'next_2'       => '2. Parakstiet to un nosūtiet atpakaļ mūsu komandai pa e-pastu.',
         'next_3'       => '3. Pēc saņemšanas mēs jums nosūtīsim bankas rekvizītus līdzekļu pārskaitīšanai.',
         'closing'      => 'Esam jūsu rīcībā, ja rodas kādi jautājumi.',
-        'team'         => 'Solberg Grupo komanda',
+        'team'         => site_name() . ' komanda',
     ],
     'nl' => [
         'greeting'     => 'Geachte heer/mevrouw ' . $loan->name . ',',
@@ -264,7 +264,7 @@ $texts = [
         'next_2'       => '2. Onderteken het en stuur het per e-mail terug naar ons team.',
         'next_3'       => '3. Zodra wij het ontvangen hebben, ontvangt u de bankgegevens voor de uitbetaling van de fondsen.',
         'closing'      => 'Wij staan u graag ter beschikking voor al uw vragen.',
-        'team'         => 'Het Solberg Grupo Team',
+        'team'         => 'Het ' . site_name() . ' Team',
     ],
 ];
 $t   = $texts[$locale] ?? $texts['fr'];

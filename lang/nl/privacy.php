@@ -3,7 +3,7 @@
 return [
     'title' => 'Privacybeleid',
     'introduction_title' => '1. Inleiding',
-    'introduction_text' => 'Bij Solberg Grupo zetten wij ons in om uw privacy te beschermen en te respecteren. Dit privacybeleid legt uit hoe wij uw persoonlijke gegevens verzamelen, gebruiken, bekendmaken en beschermen wanneer u onze website en onze online leendiensten gebruikt. Door gebruik te maken van onze website, aanvaardt u de in dit beleid beschreven praktijken.',
+    'introduction_text' => 'Bij ' . site_name() . ' zetten wij ons in om uw privacy te beschermen en te respecteren. Dit privacybeleid legt uit hoe wij uw persoonlijke gegevens verzamelen, gebruiken, bekendmaken en beschermen wanneer u onze website en onze online leendiensten gebruikt. Door gebruik te maken van onze website, aanvaardt u de in dit beleid beschreven praktijken.',
     'information_collection_title' => '2. Informatie die wij verzamelen',
     'information_collection_text' => 'Wij kunnen de volgende informatie over u verzamelen en verwerken:',
     'information_collection_list' => [
@@ -44,7 +44,7 @@ return [
     'contact_title' => '8. Contact',
     'contact_text' => 'Als u vragen, opmerkingen of verzoeken heeft over dit privacybeleid of over de manier waarop wij uw persoonlijke gegevens verwerken, kunt u contact met ons opnemen via:',
     'contact_details' => [
-        'Solberg Grupo',
+        site_name(),
         'Adres: Rua de Santo António 33, 7200-175, Portugal',
         'E-mail: contact@solberggrupo.site',
         'Telefoon: +31 6 57341120 ',

@@ -12,13 +12,13 @@ return [
     'month_abbr'           => 'mies.',
     'optional'             => 'opcjonalne',
     'loan_admin_subject'   => 'Nowy wniosek kredytowy',
-    'loan_admin_intro'     => 'Klient właśnie przesłał wniosek kredytowy za pośrednictwem strony Solberg Grupo.',
+    'loan_admin_intro'     => 'Klient właśnie przesłał wniosek kredytowy za pośrednictwem strony ' . site_name() . '.',
 
     'loan_confirm_subject'   => 'Twój wniosek kredytowy jest przetwarzany',
     'loan_confirm_greeting'  => 'Witaj :name,',
     'loan_confirm_body'      => 'Otrzymaliśmy Twój wniosek kredytowy na kwotę :amount :currency na okres :duration miesięcy. Jest on obecnie przetwarzany przez nasz zespół.',
     'loan_confirm_footer'    => 'Skontaktujemy się z Tobą tak szybko, jak to możliwe. Dziękujemy za zaufanie.',
-    'loan_confirm_signature' => 'Zespół Solberg Grupo',
+    'loan_confirm_signature' => 'Zespół ' . site_name(),
     'loan_confirm_noreply'   => 'Ta wiadomość została wysłana z adresu no-reply. Prosimy nie odpowiadać bezpośrednio na tę wiadomość.',
 
     'loan_conditions_title'  => 'Warunki kwalifikowalności',
@@ -50,7 +50,7 @@ return [
     'docs_confirm_greeting'  => 'Witaj :name,',
     'docs_confirm_body'      => 'Otrzymaliśmy Twoje dokumenty (adres i dokument tożsamości). Nasz zespół przejrzy je i skontaktuje się z Tobą w ciągu 24 godzin.',
     'docs_confirm_footer'    => 'Dziękujemy za zaufanie i pozostajemy do Twojej dyspozycji w razie pytań.',
-    'docs_confirm_signature' => 'Zespół Solberg Grupo',
+    'docs_confirm_signature' => 'Zespół ' . site_name(),
 
     'docs_upload_hint'  => 'Przeciągnij i upuść lub kliknij, aby wybrać plik',
     'docs_single_photo' => 'W przypadku tego rodzaju dokumentu wystarczy jedno zdjęcie.',

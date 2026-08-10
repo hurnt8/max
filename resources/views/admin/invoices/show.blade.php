@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', $invoice->reference . ' — Facture Solberg Grupo')
+@section('title', $invoice->reference . ' — Facture ' . site_name())
 
 @section('content')
 <style>
@@ -124,7 +124,7 @@
   {{-- Top: brand + ref --}}
   <div class="inv-top">
     <div class="inv-brand">
-      <div class="inv-brand-name"> Solberg Grupo</div>
+      <div class="inv-brand-name"> {{ site_name() }}</div>
       <div class="inv-brand-sub">
         Organisme de financement<br>
         contact@solberggrupo.site

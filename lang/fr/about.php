@@ -1,19 +1,19 @@
 <?php
 
 return [
-    'banner_title' => 'Découvrez Solberg Grupo',
+    'banner_title' => 'Découvrez ' . site_name(),
     'banner_subtitle' => 'À propos de nous',
     'banner_description' => 'Empruntez plus simplement avec des solutions de prêt flexibles et adaptées à vos besoins financiers.',
 
-    'section1_title' => 'Pourquoi opter pour Solberg Grupo',
-    'section1_p1' => 'Chez Solberg Grupo, nous croyons fermement que chacun mérite une chance de réaliser ses rêves financiers. Depuis notre création, nous nous sommes engagés à fournir des solutions de prêt flexibles et accessibles pour répondre aux besoins divers de nos clients. Que vous cherchiez à financer un projet personnel, acheter une voiture, ou développer votre entreprise, nous avons le prêt qu\'il vous faut.',
+    'section1_title' => 'Pourquoi opter pour ' . site_name(),
+    'section1_p1' => 'Chez ' . site_name() . ', nous croyons fermement que chacun mérite une chance de réaliser ses rêves financiers. Depuis notre création, nous nous sommes engagés à fournir des solutions de prêt flexibles et accessibles pour répondre aux besoins divers de nos clients. Que vous cherchiez à financer un projet personnel, acheter une voiture, ou développer votre entreprise, nous avons le prêt qu\'il vous faut.',
     'section1_p2' => 'Nos services sont conçus pour offrir une expérience sans tracas, avec un processus de demande simple et rapide. Nous comprenons que chaque client est unique, c\'est pourquoi nous offrons des prêts personnalisés qui s\'adaptent à vos besoins spécifiques. De plus, nos conseillers dédiés sont toujours là pour vous guider à chaque étape, vous assurant ainsi un accompagnement complet du début à la fin.',
     'proposed' => 'Nous proposons :',
     'check1' => 'Des prêts personnalisés selon vos besoins spécifiques.',
     'check2' => 'Des conseillers dédiés pour vous aider à chaque étape du processus.',
     'check3' => 'Des conditions de remboursement flexibles pour s\'adapter à votre situation financière',
     'check4' => 'Des prêts sans que vous ne disposé de chèque de paie.',
-    'section1_p3' => 'Chez Solberg Grupo, notre mission est de vous aider à atteindre vos objectifs financiers avec des solutions de prêt sur mesure. Rejoignez-nous dès aujourd\'hui et découvrez comment nous pouvons vous aider à concrétiser vos projets.',
+    'section1_p3' => 'Chez ' . site_name() . ', notre mission est de vous aider à atteindre vos objectifs financiers avec des solutions de prêt sur mesure. Rejoignez-nous dès aujourd\'hui et découvrez comment nous pouvons vous aider à concrétiser vos projets.',
     'btn' => 'Trouvez Votre Prêt Idéal',
 
     'faq_title' => 'Questions Fréquemment Posées',

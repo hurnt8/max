@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Tableau de bord — Solberg Grupo')
+@section('title', 'Tableau de bord — ' . site_name())
 @section('page_title', 'Vue d\'ensemble')
 
 @push('styles')
@@ -301,7 +301,7 @@
 {{-- ── HERO ── --}}
 <div class="adb-hero">
   <div class="adb-hero-left">
-    <div class="adb-hero-tag">Solberg Grupo — Espace Administrateur</div>
+    <div class="adb-hero-tag">{{ site_name() }} — Espace Administrateur</div>
     <div class="adb-hero-title">Bonjour, {{ Auth::user()->name }} 👋</div>
     <div class="adb-hero-sub">{{ now()->isoFormat('dddd D MMMM YYYY') }}</div>
     <button id="adb-pwa-btn" class="adb-pwa-btn" aria-label="Installer l'application">

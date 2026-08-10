@@ -165,7 +165,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
         <h2 class="auth-left__title">{{ __('auth.otp_heading') }}</h2>
         <p class="auth-left__sub">{{ __('auth.otp_subtitle') }}</p>
       </div>
-      <div class="auth-left__copy">&copy; {{ date('Y') }} Solberg Grupo Invest</div>
+      <div class="auth-left__copy">&copy; {{ date('Y') }} {{ site_name() }}</div>
     </div>
   </div>
 
@@ -217,7 +217,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
         </div>
       </div>
 
-      <div class="auth-footer">&copy; {{ date('Y') }} Solberg Grupo Invest</div>
+      <div class="auth-footer">&copy; {{ date('Y') }} {{ site_name() }}</div>
     </div>
   </div>
 

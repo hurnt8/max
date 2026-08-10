@@ -1,5 +1,5 @@
 @extends('layouts.client-app')
-@section('title', __('app.payment_methods') . ' — Solberg Grupo')
+@section('title', __('app.payment_methods') . ' — ' . site_name())
 @section('page_title', __('app.payment_methods'))
 @section('back_btn', true)
 @section('back_url', route('client.app.profile'))
@@ -159,7 +159,7 @@
   <div class="pm-card__top">
     <div class="pm-card__brand">
       <i class="fas fa-landmark" style="margin-right:.3rem;font-size:.58rem"></i>
-     Solberg Grupo &nbsp;·&nbsp; {{ __('app.account_num') }}
+     {{ site_name() }} &nbsp;·&nbsp; {{ __('app.account_num') }}
     </div>
     <div class="pm-card__chip" aria-hidden="true"></div>
   </div>
@@ -223,7 +223,7 @@
   @endif
   <div class="pm-detail-row">
     <span class="pm-detail-key">{{ __('app.receive_bank') ?? 'Banque' }}</span>
-    <span class="pm-detail-val">Solberg Grupo Bank</span>
+    <span class="pm-detail-val">{{ site_name() }} Bank</span>
   </div>
   <div class="pm-detail-row">
     <span class="pm-detail-key">{{ __('app.balance') }}</span>
@@ -246,7 +246,7 @@
   <div class="pm-empty__ico"><i class="fas fa-credit-card"></i></div>
   <div class="pm-empty__title">{{ __('app.not_configured') }}</div>
   <div class="pm-empty__sub">
-    Votre conseiller Solberg Grupo configurera vos coordonnees bancaires<br>lors de la finalisation de votre dossier.
+    Votre conseiller {{ site_name() }} configurera vos coordonnees bancaires<br>lors de la finalisation de votre dossier.
   </div>
 </div>
 

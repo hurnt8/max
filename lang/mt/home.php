@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Solberg Grupo - L-Aħjar Self Online fil-Ġermanja, Spanja, Ungerija eċċ.',
+    'general_title' => site_name() . ' - L-Aħjar Self Online fil-Ġermanja, Spanja, Ungerija eċċ.',
     'banner_title' => 'Ikseb is-self perfett għal bżonnijietek online.',
-    'banner_text' => 'Miljuni ta’ nies jużaw Solberg Grupo biex iwettqu l-proġetti tagħhom.',
+    'banner_text' => 'Miljuni ta’ nies jużaw ' . site_name() . ' biex iwettqu l-proġetti tagħhom.',
     'get_loan_now' => 'Ikseb self issa',
     'popular_loans' => 'Tipi popolari ta’ self:',
     'personal_loan' => 'Self personali',
@@ -54,11 +54,11 @@ return [
 
     'custom_loan_services' => 'Ibbenefika mis-servizzi ta’ self adattati għalik',
     'reliability_quality' => 'Trasparenza u Affidabbiltà',
-    'reliability_quality_description' => 'F’Solberg Grupo noffru soluzzjonijiet ta’ self ċari u affidabbli, appoġġjati minn reviżjonijiet pożittivi tal-klijenti u trasparenza sħiħa.',
+    'reliability_quality_description' => 'F’' . site_name() . ' noffru soluzzjonijiet ta’ self ċari u affidabbli, appoġġjati minn reviżjonijiet pożittivi tal-klijenti u trasparenza sħiħa.',
     'financial_transparency' => 'L-ebda spiża moħbija',
     'financial_transparency_description' => 'Reviżjoni tat-termini tagħna, diskussjoni dwar ir-rati, u ħlas biss ladarba s-self tiegħek ikun approvat.',
     'optimal_security' => 'Sigurtà u Privatezza',
-    'optimal_security_description' => 'Id-dejta personali tiegħek hija sigura magħna. Solberg Grupo juża protokolli avvanzati tas-sigurtà biex jipproteġi l-privatezza tiegħek. L-appoġġ tagħna huwa disponibbli 24/7 għal kull għajnuna.',
+    'optimal_security_description' => 'Id-dejta personali tiegħek hija sigura magħna. ' . site_name() . ' juża protokolli avvanzati tas-sigurtà biex jipproteġi l-privatezza tiegħek. L-appoġġ tagħna huwa disponibbli 24/7 għal kull għajnuna.',
     'apply_loan' => 'Applika għal self',
 
 
@@ -98,7 +98,7 @@ return [
     ],
 
     'about_title' => 'Ingħaqad fl-aqwa pjattaforma għall-ħaddiema globali',
-    'about_description' => 'Solberg Grupo hija l-pjattaforma fdati tiegħek biex tikseb self b’esperjenza tal-klijent eċċezzjonali. Aħna impenjati li nipprovdulek soluzzjonijiet finanzjarji sempliċi, siguri u mgħaġġla.',
+    'about_description' => site_name() . ' hija l-pjattaforma fdati tiegħek biex tikseb self b’esperjenza tal-klijent eċċezzjonali. Aħna impenjati li nipprovdulek soluzzjonijiet finanzjarji sempliċi, siguri u mgħaġġla.',
     'rating' => '4.9/5',
     'rating_description' => 'Il-klijenti jagħtu l-professjonisti',
     'projects_completed' => '+12M',
@@ -140,7 +140,7 @@ return [
         'placeholder' => 'L-indirizz tal-email tiegħek',
         'button' => 'Ibgħat',
     ],
-    'rights_reserved' => '© Solberg Grupo. 2024. Id-drittijiet kollha riservati.',
+    'rights_reserved' => '© ' . site_name() . '. 2024. Id-drittijiet kollha riservati.',
 
     'en' => 'Ingliż',
     'fr' => 'Franċiż',
@@ -190,7 +190,7 @@ return [
         'sectagline' => 'Merħba fil-finanzi tal-ekwità',
         'sectitle' => 'Prestiti personali biex twettqu l-ħolm tiegħek',
         'text1' => 'Ilna 15-il sena f\'dan il-business u nipprovdu l-aħjar servizzi.',
-        'text2' => 'Solberg Grupo hija l-pjattaforma affidabbli tiegħek għall-prestiti bi esperjenza tal-klijent eċċezzjonali. Aħna impenjati li nipprovdu soluzzjonijiet finanzjarji sempliċi, siguri u rapidi.',
+        'text2' => site_name() . ' hija l-pjattaforma affidabbli tiegħek għall-prestiti bi esperjenza tal-klijent eċċezzjonali. Aħna impenjati li nipprovdu soluzzjonijiet finanzjarji sempliċi, siguri u rapidi.',
         'check1' => 'prestitu għall-kumpaniji żgħar',
         'check2' => 'prestitu għall-istudju barra',
         'check3' => 'proċess tal-prestitu veloċi',

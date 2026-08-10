@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Inleiding',
-            'content' => 'Welkom bij Solberg Grupo. Door gebruik te maken van onze website en diensten, stemt u ermee in zich te houden aan en gebonden te zijn door de volgende algemene voorwaarden. Lees deze voorwaarden zorgvuldig door voordat u onze website gebruikt of een lening bij ons afsluit.'
+            'content' => 'Welkom bij ' . site_name() . '. Door gebruik te maken van onze website en diensten, stemt u ermee in zich te houden aan en gebonden te zijn door de volgende algemene voorwaarden. Lees deze voorwaarden zorgvuldig door voordat u onze website gebruikt of een lening bij ons afsluit.'
         ],
         [
             'title' => '2. Gebruik van de website',
@@ -13,11 +13,11 @@ return [
         ],
         [
             'title' => '3. Leendiensten',
-            'content' => 'Solberg Grupo biedt verschillende soorten leningen aan om aan uw financiële behoeften te voldoen. Alle leningen zijn onderworpen aan goedkeuring op basis van onze beoordeling van uw kredietwaardigheid en terugbetalingscapaciteit. De specifieke voorwaarden van elke lening, met inbegrip van rentetarieven, looptijden en terugbetalingsmodaliteiten, worden nader toegelicht in uw leningsovereenkomst.'
+            'content' => site_name() . ' biedt verschillende soorten leningen aan om aan uw financiële behoeften te voldoen. Alle leningen zijn onderworpen aan goedkeuring op basis van onze beoordeling van uw kredietwaardigheid en terugbetalingscapaciteit. De specifieke voorwaarden van elke lening, met inbegrip van rentetarieven, looptijden en terugbetalingsmodaliteiten, worden nader toegelicht in uw leningsovereenkomst.'
         ],
         [
             'title' => '4. Contract- en verzekeringskosten',
-            'content' => 'Bij het afsluiten van een lening bij Solberg Grupo kunnen contract- en verzekeringskosten in rekening worden gebracht. Deze kosten dekken de administratieve kosten die verbonden zijn aan het opzetten en beheren van uw lening. De specifieke details van deze kosten worden duidelijk vermeld in uw leningsovereenkomst. U bent verplicht deze kosten te betalen overeenkomstig de vastgestelde voorwaarden.'
+            'content' => 'Bij het afsluiten van een lening bij ' . site_name() . ' kunnen contract- en verzekeringskosten in rekening worden gebracht. Deze kosten dekken de administratieve kosten die verbonden zijn aan het opzetten en beheren van uw lening. De specifieke details van deze kosten worden duidelijk vermeld in uw leningsovereenkomst. U bent verplicht deze kosten te betalen overeenkomstig de vastgestelde voorwaarden.'
         ],
         [
             'title' => '5. Vertrouwelijkheid',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Beperking van aansprakelijkheid',
-            'content' => 'Solberg Grupo kan niet aansprakelijk worden gesteld voor indirecte, bijzondere of gevolgschade of verliezen die voortvloeien uit het gebruik of de onmogelijkheid om onze website of diensten te gebruiken, met inbegrip van winstderving, gegevensverlies of bedrijfsonderbreking, zelfs indien wij op de hoogte zijn gesteld van de mogelijkheid van dergelijke schade.'
+            'content' => site_name() . ' kan niet aansprakelijk worden gesteld voor indirecte, bijzondere of gevolgschade of verliezen die voortvloeien uit het gebruik of de onmogelijkheid om onze website of diensten te gebruiken, met inbegrip van winstderving, gegevensverlies of bedrijfsonderbreking, zelfs indien wij op de hoogte zijn gesteld van de mogelijkheid van dergelijke schade.'
         ],
         [
             'title' => '8. Wijzigingen van de voorwaarden',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contact',
-            'content' => 'Als u vragen of opmerkingen heeft over deze algemene voorwaarden, neem dan contact met ons op via:<br><br>Solberg Grupo<br>Adres: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@solberggrupo.site<br>Telefoon: +31 6 57341120 '
+            'content' => 'Als u vragen of opmerkingen heeft over deze algemene voorwaarden, neem dan contact met ons op via:<br><br>' . site_name() . '<br>Adres: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: contact@solberggrupo.site<br>Telefoon: +31 6 57341120 '
         ],
     ],
 ];

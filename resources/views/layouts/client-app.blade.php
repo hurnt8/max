@@ -6,12 +6,12 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Solberg Grupo">
+  <meta name="apple-mobile-web-app-title" content="{{ site_name() }}">
   <meta name="theme-color" content="#0B1A2E">
-  <meta name="description" content="Solberg Grupo — Espace client mobile">
+  <meta name="description" content="{{ site_name() }} — Espace client mobile">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>@yield('title', 'Solberg Grupo')</title>
+  <title>@yield('title', site_name())</title>
 
   <link rel="manifest" href="{{ route('pwa.manifest') }}">
   {{-- Icônes PWA --}}
@@ -29,7 +29,7 @@
 
   {{-- Init theme AVANT le rendu pour éviter le flash blanc/noir.
        Clé renommée (v2) pour ignorer un ancien 'dark' déjà stocké côté client
-       et repartir sur le nouveau thème clair par défaut (charte Solberg Grupo). --}}
+       et repartir sur le nouveau thème clair par défaut (charte {{ site_name() }}). --}}
   <script>
     (function(){
       var t = localStorage.getItem('solberg-theme-v2') || 'light';
@@ -99,7 +99,7 @@
     <div style="width:38px"></div>
     @endif
 
-    <span class="ca-topbar__title">@yield('page_title', 'Solberg Grupo')</span>
+    <span class="ca-topbar__title">@yield('page_title', '{{ site_name() }}')</span>
 
     @hasSection('topbar_action')
     @yield('topbar_action')

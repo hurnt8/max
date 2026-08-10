@@ -29,5 +29,5 @@ return [
     'newsletter_title' => 'Bądź na bieżąco z naszymi ofertami',
     'subscribe'        => 'Subskrybuj',
     'read_more'        => 'Dowiedz się więcej',
-    'footer_desc'      => 'Solberg Grupo to Twój zaufany partner w zakresie szybkich, elastycznych i spersonalizowanych rozwiązań finansowych w całej Europie.',
+    'footer_desc'      => site_name() . ' to Twój zaufany partner w zakresie szybkich, elastycznych i spersonalizowanych rozwiązań finansowych w całej Europie.',
 ];

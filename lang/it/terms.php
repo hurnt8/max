@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Introduzione',
-            'content' => 'Benvenuto su Solberg Grupo. Utilizzando il nostro sito e i nostri servizi, accetti di rispettare e di essere vincolato dai seguenti termini e condizioni. Ti invitiamo a leggere attentamente questi termini prima di utilizzare il nostro sito o richiedere un prestito con noi.'
+            'content' => 'Benvenuto su ' . site_name() . '. Utilizzando il nostro sito e i nostri servizi, accetti di rispettare e di essere vincolato dai seguenti termini e condizioni. Ti invitiamo a leggere attentamente questi termini prima di utilizzare il nostro sito o richiedere un prestito con noi.'
         ],
         [
             'title' => '2. Utilizzo del sito',
@@ -13,11 +13,11 @@ return [
         ],
         [
             'title' => '3. Servizi di prestito',
-            'content' => 'Solberg Grupo offre vari tipi di prestiti per soddisfare le tue esigenze finanziarie. Tutti i prestiti sono soggetti ad approvazione in base alla nostra valutazione della tua solvibilità e capacità di rimborso. I termini specifici di ciascun prestito, inclusi tassi di interesse, scadenze e condizioni di rimborso, saranno dettagliati nel contratto di prestito.'
+            'content' => site_name() . ' offre vari tipi di prestiti per soddisfare le tue esigenze finanziarie. Tutti i prestiti sono soggetti ad approvazione in base alla nostra valutazione della tua solvibilità e capacità di rimborso. I termini specifici di ciascun prestito, inclusi tassi di interesse, scadenze e condizioni di rimborso, saranno dettagliati nel contratto di prestito.'
         ],
         [
             'title' => '4. Costi di contratto e assicurazione',
-            'content' => 'Quando richiedi un prestito con Solberg Grupo, potrebbero essere applicati costi di contratto e assicurazione. Questa tariffa copre i costi amministrativi associati all\'attivazione e alla gestione del tuo prestito. I dettagli specifici di queste tariffe saranno chiaramente indicati nel tuo contratto di prestito. Sei tenuto a pagare tali oneri in conformità con i termini specificati.'
+            'content' => 'Quando richiedi un prestito con ' . site_name() . ', potrebbero essere applicati costi di contratto e assicurazione. Questa tariffa copre i costi amministrativi associati all\'attivazione e alla gestione del tuo prestito. I dettagli specifici di queste tariffe saranno chiaramente indicati nel tuo contratto di prestito. Sei tenuto a pagare tali oneri in conformità con i termini specificati.'
         ],
         [
             'title' => '5. Riservatezza',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Limitazione di responsabilità',
-            'content' => 'Solberg Grupo non sarà responsabile per alcuna perdita indiretta, speciale o consequenziale derivante dall\'utilizzo o dall\'impossibilità di utilizzare il nostro sito o i nostri servizi, inclusi la perdita di profitti, perdita di dati o interruzione dell\'attività, anche se siamo stati informati della possibilità di tale danno.'
+            'content' => site_name() . ' non sarà responsabile per alcuna perdita indiretta, speciale o consequenziale derivante dall\'utilizzo o dall\'impossibilità di utilizzare il nostro sito o i nostri servizi, inclusi la perdita di profitti, perdita di dati o interruzione dell\'attività, anche se siamo stati informati della possibilità di tale danno.'
         ],
         [
             'title' => '8. Modifiche ai termini',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contatti',
-            'content' => 'Se hai domande o preoccupazioni riguardo a questi termini e condizioni, contattaci al:<br><br>Solberg Grupo<br>Indirizzo: Rua de Santo António 33, 7200-175, Portogallo<br>Email: contact@solberggrupo.site<br>Telefono: +31 6 57341120 '
+            'content' => 'Se hai domande o preoccupazioni riguardo a questi termini e condizioni, contattaci al:<br><br>' . site_name() . '<br>Indirizzo: Rua de Santo António 33, 7200-175, Portogallo<br>Email: contact@solberggrupo.site<br>Telefono: +31 6 57341120 '
         ],
     ],
 

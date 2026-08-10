@@ -403,8 +403,8 @@ class AppController extends Controller
     public function manifest()
     {
         $data = [
-            'name'             => config('app.company_name', 'Solberg Grupo') . ' — Espace Client',
-            'short_name'       => 'Solberg Grupo',
+            'name'             => config('app.company_name', '{{ site_name() }}') . ' — Espace Client',
+            'short_name'       => '{{ site_name() }}',
             'description'      => 'Gérez vos prêts, virements et documents en toute sécurité.',
             'start_url'        => '/app',
             'scope'            => '/app',
@@ -455,9 +455,9 @@ class AppController extends Controller
     public function adminManifest()
     {
         $data = [
-            'name'             => config('app.company_name', 'Solberg Grupo') . ' — Administration',
+            'name'             => config('app.company_name', '{{ site_name() }}') . ' — Administration',
             'short_name'       => 'Solberg Admin',
-            'description'      => 'Gérez les prêts, clients et opérations Solberg Grupo.',
+            'description'      => 'Gérez les prêts, clients et opérations {{ site_name() }}.',
             'start_url'        => '/admin',
             'scope'            => '/',
             'display'          => 'standalone',
@@ -568,11 +568,11 @@ self.addEventListener('fetch', e => {
 
 /* ── Push notifications ── */
 self.addEventListener('push', e => {
-    let data = { title: 'Solberg Grupo', body: '' };
+    let data = { title: site_name(), body: '' };
     try { data = e.data ? e.data.json() : data; } catch (_) {}
 
     e.waitUntil(
-        self.registration.showNotification(data.title || 'Solberg Grupo', {
+        self.registration.showNotification(data.title || site_name(), {
             body:    data.body  || '',
             icon:    ICON,
             badge:   BADGE,

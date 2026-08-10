@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'general_title' => 'Solberg Grupo - Labākie tiešsaistes aizdevēji Vācijā, Spānijā, Ungārijā u.c.',
+    'general_title' => site_name() . ' - Labākie tiešsaistes aizdevēji Vācijā, Spānijā, Ungārijā u.c.',
     'banner_title' => 'Saņemiet ideālo aizdevumu visām jūsu vajadzībām tiešsaistē.',
-    'banner_text' => 'Miljoniem cilvēku izmanto Solberg Grupo, lai īstenotu savus projektus.',
+    'banner_text' => 'Miljoniem cilvēku izmanto ' . site_name() . ', lai īstenotu savus projektus.',
     'get_loan_now' => 'Saņemiet aizdevumu tagad',
     'popular_loans' => 'Populārākie aizdevumu veidi:',
 
@@ -54,11 +54,11 @@ return [
 
     'custom_loan_services' => 'Izmantojiet mūsu individuāli pielāgotos aizdevumu pakalpojumus',
     'reliability_quality' => 'Pārskatāmība un uzticamība',
-    'reliability_quality_description' => 'Solberg Grupo piedāvā skaidrus un uzticamus aizdevumu risinājumus, ko apliecina pozitīvas klientu atsauksmes un pilnīga pārskatāmība.',
+    'reliability_quality_description' => site_name() . ' piedāvā skaidrus un uzticamus aizdevumu risinājumus, ko apliecina pozitīvas klientu atsauksmes un pilnīga pārskatāmība.',
     'financial_transparency' => 'Bez slēptām izmaksām',
     'financial_transparency_description' => 'Iepazīstieties ar mūsu nosacījumiem, pārrunājiet likmes un maksājiet tikai pēc aizdevuma apstiprināšanas.',
     'optimal_security' => 'Drošība un konfidencialitāte',
-    'optimal_security_description' => 'Jūsu personas dati pie mums ir drošībā. Solberg Grupo izmanto uzlabotus drošības protokolus, lai aizsargātu jūsu privātumu. Mūsu atbalsts ir pieejams 24/7 jebkurai palīdzībai.',
+    'optimal_security_description' => 'Jūsu personas dati pie mums ir drošībā. ' . site_name() . ' izmanto uzlabotus drošības protokolus, lai aizsargātu jūsu privātumu. Mūsu atbalsts ir pieejams 24/7 jebkurai palīdzībai.',
     'apply_loan' => 'Pieteikties aizdevumam',
 
 
@@ -74,7 +74,7 @@ return [
         'months_ago' => 1,
     ],
     'testimonial_2' => [
-        'quote' => '"Pēc diviem atteikumiem tradicionālajā bankā Solberg Grupo man piešķīra personīgo aizdevumu 48 stundu laikā. Komanda izskatīja manu pieteikumu nopietni un ar sapratni. Liels paldies!"',
+        'quote' => '"Pēc diviem atteikumiem tradicionālajā bankā ' . site_name() . ' man piešķīra personīgo aizdevumu 48 stundu laikā. Komanda izskatīja manu pieteikumu nopietni un ar sapratni. Liels paldies!"',
         'name'  => 'Ilze Bērziņa',
         'location' => 'Daugavpils, Latvija',
         'months_ago' => 2,
@@ -92,7 +92,7 @@ return [
         'months_ago' => 3,
     ],
     'testimonial_5' => [
-        'quote' => '"Skaidrs simulators, vienkāršs pieteikums, pārskaitījums saņemts trīs darba dienu laikā. Man bija steidzami jāfinansē remontdarbi, un Solberg Grupo bija klāt īstajā brīdī."',
+        'quote' => '"Skaidrs simulators, vienkāršs pieteikums, pārskaitījums saņemts trīs darba dienu laikā. Man bija steidzami jāfinansē remontdarbi, un ' . site_name() . ' bija klāt īstajā brīdī."',
         'name'  => 'Artūrs Liepiņš',
         'location' => 'Ventspils, Latvija',
         'months_ago' => 4,
@@ -113,7 +113,7 @@ return [
     ],
 
     'about_title' => 'Pievienojieties labākajam pasaules tirgum darbiniekiem',
-    'about_description' => 'Solberg Grupo ir jūsu uzticamā platforma aizdevumu saņemšanai ar izcilu klientu pieredzi. Mēs apņemamies nodrošināt jums vienkāršus, drošus un ātrus finanšu risinājumus.',
+    'about_description' => site_name() . ' ir jūsu uzticamā platforma aizdevumu saņemšanai ar izcilu klientu pieredzi. Mēs apņemamies nodrošināt jums vienkāršus, drošus un ātrus finanšu risinājumus.',
     'rating' => '4.9/5',
     'rating_description' => 'Klienti vērtē profesionāļus',
     'projects_completed' => '+12M',
@@ -149,7 +149,7 @@ return [
         'placeholder' => 'Jūsu e-pasta adrese',
         'button' => 'Nosūtīt',
     ],
-    'rights_reserved' => '© Solberg Grupo. 2024. Visas tiesības aizsargātas.',
+    'rights_reserved' => '© ' . site_name() . '. 2024. Visas tiesības aizsargātas.',
 
     'en' => 'Angļu',
     'fr' => 'Franču',
@@ -198,10 +198,10 @@ return [
     // About
     'about' => [
         'exptitle' => 'gadu pieredze',
-        'sectagline' => 'laipni lūdzam Solberg Grupo',
+        'sectagline' => 'laipni lūdzam ' . site_name(),
         'sectitle' => 'Personīgie aizdevumi jūsu sapņu piepildīšanai',
         'text1' => 'Mēs darbojamies šajā jomā jau 15 gadus un piedāvājam labākos pakalpojumus.',
-        'text2' => 'Solberg Grupo ir jūsu uzticamā platforma aizdevumiem ar izcilu klientu pieredzi. Mēs apņemamies nodrošināt jums vienkāršus, drošus un ātrus finanšu risinājumus.',
+        'text2' => site_name() . ' ir jūsu uzticamā platforma aizdevumiem ar izcilu klientu pieredzi. Mēs apņemamies nodrošināt jums vienkāršus, drošus un ātrus finanšu risinājumus.',
         'check1' => 'aizdevums mazajam uzņēmumam',
         'check2' => 'aizdevums studijām ārzemēs',
         'check3' => 'ātrs aizdevuma process',

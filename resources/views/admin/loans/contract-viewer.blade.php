@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<title>Contrat {{ $loan->reference }} · Solberg Grupo Invest</title>
+<title>Contrat {{ $loan->reference }} · {{ site_name() }}</title>
 <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -300,7 +300,7 @@ kbd {
     <a href="{{ route($panelPrefix.'.loans.show', $loan) }}" class="s-brand">
       <div class="s-logo">CI</div>
       <div class="s-brand-wrap">
-        <span class="s-brand-name">Solberg Grupo</span>
+        <span class="s-brand-name">{{ site_name() }}</span>
         <span class="s-brand-hint">Portail de gestion</span>
       </div>
     </a>

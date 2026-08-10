@@ -30,5 +30,5 @@ return [
     'newsletter_title' => 'Bleiben Sie über unsere Angebote informiert',
     'subscribe'        => 'Abonnieren',
     'read_more'        => 'Mehr erfahren',
-    'footer_desc'      => 'Solberg Grupo ist Ihr vertrauenswürdiger Partner für schnelle, flexible und individuelle Finanzierungslösungen in ganz Europa.',
+    'footer_desc'      => site_name() . ' ist Ihr vertrauenswürdiger Partner für schnelle, flexible und individuelle Finanzierungslösungen in ganz Europa.',
 ];

@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#080C18">
 <link rel="icon" type="image/svg+xml" href="/images/icon-192.svg">
-<title>Mot de passe oublié — Solberg Grupo</title>
+<title>Mot de passe oublié — {{ site_name() }}</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -252,7 +252,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <div class="pg-foot">
-    &copy; {{ date('Y') }} Solberg Grupo Invest &nbsp;·&nbsp;
+    &copy; {{ date('Y') }} {{ site_name() }} &nbsp;·&nbsp;
     <a href="{{ url('/fr/terms') }}">CGU</a> &nbsp;·&nbsp;
     <a href="{{ url('/fr/privacy') }}">Confidentialité</a>
   </div>

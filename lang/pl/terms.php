@@ -5,7 +5,7 @@ return [
     'sections' => [
         [
             'title' => '1. Wprowadzenie',
-            'content' => 'Witamy w Solberg Grupo. Korzystając z naszej strony i usług, zobowiązujesz się przestrzegać poniższych warunków użytkowania i być nimi związany. Prosimy o uważne zapoznanie się z niniejszymi warunkami przed skorzystaniem z naszej strony lub zaciągnięciem u nas kredytu.'
+            'content' => 'Witamy w ' . site_name() . '. Korzystając z naszej strony i usług, zobowiązujesz się przestrzegać poniższych warunków użytkowania i być nimi związany. Prosimy o uważne zapoznanie się z niniejszymi warunkami przed skorzystaniem z naszej strony lub zaciągnięciem u nas kredytu.'
         ],
         [
             'title' => '2. Korzystanie ze strony',
@@ -13,11 +13,11 @@ return [
         ],
         [
             'title' => '3. Usługi kredytowe',
-            'content' => 'Solberg Grupo oferuje różne rodzaje kredytów odpowiadające Twoim potrzebom finansowym. Wszystkie kredyty podlegają zatwierdzeniu na podstawie naszej oceny Twojej zdolności kredytowej i możliwości spłaty. Szczegółowe warunki każdego kredytu, w tym oprocentowanie, terminy i zasady spłaty, zostaną określone w Twojej umowie kredytowej.'
+            'content' => site_name() . ' oferuje różne rodzaje kredytów odpowiadające Twoim potrzebom finansowym. Wszystkie kredyty podlegają zatwierdzeniu na podstawie naszej oceny Twojej zdolności kredytowej i możliwości spłaty. Szczegółowe warunki każdego kredytu, w tym oprocentowanie, terminy i zasady spłaty, zostaną określone w Twojej umowie kredytowej.'
         ],
         [
             'title' => '4. Opłaty za umowę i ubezpieczenie',
-            'content' => 'Przy zawieraniu kredytu w Solberg Grupo mogą zostać naliczone opłaty za umowę i ubezpieczenie. Opłaty te pokrywają koszty administracyjne związane z uruchomieniem i obsługą Twojego kredytu. Szczegóły dotyczące tych opłat zostaną jasno wskazane w Twojej umowie kredytowej. Jesteś zobowiązany do uiszczenia tych opłat zgodnie z określonymi warunkami.'
+            'content' => 'Przy zawieraniu kredytu w ' . site_name() . ' mogą zostać naliczone opłaty za umowę i ubezpieczenie. Opłaty te pokrywają koszty administracyjne związane z uruchomieniem i obsługą Twojego kredytu. Szczegóły dotyczące tych opłat zostaną jasno wskazane w Twojej umowie kredytowej. Jesteś zobowiązany do uiszczenia tych opłat zgodnie z określonymi warunkami.'
         ],
         [
             'title' => '5. Poufność',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Ograniczenie odpowiedzialności',
-            'content' => 'Solberg Grupo nie ponosi odpowiedzialności za jakiekolwiek pośrednie, szczególne lub wtórne straty lub szkody wynikające z korzystania lub niemożności korzystania z naszej strony lub usług, w tym utratę zysków, utratę danych lub przerwę w działalności, nawet jeśli zostaliśmy poinformowani o możliwości wystąpienia takich szkód.'
+            'content' => site_name() . ' nie ponosi odpowiedzialności za jakiekolwiek pośrednie, szczególne lub wtórne straty lub szkody wynikające z korzystania lub niemożności korzystania z naszej strony lub usług, w tym utratę zysków, utratę danych lub przerwę w działalności, nawet jeśli zostaliśmy poinformowani o możliwości wystąpienia takich szkód.'
         ],
         [
             'title' => '8. Zmiany warunków',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kontakt',
-            'content' => 'Jeśli masz pytania lub wątpliwości dotyczące niniejszych warunków użytkowania, skontaktuj się z nami:<br><br>Solberg Grupo<br>Adres: Rua de Santo António 33, 7200-175, Portugalia<br>E-mail: contact@solberggrupo.site<br>Telefon: +31 6 57341120 '
+            'content' => 'Jeśli masz pytania lub wątpliwości dotyczące niniejszych warunków użytkowania, skontaktuj się z nami:<br><br>' . site_name() . '<br>Adres: Rua de Santo António 33, 7200-175, Portugalia<br>E-mail: contact@solberggrupo.site<br>Telefon: +31 6 57341120 '
         ],
     ],
 ];

@@ -19,12 +19,12 @@ return [
 
     'client_login_title'  => 'Klijentski prostor',
     'client_login_sub'    => 'Prijavite se za pristup svojim dosjeima',
-    'client_brand_title'  => 'Vaš<br>klijentski prostor Solberg Grupo',
+    'client_brand_title'  => 'Vaš<br>klijentski prostor ' . site_name(),
     'client_brand_sub'    => 'Pratite svoje zahtjeve, upravljajte svojim profilom i pristupite svim svojim dokumentima na siguran način.',
 
     'staff_login_title'   => 'Administrativni portal',
     'staff_login_sub'     => 'Isključivo za ovlašteno osoblje',
-    'staff_brand_title'   => 'Administracija<br>Solberg Grupo',
+    'staff_brand_title'   => 'Administracija<br>' . site_name(),
     'staff_brand_sub'     => 'Siguran pristup alatima za upravljanje, praćenje dosjea i administraciju korisnika.',
 
     'email'               => 'E-mail adresa',
@@ -40,7 +40,7 @@ return [
     'staff_portal_link'   => 'Portal za agente / administratore',
     'client_portal_link'  => 'Klijentski prostor',
     'staff_restricted'    => 'Ograničen pristup — Ovlašteno osoblje',
-    'staff_notice'        => 'Ovaj portal namijenjen je isključivo agentima Solberg Grupo. Sve prijave se bilježe.',
+    'staff_notice'        => 'Ovaj portal namijenjen je isključivo agentima ' . site_name() . '. Sve prijave se bilježe.',
     'or_staff'            => 'Vi ste agent ili administrator?',
     'or_client'           => 'Vi ste klijent?',
 
@@ -92,31 +92,31 @@ return [
     'account_unblocked'                   => 'Vaš račun je uspješno deblokiran. Sada se možete prijaviti.',
     'unblock_invalid'                     => 'Ova poveznica za deblokadu nije važeća ili je istekla. Kontaktirajte podršku.',
 
-    'account_blocked_email_subject'       => 'Vaš račun Solberg Grupo je blokiran',
+    'account_blocked_email_subject'       => 'Vaš račun ' . site_name() . ' je blokiran',
     'account_blocked_email_title'         => 'Račun privremeno blokiran',
     'account_blocked_email_intro'         => 'Vaš račun je privremeno blokiran zbog nekoliko netočnih pokušaja prijave.',
     'account_blocked_email_reason_title'  => 'Zašto je blokiran?',
     'account_blocked_email_reason_body'   => '4 netočna OTP koda unesena su uzastopno prilikom pokušaja prijave na vaš račun. Iz sigurnosnih razloga pristup je obustavljen.',
     'account_blocked_email_btn'           => 'Deblokiraj moj račun',
     'account_blocked_email_fallback'      => 'Ako gumb ne radi, kopirajte ovu poveznicu u svoj preglednik:',
-    'account_blocked_email_notice'        => 'Ako niste vi izvršili ove pokušaje, ne klikajte na ovu poveznicu i odmah kontaktirajte podršku Solberg Grupo.',
+    'account_blocked_email_notice'        => 'Ako niste vi izvršili ove pokušaje, ne klikajte na ovu poveznicu i odmah kontaktirajte podršku ' . site_name() . '.',
     'account_blocked_email_footer'        => 'Poveznica vrijedi 48 sati.',
 
     // OTP email
-    'otp_email_subject'      => 'Vaš kod za prijavu — Solberg Grupo',
+    'otp_email_subject'      => 'Vaš kod za prijavu — ' . site_name(),
     'otp_email_title'        => 'Kod za provjeru',
     'otp_email_intro'        => 'Evo vašeg jednokratnog koda za prijavu. Ne dijelite ga ni s kim.',
     'otp_email_code_label'   => 'Vaš kod',
     'otp_email_expiry'       => 'Ovaj kod istječe za 10 minuta.',
     'otp_email_notice_title' => 'Važna sigurnosna napomena',
-    'otp_email_notice_body'  => 'Solberg Grupo nikada neće od vas tražiti ovaj kod putem telefona ili poruke. Ako niste zatražili ovaj kod, zanemarite ovaj e-mail.',
+    'otp_email_notice_body'  => site_name() . ' nikada neće od vas tražiti ovaj kod putem telefona ili poruke. Ako niste zatražili ovaj kod, zanemarite ovaj e-mail.',
     'otp_email_footer'       => 'Ako niste zatražili ovaj kod, zanemarite ovaj e-mail.',
 
     // Bannière d'installation PWA (pages de connexion)
     'pwa_install_title' => 'Instaliraj aplikaciju',
     'pwa_install_hint'  => 'Brzi pristup · Obavijesti · Rad bez interneta',
     'pwa_install_btn'   => 'Instaliraj',
-    'pwa_ios_title'     => 'Instalirajte aplikaciju Solberg Grupo na svoj iPhone',
+    'pwa_ios_title'     => 'Instalirajte aplikaciju ' . site_name() . ' na svoj iPhone',
     'pwa_ios_step1'     => 'Dodirnite <strong>Podijeli</strong> u Safariju',
     'pwa_ios_step2'     => 'Odaberite <strong>Na početni zaslon</strong>',
     'pwa_ios_step3'     => 'Dodirnite <strong>Dodaj</strong> — gotovo je!',
