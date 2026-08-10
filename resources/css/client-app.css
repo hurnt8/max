@@ -12,10 +12,15 @@
   --ca-bg3:         #112237;
   --ca-bg4:         #162D47;
   --ca-card:        #1A3A5C;
-  --ca-teal:        #1B8A7A;
-  --ca-teal-l:      #22A396;
+  --ca-navy:        #0B1A2E;
+  --ca-navy-light:  #1E3A5F;
   --ca-gold:        #C8A951;
   --ca-gold-l:      #D4B96A;
+  /* Compat: le teal a ete retire de l'identite de marque (voir --ca-navy/--ca-gold
+     ci-dessus) ; ces deux alias evitent de casser les nombreuses vues qui
+     referencaient encore var(--ca-teal[-l]) avant l'unification des couleurs. */
+  --ca-teal:        var(--ca-navy);
+  --ca-teal-l:      var(--ca-gold-l);
   --ca-positive:    #00C896;
   --ca-negative:    #FF5A5A;
   --ca-amber:       #F59E0B;
@@ -43,8 +48,6 @@
   --ca-bg3:      #FFFFFF;
   --ca-bg4:      #DCE4F2;
   --ca-card:     #EAEFF8;
-  --ca-teal:     #167A6C;
-  --ca-teal-l:   #1A9688;
   --ca-text:     #0A1628;
   --ca-text-2:   #1C3A5C;
   --ca-text-3:   #546580;
@@ -81,6 +84,10 @@
 [data-theme="light"] .ca-badge--signed  { background: rgba(0,160,110,.1);  }
 [data-theme="light"] .ca-badge--final   { background: rgba(180,140,40,.12);}
 [data-theme="light"] .ca-badge--rejected{ background: rgba(220,40,40,.1);  }
+[data-theme="light"] .ca-badge--paid      { background: rgba(0,160,110,.1);  }
+[data-theme="light"] .ca-badge--cancelled { background: rgba(84,101,128,.1); }
+[data-theme="light"] .ca-badge--completed { background: rgba(0,160,110,.1);  }
+[data-theme="light"] .ca-badge--fee-required { background: rgba(30,120,230,.1); }
 
 /* Period tabs */
 [data-theme="light"] .ca-period-tab.active { background: #FFFFFF; box-shadow: 0 2px 8px rgba(10,22,40,.12); }
@@ -224,7 +231,7 @@ button { font-family: inherit; }
 .ca-avatar {
   width: 44px; height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--ca-teal) 0%, var(--ca-card) 100%);
+  background: linear-gradient(135deg, var(--ca-navy) 0%, var(--ca-card) 100%);
   display: flex; align-items: center; justify-content: center;
   font-weight: 800;
   font-size: 1rem;
@@ -413,7 +420,7 @@ button { font-family: inherit; }
   position: relative;
 }
 
-.ca-qa-icon--teal  { background: rgba(27,138,122,.18); border-color: rgba(27,138,122,.3); color: var(--ca-teal-l); }
+.ca-qa-icon--navy  { background: rgba(11,26,46,.18); border-color: rgba(11,26,46,.3); color: var(--ca-navy-light); }
 .ca-qa-icon--gold  { background: rgba(200,169,81,.15); border-color: rgba(200,169,81,.3); color: var(--ca-gold-l); }
 .ca-qa-icon--blue  { background: rgba(74,158,255,.15); border-color: rgba(74,158,255,.3); color: var(--ca-blue); }
 .ca-qa-icon--purple{ background: rgba(139,92,246,.15); border-color: rgba(139,92,246,.3); color: var(--ca-purple); }
@@ -444,7 +451,7 @@ button { font-family: inherit; }
 .ca-section__link {
   font-size: .75rem;
   font-weight: 600;
-  color: var(--ca-teal-l);
+  color: var(--ca-gold-l);
 }
 
 /* ── Transaction item ────────────────────────────────────────────── */
@@ -604,7 +611,7 @@ button { font-family: inherit; }
 
 .ca-loan-card__progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--ca-teal), var(--ca-gold));
+  background: linear-gradient(90deg, var(--ca-navy), var(--ca-gold));
   border-radius: 99px;
   transition: width .8s ease;
 }
@@ -763,8 +770,8 @@ button { font-family: inherit; }
 }
 
 .ca-step.done .ca-step__dot {
-  background: var(--ca-teal);
-  border-color: var(--ca-teal-l);
+  background: var(--ca-gold);
+  border-color: var(--ca-gold-l);
   color: #fff;
 }
 
@@ -842,7 +849,7 @@ button { font-family: inherit; }
 .ca-send-recipient__avatar {
   width: 48px; height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--ca-teal), var(--ca-card));
+  background: linear-gradient(135deg, var(--ca-navy), var(--ca-card));
   display: flex; align-items: center; justify-content: center;
   font-weight: 800;
   font-size: 1.1rem;
@@ -983,13 +990,13 @@ button { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: .5rem;
-  background: rgba(27,138,122,.18);
-  border: 1px solid rgba(27,138,122,.3);
+  background: rgba(200,169,81,.15);
+  border: 1px solid rgba(200,169,81,.3);
   border-radius: 99px;
   padding: .45rem .9rem;
   font-size: .78rem;
   font-weight: 600;
-  color: var(--ca-teal-l);
+  color: var(--ca-gold-l);
   cursor: pointer;
   transition: var(--ca-transition);
 }
@@ -1084,7 +1091,7 @@ button { font-family: inherit; }
   align-items: center;
   justify-content: center;
   gap: .5rem;
-  color: var(--ca-teal-l);
+  color: var(--ca-gold-l);
   font-size: .82rem;
   font-weight: 600;
   padding: .75rem;
@@ -1188,7 +1195,7 @@ button { font-family: inherit; }
 .ca-category-info { flex: 1; min-width: 0; }
 .ca-category-name  { font-size: .85rem; font-weight: 600; color: var(--ca-text); margin-bottom: .3rem; }
 .ca-category-bar   { height: 4px; background: var(--ca-border); border-radius: 99px; overflow: hidden; }
-.ca-category-fill  { height: 100%; border-radius: 99px; background: var(--cat-color, var(--ca-teal)); }
+.ca-category-fill  { height: 100%; border-radius: 99px; background: var(--cat-color, var(--ca-gold)); }
 .ca-category-amt   { font-size: .82rem; font-weight: 700; color: var(--ca-text-2); flex-shrink: 0; }
 
 /* ── Profile ─────────────────────────────────────────────────────── */
@@ -1200,7 +1207,7 @@ button { font-family: inherit; }
 .ca-profile-avatar {
   width: 80px; height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--ca-teal) 0%, var(--ca-card) 100%);
+  background: linear-gradient(135deg, var(--ca-navy) 0%, var(--ca-card) 100%);
   display: flex; align-items: center; justify-content: center;
   font-weight: 800;
   font-size: 1.75rem;
@@ -1307,7 +1314,7 @@ button { font-family: inherit; }
   transition: var(--ca-transition);
 }
 
-.ca-toggle input:checked + .ca-toggle__track { background: var(--ca-teal); border-color: var(--ca-teal-l); }
+.ca-toggle input:checked + .ca-toggle__track { background: var(--ca-gold); border-color: var(--ca-gold-l); }
 
 .ca-toggle__thumb {
   position: absolute;
@@ -1342,13 +1349,6 @@ button { font-family: inherit; }
   font-family: 'Inter', sans-serif;
   letter-spacing: .01em;
 }
-
-.ca-btn--primary {
-  background: linear-gradient(135deg, var(--ca-teal-l) 0%, #156e62 100%);
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(27,138,122,.3);
-}
-.ca-btn--primary:hover { filter: brightness(1.1); box-shadow: 0 8px 28px rgba(27,138,122,.4); }
 
 .ca-btn--gold {
   background: linear-gradient(135deg, var(--ca-gold), #a8722a);
@@ -1397,6 +1397,10 @@ button { font-family: inherit; }
 .ca-badge--signed   { background: rgba(0,200,150,.12);   color: var(--ca-positive); }
 .ca-badge--final    { background: rgba(200,169,81,.15);  color: var(--ca-gold-l); }
 .ca-badge--rejected { background: rgba(255,90,90,.12);   color: var(--ca-negative); }
+.ca-badge--paid      { background: rgba(0,200,150,.12);   color: var(--ca-positive); }
+.ca-badge--cancelled { background: rgba(122,144,170,.12); color: var(--ca-text-3); }
+.ca-badge--completed { background: rgba(0,200,150,.12);   color: var(--ca-positive); }
+.ca-badge--fee-required { background: rgba(74,158,255,.12); color: var(--ca-blue); }
 
 /* ── Empty state ──────────────────────────────────────────────────── */
 .ca-empty {
@@ -1518,7 +1522,7 @@ button { font-family: inherit; }
 
 /* Etat actif */
 .ca-nav-item.active {
-  color: #27C4A8;
+  color: var(--ca-gold-l);
 }
 
 .ca-nav-item.active i {
@@ -1534,8 +1538,8 @@ button { font-family: inherit; }
   right: 25%;
   height: 2.5px;
   border-radius: 0 0 6px 6px;
-  background: linear-gradient(90deg, #27C4A8, #1B8A7A);
-  box-shadow: 0 0 10px rgba(39,196,168,.5);
+  background: linear-gradient(90deg, var(--ca-gold-l), var(--ca-gold));
+  box-shadow: 0 0 10px rgba(200,169,81,.5);
 }
 
 /* ── Onglet central — FAB ───────────────────────────────────────── */
@@ -1564,7 +1568,7 @@ button { font-family: inherit; }
 }
 
 .ca-nav-item--center.active > span {
-  color: #27C4A8;
+  color: var(--ca-gold-l);
 }
 
 /* Le cercle FAB lui-meme */

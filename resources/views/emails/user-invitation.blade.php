@@ -13,6 +13,7 @@ $titles = [
     'lv' => 'Aktivizējiet savu kontu',
     'nl' => 'Activeer uw account',
     'pt' => 'Ative a sua conta',
+    'hr' => 'Aktivirajte svoj račun',
 ];
 $subs = [
     'fr' => 'Solberg Grupo — Espace client',
@@ -28,6 +29,7 @@ $subs = [
     'lv' => 'Solberg Grupo — Klienta zona',
     'nl' => 'Solberg Grupo — Klantomgeving',
     'pt' => 'Solberg Grupo — Área de cliente',
+    'hr' => 'Solberg Grupo — Klijentski prostor',
 ];
 $notices = [
     'fr' => 'Si vous n\'êtes pas à l\'origine de cette création de compte, vous pouvez ignorer cet email.',
@@ -43,6 +45,7 @@ $notices = [
     'lv' => 'Ja šī konta izveide nav notikusi pēc jūsu pieprasījuma, varat ignorēt šo e-pastu.',
     'nl' => 'Als u niet zelf om het aanmaken van dit account heeft gevraagd, kunt u deze e-mail negeren.',
     'pt' => 'Se não foi você que solicitou a criação desta conta, pode ignorar este email.',
+    'hr' => 'Ako niste vi pokrenuli otvaranje ovog računa, možete zanemariti ovu e-poruku.',
 ];
 $title  = $titles[$locale]  ?? $titles['fr'];
 $sub    = $subs[$locale]    ?? $subs['fr'];
@@ -68,7 +71,7 @@ $notice = $notices[$locale] ?? $notices['fr'];
 
   <p class="url-fallback">
     @php
-    $fallbacks = ['fr'=>'Si le bouton ne fonctionne pas, copiez ce lien :','en'=>'If the button does not work, copy this link:','es'=>'Si el botón no funciona, copie este enlace:','pl'=>'Jeśli przycisk nie działa, skopiuj ten link:','bg'=>'Ако бутонът не работи, копирайте тази връзка:','hu'=>'Ha a gomb nem működik, másolja be ezt a linket:','it'=>'Se il pulsante non funziona, copia questo link:','de'=>'Wenn die Schaltfläche nicht funktioniert, kopieren Sie diesen Link:','lt'=>'Jei mygtukas neveikia, nukopijuokite šią nuorodą:','ro'=>'Dacă butonul nu funcționează, copiați acest link:','lv'=>'Ja poga nedarbojas, nokopējiet šo saiti:','nl'=>'Als de knop niet werkt, kopieer dan deze link:','pt'=>'Se o botão não funcionar, copie este link:'];
+    $fallbacks = ['fr'=>'Si le bouton ne fonctionne pas, copiez ce lien :','en'=>'If the button does not work, copy this link:','es'=>'Si el botón no funciona, copie este enlace:','pl'=>'Jeśli przycisk nie działa, skopiuj ten link:','bg'=>'Ако бутонът не работи, копирайте тази връзка:','hu'=>'Ha a gomb nem működik, másolja be ezt a linket:','it'=>'Se il pulsante non funziona, copia questo link:','de'=>'Wenn die Schaltfläche nicht funktioniert, kopieren Sie diesen Link:','lt'=>'Jei mygtukas neveikia, nukopijuokite šią nuorodą:','ro'=>'Dacă butonul nu funcționează, copiați acest link:','lv'=>'Ja poga nedarbojas, nokopējiet šo saiti:','nl'=>'Als de knop niet werkt, kopieer dan deze link:','pt'=>'Se o botão não funcionar, copie este link:','hr'=>'Ako gumb ne radi, kopirajte ovu poveznicu:'];
     @endphp
     {{ $fallbacks[$locale] ?? $fallbacks['fr'] }}<br>
     <a href="{{ $activationUrl }}">{{ $activationUrl }}</a>

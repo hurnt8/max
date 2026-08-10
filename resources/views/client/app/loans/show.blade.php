@@ -16,20 +16,11 @@
   $stepKeys   = array_keys($steps);
   $currentIdx = array_search($loan->status, $stepKeys);
 
-  [$accentColor, $badgeCls] = match($loan->status){
-    'draft'           => ['#94a3b8', 'ca-badge--draft'],
-    'pending'         => ['#f59e0b', 'ca-badge--pending'],
-    'validated'       => ['#2BBAA8', 'ca-badge--valid'],
-    'contract_sent'   => ['#60a5fa', 'ca-badge--sent'],
-    'contract_signed' => ['#a78bfa', 'ca-badge--signed'],
-    'finalized'       => ['#C8A951', 'ca-badge--final'],
-    'rejected'        => ['#f87171', 'ca-badge--rejected'],
-    default           => ['#94a3b8', 'ca-badge--draft'],
-  };
+  $accentColor = config("solberg.status_badges.loan.{$loan->status}.color", '#7A90AA');
 @endphp
 
 @section('topbar_action')
-<span class="ca-badge {{ $badgeCls }}" style="font-size:.62rem">{{ $loan->statusLabel() }}</span>
+<x-status-badge domain="loan" :status="$loan->status" :label="$loan->statusLabel()" style="font-size:.62rem" />
 @endsection
 
 @push('styles')
@@ -111,16 +102,16 @@
   background:var(--ca-bg3);border:1.5px solid var(--ca-border);
   color:var(--ca-text-3);
 }
-.ds-step.done .ds-step__dot{background:rgba(27,138,122,.15);border-color:var(--ca-teal-l);color:var(--ca-teal-l)}
-.ds-step.current .ds-step__dot{background:var(--ca-teal-l);border-color:var(--ca-teal-l);color:#fff;box-shadow:0 0 12px rgba(27,138,122,.35)}
-.ds-step:not(:last-child).done::after{background:var(--ca-teal-l);opacity:.4}
+.ds-step.done .ds-step__dot{background:rgba(200,169,81,.15);border-color:var(--ca-gold-l);color:var(--ca-gold-l)}
+.ds-step.current .ds-step__dot{background:var(--ca-gold-l);border-color:var(--ca-gold-l);color:#fff;box-shadow:0 0 12px rgba(200,169,81,.35)}
+.ds-step:not(:last-child).done::after{background:var(--ca-gold-l);opacity:.4}
 .ds-step__info{padding-top:.4rem}
 .ds-step__label{font-size:.825rem;font-weight:600;color:var(--ca-text-3)}
 .ds-step.done    .ds-step__label{color:var(--ca-text-2)}
 .ds-step.current .ds-step__label{color:var(--ca-text);font-weight:700}
 .ds-step__tag{display:inline-block;font-size:.6rem;padding:.1rem .5rem;border-radius:999px;margin-top:.25rem;font-weight:700}
-.ds-step__tag--done{background:rgba(27,138,122,.12);color:var(--ca-teal-l)}
-.ds-step__tag--cur {background:rgba(27,138,122,.2);color:var(--ca-teal-l)}
+.ds-step__tag--done{background:rgba(200,169,81,.12);color:var(--ca-gold-l)}
+.ds-step__tag--cur {background:rgba(200,169,81,.2);color:var(--ca-gold-l)}
 
 /* ── Detail card ── */
 .ds-detail{background:var(--ca-bg2);border:1px solid var(--ca-border);border-radius:18px;margin:0 1.25rem;overflow:hidden}

@@ -13,6 +13,7 @@ $docTypes = [
     'lv' => ['passport'=>'Pase','id_card'=>'Personu apliecinošs dokuments','residence_permit'=>'Uzturēšanās atļauja','driving_license'=>'Vadītāja apliecība'],
     'nl' => ['passport'=>'Paspoort','id_card'=>'Identiteitskaart','residence_permit'=>'Verblijfsvergunning','driving_license'=>'Rijbewijs'],
     'pt' => ['passport'=>'Passaporte','id_card'=>'Cartão de cidadão','residence_permit'=>'Título de residência','driving_license'=>'Carta de condução'],
+    'hr' => ['passport'=>'Putovnica','id_card'=>'Osobna iskaznica','residence_permit'=>'Dozvola boravka','driving_license'=>'Vozačka dozvola'],
 ];
 $texts = [
     'fr' => [
@@ -183,6 +184,19 @@ $texts = [
         'noreply'   => 'Este email foi enviado a partir de um endereço no-reply. Não responda diretamente.',
         'closing'   => 'Atenciosamente,',
         'team'      => 'A equipa Solberg Grupo',
+    ],
+    'hr' => [
+        'title'     => 'Dokumenti primljeni',
+        'sub'       => 'Solberg Grupo',
+        'greeting'  => 'Pozdrav '.$data['name'].',',
+        'body'      => 'Uspješno smo primili vaše dokumente (adresu i osobni dokument). Naš tim će ih pregledati i javiti vam se u roku od <strong>24 sata</strong>.',
+        'lbl_name'  => 'Ime',
+        'lbl_doc'   => 'Vrsta dokumenta',
+        'lbl_addr'  => 'Adresa',
+        'footer'    => 'Zahvaljujemo na povjerenju i ostajemo na raspolaganju za sva pitanja.',
+        'noreply'   => 'Ova e-poruka poslana je s adrese na koju se ne odgovara (no-reply). Molimo ne odgovarajte izravno.',
+        'closing'   => 'S poštovanjem,',
+        'team'      => 'Tim Solberg Grupo',
     ],
 ];
 $t       = $texts[$lang] ?? $texts['fr'];

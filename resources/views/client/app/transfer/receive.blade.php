@@ -139,7 +139,7 @@
 
 {{-- Actions ── --}}
 <div class="ca-btn-wrap">
-  <button class="ca-btn ca-btn--primary"
+  <button class="ca-btn ca-btn--gold"
           onclick="if(navigator.share){navigator.share({title:'Mes coordonnées Solberg Grupo',text:`{{ addslashes($shareText) }}`}).catch(()=>{})}else{copyIban(null,'{{ addslashes($shareText) }}',true)}">
     <i class="fas fa-share-nodes"></i> {{ __('app.share_details') }}
   </button>

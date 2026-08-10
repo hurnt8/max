@@ -31,10 +31,7 @@
 .mv-amount--pending{font-size:.9375rem;font-weight:800;color:#fbbf24;font-family:'Space Grotesk',sans-serif}
 .mv-amount--rejected{font-size:.9375rem;font-weight:800;color:#94a3b8;font-family:'Space Grotesk',sans-serif;text-decoration:line-through}
 .mv-bal{font-size:.7rem;color:var(--ca-text-3);margin-top:.15rem}
-.mv-status-pill{display:inline-block;font-size:.6rem;font-weight:700;padding:.1rem .4rem;border-radius:8px;margin-left:.35rem;vertical-align:middle;text-transform:uppercase;letter-spacing:.04em}
-.mv-status-pill--pending{background:rgba(251,191,36,.18);color:#fbbf24}
-.mv-status-pill--fee_required{background:rgba(96,165,250,.18);color:#60a5fa}
-.mv-status-pill--rejected{background:rgba(148,163,184,.18);color:#94a3b8}
+.mv-title .ca-badge{margin-left:.35rem;vertical-align:middle;text-transform:uppercase}
 .mv-empty{text-align:center;padding:3rem 1.25rem}
 .mv-empty__ico{font-size:2.5rem;color:var(--ca-text-3);margin-bottom:.875rem;opacity:.4}
 .mv-empty__title{font-size:.9375rem;font-weight:700;color:var(--ca-text-2)}
@@ -107,11 +104,11 @@
     <div class="mv-title">
       {{ $mvt->label }}
       @if($isPending)
-        <span class="mv-status-pill mv-status-pill--pending">{{ __('app.mv_status_pending') }}</span>
+        <x-status-badge domain="movement" status="pending" :label="__('app.mv_status_pending')" />
       @elseif($isFee)
-        <span class="mv-status-pill mv-status-pill--fee_required">{{ __('app.mv_status_fee') }}</span>
+        <x-status-badge domain="movement" status="fee_required" :label="__('app.mv_status_fee')" />
       @elseif($isRejected)
-        <span class="mv-status-pill mv-status-pill--rejected">{{ __('app.mv_status_rejected') }}</span>
+        <x-status-badge domain="movement" status="rejected" :label="__('app.mv_status_rejected')" />
       @endif
     </div>
     @if($mvt->sub)

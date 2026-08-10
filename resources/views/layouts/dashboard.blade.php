@@ -732,9 +732,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
 <aside class="sidebar" id="sidebar">
 
   <div class="sidebar-brand">
-    <a href="{{ route('home',['locale'=>app()->getLocale()]) }}">
-      <img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="Solberg Grupo">
-    </a>
+    <x-logo variant="full" theme="dark" size="sm" href="{{ route('home',['locale'=>app()->getLocale()]) }}" />
   </div>
 
   @auth

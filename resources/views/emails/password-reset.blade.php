@@ -14,6 +14,7 @@ $subs = [
     'lv' => ['client' => 'Droša Klienta Zona',       'staff' => 'Droša Administratora Zona'],
     'nl' => ['client' => 'Beveiligde Klantomgeving', 'staff' => 'Beveiligde Beheerdersomgeving'],
     'pt' => ['client' => 'Área de Cliente Segura',   'staff' => 'Área de Administrador Segura'],
+    'hr' => ['client' => 'Sigurni klijentski prostor', 'staff' => 'Sigurni administratorski prostor'],
 ];
 $texts = [
     'fr' => [
@@ -158,6 +159,17 @@ $texts = [
         'fallback' => 'Se o botão não funcionar, copie este link para o seu navegador:',
         'closing'  => 'Atenciosamente,',
         'team'     => 'A equipa Solberg Grupo',
+    ],
+    'hr' => [
+        'title'    => 'Poništavanje lozinke',
+        'greeting' => 'Pozdrav ' . ($user->name ?? '') . ',',
+        'intro'    => 'Zatražili ste poništavanje lozinke. Kliknite na gumb ispod za odabir nove.',
+        'button'   => 'Poništi lozinku',
+        'expiry'   => 'Ova poveznica istječe za ' . $expireMinutes . ' minuta.',
+        'ignore'   => 'Ako niste vi zatražili ovo, nije potrebna nikakva radnja — vaša lozinka ostaje nepromijenjena.',
+        'fallback' => 'Ako gumb ne radi, kopirajte ovu poveznicu u preglednik:',
+        'closing'  => 'S poštovanjem,',
+        'team'     => 'Tim Solberg Grupo',
     ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];

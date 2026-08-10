@@ -136,7 +136,7 @@
   padding-top: .75rem; margin-top: .25rem;
 }
 .invd-totals__row--total .invd-totals__val {
-  color: var(--ca-teal-l);
+  color: var(--ca-gold-l);
   font-family: 'Space Grotesk', sans-serif; font-size: 1rem;
 }
 

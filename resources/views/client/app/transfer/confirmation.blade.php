@@ -80,7 +80,7 @@
   display:flex;align-items:flex-start;gap:.625rem;
   text-align:left;margin-bottom:1.5rem;
 }
-.trf-confirm__info i{color:var(--ca-teal-l);flex-shrink:0;margin-top:.1rem}
+.trf-confirm__info i{color:var(--ca-gold-l);flex-shrink:0;margin-top:.1rem}
 .trf-confirm__info-text{font-size:.78rem;color:var(--ca-text-3);line-height:1.5}
 </style>
 @endpush
@@ -153,7 +153,7 @@
 </div>
 
 <div class="ca-btn-wrap" style="padding:0 1.25rem 1rem">
-  <a href="{{ route('client.app.movements') }}" class="ca-btn ca-btn--primary">
+  <a href="{{ route('client.app.movements') }}" class="ca-btn ca-btn--gold">
     <i class="fas fa-list-ul"></i> {{ __('app.transfer_pending_view_movements') }}
   </a>
 </div>

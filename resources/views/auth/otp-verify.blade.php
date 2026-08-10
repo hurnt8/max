@@ -337,7 +337,7 @@ html,body{
 <div id="ld" role="status">
   <div class="ld-bar"></div>
   <div class="ld-logo">
-    <img src="/images/icon-192.png" alt="Solberg Grupo">
+    <x-logo variant="icon" theme="dark" size="md" />
     <div class="ld-ring"></div>
   </div>
   <p class="ld-lbl">{{ __('auth.otp_verifying') ?? 'Vérification…' }}</p>
@@ -362,10 +362,7 @@ html,body{
     <a href="{{ $backUrl ?? '/login' }}" class="topbar__back">
       <i class="fas fa-chevron-left"></i> {{ __('auth.otp_back') }}
     </a>
-    <a href="{{ url('/') }}" class="topbar__logo">
-      <img src="{{ asset('assets/images/logo-transparent-icon.png') }}"
-           onerror="this.style.display='none'" alt="Solberg Grupo">
-    </a>
+    <x-logo variant="icon" theme="light" size="sm" href="{{ url('/') }}" class="topbar__logo" />
   </div>
 
   {{-- Scrollable content --}}

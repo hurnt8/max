@@ -182,6 +182,20 @@ $texts = [
         'closing'    => 'Atenciosamente,',
         'team'       => 'A equipa Solberg Grupo',
     ],
+    'hr' => [
+        'title'      => 'Zahtjev za kredit primljen',
+        'sub'        => 'Solberg Grupo',
+        'greeting'   => 'Pozdrav '.$data['name'].',',
+        'body'       => 'Zaprimili smo vaš zahtjev za kredit u iznosu od <strong>'.number_format($data['amount'], 0, ',', ' ').' '.($data['currency'] ?? 'EUR').'</strong> na <strong>'.$data['darly'].' mjeseci</strong>. Trenutno ga obrađuje naš tim.',
+        'cond_title' => 'Uvjeti prihvatljivosti',
+        'cond_body'  => 'Za dobivanje kredita potrebno je imati najmanje 18 godina, stabilan mjesečni prihod i mogućnost otplate prema utvrđenim uvjetima.',
+        'btn_intro'  => 'Za dovršetak vašeg zahtjeva kliknite na gumb ispod kako biste nam poslali svoju punu adresu i presliku osobne iskaznice.',
+        'btn_label'  => 'Dovrši moj zahtjev',
+        'footer'     => 'Kontaktirat ćemo vas u najkraćem mogućem roku. Hvala vam na povjerenju.',
+        'noreply'    => 'Ova e-poruka poslana je s adrese na koju se ne odgovara (no-reply). Molimo ne odgovarajte izravno.',
+        'closing'    => 'S poštovanjem,',
+        'team'       => 'Tim Solberg Grupo',
+    ],
 ];
 $t = $texts[$lang] ?? $texts['fr'];
 @endphp

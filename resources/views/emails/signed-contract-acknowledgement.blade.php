@@ -117,6 +117,15 @@ $texts = [
         'closing' => 'Atenciosamente,',
         'team'    => 'A equipa Solberg Grupo',
     ],
+    'hr' => [
+        'title'   => 'Ugovor br. '.$loan->reference.' primljen',
+        'sub'     => 'Potvrda primitka',
+        'greeting'=> 'Poštovani/Poštovana '.$loan->name.',',
+        'intro'   => 'Potvrđujemo primitak vašeg potpisanog ugovora o kreditu (Referenca: <strong>'.$loan->reference.'</strong>).',
+        'next'    => 'Naš tim za upravljanje pristupit će konačnoj obradi vašeg dosjea. Podaci o računu bit će vam dostavljeni u roku od <strong>24 do 48 sati</strong>.',
+        'closing' => 'S poštovanjem,',
+        'team'    => 'Tim Solberg Grupo',
+    ],
 ];
 $t = $texts[$locale] ?? $texts['fr'];
 @endphp

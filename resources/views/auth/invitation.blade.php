@@ -98,12 +98,17 @@ $salutationName = ($gender === 'N') ? explode(' ', $user->name)[0] : $user->name
 :root{
   --bg:   #080C18;
   --inp:  #141C2E;
-  --cyan: #0DCFDC;
-  --cyan2:#09B5C8;
+  --navy: #0B1A2E;
+  --navy2:#112237;
+  --gold: #C8A951;
+  --gold2:#A8893A;
   --text: #FFFFFF;
   --sub:  rgba(255,255,255,.52);
   --muted:rgba(255,255,255,.28);
   --bdr:  rgba(255,255,255,.09);
+  /* Compat: quelques accents ponctuels référencent encore --cyan/--cyan2 */
+  --cyan: #0DCFDC;
+  --cyan2:#09B5C8;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
@@ -125,12 +130,12 @@ a{text-decoration:none;color:inherit}
 .orb{position:absolute;border-radius:50%;filter:blur(90px)}
 .orb-1{
   width:520px;height:520px;top:-15%;right:-10%;
-  background:radial-gradient(circle,rgba(13,207,220,.11) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(200,169,81,.11) 0%,transparent 65%);
   animation:orbf 10s ease-in-out infinite alternate;
 }
 .orb-2{
   width:380px;height:380px;bottom:-15%;left:-8%;
-  background:radial-gradient(circle,rgba(13,207,220,.06) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(200,169,81,.06) 0%,transparent 65%);
   animation:orbf 14s ease-in-out infinite alternate-reverse;
 }
 @keyframes orbf{from{transform:scale(1)}to{transform:scale(1.1) translate(2%,3%)}}
@@ -145,22 +150,20 @@ a{text-decoration:none;color:inherit}
 /* Logo box */
 .logo-box{
   width:74px;height:74px;border-radius:22px;
-  background:linear-gradient(135deg,var(--cyan),var(--cyan2));
+  background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.375rem;
-  box-shadow:0 0 36px rgba(13,207,220,.3);
+  box-shadow:0 0 36px rgba(11,26,46,.3);
 }
-.logo-box img{height:40px;object-fit:contain}
-.logo-box span{font-family:'Inter',sans-serif;font-size:2rem;font-weight:800;color:#080C18;line-height:1}
 
 /* Avatar */
 .avatar{
   width:60px;height:60px;border-radius:50%;
-  background:linear-gradient(135deg,var(--cyan),var(--cyan2));
+  background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;
-  color:#080C18;margin:0 auto 1rem;
-  box-shadow:0 0 24px rgba(13,207,220,.3);
+  color:var(--gold);margin:0 auto 1rem;
+  box-shadow:0 0 24px rgba(11,26,46,.3);
 }
 
 /* Heading */
@@ -174,13 +177,13 @@ a{text-decoration:none;color:inherit}
 /* Info box */
 .info-box{
   display:flex;gap:.75rem;align-items:flex-start;
-  background:rgba(13,207,220,.07);
-  border:1px solid rgba(13,207,220,.18);
+  background:rgba(200,169,81,.07);
+  border:1px solid rgba(200,169,81,.18);
   border-radius:12px;padding:.875rem 1rem;margin-bottom:1.5rem;
 }
-.info-box i{color:var(--cyan);font-size:.88rem;flex-shrink:0;margin-top:.15rem}
+.info-box i{color:var(--gold);font-size:.88rem;flex-shrink:0;margin-top:.15rem}
 .info-box p{font-size:.77rem;color:rgba(255,255,255,.65);line-height:1.6}
-.info-box strong{color:var(--cyan);font-weight:600}
+.info-box strong{color:var(--gold);font-weight:600}
 
 /* Error */
 .ferr{
@@ -206,8 +209,8 @@ a{text-decoration:none;color:inherit}
   outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
 }
 .finput::placeholder{color:rgba(255,255,255,.2)}
-.finput:focus{border-color:var(--cyan);background:#161E30;box-shadow:0 0 0 3.5px rgba(13,207,220,.15)}
-.finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--cyan)}
+.finput:focus{border-color:var(--navy);background:#161E30;box-shadow:0 0 0 3.5px rgba(11,26,46,.25)}
+.finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--gold)}
 .finput.err{border-color:#ef4444}
 .finput[readonly]{
   color:rgba(255,255,255,.4);cursor:not-allowed;
@@ -225,23 +228,23 @@ a{text-decoration:none;color:inherit}
 .strength-fill{height:100%;border-radius:2px;transition:width .3s,background .3s;width:0}
 .strength-txt{font-size:.68rem;color:var(--muted);margin-top:.3rem;min-height:1em;transition:color .2s}
 
-/* Cyan pill button */
+/* Gold pill button */
 .fbtn{
   width:100%;padding:.92rem 1.5rem;border:none;border-radius:999px;
   font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.625rem;
-  background:linear-gradient(90deg,var(--cyan) 0%,var(--cyan2) 100%);
-  color:#080C18;letter-spacing:.01em;
-  box-shadow:0 6px 28px rgba(13,207,220,.35),0 2px 8px rgba(0,0,0,.3);
+  background:linear-gradient(90deg,var(--gold) 0%,var(--gold2) 100%);
+  color:var(--navy);letter-spacing:.01em;
+  box-shadow:0 6px 28px rgba(200,169,81,.35),0 2px 8px rgba(0,0,0,.3);
   transition:filter .2s,box-shadow .2s,transform .1s;margin-top:1.25rem;
 }
-.fbtn:hover{filter:brightness(1.08);box-shadow:0 8px 36px rgba(13,207,220,.5)}
+.fbtn:hover{filter:brightness(1.08);box-shadow:0 8px 36px rgba(200,169,81,.5)}
 .fbtn:active{transform:scale(.975)}
 .fbtn:disabled{opacity:.6;cursor:not-allowed;filter:none}
 
 /* Footer link */
 .foot{text-align:center;font-size:.76rem;color:var(--muted);margin-top:1.25rem}
-.foot a{color:var(--cyan);font-weight:600;transition:opacity .18s}
+.foot a{color:var(--gold);font-weight:600;transition:opacity .18s}
 .foot a:hover{opacity:.75}
 
 /* Copyright */
@@ -265,10 +268,7 @@ a{text-decoration:none;color:inherit}
 
   {{-- Logo --}}
   <div class="logo-box">
-    <img src="{{ asset('assets/images/logo-white-icon.png') }}"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-         alt="Solberg Grupo">
-    <span style="display:none">SG</span>
+    <x-logo variant="icon" theme="dark" size="md" />
   </div>
 
   {{-- Avatar + Heading --}}
@@ -361,7 +361,7 @@ a{text-decoration:none;color:inherit}
 <script>
 const strengths = @json($t['strengths']);
 const strPh     = @json($t['str_ph']);
-const colors    = ['','#ef4444','#f97316','#eab308','#22c55e','#0DCFDC'];
+const colors    = ['','#ef4444','#f97316','#eab308','#22c55e','#C8A951'];
 const widths    = ['0%','25%','50%','75%','90%','100%'];
 
 function tglPwd(id, btn) {

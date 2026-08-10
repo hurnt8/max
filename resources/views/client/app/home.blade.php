@@ -21,7 +21,7 @@
       </button>
       <div x-show="open" @click.outside="close()" x-transition
            style="position:absolute;right:0;top:48px;background:var(--ca-bg4);border:1px solid var(--ca-border);border-radius:14px;min-width:144px;overflow:hidden;z-index:500;box-shadow:0 12px 40px rgba(0,0,0,.45)">
-        @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','bg'=>'Български','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuvių','ro'=>'Română','lv'=>'Latviešu','nl'=>'Nederlands','pt'=>'Português'] as $lc => $label)
+        @foreach(['fr'=>'Français','en'=>'English','pl'=>'Polski','es'=>'Español','bg'=>'Български','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuvių','ro'=>'Română','lv'=>'Latviešu','nl'=>'Nederlands','pt'=>'Português','hr'=>'Hrvatski'] as $lc => $label)
         <form method="POST" action="{{ route('client.app.locale') }}">
           @csrf<input type="hidden" name="locale" value="{{ $lc }}">
           <button type="submit" style="width:100%;padding:.6rem 1rem;background:none;border:none;color:{{ app()->getLocale()===$lc?'var(--ca-teal-l)':'var(--ca-text-2)' }};font-size:.82rem;text-align:left;cursor:pointer;font-family:inherit;font-weight:{{ app()->getLocale()===$lc?'700':'400' }}">
@@ -54,7 +54,7 @@
 .h-header__actions{ display:flex;gap:.5rem }
 .h-avatar{
   width:46px;height:46px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--ca-teal),#0B1A2E);
+  background:linear-gradient(135deg,var(--ca-navy-light),#0B1A2E);
   border:2.5px solid rgba(200,169,81,.45);
   box-shadow:0 0 0 4px rgba(200,169,81,.1);
   display:flex;align-items:center;justify-content:center;
@@ -206,7 +206,7 @@
   transition:transform .14s,box-shadow .14s;
 }
 .h-action:active .h-action__ico{ transform:scale(.91) }
-.h-action__ico--teal  { background:rgba(200,169,81,.2);  border:1px solid rgba(200,169,81,.35);  color:var(--ca-teal-l);    box-shadow:0 4px 14px rgba(200,169,81,.18) }
+.h-action__ico--teal  { background:rgba(200,169,81,.2);  border:1px solid rgba(200,169,81,.35);  color:var(--ca-gold-l);    box-shadow:0 4px 14px rgba(200,169,81,.18) }
 .h-action__ico--green { background:rgba(0,200,150,.15);  border:1px solid rgba(0,200,150,.3);    color:var(--ca-positive);  box-shadow:0 4px 14px rgba(0,200,150,.16) }
 .h-action__ico--blue  { background:rgba(74,158,255,.15); border:1px solid rgba(74,158,255,.3);   color:var(--ca-blue);      box-shadow:0 4px 14px rgba(74,158,255,.14) }
 .h-action__ico--purple{ background:rgba(139,92,246,.15); border:1px solid rgba(139,92,246,.3);   color:var(--ca-purple);    box-shadow:0 4px 14px rgba(139,92,246,.14) }
@@ -233,7 +233,7 @@
   height:3px;border-radius:16px 16px 0 0;
 }
 .h-stat--def::before { background:linear-gradient(90deg,var(--ca-text-3),var(--ca-bg4)) }
-.h-stat--teal::before{ background:linear-gradient(90deg,var(--ca-teal-l),#A8893A) }
+.h-stat--teal::before{ background:linear-gradient(90deg,var(--ca-gold-l),#A8893A) }
 .h-stat--amb::before { background:linear-gradient(90deg,var(--ca-amber),#C87800) }
 .h-stat__num{
   font-family:'Inter',sans-serif;
@@ -241,7 +241,7 @@
   line-height:1;margin-bottom:.3rem;
 }
 .h-stat--def  .h-stat__num{ color:var(--ca-text) }
-.h-stat--teal .h-stat__num{ color:var(--ca-teal-l) }
+.h-stat--teal .h-stat__num{ color:var(--ca-gold-l) }
 .h-stat--amb  .h-stat__num{ color:var(--ca-amber) }
 .h-stat__lbl{
   font-size:.63rem;font-weight:600;
@@ -256,7 +256,7 @@
 }
 .h-section__title{ font-size:.85rem;font-weight:700;color:var(--ca-text) }
 .h-section__link{
-  font-size:.75rem;font-weight:600;color:var(--ca-teal-l);
+  font-size:.75rem;font-weight:600;color:var(--ca-gold-l);
   display:inline-flex;align-items:center;gap:.3rem;
   transition:opacity .18s;
 }
@@ -298,18 +298,6 @@
 .h-txn__amount--neg{ color:var(--ca-negative) }
 .h-txn__amount--neu{ color:var(--ca-text) }
 .h-txn__date{ font-size:.65rem;color:var(--ca-text-3);margin-top:.18rem }
-
-/* ── Badge inside transactions ── */
-.h-badge{
-  display:inline-flex;align-items:center;
-  padding:.15rem .55rem;border-radius:999px;
-  font-size:.62rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:.04em;
-}
-.h-badge--loan   { background:rgba(200,169,81,.18); color:var(--ca-teal-l) }
-.h-badge--pending{ background:rgba(245,158,11,.15); color:var(--ca-amber) }
-.h-badge--signed { background:rgba(74,158,255,.15); color:var(--ca-blue) }
-.h-badge--final  { background:rgba(200,169,81,.15); color:var(--ca-gold-l) }
 
 /* ── Empty state ── */
 .h-empty{
@@ -537,7 +525,7 @@
     <div class="h-txn__info">
       <div class="h-txn__title">{{ $loan->reference }}</div>
       <div class="h-txn__sub">
-        <span class="h-badge h-badge--pending">{{ $loan->statusLabel() }}</span>
+        <x-status-badge domain="loan" :status="$loan->status" :label="$loan->statusLabel()" />
       </div>
     </div>
     <div class="h-txn__right">

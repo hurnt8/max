@@ -47,7 +47,7 @@
 /* ── Section header ── */
 .trf-section{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.25rem .625rem}
 .trf-section__title{font-size:.85rem;font-weight:700;color:var(--ca-text)}
-.trf-section__link{font-size:.75rem;font-weight:600;color:var(--ca-teal-l);display:inline-flex;align-items:center;gap:.3rem}
+.trf-section__link{font-size:.75rem;font-weight:600;color:var(--ca-gold-l);display:inline-flex;align-items:center;gap:.3rem}
 
 /* ── Transfer list ── */
 .trf-list{padding:0 1.25rem;display:flex;flex-direction:column;gap:.5rem}
@@ -76,12 +76,7 @@
 .trf-item__amt--muted{color:var(--ca-text-3)}
 .trf-item__date{font-size:.67rem;color:var(--ca-text-3);margin-top:.15rem}
 
-/* ── Status pill ── */
-.trf-pill{display:inline-block;font-size:.6rem;font-weight:700;padding:.1rem .45rem;border-radius:999px;text-transform:uppercase;letter-spacing:.04em;margin-top:.2rem}
-.trf-pill--pending{background:rgba(245,158,11,.18);color:#f59e0b}
-.trf-pill--fee    {background:rgba(96,165,250,.18);color:#60a5fa}
-.trf-pill--done   {background:rgba(74,222,128,.15);color:#4ade80}
-.trf-pill--rej    {background:rgba(148,163,184,.15);color:#94a3b8}
+.trf-item__body .ca-badge{margin-top:.2rem;text-transform:uppercase}
 
 /* ── Empty ── */
 .trf-empty{text-align:center;padding:2.5rem 1rem}
@@ -170,13 +165,13 @@
       <div class="trf-item__name">{{ $t->beneficiary_name ?? '—' }}</div>
       <div class="trf-item__ref">{{ $t->reference }}</div>
       @if($isPending)
-        <span class="trf-pill trf-pill--pending">En attente de validation</span>
+        <x-status-badge domain="movement" status="pending" label="En attente de validation" />
       @elseif($isFee)
-        <span class="trf-pill trf-pill--fee">Frais requis</span>
+        <x-status-badge domain="movement" status="fee_required" label="Frais requis" />
       @elseif($isDone)
-        <span class="trf-pill trf-pill--done">Validé</span>
+        <x-status-badge domain="movement" status="completed" label="Validé" />
       @elseif($isRej)
-        <span class="trf-pill trf-pill--rej">Rejeté</span>
+        <x-status-badge domain="movement" status="rejected" label="Rejeté" />
       @endif
     </div>
     <div class="trf-item__right">

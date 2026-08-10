@@ -27,9 +27,7 @@ table{border-collapse:collapse}
 .wrap{max-width:580px;margin:32px auto;background:#FFFFFF;border-radius:14px;overflow:hidden;border:1px solid #E5E7EB}
 /* ── Header ── */
 .hdr{background:#0B1A2E;padding:28px 44px;text-align:center}
-.logo-outer{width:60px;height:60px;border-radius:14px;margin:0 auto 14px;overflow:hidden;background:#C8A951;display:inline-flex;align-items:center;justify-content:center}
-.logo-outer img{width:60px;height:60px;object-fit:cover;display:block}
-.logo-letter{font-family:Georgia,'Times New Roman',serif;font-size:2rem;font-weight:900;color:#0B1A2E;line-height:1;display:none}
+.logo-outer{margin:0 auto 14px;display:inline-flex}
 .hdr-title{font-size:1.2rem;font-weight:700;color:#FFFFFF;margin:0 0 4px;letter-spacing:-.01em}
 .hdr-sub{font-size:.74rem;color:rgba(255,255,255,.55);margin:0;letter-spacing:.03em;text-transform:uppercase}
 /* ── Body ── */
@@ -87,7 +85,7 @@ p.closing strong{color:#111827;font-size:.92rem}
   {{-- ── Header ── --}}
   <div class="hdr">
     <div class="logo-outer">
-      <img src="{{ url('images/icon-192.png') }}" alt="Solberg Grupo" width="60" height="60">
+      <x-logo variant="icon" theme="dark" size="lg" />
     </div>
     <h1 class="hdr-title">{{ $title }}</h1>
     @if($subtitle)

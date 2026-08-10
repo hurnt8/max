@@ -152,7 +152,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
   <div class="col-lg-5 d-none d-lg-flex">
     <div class="auth-left w-100">
       <div class="auth-left__logo">
-        <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="Solberg Grupo"></a>
+        <x-logo variant="full" theme="dark" href="{{ url('/') }}" />
       </div>
       <div class="auth-left__body">
         <div class="staff-badge">
@@ -176,9 +176,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
         <a href="{{ $backUrl ?? route('staff.login') }}" class="auth-topbar__back">
           <i class="fas fa-arrow-left"></i> {{ __('auth.otp_back') }}
         </a>
-        <a href="{{ url('/') }}" class="auth-topbar__logo d-lg-none">
-          <img src="{{ asset('assets/images/logo-transparent-icon.png') }}" alt="Solberg Grupo">
-        </a>
+        <x-logo variant="icon" theme="light" size="sm" href="{{ url('/') }}" class="auth-topbar__logo d-lg-none" />
       </div>
 
       <div class="auth-form-wrap">

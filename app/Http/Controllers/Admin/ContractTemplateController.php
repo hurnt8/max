@@ -45,7 +45,7 @@ class ContractTemplateController extends Controller
         $data = $request->validate([
             'name'       => 'required|string|max:255',
             'is_default' => 'boolean',
-            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
+            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt,hr',
         ]);
 
         // Le modèle par défaut a un impact global (utilisé pour tout dossier sans
@@ -98,7 +98,7 @@ class ContractTemplateController extends Controller
         $data = $request->validate([
             'name'       => 'required|string|max:255',
             'is_default' => 'boolean',
-            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt',
+            'locale'     => 'nullable|in:fr,en,pl,es,bg,hu,it,de,lt,ro,lv,nl,pt,hr',
         ]);
 
         $isSuperAdmin = Auth::user()->hasRole('super-admin');

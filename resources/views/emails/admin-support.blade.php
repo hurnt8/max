@@ -13,6 +13,7 @@ $texts = [
     'lv' => ['title'=>'Jauns atbalsta ziņojums','sub'=>'Solberg Grupo atbalsts','intro'=>'jums nosūtīja ziņojumu, izmantojot Solberg Grupo atbalstu.','lbl_date'=>'Saņemts','btn'=>'Atbildēt klientam','closing'=>'Ar cieņu,','team'=>'Solberg Grupo komanda'],
     'nl' => ['title'=>'Nieuw supportbericht','sub'=>'Solberg Grupo Support','intro'=>'heeft u een bericht gestuurd via de Solberg Grupo-support.','lbl_date'=>'Ontvangen op','btn'=>'Klant beantwoorden','closing'=>'Met vriendelijke groet,','team'=>'Het team van Solberg Grupo'],
     'pt' => ['title'=>'Nova mensagem de suporte','sub'=>'Suporte Solberg Grupo','intro'=>'enviou-lhe uma mensagem através do suporte Solberg Grupo.','lbl_date'=>'Recebido em','btn'=>'Responder ao cliente','closing'=>'Atenciosamente,','team'=>'A equipa Solberg Grupo'],
+    'hr' => ['title'=>'Nova poruka podrške','sub'=>'Podrška Solberg Grupo','intro'=>'poslao/la vam je poruku putem podrške Solberg Grupo.','lbl_date'=>'Primljeno dana','btn'=>'Odgovori klijentu','closing'=>'S poštovanjem,','team'=>'Tim Solberg Grupo'],
 ];
 $t = $texts[$locale ?? 'fr'] ?? $texts['fr'];
 @endphp

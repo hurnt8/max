@@ -226,7 +226,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
     <div class="auth-left w-100">
 
       <div class="auth-left__logo">
-        <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo-white-icon.png') }}" alt="Solberg Grupo"></a>
+        <x-logo variant="full" theme="dark" href="{{ url('/') }}" />
       </div>
 
       <div class="auth-left__body">
@@ -264,9 +264,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
           <i class="fas fa-arrow-left"></i> {{ __('auth.back_site') }}
         </a>
 
-        <a href="{{ url('/') }}" class="auth-topbar__logo d-lg-none">
-          <img src="{{ asset('assets/images/logo-transparent-icon.png') }}" alt="Solberg Grupo">
-        </a>
+        <x-logo variant="icon" theme="light" size="sm" href="{{ url('/') }}" class="auth-topbar__logo d-lg-none" />
 
         @php
           $cur = app()->getLocale();
@@ -284,6 +282,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
             'lv' => ['Latviešu', 'png'],
             'nl' => ['Nederlands', 'png'],
             'pt' => ['Português', 'png'],
+            'hr' => ['Hrvatski', 'png'],
           ];
         @endphp
         <div class="ls" x-data="{ open: false }">

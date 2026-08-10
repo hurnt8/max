@@ -117,7 +117,7 @@
 
     {{-- Bouton envoyer ── --}}
     <div class="ca-btn-wrap">
-      <button type="submit" class="ca-btn ca-btn--primary"
+      <button type="submit" class="ca-btn ca-btn--gold"
               :disabled="numericValue <= 0 || numericValue > {{ $balance }}"
               :style="(numericValue <= 0 || numericValue > {{ $balance }}) ? 'opacity:.45;pointer-events:none' : ''">
         <i class="fas fa-paper-plane"></i>

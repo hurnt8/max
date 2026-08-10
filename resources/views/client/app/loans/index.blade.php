@@ -5,7 +5,7 @@
 @section('back_url', route('client.app.home'))
 
 @section('topbar_action')
-<span style="font-size:.8rem;font-weight:800;color:var(--ca-teal-l);min-width:28px;text-align:center">
+<span style="font-size:.8rem;font-weight:800;color:var(--ca-gold-l);min-width:28px;text-align:center">
   {{ $loans->count() }}
 </span>
 @endsection
@@ -38,7 +38,7 @@
   color:var(--ca-text-3);background:var(--ca-bg2);cursor:pointer;
   transition:.15s;
 }
-.dos-pill.active{background:rgba(27,138,122,.12);border-color:rgba(27,138,122,.3);color:var(--ca-teal-l)}
+.dos-pill.active{background:rgba(200,169,81,.12);border-color:rgba(200,169,81,.3);color:var(--ca-gold-l)}
 
 /* ── Loan cards ── */
 .dos-list{display:flex;flex-direction:column;gap:.625rem;padding:0 1.25rem}
@@ -59,20 +59,6 @@
 /* row 1: ref + badge */
 .dos-card__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.625rem}
 .dos-card__ref{font-size:.7rem;font-weight:700;color:var(--ca-text-3);font-family:monospace;letter-spacing:.04em}
-
-/* Status badges */
-.dos-badge{
-  display:inline-flex;align-items:center;gap:.3rem;
-  font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
-  padding:.18rem .6rem;border-radius:999px;
-}
-.dos-badge--draft   {background:rgba(148,163,184,.12);color:#94a3b8}
-.dos-badge--pending {background:rgba(245,158,11,.12);color:#f59e0b}
-.dos-badge--valid   {background:rgba(27,138,122,.12);color:var(--ca-teal-l)}
-.dos-badge--sent    {background:rgba(96,165,250,.12);color:#60a5fa}
-.dos-badge--signed  {background:rgba(139,92,246,.12);color:#a78bfa}
-.dos-badge--final   {background:rgba(200,169,81,.14);color:var(--ca-gold-l)}
-.dos-badge--rejected{background:rgba(248,113,113,.1);color:#f87171}
 
 /* Amount */
 .dos-card__amount{
@@ -134,7 +120,7 @@
     <div class="dos-chip__lbl">{{ __('app.stat_total') }}</div>
   </div>
   <div class="dos-chip">
-    <div class="dos-chip__val" style="color:var(--ca-teal-l)">{{ $active }}</div>
+    <div class="dos-chip__val" style="color:var(--ca-gold-l)">{{ $active }}</div>
     <div class="dos-chip__lbl">{{ __('app.stat_active') }}</div>
   </div>
   <div class="dos-chip">
@@ -164,16 +150,14 @@
   $idx   = array_search($loan->status, $steps);
   $pct   = $idx !== false ? round(($idx+1)/count($steps)*100) : 0;
 
-  [$barColor,$badgeCls,$filterGroup] = match($loan->status){
-    'draft'           => ['#94a3b8','dos-badge--draft',   'pending'],
-    'pending'         => ['#f59e0b','dos-badge--pending',  'pending'],
-    'validated'       => ['#2BBAA8','dos-badge--valid',    'pending'],
-    'contract_sent'   => ['#60a5fa','dos-badge--sent',     'active'],
-    'contract_signed' => ['#a78bfa','dos-badge--signed',   'active'],
-    'finalized'       => ['#C8A951','dos-badge--final',    'finalized'],
-    'rejected'        => ['#f87171','dos-badge--rejected', 'rejected'],
-    default           => ['#94a3b8','dos-badge--draft',    'pending'],
+  $filterGroup = match($loan->status){
+    'draft', 'pending', 'validated' => 'pending',
+    'contract_sent', 'contract_signed' => 'active',
+    'finalized' => 'finalized',
+    'rejected'  => 'rejected',
+    default     => 'pending',
   };
+  $barColor    = config("solberg.status_badges.loan.{$loan->status}.color", '#7A90AA');
   $statusLabel = $loan->statusLabel();
 @endphp
 <a href="{{ route('client.app.loans.show', $loan) }}" class="dos-card"
@@ -182,10 +166,7 @@
   <div class="dos-card__inner">
     <div class="dos-card__top">
       <span class="dos-card__ref">{{ $loan->reference }}</span>
-      <span class="dos-badge {{ $badgeCls }}">
-        <i class="fas fa-circle" style="font-size:.4rem"></i>
-        {{ $statusLabel }}
-      </span>
+      <x-status-badge domain="loan" :status="$loan->status" :label="$statusLabel" />
     </div>
     <div class="dos-card__amount">
       {{ number_format($loan->amount, 0, ',', ' ') }}

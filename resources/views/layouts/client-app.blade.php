@@ -44,7 +44,7 @@
 
 {{-- ══ SPLASH SCREEN ══ --}}
 <div id="cxa-splash" aria-hidden="true">
-  <img src="/assets/images/logo-white.png" alt="Solberg Grupo" id="cxa-splash-logo">
+  <x-logo variant="full" theme="dark" size="lg" id="cxa-splash-logo" />
 </div>
 <style>
 #cxa-splash{
@@ -55,7 +55,6 @@
   pointer-events:none;
 }
 #cxa-splash-logo{
-  width:180px;max-width:55vw;
   animation:splashLogo 0.55s cubic-bezier(.22,1,.36,1) 0.1s both;
 }
 @keyframes splashLogo{

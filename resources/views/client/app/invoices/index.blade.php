@@ -5,7 +5,7 @@
 @section('back_url', route('client.app.home'))
 
 @section('topbar_action')
-<span style="font-size:.8rem;font-weight:800;color:var(--ca-teal-l);min-width:28px;text-align:center">
+<span style="font-size:.8rem;font-weight:800;color:var(--ca-gold-l);min-width:28px;text-align:center">
   {{ $invoices->count() }}
 </span>
 @endsection
@@ -55,9 +55,9 @@
   transition: .15s; text-decoration: none;
 }
 .inv-pill.active {
-  background: rgba(27,138,122,.12);
-  border-color: rgba(27,138,122,.3);
-  color: var(--ca-teal-l);
+  background: rgba(200,169,81,.12);
+  border-color: rgba(200,169,81,.3);
+  color: var(--ca-gold-l);
 }
 .inv-pill--paid.active   { background: rgba(74,222,128,.1); border-color: rgba(74,222,128,.3); color: #4ade80 }
 .inv-pill--sent.active   { background: rgba(96,165,250,.1); border-color: rgba(96,165,250,.3); color: #60a5fa }
@@ -116,16 +116,7 @@
   color: var(--ca-text); line-height: 1;
 }
 .inv-card__amount--paid { color: #4ade80 }
-.inv-badge {
-  display: inline-block;
-  font-size: .6rem; font-weight: 700;
-  padding: .18rem .5rem; border-radius: 999px;
-  margin-top: .35rem; letter-spacing: .04em;
-  text-transform: uppercase;
-}
-.inv-badge--sent      { background: rgba(96,165,250,.15); color: #60a5fa }
-.inv-badge--paid      { background: rgba(74,222,128,.15); color: #4ade80 }
-.inv-badge--cancelled { background: rgba(148,163,184,.15); color: #94a3b8 }
+.inv-card__right .ca-badge { margin-top: .35rem; text-transform: uppercase }
 
 /* ── Empty state ── */
 .inv-empty {
@@ -168,11 +159,6 @@
       'sent'      => __('app.invoice_status_sent'),
       'paid'      => __('app.invoice_status_paid'),
       'cancelled' => __('app.invoice_status_cancelled'),
-  ];
-  $statusIcons = [
-      'sent'      => 'fa-clock',
-      'paid'      => 'fa-circle-check',
-      'cancelled' => 'fa-ban',
   ];
 @endphp
 
@@ -231,7 +217,7 @@
   @php
     $st    = $invoice->status;
     $label = $statusLabels[$st] ?? $st;
-    $icon  = $statusIcons[$st]  ?? 'fa-file-invoice';
+    $icon  = config("solberg.status_badges.invoice.$st.icon", 'fa-file-invoice');
   @endphp
   <a href="{{ route('client.app.invoices.show', $invoice) }}" class="inv-card">
     <div class="inv-card__stripe inv-card__stripe--{{ $st }}"></div>
@@ -257,7 +243,7 @@
       <div class="inv-card__amount {{ $st === 'paid' ? 'inv-card__amount--paid' : '' }}">
         {{ number_format($invoice->total, 2, ',', ' ') }}&nbsp;{{ $invoice->currency ?? $currency }}
       </div>
-      <div class="inv-badge inv-badge--{{ $st }}">{{ $label }}</div>
+      <x-status-badge domain="invoice" :status="$st" :label="$label" />
     </div>
   </a>
   @endforeach

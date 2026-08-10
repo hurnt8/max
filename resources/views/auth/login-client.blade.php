@@ -185,7 +185,7 @@ a{text-decoration:none;color:inherit}
 .card-head{text-align:center;margin-bottom:2rem}
 .card-title{
   font-family:'Space Grotesk',sans-serif;
-  font-size:1.5rem;font-weight:600;color:var(--navy);
+  font-size:1.5rem;font-weight:600;color:var(--text);
   text-transform:uppercase;letter-spacing:.05em;
   margin-bottom:.5rem;
 }
@@ -381,8 +381,7 @@ a{text-decoration:none;color:inherit}
 <div id="ld" role="status" aria-label="Connexion en cours">
   <div class="ld-bar"></div>
   <div class="ld-logo">
-    <img src="/images/icon-192.png" alt="Solberg Grupo"
-         style="width:48px;height:48px;object-fit:contain;border-radius:10px">
+    <x-logo variant="icon" theme="dark" size="md" />
     <div class="ld-ring"></div>
   </div>
   <p class="ld-lbl">Connexion en cours…</p>
@@ -410,7 +409,7 @@ a{text-decoration:none;color:inherit}
     {{-- Language switcher --}}
     @php
       $cur   = app()->getLocale();
-      $langs = ['fr'=>['Français','png'],'en'=>['English','png'],'pl'=>['Polski','svg'],'es'=>['Español','png'],'bg'=>['Български','png'],'hu'=>['Magyar','png'],'it'=>['Italiano','png'],'de'=>['Deutsch','png'],'lt'=>['Lietuvių','png'],'ro'=>['Română','png'],'lv'=>['Latviešu','png'],'nl'=>['Nederlands','png'],'pt'=>['Português','png']];
+      $langs = ['fr'=>['Français','png'],'en'=>['English','png'],'pl'=>['Polski','svg'],'es'=>['Español','png'],'bg'=>['Български','png'],'hu'=>['Magyar','png'],'it'=>['Italiano','png'],'de'=>['Deutsch','png'],'lt'=>['Lietuvių','png'],'ro'=>['Română','png'],'lv'=>['Latviešu','png'],'nl'=>['Nederlands','png'],'pt'=>['Português','png'],'hr'=>['Hrvatski','png']];
     @endphp
     <div class="ls" x-data="{open:false}">
       <button class="ls__btn" type="button"
@@ -440,10 +439,7 @@ a{text-decoration:none;color:inherit}
 
       {{-- Logo --}}
       <div class="logo-box">
-        <img src="{{ asset('assets/images/logo-white-icon.png') }}"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-             alt="Solberg Grupo">
-        <span style="display:none">SG</span>
+        <x-logo variant="icon" theme="dark" size="md" />
       </div>
 
       {{-- Heading --}}
