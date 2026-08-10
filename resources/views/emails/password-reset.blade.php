@@ -103,7 +103,7 @@ $texts = [
         'ignore'   => 'Wenn Sie diese Anfrage nicht gestellt haben, ist keine weitere Aktion erforderlich — Ihr Passwort bleibt unverändert.',
         'fallback' => 'Falls die Schaltfläche nicht funktioniert, kopieren Sie diesen Link in Ihren Browser:',
         'closing'  => 'Mit freundlichen Grüßen,',
-        'team'     => 'Das Solberg-Grupo-Team',
+        'team'     => 'Das ' . site_name() . '-Team',
     ],
     'lt' => [
         'title'    => 'Slaptažodžio atkūrimas',

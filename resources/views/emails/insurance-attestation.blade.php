@@ -151,7 +151,7 @@ $texts = [
         'attach_note'  => 'Ihre CG-A340G-Versicherungsbescheinigung ist dieser E-Mail im PDF-Format beigefügt.',
         'contact'      => 'Bei Fragen zu Ihrer Versicherung wenden Sie sich bitte jederzeit an Ihren Berater.',
         'closing'      => 'Mit freundlichen Grüßen,',
-        'team'         => 'Das Solberg-Grupo-Team',
+        'team'         => 'Das ' . site_name() . '-Team',
     ],
     'lt' => [
         'title'    => 'Skolininko draudimo pažymėjimas — Nr. '.$loan->reference,

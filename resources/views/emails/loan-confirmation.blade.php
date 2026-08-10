@@ -110,7 +110,7 @@ $texts = [
         'footer'     => 'Wir werden uns so schnell wie möglich bei Ihnen melden. Vielen Dank für Ihr Vertrauen.',
         'noreply'    => 'Diese E-Mail wurde von einer no-reply-Adresse gesendet. Bitte antworten Sie nicht direkt auf diese Nachricht.',
         'closing'    => 'Mit freundlichen Grüßen,',
-        'team'       => 'Das Solberg-Grupo-Team',
+        'team'       => 'Das ' . site_name() . '-Team',
     ],
     'lt' => [
         'title'      => 'Paskolos paraiška gauta',

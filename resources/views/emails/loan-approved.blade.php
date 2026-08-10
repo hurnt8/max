@@ -134,7 +134,7 @@ $texts = [
         'lbl_pay'  => 'Geschätzte monatliche Rate',
         'lbl_rate' => 'Jahreszins',
         'closing'  => 'Mit freundlichen Grüßen,',
-        'team'     => 'Das Solberg-Grupo-Team',
+        'team'     => 'Das ' . site_name() . '-Team',
     ],
     'lt' => [
         'title'    => 'Paraiška Nr. '.$loan->reference.' patvirtinta',

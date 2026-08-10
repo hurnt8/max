@@ -70,7 +70,7 @@ $texts = [
         'intro'   => 'Wir bestätigen den Eingang Ihres unterschriebenen Kreditvertrags (Referenz: <strong>'.$loan->reference.'</strong>).',
         'next'    => 'Unser Verwaltungsteam wird nun die endgültige Bearbeitung Ihrer Akte vornehmen. Die Kontodaten werden Ihnen innerhalb von <strong>24 bis 48 Stunden</strong> mitgeteilt.',
         'closing' => 'Mit freundlichen Grüßen,',
-        'team'    => 'Das Solberg-Grupo-Team',
+        'team'    => 'Das ' . site_name() . '-Team',
     ],
     'lt' => [
         'title'   => 'Sutartis Nr. '.$loan->reference.' gauta',

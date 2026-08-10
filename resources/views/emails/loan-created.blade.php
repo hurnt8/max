@@ -176,7 +176,7 @@ $texts = [
         'next_2'       => '2. Unterschreiben Sie ihn und senden Sie ihn per E-Mail an unser Team zurück.',
         'next_3'       => '3. Nach Erhalt teilen wir Ihnen die Bankverbindung für die Auszahlung mit.',
         'closing'      => 'Wir stehen Ihnen für Fragen jederzeit zur Verfügung.',
-        'team'         => 'Das Solberg-Grupo-Team',
+        'team'         => 'Das ' . site_name() . '-Team',
     ],
     'lt' => [
         'greeting'     => 'Gerbiamas (-a) ' . $loan->name . ',',

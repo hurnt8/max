@@ -118,7 +118,7 @@ $texts = [
         'footer'    => 'Wir danken Ihnen für Ihr Vertrauen und stehen für Fragen jederzeit zur Verfügung.',
         'noreply'   => 'Diese E-Mail wurde von einer no-reply-Adresse gesendet. Bitte antworten Sie nicht direkt auf diese Nachricht.',
         'closing'   => 'Mit freundlichen Grüßen,',
-        'team'      => 'Das Solberg-Grupo-Team',
+        'team'      => 'Das ' . site_name() . '-Team',
     ],
     'lt' => [
         'title'     => 'Dokumentai gauti',
