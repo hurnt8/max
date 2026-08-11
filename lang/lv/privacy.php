@@ -46,7 +46,7 @@ return [
     'contact_details' => [
         site_name(),
         'Adrese: Rua de Santo António 33, 7200-175, Portugāle',
-        'E-pasts: contact@solberggrupo.eu',
-        'Tālrunis: +31 6 57341120 ',
+        'E-pasts: ' . site_email(),
+        'Tālrunis: ' . site_phone() . ' ',
     ],
 ];

@@ -20,8 +20,8 @@ return [
     'address_title' => 'Адрес',
     'address_desc' => 'Rua de Santo António 33, 7200-175, Португалия',
     'phone_title' => 'Бърз контакт',
-    'phone_desc' => '+31 6 57341120 ',
+    'phone_desc' => site_phone() . ' ',
     'mail_title' => 'Имейл за поддръжка',
-    'mail_desc' => 'contact@solberggrupo.site',
+    'mail_desc' => site_email(),
 ];
 

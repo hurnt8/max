@@ -127,7 +127,7 @@
       <div class="inv-brand-name"> {{ site_name() }}</div>
       <div class="inv-brand-sub">
         Organisme de financement<br>
-        contact@solberggrupo.site
+        {{ site_email() }}
       </div>
     </div>
     <div class="inv-meta">

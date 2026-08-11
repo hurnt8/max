@@ -20,7 +20,7 @@ return [
     'address_title' => 'Adresa',
     'address_desc' => '123 Rue de l\'Exemple, 75001 Pariz, Francuska',
     'phone_title' => 'Telefon',
-    'phone_desc' => '+33 1 23 45 67 89',
+    'phone_desc' => site_phone(),
     'mail_title' => 'E-mail',
-    'mail_desc' => 'contact@solberggrupo.site',
+    'mail_desc' => site_email(),
 ];

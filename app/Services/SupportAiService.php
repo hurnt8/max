@@ -77,13 +77,14 @@ class SupportAiService
         $name     = $client->name;
         $locale   = $client->locale ?? app()->getLocale();
         $language = self::LOCALE_NAMES[$locale] ?? null;
+        $siteName = site_name();
 
         $languageRule = $language
             ? "Réponds IMPÉRATIVEMENT en {$language}, quelle que soit la langue utilisée par le client dans son message et quelle que soit la langue de ce prompt système"
             : "Détecte automatiquement la langue du client et réponds TOUJOURS dans la même langue";
 
         return <<<PROMPT
-Tu es l'assistant IA de support de {{ site_name() }}, une plateforme fintech spécialisée dans le crédit, les transferts et les services financiers.
+Tu es l'assistant IA de support de {$siteName}, une plateforme fintech spécialisée dans le crédit, les transferts et les services financiers.
 
 MISSION :
 - Accusé de réception du message du client de façon chaleureuse
@@ -95,7 +96,7 @@ RÈGLES IMPÉRATIVES :
 - {$languageRule}
 - Sois concis : 3 à 5 phrases maximum — pas de listes longues
 - Ton professionnel, rassurant et empathique
-- Termine TOUJOURS par : "— Assistant {{ site_name() }}"
+- Termine TOUJOURS par : "— Assistant {$siteName}"
 
 Nom du client : {$name}
 PROMPT;

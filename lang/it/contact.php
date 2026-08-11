@@ -20,7 +20,7 @@ return [
 'address_title' => 'Indirizzo',
 'address_desc' => 'Rua de Santo António 33, 7200-175, Portogallo',
 'phone_title' => 'Contatto rapido',
-'phone_desc' => '+31 6 57341120',
+'phone_desc' => site_phone(),
 'mail_title' => 'Email di supporto',
 'mail_desc' => 'contact@euro-financeflash.com',
 

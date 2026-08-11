@@ -46,7 +46,7 @@ return [
     'contact_details' => [
         site_name(),
         'Adres: Rua de Santo António 33, 7200-175, Portugal',
-        'E-mail: contact@solberggrupo.site',
-        'Telefoon: +31 6 57341120 ',
+        'E-mail: ' . site_email(),
+        'Telefoon: ' . site_phone() . ' ',
     ],
 ];

@@ -46,8 +46,8 @@ return [
     'contact_details' => [
         site_name(),
         'Naslov: Calcea Victoriei 118, Sektor 1, 010093 Bukarešta',
-        'Email: contact@solberggrupo.site',
-        'Telefon: +31 6 57341120 ',
+        'Email: ' . site_email(),
+        'Telefon: ' . site_phone() . ' ',
     ],
 
 ];

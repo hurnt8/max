@@ -289,7 +289,7 @@ function shareCoords() {
   const iban = '{{ $user->bank_account ?? "" }}';
   const name = '{{ addslashes($user->name) }}';
   const bic  = '{{ $user->bic ?? "" }}';
-  const text = `Coordonnees bancaires Solberg Grupo\nTitulaire : ${name}\nIBAN : ${iban}${bic ? '\nBIC : ' + bic : ''}`;
+  const text = `Coordonnees bancaires {{ site_name() }}\nTitulaire : ${name}\nIBAN : ${iban}${bic ? '\nBIC : ' + bic : ''}`;
   if (navigator.share) {
     navigator.share({ title: 'Mes coordonnees bancaires', text });
   } else {

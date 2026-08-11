@@ -90,7 +90,7 @@
   $iban = $user->bank_account ?? 'Non renseigné';
   $bic  = $user->bic ?? 'SOLBERGFR';
   $currency = $user->currency ?? config('solberg.default_currency');
-  $shareText = "IBAN : {$iban}\nBIC : {$bic}\nTitulaire : {$user->name}\nBanque : Solberg Grupo Financial";
+  $shareText = "IBAN : {$iban}\nBIC : {$bic}\nTitulaire : {$user->name}\nBanque : " . site_name() . " Financial";
 @endphp
 
 {{-- Hero ── --}}

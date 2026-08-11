@@ -20,7 +20,7 @@ return [
     'address_title' => 'Indirizz',
     'address_desc' => 'Calcea Victoriei 118 Settore 1 010093 Bukarest',
     'phone_title' => 'Telefon',
-    'phone_desc' => '+31 6 57341120 ',
+    'phone_desc' => site_phone() . ' ',
     'mail_title' => 'Email',
-    'mail_desc' => 'contact@solberggrupo.site',
+    'mail_desc' => site_email(),
 ];

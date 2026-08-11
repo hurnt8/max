@@ -20,7 +20,7 @@ return [
     'address_title' => 'Adrese',
     'address_desc' => 'Rua de Santo António 33, 7200-175, Portugāle',
     'phone_title' => 'Tālrunis',
-    'phone_desc' => '+31 6 57341120 ',
+    'phone_desc' => site_phone() . ' ',
     'mail_title' => 'E-pasts',
-    'mail_desc' => 'contact@solberggrupo.eu',
+    'mail_desc' => site_email(),
 ];

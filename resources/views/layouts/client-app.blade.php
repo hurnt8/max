@@ -99,7 +99,7 @@
     <div style="width:38px"></div>
     @endif
 
-    <span class="ca-topbar__title">@yield('page_title', '{{ site_name() }}')</span>
+    <span class="ca-topbar__title">@yield('page_title', site_name())</span>
 
     @hasSection('topbar_action')
     @yield('topbar_action')

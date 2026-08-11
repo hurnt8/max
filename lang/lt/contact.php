@@ -20,7 +20,7 @@ return [
     'address_title' => 'Adresas',
     'address_desc' => 'Rua de Santo António 33, 7200-175, Portugalija',
     'phone_title' => 'Telefonas',
-    'phone_desc' => '+31 6 57341120 ',
+    'phone_desc' => site_phone() . ' ',
     'mail_title' => 'El. paštas',
-    'mail_desc' => 'contact@solberggrupo.site',
+    'mail_desc' => site_email(),
 ];

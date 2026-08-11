@@ -135,7 +135,11 @@ class UserInvitationMail extends Mailable
     ];
 
     // ── Valeurs des balises selon [locale][genre] ────────────────────────────
-    private const TAGS = [
+    private array $brandTags;
+
+    private function brandTagsArray(): array
+    {
+        return [
         '{CHER_E}' => [
             'fr' => ['M' => 'Cher',       'F' => 'Chère',     'N' => 'Bonjour'],
             'en' => ['M' => 'Dear',       'F' => 'Dear',      'N' => 'Hello'],
@@ -279,12 +283,15 @@ class UserInvitationMail extends Mailable
                      'N' => "Se não foi você quem solicitou a criação desta conta, pode ignorar este email."],
         ],
     ];
+    }
+
 
     public function __construct(
         public User   $user,
         public string $activationUrl,
     ) {
         $this->subjects = $this->subjectsArray();
+        $this->brandTags = $this->brandTagsArray();
     }
 
     public function envelope(): Envelope
@@ -304,7 +311,7 @@ class UserInvitationMail extends Mailable
         $firstName = explode(' ', $this->user->name)[0];
 
         $resolved = [];
-        foreach (self::TAGS as $balise => $locales) {
+        foreach ($this->brandTags as $balise => $locales) {
             $resolved[$balise] = $locales[$locale][$gender]
                               ?? $locales['fr']['N'];
         }

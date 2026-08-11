@@ -20,8 +20,8 @@ return [
     'address_title' => 'Endereço',
     'address_desc' => 'Calcea Victoriei 118 Setor 1 010093 Bucareste',
     'phone_title' => 'Telefone',
-    'phone_desc' => '+31 6 57341120 ',
+    'phone_desc' => site_phone() . ' ',
     'mail_title' => 'Email',
-    'mail_desc' => 'contact@solberggrupo.site',
+    'mail_desc' => site_email(),
 
 ];

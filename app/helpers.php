@@ -12,9 +12,51 @@ if (! function_exists('site_name')) {
         static $name = null;
 
         if ($name === null) {
-            $name = SiteContact::current()->name ?: site_name();
+            $name = SiteContact::current()->name ?: 'Solberg Grupo';
         }
 
         return $name;
+    }
+}
+
+if (! function_exists('site_email')) {
+    /**
+     * Email de contact configure par l'admin (SiteContact::email), avec repli si absent.
+     */
+    function site_email(): string
+    {
+        static $email = null;
+
+        if ($email === null) {
+            $email = SiteContact::current()->email ?: 'contact@solberggrupo.site';
+        }
+
+        return $email;
+    }
+}
+
+if (! function_exists('site_phone')) {
+    /**
+     * Telephone de contact configure par l'admin (SiteContact::phone_1), avec repli si absent.
+     */
+    function site_phone(): string
+    {
+        static $phone = null;
+
+        if ($phone === null) {
+            $phone = SiteContact::current()->phone_1 ?: '+31 6 57341120';
+        }
+
+        return $phone;
+    }
+}
+
+if (! function_exists('site_phone_href')) {
+    /**
+     * Numero de telephone nettoye pour un lien tel: (chiffres et + uniquement).
+     */
+    function site_phone_href(): string
+    {
+        return preg_replace('/[^\d+]/', '', site_phone());
     }
 }

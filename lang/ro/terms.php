@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contact',
-            'content' => 'Dacă aveți întrebări sau nelămuriri privind acești termeni și condiții, vă rugăm să ne contactați la:<br><br>' . site_name() . '<br>Adresă: Rua de Santo António 33, 7200-175, Portugalia<br>E-mail: contact@solberggrupo.eu<br>Telefon: +31 6 57341120 '
+            'content' => 'Dacă aveți întrebări sau nelămuriri privind acești termeni și condiții, vă rugăm să ne contactați la:<br><br>' . site_name() . '<br>Adresă: Rua de Santo António 33, 7200-175, Portugalia<br>E-mail: ' . site_email() . '<br>Telefon: ' . site_phone() . ' '
         ],
     ],
 ];

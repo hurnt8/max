@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kontakt',
-            'content' => 'Če imate kakršna koli vprašanja ali pomisleke glede teh pogojev in določil, nas kontaktirajte na:<br><br>' . site_name() . '<br>Naslov: Calcea Victoriei 118, Sector 1, 010093 Bukarešta<br>E-pošta: contact@solberggrupo.site<br>Telefon: +31 6 57341120 '
+            'content' => 'Če imate kakršna koli vprašanja ali pomisleke glede teh pogojev in določil, nas kontaktirajte na:<br><br>' . site_name() . '<br>Naslov: Calcea Victoriei 118, Sector 1, 010093 Bukarešta<br>E-pošta: ' . site_email() . '<br>Telefon: ' . site_phone() . ' '
         ],
     ],
 ];

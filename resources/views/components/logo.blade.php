@@ -10,7 +10,7 @@
 ])
 
 @php
-    $siteName = $name ?: (\App\Models\SiteContact::current()->name ?: site_name());
+    $siteName = $name ?: site_name();
     $alt      = $alt ?: $siteName;
 
     $words = preg_split('/\s+/', trim($siteName)) ?: [];

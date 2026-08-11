@@ -403,8 +403,8 @@ class AppController extends Controller
     public function manifest()
     {
         $data = [
-            'name'             => config('app.company_name', '{{ site_name() }}') . ' — Espace Client',
-            'short_name'       => '{{ site_name() }}',
+            'name'             => config('app.company_name', site_name()) . ' — Espace Client',
+            'short_name'       => site_name(),
             'description'      => 'Gérez vos prêts, virements et documents en toute sécurité.',
             'start_url'        => '/app',
             'scope'            => '/app',
@@ -455,9 +455,9 @@ class AppController extends Controller
     public function adminManifest()
     {
         $data = [
-            'name'             => config('app.company_name', '{{ site_name() }}') . ' — Administration',
-            'short_name'       => 'Solberg Admin',
-            'description'      => 'Gérez les prêts, clients et opérations {{ site_name() }}.',
+            'name'             => config('app.company_name', site_name()) . ' — Administration',
+            'short_name'       => site_name() . ' Admin',
+            'description'      => 'Gérez les prêts, clients et opérations ' . site_name() . '.',
             'start_url'        => '/admin',
             'scope'            => '/',
             'display'          => 'standalone',
@@ -568,11 +568,11 @@ self.addEventListener('fetch', e => {
 
 /* ── Push notifications ── */
 self.addEventListener('push', e => {
-    let data = { title: site_name(), body: '' };
+    let data = { title: '__SITE_NAME__', body: '' };
     try { data = e.data ? e.data.json() : data; } catch (_) {}
 
     e.waitUntil(
-        self.registration.showNotification(data.title || site_name(), {
+        self.registration.showNotification(data.title || '__SITE_NAME__', {
             body:    data.body  || '',
             icon:    ICON,
             badge:   BADGE,
@@ -600,6 +600,8 @@ self.addEventListener('notificationclick', e => {
     );
 });
 JS;
+        $js = str_replace('__SITE_NAME__', addslashes(site_name()), $js);
+
         return response($js, 200, ['Content-Type' => 'application/javascript']);
     }
 }
