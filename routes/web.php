@@ -1,37 +1,38 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AccountController;
+use App\Http\Controllers\Admin\AdminNotificationController;
+use App\Http\Controllers\Admin\ContractTemplateController;
+use App\Http\Controllers\Admin\InvoiceController;
+use App\Http\Controllers\Admin\LanguageController;
+use App\Http\Controllers\Admin\LoanRequestController as AdminLoanRequestController;
+use App\Http\Controllers\Admin\NotificationTemplateController;
+use App\Http\Controllers\Admin\SupportController as AdminSupportController;
+use App\Http\Controllers\Admin\TransferValidationController;
+use App\Http\Controllers\Admin\UserManagementController;
+use App\Http\Controllers\Auth\ClientLoginController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\InvitationController;
+use App\Http\Controllers\Auth\OtpController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\StaffForgotPasswordController;
+use App\Http\Controllers\Auth\StaffLoginController;
+use App\Http\Controllers\Auth\StaffResetPasswordController;
+use App\Http\Controllers\Client\AppController as ClientAppController;
+use App\Http\Controllers\Client\LoanRequestController as ClientLoanRequestController;
+use App\Http\Controllers\Client\SupportController as ClientSupportController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Dashboard\AdminDashboardController;
+use App\Http\Controllers\Dashboard\ClientDashboardController;
+use App\Http\Controllers\Dashboard\SuperAdminDashboardController;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\LoanOutcomeController;
-use Illuminate\Support\Facades\Redirect;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\Auth\ClientLoginController;
-use App\Http\Controllers\Auth\OtpController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\Auth\InvitationController;
-use App\Http\Controllers\Auth\StaffLoginController;
-use App\Http\Controllers\Auth\StaffForgotPasswordController;
-use App\Http\Controllers\Auth\StaffResetPasswordController;
-use App\Http\Controllers\Dashboard\ClientDashboardController;
-use App\Http\Controllers\Dashboard\AdminDashboardController;
-use App\Http\Controllers\Dashboard\SuperAdminDashboardController;
-use App\Http\Controllers\Admin\UserManagementController;
-use App\Http\Controllers\Admin\LoanRequestController as AdminLoanRequestController;
-use App\Http\Controllers\Admin\ContractTemplateController;
-use App\Http\Controllers\Admin\NotificationTemplateController;
 use App\Http\Controllers\SuperAdmin\LoanRequestController as SuperAdminLoanRequestController;
-use App\Http\Controllers\Client\LoanRequestController as ClientLoanRequestController;
-use App\Http\Controllers\Client\AppController as ClientAppController;
-use App\Http\Controllers\Admin\AccountController;
-use App\Http\Controllers\Admin\InvoiceController;
-use App\Http\Controllers\Admin\TransferValidationController;
-use App\Http\Controllers\Admin\SupportController as AdminSupportController;
-use App\Http\Controllers\Admin\AdminNotificationController;
-use App\Http\Controllers\Client\SupportController as ClientSupportController;
-use App\Http\Controllers\Admin\LanguageController;
 use App\Models\Language;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,9 @@ use App\Models\Language;
 |
 */
 
-$supportedLocales = Language::enabledCodes();
+$supportedLocales = Schema::hasTable('languages')
+    ? Language::enabledCodes()
+    : ['fr', 'en'];
 
 Route::get('/', function (Request $request) use ($supportedLocales) {
     $locale = 'en';
@@ -70,7 +73,11 @@ Route::get('/', function (Request $request) use ($supportedLocales) {
     return redirect("/{$locale}");
 });
 
-Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['locale' => implode('|', Language::enabledCodes())]], function () {
+Route::group([
+    'prefix' => '{locale}',
+    'middleware' => 'setLocale',
+    'where' => ['locale' => implode('|', $supportedLocales)]
+], function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
