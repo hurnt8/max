@@ -20,6 +20,7 @@ return [
     'loan_confirm_footer'    => 'Wir werden uns so schnell wie möglich bei Ihnen melden. Vielen Dank für Ihr Vertrauen.',
     'loan_confirm_signature' => 'Das ' . site_name() . '-Team',
     'loan_confirm_noreply'   => 'Diese E-Mail wurde von einer no-reply-Adresse gesendet. Bitte antworten Sie nicht direkt auf diese Nachricht.',
+    'no_reply_notice' => 'Dies ist eine automatisch generierte E-Mail. Bitte antworten Sie nicht darauf.',
 
     'loan_conditions_title'  => 'Voraussetzungen',
     'loan_conditions_text'   => 'Um einen Kredit zu erhalten, müssen Sie mindestens 18 Jahre alt sein, über ein stabiles monatliches Einkommen verfügen und in der Lage sein, gemäß den festgelegten Bedingungen zurückzuzahlen.',

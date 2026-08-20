@@ -179,6 +179,7 @@ $sub = ($subs[$locale] ?? $subs['fr'])[$portal] ?? ($subs['fr'][$portal] ?? $sub
     :title="$t['title']"
     :subtitle="$sub"
     accent="teal"
+    :locale="$locale"
 >
 
   <p class="greeting">{{ $t['greeting'] }}</p>

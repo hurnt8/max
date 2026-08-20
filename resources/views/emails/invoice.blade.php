@@ -22,6 +22,7 @@ $t = $texts[$locale] ?? $texts['fr'];
     :title="$t['title'] . ' ' . $invoice->reference"
     :subtitle="$t['sub']"
     accent="orange"
+    :locale="$locale"
 >
 
   <p class="greeting">

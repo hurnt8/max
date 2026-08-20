@@ -71,6 +71,11 @@ return [
     'send_btn'              => 'Trimite',
     'send_name'             => 'Numele destinatarului',
     'send_iban'             => 'IBAN destinatar',
+    'doc_contract' => 'Contract',
+    'doc_notification' => 'Notificare',
+    'doc_insurance' => 'Asigurare',
+    'doc_conditions' => 'Conditii_Generale',
+    'doc_amortization' => 'Tabel_Amortizare',
     'transfer_insufficient'     => 'Sold insuficient pentru a efectua acest transfer.',
     'transfer_negative_balance' => 'Soldul dumneavoastră este negativ. Transferurile sunt blocate până la regularizarea contului.',
 

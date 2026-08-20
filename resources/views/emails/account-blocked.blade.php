@@ -4,6 +4,7 @@
     subtitle="{{ site_name() }}"
     accent="red"
     :footerNote="__('auth.account_blocked_email_footer', [], $locale)"
+    :locale="$locale"
 >
 
   <p class="greeting">

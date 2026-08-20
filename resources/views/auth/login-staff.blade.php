@@ -268,22 +268,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
 
         @php
           $cur = app()->getLocale();
-          $langs = [
-            'fr' => ['Français', 'png'],
-            'en' => ['English',  'png'],
-            'pl' => ['Polski',   'svg'],
-            'es' => ['Español',  'png'],
-            'bg' => ['Български', 'png'],
-            'hu' => ['Magyar',   'png'],
-            'it' => ['Italiano', 'png'],
-            'de' => ['Deutsch',  'png'],
-            'lt' => ['Lietuvių', 'png'],
-            'ro' => ['Română',   'png'],
-            'lv' => ['Latviešu', 'png'],
-            'nl' => ['Nederlands', 'png'],
-            'pt' => ['Português', 'png'],
-            'hr' => ['Hrvatski', 'png'],
-          ];
+          $langs = \App\Models\Language::enabledList()->mapWithKeys(fn($l) => [$l->code => [$l->native_name, $l->flag_ext]])->all();
         @endphp
         <div class="ls" x-data="{ open: false }">
           <button class="ls__btn" type="button"

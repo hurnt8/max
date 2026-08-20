@@ -71,6 +71,11 @@ return [
     'send_btn'              => 'Invia',
     'send_name'             => 'Nome del beneficiario',
     'send_iban'             => 'IBAN del beneficiario',
+    'doc_contract' => 'Contratto',
+    'doc_notification' => 'Notifica',
+    'doc_insurance' => 'Assicurazione',
+    'doc_conditions' => 'Condizioni_Generali',
+    'doc_amortization' => 'Piano_Ammortamento',
     'transfer_insufficient'     => 'Saldo insufficiente per completare questo bonifico.',
     'transfer_negative_balance' => 'Il tuo saldo è negativo. I bonifici sono bloccati fino al ripristino del tuo conto.',
 

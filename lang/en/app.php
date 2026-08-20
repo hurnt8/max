@@ -71,6 +71,11 @@ return [
     'send_btn'              => 'Send',
     'send_name'             => 'Recipient name',
     'send_iban'             => 'Recipient IBAN',
+    'doc_contract' => 'Contract',
+    'doc_notification' => 'Notification',
+    'doc_insurance' => 'Insurance',
+    'doc_conditions' => 'Terms_and_Conditions',
+    'doc_amortization' => 'Amortization_Schedule',
     'transfer_insufficient'     => 'Insufficient balance to complete this transfer.',
     'transfer_negative_balance' => 'Your balance is negative. Transfers are blocked until your account is settled.',
 

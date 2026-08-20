@@ -134,6 +134,7 @@ $t = $texts[$locale] ?? $texts['fr'];
     :title="$t['title']"
     :subtitle="$t['sub']"
     accent="teal"
+    :locale="$locale"
 >
 
   <p class="greeting">{{ $t['greeting'] }}</p>

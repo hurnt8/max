@@ -163,14 +163,15 @@
       </div>
       <div class="ca-settings-item__text">
         <div class="ca-settings-item__label">{{ __('app.language_pref') }}</div>
-        <div class="ca-settings-item__sub">{{ ['fr'=>'Francais','en'=>'English','pl'=>'Polski','es'=>'Espanol','bg'=>'Balgarski','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuviu','ro'=>'Romana','lv'=>'Latviesu','nl'=>'Nederlands','pt'=>'Portugues','hr'=>'Hrvatski'][app()->getLocale()] ?? app()->getLocale() }}</div>
+        <div class="ca-settings-item__sub">{{ \App\Models\Language::enabledList()->firstWhere('code', app()->getLocale())->native_name ?? app()->getLocale() }}</div>
       </div>
       <div class="ca-settings-item__right" @click="toggle()">
         <i class="fas fa-chevron-right"></i>
       </div>
       <div x-show="open" @click.outside="close()" x-transition
            style="position:fixed;bottom:calc(var(--ca-nav-h) + 1rem);left:1.25rem;right:1.25rem;background:var(--ca-bg4);border:1px solid var(--ca-border);border-radius:var(--ca-radius-md);overflow:hidden;z-index:600;box-shadow:0 -8px 32px rgba(0,0,0,.4)">
-        @foreach(['fr'=>'Francais','en'=>'English','pl'=>'Polski','es'=>'Espanol','bg'=>'Balgarski','hu'=>'Magyar','it'=>'Italiano','de'=>'Deutsch','lt'=>'Lietuviu','ro'=>'Romana','lv'=>'Latviesu','nl'=>'Nederlands','pt'=>'Portugues','hr'=>'Hrvatski'] as $lc => $label)
+        @foreach(\App\Models\Language::enabledList() as $lang)
+        @php [$lc, $label] = [$lang->code, $lang->native_name]; @endphp
         <form method="POST" action="{{ route('client.app.locale') }}">
           @csrf
           <input type="hidden" name="locale" value="{{ $lc }}">

@@ -20,6 +20,7 @@ return [
     'loan_confirm_footer'    => 'We will contact you as soon as possible. Thank you for trusting us.',
     'loan_confirm_signature' => 'The ' . site_name() . ' team',
     'loan_confirm_noreply'   => 'This email was sent from a no-reply address. Please do not reply directly to this message.',
+    'no_reply_notice' => 'This is an automatically generated email. Please do not reply.',
 
     'loan_conditions_title'  => 'Eligibility conditions',
     'loan_conditions_text'   => 'To obtain a loan, you must be at least 18 years old, have a stable monthly income, and be able to repay according to the set conditions.',

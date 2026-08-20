@@ -794,6 +794,10 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
          class="sidebar-link {{ request()->routeIs('admin.social-links*') ? 'active':'' }}">
         <i class="fas fa-share-alt icon"></i> Réseaux sociaux
       </a>
+      <a href="{{ route('admin.languages.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.languages*') ? 'active':'' }}">
+        <i class="fas fa-language icon"></i> Langues
+      </a>
       <a href="{{ route('admin.loan-settings.edit') }}"
          class="sidebar-link {{ request()->routeIs('admin.loan-settings*') ? 'active':'' }}">
         <i class="fas fa-percentage icon"></i> Paramètres de prêt
@@ -903,6 +907,12 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
       <a href="{{ route('admin.social-links.index') }}"
          class="sidebar-link {{ request()->routeIs('admin.social-links*') ? 'active':'' }}">
         <i class="fas fa-share-alt icon"></i> Réseaux sociaux
+      </a>
+      @endcan
+      @can('manage-languages')
+      <a href="{{ route('admin.languages.index') }}"
+         class="sidebar-link {{ request()->routeIs('admin.languages*') ? 'active':'' }}">
+        <i class="fas fa-language icon"></i> Langues
       </a>
       @endcan
       @can('manage-loan-settings')

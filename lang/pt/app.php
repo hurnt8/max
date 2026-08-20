@@ -79,6 +79,11 @@ return [
     'send_btn'              => 'Enviar',
     'send_name'             => 'Nome do beneficiário',
     'send_iban'             => 'IBAN do beneficiário',
+    'doc_contract' => 'Contrato',
+    'doc_notification' => 'Notificacao',
+    'doc_insurance' => 'Seguro',
+    'doc_conditions' => 'Condicoes_Gerais',
+    'doc_amortization' => 'Tabela_Amortizacao',
     'transfer_insufficient'     => 'Saldo insuficiente para efetuar esta transferência.',
     'transfer_negative_balance' => 'O seu saldo está negativo. As transferências estão bloqueadas até à regularização da sua conta.',
 

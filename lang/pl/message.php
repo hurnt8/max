@@ -20,6 +20,7 @@ return [
     'loan_confirm_footer'    => 'Skontaktujemy się z Tobą tak szybko, jak to możliwe. Dziękujemy za zaufanie.',
     'loan_confirm_signature' => 'Zespół ' . site_name(),
     'loan_confirm_noreply'   => 'Ta wiadomość została wysłana z adresu no-reply. Prosimy nie odpowiadać bezpośrednio na tę wiadomość.',
+    'no_reply_notice' => 'To jest automatycznie wygenerowana wiadomość e-mail. Prosimy na nią nie odpowiadać.',
 
     'loan_conditions_title'  => 'Warunki kwalifikowalności',
     'loan_conditions_text'   => 'Aby uzyskać pożyczkę, należy mieć ukończone 18 lat, posiadać stabilne miesięczne dochody i być w stanie spłacać zgodnie z ustalonymi warunkami.',

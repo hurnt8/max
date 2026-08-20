@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Language;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -9,8 +10,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SetLocale
 {
-    private const SUPPORTED = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'hr'];
-
     public function handle(Request $request, Closure $next): Response
     {
         $locale = $this->resolve($request);
@@ -20,10 +19,12 @@ class SetLocale
 
     private function resolve(Request $request): string
     {
+        $supported = Language::enabledCodes();
+
         // 1. Choix explicite dans CETTE requête (segment d'URL {locale} ou ?lang=)
         //    — un changement de langue volontaire prime toujours sur le reste.
         $explicit = $request->route('locale') ?? $request->query('lang');
-        if (in_array($explicit, self::SUPPORTED, true)) {
+        if (in_array($explicit, $supported, true)) {
             session(['locale' => $explicit]);
             return $explicit;
         }
@@ -32,14 +33,14 @@ class SetLocale
         //    Prioritaire sur la session pour éviter qu'une langue restée en
         //    session depuis une navigation anonyme n'écrase le profil du client.
         $user = $request->user();
-        if ($user && in_array($user->locale, self::SUPPORTED, true)) {
+        if ($user && in_array($user->locale, $supported, true)) {
             session(['locale' => $user->locale]);
             return $user->locale;
         }
 
         // 3. Session (visiteur anonyme ayant déjà choisi une langue)
         $sessionLocale = session('locale');
-        if (in_array($sessionLocale, self::SUPPORTED, true)) {
+        if (in_array($sessionLocale, $supported, true)) {
             return $sessionLocale;
         }
 
@@ -48,7 +49,7 @@ class SetLocale
         foreach (explode(',', $header) as $part) {
             $tag  = trim(explode(';', $part)[0]);       // ex: "fr-FR" ou "en"
             $code = strtolower(substr($tag, 0, 2));
-            if (in_array($code, self::SUPPORTED, true)) {
+            if (in_array($code, $supported, true)) {
                 return $code;
             }
         }

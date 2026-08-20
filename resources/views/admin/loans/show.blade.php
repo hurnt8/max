@@ -268,9 +268,16 @@ $tpl = $loan->contractTemplate;
 
 {{-- ── STEPPER / REJETÉ ── --}}
 @if($loan->status === 'rejected')
-<div class="ld-rejected">
-  <i class="fas fa-ban"></i>
-  Cette demande a été <strong style="margin-left:.3rem">rejetée</strong>.
+<div class="ld-rejected" style="flex-direction:column;align-items:flex-start;gap:.3rem">
+  <div style="display:flex;align-items:center;gap:.75rem">
+    <i class="fas fa-ban"></i>
+    <span>Cette demande a été <strong>rejetée</strong>@if($loan->rejected_at) le {{ $loan->rejected_at->format('d/m/Y') }}@endif.</span>
+  </div>
+  @if($loan->rejection_reason)
+  <div style="font-size:.8rem;font-weight:400;color:#7A1F1F;padding-left:1.75rem">
+    <strong style="font-weight:700">Motif :</strong> {{ $loan->rejection_reason }}
+  </div>
+  @endif
 </div>
 @else
 <div class="ld-stepper">
@@ -452,6 +459,19 @@ $tpl = $loan->contractTemplate;
         </form>
         @endif
 
+        @if(!in_array($loan->status, [\App\Models\LoanRequest::STATUS_FINALIZED, \App\Models\LoanRequest::STATUS_REJECTED]))
+        <form action="{{ route($panelPrefix.'.loans.reject', $loan) }}" method="POST"
+              data-confirm="Rejeter ce dossier ? Un email sera envoyé au client avec le motif indiqué.">
+          @csrf
+          <div style="margin-bottom:.6rem">
+            <textarea name="rejection_reason" class="form-control-pro" rows="3" placeholder="Motif du refus (envoyé au client)" required></textarea>
+          </div>
+          <button class="btn-navy ld-btn-full" style="margin-top:.5rem;background:#dc2626;border-color:#dc2626">
+            <i class="fas fa-ban"></i> Rejeter le dossier
+          </button>
+        </form>
+        @endif
+
         @if($loan->status === 'contract_sent')
         <form action="{{ route($panelPrefix.'.loans.contract.pdf.resend',$loan) }}" method="POST"
               data-confirm="Renvoyer le contrat à {{ $loan->email }} ?">
@@ -508,14 +528,14 @@ $tpl = $loan->contractTemplate;
 
         <hr class="ld-divider">
 
-        @if($loan->status !== \App\Models\LoanRequest::STATUS_FINALIZED)
+        @if(!in_array($loan->status, [\App\Models\LoanRequest::STATUS_FINALIZED, \App\Models\LoanRequest::STATUS_REJECTED]))
         <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--c-muted);margin-bottom:.35rem">Changer le statut</div>
         <form action="{{ route($panelPrefix.'.loans.status', $loan) }}" method="POST">
           @csrf @method('PATCH')
           <div class="ld-status-row">
             <select name="status" class="form-control-pro">
               @foreach(\App\Models\LoanRequest::STATUSES as $s)
-              @continue($s === \App\Models\LoanRequest::STATUS_FINALIZED)
+              @continue(in_array($s, [\App\Models\LoanRequest::STATUS_FINALIZED, \App\Models\LoanRequest::STATUS_REJECTED]))
               <option value="{{ $s }}" {{ $loan->status===$s?'selected':'' }}>
                 {{ $statusLabels[$s] ?? ucfirst($s) }}
               </option>

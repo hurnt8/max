@@ -43,30 +43,25 @@ class AdminNotification extends Model
     }
 
     /**
-     * Notify all super-admins + the responsible admin of a client.
+     * IDs des admins à notifier pour ce client : uniquement l'admin responsable
+     * (created_by, ou à défaut l'admin du dossier de prêt) + systématiquement
+     * tous les super-admins — jamais l'ensemble des admins.
      */
-    public static function notifyAdminsForClient(User $client, string $type, string $title, string $body, array $data = []): void
+    public static function recipientAdminIds(User $client): \Illuminate\Support\Collection
     {
-        $notified = [];
+        $ids = collect();
 
-        // Responsible admin (created_by)
         if ($client->created_by) {
-            self::forAdmin($client->created_by, $type, $title, $body, $data);
-            $notified[] = $client->created_by;
+            $ids->push($client->created_by);
+        } else {
+            $loanAdminId = $client->clientLoans()->whereNotNull('admin_id')->value('admin_id');
+            if ($loanAdminId) {
+                $ids->push($loanAdminId);
+            }
         }
 
-        // Admin of any loan
-        $loanAdminId = $client->clientLoans()->whereNotNull('admin_id')->value('admin_id');
-        if ($loanAdminId && ! in_array($loanAdminId, $notified)) {
-            self::forAdmin($loanAdminId, $type, $title, $body, $data);
-            $notified[] = $loanAdminId;
-        }
+        $ids = $ids->merge(User::role('super-admin')->pluck('id'));
 
-        // Super-admins (if no specific admin found or always)
-        if (empty($notified)) {
-            User::role('super-admin')->each(function (User $sa) use ($type, $title, $body, $data) {
-                self::forAdmin($sa->id, $type, $title, $body, $data);
-            });
-        }
+        return $ids->filter()->unique()->values();
     }
 }

@@ -57,6 +57,7 @@ $notice = $notices[$locale] ?? $notices['fr'];
     :subtitle="$sub"
     accent="teal"
     :footerNote="$notice"
+    :locale="$locale"
 >
 
   <p class="greeting">{{ $greeting }}</p>

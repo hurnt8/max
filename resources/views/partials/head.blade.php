@@ -6,7 +6,7 @@
     <title>@yield('title', __('menu.home')) | {{ site_name() }}</title>
     <meta name="description" content="{{ site_name() }} — solutions de financement rapides, flexibles et personnalisées à travers l'Europe.">
     <link rel="canonical" href="{{ url()->current() }}">
-    @foreach (['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'hr'] as $l)
+    @foreach (\App\Models\Language::enabledCodes() as $l)
     <link rel="alternate" hreflang="{{ $l }}" href="{{ url($l) }}">
     @endforeach
     <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">

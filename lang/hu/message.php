@@ -20,6 +20,7 @@ return [
     'loan_confirm_footer'    => 'A lehető leghamarabb felvesszük Önnel a kapcsolatot. Köszönjük bizalmát.',
     'loan_confirm_signature' => 'A ' . site_name() . ' csapata',
     'loan_confirm_noreply'   => 'Ezt az e-mailt egy no-reply címről küldtük. Kérjük, ne válaszoljon közvetlenül erre az üzenetre.',
+    'no_reply_notice' => 'Ez egy automatikusan generált e-mail. Kérjük, ne válaszoljon rá.',
 
     'loan_conditions_title'  => 'Jogosultsági feltételek',
     'loan_conditions_text'   => 'Kölcsön igényléséhez legalább 18 évesnek kell lennie, stabil havi jövedelemmel kell rendelkeznie, és képesnek kell lennie a meghatározott feltételek szerinti törlesztésre.',

@@ -71,6 +71,11 @@ return [
     'send_btn'              => 'Wyslij',
     'send_name'             => 'Nazwa odbiorcy',
     'send_iban'             => 'IBAN odbiorcy',
+    'doc_contract' => 'Umowa',
+    'doc_notification' => 'Powiadomienie',
+    'doc_insurance' => 'Ubezpieczenie',
+    'doc_conditions' => 'Warunki_Ogolne',
+    'doc_amortization' => 'Harmonogram_Splat',
     'transfer_insufficient'     => 'Niewystarczajace saldo do realizacji przelewu.',
     'transfer_negative_balance' => 'Saldo jest ujemne. Przelewy są zablokowane do czasu wyrównania konta.',
 

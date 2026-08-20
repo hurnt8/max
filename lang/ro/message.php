@@ -20,6 +20,7 @@ return [
     'loan_confirm_footer'    => 'Vă vom contacta în cel mai scurt timp. Vă mulțumim pentru încrederea acordată.',
     'loan_confirm_signature' => 'Echipa ' . site_name(),
     'loan_confirm_noreply'   => 'Acest e-mail a fost trimis de la o adresă no-reply. Vă rugăm să nu răspundeți direct la acest mesaj.',
+    'no_reply_notice' => 'Acesta este un e-mail generat automat. Vă rugăm să nu răspundeți la acest mesaj.',
 
     'loan_conditions_title'  => 'Condiții de eligibilitate',
     'loan_conditions_text'   => 'Pentru a obține un împrumut, trebuie să aveți cel puțin 18 ani, să realizați un venit lunar stabil și să puteți rambursa conform condițiilor stabilite.',

@@ -100,18 +100,7 @@ class TransferController extends Controller
 
     private function notifyAdmins(User $client, Transfer $transfer): void
     {
-        $adminIds = collect();
-
-        if ($client->created_by) {
-            $adminIds->push($client->created_by);
-        }
-        $loanAdminId = $client->clientLoans()->whereNotNull('admin_id')->value('admin_id');
-        if ($loanAdminId) $adminIds->push($loanAdminId);
-        $adminIds = $adminIds->unique();
-
-        if ($adminIds->isEmpty()) {
-            $adminIds = User::role('super-admin')->pluck('id');
-        }
+        $adminIds = AdminNotification::recipientAdminIds($client);
 
         $body = 'Virement de ' . number_format($transfer->amount, 2, ',', ' ') . ' '
             . $transfer->currency . ' vers ' . $transfer->beneficiary_name;

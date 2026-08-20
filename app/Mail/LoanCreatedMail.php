@@ -56,13 +56,13 @@ class LoanCreatedMail extends Mailable
 
         if (file_exists($this->contractPdfPath)) {
             $attachments[] = Attachment::fromPath($this->contractPdfPath)
-                ->as('Contrat_' . $this->loan->reference . '.pdf')
+                ->as($this->loan->documentFileName('contract'))
                 ->withMime('application/pdf');
         }
 
         if (file_exists($this->amortizationPdfPath)) {
             $attachments[] = Attachment::fromPath($this->amortizationPdfPath)
-                ->as('Tableau_Amortissement_' . $this->loan->reference . '.pdf')
+                ->as($this->loan->documentFileName('amortization'))
                 ->withMime('application/pdf');
         }
 

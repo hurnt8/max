@@ -20,6 +20,7 @@ return [
     'loan_confirm_footer'    => 'Nous vous contacterons dans les plus brefs délais. Merci de nous avoir fait confiance.',
     'loan_confirm_signature' => 'L\'équipe ' . site_name(),
     'loan_confirm_noreply'   => 'Cet email a été envoyé depuis une adresse no-reply. Veuillez ne pas répondre directement à ce message.',
+    'no_reply_notice' => 'Ceci est un e-mail généré automatiquement. Merci de ne pas y répondre.',
 
     'loan_conditions_title'  => 'Conditions d\'éligibilité',
     'loan_conditions_text'   => 'Pour obtenir un prêt, il faut avoir au moins 18 ans, percevoir un revenu mensuel stable et pouvoir rembourser selon les conditions fixées.',

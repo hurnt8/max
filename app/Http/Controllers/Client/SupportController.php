@@ -113,7 +113,7 @@ class SupportController extends Controller
 
     private function notifyAdmin(User $client, SupportMessage $msg): void
     {
-        $adminIds = User::role(['admin', 'super-admin'])->pluck('id');
+        $adminIds = AdminNotification::recipientAdminIds($client);
 
         $preview = $msg->body
             ? Str::limit($msg->body, 80)

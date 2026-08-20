@@ -55,6 +55,26 @@
     </div>
   </div>
 
+  <div class="col-12">
+    <div class="card-pro mb-4">
+      <div class="card-pro-hdr">
+        <div class="card-pro-title"><span class="icon-dot"></span>Signature email</div>
+      </div>
+      <div class="card-pro-body">
+        <p style="font-size:.8rem;color:var(--c-muted);margin-bottom:.75rem">
+          Image de signature (manuscrite/scannée) affichée en bas de tous les emails envoyés par l'application, avec l'adresse et l'email ci-dessous.
+        </p>
+        @if($contact->email_signature_path)
+        <div class="mb-2">
+          <img src="{{ Storage::url($contact->email_signature_path) }}" alt="Signature email" style="max-height:64px;background:#f0f2f5;padding:.5rem;border-radius:8px">
+          <label class="ms-2" style="font-size:.8rem"><input type="checkbox" name="remove_email_signature" value="1"> Supprimer</label>
+        </div>
+        @endif
+        <input type="file" name="email_signature" accept="image/*" class="form-control-pro">
+      </div>
+    </div>
+  </div>
+
   <div class="col-xl-6">
     <div class="card-pro mb-4">
       <div class="card-pro-hdr">

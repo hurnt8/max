@@ -71,6 +71,11 @@ return [
     'send_btn'              => 'Küldés',
     'send_name'             => 'Kedvezményezett neve',
     'send_iban'             => 'Kedvezményezett IBAN-száma',
+    'doc_contract' => 'Szerzodes',
+    'doc_notification' => 'Ertesites',
+    'doc_insurance' => 'Biztositas',
+    'doc_conditions' => 'Altalanos_Feltetelek',
+    'doc_amortization' => 'Torlesztesi_Utemterv',
     'transfer_insufficient'     => 'Nincs elég fedezet az átutalás végrehajtásához.',
     'transfer_negative_balance' => 'Az Ön egyenlege negatív. Az átutalások le vannak tiltva, amíg a számláját nem rendezi.',
 

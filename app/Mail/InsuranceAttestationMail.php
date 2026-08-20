@@ -28,7 +28,14 @@ class InsuranceAttestationMail extends Mailable
 
     public function content(): Content
     {
-        return new Content(htmlString: $this->htmlBody);
+        return new Content(
+            view: 'emails.notification-template',
+            with: [
+                'title'  => $this->mailSubject,
+                'body'   => $this->htmlBody,
+                'locale' => $this->loan->contract_language ?? 'fr',
+            ],
+        );
     }
 
     public function attachments(): array
@@ -39,7 +46,7 @@ class InsuranceAttestationMail extends Mailable
 
         return [
             Attachment::fromPath($this->pdfPath)
-                ->as('Assurance_' . $this->loan->reference . '.pdf')
+                ->as($this->loan->documentFileName('insurance'))
                 ->withMime('application/pdf'),
         ];
     }

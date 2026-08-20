@@ -79,6 +79,11 @@ return [
     'send_btn'           => 'Envoyer',
     'send_name'          => 'Nom du beneficiaire',
     'send_iban'          => 'IBAN du beneficiaire',
+    'doc_contract' => 'Contrat',
+    'doc_notification' => 'Notification',
+    'doc_insurance' => 'Assurance',
+    'doc_conditions' => 'Conditions_Generales',
+    'doc_amortization' => 'Tableau_Amortissement',
     'transfer_insufficient'     => 'Solde insuffisant pour effectuer ce virement.',
     'transfer_negative_balance' => 'Votre solde est négatif. Les virements sont bloqués jusqu\'à régularisation.',
 

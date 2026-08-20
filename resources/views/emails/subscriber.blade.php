@@ -6,4 +6,8 @@
    <br>
       <strong>Email</strong> : {{$data['email']}}
 </p>
+
+<x-mail::subcopy>
+Ceci est un e-mail généré automatiquement. Merci de ne pas y répondre.
+</x-mail::subcopy>
 </x-mail::message>

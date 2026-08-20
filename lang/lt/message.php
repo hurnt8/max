@@ -20,6 +20,7 @@ return [
     'loan_confirm_footer'    => 'Susisieksime su jumis kuo greičiau. Dėkojame, kad pasitikite mumis.',
     'loan_confirm_signature' => site_name() . ' komanda',
     'loan_confirm_noreply'   => 'Šis el. laiškas išsiųstas iš no-reply adreso. Prašome tiesiogiai neatsakyti į šį pranešimą.',
+    'no_reply_notice' => 'Tai automatiškai sugeneruotas el. laiškas. Prašome į jį neatsakyti.',
 
     'loan_conditions_title'  => 'Reikalavimai',
     'loan_conditions_text'   => 'Norint gauti paskolą, būtina būti bent 18 metų amžiaus, turėti stabilias mėnesines pajamas ir galėti grąžinti paskolą pagal nustatytas sąlygas.',

@@ -71,6 +71,11 @@ return [
     'send_btn'              => 'Senden',
     'send_name'             => 'Name des Empfängers',
     'send_iban'             => 'IBAN des Empfängers',
+    'doc_contract' => 'Vertrag',
+    'doc_notification' => 'Benachrichtigung',
+    'doc_insurance' => 'Versicherung',
+    'doc_conditions' => 'Allgemeine_Geschaeftsbedingungen',
+    'doc_amortization' => 'Tilgungsplan',
     'transfer_insufficient'     => 'Unzureichendes Guthaben, um diese Überweisung durchzuführen.',
     'transfer_negative_balance' => 'Ihr Guthaben ist negativ. Überweisungen sind gesperrt, bis Ihr Konto ausgeglichen ist.',
 

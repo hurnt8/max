@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoanController;
+use App\Http\Controllers\LoanOutcomeController;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Auth\ClientLoginController;
@@ -29,6 +30,8 @@ use App\Http\Controllers\Admin\TransferValidationController;
 use App\Http\Controllers\Admin\SupportController as AdminSupportController;
 use App\Http\Controllers\Admin\AdminNotificationController;
 use App\Http\Controllers\Client\SupportController as ClientSupportController;
+use App\Http\Controllers\Admin\LanguageController;
+use App\Models\Language;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +44,7 @@ use App\Http\Controllers\Client\SupportController as ClientSupportController;
 |
 */
 
-$supportedLocales = ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'hr'];
+$supportedLocales = Language::enabledCodes();
 
 Route::get('/', function (Request $request) use ($supportedLocales) {
     $locale = 'en';
@@ -67,7 +70,7 @@ Route::get('/', function (Request $request) use ($supportedLocales) {
     return redirect("/{$locale}");
 });
 
-Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['locale' => 'fr|en|pl|es|bg|hu|it|de|lt|ro|lv|nl|pt|hr']], function () {
+Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale', 'where' => ['locale' => implode('|', Language::enabledCodes())]], function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
@@ -141,9 +144,15 @@ Route::post('/subscribe/send', [ContactController::class, 'subscribeMail'])->nam
 Route::post('/loan/request', [LoanController::class, 'sendMail'])->name('loan.request');
 Route::post('/loan/documents', [LoanController::class, 'sendDocuments'])->name('loan.documents');
 
+// ── Page "prochaines étapes" (lien signé envoyé par email, sans connexion) ──
+Route::get('/loan-outcome/{loan}/approved', [LoanOutcomeController::class, 'approved'])
+    ->name('loan.outcome.approved')->middleware('signed');
+Route::get('/loan-outcome/{loan}/rejected', [LoanOutcomeController::class, 'rejected'])
+    ->name('loan.outcome.rejected')->middleware('signed');
+
 // ── Locale switcher (for auth pages without {locale} prefix) ────────────────
 Route::get('/lang/{lang}', function (Request $request, $lang) {
-    if (in_array($lang, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'hr'])) {
+    if (in_array($lang, Language::enabledCodes())) {
         session(['locale' => $lang]);
     }
     $back = $request->headers->get('referer', url('/'));
@@ -248,7 +257,7 @@ Route::middleware(['auth', 'role:client', 'client.locale'])->prefix('app')->name
 
     Route::post('/locale', function (\Illuminate\Http\Request $request) {
         $locale = $request->input('locale', 'fr');
-        if (in_array($locale, ['fr','en','pl','es','bg','hu','it','de','lt','ro','lv','nl','pt','hr'])) {
+        if (in_array($locale, Language::enabledCodes())) {
             $request->user()->update(['locale' => $locale]);
             session(['locale' => $locale]);
         }
@@ -298,6 +307,7 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::post('/loans/{loan}/send-contract',        [AdminLoanRequestController::class, 'sendContract'])->name('loans.send-contract');
     Route::post('/loans/{loan}/signed',               [AdminLoanRequestController::class, 'markSigned'])->name('loans.signed');
     Route::post('/loans/{loan}/finalize',             [AdminLoanRequestController::class, 'finalizeLoan'])->name('loans.finalize');
+    Route::post('/loans/{loan}/reject',               [AdminLoanRequestController::class, 'rejectLoan'])->name('loans.reject');
     Route::patch('/loans/{loan}/status',              [AdminLoanRequestController::class, 'updateStatus'])->name('loans.status');
     Route::patch('/loans/{loan}/assign-admin',        [AdminLoanRequestController::class, 'assignAdmin'])->name('loans.assign-admin')->middleware('role:super-admin');
     Route::get('/loans/{loan}/notification/docx',        [AdminLoanRequestController::class, 'downloadNotificationDocx'])->name('loans.notification.docx');
@@ -395,6 +405,12 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
         Route::delete('/social-links/{socialLink}',  [\App\Http\Controllers\Admin\SocialLinkController::class, 'destroy'])->name('social-links.destroy');
     });
 
+    // Langues visibles dans le sélecteur du site
+    Route::middleware('role_or_permission:super-admin|manage-languages')->group(function () {
+        Route::get('/languages',  [LanguageController::class, 'index'])->name('languages.index');
+        Route::put('/languages',  [LanguageController::class, 'update'])->name('languages.update');
+    });
+
     // Paramètres de prêt (taux d'intérêt annuel)
     Route::middleware('role_or_permission:super-admin|manage-loan-settings')->group(function () {
         Route::get('/loan-settings',  [\App\Http\Controllers\Admin\LoanSettingController::class, 'edit'])->name('loan-settings.edit');
@@ -450,6 +466,7 @@ Route::middleware(['auth', 'role:super-admin'])->prefix('super-admin')->name('su
     Route::post('/loans/{loan}/send-contract',        [AdminLoanRequestController::class, 'sendContract'])->name('loans.send-contract');
     Route::post('/loans/{loan}/signed',               [AdminLoanRequestController::class, 'markSigned'])->name('loans.signed');
     Route::post('/loans/{loan}/finalize',             [AdminLoanRequestController::class, 'finalizeLoan'])->name('loans.finalize');
+    Route::post('/loans/{loan}/reject',               [AdminLoanRequestController::class, 'rejectLoan'])->name('loans.reject');
     Route::patch('/loans/{loan}/status',              [AdminLoanRequestController::class, 'updateStatus'])->name('loans.status');
     Route::patch('/loans/{loan}/assign-admin',        [AdminLoanRequestController::class, 'assignAdmin'])->name('loans.assign-admin');
     Route::get('/loans/{loan}/notification/docx',        [AdminLoanRequestController::class, 'downloadNotificationDocx'])->name('loans.notification.docx');

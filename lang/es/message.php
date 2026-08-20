@@ -20,6 +20,7 @@ return [
     'loan_confirm_footer'    => 'Nos pondremos en contacto con usted a la mayor brevedad posible. Gracias por confiar en nosotros.',
     'loan_confirm_signature' => 'El equipo de ' . site_name(),
     'loan_confirm_noreply'   => 'Este correo fue enviado desde una dirección no-reply. Por favor no responda directamente a este mensaje.',
+    'no_reply_notice' => 'Este es un correo electrónico generado automáticamente. Por favor, no responda a este mensaje.',
 
     'loan_conditions_title'  => 'Condiciones de elegibilidad',
     'loan_conditions_text'   => 'Para obtener un préstamo, debe tener al menos 18 años, tener ingresos mensuales estables y poder reembolsar según las condiciones establecidas.',

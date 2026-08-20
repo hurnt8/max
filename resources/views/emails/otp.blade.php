@@ -4,6 +4,7 @@
     subtitle="{{ site_name() }}"
     accent="teal"
     :footerNote="__('auth.otp_email_footer', [], $locale)"
+    :locale="$locale"
 >
 
   <p class="greeting">

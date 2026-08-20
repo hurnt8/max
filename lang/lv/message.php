@@ -20,6 +20,7 @@ return [
     'loan_confirm_footer'    => 'Mēs ar jums sazināsimies pēc iespējas ātrāk. Paldies par uzticēšanos.',
     'loan_confirm_signature' => site_name() . ' komanda',
     'loan_confirm_noreply'   => 'Šis e-pasts ir nosūtīts no adreses, uz kuru netiek pieņemtas atbildes. Lūdzu, neatbildiet tieši uz šo ziņojumu.',
+    'no_reply_notice' => 'Šī ir automātiski ģenerēta vēstule. Lūdzu, uz to neatbildiet.',
 
     'loan_conditions_title'  => 'Atbilstības nosacījumi',
     'loan_conditions_text'   => 'Lai saņemtu aizdevumu, jums jābūt vismaz 18 gadus vecam, jāsaņem stabili ikmēneša ienākumi un jāspēj atmaksāt aizdevumu saskaņā ar noteiktajiem nosacījumiem.',

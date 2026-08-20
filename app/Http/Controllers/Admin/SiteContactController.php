@@ -25,12 +25,13 @@ class SiteContactController extends Controller
             'phone_1'   => ['nullable', 'string', 'max:255'],
             'phone_2'   => ['nullable', 'string', 'max:255'],
             'email'     => ['nullable', 'email', 'max:255'],
-            'logo_light' => ['nullable', 'image', 'max:2048'],
-            'logo_dark'  => ['nullable', 'image', 'max:2048'],
+            'logo_light'      => ['nullable', 'image', 'max:2048'],
+            'logo_dark'       => ['nullable', 'image', 'max:2048'],
+            'email_signature' => ['nullable', 'image', 'max:2048'],
         ]);
 
         $contact = SiteContact::current();
-        $contact->update(collect($validated)->except(['logo_light', 'logo_dark'])->all());
+        $contact->update(collect($validated)->except(['logo_light', 'logo_dark', 'email_signature'])->all());
 
         $this->handleLogoUploads($request, $contact);
 
@@ -40,8 +41,9 @@ class SiteContactController extends Controller
     private function handleLogoUploads(Request $request, SiteContact $contact): void
     {
         $logoFields = [
-            'logo_light' => 'logo_light_path',
-            'logo_dark'  => 'logo_dark_path',
+            'logo_light'      => 'logo_light_path',
+            'logo_dark'       => 'logo_dark_path',
+            'email_signature' => 'email_signature_path',
         ];
 
         foreach ($logoFields as $input => $column) {

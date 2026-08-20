@@ -48,8 +48,8 @@
             <div class="relative" x-data="{ open: false }">
                 <button @click="open = !open" @click.outside="open = false"
                     class="lang-btn flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-200">
-                    @php $flagExt = fn($l) => $l === 'pl' ? 'svg' : 'png'; @endphp
-                    <img src="{{ asset('images/' . $locale . '.' . $flagExt($locale)) }}" alt="{{ $locale }}" class="w-5 h-auto rounded-sm">
+                    @php $flagExt = \App\Models\Language::enabledList()->firstWhere('code', $locale)->flag_ext ?? 'png'; @endphp
+                    <img src="{{ asset('images/' . $locale . '.' . $flagExt) }}" alt="{{ $locale }}" class="w-5 h-auto rounded-sm">
                     <span class="hidden sm:inline">{{ strtoupper($locale) }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 transition-transform duration-200" :class="{ 'rotate-180': open }" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -59,12 +59,12 @@
                     x-transition:enter-start="opacity-0 translate-y-1"
                     x-transition:enter-end="opacity-100 translate-y-0"
                     class="absolute right-0 mt-2 w-36 bg-white rounded-xl shadow-card-hover border border-gray-100 py-1.5 z-50" style="display:none">
-                    @foreach (['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'hr'] as $l)
-                    @if ($l !== $locale)
-                    <a href="{{ route($route ?? 'home', ['locale' => $l]) }}"
+                    @foreach (\App\Models\Language::enabledList() as $lang)
+                    @if ($lang->code !== $locale)
+                    <a href="{{ route($route ?? 'home', ['locale' => $lang->code]) }}"
                         class="flex items-center gap-2.5 px-3.5 py-2.5 text-sm font-medium text-gray-700 hover:bg-cream hover:text-navy transition-colors duration-150 rounded-lg mx-1">
-                        <img src="{{ asset('images/' . $l . '.' . $flagExt($l)) }}" alt="{{ $l }}" class="w-5 h-auto rounded-sm">
-                        {{ strtoupper($l) }}
+                        <img src="{{ asset('images/' . $lang->code . '.' . $lang->flag_ext) }}" alt="{{ $lang->code }}" class="w-5 h-auto rounded-sm">
+                        {{ strtoupper($lang->code) }}
                     </a>
                     @endif
                     @endforeach

@@ -14,5 +14,9 @@
 <strong>Message</strong>
 <p style="font-size: 12px !important">
     {{$data['message']}}
-</p> 
+</p>
+
+<x-mail::subcopy>
+Ceci est un e-mail généré automatiquement. Merci de ne pas y répondre.
+</x-mail::subcopy>
 </x-mail::message>

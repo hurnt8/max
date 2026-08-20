@@ -71,6 +71,11 @@ return [
     'send_btn'              => 'Изпрати',
     'send_name'             => 'Име на получателя',
     'send_iban'             => 'IBAN на получателя',
+    'doc_contract' => 'Dogovor',
+    'doc_notification' => 'Uvedomlenie',
+    'doc_insurance' => 'Zastrahovka',
+    'doc_conditions' => 'Obshti_Uslovia',
+    'doc_amortization' => 'Grafik_Pogasyavane',
     'transfer_insufficient'     => 'Недостатъчно салдо за извършване на този превод.',
     'transfer_negative_balance' => 'Вашето салдо е отрицателно. Преводите са блокирани до уреждане на сметката ви.',
 

@@ -23,6 +23,7 @@ $t = $texts[$locale ?? 'fr'] ?? $texts['fr'];
     :title="$t['title']"
     :subtitle="$t['sub']"
     accent="orange"
+    :locale="$locale"
 >
 
   <p class="greeting">

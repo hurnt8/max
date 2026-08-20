@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\LoanFinalizedMail;
+use App\Mail\LoanRejectedMail;
 use App\Mail\LoanValidatedMail;
 use App\Mail\SignedContractAcknowledgementMail;
 use App\Mail\LoanValidationNotificationMail;
@@ -1040,6 +1041,12 @@ class LoanRequestController extends Controller
             return back()->with('error', 'Utilisez le bouton "Finaliser le dossier" pour finaliser (il permet de choisir si le compte client doit être crédité).');
         }
 
+        // ── Le rejet passe obligatoirement par le bouton dédié : il exige un
+        // motif et envoie un email au client, ce que ce sélecteur ne permet pas.
+        if ($data['status'] === LoanRequest::STATUS_REJECTED && $old['status'] !== LoanRequest::STATUS_REJECTED) {
+            return back()->with('error', 'Utilisez le bouton "Rejeter le dossier" pour rejeter (il permet de saisir le motif envoyé au client).');
+        }
+
         // ── Autres changements de statut ──────────────────────────────────
         DB::transaction(function () use ($loan, $data, $old) {
             $loan->update(['status' => $data['status']]);
@@ -1139,6 +1146,56 @@ class LoanRequestController extends Controller
         }
 
         $msg = 'Dossier finalisé' . ($credited ? ' — compte client crédité.' : '.');
+        $msg .= $mailSent ? ' Email envoyé au client.' : ' (Email non envoyé — vérifiez la configuration mail.)';
+
+        return back()->with('success', $msg);
+    }
+
+    /**
+     * Rejette le dossier avec un motif obligatoire, et envoie un email au
+     * client dans la langue du dossier incluant ce motif et un lien vers la
+     * page "prochaines étapes".
+     */
+    public function rejectLoan(Request $request, LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+
+        $data = $request->validate([
+            'rejection_reason' => 'required|string|max:2000',
+        ]);
+
+        $old = ['status' => $loan->status];
+
+        $loan->update([
+            'status'           => LoanRequest::STATUS_REJECTED,
+            'rejected_at'      => now(),
+            'rejection_reason' => $data['rejection_reason'],
+        ]);
+
+        if ($loan->client_id) {
+            ClientNotification::notifyUser(
+                $loan->client,
+                'loan_update',
+                'app.notif_loan_rejected',
+                'app.notif_loan_rejected_body',
+                ['reference' => $loan->reference],
+                ['loan_id' => $loan->id]
+            );
+        }
+
+        $this->logHistory($loan, 'rejected', $old, ['status' => $loan->status, 'reason' => $data['rejection_reason']]);
+
+        $mailSent = true;
+        if ($loan->client_id) {
+            try {
+                Mail::to($this->recipientEmail($loan))->send(new LoanRejectedMail($loan, $data['rejection_reason']));
+            } catch (\Throwable $e) {
+                Log::error('LoanRejectedMail failed for ' . $loan->reference . ': ' . $e->getMessage());
+                $mailSent = false;
+            }
+        }
+
+        $msg = 'Dossier rejeté.';
         $msg .= $mailSent ? ' Email envoyé au client.' : ' (Email non envoyé — vérifiez la configuration mail.)';
 
         return back()->with('success', $msg);

@@ -79,6 +79,11 @@ return [
     'send_btn'           => 'Versturen',
     'send_name'          => 'Naam van de begunstigde',
     'send_iban'          => 'IBAN van de begunstigde',
+    'doc_contract' => 'Contract',
+    'doc_notification' => 'Kennisgeving',
+    'doc_insurance' => 'Verzekering',
+    'doc_conditions' => 'Algemene_Voorwaarden',
+    'doc_amortization' => 'Aflossingsschema',
     'transfer_insufficient'     => 'Onvoldoende saldo om deze overboeking uit te voeren.',
     'transfer_negative_balance' => 'Uw saldo is negatief. Overboekingen zijn geblokkeerd totdat dit is rechtgezet.',
 

@@ -9,6 +9,7 @@ use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\URL;
 
 class LoanValidatedMail extends Mailable
 {
@@ -30,7 +31,15 @@ class LoanValidatedMail extends Mailable
 
     public function content(): Content
     {
-        return new Content(htmlString: $this->htmlBody);
+        return new Content(
+            view: 'emails.notification-template',
+            with: [
+                'title'      => $this->mailSubject,
+                'body'       => $this->htmlBody,
+                'locale'     => $this->loan->contract_language ?? 'fr',
+                'outcomeUrl' => URL::signedRoute('loan.outcome.approved', ['loan' => $this->loan]),
+            ],
+        );
     }
 
     public function attachments(): array
@@ -39,19 +48,19 @@ class LoanValidatedMail extends Mailable
 
         if (file_exists($this->pdfPath)) {
             $attachments[] = Attachment::fromPath($this->pdfPath)
-                ->as('Contrat_' . $this->loan->reference . '.pdf')
+                ->as($this->loan->documentFileName('contract'))
                 ->withMime('application/pdf');
         }
 
         if ($this->amortizationPdfPath && file_exists($this->amortizationPdfPath)) {
             $attachments[] = Attachment::fromPath($this->amortizationPdfPath)
-                ->as('Tableau_Amortissement_' . $this->loan->reference . '.pdf')
+                ->as($this->loan->documentFileName('amortization'))
                 ->withMime('application/pdf');
         }
 
         if ($this->conditionsPdfPath && file_exists($this->conditionsPdfPath)) {
             $attachments[] = Attachment::fromPath($this->conditionsPdfPath)
-                ->as('Conditions_Generales_' . $this->loan->reference . '.pdf')
+                ->as($this->loan->documentFileName('conditions'))
                 ->withMime('application/pdf');
         }
 

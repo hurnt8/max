@@ -31,4 +31,7 @@
 **{{ __('message.docs_verso') }} :**  ({{ __('message.docs_id_photo') }})
 @endif
 
+<x-mail::subcopy>
+{{ __('message.no_reply_notice') }}
+</x-mail::subcopy>
 </x-mail::message>

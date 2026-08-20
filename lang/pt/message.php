@@ -20,6 +20,7 @@ return [
     'loan_confirm_footer'    => 'Entraremos em contacto consigo o mais rapidamente possível. Obrigado pela sua confiança.',
     'loan_confirm_signature' => 'A equipa ' . site_name(),
     'loan_confirm_noreply'   => 'Este email foi enviado a partir de um endereço sem resposta. Por favor, não responda diretamente a esta mensagem.',
+    'no_reply_notice' => 'Esta é uma mensagem gerada automaticamente. Por favor, não responda a este e-mail.',
 
     'loan_conditions_title'  => 'Condições de elegibilidade',
     'loan_conditions_text'   => 'Para obter um empréstimo, deve ter pelo menos 18 anos, ter um rendimento mensal estável e ser capaz de reembolsar de acordo com as condições estabelecidas.',

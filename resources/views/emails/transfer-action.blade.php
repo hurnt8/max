@@ -62,6 +62,7 @@ $accent = match($action) { 'approved' => 'green', 'rejected' => 'red', default =
     :title="$t['title']"
     :subtitle="$t['sub']"
     :accent="$accent"
+    :locale="$locale"
 >
 
   <p class="greeting">

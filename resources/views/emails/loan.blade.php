@@ -23,4 +23,7 @@
 **{{ __('loan.label_objet') }} :** {{ $data['objet'] }}
 @endif
 
+<x-mail::subcopy>
+{{ __('message.no_reply_notice') }}
+</x-mail::subcopy>
 </x-mail::message>

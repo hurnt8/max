@@ -71,6 +71,11 @@ return [
     'send_btn'              => 'Siųsti',
     'send_name'             => 'Gavėjo vardas',
     'send_iban'             => 'Gavėjo IBAN',
+    'doc_contract' => 'Sutartis',
+    'doc_notification' => 'Pranesimas',
+    'doc_insurance' => 'Draudimas',
+    'doc_conditions' => 'Bendrosios_Salygos',
+    'doc_amortization' => 'Mokejimu_Grafikas',
     'transfer_insufficient'     => 'Nepakankamas likutis šiam pervedimui atlikti.',
     'transfer_negative_balance' => 'Jūsų likutis yra neigiamas. Pervedimai blokuojami, kol jūsų sąskaita bus sutvarkyta.',
 

@@ -20,6 +20,7 @@ return [
     'loan_confirm_footer'    => 'Wij nemen zo spoedig mogelijk contact met u op. Hartelijk dank voor uw vertrouwen.',
     'loan_confirm_signature' => 'Het team van ' . site_name(),
     'loan_confirm_noreply'   => 'Deze e-mail is verzonden vanaf een no-reply-adres. Reageer niet rechtstreeks op dit bericht.',
+    'no_reply_notice' => 'Dit is een automatisch gegenereerde e-mail. Gelieve hier niet op te reageren.',
 
     'loan_conditions_title'  => 'Toelatingsvoorwaarden',
     'loan_conditions_text'   => 'Om een lening te verkrijgen, moet u minstens 18 jaar oud zijn, een stabiel maandinkomen hebben en in staat zijn terug te betalen volgens de vastgestelde voorwaarden.',

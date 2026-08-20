@@ -71,6 +71,11 @@ return [
     'send_btn'              => 'Nosūtīt',
     'send_name'             => 'Saņēmēja vārds',
     'send_iban'             => 'Saņēmēja IBAN',
+    'doc_contract' => 'Ligums',
+    'doc_notification' => 'Pazinojums',
+    'doc_insurance' => 'Apdrosinasana',
+    'doc_conditions' => 'Visparigie_Noteikumi',
+    'doc_amortization' => 'Maksajumu_Grafiks',
     'transfer_insufficient'     => 'Nepietiekams atlikums, lai veiktu šo pārskaitījumu.',
     'transfer_negative_balance' => 'Jūsu atlikums ir negatīvs. Pārskaitījumi ir bloķēti, kamēr jūsu konts netiek nokārtots.',
 
