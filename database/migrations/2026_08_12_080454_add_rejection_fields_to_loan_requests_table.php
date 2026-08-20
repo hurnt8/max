@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('loan_requests', function (Blueprint $table) {
-            $table->timestamp('rejected_at')->nullable()->after('finalized_at');
+
             $table->text('rejection_reason')->nullable()->after('rejected_at');
         });
     }
@@ -23,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('loan_requests', function (Blueprint $table) {
-            $table->dropColumn(['rejected_at', 'rejection_reason']);
+            $table->dropColumn(['rejection_reason']);
         });
     }
 };
