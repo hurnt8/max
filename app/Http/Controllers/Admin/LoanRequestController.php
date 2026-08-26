@@ -11,6 +11,7 @@ use App\Mail\LoanValidationNotificationMail;
 use App\Models\AccountMovement;
 use App\Models\ClientNotification;
 use App\Models\ContractTemplate;
+use App\Models\Currency;
 use App\Models\LoanHistory;
 use App\Models\LoanRequest;
 use App\Models\NotificationTemplate;
@@ -94,7 +95,7 @@ class LoanRequestController extends Controller
         $admin     = Auth::user();
         $myClients = $this->clientsForAdmin($admin);
         $templates  = $this->templatesForAdmin($admin);
-        $currencies = config('solberg.currencies');
+        $currencies = Currency::codes();
         $annualRate = \App\Models\LoanSetting::current()->annual_rate;
         $financingTypes = LoanRequest::FINANCING_TYPES;
 
@@ -268,7 +269,7 @@ class LoanRequestController extends Controller
         $myClients = User::where('type', 'client')
                          ->whereHas('clientLoans', fn($q) => $q->where('admin_id', $admin->id))
                          ->orderBy('name')->get();
-        $currencies = config('solberg.currencies');
+        $currencies = Currency::codes();
         $templates  = $this->templatesForAdmin($admin);
         $financingTypes = LoanRequest::FINANCING_TYPES;
 
@@ -1088,7 +1089,7 @@ class LoanRequestController extends Controller
                 'finalized_at' => now(),
             ]);
 
-            $cur = $fresh->currency ?? config('solberg.default_currency');
+            $cur = $fresh->currency ?? Currency::default();
 
             if ($creditRequested && $fresh->client_id) {
                 $before = (float) $fresh->client->balance;

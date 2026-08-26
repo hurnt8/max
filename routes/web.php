@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AdminNotificationController;
 use App\Http\Controllers\Admin\ContractTemplateController;
+use App\Http\Controllers\Admin\CurrencyController;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\LoanRequestController as AdminLoanRequestController;
@@ -416,6 +417,14 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::middleware('role_or_permission:super-admin|manage-languages')->group(function () {
         Route::get('/languages',  [LanguageController::class, 'index'])->name('languages.index');
         Route::put('/languages',  [LanguageController::class, 'update'])->name('languages.update');
+    });
+
+    // Devises disponibles dans le projet
+    Route::middleware('role_or_permission:super-admin|manage-currencies')->group(function () {
+        Route::get('/currencies',               [CurrencyController::class, 'index'])->name('currencies.index');
+        Route::put('/currencies',                [CurrencyController::class, 'update'])->name('currencies.update');
+        Route::post('/currencies',               [CurrencyController::class, 'store'])->name('currencies.store');
+        Route::delete('/currencies/{currency}',  [CurrencyController::class, 'destroy'])->name('currencies.destroy');
     });
 
     // Paramètres de prêt (taux d'intérêt annuel)

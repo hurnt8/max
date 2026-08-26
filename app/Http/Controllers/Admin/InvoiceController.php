@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Mail\InvoiceMail;
 use App\Models\ClientNotification;
+use App\Models\Currency;
 use App\Models\Invoice;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -88,7 +89,7 @@ class InvoiceController extends Controller
     public function create()
     {
         $clients    = $this->clientsQuery()->get();
-        $currencies = config('solberg.currencies');
+        $currencies = Currency::codes();
         return view('admin.invoices.create', compact('clients', 'currencies'));
     }
 
@@ -98,7 +99,7 @@ class InvoiceController extends Controller
             'client_id'   => 'required|exists:users,id',
             'issue_date'  => 'required|date',
             'due_date'    => 'nullable|date|after_or_equal:issue_date',
-            'currency'    => 'required|string|in:' . implode(',', config('solberg.currencies')),
+            'currency'    => 'required|string|in:' . implode(',', Currency::codes()),
             'tax_rate'    => 'nullable|numeric|min:0|max:100',
             'description' => 'nullable|string|max:1000',
             'note'        => 'nullable|string|max:500',
@@ -164,7 +165,7 @@ class InvoiceController extends Controller
         abort_unless($invoice->isDraft(), 403, 'Seuls les brouillons peuvent être modifiés.');
 
         $clients    = $this->clientsQuery()->get();
-        $currencies = config('solberg.currencies');
+        $currencies = Currency::codes();
         return view('admin.invoices.edit', compact('invoice', 'clients', 'currencies'));
     }
 
@@ -177,7 +178,7 @@ class InvoiceController extends Controller
             'client_id'   => 'required|exists:users,id',
             'issue_date'  => 'required|date',
             'due_date'    => 'nullable|date|after_or_equal:issue_date',
-            'currency'    => 'required|string|in:' . implode(',', config('solberg.currencies')),
+            'currency'    => 'required|string|in:' . implode(',', Currency::codes()),
             'tax_rate'    => 'nullable|numeric|min:0|max:100',
             'description' => 'nullable|string|max:1000',
             'note'        => 'nullable|string|max:500',

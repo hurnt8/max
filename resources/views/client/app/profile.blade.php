@@ -25,7 +25,7 @@
   <div>
     <div style="font-size:.65rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.25rem">{{ __('app.balance') }}</div>
     <div style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:800;color:#fff">
-      {{ $user->currency ?? config('solberg.default_currency') }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
+      {{ $user->currency ?? \App\Models\Currency::default() }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
     </div>
   </div>
   <div style="font-size:.75rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:.35rem">

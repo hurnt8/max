@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\ContractTemplate;
+use App\Models\Currency;
 use App\Models\LoanRequest;
 
 class ContractService
@@ -372,7 +373,7 @@ class ContractService
             '{notaire}'         => $loan->notaire ?? '',
             '{montant}'         => number_format((float)$loan->amount, 2, ',', ' '),
             '{montant_totalavecinteret}' => number_format((float)$loan->total_with_interest, 2, ',', ' '),
-            '{devise}'          => $loan->currency ?? config('solberg.default_currency'),
+            '{devise}'          => $loan->currency ?? Currency::default(),
             '{duree}'           => $loan->darly ?? '',
             '{mensualite}'      => number_format((float)$loan->monthly_payment, 2, ',', ' '),
             '{montant_mensualite}' => number_format((float)$loan->monthly_payment, 2, ',', ' '),

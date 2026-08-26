@@ -6,6 +6,7 @@ use App\Mail\LoanMail;
 use App\Mail\LoanConfirmationMail;
 use App\Mail\LoanDocumentsMail;
 use App\Mail\LoanDocumentsConfirmationMail;
+use App\Models\Currency;
 use App\Models\LoanSetting;
 use App\Services\LoanService;
 use Illuminate\Http\Request;
@@ -55,9 +56,9 @@ class LoanController extends Controller
             'darly'    => 'required|numeric|min:1',
             'subject'  => 'required|string',
             'objet'    => 'nullable|string|max:2000',
-            'currency' => 'nullable|string|in:' . implode(',', config('solberg.currencies')),
+            'currency' => 'nullable|string|in:' . implode(',', Currency::codes()),
         ]);
-        $data['currency'] = $data['currency'] ?? config('solberg.default_currency');
+        $data['currency'] = $data['currency'] ?? Currency::default();
 
         $locale = $request->input('locale', 'fr');
         if (!in_array($locale, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'hr'])) {

@@ -7,7 +7,7 @@
 @section('content')
 
 @php
-  $currency      = $user->currency ?? config('solberg.default_currency');
+  $currency      = $user->currency ?? \App\Models\Currency::default();
   $totalSchedule = $loans->sum(fn($l) => (float) $l->total_with_interest);
   $totalCapital  = $loans->sum(fn($l) => (float) $l->amount);
   $totalInterest = max(0, $totalSchedule - $totalCapital);

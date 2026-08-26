@@ -19,6 +19,7 @@ class ExceptionalPermissionsSeeder extends Seeder
         'manage-site-contacts'          => 'Coordonnées du site',
         'manage-social-links'           => 'Réseaux sociaux',
         'manage-languages'              => 'Langues',
+        'manage-currencies'             => 'Devises',
     ];
 
     public function run(): void

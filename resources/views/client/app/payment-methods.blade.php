@@ -228,7 +228,7 @@
   <div class="pm-detail-row">
     <span class="pm-detail-key">{{ __('app.balance') }}</span>
     <span class="pm-detail-val" style="color:var(--ca-positive)">
-      {{ $user->currency ?? config('solberg.default_currency') }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
+      {{ $user->currency ?? \App\Models\Currency::default() }} {{ number_format((float)$user->balance, 2, ',', ' ') }}
     </span>
   </div>
 </div>

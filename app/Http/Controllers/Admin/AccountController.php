@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\AccountMovement;
 use App\Models\ClientNotification;
+use App\Models\Currency;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -53,7 +54,7 @@ class AccountController extends Controller
             'note'   => 'nullable|string|max:255',
         ]);
 
-        $cur = $account->currency ?? config('solberg.default_currency');
+        $cur = $account->currency ?? Currency::default();
 
         DB::transaction(function () use ($account, $validated, $cur) {
             $before = (float) $account->balance;
@@ -94,7 +95,7 @@ class AccountController extends Controller
             'note'   => 'nullable|string|max:255',
         ]);
 
-        $cur    = $account->currency ?? config('solberg.default_currency');
+        $cur    = $account->currency ?? Currency::default();
         $before = (float) $account->balance;
 
         DB::transaction(function () use ($account, $validated, $before, $cur) {
@@ -123,7 +124,7 @@ class AccountController extends Controller
             );
         });
 
-        return back()->with('success', 'Compte débité de ' . number_format($validated['amount'], 2, ',', ' ') . ' ' . ($account->currency ?? config('solberg.default_currency')) . '.');
+        return back()->with('success', 'Compte débité de ' . number_format($validated['amount'], 2, ',', ' ') . ' ' . ($account->currency ?? Currency::default()) . '.');
     }
 
     private function authorizeAccount(User $client): void

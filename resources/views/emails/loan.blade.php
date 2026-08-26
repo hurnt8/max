@@ -11,7 +11,7 @@
 
 **{{ __('loan.label_phone') }} :** {{ $data['phone'] }}
 
-**{{ __('loan.label_amount') }} :** {{ number_format($data['amount'], 0, ',', ' ') }} {{ $data['currency'] ?? config('solberg.default_currency') }}
+**{{ __('loan.label_amount') }} :** {{ number_format($data['amount'], 0, ',', ' ') }} {{ $data['currency'] ?? \App\Models\Currency::default() }}
 
 **{{ __('loan.label_darly') }} :** {{ $data['darly'] }} {{ __('message.months') }}
 

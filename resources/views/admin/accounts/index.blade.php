@@ -7,7 +7,7 @@
   $totalBalance  = $clients->sum('balance');
   $positiveCount = $clients->where('balance', '>', 0)->count();
   $negativeCount = $clients->where('balance', '<', 0)->count();
-  $defaultCur    = config('solberg.default_currency');
+  $defaultCur    = \App\Models\Currency::default();
 @endphp
 
 {{-- Page header ── --}}

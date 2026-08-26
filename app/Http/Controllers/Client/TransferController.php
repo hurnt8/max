@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Mail\AdminTransferMail;
 use App\Models\AdminNotification;
+use App\Models\Currency;
 use App\Models\Transfer;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -70,7 +71,7 @@ class TransferController extends Controller
                     'reference'        => Transfer::generateReference(),
                     'type'             => 'send',
                     'amount'           => $amount,
-                    'currency'         => $fresh->currency ?? config('solberg.default_currency'),
+                    'currency'         => $fresh->currency ?? Currency::default(),
                     'beneficiary_name' => $validated['beneficiary_name'],
                     'beneficiary_iban' => $validated['beneficiary_iban'],
                     'note'             => $validated['note'] ?? null,

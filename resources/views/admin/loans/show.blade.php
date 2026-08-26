@@ -445,7 +445,7 @@ $tpl = $loan->contractTemplate;
           @if($loan->client_id)
           <label style="display:flex;align-items:flex-start;gap:.45rem;font-size:.8rem;color:var(--c-muted);margin-bottom:.5rem;cursor:pointer">
             <input type="checkbox" name="credit_account" value="1" checked style="margin-top:.2rem">
-            <span>Créditer le compte client de <strong>{{ number_format((float) $loan->amount, 2, ',', ' ') }} {{ $loan->currency ?? config('solberg.default_currency') }}</strong></span>
+            <span>Créditer le compte client de <strong>{{ number_format((float) $loan->amount, 2, ',', ' ') }} {{ $loan->currency ?? \App\Models\Currency::default() }}</strong></span>
           </label>
           @else
           <div class="ld-warn-box" style="margin-bottom:.5rem">

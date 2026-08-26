@@ -89,7 +89,7 @@
 @php
   $iban = $user->bank_account ?? 'Non renseigné';
   $bic  = $user->bic ?? 'SOLBERGFR';
-  $currency = $user->currency ?? config('solberg.default_currency');
+  $currency = $user->currency ?? \App\Models\Currency::default();
   $shareText = "IBAN : {$iban}\nBIC : {$bic}\nTitulaire : {$user->name}\nBanque : " . site_name() . " Financial";
 @endphp
 

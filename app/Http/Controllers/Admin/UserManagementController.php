@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\UserInvitationMail;
+use App\Models\Currency;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -128,7 +129,7 @@ class UserManagementController extends Controller
             'date_delivre'     => $data['date_delivre'] ?? null,
             'tax_number'       => $data['tax_number'] ?? null,
             'activity'         => $data['activity'] ?? null,
-            'currency'         => $data['currency'] ?? config('solberg.default_currency'),
+            'currency'         => $data['currency'] ?? Currency::default(),
             'locale'           => $data['locale'] ?? 'fr',
         ]);
 

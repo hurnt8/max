@@ -1,7 +1,7 @@
 @php
 $ref     = $loan->reference;
 $amount  = number_format((float) $loan->amount, 2, ',', ' ');
-$currency = $loan->currency ?? config('solberg.default_currency');
+$currency = $loan->currency ?? \App\Models\Currency::default();
 $name    = $loan->client?->name ?? $loan->name;
 
 $texts = [

@@ -4,6 +4,7 @@
 @php
     $loanSetting = \App\Models\LoanSetting::current();
     $siteContact = \App\Models\SiteContact::current();
+    $currenciesForForm = \App\Models\Currency::enabledList();
 @endphp
 
 @push('styles')
@@ -80,7 +81,7 @@
 <script>
 document.addEventListener('alpine:init', () => {
     Alpine.data('loanForm', () => ({
-        selCurrency: 'EUR',
+        selCurrency: '{{ \App\Models\Currency::default() }}',
         selAmount:   null,
         customAmt:   '',
         selDuration: null,
@@ -93,18 +94,13 @@ document.addEventListener('alpine:init', () => {
         monthAbbr:   "{{ __('message.month_abbr') }}",
         locale:      "{{ str_replace('_','-',app()->getLocale()) }}",
 
-        currencies: [
-            { code:'EUR', symbol:'€',   flag:'🇪🇺', name:'Euro'                    },
-            { code:'GBP', symbol:'£',   flag:'🇬🇧', name:'Livre sterling (GBP)'    },
-            { code:'CHF', symbol:'CHF', flag:'🇨🇭', name:'Franc suisse (CHF)'      },
-            { code:'NOK', symbol:'kr',  flag:'🇳🇴', name:'Couronne norvégienne (NOK)' },
-            { code:'SEK', symbol:'kr',  flag:'🇸🇪', name:'Couronne suédoise (SEK)' },
-            { code:'DKK', symbol:'kr',  flag:'🇩🇰', name:'Couronne danoise (DKK)'  },
-            { code:'PLN', symbol:'zł',  flag:'🇵🇱', name:'Złoty (PLN)'             },
-            { code:'CZK', symbol:'Kč',  flag:'🇨🇿', name:'Couronne tchèque (CZK)'  },
-            { code:'HUF', symbol:'Ft',  flag:'🇭🇺', name:'Forint (HUF)'            },
-            { code:'RON', symbol:'lei', flag:'🇷🇴', name:'Leu roumain (RON)'       },
-        ],
+        currencies: (() => {
+            // Emoji de drapeau cosmetique : pas stocke en base, simple lookup client
+            // avec repli neutre pour toute devise ajoutee depuis l'admin sans entree ici.
+            const flags = { EUR:'🇪🇺', GBP:'🇬🇧', CHF:'🇨🇭', NOK:'🇳🇴', SEK:'🇸🇪', DKK:'🇩🇰', PLN:'🇵🇱', CZK:'🇨🇿', HUF:'🇭🇺', RON:'🇷🇴' };
+            return @json($currenciesForForm->map(fn ($c) => ['code' => $c->code, 'symbol' => $c->symbol, 'name' => $c->name])->values())
+                .map(c => ({ ...c, flag: flags[c.code] || '🏳️' }));
+        })(),
 
         amountsByCurrency: {
             EUR:[1000,3000,5000,10000,20000,50000,75000,95000],

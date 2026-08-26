@@ -4,24 +4,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Devise par défaut
+    | Devises (DEPRECATED — seed uniquement)
     |--------------------------------------------------------------------------
-    | Peut être surchargée via DEFAULT_CURRENCY dans .env
+    | Ces clés ne sont plus lues en direct nulle part dans l'application : la
+    | table `currencies` (voir App\Models\Currency et /admin/currencies) est
+    | la source de vérité. Elles ne servent qu'à peupler les données initiales
+    | de la migration create_currencies_table. Modifiez les devises via
+    | l'admin, pas ici.
     */
     'default_currency' => env('DEFAULT_CURRENCY', 'EUR'),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Devises supportées (liste unique pour tout le projet)
-    |--------------------------------------------------------------------------
-    */
     'currencies' => ['EUR', 'GBP', 'CHF', 'NOK', 'SEK', 'DKK', 'PLN', 'CZK', 'HUF', 'RON'],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Symboles par devise
-    |--------------------------------------------------------------------------
-    */
     'currency_symbols' => [
         'EUR' => '€',
         'GBP' => '£',
