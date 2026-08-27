@@ -76,13 +76,15 @@ class CurrencyController extends Controller
 
     public function store(Request $request)
     {
-        $request->merge(['code' => strtoupper((string) $request->input('code'))]);
+        $request->merge(['code' => strtoupper(trim((string) $request->input('code')))]);
 
         $validated = $request->validate([
             'code'          => 'required|regex:/^[A-Z]{3}$/|unique:currencies,code',
             'name'          => 'required|string|max:100',
             'symbol'        => 'required|string|max:10',
             'exchange_rate' => 'required|numeric|min:0.000001',
+        ], [
+            'code.regex' => 'Le code doit contenir exactement 3 lettres (ex : USD, EUR).',
         ]);
 
         Currency::create([
