@@ -95,11 +95,14 @@ document.addEventListener('alpine:init', () => {
         locale:      "{{ str_replace('_','-',app()->getLocale()) }}",
 
         currencies: (() => {
-            // Emoji de drapeau cosmetique : pas stocke en base, simple lookup client
-            // avec repli neutre pour toute devise ajoutee depuis l'admin sans entree ici.
-            const flags = { EUR:'🇪🇺', GBP:'🇬🇧', CHF:'🇨🇭', NOK:'🇳🇴', SEK:'🇸🇪', DKK:'🇩🇰', PLN:'🇵🇱', CZK:'🇨🇿', HUF:'🇭🇺', RON:'🇷🇴' };
+            // Drapeau derive du code ISO 4217 : ses 2 premieres lettres correspondent
+            // presque toujours au code pays ISO 3166-1 (USD->US, BRL->BR, EUR->EU...).
+            // Ainsi toute devise ajoutee depuis l'admin obtient automatiquement son
+            // drapeau, sans table a maintenir manuellement.
+            const flagFromCode = (code) => code.slice(0, 2).toUpperCase()
+                .replace(/./g, ch => String.fromCodePoint(127397 + ch.charCodeAt(0)));
             return @json($currenciesForForm->map(fn ($c) => ['code' => $c->code, 'symbol' => $c->symbol, 'name' => $c->name])->values())
-                .map(c => ({ ...c, flag: flags[c.code] || '🏳️' }));
+                .map(c => ({ ...c, flag: flagFromCode(c.code) }));
         })(),
 
         amountsByCurrency: {
