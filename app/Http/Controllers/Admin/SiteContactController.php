@@ -25,6 +25,8 @@ class SiteContactController extends Controller
             'phone_1'   => ['nullable', 'string', 'max:255'],
             'phone_2'   => ['nullable', 'string', 'max:255'],
             'email'     => ['nullable', 'email', 'max:255'],
+            'whatsapp_number'  => ['nullable', 'string', 'max:30'],
+            'whatsapp_enabled' => ['boolean'],
             'logo_light'      => ['nullable', 'image', 'max:2048'],
             'logo_dark'       => ['nullable', 'image', 'max:2048'],
             'email_signature' => ['nullable', 'image', 'max:2048'],

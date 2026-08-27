@@ -17,6 +17,12 @@ class SiteContact extends Model
         'phone_1',
         'phone_2',
         'email',
+        'whatsapp_number',
+        'whatsapp_enabled',
+    ];
+
+    protected $casts = [
+        'whatsapp_enabled' => 'boolean',
     ];
 
     /**
@@ -25,5 +31,19 @@ class SiteContact extends Model
     public static function current(): self
     {
         return static::first() ?? static::create([]);
+    }
+
+    /**
+     * Lien wa.me si l'assistant WhatsApp est configuré et actif, sinon null.
+     */
+    public function whatsappUrl(): ?string
+    {
+        if (! $this->whatsapp_enabled || ! $this->whatsapp_number) {
+            return null;
+        }
+
+        $digits = preg_replace('/[^\d]/', '', $this->whatsapp_number);
+
+        return $digits ? "https://wa.me/{$digits}" : null;
     }
 }

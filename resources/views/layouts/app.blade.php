@@ -64,6 +64,8 @@
     </svg>
 </button>
 
+@include('partials.whatsapp-bubble')
+
 @stack('scripts')
 </body>
 </html>

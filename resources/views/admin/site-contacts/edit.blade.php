@@ -131,6 +131,33 @@
         </div>
       </div>
     </div>
+
+    <div class="card-pro mb-4">
+      <div class="card-pro-hdr">
+        <div class="card-pro-title"><span class="icon-dot"></span>Assistant WhatsApp</div>
+      </div>
+      <div class="card-pro-body">
+        <p style="font-size:.8rem;color:var(--c-muted);margin-bottom:.75rem">
+          Bulle flottante affichée sur le site public, en bas de l'écran, qui ouvre une conversation WhatsApp. Visible uniquement si un numéro est renseigné et l'assistant activé.
+        </p>
+        <div class="row g-3">
+          <div class="col-12">
+            <label class="form-label-pro">Numéro WhatsApp</label>
+            <input type="text" name="whatsapp_number" class="form-control-pro"
+                   value="{{ old('whatsapp_number', $contact->whatsapp_number) }}" placeholder="+33612345678">
+            <div class="form-help" style="font-size:.72rem;color:var(--c-muted);margin-top:.3rem">Format international, avec l'indicatif pays (ex : +33612345678).</div>
+          </div>
+          <div class="col-12">
+            <label style="display:flex;align-items:center;gap:.5rem;cursor:pointer">
+              <input type="hidden" name="whatsapp_enabled" value="0">
+              <input type="checkbox" name="whatsapp_enabled" value="1"
+                     {{ old('whatsapp_enabled', $contact->whatsapp_enabled) ? 'checked' : '' }}>
+              <span style="font-size:.85rem">Activer la bulle WhatsApp sur le site public</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="col-12">
