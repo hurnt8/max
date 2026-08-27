@@ -80,13 +80,11 @@
 
           <td data-label="" style="text-align:right">
             @unless($currency->is_default)
-            <form action="{{ route('admin.currencies.destroy', $currency) }}" method="POST"
-                  onsubmit="return confirm('Supprimer la devise {{ $currency->code }} ?')">
-              @csrf @method('DELETE')
-              <button type="submit" class="btn-icon btn-icon-danger" title="Supprimer">
-                <i class="fas fa-trash"></i>
-              </button>
-            </form>
+            <button type="submit" form="delete-currency-{{ $currency->id }}"
+                    onclick="return confirm('Supprimer la devise {{ $currency->code }} ?')"
+                    class="btn-icon btn-icon-danger" title="Supprimer">
+              <i class="fas fa-trash"></i>
+            </button>
             @endunless
           </td>
         </tr>
@@ -103,6 +101,16 @@
 </div>
 
 </form>
+
+{{-- Formulaires de suppression : hors du <form> groupé ci-dessus (un <form> ne peut pas
+     être imbriqué dans un autre), reliés à leur bouton via l'attribut form="" du bouton. --}}
+@foreach($currencies as $currency)
+@unless($currency->is_default)
+<form id="delete-currency-{{ $currency->id }}" action="{{ route('admin.currencies.destroy', $currency) }}" method="POST" style="display:none">
+  @csrf @method('DELETE')
+</form>
+@endunless
+@endforeach
 
 <div class="card-pro mt-4" style="padding:1.5rem">
   <h5 style="margin-bottom:1rem">Ajouter une devise</h5>
