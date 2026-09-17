@@ -5,19 +5,19 @@ return [
     'sections' => [
         [
             'title' => '1. Įvadas',
-            'content' => 'Sveiki atvykę į ' . site_name() . '. Naudodamiesi mūsų svetaine ir paslaugomis, sutinkate laikytis toliau nurodytų sąlygų ir būti jų saistomos. Prašome atidžiai perskaityti šias sąlygas prieš naudodamiesi mūsų svetaine arba imdami paskolą su mumis.',
+            'content' => 'Sveiki atvykę į ' . site_name() . '. Naudodamiesi mūsų svetaine ir paslaugomis, sutinkate laikytis toliau nurodytų sąlygų ir būti jų saistomi. Prašome atidžiai perskaityti šias sąlygas prieš naudodamiesi mūsų svetaine arba teikdami mums pagalbos prašymą.',
         ],
         [
             'title' => '2. Svetainės naudojimas',
             'content' => 'Apsilankydami mūsų svetainėje sutinkate naudotis mūsų paslaugomis tik teisėtais tikslais ir pagal šias sąlygas. Jūs sutinkate nesinaudoti mūsų svetaine jokiu būdu, kuris sukeltų žalą, pertraukimus ar trukdžius mūsų paslaugoms arba kitų vartotojų prieigai.',
         ],
         [
-            'title' => '3. Paskolų paslaugos',
-            'content' => site_name() . ' siūlo įvairių tipų paskolas, kad patenkintų jūsų finansinius poreikius. Visos paskolos turi būti patvirtintos, remiantis mūsų įvertinimu apie jūsų kreditingumą ir grąžinimo galimybes. Konkrečios kiekvienos paskolos sąlygos, įskaitant palūkanų normas, terminus ir grąžinimo sąlygas, bus išsamiai nurodytos jūsų paskolos sutartyje.',
+            'title' => '3. Pagalbos programos',
+            'content' => site_name() . ' siūlo įvairias pagalbos ir finansinės paramos programas, atitinkančias jūsų poreikius. Kiekviena paraiška vertinama remiantis jūsų situacijos įvertinimu ir atitinkamos programos tinkamumo kriterijais. Konkrečios kiekvienos suteiktos pagalbos sąlygos, įskaitant sumą, trukmę ir išmokėjimo tvarką, bus išsamiai nurodytos jūsų paramos sutartyje.',
         ],
         [
-            'title' => '4. Sutarties ir draudimo išlaidos',
-            'content' => 'Išimant paskolą su ' . site_name() . ', gali būti taikomi sutarties ir draudimo mokesčiai. Šis mokestis padengia administracines išlaidas, susijusias su paskolos nustatymu ir valdymu. Konkreti informacija apie šiuos mokesčius bus aiškiai nurodyta jūsų paskolos sutartyje. Šiuos mokesčius privalote sumokėti pagal nurodytas sąlygas.',
+            'title' => '4. Bylos tvarkymo ir draudimo išlaidos',
+            'content' => 'Tvarkant bylą su ' . site_name() . ', gali būti taikomi bylos tvarkymo ir draudimo mokesčiai. Šis mokestis padengia administracines išlaidas, susijusias su jūsų paraiškos nagrinėjimu ir stebėsena. Konkreti informacija apie šiuos mokesčius bus aiškiai nurodyta jūsų paramos sutartyje. Šiuos mokesčius privalote sumokėti pagal nurodytas sąlygas.',
         ],
         [
             'title' => '5. Konfidencialumas',

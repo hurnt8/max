@@ -5,19 +5,19 @@ return [
     'sections' => [
         [
             'title' => '1. Uvod',
-            'content' => 'Dobrodošli pri ' . site_name() . '. Z uporabo naše spletne strani in storitev se strinjate, da se boste držali in bili vezani na naslednje pogoje in določila. Prosimo, natančno preberite te pogoje, preden uporabite našo spletno stran ali sklenete posojilo z nami.'
+            'content' => 'Dobrodošli pri ' . site_name() . '. Z uporabo naše spletne strani in storitev se strinjate, da se boste držali in bili vezani na naslednje pogoje in določila. Prosimo, natančno preberite te pogoje, preden uporabite našo spletno stran ali oddate zahtevo za pomoč pri nas.'
         ],
         [
             'title' => '2. Uporaba spletne strani',
             'content' => 'Z dostopom do naše spletne strani se strinjate, da naše storitve uporabljate le za zakonite namene in v skladu s temi pogoji. Strinjate se, da naše spletne strani ne boste uporabljali na način, ki bi povzročil škodo, prekinitev ali motnje v naših storitvah ali dostopu drugih uporabnikov.'
         ],
         [
-            'title' => '3. Posojilne storitve',
-            'content' => site_name() . ' ponuja različne vrste posojil, da zadosti vašim finančnim potrebam. Vsa posojila so predmet odobritve na podlagi naše ocene vaše kreditne sposobnosti in zmožnosti odplačevanja. Specifični pogoji vsakega posojila, vključno z obrestnimi merami, ročnostmi in pogoji odplačevanja, bodo podrobno opisani v vaši posojilni pogodbi.'
+            'title' => '3. Programi pomoči',
+            'content' => site_name() . ' ponuja različne programe pomoči in finančne podpore, ki ustrezajo vašim potrebam. Vsaka zahteva je predmet ocene na podlagi pregleda vaše situacije in meril upravičenosti zadevnega programa. Posebni pogoji vsake odobrene pomoči, vključno z zneskom, trajanjem in načinom izplačila, bodo podrobno opisani v vašem dogovoru o podpori.'
         ],
         [
-            'title' => '4. Stroški pogodbe in zavarovanja',
-            'content' => 'Ob sklenitvi posojila pri ' . site_name() . ' se lahko zaračunajo stroški pogodbe in zavarovanja. Ta pristojbina pokriva upravne stroške, povezane s postavitvijo in upravljanjem vašega posojila. Specifične podrobnosti o teh stroških bodo jasno navedene v vaši posojilni pogodbi. Te stroške morate plačati v skladu s predpisi.'
+            'title' => '4. Stroški obravnave in zavarovanja',
+            'content' => 'Ob oblikovanju dosjeja pri ' . site_name() . ' se lahko zaračunajo stroški obravnave in zavarovanja. Ta pristojbina pokriva upravne stroške, povezane z obravnavo in spremljanjem vaše zahteve. Specifične podrobnosti o teh stroških bodo jasno navedene v vašem dogovoru o podpori. Te stroške morate poravnati v skladu z navedenimi pogoji.'
         ],
         [
             'title' => '5. Zaupnost',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Kontakt',
-            'content' => 'Če imate kakršna koli vprašanja ali pomisleke glede teh pogojev in določil, nas kontaktirajte na:<br><br>' . site_name() . '<br>Naslov: Calcea Victoriei 118, Sector 1, 010093 Bukarešta<br>E-pošta: ' . site_email() . '<br>Telefon: ' . site_phone() . ' '
+            'content' => 'Če imate kakršna koli vprašanja ali pomisleke glede teh pogojev in določil, nas kontaktirajte na:<br><br>' . site_name() . '<br>Naslov: Rua de Santo António 33, 7200-175, Portugalska<br>E-pošta: ' . site_email() . '<br>Telefon: ' . site_phone() . ' '
         ],
     ],
 ];

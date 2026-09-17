@@ -2,7 +2,7 @@
 
 return [
     'banner_title' => 'Neem contact met ons op',
-    'banner_description' => 'Wij bespreken graag hoe wij u kunnen helpen',
+    'banner_description' => 'Wij bespreken graag hoe wij u kunnen begeleiden',
     'form_title' => 'Vertel ons over uzelf',
     'form_description' => ' Of u nu vragen heeft of gewoon even gedag wilt zeggen, neem contact met ons op.',
     'label_name' => 'Naam en voornamen',
@@ -12,10 +12,10 @@ return [
     'placeholder_email' => 'Uw e-mailadres',
     'placeholder_message' => 'Uw bericht',
     'button' => 'Verzenden',
-    'subject' => 'Selecteer een lening',
+    'subject' => 'Selecteer een hulpprogramma',
 
     'detail_title' => 'Blijf met ons in contact ',
-    'detail_desc' => 'Wij staan voor u klaar. Neem contact met ons op voor vragen of hulp met betrekking tot onze leendiensten.',
+    'detail_desc' => 'Wij staan voor u klaar. Neem contact met ons op voor vragen of hulp met betrekking tot onze steunprogramma\'s.',
 
     'address_title' => 'Adres',
     'address_desc' => 'Rua de Santo António 33, 7200-175, Portugal',

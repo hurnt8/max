@@ -5,19 +5,19 @@ return [
     'menu' => 'Meniu',
     'home' => 'Acasă',
     'about' => 'Despre noi',
-    'services' => 'Serviciile noastre',
-    'simulate' => 'Simulare împrumut',
+    'services' => 'Programele noastre',
+    'simulate' => 'Simulați un ajutor',
     'contact' => 'Contactați-ne',
-    'loan' => 'Solicitați un împrumut',
+    'loan' => 'Solicitați un ajutor',
 
-    'personal' => 'Împrumut personal',
-    'auto' => 'Împrumut auto',
-    'home_loan' => 'Credit imobiliar',
-    'study' => 'Credit pentru studenți',
-    'business' => 'Credit comercial',
-    'bike' => 'Credit pentru bicicletă',
+    'personal' => 'Solidaritate și Sănătate',
+    'auto' => 'Agricultură',
+    'home_loan' => 'Dezvoltare locală',
+    'study' => 'Educație',
+    'business' => 'Antreprenoriat',
+    'bike' => 'Inserție profesională',
 
-    'arlert' => "Obțineți un împrumut cu o rată a dobânzii de până la 3%",
+    'arlert' => "Depuneți cererea de sprijin în doar câteva minute",
 
 
 
@@ -28,8 +28,8 @@ return [
     'addresses'        => 'Adrese',
     'rights_reserved'  => 'Toate drepturile rezervate.',
     'email_placeholder'=> 'Adresa dumneavoastră de e-mail',
-    'newsletter_title' => 'Rămâneți informat despre ofertele noastre',
+    'newsletter_title' => 'Rămâneți informat despre acțiunile noastre',
     'subscribe'        => "Abonează-te",
     'read_more'        => 'Aflați mai multe',
-    'footer_desc'      => site_name() . " este partenerul dumneavoastră de încredere pentru soluții de finanțare rapide, flexibile și personalizate în întreaga Europă.",
+    'footer_desc'      => site_name() . " sprijină persoane, asociații și inițiatori de proiecte din întreaga Europă prin programe de sprijin financiar transparente, responsabile și pline de omenie.",
 ];

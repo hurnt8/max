@@ -5,19 +5,19 @@ return [
     'sections' => [
         [
             'title' => '1. Introdução',
-            'content' => 'Bem-vindo à ' . site_name() . '. Ao usar nosso site e serviços, você concorda em cumprir e estar vinculado aos seguintes termos e condições. Por favor, leia estes termos cuidadosamente antes de usar nosso site ou solicitar um empréstimo conosco.'
+            'content' => 'Bem-vindo à ' . site_name() . '. Ao usar nosso site e serviços, você concorda em cumprir e estar vinculado aos seguintes termos e condições. Por favor, leia estes termos cuidadosamente antes de usar nosso site ou submeter um pedido de ajuda junto de nós.'
         ],
         [
             'title' => '2. Uso do site',
             'content' => 'Ao acessar nosso site, você concorda em usar nossos serviços apenas para fins legais e de acordo com estas condições. Você concorda em não usar nosso site de maneira que cause danos, interrupções ou interferências em nossos serviços ou no acesso de outros usuários.'
         ],
         [
-            'title' => '3. Serviços de empréstimo',
-            'content' => 'A ' . site_name() . ' oferece vários tipos de empréstimos para atender às suas necessidades financeiras. Todos os empréstimos estão sujeitos à aprovação com base em nossa avaliação de sua solvência e capacidade de pagamento. Os termos específicos de cada empréstimo, incluindo taxas de juros, prazos e condições de pagamento, serão detalhados em seu contrato de empréstimo.'
+            'title' => '3. Programas de ajuda',
+            'content' => 'A ' . site_name() . ' disponibiliza diversos programas de ajuda e apoio financeiro para responder às suas necessidades. Cada pedido está sujeito a uma avaliação baseada na análise da sua situação e nos critérios de elegibilidade do programa em causa. Os termos específicos de cada ajuda concedida, incluindo o montante, a duração e as modalidades de pagamento, serão detalhados no seu acordo de apoio.'
         ],
         [
-            'title' => '4. Custos de contrato e seguro',
-            'content' => 'Ao solicitar um empréstimo com a ' . site_name() . ', podem ser aplicadas taxas de contrato e seguro. Esta taxa cobre os custos administrativos associados à configuração e gestão do seu empréstimo. Os detalhes específicos dessas taxas serão claramente indicados em seu contrato de empréstimo. Você é obrigado a pagar essas taxas de acordo com os termos especificados.'
+            'title' => '4. Custos de processo e seguro',
+            'content' => 'Ao constituir um processo junto da ' . site_name() . ', podem ser aplicados custos de processo e seguro. Estes custos cobrem as despesas administrativas associadas à instrução e ao acompanhamento do seu pedido. Os detalhes específicos destes custos serão claramente indicados no seu acordo de apoio. Você é obrigado a pagar estes valores de acordo com os termos especificados.'
         ],
         [
             'title' => '5. Confidencialidade',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contato',
-            'content' => 'Se você tiver alguma dúvida ou preocupação em relação a estes termos e condições, entre em contato conosco em:<br><br>' . site_name() . '<br>Endereço: Calcea Victoriei 118 Setor 1 010093 Bucareste<br>E-mail: ' . site_email() . '<br>Telefone: ' . site_phone() . ' '
+            'content' => 'Se você tiver alguma dúvida ou preocupação em relação a estes termos e condições, entre em contato conosco em:<br><br>' . site_name() . '<br>Endereço: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: ' . site_email() . '<br>Telefone: ' . site_phone() . ' '
         ],
     ],
 

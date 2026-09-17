@@ -12,10 +12,10 @@ return [
     'placeholder_email' => 'L-email tiegħek',
     'placeholder_message' => 'Il-Messaġġ Tiegħek',
     'button' => 'Ibgħat',
-    'subject' => 'Agħżel Self',
+    'subject' => 'Agħżel Programm ta’ Għajnuna',
 
     'detail_title' => 'Żomm kuntatt magħna',
-    'detail_desc' => 'Aħna hawn biex ngħinuk. Ikkuntattjana għal kwalunkwe mistoqsija jew għajnuna rigward is-servizzi tagħna tas-self.',
+    'detail_desc' => 'Aħna hawn biex ngħinuk. Ikkuntattjana għal kwalunkwe mistoqsija jew għajnuna rigward il-programmi tagħna ta’ appoġġ.',
 
     'address_title' => 'Indirizz',
     'address_desc' => 'Calcea Victoriei 118 Settore 1 010093 Bukarest',

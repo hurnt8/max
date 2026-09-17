@@ -1,6 +1,6 @@
 /* ================================================================
-   Credixa — Design System v2
-   Color: Navy #0B1A2E · Gold #C8A951 · Cream #F7F3EC
+   SOLIDARIS FOUNDATION — Design System v4
+   Color: Navy #0B1A2E · Accent blue #1F7AC7 · Cream #F7F3EC
    Font:  Playfair Display (headings) · Inter (body)
 ================================================================ */
 
@@ -20,10 +20,10 @@ p { margin-bottom: .75rem; }
     --navy-mid:    #162540;
     --navy-light:  #1E3A5F;
     --navy-deep:   #060E1C;
-    --gold:        #C8A951;
-    --gold-light:  #E8CB72;
-    --gold-pale:   #F5E9C8;
-    --gold-dark:   #A88830;
+    --gold:        #1F7AC7;
+    --gold-light:  #4FA8E0;
+    --gold-pale:   #EAF4FC;
+    --gold-dark:   #145A94;
     --cream:       #F7F3EC;
     --cream-light: #FDFBF8;
     --white:       #FFFFFF;
@@ -36,7 +36,7 @@ p { margin-bottom: .75rem; }
     --gray-900:    #0F172A;
     --shadow-card: 0 1px 3px rgba(11,26,46,.06), 0 4px 16px rgba(11,26,46,.08);
     --shadow-hover: 0 4px 8px rgba(11,26,46,.08), 0 16px 40px rgba(11,26,46,.12);
-    --shadow-gold: 0 4px 24px rgba(200,169,81,.30);
+    --shadow-gold: 0 4px 24px rgba(31,122,199,.22);
     --radius:      0.75rem;
     --radius-sm:   0.5rem;
     --radius-xl:   1rem;
@@ -225,8 +225,8 @@ p { margin-bottom: .75rem; }
     align-items: center;
     gap: .5rem;
     padding: .375rem 1rem;
-    background: rgba(200,169,81,.12);
-    border: 1px solid rgba(200,169,81,.25);
+    background: rgba(31,122,199,.12);
+    border: 1px solid rgba(31,122,199,.25);
     border-radius: 100px;
     color: var(--gold-light);
     font-size: .8125rem;
@@ -269,7 +269,7 @@ p { margin-bottom: .75rem; }
 .hero-trust__icon {
     width: 44px;
     height: 44px;
-    background: rgba(200,169,81,.15);
+    background: rgba(31,122,199,.15);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -310,7 +310,7 @@ p { margin-bottom: .75rem; }
     right: -100px;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(200,169,81,.12) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(31,122,199,.12) 0%, transparent 65%);
     border-radius: 50%;
 }
 .page-hero::after {
@@ -660,7 +660,7 @@ p { margin-bottom: .75rem; }
     right: -120px;
     width: 480px;
     height: 480px;
-    background: radial-gradient(circle, rgba(200,169,81,.08) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(31,122,199,.08) 0%, transparent 60%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -743,7 +743,7 @@ p { margin-bottom: .75rem; }
 }
 .form-control:focus {
     border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(200,169,81,.12);
+    box-shadow: 0 0 0 3px rgba(31,122,199,.12);
 }
 .form-control::placeholder { color: var(--gray-400); }
 textarea.form-control { resize: vertical; min-height: 130px; }
@@ -866,7 +866,7 @@ select.form-control { cursor: pointer; }
 }
 .faq-btn.is-open .faq-btn__icon {
     transform: rotate(180deg);
-    background: rgba(200,169,81,.2);
+    background: rgba(31,122,199,.2);
     color: var(--gold);
 }
 .faq-body {
@@ -898,7 +898,7 @@ select.form-control { cursor: pointer; }
 .contact-info-card__icon {
     width: 48px;
     height: 48px;
-    background: rgba(200,169,81,.15);
+    background: rgba(31,122,199,.15);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -944,7 +944,7 @@ select.form-control { cursor: pointer; }
 .contact-panel__company h3 { font-family: 'Playfair Display', serif; font-size: 1.375rem; color: var(--white); margin: 0 0 .5rem; font-weight: 700; }
 .contact-panel__company p { font-size: .875rem; color: rgba(255,255,255,.6); margin: 0; line-height: 1.6; }
 .contact-panel__item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-.contact-panel__item-icon { width: 36px; height: 36px; background: rgba(200,169,81,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: .875rem; flex-shrink: 0; }
+.contact-panel__item-icon { width: 36px; height: 36px; background: rgba(31,122,199,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: .875rem; flex-shrink: 0; }
 .contact-panel__item-label { font-size: .6875rem; text-transform: uppercase; letter-spacing: .08em; color: var(--gold); font-weight: 700; display: block; margin-bottom: .125rem; }
 .contact-panel__item-value { font-size: .9rem; color: rgba(255,255,255,.85); }
 .contact-panel__item-value a { color: rgba(255,255,255,.85); }
@@ -991,7 +991,7 @@ select.form-control { cursor: pointer; }
     background: var(--cream);
     border-radius: var(--radius-xl);
     padding: 1.75rem;
-    border: 1px solid rgba(200,169,81,.15);
+    border: 1px solid rgba(31,122,199,.15);
 }
 .service-sidebar__title {
     font-family: 'Playfair Display', serif;
@@ -1109,7 +1109,7 @@ select.form-control { cursor: pointer; }
 .footer-links a::before { content: '›'; color: var(--gold); font-size: 1rem; flex-shrink: 0; }
 .footer-links a:hover { color: var(--white); padding-left: .25rem; }
 .footer-contact-item { display: flex; align-items: flex-start; gap: .875rem; margin-bottom: .875rem; }
-.footer-contact-item .icon { width: 32px; height: 32px; background: rgba(200,169,81,.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); flex-shrink: 0; font-size: .8125rem; }
+.footer-contact-item .icon { width: 32px; height: 32px; background: rgba(31,122,199,.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); flex-shrink: 0; font-size: .8125rem; }
 .footer-contact-item a { color: rgba(255,255,255,.55); font-size: .875rem; }
 .footer-contact-item a:hover { color: var(--gold); }
 .footer-newsletter { display: flex; margin-top: .75rem; }
@@ -1157,7 +1157,7 @@ select.form-control { cursor: pointer; }
     position: absolute;
     top: -100px; right: -100px;
     width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(200,169,81,.1) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(31,122,199,.1) 0%, transparent 60%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -1201,7 +1201,7 @@ select.form-control { cursor: pointer; }
 .alert { border-radius: var(--radius-sm); font-size: .9rem; padding: 1rem 1.25rem; border: none; margin-bottom: 1.25rem; }
 .alert-success { background: rgba(16,185,129,.1); color: #065f46; border-left: 4px solid #10b981; }
 .alert-danger  { background: rgba(220,38,38,.08); color: #991b1b; border-left: 4px solid #dc2626; }
-.alert-info    { background: rgba(200,169,81,.1); color: var(--navy); border-left: 4px solid var(--gold); }
+.alert-info    { background: rgba(31,122,199,.1); color: var(--navy); border-left: 4px solid var(--gold); }
 
 /* ================================================================
    LAYOUT UTILITIES — gutter classes via Bootstrap 5 CSS var

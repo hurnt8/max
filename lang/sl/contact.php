@@ -12,10 +12,10 @@ return [
     'placeholder_email' => 'Vaš e-poštni naslov',
     'placeholder_message' => 'Vaše sporočilo',
     'button' => 'Pošlji',
-    'subject' => 'Izberi posojilo',
+    'subject' => 'Izberi program pomoči',
 
     'detail_title' => 'Ostanite v stiku z nami',
-    'detail_desc' => 'Tu smo, da vam pomagamo. Kontaktirajte nas za vsa vprašanja ali pomoč v zvezi z našimi posojilnimi storitvami.',
+    'detail_desc' => 'Tu smo, da vam pomagamo. Kontaktirajte nas za vsa vprašanja ali pomoč v zvezi z našimi programi podpore.',
 
     'address_title' => 'Naslov',
     'address_desc' => 'Calcea Victoriei 118 Sector 1 010093 Bukarešta',

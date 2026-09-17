@@ -4,20 +4,20 @@ return [
     'menu' => 'Menu',
     'home' => 'Dar',
     'about' => 'Dwarna',
-    'services' => 'Is-Servizzi Tagħna',
-    'simulate' => "Simulazzjoni ta' self",
+    'services' => 'Il-Programmi Tagħna',
+    'simulate' => "Simula għajnuna",
     'contact' => 'Ikkuntattjana',
-    'loan' => 'Applika għal self',
+    'loan' => 'Applika għal għajnuna',
 
-    'personal' => 'Self personali',
-    'auto' => 'Self awtomatiku',
-    'home_loan' => 'Self għad-dar',
-    'study' => "Self ta' studju",
-    'business' => 'Self tan-negozju',
-    'bike' => "Self ta' bike",
+    'personal' => 'Solidarjetà u Saħħa',
+    'auto' => 'Agrikoltura',
+    'home_loan' => 'Żvilupp Lokali',
+    'study' => "Edukazzjoni",
+    'business' => 'Intraprenditorija',
+    'bike' => "Integrazzjoni Professjonali",
 
 
-    'arlert' => "Ikseb self b'rata ta' imgħax sa 3%"    ,
+    'arlert' => "Issottometti t-talba tiegħek għal appoġġ fi ftit minuti biss"    ,
 
 
 
@@ -27,8 +27,8 @@ return [
     'quick_links'      => 'Links Rapidi',
     'rights_reserved'  => "Id-drittijiet kollha riżervati.",
     'email_placeholder'=> "L-indirizz tal-email tiegħek",
-    'newsletter_title' => "Ibqa' infurmat dwar l-offerti tagħna",
+    'newsletter_title' => "Ibqa' infurmat dwar l-attivitajiet tagħna",
     'subscribe'        => 'Abbona',
     'read_more'        => 'Tgħallem aktar',
-    'footer_desc'      => site_name() . " huwa l-imsieħeb fdat tiegħek għal soluzzjonijiet ta' finanzjament rapidi, flessibbli u personalizzati madwar l-Ewropa.",
+    'footer_desc'      => site_name() . " jappoġġja individwi, assoċjazzjonijiet u dawk li għandhom proġetti madwar l-Ewropa permezz ta' programmi ta' appoġġ finanzjarju trasparenti, responsabbli u umani.",
 ];

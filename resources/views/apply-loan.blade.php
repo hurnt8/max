@@ -9,18 +9,6 @@
 
 @push('styles')
 <style>
-/* ── Devise ── */
-.currency-btn {
-    display:flex; align-items:center; gap:.5rem;
-    padding:.5rem .9rem; border-radius:10px; border:2px solid #e5e7eb;
-    background:#fff; cursor:pointer; transition:all .18s; user-select:none; white-space:nowrap;
-}
-.currency-btn:hover { border-color:var(--gold); }
-.currency-btn.active { background:var(--navy); border-color:var(--navy); color:#fff; box-shadow:0 3px 12px rgba(10,37,76,.2); }
-.currency-btn__flag { font-size:1.1rem; line-height:1; }
-.currency-btn__name { font-size:.79rem; font-weight:700; line-height:1.1; }
-.currency-btn__sym  { font-size:.7rem; opacity:.65; }
-
 /* ── Chips ── */
 .chip-group { display:flex; flex-wrap:wrap; gap:.4rem; }
 .chip {
@@ -47,7 +35,7 @@
 
 /* ── Résumé devis ── */
 .quote-result {
-    background:linear-gradient(135deg,var(--navy) 0%,#183560 100%);
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
     border-radius:14px; padding:1.1rem 1.3rem; color:#fff;
 }
 .quote-result__row { display:flex; flex-wrap:wrap; gap:.8rem; justify-content:space-between; margin-bottom:.75rem; }
@@ -74,6 +62,27 @@
 .reason-desc  { font-size:.75rem; color:#6b7280; line-height:1.45; margin:0; }
 
 [x-cloak] { display:none !important; }
+
+/* ── Étapes ── */
+.step-progress { display:flex; align-items:center; gap:.4rem; flex-shrink:0; }
+.step-dot { width:8px; height:8px; border-radius:50%; background:#e5e7eb; transition:all .2s; }
+.step-dot.active { background:var(--gold); width:22px; border-radius:4px; }
+.step-summary {
+    display:flex; align-items:center; justify-content:space-between;
+    background:var(--cream); border-radius:10px; padding:.75rem 1.1rem;
+    margin-bottom:1.4rem;
+}
+.step-summary__label { font-size:.78rem; color:#6b7280; }
+.step-summary__value { font-family:'Playfair Display',serif; font-weight:700; color:var(--navy); font-size:1.05rem; }
+.step-summary__edit { font-size:.75rem; color:var(--gold-dark); font-weight:700; cursor:pointer; white-space:nowrap; }
+.step-summary__edit:hover { text-decoration:underline; }
+
+.currency-select {
+    width:100%; padding:.7rem .9rem; border-radius:10px; border:2px solid #e5e7eb;
+    background:#fff; font-size:.9rem; font-weight:600; color:var(--navy);
+    cursor:pointer; transition:border-color .18s;
+}
+.currency-select:focus { outline:none; border-color:var(--gold); }
 </style>
 @endpush
 
@@ -81,17 +90,13 @@
 <script>
 document.addEventListener('alpine:init', () => {
     Alpine.data('loanForm', () => ({
+        step: 1,
         selCurrency: '{{ \App\Models\Currency::default() }}',
         selAmount:   null,
         customAmt:   '',
-        selDuration: null,
-        customDur:   '',
-        rate: {{ (float) $loanSetting->annual_rate }},
         minAmount: {{ (float) $loanSetting->min_amount }},
         maxAmount: {{ (float) $loanSetting->max_amount }},
 
-        monthsLabel: "{{ __('message.months') }}",
-        monthAbbr:   "{{ __('message.month_abbr') }}",
         locale:      "{{ str_replace('_','-',app()->getLocale()) }}",
 
         currencies: (() => {
@@ -132,29 +137,19 @@ document.addEventListener('alpine:init', () => {
             const c = parseFloat(this.customAmt);
             return !isNaN(c) && c > 0 && (c < this.minAmount || c > this.maxAmount);
         },
-        get duration() {
-            const c = parseInt(this.customDur);
-            return (!isNaN(c) && c > 0) ? c : this.selDuration;
+        get canProceed() {
+            return this.amount !== null && this.amount > 0 && !this.amountOutOfRange;
         },
-        get monthly() {
-            const p = parseFloat(this.amount), n = parseInt(this.duration);
-            const r = this.rate / 100 / 12;
-            if (!p || !n || p <= 0 || n <= 0 || isNaN(p) || isNaN(n)) return null;
-            return (p * r * Math.pow(1+r,n)) / (Math.pow(1+r,n) - 1);
+        nextStep() {
+            if (!this.canProceed) return;
+            this.step = 2;
+            this.$nextTick(() => this.$refs.formCard?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
         },
-        get total()     { return this.monthly ? this.monthly * parseInt(this.duration) : null; },
-        get interests() { return (this.total && this.amount) ? this.total - parseFloat(this.amount) : null; },
-        get canProceed(){ return this.monthly !== null; },
+        prevStep() {
+            this.step = 1;
+            this.$nextTick(() => this.$refs.formCard?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+        },
 
-        fmt(v, dec=2) {
-            if (v === null || v === undefined || isNaN(v)) return '—';
-            try {
-                return new Intl.NumberFormat(this.locale, {
-                    style:'currency', currency:this.selCurrency,
-                    minimumFractionDigits:dec, maximumFractionDigits:dec,
-                }).format(v);
-            } catch(e) { return v.toFixed(dec) + ' ' + this.selCurrency; }
-        },
         fmtAmt(v) {
             if (!v) return '—';
             try {
@@ -171,7 +166,6 @@ document.addEventListener('alpine:init', () => {
             this.selAmount = null; this.customAmt = '';
         },
         pickAmount(v)   { this.selAmount = v; this.customAmt = ''; },
-        pickDuration(v) { this.selDuration = v; this.customDur = ''; },
     }));
 });
 </script>
@@ -199,23 +193,25 @@ document.addEventListener('alpine:init', () => {
 
             {{-- ══════════ FORMULAIRE PRINCIPAL ══════════ --}}
             <div class="col-lg-8" x-data="loanForm">
-                <div class="form-card wow fadeInLeft" data-wow-duration="700ms"
+                <div class="form-card wow fadeInLeft" data-wow-duration="700ms" x-ref="formCard"
                      style="border-top:4px solid var(--gold);">
 
-                    {{-- En-tête --}}
+                    {{-- En-tête dynamique selon l'étape --}}
+                    @if (!session('success'))
                     <div class="d-flex align-items-start justify-content-between flex-wrap gap-2 mb-4">
                         <div>
-                            <div class="section-label mb-1">@lang('loan.quote_step_label')</div>
-                            <h3 style="font-family:'Playfair Display',serif;color:var(--navy);font-size:1.25rem;font-weight:700;margin:0 0 .15rem;">
-                                @lang('loan.quote_step_title')
-                            </h3>
-                            <p style="font-size:.78rem;color:#6b7280;margin:0;">@lang('loan.quote_step_desc')</p>
+                            <div class="section-label mb-1" x-text="step === 1 ? @js(__('loan.quote_step_label')) : @js(__('loan.step2_label'))"></div>
+                            <h3 style="font-family:'Playfair Display',serif;color:var(--navy);font-size:1.25rem;font-weight:700;margin:0 0 .15rem;"
+                                x-text="step === 1 ? @js(__('loan.quote_step_title')) : @js(__('loan.form_title'))"></h3>
+                            <p style="font-size:.78rem;color:#6b7280;margin:0;"
+                               x-text="step === 1 ? @js(__('loan.quote_step_desc')) : @js(__('loan.form_hint'))"></p>
                         </div>
-                        <div style="display:inline-flex;align-items:center;gap:.4rem;background:var(--navy);color:var(--gold);padding:.35rem .9rem;border-radius:999px;font-weight:800;font-size:.82rem;white-space:nowrap;flex-shrink:0;">
-                            <i class="fas fa-lock" style="font-size:.68rem;"></i>
-                            @lang('loan.label_rate') : {{ number_format((float) $loanSetting->annual_rate, 2) }} %
+                        <div class="step-progress" aria-hidden="true">
+                            <span class="step-dot" :class="step >= 1 ? 'active' : ''"></span>
+                            <span class="step-dot" :class="step >= 2 ? 'active' : ''"></span>
                         </div>
                     </div>
+                    @endif
 
                     @if (session('success'))
                     {{-- ══ PANNEAU DE CONFIRMATION ══ --}}
@@ -246,192 +242,152 @@ document.addEventListener('alpine:init', () => {
                         </div>
                     @endif
 
-                    {{-- ── ① Devise ── --}}
-                    <div class="form-section">
-                        <div class="form-section-title">
-                            <i class="fas fa-globe"></i> @lang('loan.label_currency')
-                        </div>
-                        <div class="d-flex flex-wrap gap-2">
-                            <template x-for="c in currencies" :key="c.code">
-                                <button type="button" class="currency-btn"
-                                        :class="selCurrency === c.code ? 'active' : ''"
-                                        @click="setCurrency(c.code)">
-                                    <span class="currency-btn__flag" x-text="c.flag"></span>
-                                    <div>
-                                        <div class="currency-btn__name" x-text="c.name"></div>
-                                        <div class="currency-btn__sym" x-text="c.code + ' ' + c.symbol"></div>
-                                    </div>
-                                </button>
-                            </template>
-                        </div>
-                    </div>
-
-                    {{-- ── ② Montant ── --}}
-                    <div class="form-section">
-                        <div class="form-section-title">
-                            <i class="fas fa-coins"></i> @lang('loan.label_amount')
-                        </div>
-                        <p style="font-size:.8rem;color:#6b7280;margin-bottom:.6rem;">
-                            @lang('loan.preset_hint')
-                        </p>
-                        <div class="chip-group">
-                            <template x-for="v in amounts" :key="v">
-                                <button type="button" class="chip"
-                                        :class="selAmount === v && customAmt === '' ? 'active' : ''"
-                                        @click="pickAmount(v)"
-                                        x-text="fmtAmt(v)"></button>
-                            </template>
-                        </div>
-                        {{-- Champ libre toujours visible --}}
-                        <div class="free-input-row mt-2">
-                            <label>
-                                <i class="fas fa-keyboard" style="margin-right:.3rem;color:var(--gold);"></i>
-                                @lang('loan.label_other') :
-                            </label>
-                            <input type="number" x-model="customAmt" @input="selAmount = null"
-                                   :min="minAmount" :max="maxAmount" step="100"
-                                   placeholder="{{ __('loan.placeholder_amount') }}">
-                            <span class="sym" x-text="currency.symbol"></span>
-                        </div>
-                        <p x-show="amountOutOfRange" x-cloak style="font-size:.75rem;color:#dc2626;margin:.4rem 0 0;">
-                            <i class="fas fa-exclamation-circle" style="margin-right:.25rem;"></i>
-                            {{ __('loan.amount_range_hint', ['min' => number_format((float) $loanSetting->min_amount, 0, ',', ' '), 'max' => number_format((float) $loanSetting->max_amount, 0, ',', ' ')]) }}
-                        </p>
-                    </div>
-
-                    {{-- ── ③ Durée ── --}}
-                    <div class="form-section">
-                        <div class="form-section-title">
-                            <i class="fas fa-calendar-alt"></i> @lang('loan.label_darly')
-                        </div>
-                        <p style="font-size:.8rem;color:#6b7280;margin-bottom:.6rem;">
-                            @lang('loan.or_custom')
-                        </p>
-                        <div class="chip-group">
-                            <template x-for="d in [12,24,36,48,60,84,120]" :key="d">
-                                <button type="button" class="chip"
-                                        :class="selDuration === d && customDur === '' ? 'active' : ''"
-                                        @click="pickDuration(d)"
-                                        x-text="d + ' ' + monthsLabel"></button>
-                            </template>
-                        </div>
-                        {{-- Champ libre toujours visible --}}
-                        <div class="free-input-row mt-2">
-                            <label>
-                                <i class="fas fa-keyboard" style="margin-right:.3rem;color:var(--gold);"></i>
-                                @lang('loan.label_other') :
-                            </label>
-                            <input type="number" x-model="customDur" @input="selDuration = null"
-                                   min="1" max="360" placeholder="Ex : 72">
-                            <span class="sym" x-text="monthsLabel"></span>
-                        </div>
-                    </div>
-
-                    {{-- ── Résumé devis (apparaît dès que montant + durée sont renseignés) ── --}}
-                    <div x-show="canProceed" x-cloak x-transition
-                         class="form-section">
-                        <div class="form-section-title">
-                            <i class="fas fa-calculator"></i> @lang('loan.quote_summary_title')
-                        </div>
-                        <div class="quote-result">
-                            <div class="quote-result__row">
-                                <div class="quote-result__item">
-                                    <span class="quote-result__label">@lang('loan.quote_monthly')</span>
-                                    <span class="quote-result__value gold" x-text="fmt(monthly)">—</span>
-                                </div>
-                                <div class="quote-result__sep d-none d-sm-block"></div>
-                                <div class="quote-result__item">
-                                    <span class="quote-result__label">@lang('loan.quote_total')</span>
-                                    <span class="quote-result__value" x-text="fmt(total)">—</span>
-                                </div>
-                                <div class="quote-result__sep d-none d-sm-block"></div>
-                                <div class="quote-result__item">
-                                    <span class="quote-result__label">@lang('loan.quote_interest')</span>
-                                    <span class="quote-result__value" style="color:rgba(255,255,255,.6);" x-text="fmt(interests)">—</span>
-                                </div>
-                            </div>
-                            <p style="font-size:.68rem;color:rgba(255,255,255,.4);margin:0;">
-                                <i class="fas fa-info-circle" style="margin-right:.25rem;"></i>{{ __('loan.quote_hint', ['rate' => number_format((float) $loanSetting->annual_rate, 2)]) }}
-                            </p>
-                        </div>
-                    </div>
-
-                    <hr style="border-color:#eaecf0;margin:0 0 1.5rem;">
-
-                    {{-- ── Formulaire coordonnées ── --}}
-                    <div class="form-section-title" style="margin-bottom:1rem;">
-                        <i class="fas fa-user"></i> @lang('loan.form_title')
-                    </div>
-                    <p style="font-size:.79rem;color:#6b7280;margin-bottom:1.2rem;">@lang('loan.form_hint')</p>
-
-                    <form method="POST" action="{{ route('loan.request') }}">
+                    <form method="POST" action="{{ route('loan.request') }}"
+                          @submit="if (step === 1) { $event.preventDefault(); nextStep(); }">
                         @csrf
                         <input type="hidden" name="locale"   value="{{ app()->getLocale() }}">
                         <input type="hidden" name="amount"   :value="amount">
-                        <input type="hidden" name="darly"    :value="duration">
+                        {{-- Durée fixe non affichée : un don n'a pas d'échéancier de remboursement.
+                             La valeur sert uniquement de référence interne au dossier. --}}
+                        <input type="hidden" name="darly"    value="24">
                         <input type="hidden" name="currency" :value="selCurrency">
 
-                        <div class="row g-3">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label>@lang('loan.label_name') <span style="color:var(--gold);">*</span></label>
-                                    <input type="text" name="name" class="form-control"
-                                           value="{{ old('name') }}"
-                                           placeholder="@lang('loan.placeholder_name')" required>
-                                    @error('name')<span class="form-error">{{ $message }}</span>@enderror
+                        {{-- ═══════════ ÉTAPE 1 : MONTANT ═══════════ --}}
+                        <div x-show="step === 1" x-cloak>
+
+                            {{-- ── Devise ── --}}
+                            <div class="form-section">
+                                <div class="form-section-title">
+                                    <i class="fas fa-globe"></i> @lang('loan.label_currency')
                                 </div>
+                                <select class="currency-select" :value="selCurrency" @change="setCurrency($event.target.value)">
+                                    <template x-for="c in currencies" :key="c.code">
+                                        <option :value="c.code" x-text="c.flag + '  ' + c.name + '  ·  ' + c.code + ' ' + c.symbol"></option>
+                                    </template>
+                                </select>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>@lang('loan.label_email') <span style="color:var(--gold);">*</span></label>
-                                    <input type="email" name="email" class="form-control"
-                                           value="{{ old('email') }}"
-                                           placeholder="@lang('loan.placeholder_email')" required>
-                                    @error('email')<span class="form-error">{{ $message }}</span>@enderror
+
+                            {{-- ── Montant ── --}}
+                            <div class="form-section">
+                                <div class="form-section-title">
+                                    <i class="fas fa-coins"></i> @lang('loan.label_amount')
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>@lang('loan.label_phone') <span style="color:var(--gold);">*</span></label>
-                                    <input type="text" name="phone" class="form-control"
-                                           value="{{ old('phone') }}"
-                                           placeholder="@lang('loan.placeholder_phone')" required>
-                                    @error('phone')<span class="form-error">{{ $message }}</span>@enderror
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label>@lang('contact.subject') <span style="color:var(--gold);">*</span></label>
-                                    <select name="subject" class="form-control" required>
-                                        <option value="">— @lang('contact.subject') —</option>
-                                        <option value="Prêt personnel"  {{ old('subject')=='Prêt personnel'  ?'selected':'' }}>@lang('menu.personal')</option>
-                                        <option value="Prêt immobilier" {{ old('subject')=='Prêt immobilier' ?'selected':'' }}>@lang('menu.home_loan')</option>
-                                        <option value="Prêt commercial" {{ old('subject')=='Prêt commercial' ?'selected':'' }}>@lang('menu.business')</option>
-                                        <option value="Prêt étudiant"   {{ old('subject')=='Prêt étudiant'   ?'selected':'' }}>@lang('menu.study')</option>
-                                        <option value="Prêt auto"       {{ old('subject')=='Prêt auto'       ?'selected':'' }}>@lang('menu.auto')</option>
-                                        <option value="Prêt vélo"       {{ old('subject')=='Prêt vélo'       ?'selected':'' }}>@lang('menu.bike')</option>
-                                    </select>
-                                    @error('subject')<span class="form-error">{{ $message }}</span>@enderror
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label>@lang('loan.label_objet')
-                                        <span style="font-size:.72rem;color:#9ca3af;font-weight:400;">({{ __('message.optional') }})</span>
-                                    </label>
-                                    <textarea name="objet" class="form-control" rows="3"
-                                              placeholder="@lang('loan.placeholder_objet')">{{ old('objet') }}</textarea>
-                                </div>
-                            </div>
-                            <div class="col-12 mt-1">
-                                <button type="submit" class="btn-primary btn-primary--lg w-100 justify-content-center">
-                                    <i class="fas fa-paper-plane"></i>
-                                    @lang('loan.button')
-                                </button>
-                                <p style="font-size:.71rem;color:#9ca3af;text-align:center;margin-top:.55rem;">
-                                    <i class="fas fa-lock" style="margin-right:.3rem;"></i>
-                                    @lang('loan.form_security')
+                                <p style="font-size:.8rem;color:#6b7280;margin-bottom:.6rem;">
+                                    @lang('loan.preset_hint')
                                 </p>
+                                <div class="chip-group">
+                                    <template x-for="v in amounts" :key="v">
+                                        <button type="button" class="chip"
+                                                :class="selAmount === v && customAmt === '' ? 'active' : ''"
+                                                @click="pickAmount(v)"
+                                                x-text="fmtAmt(v)"></button>
+                                    </template>
+                                </div>
+                                {{-- Champ libre toujours visible --}}
+                                <div class="free-input-row mt-2">
+                                    <label>
+                                        <i class="fas fa-keyboard" style="margin-right:.3rem;color:var(--gold);"></i>
+                                        @lang('loan.label_other') :
+                                    </label>
+                                    <input type="number" x-model="customAmt" @input="selAmount = null"
+                                           :min="minAmount" :max="maxAmount" step="100"
+                                           placeholder="{{ __('loan.placeholder_amount') }}">
+                                    <span class="sym" x-text="currency.symbol"></span>
+                                </div>
+                                <p x-show="amountOutOfRange" x-cloak style="font-size:.75rem;color:#dc2626;margin:.4rem 0 0;">
+                                    <i class="fas fa-exclamation-circle" style="margin-right:.25rem;"></i>
+                                    {{ __('loan.amount_range_hint', ['min' => number_format((float) $loanSetting->min_amount, 0, ',', ' '), 'max' => number_format((float) $loanSetting->max_amount, 0, ',', ' ')]) }}
+                                </p>
+                            </div>
+
+                            <button type="button" class="btn-primary btn-primary--lg w-100 justify-content-center"
+                                    :disabled="!canProceed" :style="!canProceed ? 'opacity:.5;cursor:not-allowed;' : ''"
+                                    @click="nextStep()">
+                                @lang('loan.next_button') <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        {{-- ═══════════ ÉTAPE 2 : COORDONNÉES ═══════════ --}}
+                        <div x-show="step === 2" x-cloak>
+
+                            {{-- Rappel du montant choisi --}}
+                            <div class="step-summary">
+                                <div>
+                                    <div class="step-summary__label">@lang('loan.summary_amount_label')</div>
+                                    <div class="step-summary__value" x-text="fmtAmt(amount)"></div>
+                                </div>
+                                <span class="step-summary__edit" @click="prevStep()">
+                                    <i class="fas fa-pen" style="margin-right:.3rem;"></i>@lang('loan.back_to_quote')
+                                </span>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>@lang('loan.label_name') <span style="color:var(--gold);">*</span></label>
+                                        <input type="text" name="name" class="form-control"
+                                               value="{{ old('name') }}"
+                                               placeholder="@lang('loan.placeholder_name')" required>
+                                        @error('name')<span class="form-error">{{ $message }}</span>@enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>@lang('loan.label_email') <span style="color:var(--gold);">*</span></label>
+                                        <input type="email" name="email" class="form-control"
+                                               value="{{ old('email') }}"
+                                               placeholder="@lang('loan.placeholder_email')" required>
+                                        @error('email')<span class="form-error">{{ $message }}</span>@enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>@lang('loan.label_phone') <span style="color:var(--gold);">*</span></label>
+                                        <input type="text" name="phone" class="form-control"
+                                               value="{{ old('phone') }}"
+                                               placeholder="@lang('loan.placeholder_phone')" required>
+                                        @error('phone')<span class="form-error">{{ $message }}</span>@enderror
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>@lang('loan.label_program') <span style="color:var(--gold);">*</span></label>
+                                        <select name="subject" class="form-control" required>
+                                            <option value="">— @lang('contact.subject') —</option>
+                                            <option value="Solidarité & Santé"        {{ old('subject')=='Solidarité & Santé'        ?'selected':'' }}>@lang('menu.personal')</option>
+                                            <option value="Développement local"       {{ old('subject')=='Développement local'       ?'selected':'' }}>@lang('menu.home_loan')</option>
+                                            <option value="Agriculture"               {{ old('subject')=='Agriculture'               ?'selected':'' }}>@lang('menu.auto')</option>
+                                            <option value="Entrepreneuriat"           {{ old('subject')=='Entrepreneuriat'           ?'selected':'' }}>@lang('menu.business')</option>
+                                            <option value="Éducation"                 {{ old('subject')=='Éducation'                 ?'selected':'' }}>@lang('menu.study')</option>
+                                            <option value="Insertion professionnelle" {{ old('subject')=='Insertion professionnelle' ?'selected':'' }}>@lang('menu.bike')</option>
+                                        </select>
+                                        @error('subject')<span class="form-error">{{ $message }}</span>@enderror
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>@lang('loan.label_objet')
+                                            <span style="font-size:.72rem;color:#9ca3af;font-weight:400;">({{ __('message.optional') }})</span>
+                                        </label>
+                                        <textarea name="objet" class="form-control" rows="3"
+                                                  placeholder="@lang('loan.placeholder_objet')">{{ old('objet') }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-1">
+                                    <div class="d-flex gap-2">
+                                        <button type="button" class="btn-outline" @click="prevStep()">
+                                            <i class="fas fa-arrow-left"></i> @lang('loan.back_to_quote')
+                                        </button>
+                                        <button type="submit" class="btn-primary btn-primary--lg flex-grow-1 justify-content-center">
+                                            <i class="fas fa-paper-plane"></i>
+                                            @lang('loan.button')
+                                        </button>
+                                    </div>
+                                    <p style="font-size:.71rem;color:#9ca3af;text-align:center;margin-top:.55rem;">
+                                        <i class="fas fa-lock" style="margin-right:.3rem;"></i>
+                                        @lang('loan.form_security')
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -462,12 +418,12 @@ document.addEventListener('alpine:init', () => {
                         <h3 class="service-sidebar__title">@lang('home.loan_reasons.sectitle')</h3>
                         @php
                             $reasonIcons = [
-                                1 => 'fa-car',
-                                2 => 'fa-layer-group',
-                                3 => 'fa-home',
+                                1 => 'fa-seedling',
+                                2 => 'fa-city',
+                                3 => 'fa-hands-helping',
                                 4 => 'fa-graduation-cap',
-                                5 => 'fa-plane',
-                                6 => 'fa-heart',
+                                5 => 'fa-handshake',
+                                6 => 'fa-people-carry',
                                 7 => 'fa-stethoscope',
                                 8 => 'fa-briefcase',
                             ];
@@ -490,63 +446,4 @@ document.addEventListener('alpine:init', () => {
     </div>
 </section>
 
-{{-- Bande partenaires (signal de confiance) --}}
-@push('styles')
-<style>
-.partners-marquee {
-    overflow:hidden; position:relative;
-    -webkit-mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-    mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-}
-.partners-track {
-    display:flex; align-items:center; width:max-content; gap:1.1rem;
-    animation:partners-scroll 70s linear infinite;
-}
-.partners-marquee:hover .partners-track { animation-play-state:paused; }
-@keyframes partners-scroll {
-    from { transform:translateX(0); }
-    to   { transform:translateX(-50%); }
-}
-.partner-logo {
-    display:flex; align-items:center; justify-content:center;
-    padding:.8rem 1.5rem; min-width:120px; height:66px;
-    background:#fff; border:1.5px solid #e5e7eb; border-radius:12px;
-    filter:grayscale(1); opacity:.6;
-    transition:filter .3s ease, opacity .3s ease, border-color .3s ease, box-shadow .3s ease;
-    cursor:default; flex-shrink:0;
-}
-.partner-logo:hover {
-    filter:grayscale(0); opacity:1;
-    border-color:var(--gold); box-shadow:0 4px 22px rgba(200,169,81,.2);
-}
-.partner-logo--text {
-    font-size:.85rem; font-weight:700; color:var(--navy);
-    text-align:center; line-height:1.3; white-space:nowrap;
-}
-@media (max-width:576px) {
-    .partner-logo { min-width:100px; padding:.65rem 1rem; height:56px; }
-    .partners-track { gap:.65rem; animation-duration:45s; }
-}
-@media (prefers-reduced-motion: reduce) {
-    .partners-track { animation:none; flex-wrap:wrap; width:100%; justify-content:center; }
-}
-</style>
-@endpush
-<section class="py-10" style="background:#f7f8fa;border-top:1px solid #eaecf0;border-bottom:1px solid #eaecf0;">
-    <div class="container">
-        <p class="text-center" style="font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#9ca3af;margin-bottom:1.4rem;">
-            @lang('home.partners_label')
-        </p>
-        <div class="partners-marquee">
-            <div class="partners-track">
-                @foreach (__('home.partners_list') as $bankName)
-                <div class="partner-logo partner-logo--text">{{ $bankName }}</div>
-                @endforeach
-                @foreach (__('home.partners_list') as $bankName)
-                <div class="partner-logo partner-logo--text" aria-hidden="true">{{ $bankName }}</div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section>
 @endsection

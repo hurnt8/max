@@ -1,22 +1,23 @@
 <?php
 
 return [
-   'menu' => 'Menu',
-'home' => 'Home',
-'about' => 'Chi siamo',
-'services' => 'I nostri servizi',
-'simulate' => 'Simulazione del prestito',
-'contact' => 'Contattaci',
-'loan' => 'Richiedi un prestito',
 
-'personal' => 'Prestito personale',
-'auto' => 'Prestito auto',
-'home_loan' => 'Prestito casa',
-'study' => 'Prestito per studi',
-'business' => 'Prestito aziendale',
-'bike' => 'Prestito per moto',
+    'menu' => 'Menu',
+    'home' => 'Home',
+    'about' => 'Chi siamo',
+    'services' => 'I nostri programmi',
+    'simulate' => 'Simula un aiuto',
+    'contact' => 'Contattaci',
+    'loan' => 'Richiedi un aiuto',
 
-'arlert' => 'Ottieni un prestito con un tasso di interesse fino al 3%',
+    'personal' => 'Solidarietà e Salute',
+    'auto' => 'Agricoltura',
+    'home_loan' => 'Sviluppo locale',
+    'study' => 'Istruzione',
+    'business' => 'Imprenditoria',
+    'bike' => 'Inserimento professionale',
+
+    'arlert' => 'Invia la tua richiesta di sostegno in pochi minuti',
 
 
 
@@ -27,8 +28,8 @@ return [
     'addresses'        => 'Indirizzi',
     'rights_reserved'  => 'Tutti i diritti riservati.',
     'email_placeholder'=> 'Il tuo indirizzo email',
-    'newsletter_title' => 'Rimani informato sulle nostre offerte',
+    'newsletter_title' => 'Resta informato sulle nostre attività',
     'subscribe'        => 'Iscriviti',
     'read_more'        => 'Scopri di più',
-    'footer_desc'      => site_name() . ' è il vostro partner di fiducia per soluzioni di finanziamento rapide, flessibili e personalizzate in tutta Europa.',
+    'footer_desc'      => site_name() . ' accompagna persone, associazioni e promotori di progetti in tutta Europa attraverso programmi di sostegno finanziario trasparenti, responsabili e umani.',
 ];

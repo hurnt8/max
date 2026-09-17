@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'banner_title' => 'Demande de Prêt',
+    'banner_title' => 'Demande d\'Aide',
     'banner_description' => 'Nous serions ravis de discuter de la manière dont nous pouvons
-    vous aider à obtenir le financement dont vous avez besoin.',
-    'form_title' => 'Demander un prêt',
-    'form_description' => 'Utilisez le formulaire ci-dessous pour demander votre prêt.',
+    vous apporter le soutien dont vous avez besoin.',
+    'form_title' => 'Demander une aide',
+    'form_description' => 'Utilisez le formulaire ci-dessous pour déposer votre demande de don.',
     'label_name' => 'Nom et prénoms',
     'label_email' => 'Email',
     'label_phone' => 'Numero de téléphone',
@@ -14,13 +14,13 @@ return [
     'label_activity' => 'Activité exercée',
     'label_employ' => 'Emploi actuel',
     'label_salary' => 'Revenu mensuel (€)',
-    'label_amount' => 'Montant du prêt (€)',
-    'label_darly' => 'Durée du prêt (en mois)',
+    'label_amount' => 'Montant de l\'aide souhaitée (€)',
+    'label_darly' => 'Durée du programme (en mois)',
     'label_status' => 'Situation matrimoniale',
     'label_npi' => 'Numéro d\'identification personnelles',
     'label_file' => 'Pièce d\'identité recto verso',
-    'label_objet' => 'Objet du prêt',
-    'details' => 'Détails du prêt',
+    'label_objet' => 'Objet de la demande',
+    'details' => 'Détails de l\'aide',
 
     'placeholder_name' => 'Votre nom et prénoms',
     'placeholder_email' => 'Entrer votre e-mail',
@@ -30,182 +30,197 @@ return [
     'placeholder_activity' => 'Ex : salarié, commerçant…',
     'placeholder_employ' => 'Entrer votre profession',
     'placeholder_salary' => 'Entrer votre revenu mensuel',
-    'placeholder_amount' => 'Montant du prêt (€) souhaité',
-    'placeholder_objet' => 'Décrivez brièvement l\'objet de votre prêt',
-    'button' => 'Envoyer votre demande',
+    'placeholder_amount' => 'Montant de l\'aide (€) souhaité',
+    'placeholder_objet' => 'Décrivez brièvement l\'objet de votre demande',
+    'button' => 'Envoyer ma demande',
 
-    'quote_title'    => 'Votre devis estimatif',
-    'quote_monthly'  => 'Mensualité estimée',
-    'quote_total'    => 'Total à rembourser',
-    'quote_interest' => 'Coût total du crédit',
-    'quote_hint'     => 'Devis indicatif basé sur un taux annuel fixe de :rate %. Le taux définitif sera confirmé après étude de votre dossier.',
-    'label_rate'     => 'Taux annuel fixe',
+    'quote_title'    => 'Votre simulation d\'aide',
+    'quote_monthly'  => 'Versement mensuel estimé',
+    'quote_total'    => 'Total accompagné',
+    'quote_interest' => 'Frais de gestion du programme',
+    'quote_hint'     => 'Simulation indicative basée sur un taux de gestion annuel fixe de :rate %. Les conditions définitives seront confirmées après étude de votre dossier.',
+    'label_rate'     => 'Taux de gestion annuel fixe',
     'complete_title' => 'Compléter votre dossier',
-    'complete_desc'  => 'Veuillez fournir votre adresse complète et une photo de votre pièce d\'identité pour finaliser votre dossier.',
+    'complete_desc'  => 'Veuillez fournir votre adresse complète et une photo de votre pièce d\'identité pour finaliser votre dossier de demande d\'aide.',
     'complete_btn'   => 'Envoyer mes documents',
-    'label_choose'     => 'Choisir ce devis',
+    'label_choose'     => 'Choisir cette simulation',
     'label_other'      => 'Saisir un montant précis',
     'amount_range_hint' => 'Montant compris entre :min et :max',
     'label_pick'       => 'Sélectionnez un montant et une durée',
-    'label_currency'      => 'Dans quelle devise souhaitez-vous emprunter ?',
-    'currency_hint'       => 'Choisissez la monnaie dans laquelle vous souhaitez recevoir votre prêt.',
-    'preset_label'        => 'Choisissez le devis qui vous convient',
+    'label_currency'      => 'Dans quelle devise souhaitez-vous recevoir votre aide ?',
+    'currency_hint'       => 'Choisissez la monnaie dans laquelle vous souhaitez recevoir votre don.',
+    'preset_label'        => 'Choisissez la simulation qui vous convient',
     'preset_hint'         => 'Cliquez sur un montant pour le sélectionner — ou ignorez ces suggestions et saisissez directement le montant exact que vous souhaitez dans le champ ci-dessous.',
     'custom_show'         => 'Saisir un montant différent',
     'custom_hide'         => 'Masquer les options personnalisées',
-    'quote_summary_title' => 'Votre devis :',
+    'quote_summary_title' => 'Votre simulation :',
     'quote_summary_hint'  => 'Vérifiez les détails ci-dessous, puis cliquez sur le bouton pour passer à l\'étape suivante.',
     'form_hint'           => 'Tous les champs marqués d\'un * sont obligatoires. Vos données sont protégées.',
     'form_security'       => 'Vos informations sont transmises de façon sécurisée.',
     'or_custom'        => 'Cliquez sur une durée pour la sélectionner — ou saisissez directement le nombre de mois que vous souhaitez dans le champ ci-dessous.',
     'quote_step_label' => 'Étape 1',
-    'quote_step_title' => 'Choisissez votre devis',
-    'quote_step_desc'  => 'Cliquez sur un devis populaire ou saisissez vos propres paramètres.',
-    'back_to_quote'    => 'Modifier mon devis',
+    'quote_step_title' => 'Choisissez votre montant',
+    'quote_step_desc'  => 'Cliquez sur une proposition populaire ou saisissez vos propres paramètres.',
+    'back_to_quote'    => 'Modifier ma simulation',
     'sidebar_hours'    => 'Lun – Sam : 8h00 – 18h00',
 
-    // Personal Loan
+    // Étape 2 du formulaire (coordonnées)
+    'step2_label' => 'Étape 2',
+    'next_button' => 'Suivant',
+    'label_program' => 'Programme d\'aide souhaité',
+    'summary_amount_label' => 'Montant demandé',
+
+    // Solidarité & Santé
     'personal_loan' => [
-        'section_title' => 'Prêt Personnel',
-        'description' => 'Un prêt personnel est un prêt non affecté à un achat spécifique. Dans ce contexte, le montant emprunté peut être utilisé pour financer plusieurs achats (voiture, moto, immobilier, travaux, voyage, etc.).
-                      De ce point de vue, il n’est pas nécessaire de justifier la nature des dépenses engagées avec la somme totale, contrairement aux prêts affectés. Comme son nom l’indique, le prêt affecté est un prêt qui vous permet de réaliser exclusivement un projet spécifique : achat de voiture, travaux, etc.
-                      Objectivement, tout l’intérêt d’utiliser un prêt non affecté réside dans le besoin de liquidités rapides. De plus, le souscripteur est libre d’utiliser les fonds comme il le souhaite. Actuellement, de nombreux ménages disposent d’un budget insuffisant pour financer de nouveaux projets.',
+        'section_title' => 'Solidarité & Santé',
+        'description' => 'Le programme Solidarité & Santé soutient des initiatives sociales, communautaires et de santé portées par des personnes, des associations ou des collectifs.
+                      Il peut s\'agir d\'actions d\'entraide, de dispositifs d\'accès aux soins, ou de projets favorisant le lien social et la solidarité de proximité.
+                      Chaque demande est étudiée au regard de sa pertinence sociale, de sa faisabilité et de l\'impact attendu pour les bénéficiaires concernés.',
         'details' => [
-            'introduction' => 'Découvrez les avantages d’un prêt personnel, conçu pour vous offrir une liberté financière avec facilité et sécurité.',
-            'more_info_title' => 'Pourquoi choisir un prêt personnel ?',
-            'more_info_text' => 'Un prêt personnel peut vous aider à gérer vos dépenses sans stress, offrant des taux compétitifs et des conditions de remboursement flexibles.',
-            'advantage1' => 'Processus d’approbation instantané',
-            'advantage2' => 'Support client 24/7',
-            'advantage3' => 'Options de remboursement flexibles',
-            'advantage4' => 'Structure de coûts transparente',
+            'introduction' => 'Découvrez comment le programme Solidarité & Santé peut soutenir votre initiative sociale ou de santé.',
+            'more_info_title' => 'Pourquoi solliciter ce programme ?',
+            'more_info_text' => 'Ce programme accompagne les initiatives qui renforcent la solidarité et l\'accès à la santé, avec une étude attentive de chaque dossier.',
+            'advantage1' => 'Étude attentive de chaque dossier',
+            'advantage2' => 'Accompagnement bienveillant',
+            'advantage3' => 'Ouvert aux particuliers et aux associations',
+            'advantage4' => 'Transparence sur les critères d\'éligibilité',
             'faq_title' => 'Questions Fréquemment Posées',
             'faqs' => [
-                'question1' => 'Comment puis-je utiliser un prêt personnel ?',
-                'answer1' => 'Vous pouvez utiliser un prêt personnel pour diverses fins, comme le regroupement de dettes, les rénovations de maison ou pour couvrir des dépenses imprévues.',
-                'question2' => 'Comment puis-je demander un prêt personnel ?',
+                'question1' => 'Qui peut solliciter le programme Solidarité & Santé ?',
+                'answer1' => 'Ce programme s\'adresse aux particuliers, associations et collectifs portant une initiative sociale, communautaire ou de santé.',
+                'question2' => 'Comment puis-je déposer une demande ?',
                 'answer2' => 'Il suffit de remplir notre formulaire de demande en ligne, et notre équipe vous guidera étape par étape.',
-                'question3' => 'Quel est le taux d’intérêt d’un prêt personnel ?',
-                'answer3' => 'Les taux d’intérêt varient en fonction de facteurs tels que le montant du prêt et votre cote de crédit. Contactez-nous pour un taux personnalisé.',
+                'question3' => 'Quelles sont les conditions d\'éligibilité ?',
+                'answer3' => 'Les conditions varient selon la nature du projet, ses objectifs et son impact attendu. Contactez-nous pour un accompagnement personnalisé.',
             ]
         ]
     ],
 
-    // Home Loan
+    // Développement local
     'home_loan' => [
-        'section_title' => 'Prêt Immobilier',
-        'description' => 'Un prêt immobilier permet de financer spécifiquement l’achat ou la rénovation d’un bien immobilier. Ce type de prêt permet aux emprunteurs d’accéder à des fonds importants pour des projets tels que l’achat d’une nouvelle maison, l’agrandissement des espaces de vie actuels ou l’amélioration des caractéristiques de la propriété. Les prêts immobiliers sont généralement à long terme et offrent des taux d’intérêt compétitifs, en faisant un outil financier essentiel pour réaliser des objectifs de propriété. La flexibilité des conditions de remboursement et l’approche personnalisée du financement immobilier rendent les prêts immobiliers attractifs pour les futurs propriétaires.',
+        'section_title' => 'Développement local',
+        'description' => 'Le programme Développement local soutient les initiatives qui font vivre les territoires : projets d\'intérêt collectif, infrastructures de proximité, dynamisation de la vie locale.
+                      Il s\'adresse aux porteurs de projets, associations et collectivités souhaitant renforcer l\'attractivité et la qualité de vie de leur territoire.
+                      Chaque dossier est étudié selon sa pertinence, sa faisabilité et son impact attendu pour la communauté concernée.',
         'details' => [
-            'introduction' => 'Découvrez les avantages d’un prêt immobilier, conçu pour faire de vos rêves de propriété une réalité.',
-            'more_info_title' => 'Pourquoi choisir un prêt immobilier ?',
-            'more_info_text' => 'Un prêt immobilier est spécialement conçu pour vous aider à financer l’achat ou la rénovation d’une propriété, offrant des taux compétitifs et des conditions flexibles adaptés à votre situation financière.',
-            'advantage1' => 'Taux d’intérêt compétitifs',
-            'advantage2' => 'Plans de remboursement flexibles',
-            'advantage3' => 'Processus d’approbation rapide',
-            'advantage4' => 'Support dédié aux acheteurs immobiliers',
+            'introduction' => 'Découvrez comment le programme Développement local peut soutenir votre projet de territoire.',
+            'more_info_title' => 'Pourquoi solliciter ce programme ?',
+            'more_info_text' => 'Ce programme accompagne les initiatives qui renforcent la vie locale, avec un accompagnement adapté à chaque situation.',
+            'advantage1' => 'Étude au cas par cas',
+            'advantage2' => 'Accompagnement de proximité',
+            'advantage3' => 'Ouvert aux associations et collectivités',
+            'advantage4' => 'Suivi personnalisé du dossier',
             'faq_title' => 'Questions Fréquemment Posées',
             'faqs' => [
-                'question1' => 'À quoi puis-je utiliser un prêt immobilier ?',
-                'answer1' => 'Un prêt immobilier peut être utilisé pour acheter une nouvelle maison, rénover votre propriété actuelle ou refinancer une hypothèque existante.',
-                'question2' => 'Comment puis-je demander un prêt immobilier ?',
-                'answer2' => 'Pour faire une demande, remplissez simplement notre formulaire en ligne, et notre équipe vous guidera à chaque étape du processus.',
-                'question3' => 'Quel est le taux d’intérêt d’un prêt immobilier ?',
-                'answer3' => 'Les taux d’intérêt varient en fonction du montant du prêt, du type de propriété et de l’historique de crédit. Contactez-nous pour une estimation de taux personnalisée.'
+                'question1' => 'Quels types de projets sont concernés ?',
+                'answer1' => 'Le programme Développement local peut soutenir des projets d\'intérêt collectif, des infrastructures de proximité ou des initiatives de dynamisation locale.',
+                'question2' => 'Comment puis-je déposer une demande ?',
+                'answer2' => 'Il suffit de remplir notre formulaire en ligne, et notre équipe vous guidera à chaque étape du processus.',
+                'question3' => 'Quelles sont les conditions d\'éligibilité ?',
+                'answer3' => 'Les conditions varient selon la nature du projet et son impact attendu pour le territoire. Contactez-nous pour une étude personnalisée.'
             ]
         ]
     ],
 
-    // Auto Loan
+    // Agriculture
     'auto_loan' => [
-        'section_title' => 'Prêt Auto',
-        'description' => 'Un prêt auto est une option de financement spécialement conçue pour vous aider à acheter un véhicule neuf ou d’occasion. Ce type de prêt offre des conditions de remboursement flexibles et des taux d’intérêt compétitifs, vous permettant de conduire la voiture de vos rêves sans un paiement initial important. Avec un prêt auto, vous pouvez couvrir le coût total ou partiel du véhicule et le rembourser sur une période définie, en en faisant une solution accessible pour la plupart des budgets. Les prêts auto offrent un processus de demande simplifié et une approbation rapide pour vous mettre sur la route rapidement.',
+        'section_title' => 'Agriculture',
+        'description' => 'Le programme Agriculture soutient les projets agricoles et de développement rural : installation, diversification des activités, pratiques durables ou circuits courts.
+                      Il s\'adresse aux exploitants, coopératives et porteurs de projets agricoles souhaitant développer une activité durable et créatrice d\'opportunités locales.
+                      Chaque demande est étudiée selon sa pertinence, sa faisabilité et son impact attendu sur le territoire.',
         'details' => [
-            'introduction' => 'Découvrez la commodité d’un prêt auto, conçu pour rendre l’acquisition d’un véhicule facile et abordable.',
-            'more_info_title' => 'Pourquoi choisir un prêt auto ?',
-            'more_info_text' => 'Un prêt auto vous aide à financer l’achat de votre véhicule en toute simplicité, avec des options de remboursement flexibles et des taux compétitifs adaptés à vos besoins financiers.',
-            'advantage1' => 'Processus d’approbation rapide',
-            'advantage2' => 'Taux d’intérêt compétitifs',
-            'advantage3' => 'Plans de paiement flexibles',
-            'advantage4' => 'Aucun frais caché',
+            'introduction' => 'Découvrez comment le programme Agriculture peut soutenir votre projet agricole ou rural.',
+            'more_info_title' => 'Pourquoi solliciter ce programme ?',
+            'more_info_text' => 'Ce programme accompagne les initiatives agricoles et rurales, avec un accompagnement adapté à la réalité du terrain.',
+            'advantage1' => 'Étude attentive du projet',
+            'advantage2' => 'Accompagnement bienveillant',
+            'advantage3' => 'Ouvert aux exploitants et coopératives',
+            'advantage4' => 'Transparence sur les critères d\'éligibilité',
             'faq_title' => 'Questions Fréquemment Posées',
             'faqs' => [
-                'question1' => 'Quels types de véhicules puis-je financer avec un prêt auto ?',
-                'answer1' => 'Les prêts auto peuvent être utilisés pour financer une variété de véhicules, y compris des voitures neuves et d’occasion, des motos, et même certains véhicules de loisir.',
-                'question2' => 'Comment puis-je demander un prêt auto ?',
-                'answer2' => 'Il suffit de remplir notre formulaire de demande en ligne, et notre équipe vous assistera tout au long du processus pour vous mettre rapidement au volant de votre nouveau véhicule.',
-                'question3' => 'Quels facteurs déterminent le taux d’intérêt d’un prêt auto ?',
-                'answer3' => 'Les taux d’intérêt sont influencés par des facteurs tels que le type de véhicule, le montant du prêt et votre cote de crédit. Contactez-nous pour un taux personnalisé adapté à vos besoins.'
+                'question1' => 'Quels types de projets agricoles sont concernés ?',
+                'answer1' => 'Le programme Agriculture peut soutenir l\'installation, la diversification, les pratiques durables ou les circuits courts.',
+                'question2' => 'Comment puis-je déposer une demande ?',
+                'answer2' => 'Il suffit de remplir notre formulaire de demande en ligne, et notre équipe vous accompagnera tout au long du processus.',
+                'question3' => 'Quels critères déterminent l\'éligibilité d\'un projet agricole ?',
+                'answer3' => 'Les critères dépendent de la nature du projet et de son impact attendu. Contactez-nous pour un accompagnement personnalisé.'
             ]
         ]
     ],
 
-    // Business Loan
+    // Entrepreneuriat
     'business_loan' => [
-        'section_title' => 'Prêt Entreprise',
-        'description' => 'Un prêt entreprise est une solution de financement conçue pour soutenir la croissance et les besoins opérationnels de votre entreprise. Que vous ayez besoin de fonds pour l’expansion, l’achat d’équipements ou le fonds de roulement, un prêt entreprise peut fournir le coup de pouce financier dont votre société a besoin. Avec des modalités de remboursement flexibles et des taux d’intérêt compétitifs, ce type de prêt permet aux propriétaires d’entreprise de gérer efficacement la trésorerie, d’investir dans de nouvelles opportunités et de favoriser le succès à long terme.',
+        'section_title' => 'Entrepreneuriat',
+        'description' => 'Le programme Entrepreneuriat soutient le démarrage et le développement d\'activités économiques créatrices d\'opportunités. Que vous en soyez au lancement, à l\'achat d\'équipements ou au développement de votre activité, ce programme peut apporter l\'appui financier dont votre projet a besoin.
+                      Chaque demande est étudiée selon la nature du projet, sa faisabilité et son impact attendu, avec un accompagnement adapté aux porteurs de projet.',
         'details' => [
-            'introduction' => 'Découvrez comment un prêt entreprise peut donner à votre société les moyens de croître et de prospérer dans un marché compétitif.',
-            'more_info_title' => 'Pourquoi choisir un prêt entreprise ?',
-            'more_info_text' => 'Un prêt entreprise offre la flexibilité financière pour développer vos opérations, investir dans les ressources essentielles et saisir de nouvelles opportunités de marché.',
-            'advantage1' => 'Financement rapide pour la croissance',
-            'advantage2' => 'Options de remboursement flexibles',
-            'advantage3' => 'Taux d’intérêt compétitifs',
-            'advantage4' => 'Support dédié aux entreprises',
+            'introduction' => 'Découvrez comment le programme Entrepreneuriat peut soutenir le lancement ou le développement de votre activité.',
+            'more_info_title' => 'Pourquoi solliciter ce programme ?',
+            'more_info_text' => 'Ce programme accompagne les porteurs de projet dans le développement de leur activité, avec une étude attentive de chaque dossier.',
+            'advantage1' => 'Étude attentive du projet',
+            'advantage2' => 'Accompagnement personnalisé',
+            'advantage3' => 'Ouvert aux créateurs et aux entreprises existantes',
+            'advantage4' => 'Transparence sur les critères d\'éligibilité',
             'faq_title' => 'Questions Fréquemment Posées',
             'faqs' => [
-                'question1' => 'À quoi puis-je utiliser un prêt entreprise ?',
-                'answer1' => 'Les prêts entreprises peuvent être utilisés pour diverses finalités, y compris l’achat de stocks, l’agrandissement des installations, l’embauche de personnel ou l’investissement dans des équipements.',
-                'question2' => 'Comment puis-je demander un prêt entreprise ?',
-                'answer2' => 'Vous pouvez faire une demande en remplissant notre formulaire en ligne. Notre équipe vous guidera à chaque étape pour assurer une expérience fluide.',
-                'question3' => 'Quels facteurs influencent le taux d’intérêt d’un prêt entreprise ?',
-                'answer3' => 'Les taux d’intérêt dépendent de facteurs comme le montant du prêt, la santé financière de votre entreprise et votre historique de crédit. Contactez-nous pour un taux personnalisé.'
+                'question1' => 'À quoi peut servir l\'appui du programme Entrepreneuriat ?',
+                'answer1' => 'Il peut soutenir le lancement d\'une activité, l\'achat d\'équipements, l\'agrandissement des installations ou l\'embauche.',
+                'question2' => 'Comment puis-je déposer une demande ?',
+                'answer2' => 'Vous pouvez faire une demande en remplissant notre formulaire en ligne. Notre équipe vous guidera à chaque étape.',
+                'question3' => 'Quels critères déterminent l\'éligibilité d\'un projet ?',
+                'answer3' => 'Les critères dépendent de la nature du projet et de sa viabilité. Contactez-nous pour un accompagnement personnalisé.'
             ]
         ]
     ],
 
-    // Bike Loan
+    // Insertion professionnelle
     'bike_loan' => [
-        'section_title' => 'Prêt Moto',
-        'description' => 'Un prêt moto est une option de financement adaptée aux personnes souhaitant acheter une moto neuve ou d’occasion. Ce prêt vous permet de rouler avec la moto de votre choix grâce à des modalités de remboursement abordables et des taux d’intérêt compétitifs. Avec un prêt moto, vous pouvez éviter un paiement initial important et payer votre moto au fil du temps, ce qui facilite la gestion de votre budget. Ce type de prêt est idéal pour les débutants et les motards expérimentés recherchant une flexibilité financière.',
+        'section_title' => 'Insertion professionnelle',
+        'description' => 'Le programme Insertion professionnelle accompagne les personnes éloignées de l\'emploi vers une reprise d\'activité durable : accompagnement technique et méthodologique, appui à la formation, soutien aux initiatives portées par des structures d\'insertion.
+                      Il s\'adresse aux particuliers comme aux associations et structures œuvrant pour l\'insertion professionnelle.
+                      Chaque demande est étudiée selon la situation du bénéficiaire, ses objectifs et l\'impact attendu de l\'accompagnement.',
         'details' => [
-            'introduction' => 'Prenez la route facilement avec notre prêt moto, conçu pour rendre l’acquisition d’une moto accessible et abordable.',
-            'more_info_title' => 'Pourquoi choisir un prêt moto ?',
-            'more_info_text' => 'Un prêt moto vous aide à financer la moto de vos rêves avec des modalités flexibles, une approbation rapide et des taux d’intérêt compétitifs adaptés à votre budget.',
-            'advantage1' => 'Approbation rapide et facile',
-            'advantage2' => 'Taux d’intérêt abordables',
-            'advantage3' => 'Modalités de remboursement flexibles',
-            'advantage4' => 'Documentation minimale',
+            'introduction' => 'Découvrez comment le programme Insertion professionnelle peut vous accompagner vers l\'emploi.',
+            'more_info_title' => 'Pourquoi solliciter ce programme ?',
+            'more_info_text' => 'Ce programme offre un accompagnement technique et méthodologique adapté à chaque situation, vers une insertion durable.',
+            'advantage1' => 'Accompagnement personnalisé',
+            'advantage2' => 'Étude attentive de chaque situation',
+            'advantage3' => 'Ouvert aux particuliers et aux structures d\'insertion',
+            'advantage4' => 'Suivi dans la durée',
             'faq_title' => 'Questions Fréquemment Posées',
             'faqs' => [
-                'question1' => 'Quels types de motos puis-je financer avec un prêt moto ?',
-                'answer1' => 'Les prêts moto peuvent être utilisés pour financer divers types de motos, y compris les motos standards, les motos de sport et les scooters.',
-                'question2' => 'Comment puis-je demander un prêt moto ?',
-                'answer2' => 'Il suffit de remplir notre formulaire de demande en ligne, et notre équipe vous guidera tout au long du processus d’approbation pour une expérience sans accroc.',
-                'question3' => 'Quels facteurs influencent le taux d’intérêt d’un prêt moto ?',
-                'answer3' => 'Le taux d’intérêt dépend de facteurs tels que le type de moto, le montant du prêt et votre profil de crédit. Contactez-nous pour un taux personnalisé.'
+                'question1' => 'Qui peut bénéficier du programme Insertion professionnelle ?',
+                'answer1' => 'Ce programme s\'adresse aux personnes éloignées de l\'emploi ainsi qu\'aux associations et structures d\'insertion.',
+                'question2' => 'Comment puis-je déposer une demande ?',
+                'answer2' => 'Il suffit de remplir notre formulaire de demande en ligne, et notre équipe vous guidera tout au long du processus.',
+                'question3' => 'Quelles sont les conditions d\'éligibilité ?',
+                'answer3' => 'Les conditions dépendent de la situation du bénéficiaire et des objectifs du programme d\'insertion. Contactez-nous pour un accompagnement personnalisé.'
             ]
         ]
     ],
 
-    // Study Loan
+    // Éducation
     'study_loan' => [
-        'section_title' => 'Prêt Étudiant',
-        'description' => 'Un prêt étudiant est une option de financement dédiée pour aider les étudiants à couvrir les frais d’études, y compris les frais de scolarité, les livres, le logement et autres coûts liés aux études. Ce type de prêt offre aux étudiants et à leurs familles un soutien financier pour poursuivre des études supérieures sans contrainte financière immédiate. Avec des options de remboursement flexibles et des taux d’intérêt compétitifs, un prêt étudiant peut rendre la réalisation des objectifs académiques plus accessible.',
+        'section_title' => 'Éducation',
+        'description' => 'Le programme Éducation soutient l\'accès au savoir et à la formation : frais de scolarité, matériel pédagogique, projets éducatifs portés par des établissements, associations ou familles.
+                      Il vise à accompagner les parcours éducatifs et les initiatives qui favorisent l\'accès à l\'éducation, en particulier pour les publics qui en ont le plus besoin.
+                      Chaque demande est étudiée selon sa pertinence éducative, sa faisabilité et son impact attendu.',
         'details' => [
-            'introduction' => 'Donnez un coup de pouce à votre parcours éducatif avec un prêt étudiant, conçu pour rendre l’enseignement supérieur accessible et abordable.',
-            'more_info_title' => 'Pourquoi choisir un prêt étudiant ?',
-            'more_info_text' => 'Un prêt étudiant fournit un soutien financier essentiel aux étudiants, avec des taux d’intérêt gérables et des modalités de remboursement flexibles pour vous concentrer sur vos études sans souci financier.',
-            'advantage1' => 'Options de remboursement flexibles',
-            'advantage2' => 'Taux d’intérêt compétitifs',
-            'advantage3' => 'Couvre divers frais éducatifs',
-            'advantage4' => 'Processus de demande simple et rapide',
+            'introduction' => 'Découvrez comment le programme Éducation peut soutenir un parcours ou un projet éducatif.',
+            'more_info_title' => 'Pourquoi solliciter ce programme ?',
+            'more_info_text' => 'Ce programme apporte un soutien financier essentiel à l\'éducation, avec un accompagnement adapté à chaque situation.',
+            'advantage1' => 'Accompagnement bienveillant',
+            'advantage2' => 'Étude attentive de chaque dossier',
+            'advantage3' => 'Couvre différents frais éducatifs',
+            'advantage4' => 'Ouvert aux particuliers, familles et établissements',
             'faq_title' => 'Questions Fréquemment Posées',
             'faqs' => [
-                'question1' => 'Quels frais un prêt étudiant peut-il couvrir ?',
-                'answer1' => 'Un prêt étudiant peut couvrir les frais de scolarité, les livres, les fournitures, le logement et d’autres dépenses liées aux études.',
-                'question2' => 'Comment puis-je demander un prêt étudiant ?',
-                'answer2' => 'Vous pouvez faire une demande en remplissant notre formulaire en ligne, et notre équipe vous assistera à chaque étape du processus.',
-                'question3' => 'Quand dois-je commencer à rembourser le prêt étudiant ?',
-                'answer3' => 'Les modalités de remboursement varient, mais de nombreux prêts étudiants offrent des options de remboursement différé, vous permettant de commencer les remboursements après la fin de vos études.'
+                'question1' => 'Quels frais le programme Éducation peut-il couvrir ?',
+                'answer1' => 'Il peut couvrir les frais de scolarité, le matériel pédagogique, le logement étudiant ou d\'autres dépenses liées à l\'éducation.',
+                'question2' => 'Comment puis-je déposer une demande ?',
+                'answer2' => 'Vous pouvez faire une demande en remplissant notre formulaire en ligne, et notre équipe vous accompagnera à chaque étape.',
+                'question3' => 'Qui peut solliciter le programme Éducation ?',
+                'answer3' => 'Les particuliers, familles, associations et établissements portant un projet éducatif peuvent solliciter ce programme. Contactez-nous pour en savoir plus.'
             ]
         ]
     ],

@@ -5,19 +5,19 @@ return [
     'sections' => [
         [
             'title' => '1. Wprowadzenie',
-            'content' => 'Witamy w ' . site_name() . '. Korzystając z naszej strony i usług, zobowiązujesz się przestrzegać poniższych warunków użytkowania i być nimi związany. Prosimy o uważne zapoznanie się z niniejszymi warunkami przed skorzystaniem z naszej strony lub zaciągnięciem u nas kredytu.'
+            'content' => 'Witamy w ' . site_name() . '. Korzystając z naszej strony i usług, zobowiązujesz się przestrzegać poniższych warunków użytkowania i być nimi związany. Prosimy o uważne zapoznanie się z niniejszymi warunkami przed skorzystaniem z naszej strony lub złożeniem u nas wniosku o pomoc.'
         ],
         [
             'title' => '2. Korzystanie ze strony',
             'content' => 'Uzyskując dostęp do naszej strony, zobowiązujesz się korzystać z naszych usług wyłącznie w celach zgodnych z prawem i niniejszymi warunkami. Zobowiązujesz się nie korzystać z naszej strony w sposób powodujący szkody, zakłócenia lub ingerencję w nasze usługi bądź dostęp innych użytkowników.'
         ],
         [
-            'title' => '3. Usługi kredytowe',
-            'content' => site_name() . ' oferuje różne rodzaje kredytów odpowiadające Twoim potrzebom finansowym. Wszystkie kredyty podlegają zatwierdzeniu na podstawie naszej oceny Twojej zdolności kredytowej i możliwości spłaty. Szczegółowe warunki każdego kredytu, w tym oprocentowanie, terminy i zasady spłaty, zostaną określone w Twojej umowie kredytowej.'
+            'title' => '3. Programy pomocowe',
+            'content' => site_name() . ' oferuje różne programy pomocy i wsparcia finansowego odpowiadające Twoim potrzebom. Każdy wniosek podlega ocenie na podstawie analizy Twojej sytuacji oraz kryteriów kwalifikowalności danego programu. Szczegółowe warunki każdej przyznanej pomocy, w tym kwota, czas trwania i zasady wypłaty, zostaną określone w Twojej umowie o wsparcie.'
         ],
         [
-            'title' => '4. Opłaty za umowę i ubezpieczenie',
-            'content' => 'Przy zawieraniu kredytu w ' . site_name() . ' mogą zostać naliczone opłaty za umowę i ubezpieczenie. Opłaty te pokrywają koszty administracyjne związane z uruchomieniem i obsługą Twojego kredytu. Szczegóły dotyczące tych opłat zostaną jasno wskazane w Twojej umowie kredytowej. Jesteś zobowiązany do uiszczenia tych opłat zgodnie z określonymi warunkami.'
+            'title' => '4. Opłaty za rozpatrzenie wniosku i ubezpieczenie',
+            'content' => 'Przy zakładaniu sprawy w ' . site_name() . ' mogą zostać naliczone opłaty za rozpatrzenie wniosku i ubezpieczenie. Opłaty te pokrywają koszty administracyjne związane z rozpatrywaniem i obsługą Twojego wniosku. Szczegóły dotyczące tych opłat zostaną jasno wskazane w Twojej umowie o wsparcie. Jesteś zobowiązany do uiszczenia tych opłat zgodnie z określonymi warunkami.'
         ],
         [
             'title' => '5. Poufność',

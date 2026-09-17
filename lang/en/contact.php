@@ -1,26 +1,26 @@
 <?php
 
 return [
-    'banner_title' => 'Contact us',
-    'banner_description' => 'We would be happy to discuss how we can help you',
-    'form_title' => 'Tell us about yourself',
-    'form_description' => 'Whether you have any questions or just want to say hello, contact us.',
-    'label_name' => 'First and last name',
+    'banner_title' => 'Contact Us',
+    'banner_description' => 'We would be delighted to discuss how we can support you',
+    'form_title' => 'Tell Us About Yourself',
+    'form_description' => ' Whether you have questions or would simply like to say hello, get in touch.',
+    'label_name' => 'Full name',
     'label_email' => 'Email',
-    'label_message' => 'Messages',
-    'placeholder_name' => 'Your first and last name',
+    'label_message' => 'Message',
+    'placeholder_name' => 'Your full name',
     'placeholder_email' => 'Your email',
     'placeholder_message' => 'Your Message',
     'button' => 'Send',
-    'subject' => 'Select Loan',
+    'subject' => 'Select an aid program',
 
-    'detail_title' => 'Keep in touch with us',
-    'detail_desc' => 'We are here to help you. Contact us for any questions or assistance regarding our loan services.',
+    'detail_title' => 'Stay in Touch With Us ',
+    'detail_desc' => 'We are here to help. Contact us with any questions or for assistance regarding our support programs.',
 
     'address_title' => 'Address',
     'address_desc' => 'Rua de Santo António 33, 7200-175, Portugal',
-    'phone_title' => 'Quick Contact',
+    'phone_title' => 'Phone',
     'phone_desc' => site_phone() . ' ',
-    'mail_title' => 'Support email',
+    'mail_title' => 'Email',
     'mail_desc' => site_email(),
 ];

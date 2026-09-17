@@ -1,27 +1,26 @@
 <?php
 
 return [
-    'banner_title' => 'Entre em contato conosco',
-    'banner_description' => 'Ficaríamos felizes em discutir como podemos ajudá-lo',
-    'form_title' => 'Fale-nos sobre você',
-    'form_description' => 'Se você tiver alguma dúvida ou apenas quiser dizer olá, entre em contato conosco.',
-    'label_name' => 'Nome e sobrenome',
+    'banner_title' => 'Contacte-nos',
+    'banner_description' => 'Teremos todo o gosto em conversar consigo sobre a forma como podemos acompanhá-lo',
+    'form_title' => 'Fale-nos sobre si',
+    'form_description' => ' Quer tenha dúvidas ou queira simplesmente dizer olá, contacte-nos.',
+    'label_name' => 'Nome e apelidos',
     'label_email' => 'Email',
     'label_message' => 'Mensagens',
-    'placeholder_name' => 'Seu nome e sobrenome',
-    'placeholder_email' => 'Seu email',
-    'placeholder_message' => 'Sua Mensagem',
+    'placeholder_name' => 'O seu nome e apelidos',
+    'placeholder_email' => 'O seu email',
+    'placeholder_message' => 'A sua mensagem',
     'button' => 'Enviar',
-    'subject' => 'Selecionar empréstimo',
+    'subject' => 'Selecionar um programa de ajuda',
 
-    'detail_title' => 'Mantenha-se em contato conosco',
-    'detail_desc' => 'Estamos aqui para ajudá-lo. Entre em contato conosco para qualquer dúvida ou assistência sobre nossos serviços de empréstimo.',
+    'detail_title' => 'Mantenha-se em contacto connosco ',
+    'detail_desc' => 'Estamos aqui para o ajudar. Contacte-nos para qualquer questão ou assistência relativa aos nossos programas de apoio.',
 
-    'address_title' => 'Endereço',
-    'address_desc' => 'Calcea Victoriei 118 Setor 1 010093 Bucareste',
+    'address_title' => 'Morada',
+    'address_desc' => 'Rua de Santo António 33, 7200-175, Portugal',
     'phone_title' => 'Telefone',
     'phone_desc' => site_phone() . ' ',
     'mail_title' => 'Email',
     'mail_desc' => site_email(),
-
 ];

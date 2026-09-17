@@ -96,17 +96,30 @@
     </div>
 </section>
 
-{{-- Calculator strip --}}
+{{-- Bandeau de réassurance (pas de simulation : un don n'a pas d'échéancier de remboursement) --}}
 <section class="calc-section py-16">
     <div class="container">
         <div class="row g-4 gutter-y-50 align-items-center">
             <div class="col-lg-6 wow fadeInLeft" data-wow-duration="900ms">
-                <div class="section-label" style="color:var(--gold);">Simulation</div>
-                <h2 class="section-title section-title--white mb-4">@lang('home.simulate.sectitle')</h2>
-                <p class="section-sub section-sub--white">{{ __('loan.' . $loanKey . '.description') }}</p>
+                <div class="section-label" style="color:var(--gold);">@lang('menu.' . $menuKey)</div>
+                <h2 class="section-title section-title--white mb-4">{{ __('loan.' . $loanKey . '.details.introduction') }}</h2>
+                <p class="section-sub section-sub--white">{{ __('loan.' . $loanKey . '.details.more_info_text') }}</p>
             </div>
             <div class="col-lg-6 wow fadeInRight" data-wow-duration="900ms" data-wow-delay="150ms">
-                @include('partials.simulate')
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:2.5rem 2.25rem;text-align:center;">
+                    <div style="width:56px;height:56px;border-radius:50%;background:rgba(31,122,199,.15);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+                        <i class="fas fa-hand-holding-heart" style="font-size:1.4rem;color:var(--gold);"></i>
+                    </div>
+                    <h3 style="font-family:'Playfair Display',serif;color:#fff;font-size:1.4rem;font-weight:700;margin-bottom:.75rem;">
+                        {{ __('home.cta_title') }}
+                    </h3>
+                    <p style="color:rgba(255,255,255,.6);font-size:.92rem;line-height:1.7;margin-bottom:1.75rem;">
+                        {{ __('home.cta_text') }}
+                    </p>
+                    <a href="{{ route('loan', ['locale' => $locale]) }}" class="btn-primary btn-primary--lg">
+                        <i class="fas fa-file-signature"></i> @lang('menu.loan')
+                    </a>
+                </div>
             </div>
         </div>
     </div>

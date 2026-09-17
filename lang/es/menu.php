@@ -1,22 +1,23 @@
 <?php
 
 return [
+
     'menu' => 'Menú',
     'home' => 'Inicio',
     'about' => 'Sobre nosotros',
-    'services' => 'Nuestros servicios',
-    'simulate' => 'Simulación de préstamo',
+    'services' => 'Nuestros programas',
+    'simulate' => 'Simular una ayuda',
     'contact' => 'Contáctenos',
-    'loan' => 'Solicitar préstamo',
+    'loan' => 'Solicitar una ayuda',
 
-    'personal' => 'Préstamo personal',
-    'auto' => 'Préstamo para automóvil',
-    'home_loan' => 'Préstamo para vivienda',
-    'study' => 'Préstamo para estudios',
-    'business' => 'Préstamo para negocios',
-    'bike' => 'Préstamo para bicicleta',
+    'personal' => 'Solidaridad y Salud',
+    'auto' => 'Agricultura',
+    'home_loan' => 'Desarrollo local',
+    'study' => 'Educación',
+    'business' => 'Emprendimiento',
+    'bike' => 'Inserción profesional',
 
-    'arlert' => 'Obtenga un préstamo con una tasa de interés de hasta el 3%',
+    'arlert' => 'Presente su solicitud de apoyo en solo unos minutos',
 
 
     'faq'              => 'FAQ',
@@ -26,8 +27,8 @@ return [
     'addresses'        => 'Direcciones',
     'rights_reserved'  => 'Todos los derechos reservados.',
     'email_placeholder'=> 'Su dirección de correo electrónico',
-    'newsletter_title' => 'Manténgase informado sobre nuestras ofertas',
+    'newsletter_title' => 'Manténgase informado sobre nuestra labor',
     'subscribe'        => 'Suscribirse',
     'read_more'        => 'Saber más',
-    'footer_desc'      => site_name() . ' es su socio de confianza para soluciones de financiación rápidas, flexibles y personalizadas en toda Europa.',
+    'footer_desc'      => site_name() . ' acompaña a personas, asociaciones y promotores de proyectos en toda Europa mediante programas de apoyo financiero transparentes, responsables y humanos.',
 ];

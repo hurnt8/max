@@ -5,19 +5,21 @@ return [
     'menu' => 'Meniu',
     'home' => 'Pradinis',
     'about' => 'Apie mus',
-    'services' => 'Mūsų paslaugos',
-    'simulate' => 'Paskolos simuliacija',
+    'services' => 'Mūsų programos',
+    'simulate' => 'Simuliuoti paramą',
     'contact' => 'Susisiekite su mumis',
-    'loan' => 'Prašyti paskolos',
+    'loan' => 'Prašyti paramos',
 
-    'personal' => 'Asmeninė paskola',
-    'auto' => 'Auto paskola',
-    'home_loan' => 'Būsto paskola',
-    'study' => 'Studijų paskola',
-    'business' => 'Verslo paskola',
-    'bike' => 'Dviračio paskola',
+    'personal' => 'Solidarumas ir sveikata',
+    'auto' => 'Žemės ūkis',
+    'home_loan' => 'Vietos plėtra',
+    'study' => 'Švietimas',
+    'business' => 'Verslumas',
+    'bike' => 'Profesinė integracija',
 
-    'arlert' => 'Gaukite paskolą su iki 3% palūkanų norma',
+    'arlert' => 'Pateikite savo paraišką gauti paramą vos per kelias minutes',
+
+
 
     'faq'              => 'DUK',
     'terms'            => 'Naudojimo sąlygos',
@@ -26,8 +28,8 @@ return [
     'addresses'        => 'Adresai',
     'rights_reserved'  => 'Visos teisės saugomos.',
     'email_placeholder'=> 'Jūsų el. pašto adresas',
-    'newsletter_title' => 'Gaukite informaciją apie mūsų pasiūlymus',
+    'newsletter_title' => 'Sužinokite naujienas apie mūsų veiklą',
     'subscribe'        => 'Prenumeruoti',
     'read_more'        => 'Sužinoti daugiau',
-    'footer_desc'      => site_name() . ' yra patikimas jūsų partneris greito, lankstaus ir personalizuoto finansavimo sprendimams visoje Europoje.',
+    'footer_desc'      => site_name() . ' remia asmenis, asociacijas ir projektų vykdytojus visoje Europoje, teikdamas skaidrias, atsakingas ir žmogiškas finansinės paramos programas.',
 ];

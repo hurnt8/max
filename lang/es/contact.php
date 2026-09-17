@@ -1,21 +1,21 @@
 <?php
 
 return [
-    'banner_title' => 'Contáctanos',
-    'banner_description' => 'Estaremos encantados de analizar cómo podemos ayudarle',
-    'form_title' => 'Cuéntanos sobre ti',
-    'form_description' => 'Si tienes alguna pregunta o simplemente quieres saludar, contáctanos.',
-    'label_name' => 'Nombre y apellido',
+    'banner_title' => 'Contáctenos',
+    'banner_description' => 'Estaremos encantados de conversar sobre cómo podemos acompañarle',
+    'form_title' => 'Cuéntenos sobre usted',
+    'form_description' => ' Ya sea que tenga preguntas o simplemente quiera saludar, contáctenos.',
+    'label_name' => 'Nombre y apellidos',
     'label_email' => 'Correo electrónico',
-    'label_message' => 'Mensajes',
-    'placeholder_name' => 'Tu nombre y apellido',
-    'placeholder_email' => 'Tu correo electrónico',
-    'placeholder_message' => 'Tu mensaje',
+    'label_message' => 'Mensaje',
+    'placeholder_name' => 'Su nombre y apellidos',
+    'placeholder_email' => 'Su correo electrónico',
+    'placeholder_message' => 'Su mensaje',
     'button' => 'Enviar',
-    'subject' => 'Seleccionar Préstamo',
+    'subject' => 'Seleccionar un programa de ayuda',
 
-    'detail_title' => 'Manténgase en contacto con nosotros',
-    'detail_desc' => 'Estamos aquí para ayudarte. Contáctenos para cualquier pregunta o ayuda con respecto a nuestros servicios de préstamo.',
+    'detail_title' => 'Mantengamos el contacto ',
+    'detail_desc' => 'Estamos aquí para ayudarle. Contáctenos para cualquier pregunta o asistencia relacionada con nuestros programas de apoyo.',
 
     'address_title' => 'Dirección',
     'address_desc' => 'Rua de Santo António 33, 7200-175, Portugal',

@@ -5,19 +5,19 @@ return [
     'sections' => [
         [
             'title' => '1. Introduction',
-            'content' => 'Bienvenue sur ' . site_name() . '. En utilisant notre site et nos services, vous acceptez de vous conformer et d\'être lié par les termes et conditions suivants. Veuillez lire attentivement ces termes avant d\'utiliser notre site ou de contracter un prêt avec nous.'
+            'content' => 'Bienvenue sur ' . site_name() . '. En utilisant notre site et nos services, vous acceptez de vous conformer et d\'être lié par les termes et conditions suivants. Veuillez lire attentivement ces termes avant d\'utiliser notre site ou de déposer une demande d\'aide auprès de nous.'
         ],
         [
             'title' => '2. Utilisation du site',
             'content' => 'En accédant à notre site, vous vous engagez à utiliser nos services uniquement à des fins légales et conformes aux présentes conditions. Vous vous engagez à ne pas utiliser notre site de manière à causer des dommages, des interruptions ou des interférences avec nos services ou à l\'accès d\'autres utilisateurs.'
         ],
         [
-            'title' => '3. Services de prêt',
-            'content' => site_name() . ' propose divers types de prêts pour répondre à vos besoins financiers. Tous les prêts sont soumis à une approbation basée sur notre évaluation de votre solvabilité et de votre capacité de remboursement. Les termes spécifiques de chaque prêt, y compris les taux d\'intérêt, les échéances et les modalités de remboursement, seront détaillés dans votre contrat de prêt.'
+            'title' => '3. Programmes d\'aide',
+            'content' => site_name() . ' propose divers programmes d\'aide et de soutien financier pour répondre à vos besoins. Chaque demande est soumise à une évaluation basée sur l\'examen de votre situation et des critères d\'éligibilité du programme concerné. Les termes spécifiques de chaque aide accordée, y compris le montant, la durée et les modalités de versement, seront détaillés dans votre accord de soutien.'
         ],
         [
-            'title' => '4. Frais de contrat et d\'assurance',
-            'content' => 'Lors de la souscription d\'un prêt chez ' . site_name() . ', des frais de contrat et d\'assurance peuvent être appliqués. Ces frais couvrent les coûts administratifs associés à la mise en place et à la gestion de votre prêt. Les détails spécifiques de ces frais seront clairement indiqués dans votre contrat de prêt. Vous êtes tenu de payer ces frais conformément aux modalités précisées.'
+            'title' => '4. Frais de dossier et d\'assurance',
+            'content' => 'Lors de la constitution d\'un dossier auprès de ' . site_name() . ', des frais de dossier et d\'assurance peuvent être appliqués. Ces frais couvrent les coûts administratifs associés à l\'instruction et au suivi de votre demande. Les détails spécifiques de ces frais seront clairement indiqués dans votre accord de soutien. Vous êtes tenu de vous acquitter de ces frais conformément aux modalités précisées.'
         ],
         [
             'title' => '5. Confidentialité',

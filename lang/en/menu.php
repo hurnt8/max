@@ -1,23 +1,24 @@
 <?php
 
 return [
+
     'menu' => 'Menu',
     'home' => 'Home',
     'about' => 'About Us',
-    'services' => 'Our Services',
-    'simulate' => 'Loan simulation',
+    'services' => 'Our Programs',
+    'simulate' => 'Simulate Aid',
     'contact' => 'Contact Us',
-    'loan' => 'Apply for loan',
+    'loan' => 'Request Aid',
 
-    'personal' => 'Personal loan',
-    'auto' => 'Auto loan',
-    'home_loan' => 'Home loan',
-    'study' => 'Study loan',
-    'business' => 'Business loan',
-    'bike' => 'Bike loan',
+    'personal' => 'Solidarity & Health',
+    'auto' => 'Agriculture',
+    'home_loan' => 'Local Development',
+    'study' => 'Education',
+    'business' => 'Entrepreneurship',
+    'bike' => 'Professional Integration',
 
+    'arlert' => 'Submit your support request in just a few minutes',
 
-    'arlert' => 'Get a loan with up to 3% interest rate',
 
 
     'faq'              => 'FAQ',
@@ -27,8 +28,8 @@ return [
     'addresses'        => 'Addresses',
     'rights_reserved'  => 'All rights reserved.',
     'email_placeholder'=> 'Your email address',
-    'newsletter_title' => 'Stay informed about our offers',
+    'newsletter_title' => 'Stay informed about our work',
     'subscribe'        => 'Subscribe',
     'read_more'        => 'Learn more',
-    'footer_desc'      => site_name() . ' is your trusted partner for fast, flexible and personalized financing solutions across Europe.',
+    'footer_desc'      => site_name() . ' supports individuals, associations and project leaders across Europe through transparent, responsible and human financial support programs.',
 ];

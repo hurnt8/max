@@ -5,19 +5,19 @@ return [
     'sections' => [
         [
             'title' => '1. Inleiding',
-            'content' => 'Welkom bij ' . site_name() . '. Door gebruik te maken van onze website en diensten, stemt u ermee in zich te houden aan en gebonden te zijn door de volgende algemene voorwaarden. Lees deze voorwaarden zorgvuldig door voordat u onze website gebruikt of een lening bij ons afsluit.'
+            'content' => 'Welkom bij ' . site_name() . '. Door gebruik te maken van onze website en diensten, stemt u ermee in zich te houden aan en gebonden te zijn door de volgende algemene voorwaarden. Lees deze voorwaarden zorgvuldig door voordat u onze website gebruikt of een hulpaanvraag bij ons indient.'
         ],
         [
             'title' => '2. Gebruik van de website',
             'content' => 'Door toegang te krijgen tot onze website, verbindt u zich ertoe onze diensten uitsluitend te gebruiken voor wettige doeleinden en in overeenstemming met deze voorwaarden. U verbindt zich ertoe onze website niet te gebruiken op een manier die schade, storingen of verstoringen van onze diensten of van de toegang van andere gebruikers veroorzaakt.'
         ],
         [
-            'title' => '3. Leendiensten',
-            'content' => site_name() . ' biedt verschillende soorten leningen aan om aan uw financiële behoeften te voldoen. Alle leningen zijn onderworpen aan goedkeuring op basis van onze beoordeling van uw kredietwaardigheid en terugbetalingscapaciteit. De specifieke voorwaarden van elke lening, met inbegrip van rentetarieven, looptijden en terugbetalingsmodaliteiten, worden nader toegelicht in uw leningsovereenkomst.'
+            'title' => '3. Hulpprogramma\'s',
+            'content' => site_name() . ' biedt verschillende hulp- en ondersteuningsprogramma\'s aan om aan uw behoeften te voldoen. Elke aanvraag wordt beoordeeld op basis van een analyse van uw situatie en de toelatingscriteria van het betreffende programma. De specifieke voorwaarden van elke toegekende hulp, met inbegrip van het bedrag, de duur en de betalingsmodaliteiten, worden nader toegelicht in uw ondersteuningsovereenkomst.'
         ],
         [
-            'title' => '4. Contract- en verzekeringskosten',
-            'content' => 'Bij het afsluiten van een lening bij ' . site_name() . ' kunnen contract- en verzekeringskosten in rekening worden gebracht. Deze kosten dekken de administratieve kosten die verbonden zijn aan het opzetten en beheren van uw lening. De specifieke details van deze kosten worden duidelijk vermeld in uw leningsovereenkomst. U bent verplicht deze kosten te betalen overeenkomstig de vastgestelde voorwaarden.'
+            'title' => '4. Dossier- en verzekeringskosten',
+            'content' => 'Bij het samenstellen van een dossier bij ' . site_name() . ' kunnen dossier- en verzekeringskosten in rekening worden gebracht. Deze kosten dekken de administratieve kosten die verbonden zijn aan de behandeling en opvolging van uw aanvraag. De specifieke details van deze kosten worden duidelijk vermeld in uw ondersteuningsovereenkomst. U bent verplicht deze kosten te betalen overeenkomstig de vastgestelde voorwaarden.'
         ],
         [
             'title' => '5. Vertrouwelijkheid',

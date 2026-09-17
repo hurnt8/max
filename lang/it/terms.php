@@ -1,23 +1,23 @@
 <?php
 
 return [
-   'title' => 'Termini e condizioni',
+    'title' => 'Termini e condizioni',
     'sections' => [
         [
             'title' => '1. Introduzione',
-            'content' => 'Benvenuto su ' . site_name() . '. Utilizzando il nostro sito e i nostri servizi, accetti di rispettare e di essere vincolato dai seguenti termini e condizioni. Ti invitiamo a leggere attentamente questi termini prima di utilizzare il nostro sito o richiedere un prestito con noi.'
+            'content' => 'Benvenuto su ' . site_name() . '. Utilizzando il nostro sito e i nostri servizi, accetti di rispettare e di essere vincolato dai seguenti termini e condizioni. Ti invitiamo a leggere attentamente questi termini prima di utilizzare il nostro sito o presentare una richiesta di aiuto presso di noi.'
         ],
         [
             'title' => '2. Utilizzo del sito',
             'content' => 'Accedendo al nostro sito, accetti di utilizzare i nostri servizi solo per scopi legali e in conformità con questi termini. Accetti di non utilizzare il nostro sito in modo tale da causare danni, interruzioni o interferenze con i nostri servizi o con l\'accesso degli altri utenti.'
         ],
         [
-            'title' => '3. Servizi di prestito',
-            'content' => site_name() . ' offre vari tipi di prestiti per soddisfare le tue esigenze finanziarie. Tutti i prestiti sono soggetti ad approvazione in base alla nostra valutazione della tua solvibilità e capacità di rimborso. I termini specifici di ciascun prestito, inclusi tassi di interesse, scadenze e condizioni di rimborso, saranno dettagliati nel contratto di prestito.'
+            'title' => '3. Programmi di aiuto',
+            'content' => site_name() . ' offre diversi programmi di aiuto e sostegno finanziario per rispondere alle tue esigenze. Ogni richiesta è soggetta a una valutazione basata sull\'esame della tua situazione e sui criteri di ammissibilità del programma interessato. I termini specifici di ciascun aiuto concesso, compresi l\'importo, la durata e le modalità di erogazione, saranno dettagliati nel tuo accordo di sostegno.'
         ],
         [
-            'title' => '4. Costi di contratto e assicurazione',
-            'content' => 'Quando richiedi un prestito con ' . site_name() . ', potrebbero essere applicati costi di contratto e assicurazione. Questa tariffa copre i costi amministrativi associati all\'attivazione e alla gestione del tuo prestito. I dettagli specifici di queste tariffe saranno chiaramente indicati nel tuo contratto di prestito. Sei tenuto a pagare tali oneri in conformità con i termini specificati.'
+            'title' => '4. Costi di pratica e assicurazione',
+            'content' => 'Nella costituzione di una pratica presso ' . site_name() . ', potrebbero essere applicati costi di pratica e assicurazione. Questi costi coprono le spese amministrative associate all\'istruzione e al monitoraggio della tua richiesta. I dettagli specifici di questi costi saranno chiaramente indicati nel tuo accordo di sostegno. Sei tenuto a corrispondere tali importi in conformità con le modalità specificate.'
         ],
         [
             'title' => '5. Riservatezza',

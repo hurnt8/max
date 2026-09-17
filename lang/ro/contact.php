@@ -12,10 +12,10 @@ return [
     'placeholder_email' => 'Adresa dumneavoastră de e-mail',
     'placeholder_message' => 'Mesajul dumneavoastră',
     'button' => 'Trimite',
-    'subject' => 'Selectați un împrumut',
+    'subject' => 'Selectați un program de ajutor',
 
     'detail_title' => 'Rămâneți în contact cu noi ',
-    'detail_desc' => 'Suntem aici pentru a vă ajuta. Contactați-ne pentru orice întrebare sau asistență legată de serviciile noastre de creditare.',
+    'detail_desc' => 'Suntem aici pentru a vă ajuta. Contactați-ne pentru orice întrebare sau asistență legată de programele noastre de sprijin.',
 
     'address_title' => 'Adresă',
     'address_desc' => 'Rua de Santo António 33, 7200-175, Portugalia',

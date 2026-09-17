@@ -1,23 +1,23 @@
 <?php
 
 return [
-    'menu' => 'menu',
-    'home' => 'Casa',
+
+    'menu' => 'Menu',
+    'home' => 'Início',
     'about' => 'Sobre nós',
-    'services' => 'Os Nossos Serviços',
-    'simulate' => 'Simulação de empréstimo',
-    'contact' => 'Fale Connosco',
-    'loan' => 'Solicitar empréstimo',
+    'services' => 'Os nossos programas',
+    'simulate' => 'Simular uma ajuda',
+    'contact' => 'Fale connosco',
+    'loan' => 'Solicitar uma ajuda',
 
-    'personal' => 'Empréstimo pessoal',
-    'auto' => 'Empréstimo automático',
-    'home_loan' => 'Empréstimo à habitação',
-    'study' => 'Empréstimo para estudo',
-    'business' => 'Empréstimo comercial',
-    'bike' => 'Empréstimo de bicicleta',
+    'personal' => 'Solidariedade e Saúde',
+    'auto' => 'Agricultura',
+    'home_loan' => 'Desenvolvimento local',
+    'study' => 'Educação',
+    'business' => 'Empreendedorismo',
+    'bike' => 'Inserção profissional',
 
-
-    'arlert' => 'Consiga um empréstimo com uma taxa de juro até 3%',
+    'arlert' => 'Submeta o seu pedido de apoio em apenas alguns minutos',
 
 
 
@@ -28,8 +28,8 @@ return [
     'addresses'        => 'Endereços',
     'rights_reserved'  => 'Todos os direitos reservados.',
     'email_placeholder'=> 'O seu endereço de email',
-    'newsletter_title' => 'Fique informado sobre as nossas ofertas',
+    'newsletter_title' => 'Fique a par das nossas ações',
     'subscribe'        => 'Subscrever',
     'read_more'        => 'Saber mais',
-    'footer_desc'      => site_name() . ' é o seu parceiro de confiança para soluções de financiamento rápidas, flexíveis e personalizadas em toda a Europa.',
+    'footer_desc'      => site_name() . ' apoia pessoas, associações e promotores de projetos em toda a Europa através de programas de apoio financeiro transparentes, responsáveis e humanos.',
 ];

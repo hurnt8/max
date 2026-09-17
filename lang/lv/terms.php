@@ -5,19 +5,19 @@ return [
     'sections' => [
         [
             'title' => '1. Ievads',
-            'content' => 'Laipni lūdzam ' . site_name() . '. Izmantojot mūsu vietni un pakalpojumus, jūs piekrītat ievērot un būt saistīts ar šādiem noteikumiem un nosacījumiem. Lūdzu, uzmanīgi izlasiet šos noteikumus, pirms izmantojat mūsu vietni vai slēdzat aizdevuma līgumu ar mums.'
+            'content' => 'Laipni lūdzam ' . site_name() . '. Izmantojot mūsu vietni un pakalpojumus, jūs piekrītat ievērot un būt saistīts ar šādiem noteikumiem un nosacījumiem. Lūdzu, uzmanīgi izlasiet šos noteikumus, pirms izmantojat mūsu vietni vai iesniedzat mums palīdzības pieteikumu.'
         ],
         [
             'title' => '2. Vietnes izmantošana',
             'content' => 'Piekļūstot mūsu vietnei, jūs apņematies izmantot mūsu pakalpojumus tikai likumīgiem mērķiem un saskaņā ar šiem noteikumiem. Jūs apņematies neizmantot mūsu vietni tā, lai radītu kaitējumu, traucējumus vai iejauktos mūsu pakalpojumos vai citu lietotāju piekļuvē tiem.'
         ],
         [
-            'title' => '3. Aizdevumu pakalpojumi',
-            'content' => site_name() . ' piedāvā dažādus aizdevumu veidus jūsu finansiālo vajadzību apmierināšanai. Visi aizdevumi ir pakļauti apstiprināšanai, pamatojoties uz mūsu veikto jūsu maksātspējas un atmaksas kapacitātes novērtējumu. Katra aizdevuma konkrētie noteikumi, tostarp procentu likmes, termiņi un atmaksas kārtība, tiks detalizēti norādīti jūsu aizdevuma līgumā.'
+            'title' => '3. Palīdzības programmas',
+            'content' => site_name() . ' piedāvā dažādas palīdzības un finansiāla atbalsta programmas, lai apmierinātu jūsu vajadzības. Katrs pieteikums tiek izvērtēts, pamatojoties uz jūsu situācijas izskatīšanu un attiecīgās programmas atbilstības kritērijiem. Katras piešķirtās palīdzības konkrētie nosacījumi, tostarp summa, ilgums un izmaksas kārtība, tiks detalizēti norādīti jūsu atbalsta līgumā.'
         ],
         [
-            'title' => '4. Līguma un apdrošināšanas maksas',
-            'content' => 'Slēdzot aizdevuma līgumu ar ' . site_name() . ', var tikt piemērotas līguma un apdrošināšanas maksas. Šīs maksas sedz administratīvās izmaksas, kas saistītas ar jūsu aizdevuma noformēšanu un pārvaldību. Precīza informācija par šīm maksām būs skaidri norādīta jūsu aizdevuma līgumā. Jums ir pienākums samaksāt šīs maksas saskaņā ar norādītajiem nosacījumiem.'
+            'title' => '4. Lietas noformēšanas un apdrošināšanas maksas',
+            'content' => 'Noformējot lietu ar ' . site_name() . ', var tikt piemērotas lietas noformēšanas un apdrošināšanas maksas. Šīs maksas sedz administratīvās izmaksas, kas saistītas ar jūsu pieteikuma izskatīšanu un uzraudzību. Precīza informācija par šīm maksām būs skaidri norādīta jūsu atbalsta līgumā. Jums ir pienākums samaksāt šīs maksas saskaņā ar norādītajiem nosacījumiem.'
         ],
         [
             'title' => '5. Konfidencialitāte',

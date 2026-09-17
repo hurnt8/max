@@ -1,208 +1,229 @@
 <?php
 
 return [
-    'banner_title' => 'Solicitud de préstamo',
-    'banner_description' => 'Estaremos encantados de discutir cómo podemos
- ayudarle a conseguir la financiación que necesita.',
-    'form_title' => 'Solicitar un préstamo',
-    'form_description' => 'Utilice el siguiente formulario para solicitar su préstamo.',
-    'label_name' => 'Nombre y apellido',
+    'banner_title' => 'Solicitud de Ayuda',
+    'banner_description' => 'Estaremos encantados de conversar sobre cómo podemos
+ brindarle el apoyo que necesita.',
+    'form_title' => 'Solicitar una ayuda',
+    'form_description' => 'Utilice el siguiente formulario para presentar su solicitud de donación.',
+    'label_name' => 'Nombre y apellidos',
     'label_email' => 'Correo electrónico',
     'label_phone' => 'Número de teléfono',
     'label_address' => 'Dirección',
     'label_tax_number' => 'Número fiscal',
-    'label_activity' => 'Actividad profesional',
+    'label_activity' => 'Actividad ejercida',
     'label_employ' => 'Empleo actual',
     'label_salary' => 'Ingresos mensuales (€)',
-    'label_amount' => 'Importe del préstamo (€)',
-    'label_darly' => 'Duración del préstamo (en meses)',
+    'label_amount' => 'Importe de la ayuda solicitada (€)',
+    'label_darly' => 'Duración del programa (en meses)',
     'label_status' => 'Estado civil',
     'label_npi' => 'Número de identificación personal',
-    'label_file' => 'Documento de identidad de doble cara',
-    'label_objet' => 'Objeto del préstamo',
-    'details' => 'Detalles del préstamo',
+    'label_file' => 'Documento de identidad por ambas caras',
+    'label_objet' => 'Motivo de la solicitud',
+    'details' => 'Detalles de la ayuda',
 
-    'placeholder_name' => 'Tu nombre y apellido',
+    'placeholder_name' => 'Su nombre y apellidos',
     'placeholder_email' => 'Ingrese su correo electrónico',
-    'placeholder_phone' => 'Ingresa tu número de teléfono',
+    'placeholder_phone' => 'Ingrese su número de teléfono',
     'placeholder_address' => 'Ingrese su dirección',
     'placeholder_tax_number' => 'Su número fiscal (opcional)',
-    'placeholder_activity' => 'Ej.: empleado, autónomo…',
+    'placeholder_activity' => 'Ej.: empleado, comerciante…',
     'placeholder_employ' => 'Ingrese su profesión',
     'placeholder_salary' => 'Ingrese sus ingresos mensuales',
-    'placeholder_amount' => 'Importe del préstamo (€) deseado',
-    'placeholder_objet' => 'Describe brevemente el propósito de tu préstamo',
+    'placeholder_amount' => 'Importe deseado de la ayuda (€)',
+    'placeholder_objet' => 'Describa brevemente el motivo de su solicitud',
     'button' => 'Enviar mi solicitud',
 
-    'quote_title'    => 'Su presupuesto estimado',
-    'quote_monthly'  => 'Cuota mensual estimada',
-    'quote_total'    => 'Total a reembolsar',
-    'quote_interest' => 'Coste total del crédito',
-    'quote_hint'     => 'Presupuesto indicativo basado en una tasa anual fija del :rate %. La tasa definitiva se confirmará tras el estudio de su solicitud.',
-    'label_rate'     => 'Tasa anual fija',
-    'complete_title' => 'Completar su expediente',
-    'complete_desc'  => 'Facilite su dirección completa y una foto de su documento de identidad para finalizar su solicitud.',
+    'quote_title'    => 'Su simulación de ayuda',
+    'quote_monthly'  => 'Desembolso mensual estimado',
+    'quote_total'    => 'Total acompañado',
+    'quote_interest' => 'Gastos de gestión del programa',
+    'quote_hint'     => 'Simulación orientativa basada en una tasa de gestión anual fija del :rate %. Las condiciones definitivas se confirmarán tras el estudio de su expediente.',
+    'label_rate'     => 'Tasa de gestión anual fija',
+    'complete_title' => 'Complete su expediente',
+    'complete_desc'  => 'Facilite su dirección completa y una foto de su documento de identidad para finalizar su expediente de solicitud de ayuda.',
     'complete_btn'   => 'Enviar mis documentos',
-    'label_choose'     => 'Elegir esta cotización',
-    'label_other'      => 'Escribir un importe exacto',
+    'label_choose'     => 'Elegir esta simulación',
+    'label_other'      => 'Introducir un importe preciso',
     'amount_range_hint' => 'Importe comprendido entre :min y :max',
     'label_pick'       => 'Seleccione un importe y una duración',
-    'label_currency'      => '¿En qué divisa desea solicitar el préstamo?',
-    'currency_hint'       => 'Elija la moneda en la que desea recibir su préstamo.',
-    'preset_label'        => 'Elija la cotización que le convenga',
-    'preset_hint'         => 'Haga clic en un importe para seleccionarlo — o ignore las sugerencias y escriba directamente el importe exacto que desea en el campo de abajo.',
+    'label_currency'      => '¿En qué divisa desea recibir su ayuda?',
+    'currency_hint'       => 'Elija la moneda en la que desea recibir su donación.',
+    'preset_label'        => 'Elija la simulación que le convenga',
+    'preset_hint'         => 'Haga clic en un importe para seleccionarlo — o ignore estas sugerencias e introduzca directamente el importe exacto que desea en el campo de abajo.',
     'custom_show'         => 'Introducir un importe diferente',
     'custom_hide'         => 'Ocultar las opciones personalizadas',
-    'quote_summary_title' => 'Su cotización:',
-    'quote_summary_hint'  => 'Verifique los detalles y haga clic en el botón para continuar.',
+    'quote_summary_title' => 'Su simulación:',
+    'quote_summary_hint'  => 'Verifique los detalles a continuación y haga clic en el botón para pasar al siguiente paso.',
     'form_hint'           => 'Todos los campos marcados con * son obligatorios. Sus datos están protegidos.',
     'form_security'       => 'Su información se transmite de forma segura.',
-    'or_custom'        => 'Haga clic en una duración para seleccionarla — o escriba directamente el número de meses que desea en el campo de abajo.',
+    'or_custom'        => 'Haga clic en una duración para seleccionarla — o introduzca directamente el número de meses que desea en el campo de abajo.',
     'quote_step_label' => 'Paso 1',
-    'quote_step_title' => 'Elija su cotización',
-    'quote_step_desc'  => 'Haga clic en una cotización popular o introduzca sus propios parámetros.',
-    'back_to_quote'    => 'Modificar mi cotización',
+    'quote_step_title' => 'Elija su importe',
+    'quote_step_desc'  => 'Haga clic en una propuesta popular o introduzca sus propios parámetros.',
+    'back_to_quote'    => 'Modificar mi simulación',
     'sidebar_hours'    => 'Lun – Sáb: 8:00 – 18:00',
 
+    // Paso 2 del formulario (datos de contacto)
+    'step2_label' => 'Paso 2',
+    'next_button' => 'Siguiente',
+    'label_program' => 'Programa de ayuda deseado',
+    'summary_amount_label' => 'Importe solicitado',
+
+    // Solidaridad y Salud
     'personal_loan' => [
-        'section_title' => 'Préstamo Personal',
-        'description' => 'Un préstamo personal es un préstamo no destinado a una compra específica. En este contexto, la cantidad solicitada mediante este tipo de financiamiento puede ser utilizada para financiar múltiples compras (automóvil, motocicleta, bienes inmuebles, reformas, viajes, etc.). 
-                      Desde este punto de vista, no es necesario justificar la naturaleza de los gastos realizados con la suma total del dinero, a diferencia de los préstamos asignados. Como su nombre indica, el préstamo asignado es un préstamo que permite llevar a cabo exclusivamente un proyecto específico: compra de automóvil, proyecto de reformas, etc.
-                      En esencia, la ventaja del préstamo no asignado es la necesidad de efectivo rápido. Además, el suscriptor tiene la libertad de usar los fondos como lo considere conveniente. Actualmente, muchos hogares cuentan con un presupuesto insuficiente para financiar nuevos proyectos.',
+        'section_title' => 'Solidaridad y Salud',
+        'description' => 'El programa Solidaridad y Salud apoya iniciativas sociales, comunitarias y de salud impulsadas por personas, asociaciones o colectivos.
+                      Puede tratarse de acciones de ayuda mutua, dispositivos de acceso a la atención sanitaria o proyectos que favorezcan el vínculo social y la solidaridad de proximidad.
+                      Cada solicitud se estudia en función de su pertinencia social, su viabilidad y el impacto esperado para los beneficiarios afectados.',
         'details' => [
-            'introduction' => 'Explora los beneficios de un préstamo personal, diseñado para darte libertad financiera con facilidad y seguridad.',
-            'more_info_title' => '¿Por qué elegir un préstamo personal?',
-            'more_info_text' => 'Un préstamo personal puede ayudarte a cubrir gastos con un mínimo de estrés, ofreciendo tasas competitivas y opciones de pago flexibles.',
-            'advantage1' =>  'Proceso de Aprobación Instantáneo',
-            'advantage2' =>  'Soporte al Cliente 24/7',
-            'advantage3' =>  'Opciones de Pago Flexibles',
-            'advantage4' =>  'Estructura de Costos Transparente',
+            'introduction' => 'Descubra cómo el programa Solidaridad y Salud puede apoyar su iniciativa social o de salud.',
+            'more_info_title' => '¿Por qué solicitar este programa?',
+            'more_info_text' => 'Este programa acompaña las iniciativas que refuerzan la solidaridad y el acceso a la salud, con un estudio detenido de cada expediente.',
+            'advantage1' =>  'Estudio detenido de cada expediente',
+            'advantage2' =>  'Acompañamiento cercano',
+            'advantage3' =>  'Abierto a particulares y asociaciones',
+            'advantage4' =>  'Transparencia sobre los criterios de elegibilidad',
             'faq_title' => 'Preguntas Frecuentes',
             'faqs' => [
-                'question1' => '¿Cómo puedo usar un préstamo personal?',
-                'answer1' => 'Puedes utilizar un préstamo personal para diversos fines, como consolidación de deudas, mejoras en el hogar o cubrir gastos imprevistos.',
-                'question2' => '¿Cómo solicito un préstamo personal?',
-                'answer2' => 'Simplemente completa nuestro formulario de solicitud en línea, y nuestro equipo te guiará a través del proceso paso a paso.',
-                'question3' => '¿Cuál es la tasa de interés en un préstamo personal?',
-                'answer3' => 'Las tasas de interés varían según factores como la cantidad del préstamo y el puntaje crediticio. Contáctanos para obtener una tasa personalizada.',
+                'question1' => '¿Quién puede solicitar el programa Solidaridad y Salud?',
+                'answer1' => 'Este programa se dirige a particulares, asociaciones y colectivos que impulsan una iniciativa social, comunitaria o de salud.',
+                'question2' => '¿Cómo puedo presentar una solicitud?',
+                'answer2' => 'Basta con completar nuestro formulario de solicitud en línea, y nuestro equipo le guiará paso a paso.',
+                'question3' => '¿Cuáles son las condiciones de elegibilidad?',
+                'answer3' => 'Las condiciones varían según la naturaleza del proyecto, sus objetivos y su impacto esperado. Contáctenos para un acompañamiento personalizado.',
             ]
         ]
     ],
 
+    // Desarrollo local
     'home_loan' => [
-        'section_title' => 'Préstamo Hipotecario',
-        'description' => 'Un préstamo hipotecario proporciona financiamiento específicamente para la compra o renovación de una propiedad. Este tipo de préstamo permite a los prestatarios acceder a fondos significativos para proyectos como la compra de una nueva casa, la ampliación de espacios actuales o la mejora de características de la propiedad. Los préstamos hipotecarios suelen ser a largo plazo y cuentan con tasas de interés competitivas, lo que los convierte en una herramienta financiera esencial para lograr objetivos de adquisición de vivienda. La flexibilidad en los términos de pago y el enfoque personalizado para el financiamiento de propiedades hacen de los préstamos hipotecarios una solución atractiva para futuros propietarios.',
+        'section_title' => 'Desarrollo local',
+        'description' => 'El programa Desarrollo local apoya las iniciativas que dan vida a los territorios: proyectos de interés colectivo, infraestructuras de proximidad y dinamización de la vida local.
+                      Se dirige a promotores de proyectos, asociaciones y entidades locales que deseen reforzar el atractivo y la calidad de vida de su territorio.
+                      Cada expediente se estudia según su pertinencia, su viabilidad y su impacto esperado para la comunidad afectada.',
         'details' => [
-            'introduction' => 'Descubre los beneficios de un préstamo hipotecario, diseñado para hacer realidad tus sueños de ser propietario.',
-            'more_info_title' => '¿Por qué elegir un préstamo hipotecario?',
-            'more_info_text' => 'Un préstamo hipotecario está diseñado específicamente para ayudarte a financiar la compra o renovación de una propiedad, ofreciendo tasas competitivas y términos flexibles para adaptarse a tu situación financiera.',
-            'advantage1' => 'Tasas de Interés Competitivas',
-            'advantage2' => 'Planes de Pago Flexibles',
-            'advantage3' => 'Proceso de Aprobación Rápido',
-            'advantage4' => 'Soporte Dedicado para Compradores de Vivienda',
+            'introduction' => 'Descubra cómo el programa Desarrollo local puede apoyar su proyecto de territorio.',
+            'more_info_title' => '¿Por qué solicitar este programa?',
+            'more_info_text' => 'Este programa acompaña las iniciativas que refuerzan la vida local, con un acompañamiento adaptado a cada situación.',
+            'advantage1' => 'Estudio caso por caso',
+            'advantage2' => 'Acompañamiento de proximidad',
+            'advantage3' => 'Abierto a asociaciones y entidades locales',
+            'advantage4' => 'Seguimiento personalizado del expediente',
             'faq_title' => 'Preguntas Frecuentes',
             'faqs' => [
-                'question1' => '¿Para qué puedo utilizar un préstamo hipotecario?',
-                'answer1' => 'Un préstamo hipotecario puede ser utilizado para comprar una nueva vivienda, renovar tu propiedad actual o refinanciar una hipoteca existente.',
-                'question2' => '¿Cómo solicito un préstamo hipotecario?',
-                'answer2' => 'Para solicitarlo, simplemente completa nuestra solicitud en línea, y nuestro equipo te guiará en cada paso del proceso.',
-                'question3' => '¿Cuál es la tasa de interés en un préstamo hipotecario?',
-                'answer3' => 'Las tasas de interés varían según la cantidad del préstamo, el tipo de propiedad y el historial crediticio. Contáctanos para obtener una estimación personalizada de la tasa.',
+                'question1' => '¿Qué tipos de proyectos están contemplados?',
+                'answer1' => 'El programa Desarrollo local puede apoyar proyectos de interés colectivo, infraestructuras de proximidad o iniciativas de dinamización local.',
+                'question2' => '¿Cómo puedo presentar una solicitud?',
+                'answer2' => 'Basta con completar nuestro formulario en línea, y nuestro equipo le guiará en cada etapa del proceso.',
+                'question3' => '¿Cuáles son las condiciones de elegibilidad?',
+                'answer3' => 'Las condiciones varían según la naturaleza del proyecto y su impacto esperado para el territorio. Contáctenos para un estudio personalizado.'
             ]
         ]
     ],
 
+    // Agricultura
     'auto_loan' => [
-        'section_title' => 'Préstamo para Auto',
-        'description' => 'Un préstamo para auto es una opción de financiamiento diseñada específicamente para ayudarte a comprar un vehículo nuevo o usado. Este tipo de préstamo proporciona términos de pago flexibles y tasas de interés competitivas, permitiéndote conducir el automóvil que deseas sin un pago inicial grande. Con un préstamo para auto, puedes cubrir el costo total o parcial del vehículo y pagarlo con el tiempo, haciendo que sea una solución accesible para la mayoría de los presupuestos. Los préstamos para auto ofrecen un proceso de solicitud sencillo y una aprobación rápida para que puedas estar en la carretera rápidamente.',
+        'section_title' => 'Agricultura',
+        'description' => 'El programa Agricultura apoya los proyectos agrícolas y de desarrollo rural: instalación, diversificación de actividades, prácticas sostenibles o circuitos cortos.
+                      Se dirige a agricultores, cooperativas y promotores de proyectos agrícolas que deseen desarrollar una actividad sostenible y creadora de oportunidades locales.
+                      Cada solicitud se estudia según su pertinencia, su viabilidad y su impacto esperado en el territorio.',
         'details' => [
-            'introduction' => 'Experimenta la comodidad de un préstamo para auto, diseñado para hacer que la propiedad de un vehículo sea fácil y asequible.',
-            'more_info_title' => '¿Por qué elegir un préstamo para auto?',
-            'more_info_text' => 'Un préstamo para auto te ayuda a financiar la compra de tu vehículo con facilidad, ofreciendo opciones de pago flexibles y tasas competitivas que se ajustan a tus necesidades financieras.',
-            'advantage1' => 'Proceso de Aprobación Rápido',
-            'advantage2' => 'Tasas de Interés Competitivas',
-            'advantage3' => 'Planes de Pago Flexibles',
-            'advantage4' => 'Sin Costos Ocultos',
+            'introduction' => 'Descubra cómo el programa Agricultura puede apoyar su proyecto agrícola o rural.',
+            'more_info_title' => '¿Por qué solicitar este programa?',
+            'more_info_text' => 'Este programa acompaña las iniciativas agrícolas y rurales, con un acompañamiento adaptado a la realidad del terreno.',
+            'advantage1' => 'Estudio detenido del proyecto',
+            'advantage2' => 'Acompañamiento cercano',
+            'advantage3' => 'Abierto a agricultores y cooperativas',
+            'advantage4' => 'Transparencia sobre los criterios de elegibilidad',
             'faq_title' => 'Preguntas Frecuentes',
             'faqs' => [
-                'question1' => '¿Qué tipos de vehículos puedo financiar con un préstamo para auto?',
-                'answer1' => 'Los préstamos para auto pueden ser utilizados para financiar una variedad de vehículos, incluyendo autos nuevos y usados, motocicletas, e incluso algunos vehículos recreativos.',
-                'question2' => '¿Cómo solicito un préstamo para auto?',
-                'answer2' => 'Simplemente completa nuestro formulario de solicitud en línea, y nuestro equipo te ayudará durante el proceso de aprobación del préstamo para que obtengas tu nuevo vehículo rápidamente.',
-                'question3' => '¿Qué factores determinan la tasa de interés en un préstamo para auto?',
-                'answer3' => 'Las tasas de interés son influenciadas por factores como el tipo de vehículo, la cantidad del préstamo y tu puntaje de crédito. Contáctanos para obtener una tasa personalizada según tus necesidades.',
+                'question1' => '¿Qué tipos de proyectos agrícolas están contemplados?',
+                'answer1' => 'El programa Agricultura puede apoyar la instalación, la diversificación, las prácticas sostenibles o los circuitos cortos.',
+                'question2' => '¿Cómo puedo presentar una solicitud?',
+                'answer2' => 'Basta con completar nuestro formulario de solicitud en línea, y nuestro equipo le acompañará durante todo el proceso.',
+                'question3' => '¿Qué criterios determinan la elegibilidad de un proyecto agrícola?',
+                'answer3' => 'Los criterios dependen de la naturaleza del proyecto y de su impacto esperado. Contáctenos para un acompañamiento personalizado.'
             ]
         ]
     ],
 
+    // Emprendimiento
     'business_loan' => [
-        'section_title' => 'Préstamo para Negocios',
-        'description' => 'Un préstamo para negocios es una solución de financiamiento diseñada para apoyar el crecimiento y las necesidades operativas de tu empresa. Ya sea que necesites fondos para expansión, compra de equipos o capital de trabajo, un préstamo para negocios puede proporcionar el impulso financiero que tu empresa necesita. Con términos de pago flexibles y tasas de interés competitivas, este tipo de préstamo permite a los propietarios de negocios gestionar el flujo de caja de manera efectiva, invertir en nuevas oportunidades y fomentar el éxito a largo plazo.',
+        'section_title' => 'Emprendimiento',
+        'description' => 'El programa Emprendimiento apoya el inicio y el desarrollo de actividades económicas creadoras de oportunidades. Ya sea que se encuentre en la fase de lanzamiento, de compra de equipos o de desarrollo de su actividad, este programa puede aportar el apoyo financiero que su proyecto necesita.
+                      Cada solicitud se estudia según la naturaleza del proyecto, su viabilidad y su impacto esperado, con un acompañamiento adaptado a los promotores de proyectos.',
         'details' => [
-            'introduction' => 'Descubre cómo un préstamo para negocios puede ayudar a tu empresa a crecer y prosperar en un mercado competitivo.',
-            'more_info_title' => '¿Por qué elegir un préstamo para negocios?',
-            'more_info_text' => 'Un préstamo para negocios ofrece la flexibilidad financiera para expandir tus operaciones, invertir en recursos esenciales y aprovechar nuevas oportunidades de mercado.',
-            'advantage1' => 'Financiamiento Rápido para Crecimiento',
-            'advantage2' => 'Opciones de Pago Flexibles',
-            'advantage3' => 'Tasas de Interés Competitivas',
-            'advantage4' => 'Soporte Dedicado para Negocios',
+            'introduction' => 'Descubra cómo el programa Emprendimiento puede apoyar el lanzamiento o el desarrollo de su actividad.',
+            'more_info_title' => '¿Por qué solicitar este programa?',
+            'more_info_text' => 'Este programa acompaña a los promotores de proyectos en el desarrollo de su actividad, con un estudio detenido de cada expediente.',
+            'advantage1' => 'Estudio detenido del proyecto',
+            'advantage2' => 'Acompañamiento personalizado',
+            'advantage3' => 'Abierto a nuevos emprendedores y empresas ya existentes',
+            'advantage4' => 'Transparencia sobre los criterios de elegibilidad',
             'faq_title' => 'Preguntas Frecuentes',
             'faqs' => [
-                'question1' => '¿Para qué puedo utilizar un préstamo para negocios?',
-                'answer1' => 'Los préstamos para negocios pueden ser utilizados para diversos fines, incluyendo la compra de inventario, expansión de instalaciones, contratación de personal o inversión en equipos.',
-                'question2' => '¿Cómo solicito un préstamo para negocios?',
-                'answer2' => 'Puedes solicitarlo llenando nuestro formulario de solicitud en línea. Nuestro equipo te guiará en cada paso para asegurar una experiencia fluida.',
-                'question3' => '¿Qué factores afectan la tasa de interés en un préstamo para negocios?',
-                'answer3' => 'Las tasas de interés dependen de factores como la cantidad del préstamo, la salud financiera de tu negocio y tu historial crediticio. Contáctanos para recibir una tasa personalizada.'
+                'question1' => '¿Para qué puede servir el apoyo del programa Emprendimiento?',
+                'answer1' => 'Puede apoyar el lanzamiento de una actividad, la compra de equipos, la ampliación de instalaciones o la contratación de personal.',
+                'question2' => '¿Cómo puedo presentar una solicitud?',
+                'answer2' => 'Puede presentar su solicitud completando nuestro formulario en línea. Nuestro equipo le guiará en cada etapa.',
+                'question3' => '¿Qué criterios determinan la elegibilidad de un proyecto?',
+                'answer3' => 'Los criterios dependen de la naturaleza del proyecto y de su viabilidad. Contáctenos para un acompañamiento personalizado.'
             ]
         ]
     ],
 
+    // Inserción profesional
     'bike_loan' => [
-        'section_title' => 'Préstamo para Moto',
-        'description' => 'Un préstamo para moto es una opción de financiamiento diseñada para individuos que buscan comprar una motocicleta o bicicleta nueva o usada. Este préstamo te permite adquirir la moto de tu elección con términos de pago asequibles y tasas de interés competitivas. Con un préstamo para moto, puedes evitar un pago inicial grande y pagar tu moto a plazos, facilitando su gestión dentro de tu presupuesto. Este tipo de préstamo es ideal tanto para principiantes como para conductores experimentados que buscan flexibilidad financiera.',
+        'section_title' => 'Inserción profesional',
+        'description' => 'El programa Inserción profesional acompaña a las personas alejadas del empleo hacia una reincorporación laboral duradera: acompañamiento técnico y metodológico, apoyo a la formación, respaldo a las iniciativas impulsadas por entidades de inserción.
+                      Se dirige tanto a particulares como a asociaciones y entidades que trabajan por la inserción profesional.
+                      Cada solicitud se estudia según la situación del beneficiario, sus objetivos y el impacto esperado del acompañamiento.',
         'details' => [
-            'introduction' => 'Comienza tu viaje con facilidad usando nuestro préstamo para moto, diseñado para hacer accesible y asequible la propiedad de una motocicleta.',
-            'more_info_title' => '¿Por qué elegir un préstamo para moto?',
-            'more_info_text' => 'Un préstamo para moto te ayuda a financiar la moto de tus sueños con términos flexibles, aprobaciones rápidas y tasas competitivas que se ajustan a tu presupuesto.',
-            'advantage1' => 'Aprobación Rápida y Fácil',
-            'advantage2' => 'Tasas de Interés Asequibles',
-            'advantage3' => 'Términos de Pago Flexibles',
-            'advantage4' => 'Documentación Mínima',
+            'introduction' => 'Descubra cómo el programa Inserción profesional puede acompañarle hacia el empleo.',
+            'more_info_title' => '¿Por qué solicitar este programa?',
+            'more_info_text' => 'Este programa ofrece un acompañamiento técnico y metodológico adaptado a cada situación, hacia una inserción duradera.',
+            'advantage1' => 'Acompañamiento personalizado',
+            'advantage2' => 'Estudio detenido de cada situación',
+            'advantage3' => 'Abierto a particulares y entidades de inserción',
+            'advantage4' => 'Seguimiento en el tiempo',
             'faq_title' => 'Preguntas Frecuentes',
             'faqs' => [
-                'question1' => '¿Qué tipos de motos puedo financiar con un préstamo para moto?',
-                'answer1' => 'Los préstamos para moto pueden ser utilizados para financiar diversos tipos de motocicletas, incluyendo motos estándar, deportivas y scooters.',
-                'question2' => '¿Cómo solicito un préstamo para moto?',
-                'answer2' => 'Simplemente completa nuestro formulario de solicitud en línea, y nuestro equipo te guiará durante el proceso de aprobación para una experiencia fluida.',
-                'question3' => '¿Qué factores afectan la tasa de interés en un préstamo para moto?',
-                'answer3' => 'La tasa de interés depende de factores como el tipo de moto, la cantidad del préstamo y tu perfil crediticio. Contáctanos para una tasa personalizada.'
+                'question1' => '¿Quién puede beneficiarse del programa Inserción profesional?',
+                'answer1' => 'Este programa se dirige a personas alejadas del empleo, así como a asociaciones y entidades de inserción.',
+                'question2' => '¿Cómo puedo presentar una solicitud?',
+                'answer2' => 'Basta con completar nuestro formulario de solicitud en línea, y nuestro equipo le guiará durante todo el proceso.',
+                'question3' => '¿Cuáles son las condiciones de elegibilidad?',
+                'answer3' => 'Las condiciones dependen de la situación del beneficiario y de los objetivos del programa de inserción. Contáctenos para un acompañamiento personalizado.'
             ]
         ]
     ],
 
+    // Educación
     'study_loan' => [
-        'section_title' => 'Préstamo para Estudios',
-        'description' => 'Un préstamo para estudios es una opción de financiamiento dedicada a ayudar a los estudiantes a cubrir los gastos educativos, incluyendo matrícula, libros, alojamiento y otros costos relacionados con los estudios. Este tipo de préstamo proporciona a los estudiantes y sus familias el apoyo financiero necesario para seguir una educación superior sin tensiones económicas inmediatas. Con opciones de pago flexibles y tasas de interés competitivas, un préstamo para estudios puede hacer que alcanzar objetivos académicos sea más accesible.',
+        'section_title' => 'Educación',
+        'description' => 'El programa Educación apoya el acceso al conocimiento y a la formación: tasas de matrícula, material pedagógico, proyectos educativos impulsados por centros, asociaciones o familias.
+                      Tiene como objetivo acompañar los itinerarios educativos y las iniciativas que favorecen el acceso a la educación, en particular para los colectivos que más lo necesitan.
+                      Cada solicitud se estudia según su pertinencia educativa, su viabilidad y su impacto esperado.',
         'details' => [
-            'introduction' => 'Impulsa tu camino educativo con un préstamo para estudios, diseñado para hacer accesible y asequible la educación superior.',
-            'more_info_title' => '¿Por qué elegir un préstamo para estudios?',
-            'more_info_text' => 'Un préstamo para estudios brinda el apoyo financiero esencial para estudiantes, ofreciendo tasas de interés manejables y términos de pago flexibles para que te concentres en tus estudios sin preocupaciones financieras.',
-            'advantage1' => 'Opciones de Pago Flexibles',
-            'advantage2' => 'Tasas de Interés Competitivas',
-            'advantage3' => 'Cubre Diversos Gastos Educativos',
-            'advantage4' => 'Proceso de Solicitud Rápido y Fácil',
+            'introduction' => 'Descubra cómo el programa Educación puede apoyar un itinerario o un proyecto educativo.',
+            'more_info_title' => '¿Por qué solicitar este programa?',
+            'more_info_text' => 'Este programa aporta un apoyo financiero esencial a la educación, con un acompañamiento adaptado a cada situación.',
+            'advantage1' => 'Acompañamiento cercano',
+            'advantage2' => 'Estudio detenido de cada expediente',
+            'advantage3' => 'Cubre diferentes gastos educativos',
+            'advantage4' => 'Abierto a particulares, familias y centros',
             'faq_title' => 'Preguntas Frecuentes',
             'faqs' => [
-                'question1' => '¿Qué gastos cubre un préstamo para estudios?',
-                'answer1' => 'Un préstamo para estudios puede cubrir costos de matrícula, libros, suministros, alojamiento y otros gastos educativos.',
-                'question2' => '¿Cómo solicito un préstamo para estudios?',
-                'answer2' => 'Puedes solicitarlo llenando nuestro formulario de solicitud en línea, y nuestro equipo te asistirá en cada paso del proceso.',
-                'question3' => '¿Cuándo comienzo a pagar el préstamo para estudios?',
-                'answer3' => 'Los términos de pago varían, pero muchos préstamos para estudios ofrecen opciones de pago diferido, permitiéndote comenzar el pago después de completar tus estudios.'
+                'question1' => '¿Qué gastos puede cubrir el programa Educación?',
+                'answer1' => 'Puede cubrir las tasas de matrícula, el material pedagógico, el alojamiento estudiantil u otros gastos relacionados con la educación.',
+                'question2' => '¿Cómo puedo presentar una solicitud?',
+                'answer2' => 'Puede presentar su solicitud completando nuestro formulario en línea, y nuestro equipo le acompañará en cada etapa.',
+                'question3' => '¿Quién puede solicitar el programa Educación?',
+                'answer3' => 'Los particulares, familias, asociaciones y centros que impulsen un proyecto educativo pueden solicitar este programa. Contáctenos para saber más.'
             ]
         ]
-    ]
+    ],
 
 
 ];

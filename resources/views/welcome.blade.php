@@ -94,9 +94,9 @@
                         <i class="fas fa-file-signature"></i>
                         @lang('menu.loan')
                     </a>
-                    <a href="#simulate" class="btn-outline-white">
-                        <i class="fas fa-calculator"></i>
-                        @lang('menu.simulate')
+                    <a href="{{ route('services', ['locale' => $locale]) }}" class="btn-outline-white">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        @lang('menu.services')
                     </a>
                 </div>
 
@@ -109,7 +109,7 @@
                         ['fas fa-users',       __('home.member'),                     '8 500+'],
                     ] as $trust)
                     <div class="d-flex align-items-center gap-2">
-                        <div style="width:32px;height:32px;background:rgba(200,169,81,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.7rem;flex-shrink:0;">
+                        <div style="width:32px;height:32px;background:rgba(31,122,199,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.7rem;flex-shrink:0;">
                             <i class="{{ $trust[0] }}"></i>
                         </div>
                         <div>
@@ -170,12 +170,12 @@
 ============================================================ --}}
 @php
 $serviceNav = [
-    ['route' => 'services.personal', 'icon' => 'fas fa-user-tie',      'label' => 'menu.personal'],
-    ['route' => 'services.home',     'icon' => 'fas fa-home',           'label' => 'menu.home_loan'],
-    ['route' => 'services.auto',     'icon' => 'fas fa-car',            'label' => 'menu.auto'],
-    ['route' => 'services.business', 'icon' => 'fas fa-briefcase',      'label' => 'menu.business'],
-    ['route' => 'services.study',    'icon' => 'fas fa-graduation-cap', 'label' => 'menu.study'],
-    ['route' => 'services.bike',     'icon' => 'fas fa-bicycle',        'label' => 'menu.bike'],
+    ['route' => 'services.personal', 'icon' => 'fas fa-hands-holding-circle', 'label' => 'menu.personal'],
+    ['route' => 'services.home',     'icon' => 'fas fa-city',                 'label' => 'menu.home_loan'],
+    ['route' => 'services.auto',     'icon' => 'fas fa-seedling',             'label' => 'menu.auto'],
+    ['route' => 'services.business', 'icon' => 'fas fa-briefcase',            'label' => 'menu.business'],
+    ['route' => 'services.study',    'icon' => 'fas fa-graduation-cap',       'label' => 'menu.study'],
+    ['route' => 'services.bike',     'icon' => 'fas fa-handshake',            'label' => 'menu.bike'],
 ];
 @endphp
 <div class="service-nav-strip" id="services-strip">
@@ -241,7 +241,7 @@ $serviceNav = [
     padding:.3rem .8rem; white-space:nowrap; flex-shrink:0;
     transition:border-color .25s ease, box-shadow .25s ease;
 }
-.about-partner-bar__name:hover { border-color:var(--gold); box-shadow:0 2px 10px rgba(200,169,81,.18); }
+.about-partner-bar__name:hover { border-color:var(--gold); box-shadow:0 2px 10px rgba(31,122,199,.18); }
 @media (prefers-reduced-motion: reduce) {
     .about-partner-bar__track { animation:none; flex-wrap:wrap; width:100%; }
 }
@@ -305,27 +305,12 @@ $serviceNav = [
                     <i class="fas fa-tags" style="color:var(--gold);margin-right:.35rem;"></i>@lang('home.discover_our_loan_services')
                 </div>
                 <div class="about-loan-grid">
-                    <div class="about-loan-item"><i class="fas fa-user-tie"></i> @lang('home.personal_loan')</div>
-                    <div class="about-loan-item"><i class="fas fa-home"></i> @lang('home.mortgage_loan')</div>
-                    <div class="about-loan-item"><i class="fas fa-car"></i> @lang('home.auto_loan')</div>
+                    <div class="about-loan-item"><i class="fas fa-hands-holding-circle"></i> @lang('home.personal_loan')</div>
+                    <div class="about-loan-item"><i class="fas fa-city"></i> @lang('home.mortgage_loan')</div>
+                    <div class="about-loan-item"><i class="fas fa-seedling"></i> @lang('home.auto_loan')</div>
                     <div class="about-loan-item"><i class="fas fa-graduation-cap"></i> @lang('home.student_loan')</div>
                     <div class="about-loan-item"><i class="fas fa-briefcase"></i> @lang('home.business_loan')</div>
-                    <div class="about-loan-item"><i class="fas fa-credit-card"></i> @lang('home.microcredit')</div>
-                </div>
-
-                {{-- Partenaires bancaires --}}
-                <div class="about-partner-bar">
-                    <span class="about-partner-bar__lbl">@lang('home.partners_label') :</span>
-                    <div class="about-partner-bar__marquee">
-                        <div class="about-partner-bar__track">
-                            @foreach (__('home.partners_list') as $bankName)
-                            <span class="about-partner-bar__name">{{ $bankName }}</span>
-                            @endforeach
-                            @foreach (__('home.partners_list') as $bankName)
-                            <span class="about-partner-bar__name" aria-hidden="true">{{ $bankName }}</span>
-                            @endforeach
-                        </div>
-                    </div>
+                    <div class="about-loan-item"><i class="fas fa-hand-holding-dollar"></i> @lang('home.microcredit')</div>
                 </div>
 
                 <div class="d-flex flex-wrap gap-3">
@@ -422,7 +407,7 @@ $serviceNav = [
 </section>
 
 {{-- ============================================================
-     LOAN CALCULATOR
+     DEMANDE D'AIDE — sans simulation, juste le montant
 ============================================================ --}}
 <section class="calc-section py-24" id="simulate">
     <div class="container">
@@ -434,7 +419,7 @@ $serviceNav = [
 
                 @foreach ([1,2,3] as $r)
                 <div class="d-flex align-items-start gap-3 mb-4">
-                    <div style="width:36px;height:36px;background:rgba(200,169,81,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;">
+                    <div style="width:36px;height:36px;background:rgba(31,122,199,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;">
                         <i class="fas fa-check"></i>
                     </div>
                     <div>
@@ -456,7 +441,20 @@ $serviceNav = [
             </div>
 
             <div class="col-lg-6 offset-lg-1 wow fadeInRight" data-wow-duration="900ms" data-wow-delay="150ms">
-                @include('partials.simulate')
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:2.5rem 2.25rem;text-align:center;">
+                    <div style="width:56px;height:56px;border-radius:50%;background:rgba(31,122,199,.15);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+                        <i class="fas fa-hand-holding-heart" style="font-size:1.4rem;color:var(--gold);"></i>
+                    </div>
+                    <h3 style="font-family:'Playfair Display',serif;color:#fff;font-size:1.4rem;font-weight:700;margin-bottom:.75rem;">
+                        {{ __('home.cta_title') }}
+                    </h3>
+                    <p style="color:rgba(255,255,255,.6);font-size:.92rem;line-height:1.7;margin-bottom:1.75rem;">
+                        {{ __('home.cta_text') }}
+                    </p>
+                    <a href="{{ route('loan', ['locale' => $locale]) }}" class="btn-primary btn-primary--lg">
+                        <i class="fas fa-paper-plane"></i> {{ __('home.cta_button') }}
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -493,103 +491,11 @@ $serviceNav = [
 </section>
 
 {{-- ============================================================
-     BANQUES PARTENAIRES — après les stats (signal de confiance)
-============================================================ --}}
-@push('styles')
-<style>
-.partners-marquee {
-    overflow:hidden; position:relative;
-    -webkit-mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-    mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-}
-.partners-track {
-    display:flex; align-items:center; width:max-content; gap:1.1rem;
-    animation:partners-scroll 70s linear infinite;
-}
-.partners-marquee:hover .partners-track { animation-play-state:paused; }
-@keyframes partners-scroll {
-    from { transform:translateX(0); }
-    to   { transform:translateX(-50%); }
-}
-.partner-logo {
-    display:flex; align-items:center; justify-content:center;
-    padding:.8rem 1.5rem; min-width:120px; height:66px;
-    background:#fff; border:1.5px solid #e5e7eb; border-radius:12px;
-    filter:grayscale(1); opacity:.6;
-    transition:filter .3s ease, opacity .3s ease, border-color .3s ease, box-shadow .3s ease;
-    cursor:default; flex-shrink:0;
-}
-.partner-logo:hover {
-    filter:grayscale(0); opacity:1;
-    border-color:var(--gold); box-shadow:0 4px 22px rgba(200,169,81,.2);
-}
-.partner-logo--text {
-    font-size:.85rem; font-weight:700; color:var(--navy);
-    text-align:center; line-height:1.3; white-space:nowrap;
-}
-@media (max-width:576px) {
-    .partner-logo { min-width:100px; padding:.65rem 1rem; height:56px; }
-    .partners-track { gap:.65rem; animation-duration:45s; }
-}
-@media (prefers-reduced-motion: reduce) {
-    .partners-track { animation:none; flex-wrap:wrap; width:100%; justify-content:center; }
-}
-</style>
-@endpush
-
-<section class="py-10" style="background:#f7f8fa;border-top:1px solid #eaecf0;border-bottom:1px solid #eaecf0;">
-    <div class="container">
-        <p class="text-center" style="font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#9ca3af;margin-bottom:1.4rem;">
-            @lang('home.partners_label')
-        </p>
-        <div class="partners-marquee">
-            <div class="partners-track">
-                @foreach (__('home.partners_list') as $bankName)
-                <div class="partner-logo partner-logo--text">{{ $bankName }}</div>
-                @endforeach
-                @foreach (__('home.partners_list') as $bankName)
-                <div class="partner-logo partner-logo--text" aria-hidden="true">{{ $bankName }}</div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- ============================================================
      TESTIMONIALS — Swiper carousel
 ============================================================ --}}
 @push('styles')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
-/* ── Trust badge (Google rating summary) ── */
-.gr-badge {
-    max-width: 480px;
-    margin: 0 auto 2.5rem;
-    background: var(--white);
-    border: 1px solid var(--gray-100);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-card);
-    padding: 1.75rem 2rem;
-    text-align: center;
-}
-.gr-badge__row { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
-.gr-logo { display: inline-flex; align-items: center; gap: .5rem; font-family: Arial, sans-serif; font-size: 1.5rem; font-weight: 700; }
-.gr-logo span:nth-child(1) { color: #4285F4; }
-.gr-logo span:nth-child(2) { color: #EA4335; }
-.gr-logo span:nth-child(3) { color: #FBBC05; }
-.gr-logo span:nth-child(4) { color: #4285F4; }
-.gr-logo span:nth-child(5) { color: #34A853; }
-.gr-logo span:nth-child(6) { color: #EA4335; }
-.gr-badge__stars { color: #FBBC05; font-size: 1.125rem; letter-spacing: .1em; }
-.gr-badge__rating { font-size: .9375rem; font-weight: 700; color: var(--navy); text-align: left; }
-.gr-badge__cert {
-    display: inline-flex; align-items: center; gap: .4rem;
-    background: #1E8E3E; color: #fff;
-    font-size: .8125rem; font-weight: 600;
-    padding: .5rem 1.125rem; border-radius: 999px;
-}
-.gr-badge__cert i { font-size: .75rem; opacity: .85; }
-
 /* ── Review cards ── */
 .gr-card {
     background: var(--white);
@@ -643,26 +549,8 @@ $serviceNav = [
             <h2 class="section-title">{{ __('home.testimonials_title') }}</h2>
         </div>
 
-        {{-- Trust badge --}}
-        <div class="gr-badge">
-            <div class="gr-badge__row">
-                <span class="gr-logo">
-                    <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-                </span>
-                <div>
-                    <div class="gr-badge__stars">
-                        @for($s=0;$s<5;$s++)<i class="fas fa-star"></i>@endfor
-                    </div>
-                    <p class="gr-badge__rating">{{ __('home.testimonials_rating_badge') }}</p>
-                </div>
-            </div>
-            <span class="gr-badge__cert">
-                {{ __('home.testimonials_certified_by') }} <i class="fas fa-circle-info"></i>
-            </span>
-        </div>
-
         @php
-            $avatarColors = ['#0B1A2E', '#C8A951', '#0F766E', '#B45309', '#1D4ED8', '#7C3AED'];
+            $avatarColors = ['#0B1A2E', '#1F7AC7', '#0D9488', '#B45309', '#1D4ED8', '#7C3AED'];
         @endphp
 
         <div class="swiper testimonials-swiper">

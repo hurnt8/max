@@ -1,46 +1,47 @@
 <?php
 
 return [
-    'banner_title' => 'Descubre ' . site_name(),
-    'banner_subtitle' => 'Acerca de nosotros',
-    'banner_description' => 'Pide prestado más fácilmente con soluciones de préstamo flexibles adaptadas a tus necesidades financieras.',
+    'banner_title' => 'Descubra ' . site_name(),
+    'banner_subtitle' => 'Sobre nosotros',
+    'banner_description' => 'Reciba apoyo de forma más sencilla gracias a programas de ayuda flexibles y adaptados a su situación.',
 
     'section1_title' => 'Por qué elegir ' . site_name(),
-    'section1_p1' => 'En ' . site_name() . ', creemos firmemente que todo el mundo merece la oportunidad de hacer realidad sus sueños financieros. Desde nuestros inicios, nos hemos comprometido a brindar soluciones crediticias flexibles y accesibles para satisfacer las diversas necesidades de nuestros clientes. Ya sea que esté buscando financiar un proyecto personal, comprar un automóvil o expandir su negocio, tenemos el préstamo que necesita.',
-    'section1_p2' => 'Nuestros servicios están diseñados para brindar una experiencia sin complicaciones, con un proceso de solicitud rápido y sencillo. Entendemos que cada cliente es único, por eso ofrecemos préstamos personalizados que se adaptan a sus necesidades específicas. Además, nuestros asesores dedicados siempre están ahí para guiarlo en cada paso del camino, asegurándose de que reciba pleno apoyo de principio a fin.',
-    'propuesto' => 'Proponemos:',
-    'check1' => 'Préstamos personalizados según tus necesidades específicas.',
-    'check2' => 'Asesores dedicados para ayudarte en cada paso del camino.',
-    'check3' => 'Términos de pago flexibles que se adaptan a su situación financiera',
-    'check4' => 'Préstamos sin que tengas sueldo.',
-    'section1_p3' => 'En ' . site_name() . ', nuestra misión es ayudarle a alcanzar sus objetivos financieros con soluciones de préstamos hechas a medida. Únase a nosotros hoy y descubra cómo podemos ayudarlo a hacer realidad sus proyectos.',
-    'btn' => 'Encuentre su préstamo ideal',
+    'section1_p1' => 'En ' . site_name() . ', creemos firmemente que cada persona merece una oportunidad para superar sus dificultades financieras. Desde nuestra creación, nos hemos comprometido a ofrecer programas de ayuda flexibles y accesibles para responder a las diversas necesidades de quienes acompañamos. Ya sea que busque financiar un proyecto personal, asegurar su vivienda o desarrollar su actividad, contamos con el programa de apoyo que necesita.',
+    'section1_p2' => 'Nuestros programas están diseñados para ofrecer una experiencia humana y sin complicaciones, con un trámite sencillo y rápido. Comprendemos que cada situación es única, por eso proponemos ayudas personalizadas que se adaptan a sus necesidades específicas. Además, nuestros asesores dedicados están siempre disponibles para guiarle en cada etapa, garantizándole así un acompañamiento completo de principio a fin.',
+    'proposed' => 'Le proponemos:',
+    'check1' => 'Ayudas personalizadas según sus necesidades específicas.',
+    'check2' => 'Asesores dedicados para acompañarle en cada etapa.',
+    'check3' => 'Condiciones de desembolso flexibles para adaptarse a su situación',
+    'check4' => 'Ayudas accesibles, sin necesidad de justificante de salario.',
+    'section1_p3' => 'En ' . site_name() . ', nuestra misión es acompañarle hacia una mayor tranquilidad mediante soluciones de apoyo hechas a medida. Únase a nosotros hoy mismo y descubra cómo podemos ayudarle a hacer realidad sus proyectos.',
+    'btn' => 'Encuentre Su Programa Ideal',
 
-    'faq_title' => 'Preguntas frecuentes',
-    'faq_description' => 'Encuentre respuestas a las preguntas más comunes sobre nuestros servicios de préstamo.',
-    'acc_1' => '¿Qué tipos de préstamos ofrecen?',
-    'acc_1_desc' => 'Ofrecemos una variedad de préstamos, incluidos préstamos personales, préstamos
-    hipotecas, préstamos para automóviles y préstamos para pequeñas empresas. Cada
-    El tipo de préstamo está diseñado para satisfacer necesidades y ofertas específicas.
-    condiciones flexibles.',
-    'acc_2' => '¿Cómo puedo solicitar un préstamo?',
-    'acc_2_desc' => 'Puedes solicitar un préstamo directamente en nuestro sitio web
-    completando el formulario de solicitud en línea. te pediremos
-    información básica como su nombre, datos de contacto y el importe del
-    préstamo deseado. Nuestros asesores se pondrán en contacto contigo para finalizar la solicitud y
-    guiarte a través del proceso.',
-    'acc_3' => '¿Cuáles son los criterios de elegibilidad para un préstamo?',
-    'acc_3_desc' => 'Los criterios de elegibilidad varían dependiendo del tipo de préstamo, pero en general, usted
-    debe ser mayor de edad, tener ingresos estables y buen puntaje crediticio. Nosotros
-    También examinaremos tu capacidad de pago y tu historial.
-    financiero.',
-    'acc_4' => '¿Cuál es el tiempo de procesamiento de una solicitud de préstamo?',
-    'acc_4_desc' => ' El tiempo de procesamiento varía según el tipo de préstamo y la complejidad de su
-    pedido. Por lo general, las solicitudes de préstamos personales se procesan en un plazo de 24 a 48
-    horas, mientras que las hipotecas pueden tardar varios días en
-    razón por la que se requieren controles más profundos.',
-    'acc_5' => '¿Puedo pagar mi préstamo anticipadamente?',
-    'acc_5_desc' => 'Sí, puedes pagar tu préstamo anticipadamente sin penalización. Nosotros tu
-    Le recomendamos que pague su préstamo lo antes posible, ya que esto reducirá el
-    monto total de intereses que pagará durante la vigencia del préstamo.',
+    'faq_title' => 'Preguntas Frecuentes',
+    'faq_description' => 'Encuentre respuestas a las preguntas más comunes sobre nuestros programas de ayuda.',
+    'acc_1' => ' ¿Qué tipos de ayuda ofrecen?',
+    'acc_1_desc' => 'Ofrecemos una variedad de programas de ayuda, incluidas ayudas
+    personales, ayudas para vivienda, ayudas para movilidad y ayudas para pequeños
+    proyectos empresariales. Cada programa está diseñado para responder a necesidades
+    específicas y ofrece condiciones flexibles.',
+    'acc_2' => '¿Cómo puedo presentar una solicitud de donación?',
+    'acc_2_desc' => 'Puede presentar una solicitud directamente en nuestro sitio web
+    completando el formulario en línea. Le pediremos
+    información básica como su nombre, sus datos de contacto y el importe
+    deseado. Nuestros asesores se pondrán en contacto con usted para finalizar la solicitud y
+    guiarle a través del proceso.',
+    'acc_3' => '¿Cuáles son los criterios de elegibilidad para una ayuda?',
+    'acc_3_desc' => 'Los criterios de elegibilidad varían según el programa, pero en general
+    debe ser mayor de edad y poder presentar su situación. Examinamos
+    cada expediente con atención y sensibilidad, teniendo en cuenta su
+    contexto personal.',
+    'acc_4' => '¿Cuál es el plazo de tramitación de una solicitud de ayuda?',
+    'acc_4_desc' => '  El plazo de tramitación varía según el programa y la complejidad de su
+    solicitud. En general, las solicitudes de ayuda personal se tramitan en un plazo de 24 a 48
+    horas, mientras que las ayudas para vivienda pueden tardar varios días debido a
+    las verificaciones más exhaustivas necesarias.',
+    'acc_5' => '¿Puedo finalizar mi programa de ayuda de forma anticipada?',
+    'acc_5_desc' => ' Sí, puede liquidar su programa de ayuda de forma anticipada sin penalización. Le
+    animamos a hacerlo si es posible, ya que esto nos permite apoyar a más
+    beneficiarios que lo necesitan.',
+
 ];

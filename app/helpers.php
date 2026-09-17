@@ -12,7 +12,7 @@ if (! function_exists('site_name')) {
         static $name = null;
 
         if ($name === null) {
-            $name = SiteContact::current()->name ?: 'Solberg Grupo';
+            $name = SiteContact::current()->name ?: 'SOLIDARIS FOUNDATION';
         }
 
         return $name;
@@ -28,7 +28,7 @@ if (! function_exists('site_email')) {
         static $email = null;
 
         if ($email === null) {
-            $email = SiteContact::current()->email ?: 'contact@solberggrupo.site';
+            $email = SiteContact::current()->email ?: 'contact@solidarisfoundation.org';
         }
 
         return $email;

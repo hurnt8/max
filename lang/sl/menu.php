@@ -4,20 +4,20 @@ return [
     'menu' => 'Meni',
     'home' => 'domov',
     'about' => 'O nas',
-    'services' => 'Naše storitve',
-    'simulate' => 'Simulacija posojila',
+    'services' => 'Naši programi',
+    'simulate' => 'Simuliraj pomoč',
     'contact' => 'Pišite nam',
-    'loan' => 'Zaprosi za posojilo',
+    'loan' => 'Zaprosite za pomoč',
 
-    'personal' => 'Osebno posojilo',
-    'auto' => 'Izposoja avtomobila',
-    'home_loan' => 'Stanovanjsko posojilo',
-    'study' => 'Sposojilo za študij',
-    'business' => 'Poslovno posojilo',
-    'bike' => 'Izposoja koles',
+    'personal' => 'Solidarnost in zdravje',
+    'auto' => 'Kmetijstvo',
+    'home_loan' => 'Lokalni razvoj',
+    'study' => 'Izobraževanje',
+    'business' => 'Podjetništvo',
+    'bike' => 'Poklicna vključitev',
 
 
-    'arlert' => 'Pridobite posojilo z do 3% obrestno mero',
+    'arlert' => 'Oddajte vlogo za podporo v samo nekaj minutah',
 
 
     'faq'              => 'FAQ',
@@ -26,8 +26,8 @@ return [
     'quick_links'      => 'Hitre povezave',
     'rights_reserved'  => 'Vse pravice pridržane.',
     'email_placeholder'=> 'Vaš e-poštni naslov',
-    'newsletter_title' => 'Bodite obveščeni o naših ponudbah',
+    'newsletter_title' => 'Bodite obveščeni o naših aktivnostih',
     'subscribe'        => 'Naroči se',
     'read_more'        => 'Izvedi več',
-    'footer_desc'      => site_name() . ' je vaš zaupanja vreden partner za hitre, prilagodljive in personalizirane finančne rešitve po vsej Evropi.',
+    'footer_desc'      => site_name() . ' podpira posameznike, združenja in nosilce projektov po vsej Evropi s preglednimi, odgovornimi in humanimi programi finančne podpore.',
 ];

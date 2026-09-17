@@ -18,24 +18,6 @@
 }
 .about-engage-title { font-size:.875rem; font-weight:800; color:var(--navy); margin-bottom:.2rem; }
 .about-engage-desc  { font-size:.78rem; color:#6b7280; margin:0; line-height:1.55; }
-
-.about-page-partners-marquee {
-    overflow:hidden;
-    -webkit-mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-    mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-}
-.about-page-partners-track {
-    display:flex; align-items:center; width:max-content; gap:.5rem;
-    animation:about-page-partners-scroll 60s linear infinite;
-}
-.about-page-partners-marquee:hover .about-page-partners-track { animation-play-state:paused; }
-@keyframes about-page-partners-scroll {
-    from { transform:translateX(0); }
-    to   { transform:translateX(-50%); }
-}
-@media (prefers-reduced-motion: reduce) {
-    .about-page-partners-track { animation:none; flex-wrap:wrap; width:100%; }
-}
 </style>
 @endpush
 
@@ -61,7 +43,7 @@
                 <div class="about-image-wrap">
                     <img src="{{ asset('assets/images/about/about-1-1.jpg') }}"
                          alt="{{ site_name() }}" class="about-image-main">
-                    <img src="{{ asset('assets/images/about/about-1-2.jpg') }}"
+                    <img src="{{ asset('assets/images/about/about-2-1.jpg') }}"
                          alt="" class="about-image-secondary"
                          style="width:38%;right:1rem;bottom:1rem;">
                     <div class="about-badge">
@@ -75,8 +57,11 @@
                 <div class="section-label">{{ __('home.about.sectagline') }}</div>
                 <h2 class="section-title">{{ __('home.about.sectitle') }}</h2>
 
-                <p style="color:var(--gray-500);font-size:.9375rem;line-height:1.8;margin-bottom:1.5rem;">
+                <p style="color:var(--gray-500);font-size:.9375rem;line-height:1.8;margin-bottom:1rem;">
                     {{ __('home.about.text2') }}
+                </p>
+                <p style="color:var(--gray-500);font-size:.9375rem;line-height:1.8;margin-bottom:1.5rem;">
+                    {{ __('home.about.mission_text2') }}
                 </p>
 
                 {{-- 3 engagements clés --}}
@@ -108,12 +93,12 @@
                 </div>
                 <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem;">
                     @foreach([
-                        ['fas fa-user-tie',       'home.personal_loan'],
-                        ['fas fa-home',           'home.mortgage_loan'],
-                        ['fas fa-car',            'home.auto_loan'],
-                        ['fas fa-graduation-cap', 'home.student_loan'],
-                        ['fas fa-briefcase',      'home.business_loan'],
-                        ['fas fa-credit-card',    'home.microcredit'],
+                        ['fas fa-hands-holding-circle', 'home.personal_loan'],
+                        ['fas fa-city',                 'home.mortgage_loan'],
+                        ['fas fa-seedling',             'home.auto_loan'],
+                        ['fas fa-graduation-cap',        'home.student_loan'],
+                        ['fas fa-briefcase',             'home.business_loan'],
+                        ['fas fa-hand-holding-dollar',  'home.microcredit'],
                     ] as $t)
                     <span style="display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .75rem;border-radius:999px;background:var(--cream);border:1px solid #e2ddd0;font-size:.75rem;font-weight:700;color:var(--navy);">
                         <i class="{{ $t[0] }}" style="color:var(--gold-dark);font-size:.7rem;"></i> @lang($t[1])
@@ -121,25 +106,64 @@
                     @endforeach
                 </div>
 
-                {{-- Partenaires --}}
-                <div style="padding:.85rem 1.1rem;background:#f7f8fa;border:1px solid #eaecf0;border-radius:12px;margin-bottom:1.5rem;">
-                    <div style="font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#9ca3af;margin-bottom:.75rem;">@lang('home.partners_title')</div>
-                    <div class="about-page-partners-marquee">
-                        <div class="about-page-partners-track">
-                            @foreach (__('home.partners_list') as $bankName)
-                            <span style="font-size:.72rem;font-weight:700;color:var(--navy);background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:.25rem .7rem;white-space:nowrap;flex-shrink:0;">{{ $bankName }}</span>
-                            @endforeach
-                            @foreach (__('home.partners_list') as $bankName)
-                            <span style="font-size:.72rem;font-weight:700;color:var(--navy);background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:.25rem .7rem;white-space:nowrap;flex-shrink:0;" aria-hidden="true">{{ $bankName }}</span>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-
                 <a href="{{ route('loan', ['locale' => $locale]) }}" class="btn-primary btn-primary--lg">
                     <i class="fas fa-file-signature"></i> @lang('menu.loan')
                 </a>
             </div>
+        </div>
+    </div>
+</section>
+
+{{-- Nos appuis & Notre engagement --}}
+<section class="py-24" style="background:var(--cream);">
+    <div class="container">
+        <div class="row g-4 gutter-y-40">
+
+            <div class="col-lg-6 wow fadeInLeft" data-wow-duration="800ms">
+                <div class="card-glass" style="padding:2rem;height:100%;">
+                    <div class="section-label">{{ __('home.about.supports_title') }}</div>
+                    <p style="color:var(--gray-500);font-size:.92rem;line-height:1.75;margin:.5rem 0 1.25rem;">
+                        {{ __('home.about.supports_intro') }}
+                    </p>
+                    <ul style="list-style:none;margin:0 0 1.25rem;padding:0;">
+                        @foreach (__('home.about.supports') as $support)
+                        <li style="display:flex;align-items:flex-start;gap:.65rem;margin-bottom:.75rem;font-size:.9rem;color:var(--navy);line-height:1.55;">
+                            <i class="fas fa-check" style="color:var(--gold);margin-top:.3rem;flex-shrink:0;"></i>
+                            <span>{{ $support }}</span>
+                        </li>
+                        @endforeach
+                    </ul>
+                    <p style="font-size:.82rem;color:#6b7280;line-height:1.65;margin:0;">
+                        {{ __('home.about.supports_note') }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 wow fadeInRight" data-wow-duration="800ms" data-wow-delay="150ms">
+                <div class="card-glass" style="padding:2rem;height:100%;">
+                    <div class="section-label">{{ __('home.about.commitment_title') }}</div>
+                    <p style="color:var(--gray-500);font-size:.92rem;line-height:1.75;margin:.5rem 0 1.25rem;">
+                        {{ __('home.about.commitment_text') }}
+                    </p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem;">
+                        @foreach ([1,2,3,4] as $v)
+                        <div>
+                            <div style="font-size:.85rem;font-weight:800;color:var(--navy);margin-bottom:.2rem;">
+                                <i class="fas fa-circle" style="font-size:.35rem;color:var(--gold);margin-right:.4rem;vertical-align:middle;"></i>{{ __('home.about.values.title' . $v) }}
+                            </div>
+                            <p style="font-size:.78rem;color:#6b7280;margin:0;line-height:1.5;">{{ __('home.about.values.desc' . $v) }}</p>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div style="display:flex;gap:.75rem;padding:1rem 1.15rem;background:var(--gold-pale);border-left:3px solid var(--gold-dark);border-radius:10px;">
+                        <i class="fas fa-circle-info" style="color:var(--gold-dark);margin-top:.15rem;flex-shrink:0;"></i>
+                        <p style="font-size:.8rem;color:var(--navy);line-height:1.6;margin:0;font-weight:600;">
+                            {{ __('home.about.disclaimer') }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -172,6 +196,27 @@
     </div>
 </section>
 
+{{-- Notre vision --}}
+<section class="py-24 bg-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center wow fadeInUp" data-wow-duration="800ms">
+                <div class="section-label justify-content-center">{{ __('home.about.vision_tagline') }}</div>
+                <h2 class="section-title">{{ __('home.about.vision_title') }}</h2>
+                <p style="color:var(--gray-500);font-size:.95rem;line-height:1.85;margin-bottom:1.25rem;">
+                    {{ __('home.about.vision_text1') }}
+                </p>
+                <p style="color:var(--gray-500);font-size:.95rem;line-height:1.85;margin-bottom:2rem;">
+                    {{ __('home.about.vision_text2') }}
+                </p>
+                <p style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--navy);border-top:2px solid var(--gold);padding-top:1.5rem;display:inline-block;margin:0;">
+                    {{ __('home.about.vision_ambition') }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 {{-- Why choose us --}}
 <section class="py-24" style="background:var(--cream);">
     <div class="container">
@@ -195,6 +240,30 @@
                 </div>
             </div>
             @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- Agir avec nous --}}
+<section class="cta-banner">
+    <div class="container">
+        <div class="row align-items-center gutter-y-30">
+            <div class="col-lg-7 wow fadeInLeft" data-wow-duration="900ms">
+                <div class="section-label" style="color:var(--gold);">{{ __('home.about.act_label') }}</div>
+                <h2 class="section-title section-title--white mb-2">{{ __('home.about.act_title') }}</h2>
+                <p class="section-sub section-sub--white">{{ __('home.about.act_text') }}</p>
+                <p style="color:rgba(255,255,255,.5);font-size:.85rem;margin-top:1rem;font-style:italic;">{{ __('home.about.act_signature') }}</p>
+            </div>
+            <div class="col-lg-5 text-lg-end wow fadeInRight" data-wow-duration="900ms" data-wow-delay="150ms">
+                <div class="d-flex flex-wrap justify-content-lg-end gap-3">
+                    <a href="{{ route('loan', ['locale' => $locale]) }}" class="btn-primary btn-primary--lg">
+                        <i class="fas fa-file-signature"></i> @lang('menu.loan')
+                    </a>
+                    <a href="{{ route('services', ['locale' => $locale]) }}" class="btn-outline-white">
+                        <i class="fas fa-hand-holding-heart"></i> @lang('menu.services')
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>

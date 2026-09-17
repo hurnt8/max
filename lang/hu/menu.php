@@ -1,23 +1,24 @@
 <?php
 
 return [
-    'menu' => 'menü',
-    'home' => 'Otthon',
+
+    'menu' => 'Menü',
+    'home' => 'Főoldal',
     'about' => 'Rólunk',
-    'services' => 'Szolgáltatásaink',
-    'simulate' => 'Kölcsön szimuláció',
+    'services' => 'Programjaink',
+    'simulate' => 'Támogatás szimulálása',
     'contact' => 'Kapcsolatfelvétel',
-    'loan' => 'Kölcsönigénylés',
+    'loan' => 'Támogatás igénylése',
 
-    'personal' => 'Személyi kölcsön',
-    'auto' => 'Auto kölcsön',
-    'home_loan' => 'Lakáshitel',
-    'study' => 'Tanulmányi kölcsön',
-    'business' => 'Üzleti kölcsön',
-    'bike' => 'Kerékpárkölcsön',
+    'personal' => 'Szolidaritás és egészségügy',
+    'auto' => 'Mezőgazdaság',
+    'home_loan' => 'Helyi fejlesztés',
+    'study' => 'Oktatás',
+    'business' => 'Vállalkozás',
+    'bike' => 'Szakmai beilleszkedés',
 
+    'arlert' => 'Adja le támogatási kérelmét mindössze néhány perc alatt',
 
-    'arlert' => 'Kölcsön kérése akár 3%-os kamattal',
 
 
     'faq'              => 'FAQ',
@@ -27,8 +28,8 @@ return [
     'addresses'        => 'Címek',
     'rights_reserved'  => 'Minden jog fenntartva.',
     'email_placeholder'=> 'Az Ön e-mail-címe',
-    'newsletter_title' => 'Legyen tájékozott ajánlatainkról',
+    'newsletter_title' => 'Értesüljön tevékenységeinkről',
     'subscribe'        => 'Feliratkozás',
     'read_more'        => 'Tudjon meg többet',
-    'footer_desc'      => 'A ' . site_name() . ' megbízható partnere a gyors, rugalmas és személyre szabott finanszírozási megoldásoknak szerte Európában.',
+    'footer_desc'      => 'A ' . site_name() . ' Európa-szerte támogatja a magánszemélyeket, egyesületeket és projektgazdákat átlátható, felelős és emberközpontú pénzügyi támogatási programok révén.',
 ];

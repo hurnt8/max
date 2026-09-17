@@ -27,8 +27,8 @@
     $overrideSrc = $theme === 'dark' ? $dark : $light;
     $box   = ['sm' => 32, 'md' => 44, 'lg' => 64][$size] ?? 44;
     $isDark = $theme === 'dark';
-    $badgeBg   = $isDark ? '#C8A951' : '#0B1A2E';
-    $badgeFg   = $isDark ? '#0B1A2E' : '#C8A951';
+    $badgeBg   = $isDark ? '#1F7AC7' : '#0B1A2E';
+    $badgeFg   = $isDark ? '#0B1A2E' : '#1F7AC7';
     $wordColor = $isDark ? '#F7F3EC' : '#0B1A2E';
     $gap   = round($box * 0.28);
     $wsize = round($box * 0.42);
@@ -51,7 +51,7 @@
         </svg>
         @if($variant === 'full')
         <span style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:{{ $wsize }}px;color:{{ $wordColor }};white-space:nowrap">
-            {{ $firstWord }}@if($restWords) <span style="color:#C8A951">{{ $restWords }}</span>@endif
+            {{ $firstWord }}@if($restWords) <span style="color:#1F7AC7">{{ $restWords }}</span>@endif
         </span>
         @endif
     </{{ $tag }}>

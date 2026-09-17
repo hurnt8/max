@@ -5,19 +5,19 @@ return [
     'menu' => 'Menu',
     'home' => 'Home',
     'about' => 'Over ons',
-    'services' => 'Onze diensten',
-    'simulate' => 'Leensimulatie',
+    'services' => 'Onze programma\'s',
+    'simulate' => 'Hulp simuleren',
     'contact' => 'Contact opnemen',
-    'loan' => 'Een lening aanvragen',
+    'loan' => 'Hulp aanvragen',
 
-    'personal' => 'Persoonlijke lening',
-    'auto' => 'Autolening',
-    'home_loan' => 'Hypothecaire lening',
-    'study' => 'Studielening',
-    'business' => 'Zakelijke lening',
-    'bike' => 'Fietslening',
+    'personal' => 'Solidariteit en Gezondheid',
+    'auto' => 'Landbouw',
+    'home_loan' => 'Lokale ontwikkeling',
+    'study' => 'Onderwijs',
+    'business' => 'Ondernemerschap',
+    'bike' => 'Arbeidsintegratie',
 
-    'arlert' => "Ontvang een lening met een rentetarief tot 3%",
+    'arlert' => 'Dien uw aanvraag voor steun in, in slechts enkele minuten',
 
 
 
@@ -28,8 +28,8 @@ return [
     'addresses'        => 'Adressen',
     'rights_reserved'  => 'Alle rechten voorbehouden.',
     'email_placeholder'=> 'Uw e-mailadres',
-    'newsletter_title' => 'Blijf op de hoogte van onze aanbiedingen',
+    'newsletter_title' => 'Blijf op de hoogte van onze acties',
     'subscribe'        => "Abonneren",
     'read_more'        => 'Meer weten',
-    'footer_desc'      => site_name() . " is uw betrouwbare partner voor snelle, flexibele en persoonlijke financieringsoplossingen in heel Europa.",
+    'footer_desc'      => site_name() . " ondersteunt personen, verenigingen en projectinitiatiefnemers door heel Europa met transparante, verantwoorde en menselijke financiële steunprogramma's.",
 ];

@@ -5,19 +5,19 @@ return [
     'menu' => 'Menu',
     'home' => 'Accueil',
     'about' => 'À propos de nous',
-    'services' => 'Nos services',
-    'simulate' => 'Simulation de prêt',
+    'services' => 'Nos programmes',
+    'simulate' => 'Simuler une aide',
     'contact' => 'Nous contacter',
-    'loan' => 'Demander un prêt',
+    'loan' => 'Demander une aide',
 
-    'personal' => 'Prêt personnel',
-    'auto' => 'Prêt auto',
-    'home_loan' => 'Prêt immobilier',
-    'study' => 'Prêt étudiant',
-    'business' => 'Prêt commercial',
-    'bike' => 'Prêt vélo',
+    'personal' => 'Solidarité & Santé',
+    'auto' => 'Agriculture',
+    'home_loan' => 'Développement local',
+    'study' => 'Éducation',
+    'business' => 'Entrepreneuriat',
+    'bike' => 'Insertion professionnelle',
 
-    'arlert' => "Obtenez un prêt avec un taux d'intérêt allant jusqu'à 3 %",
+    'arlert' => 'Déposez votre demande de soutien en quelques minutes seulement',
 
 
 
@@ -28,8 +28,8 @@ return [
     'addresses'        => 'Adresses',
     'rights_reserved'  => 'Tous droits réservés.',
     'email_placeholder'=> 'Votre adresse email',
-    'newsletter_title' => 'Restez informé de nos offres',
+    'newsletter_title' => 'Restez informé de nos actions',
     'subscribe'        => "S'abonner",
     'read_more'        => 'En savoir plus',
-    'footer_desc'      => site_name() . " est votre partenaire de confiance pour des solutions de financement rapides, flexibles et personnalisées à travers l'Europe.",
+    'footer_desc'      => site_name() . " soutient des personnes, associations et porteurs de projets à travers l'Europe grâce à des programmes d'appui financier transparents, responsables et humains.",
 ];

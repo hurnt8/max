@@ -5,19 +5,19 @@ return [
     'sections' => [
         [
             'title' => '1. Einführung',
-            'content' => 'Willkommen bei ' . site_name() . '. Durch die Nutzung unserer Website und Dienste erklären Sie sich mit den folgenden Geschäftsbedingungen einverstanden und an diese gebunden. Bitte lesen Sie diese Bedingungen sorgfältig durch, bevor Sie unsere Website nutzen oder einen Kredit bei uns aufnehmen.',
+            'content' => 'Willkommen bei ' . site_name() . '. Durch die Nutzung unserer Website und Dienste erklären Sie sich mit den folgenden Geschäftsbedingungen einverstanden und an diese gebunden. Bitte lesen Sie diese Bedingungen sorgfältig durch, bevor Sie unsere Website nutzen oder einen Hilfsantrag bei uns stellen.',
         ],
         [
             'title' => '2. Nutzung der Website',
             'content' => 'Durch den Zugriff auf unsere Website erklären Sie sich damit einverstanden, unsere Dienste nur für rechtmäßige Zwecke und in Übereinstimmung mit diesen Bedingungen zu nutzen. Sie erklären sich damit einverstanden, unsere Website nicht in einer Weise zu nutzen, die zu Schäden, Unterbrechungen oder Störungen unserer Dienste oder des Zugriffs anderer Benutzer führt.',
         ],
         [
-            'title' => '3. Kreditdienstleistungen',
-            'content' => site_name() . ' bietet verschiedene Arten von Krediten an, um Ihren finanziellen Bedürfnissen gerecht zu werden. Alle Kredite unterliegen der Genehmigung auf Grundlage unserer Einschätzung Ihrer Kreditwürdigkeit und Rückzahlungsfähigkeit. Die spezifischen Bedingungen jedes Darlehens, einschließlich Zinssätze, Laufzeiten und Rückzahlungsbedingungen, werden in Ihrem Darlehensvertrag detailliert beschrieben.',
+            'title' => '3. Hilfsprogramme',
+            'content' => site_name() . ' bietet verschiedene Hilfs- und Unterstützungsprogramme an, um Ihren Bedürfnissen gerecht zu werden. Jeder Antrag wird anhand einer Prüfung Ihrer Situation sowie der Zulassungskriterien des jeweiligen Programms bewertet. Die genauen Bedingungen jeder gewährten Hilfe, einschließlich Betrag, Dauer und Auszahlungsmodalitäten, werden in Ihrer Unterstützungsvereinbarung festgelegt.',
         ],
         [
-            'title' => '4. Vertrags- und Versicherungskosten',
-            'content' => 'Bei der Aufnahme eines Kredits bei ' . site_name() . ' können Vertrags- und Versicherungsgebühren anfallen. Diese Gebühr deckt die Verwaltungskosten ab, die mit der Einrichtung und Verwaltung Ihres Kredits verbunden sind. Die genauen Einzelheiten dieser Gebühren werden in Ihrem Darlehensvertrag klar dargelegt. Sie sind verpflichtet, diese Gebühren gemäß den angegebenen Bedingungen zu zahlen.',
+            'title' => '4. Bearbeitungs- und Versicherungsgebühren',
+            'content' => 'Bei der Erstellung eines Antrags bei ' . site_name() . ' können Bearbeitungs- und Versicherungsgebühren anfallen. Diese Gebühren decken die Verwaltungskosten ab, die mit der Prüfung und Betreuung Ihres Antrags verbunden sind. Die genauen Einzelheiten dieser Gebühren werden in Ihrer Unterstützungsvereinbarung klar dargelegt. Sie sind verpflichtet, diese Gebühren gemäß den angegebenen Bedingungen zu zahlen.',
         ],
         [
             'title' => '5. Vertraulichkeit',
@@ -25,14 +25,14 @@ return [
         ],
         [
             'title' => '6. Beendigung',
-            'content' => 'Wir behalten uns das Recht vor, Ihren Zugriff auf unsere Website und unsere Dienste ohne Vorankündigung zu sperren oder zu sperren, wenn wir glauben, dass Sie gegen diese Bedingungen verstoßen haben oder wenn wir es für notwendig erachten, unsere Interessen oder die unserer Nutzer zu schützen.',
+            'content' => 'Wir behalten uns das Recht vor, Ihren Zugriff auf unsere Website und unsere Dienste ohne Vorankündigung zu sperren oder zu beenden, wenn wir glauben, dass Sie gegen diese Bedingungen verstoßen haben oder wenn wir es für notwendig erachten, unsere Interessen oder die unserer Nutzer zu schützen.',
         ],
         [
             'title' => '7. Haftungsbeschränkung',
-            'content' => site_name() . ' haftet nicht für indirekte, besondere oder Folgeschäden oder Verluste, die sich aus der Nutzung oder der Unmöglichkeit der Nutzung unserer Website oder Dienste ergeben, einschließlich entgangenem Gewinn, Verlust von Daten oder Betriebsunterbrechungen, selbst wenn Wir wurden auf die Möglichkeit eines solchen Schadens hingewiesen.',
+            'content' => site_name() . ' haftet nicht für indirekte, besondere oder Folgeschäden oder Verluste, die sich aus der Nutzung oder der Unmöglichkeit der Nutzung unserer Website oder Dienste ergeben, einschließlich entgangenem Gewinn, Verlust von Daten oder Betriebsunterbrechungen, selbst wenn wir auf die Möglichkeit eines solchen Schadens hingewiesen wurden.',
         ],
         [
-            'title' => '8. AGB-Änderungen',
+            'title' => '8. Änderungen der Bedingungen',
             'content' => 'Wir können diese Allgemeinen Geschäftsbedingungen von Zeit zu Zeit ändern, um Änderungen unserer Praktiken oder der geltenden Gesetze Rechnung zu tragen. Wir werden Sie über alle wesentlichen Änderungen informieren, indem wir die neuen Bedingungen auf unserer Website veröffentlichen. Durch die fortgesetzte Nutzung unserer Website nach solchen Änderungen erklären Sie sich mit den neuen Bedingungen einverstanden.',
         ],
         [

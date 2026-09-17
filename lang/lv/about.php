@@ -3,45 +3,45 @@
 return [
     'banner_title' => 'Iepazīstiet ' . site_name(),
     'banner_subtitle' => 'Par mums',
-    'banner_description' => 'Aizņemieties vienkāršāk ar elastīgiem aizdevuma risinājumiem, kas pielāgoti jūsu finansiālajām vajadzībām.',
+    'banner_description' => 'Saņemiet atbalstu vienkāršāk, izmantojot elastīgas un jūsu situācijai pielāgotas atbalsta programmas.',
 
     'section1_title' => 'Kāpēc izvēlēties ' . site_name(),
-    'section1_p1' => site_name() . ' mēs stingri ticam, ka ikvienam pienākas iespēja piepildīt savus finansiālos sapņus. Kopš mūsu darbības sākuma esam apņēmušies nodrošināt elastīgus un pieejamus aizdevuma risinājumus, lai apmierinātu mūsu klientu dažādās vajadzības. Vai vēlaties finansēt personīgu projektu, iegādāties automašīnu vai attīstīt savu uzņēmumu — mums ir aizdevums, kas jums nepieciešams.',
-    'section1_p2' => 'Mūsu pakalpojumi ir izstrādāti, lai nodrošinātu ērtu pieredzi ar vienkāršu un ātru pieteikšanās procesu. Mēs saprotam, ka katrs klients ir unikāls, tāpēc piedāvājam individuāli pielāgotus aizdevumus, kas atbilst jūsu konkrētajām vajadzībām. Turklāt mūsu personīgie konsultanti vienmēr ir gatavi jūs vadīt katrā solī, nodrošinot pilnvērtīgu atbalstu no sākuma līdz beigām.',
+    'section1_p1' => 'Fondā ' . site_name() . ' mēs stingri ticam, ka ikvienam pienākas iespēja pārvarēt finansiālas grūtības. Kopš mūsu dibināšanas esam apņēmušies piedāvāt elastīgas un pieejamas atbalsta programmas, kas atbilst dažādajām to cilvēku vajadzībām, kurus mēs atbalstām. Vai vēlaties finansēt personīgu projektu, nodrošināt savu mājokli vai attīstīt savu darbību — mums ir jums nepieciešamā atbalsta programma.',
+    'section1_p2' => 'Mūsu programmas ir veidotas, lai sniegtu cilvēcisku un vienkāršu pieredzi ar ātru un skaidru procesu. Mēs saprotam, ka katra situācija ir unikāla, tāpēc piedāvājam individuāli pielāgotu atbalstu, kas atbilst jūsu konkrētajām vajadzībām. Turklāt mūsu konsultanti vienmēr ir gatavi jūs vadīt katrā solī, nodrošinot pilnīgu atbalstu no sākuma līdz beigām.',
     'proposed' => 'Mēs piedāvājam:',
-    'check1' => 'Individuāli pielāgotus aizdevumus atbilstoši jūsu konkrētajām vajadzībām.',
-    'check2' => 'Personīgus konsultantus, kas palīdz jums katrā procesa posmā.',
-    'check3' => 'Elastīgus atmaksas nosacījumus, kas pielāgojas jūsu finansiālajai situācijai',
-    'check4' => 'Aizdevumus arī bez algas lapiņas uzrādīšanas.',
-    'section1_p3' => site_name() . ' misija ir palīdzēt jums sasniegt savus finansiālos mērķus ar individuāli pielāgotiem aizdevuma risinājumiem. Pievienojieties mums jau šodien un uzziniet, kā mēs varam palīdzēt jums īstenot savus projektus.',
-    'btn' => 'Atrodiet sev ideālo aizdevumu',
+    'check1' => 'Individuāli pielāgotu atbalstu atbilstoši jūsu konkrētajām vajadzībām.',
+    'check2' => 'Personīgus konsultantus, kas jums palīdz katrā posmā.',
+    'check3' => 'Elastīgus izmaksas nosacījumus, kas pielāgojas jūsu situācijai',
+    'check4' => 'Pieejamu atbalstu bez algas apliecinājuma pieprasīšanas.',
+    'section1_p3' => 'Fondā ' . site_name() . ' mūsu misija ir palīdzēt jums sasniegt lielāku mieru ar individuāli pielāgotiem atbalsta risinājumiem. Pievienojieties mums jau šodien un uzziniet, kā mēs varam palīdzēt jums īstenot savus projektus.',
+    'btn' => 'Atrodiet sev ideālo atbalsta programmu',
 
     'faq_title' => 'Biežāk uzdotie jautājumi',
-    'faq_description' => 'Atrodiet atbildes uz visbiežāk uzdotajiem jautājumiem par mūsu aizdevumu pakalpojumiem.',
-    'acc_1' => 'Kādus aizdevumu veidus jūs piedāvājat?',
-    'acc_1_desc' => 'Mēs piedāvājam dažādus aizdevumu veidus, tostarp personīgos aizdevumus,
-    hipotekāros aizdevumus, auto aizdevumus un aizdevumus mazajiem uzņēmumiem. Katrs
-    aizdevuma veids ir izstrādāts, lai apmierinātu konkrētas vajadzības, un piedāvā
+    'faq_description' => 'Atrodiet atbildes uz visbiežāk uzdotajiem jautājumiem par mūsu atbalsta programmām.',
+    'acc_1' => ' Kāda veida atbalstu jūs piedāvājat?',
+    'acc_1_desc' => 'Mēs piedāvājam dažādas atbalsta programmas, tostarp
+    personīgo atbalstu, mājokļa atbalstu, mobilitātes atbalstu un atbalstu maziem uzņēmējdarbības projektiem. Katra
+    programma ir veidota, lai atbilstu konkrētām vajadzībām, un piedāvā
     elastīgus nosacījumus.',
-    'acc_2' => 'Kā es varu pieteikties aizdevumam?',
-    'acc_2_desc' => 'Jūs varat pieteikties aizdevumam tieši mūsu tīmekļa vietnē,
-    aizpildot tiešsaistes pieteikuma veidlapu. Mēs jums pieprasīsim
-    pamatinformāciju, piemēram, vārdu, kontaktinformāciju un vēlamo aizdevuma
-    summu. Mūsu konsultanti sazināsies ar jums, lai pabeigtu pieteikumu un
-    palīdzētu jums visā procesa gaitā.',
-    'acc_3' => 'Kādi ir atbilstības kritēriji aizdevuma saņemšanai?',
-    'acc_3_desc' => 'Atbilstības kritēriji atšķiras atkarībā no aizdevuma veida, taču kopumā
-    jums jābūt pilngadīgam, jābūt stabiliem ienākumiem un labai kredītvēsturei. Mēs
-    izvērtēsim arī jūsu atmaksas spēju un finansiālo
-    priekšvēsturi.',
-    'acc_4' => 'Cik ilgs ir aizdevuma pieteikuma izskatīšanas laiks?',
-    'acc_4_desc' => 'Izskatīšanas laiks atšķiras atkarībā no aizdevuma veida un jūsu
-    pieteikuma sarežģītības. Kopumā personīgo aizdevumu pieteikumi tiek izskatīti 24–48
-    stundu laikā, savukārt hipotekāro aizdevumu izskatīšana var aizņemt vairākas dienas
-    padziļinātāku pārbaužu dēļ.',
-    'acc_5' => 'Vai es varu atmaksāt savu aizdevumu pirms termiņa?',
-    'acc_5_desc' => 'Jā, jūs varat atmaksāt savu aizdevumu pirms termiņa bez soda naudas. Mēs
-    iesakām atmaksāt aizdevumu ātrāk, ja iespējams, jo tas samazinās
-    kopējo procentu summu, ko jūs samaksāsiet aizdevuma darbības laikā.',
+    'acc_2' => 'Kā es varu iesniegt ziedojuma pieprasījumu?',
+    'acc_2_desc' => 'Jūs varat iesniegt pieprasījumu tieši mūsu tīmekļa vietnē,
+    aizpildot tiešsaistes veidlapu. Mēs jums lūgsim
+    pamatinformāciju, piemēram, jūsu vārdu, kontaktinformāciju un vēlamo
+    summu. Mūsu konsultanti ar jums sazināsies, lai pabeigtu pieprasījumu un
+    vadītu jūs cauri procesam.',
+    'acc_3' => 'Kādi ir atbilstības kritēriji atbalsta saņemšanai?',
+    'acc_3_desc' => 'Atbilstības kritēriji atšķiras atkarībā no programmas, taču kopumā jums
+    jābūt pilngadīgam un jāspēj izklāstīt savu situāciju. Mēs
+    katru pieteikumu izskatām rūpīgi un ar sapratni, ņemot vērā jūsu
+    personīgo kontekstu.',
+    'acc_4' => 'Kāds ir atbalsta pieprasījuma izskatīšanas termiņš?',
+    'acc_4_desc' => '  Izskatīšanas termiņš atšķiras atkarībā no programmas un jūsu
+    pieprasījuma sarežģītības. Kopumā personīgā atbalsta pieprasījumi tiek izskatīti 24 līdz 48
+    stundu laikā, savukārt mājokļa atbalsta izskatīšana var aizņemt vairākas dienas
+    nepieciešamo padziļinātāko pārbaužu dēļ.',
+    'acc_5' => 'Vai es varu priekšlaicīgi pabeigt savu atbalsta programmu?',
+    'acc_5_desc' => ' Jā, jūs varat priekšlaicīgi noslēgt savu atbalsta programmu bez soda naudas. Mēs
+    jūs mudinām to darīt, ja iespējams, jo tas ļauj mums atbalstīt
+    vairāk cilvēku, kuriem tas nepieciešams.',
 
 ];

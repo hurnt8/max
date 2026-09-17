@@ -159,11 +159,11 @@
                                     <label>{{ __('contact.subject') }} *</label>
                                     <select name="subject" class="form-control" required>
                                         <option value="">— {{ __('contact.subject') }} —</option>
-                                        <option value="Prêt personnel"  {{ old('subject')=='Prêt personnel'  ?'selected':'' }}>@lang('menu.personal')</option>
-                                        <option value="Prêt immobilier" {{ old('subject')=='Prêt immobilier' ?'selected':'' }}>@lang('menu.home_loan')</option>
-                                        <option value="Prêt commercial" {{ old('subject')=='Prêt commercial' ?'selected':'' }}>@lang('menu.business')</option>
-                                        <option value="Prêt étudiant"   {{ old('subject')=='Prêt étudiant'   ?'selected':'' }}>@lang('menu.study')</option>
-                                        <option value="Prêt auto"       {{ old('subject')=='Prêt auto'       ?'selected':'' }}>@lang('menu.auto')</option>
+                                        <option value="Aide personnelle"    {{ old('subject')=='Aide personnelle'    ?'selected':'' }}>@lang('menu.personal')</option>
+                                        <option value="Aide au logement"    {{ old('subject')=='Aide au logement'    ?'selected':'' }}>@lang('menu.home_loan')</option>
+                                        <option value="Aide entrepreneuriat"{{ old('subject')=='Aide entrepreneuriat'?'selected':'' }}>@lang('menu.business')</option>
+                                        <option value="Aide aux études"     {{ old('subject')=='Aide aux études'     ?'selected':'' }}>@lang('menu.study')</option>
+                                        <option value="Aide mobilité"       {{ old('subject')=='Aide mobilité'       ?'selected':'' }}>@lang('menu.auto')</option>
                                         <option value="Prêt moto"       {{ old('subject')=='Prêt moto'       ?'selected':'' }}>@lang('menu.bike')</option>
                                         <option value="Autre"           {{ old('subject')=='Autre'           ?'selected':'' }}>Autre</option>
                                     </select>

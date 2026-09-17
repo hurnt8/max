@@ -31,12 +31,12 @@
 
         @php
         $services = [
-            ['route' => 'services.personal', 'img' => 'service-3-1.jpg', 'label' => 'menu.personal',  'type' => 'personal_loan', 'icon' => 'fas fa-user-tie'],
-            ['route' => 'services.home',     'img' => 'service-3-3.jpg', 'label' => 'menu.home_loan', 'type' => 'home_loan',     'icon' => 'fas fa-home'],
-            ['route' => 'services.auto',     'img' => 'service-3-5.jpg', 'label' => 'menu.auto',      'type' => 'auto_loan',     'icon' => 'fas fa-car'],
+            ['route' => 'services.personal', 'img' => 'service-3-1.jpg', 'label' => 'menu.personal',  'type' => 'personal_loan', 'icon' => 'fas fa-hands-holding-circle'],
+            ['route' => 'services.home',     'img' => 'service-3-3.jpg', 'label' => 'menu.home_loan', 'type' => 'home_loan',     'icon' => 'fas fa-city'],
+            ['route' => 'services.auto',     'img' => 'service-3-5.jpg', 'label' => 'menu.auto',      'type' => 'auto_loan',     'icon' => 'fas fa-seedling'],
             ['route' => 'services.business', 'img' => 'service-3-4.jpg', 'label' => 'menu.business',  'type' => 'business_loan', 'icon' => 'fas fa-briefcase'],
             ['route' => 'services.study',    'img' => 'service-3-2.jpg', 'label' => 'menu.study',     'type' => 'study_loan',    'icon' => 'fas fa-graduation-cap'],
-            ['route' => 'services.bike',     'img' => 'service-3-6.jpg', 'label' => 'menu.bike',      'type' => 'bike_loan',     'icon' => 'fas fa-bicycle'],
+            ['route' => 'services.bike',     'img' => 'service-3-6.jpg', 'label' => 'menu.bike',      'type' => 'bike_loan',     'icon' => 'fas fa-handshake'],
         ];
         @endphp
 

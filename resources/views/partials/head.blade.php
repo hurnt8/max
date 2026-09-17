@@ -24,7 +24,7 @@
             extend: {
                 colors: {
                     navy:      { DEFAULT:'#0B1A2E', mid:'#162540', light:'#1E3A5F', deep:'#060E1C' },
-                    gold:      { DEFAULT:'#C8A951', light:'#E8CB72', pale:'#F5E9C8', dark:'#A88830' },
+                    gold:      { DEFAULT:'#1F7AC7', light:'#4FA8E0', pale:'#EAF4FC', dark:'#145A94' },
                     cream:     { DEFAULT:'#F7F3EC', light:'#FDFBF8' },
                 },
                 fontFamily: {
@@ -34,7 +34,7 @@
                 boxShadow: {
                     'card':  '0 1px 3px rgba(11,26,46,.06), 0 4px 16px rgba(11,26,46,.08)',
                     'card-hover': '0 4px 8px rgba(11,26,46,.08), 0 16px 40px rgba(11,26,46,.12)',
-                    'gold':  '0 4px 24px rgba(200,169,81,.30)',
+                    'gold':  '0 4px 24px rgba(31,122,199,.22)',
                     'nav':   '0 1px 0 rgba(11,26,46,.08)',
                 },
                 animation: {

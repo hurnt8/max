@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'banner_title' => 'Kreditanfrage',
-    'banner_description' => 'Wir besprechen gerne, wie wir das können helfen Ihnen, die Finanzierung zu bekommen, die Sie brauchen.',
-    'form_title' => 'Darlehen anfordern',
-    'form_description' => 'Verwenden Sie das Formular unten, um Ihr Darlehen anzufordern.',
+    'banner_title' => 'Hilfeantrag',
+    'banner_description' => 'Wir würden uns freuen, mit Ihnen zu besprechen, wie wir Ihnen die Unterstützung bieten können, die Sie brauchen.',
+    'form_title' => 'Hilfe beantragen',
+    'form_description' => 'Nutzen Sie das untenstehende Formular, um Ihren Spendenantrag einzureichen.',
     'label_name' => 'Vor- und Nachname',
     'label_email' => 'E-Mail',
     'label_phone' => 'Telefonnummer',
@@ -13,192 +13,213 @@ return [
     'label_activity' => 'Ausgeübte Tätigkeit',
     'label_employ' => 'Aktuelle Beschäftigung',
     'label_salary' => 'Monatliches Einkommen (€)',
-    'label_amount' => 'Kreditbetrag (€)',
-    'label_darly' => 'Darlehensdauer (in Monaten)',
+    'label_amount' => 'Gewünschter Hilfsbetrag (€)',
+    'label_darly' => 'Dauer des Programms (in Monaten)',
     'label_status' => 'Familienstand',
     'label_npi' => 'Persönliche Identifikationsnummer',
-    'label_file' => 'Doppelseitiges Ausweisdokument',
-    'label_objet' => 'Gegenstand des Darlehens',
-    'details' => 'Darlehens Details',
+    'label_file' => 'Ausweisdokument, beidseitig',
+    'label_objet' => 'Gegenstand des Antrags',
+    'details' => 'Details zur Hilfe',
 
     'placeholder_name' => 'Ihr Vor- und Nachname',
     'placeholder_email' => 'Geben Sie Ihre E-Mail-Adresse ein',
     'placeholder_phone' => 'Geben Sie Ihre Telefonnummer ein',
     'placeholder_address' => 'Geben Sie Ihre Adresse ein',
     'placeholder_tax_number' => 'Ihre Steuernummer (optional)',
-    'placeholder_activity' => 'Z. B. Angestellter, Selbstständiger…',
+    'placeholder_activity' => 'Z. B.: Angestellter, Gewerbetreibender…',
     'placeholder_employ' => 'Geben Sie Ihren Beruf ein',
     'placeholder_salary' => 'Geben Sie Ihr monatliches Einkommen ein',
-    'placeholder_amount' => 'Kreditbetrag (€) gewünscht',
-    'placeholder_objet' => 'Beschreiben Sie kurz den Zweck Ihres Darlehens',
-    'button' => 'Anfrage senden',
+    'placeholder_amount' => 'Gewünschter Hilfsbetrag (€)',
+    'placeholder_objet' => 'Beschreiben Sie kurz den Gegenstand Ihres Antrags',
+    'button' => 'Antrag absenden',
 
-    'quote_title'    => 'Ihr geschätztes Angebot',
-    'quote_monthly'  => 'Geschätzte monatliche Rate',
-    'quote_total'    => 'Gesamtrückzahlung',
-    'quote_interest' => 'Gesamtkosten des Kredits',
-    'quote_hint'     => 'Unverbindliches Angebot basierend auf einem festen Jahreszins von :rate %. Der endgültige Zinssatz wird nach Prüfung Ihrer Unterlagen bestätigt.',
-    'label_rate'     => 'Fester Jahreszins',
-    'complete_title' => 'Vervollständigen Sie Ihre Unterlagen',
-    'complete_desc'  => 'Bitte geben Sie Ihre vollständige Adresse an und laden Sie ein Foto Ihres Ausweisdokuments hoch, um Ihre Unterlagen abzuschließen.',
+    'quote_title'    => 'Ihre Hilfesimulation',
+    'quote_monthly'  => 'Geschätzte monatliche Auszahlung',
+    'quote_total'    => 'Gesamt unterstützter Betrag',
+    'quote_interest' => 'Verwaltungsgebühr des Programms',
+    'quote_hint'     => 'Unverbindliche Simulation auf Basis eines festen jährlichen Verwaltungssatzes von :rate %. Die endgültigen Bedingungen werden nach Prüfung Ihres Antrags bestätigt.',
+    'label_rate'     => 'Fester jährlicher Verwaltungssatz',
+    'complete_title' => 'Vervollständigen Sie Ihren Antrag',
+    'complete_desc'  => 'Bitte geben Sie Ihre vollständige Adresse sowie ein Foto Ihres Ausweisdokuments an, um Ihren Hilfsantrag abzuschließen.',
     'complete_btn'   => 'Meine Dokumente senden',
-    'label_choose'     => 'Dieses Angebot wählen',
-    'label_other'      => 'Genauen Betrag eingeben',
+    'label_choose'     => 'Diese Simulation wählen',
+    'label_other'      => 'Einen genauen Betrag eingeben',
     'amount_range_hint' => 'Betrag zwischen :min und :max',
-    'label_pick'       => 'Betrag und Laufzeit auswählen',
-    'label_currency'      => 'In welcher Währung möchten Sie einen Kredit aufnehmen?',
-    'currency_hint'       => 'Wählen Sie die Währung, in der Sie Ihren Kredit erhalten möchten.',
-    'preset_label'        => 'Wählen Sie das für Sie passende Angebot',
-    'preset_hint'         => 'Klicken Sie auf einen Betrag, um ihn auszuwählen — oder ignorieren Sie diese Vorschläge und geben Sie direkt den gewünschten genauen Betrag im untenstehenden Feld ein.',
-    'custom_show'         => 'Anderen Betrag eingeben',
+    'label_pick'       => 'Wählen Sie einen Betrag und eine Dauer',
+    'label_currency'      => 'In welcher Währung möchten Sie Ihre Hilfe erhalten?',
+    'currency_hint'       => 'Wählen Sie die Währung, in der Sie Ihre Spende erhalten möchten.',
+    'preset_label'        => 'Wählen Sie die für Sie passende Simulation',
+    'preset_hint'         => 'Klicken Sie auf einen Betrag, um ihn auszuwählen — oder ignorieren Sie diese Vorschläge und geben Sie den gewünschten genauen Betrag direkt in das Feld unten ein.',
+    'custom_show'         => 'Einen anderen Betrag eingeben',
     'custom_hide'         => 'Individuelle Optionen ausblenden',
-    'quote_summary_title' => 'Ihr Angebot:',
-    'quote_summary_hint'  => 'Überprüfen Sie die untenstehenden Details und klicken Sie dann auf die Schaltfläche, um zum nächsten Schritt zu gelangen.',
+    'quote_summary_title' => 'Ihre Simulation:',
+    'quote_summary_hint'  => 'Überprüfen Sie die untenstehenden Details und klicken Sie dann auf die Schaltfläche, um mit dem nächsten Schritt fortzufahren.',
     'form_hint'           => 'Alle mit * gekennzeichneten Felder sind Pflichtfelder. Ihre Daten sind geschützt.',
-    'form_security'       => 'Ihre Informationen werden sicher übermittelt.',
-    'or_custom'        => 'Klicken Sie auf eine Laufzeit, um sie auszuwählen — oder geben Sie direkt die gewünschte Anzahl an Monaten im untenstehenden Feld ein.',
+    'form_security'       => 'Ihre Angaben werden sicher übermittelt.',
+    'or_custom'        => 'Klicken Sie auf eine Dauer, um sie auszuwählen — oder geben Sie die gewünschte Anzahl an Monaten direkt in das Feld unten ein.',
     'quote_step_label' => 'Schritt 1',
-    'quote_step_title' => 'Wählen Sie Ihr Angebot',
-    'quote_step_desc'  => 'Klicken Sie auf ein beliebtes Angebot oder geben Sie Ihre eigenen Parameter ein.',
-    'back_to_quote'    => 'Mein Angebot ändern',
+    'quote_step_title' => 'Wählen Sie Ihren Betrag',
+    'quote_step_desc'  => 'Klicken Sie auf einen beliebten Vorschlag oder geben Sie Ihre eigenen Parameter ein.',
+    'back_to_quote'    => 'Meine Simulation bearbeiten',
     'sidebar_hours'    => 'Mo – Sa: 8:00 – 18:00 Uhr',
 
+    // Schritt 2 des Formulars (Kontaktdaten)
+    'step2_label' => 'Schritt 2',
+    'next_button' => 'Weiter',
+    'label_program' => 'Gewünschtes Hilfsprogramm',
+    'summary_amount_label' => 'Gewünschter Betrag',
+
+    // Solidarität & Gesundheit
     'personal_loan' => [
-        'section_title' => 'Privatkredit',
-        'description' => 'Ein Privatkredit ist ein Darlehen, das nicht für einen bestimmten Kauf bestimmt ist. In diesem Zusammenhang kann der über diese Finanzierungsform geliehene Betrag für verschiedene Anschaffungen verwendet werden (Auto, Motorrad, Immobilien, Renovierung, Reise usw.). 
-                    Es ist daher nicht notwendig, den Zweck der Ausgaben mit dem gesamten Geldbetrag zu rechtfertigen, im Gegensatz zu zweckgebundenen Krediten. Ein zweckgebundener Kredit ist ein Darlehen, das ausschließlich für ein spezifisches Projekt verwendet werden kann: Autokauf, Renovierungsprojekt usw.
-                    Ein ungebundener Kredit ist besonders sinnvoll, wenn schnell Bargeld benötigt wird. Zudem kann der Kreditnehmer frei über die Mittel verfügen. Derzeit haben viele Haushalte ein unzureichendes Budget, um neue Projekte zu finanzieren.',
+        'section_title' => 'Solidarität & Gesundheit',
+        'description' => 'Das Programm Solidarität & Gesundheit unterstützt soziale, gemeinschaftliche und gesundheitliche Initiativen, die von Einzelpersonen, Vereinen oder Gruppen getragen werden.
+                    Dazu können Maßnahmen der gegenseitigen Hilfe, Projekte zur Verbesserung des Zugangs zur Gesundheitsversorgung oder Initiativen zählen, die den sozialen Zusammenhalt und die lokale Solidarität fördern.
+                    Jeder Antrag wird im Hinblick auf seine soziale Relevanz, seine Machbarkeit und die erwartete Wirkung für die betroffenen Begünstigten geprüft.',
         'details' => [
-            'introduction' => 'Entdecken Sie die Vorteile eines Privatkredits, der Ihnen finanzielle Freiheit mit Leichtigkeit und Sicherheit bietet.',
-            'more_info_title' => 'Warum einen Privatkredit wählen?',
-            'more_info_text' => 'Ein Privatkredit kann Ihnen helfen, Ausgaben stressfrei zu bewältigen und bietet wettbewerbsfähige Zinssätze sowie flexible Rückzahlungsbedingungen.',
-            'advantage1' => 'Sofortige Genehmigung',
-            'advantage2' => '24/7 Kundensupport',
-            'advantage3' => 'Flexible Rückzahlungsoptionen',
-            'advantage4' => 'Transparente Kostenstruktur',
+            'introduction' => 'Entdecken Sie, wie das Programm Solidarität & Gesundheit Ihre soziale oder gesundheitliche Initiative unterstützen kann.',
+            'more_info_title' => 'Warum dieses Programm beantragen?',
+            'more_info_text' => 'Dieses Programm begleitet Initiativen, die Solidarität und den Zugang zur Gesundheitsversorgung stärken, mit einer sorgfältigen Prüfung jedes Antrags.',
+            'advantage1' => 'Sorgfältige Prüfung jedes Antrags',
+            'advantage2' => 'Einfühlsame Begleitung',
+            'advantage3' => 'Offen für Einzelpersonen und Vereine',
+            'advantage4' => 'Transparenz bei den Zulassungskriterien',
             'faq_title' => 'Häufig gestellte Fragen',
             'faqs' => [
-                'question1' => 'Wofür kann ich einen Privatkredit verwenden?',
-                'answer1' => 'Sie können einen Privatkredit für verschiedene Zwecke verwenden, wie z. B. zur Schuldenkonsolidierung, für Hausrenovierungen oder zur Deckung unerwarteter Ausgaben.',
-                'question2' => 'Wie beantrage ich einen Privatkredit?',
-                'answer2' => 'Füllen Sie einfach unser Online-Bewerbungsformular aus, und unser Team begleitet Sie Schritt für Schritt durch den Prozess.',
-                'question3' => 'Wie hoch ist der Zinssatz für einen Privatkredit?',
-                'answer3' => 'Die Zinssätze variieren je nach Darlehensbetrag und Kreditwürdigkeit. Kontaktieren Sie uns für einen individuellen Zinssatz.',
+                'question1' => 'Wer kann das Programm Solidarität & Gesundheit beantragen?',
+                'answer1' => 'Dieses Programm richtet sich an Einzelpersonen, Vereine und Gruppen, die eine soziale, gemeinschaftliche oder gesundheitliche Initiative tragen.',
+                'question2' => 'Wie kann ich einen Antrag einreichen?',
+                'answer2' => 'Füllen Sie einfach unser Online-Antragsformular aus, und unser Team begleitet Sie Schritt für Schritt.',
+                'question3' => 'Welche Zulassungsbedingungen gelten?',
+                'answer3' => 'Die Bedingungen variieren je nach Art des Projekts, seinen Zielen und der erwarteten Wirkung. Kontaktieren Sie uns für eine persönliche Beratung.',
             ]
         ]
     ],
 
+    // Lokale Entwicklung
     'home_loan' => [
-        'section_title' => 'Hypothekendarlehen',
-        'description' => 'Ein Hypothekendarlehen bietet Finanzierungen speziell für den Kauf oder die Renovierung einer Immobilie. Dieses Darlehen ermöglicht es den Kreditnehmern, beträchtliche Mittel für Projekte wie den Kauf eines neuen Hauses, die Erweiterung von Wohnräumen oder die Verbesserung der Immobilieneigenschaften zu erhalten. Hypothekendarlehen sind in der Regel langfristig und bieten wettbewerbsfähige Zinssätze, was sie zu einem wesentlichen Finanzierungsinstrument zur Erreichung von Wohneigentumszielen macht.',
+        'section_title' => 'Lokale Entwicklung',
+        'description' => 'Das Programm Lokale Entwicklung unterstützt Initiativen, die Regionen beleben: Projekte von kollektivem Interesse, lokale Infrastrukturen und die Belebung des Gemeinschaftslebens.
+                    Es richtet sich an Projektträger, Vereine und Gebietskörperschaften, die die Attraktivität und Lebensqualität ihrer Region stärken möchten.
+                    Jeder Antrag wird nach seiner Relevanz, seiner Machbarkeit und seiner erwarteten Wirkung für die betroffene Gemeinschaft geprüft.',
         'details' => [
-            'introduction' => 'Entdecken Sie die Vorteile eines Hypothekendarlehens, das darauf zugeschnitten ist, Ihre Träume vom Eigenheim zu verwirklichen.',
-            'more_info_title' => 'Warum ein Hypothekendarlehen wählen?',
-            'more_info_text' => 'Ein Hypothekendarlehen ist speziell darauf ausgelegt, Ihnen den Kauf oder die Renovierung einer Immobilie zu finanzieren und bietet wettbewerbsfähige Zinssätze sowie flexible Konditionen, die zu Ihrer finanziellen Situation passen.',
-            'advantage1' => 'Wettbewerbsfähige Zinssätze',
-            'advantage2' => 'Flexible Rückzahlungspläne',
-            'advantage3' => 'Schneller Genehmigungsprozess',
-            'advantage4' => 'Spezieller Support für Immobilienkäufer',
+            'introduction' => 'Entdecken Sie, wie das Programm Lokale Entwicklung Ihr regionales Projekt unterstützen kann.',
+            'more_info_title' => 'Warum dieses Programm beantragen?',
+            'more_info_text' => 'Dieses Programm begleitet Initiativen, die das lokale Leben stärken, mit einer auf jede Situation abgestimmten Begleitung.',
+            'advantage1' => 'Prüfung im Einzelfall',
+            'advantage2' => 'Begleitung vor Ort',
+            'advantage3' => 'Offen für Vereine und Gebietskörperschaften',
+            'advantage4' => 'Persönliche Nachverfolgung des Antrags',
             'faq_title' => 'Häufig gestellte Fragen',
             'faqs' => [
-                'question1' => 'Wofür kann ich ein Hypothekendarlehen verwenden?',
-                'answer1' => 'Ein Hypothekendarlehen kann für den Kauf eines neuen Hauses, die Renovierung Ihrer aktuellen Immobilie oder die Refinanzierung eines bestehenden Kredits verwendet werden.',
-                'question2' => 'Wie beantrage ich ein Hypothekendarlehen?',
-                'answer2' => 'Um sich zu bewerben, füllen Sie einfach unser Online-Formular aus, und unser Team unterstützt Sie bei jedem Schritt des Prozesses.',
-                'question3' => 'Wie hoch ist der Zinssatz für ein Hypothekendarlehen?',
-                'answer3' => 'Die Zinssätze variieren je nach Darlehensbetrag, Immobilientyp und Bonität. Kontaktieren Sie uns für eine individuelle Zinsschätzung.',
+                'question1' => 'Welche Arten von Projekten sind betroffen?',
+                'answer1' => 'Das Programm Lokale Entwicklung kann Projekte von kollektivem Interesse, lokale Infrastrukturen oder Initiativen zur Belebung der Region unterstützen.',
+                'question2' => 'Wie kann ich einen Antrag einreichen?',
+                'answer2' => 'Füllen Sie einfach unser Online-Formular aus, und unser Team begleitet Sie bei jedem Schritt des Prozesses.',
+                'question3' => 'Welche Zulassungsbedingungen gelten?',
+                'answer3' => 'Die Bedingungen variieren je nach Art des Projekts und seiner erwarteten Wirkung für die Region. Kontaktieren Sie uns für eine persönliche Prüfung.'
             ]
         ]
     ],
 
+    // Landwirtschaft
     'auto_loan' => [
-        'section_title' => 'Autokredit',
-        'description' => 'Ein Autokredit ist eine Finanzierungsoption, die speziell dafür konzipiert ist, Ihnen beim Kauf eines neuen oder gebrauchten Fahrzeugs zu helfen. Dieser Kredittyp bietet flexible Rückzahlungsbedingungen und wettbewerbsfähige Zinssätze, sodass Sie das Auto Ihrer Wahl ohne große Vorauszahlung fahren können. Mit einem Autokredit können Sie die gesamten oder teilweisen Fahrzeugkosten abdecken und diese im Laufe der Zeit zurückzahlen, was ihn zu einer erschwinglichen Lösung für die meisten Budgets macht. Autokredite bieten einen unkomplizierten Antragsprozess und eine schnelle Genehmigung, damit Sie schnell auf die Straße kommen.',
+        'section_title' => 'Landwirtschaft',
+        'description' => 'Das Programm Landwirtschaft unterstützt landwirtschaftliche und ländliche Entwicklungsprojekte: Betriebsgründung, Diversifizierung der Tätigkeiten, nachhaltige Praktiken oder kurze Vertriebswege.
+                    Es richtet sich an Landwirte, Genossenschaften und Träger landwirtschaftlicher Projekte, die eine nachhaltige, chancenschaffende Tätigkeit in ihrer Region entwickeln möchten.
+                    Jeder Antrag wird nach seiner Relevanz, seiner Machbarkeit und seiner erwarteten Wirkung auf die Region geprüft.',
         'details' => [
-            'introduction' => 'Erleben Sie die Vorteile eines Autokredits, der darauf ausgelegt ist, den Fahrzeugkauf einfach und erschwinglich zu gestalten.',
-            'more_info_title' => 'Warum einen Autokredit wählen?',
-            'more_info_text' => 'Ein Autokredit hilft Ihnen, den Kauf Ihres Fahrzeugs einfach zu finanzieren, mit flexiblen Rückzahlungsoptionen und wettbewerbsfähigen Zinssätzen, die Ihren finanziellen Bedürfnissen entsprechen.',
-            'advantage1' => 'Schneller Genehmigungsprozess',
-            'advantage2' => 'Wettbewerbsfähige Zinssätze',
-            'advantage3' => 'Flexible Zahlungspläne',
-            'advantage4' => 'Keine versteckten Gebühren',
+            'introduction' => 'Entdecken Sie, wie das Programm Landwirtschaft Ihr landwirtschaftliches oder ländliches Projekt unterstützen kann.',
+            'more_info_title' => 'Warum dieses Programm beantragen?',
+            'more_info_text' => 'Dieses Programm begleitet landwirtschaftliche und ländliche Initiativen, mit einer an die Gegebenheiten vor Ort angepassten Begleitung.',
+            'advantage1' => 'Sorgfältige Prüfung des Projekts',
+            'advantage2' => 'Einfühlsame Begleitung',
+            'advantage3' => 'Offen für Landwirte und Genossenschaften',
+            'advantage4' => 'Transparenz bei den Zulassungskriterien',
             'faq_title' => 'Häufig gestellte Fragen',
             'faqs' => [
-                'question1' => 'Welche Fahrzeugtypen kann ich mit einem Autokredit finanzieren?',
-                'answer1' => 'Autokredite können für eine Vielzahl von Fahrzeugen verwendet werden, darunter neue und gebrauchte Autos, Motorräder und sogar einige Freizeitfahrzeuge.',
-                'question2' => 'Wie beantrage ich einen Autokredit?',
-                'answer2' => 'Füllen Sie einfach unser Online-Bewerbungsformular aus, und unser Team unterstützt Sie im Genehmigungsprozess, damit Sie schnell in Ihrem neuen Fahrzeug unterwegs sind.',
-                'question3' => 'Welche Faktoren bestimmen den Zinssatz eines Autokredits?',
-                'answer3' => 'Die Zinssätze hängen von Faktoren wie dem Fahrzeugtyp, dem Darlehensbetrag und Ihrer Kreditwürdigkeit ab. Kontaktieren Sie uns für einen individuell angepassten Zinssatz.'
+                'question1' => 'Welche Arten von landwirtschaftlichen Projekten sind betroffen?',
+                'answer1' => 'Das Programm Landwirtschaft kann Betriebsgründungen, Diversifizierung, nachhaltige Praktiken oder kurze Vertriebswege unterstützen.',
+                'question2' => 'Wie kann ich einen Antrag einreichen?',
+                'answer2' => 'Füllen Sie einfach unser Online-Antragsformular aus, und unser Team begleitet Sie während des gesamten Prozesses.',
+                'question3' => 'Welche Kriterien bestimmen die Zulassung eines landwirtschaftlichen Projekts?',
+                'answer3' => 'Die Kriterien hängen von der Art des Projekts und seiner erwarteten Wirkung ab. Kontaktieren Sie uns für eine persönliche Beratung.'
             ]
         ]
     ],
 
+    // Unternehmertum
     'business_loan' => [
-        'section_title' => 'Geschäftskredit',
-        'description' => 'Ein Geschäftskredit ist eine Finanzlösung, die darauf abzielt, das Wachstum und die operativen Bedürfnisse Ihres Unternehmens zu unterstützen. Ob Sie Mittel für Expansion, den Kauf von Ausrüstung oder Betriebskapital benötigen – ein Geschäftskredit kann Ihrem Unternehmen den nötigen finanziellen Schub geben. Mit flexiblen Rückzahlungsbedingungen und wettbewerbsfähigen Zinssätzen ermöglicht dieser Kredittyp Geschäftsinhabern, den Cashflow effektiv zu steuern, in neue Möglichkeiten zu investieren und langfristigen Erfolg zu fördern.',
+        'section_title' => 'Unternehmertum',
+        'description' => 'Das Programm Unternehmertum unterstützt den Start und die Entwicklung wirtschaftlicher Tätigkeiten, die Chancen schaffen. Ob Sie sich in der Gründungsphase befinden, Ausrüstung kaufen oder Ihre Tätigkeit weiterentwickeln möchten – dieses Programm kann die finanzielle Unterstützung bieten, die Ihr Projekt braucht.
+                    Jeder Antrag wird nach der Art des Projekts, seiner Machbarkeit und seiner erwarteten Wirkung geprüft, mit einer auf Projektträger abgestimmten Begleitung.',
         'details' => [
-            'introduction' => 'Entdecken Sie, wie ein Geschäftskredit Ihr Unternehmen in einem wettbewerbsorientierten Markt wachsen und gedeihen lassen kann.',
-            'more_info_title' => 'Warum einen Geschäftskredit wählen?',
-            'more_info_text' => 'Ein Geschäftskredit bietet die finanzielle Flexibilität, Ihre Betriebsabläufe zu skalieren, in wichtige Ressourcen zu investieren und neue Marktchancen zu nutzen.',
-            'advantage1' => 'Schnelle Finanzierung für Wachstum',
-            'advantage2' => 'Flexible Rückzahlungsoptionen',
-            'advantage3' => 'Wettbewerbsfähige Zinssätze',
-            'advantage4' => 'Spezieller Support für Unternehmen',
+            'introduction' => 'Entdecken Sie, wie das Programm Unternehmertum den Start oder die Entwicklung Ihrer Tätigkeit unterstützen kann.',
+            'more_info_title' => 'Warum dieses Programm beantragen?',
+            'more_info_text' => 'Dieses Programm begleitet Projektträger bei der Entwicklung ihrer Tätigkeit, mit einer sorgfältigen Prüfung jedes Antrags.',
+            'advantage1' => 'Sorgfältige Prüfung des Projekts',
+            'advantage2' => 'Persönliche Begleitung',
+            'advantage3' => 'Offen für Gründer und bestehende Unternehmen',
+            'advantage4' => 'Transparenz bei den Zulassungskriterien',
             'faq_title' => 'Häufig gestellte Fragen',
             'faqs' => [
-                'question1' => 'Wofür kann ich einen Geschäftskredit verwenden?',
-                'answer1' => 'Geschäftskredite können für verschiedene Zwecke verwendet werden, wie z. B. für den Kauf von Inventar, die Erweiterung von Einrichtungen, das Einstellen von Personal oder Investitionen in Ausrüstung.',
-                'question2' => 'Wie beantrage ich einen Geschäftskredit?',
-                'answer2' => 'Sie können sich bewerben, indem Sie unser Online-Formular ausfüllen. Unser Team wird Sie durch den Prozess führen, um ein reibungsloses Erlebnis zu gewährleisten.',
-                'question3' => 'Welche Faktoren beeinflussen den Zinssatz eines Geschäftskredits?',
-                'answer3' => 'Die Zinssätze hängen von Faktoren wie dem Darlehensbetrag, der finanziellen Gesundheit Ihres Unternehmens und Ihrer Kreditgeschichte ab. Kontaktieren Sie uns, um einen maßgeschneiderten Zinssatz zu erhalten.'
+                'question1' => 'Wofür kann die Unterstützung des Programms Unternehmertum dienen?',
+                'answer1' => 'Sie kann den Start einer Tätigkeit, den Kauf von Ausrüstung, die Erweiterung von Räumlichkeiten oder Neueinstellungen unterstützen.',
+                'question2' => 'Wie kann ich einen Antrag einreichen?',
+                'answer2' => 'Sie können Ihren Antrag stellen, indem Sie unser Online-Formular ausfüllen. Unser Team begleitet Sie bei jedem Schritt.',
+                'question3' => 'Welche Kriterien bestimmen die Zulassung eines Projekts?',
+                'answer3' => 'Die Kriterien hängen von der Art des Projekts und seiner Tragfähigkeit ab. Kontaktieren Sie uns für eine persönliche Beratung.'
             ]
         ]
     ],
 
+    // Berufliche Eingliederung
     'bike_loan' => [
-        'section_title' => 'Motorradkredit',
-        'description' => 'Ein Motorradkredit ist eine Finanzierungsoption, die für Personen entwickelt wurde, die ein neues oder gebrauchtes Motorrad oder Fahrrad kaufen möchten. Dieser Kredit ermöglicht es Ihnen, das Motorrad Ihrer Wahl mit erschwinglichen Rückzahlungsbedingungen und wettbewerbsfähigen Zinssätzen zu fahren. Mit einem Motorradkredit können Sie eine große Vorauszahlung vermeiden und das Motorrad im Laufe der Zeit bezahlen, was es einfacher macht, Ihr Budget zu verwalten. Dieser Kredittyp ist ideal für sowohl Anfänger als auch erfahrene Fahrer, die finanzielle Flexibilität wünschen.',
+        'section_title' => 'Berufliche Eingliederung',
+        'description' => 'Das Programm Berufliche Eingliederung begleitet arbeitsferne Personen auf dem Weg zu einer dauerhaften Rückkehr ins Berufsleben: technische und methodische Begleitung, Unterstützung bei der Ausbildung, Förderung von Initiativen, die von Eingliederungseinrichtungen getragen werden.
+                    Es richtet sich sowohl an Einzelpersonen als auch an Vereine und Einrichtungen, die im Bereich der beruflichen Eingliederung tätig sind.
+                    Jeder Antrag wird nach der Situation der begünstigten Person, ihren Zielen und der erwarteten Wirkung der Begleitung geprüft.',
         'details' => [
-            'introduction' => 'Kommen Sie mit unserem Motorradkredit schnell und einfach auf die Straße, gestaltet um den Motorradbesitz zugänglich und erschwinglich zu machen.',
-            'more_info_title' => 'Warum einen Motorradkredit wählen?',
-            'more_info_text' => 'Ein Motorradkredit hilft Ihnen, das Motorrad Ihrer Träume zu finanzieren, mit flexiblen Bedingungen, schneller Genehmigung und wettbewerbsfähigen Zinssätzen, die zu Ihrem Budget passen.',
-            'advantage1' => 'Schnelle und einfache Genehmigung',
-            'advantage2' => 'Erschwingliche Zinssätze',
-            'advantage3' => 'Flexible Rückzahlungsbedingungen',
-            'advantage4' => 'Minimale Dokumentation',
+            'introduction' => 'Entdecken Sie, wie das Programm Berufliche Eingliederung Sie auf dem Weg zur Beschäftigung begleiten kann.',
+            'more_info_title' => 'Warum dieses Programm beantragen?',
+            'more_info_text' => 'Dieses Programm bietet eine technische und methodische Begleitung, die an jede Situation angepasst ist, hin zu einer dauerhaften Eingliederung.',
+            'advantage1' => 'Persönliche Begleitung',
+            'advantage2' => 'Sorgfältige Prüfung jeder Situation',
+            'advantage3' => 'Offen für Einzelpersonen und Eingliederungseinrichtungen',
+            'advantage4' => 'Langfristige Nachverfolgung',
             'faq_title' => 'Häufig gestellte Fragen',
             'faqs' => [
-                'question1' => 'Welche Art von Motorrädern kann ich mit einem Motorradkredit finanzieren?',
-                'answer1' => 'Motorradkredite können für verschiedene Motorradtypen verwendet werden, einschließlich Standard-Motorräder, Sportmotorräder und Roller.',
-                'question2' => 'Wie beantrage ich einen Motorradkredit?',
-                'answer2' => 'Füllen Sie einfach unser Online-Bewerbungsformular aus, und unser Team wird Sie im Genehmigungsprozess für ein reibungsloses Erlebnis unterstützen.',
-                'question3' => 'Welche Faktoren beeinflussen den Zinssatz eines Motorradkredits?',
-                'answer3' => 'Der Zinssatz hängt von Faktoren wie der Art des Motorrads, dem Darlehensbetrag und Ihrem Kreditprofil ab. Kontaktieren Sie uns für einen individuell angepassten Zinssatz.'
+                'question1' => 'Wer kann von dem Programm Berufliche Eingliederung profitieren?',
+                'answer1' => 'Dieses Programm richtet sich an arbeitsferne Personen sowie an Vereine und Eingliederungseinrichtungen.',
+                'question2' => 'Wie kann ich einen Antrag einreichen?',
+                'answer2' => 'Füllen Sie einfach unser Online-Antragsformular aus, und unser Team begleitet Sie während des gesamten Prozesses.',
+                'question3' => 'Welche Zulassungsbedingungen gelten?',
+                'answer3' => 'Die Bedingungen hängen von der Situation der begünstigten Person und den Zielen des Eingliederungsprogramms ab. Kontaktieren Sie uns für eine persönliche Beratung.'
             ]
         ]
     ],
 
+    // Bildung
     'study_loan' => [
-        'section_title' => 'Studienkredit',
-        'description' => 'Ein Studienkredit ist eine spezielle Finanzierungsoption, die dazu dient, Studenten bei der Deckung der Ausbildungskosten wie Studiengebühren, Bücher, Unterkunft und anderen studienbezogenen Ausgaben zu unterstützen. Diese Art von Kredit bietet Studenten und ihren Familien finanzielle Unterstützung, um eine höhere Ausbildung ohne unmittelbare finanzielle Belastung zu ermöglichen. Mit flexiblen Rückzahlungsoptionen und wettbewerbsfähigen Zinssätzen kann ein Studienkredit das Erreichen akademischer Ziele erleichtern.',
+        'section_title' => 'Bildung',
+        'description' => 'Das Programm Bildung unterstützt den Zugang zu Wissen und Ausbildung: Schulgebühren, Lehrmaterial, Bildungsprojekte, die von Einrichtungen, Vereinen oder Familien getragen werden.
+                    Es zielt darauf ab, Bildungswege und Initiativen zu begleiten, die den Zugang zu Bildung fördern, insbesondere für Menschen, die ihn am dringendsten benötigen.
+                    Jeder Antrag wird nach seiner pädagogischen Relevanz, seiner Machbarkeit und seiner erwarteten Wirkung geprüft.',
         'details' => [
-            'introduction' => 'Fördern Sie Ihre Bildungsreise mit einem Studienkredit, der darauf ausgelegt ist, höhere Bildung zugänglich und erschwinglich zu machen.',
-            'more_info_title' => 'Warum einen Studienkredit wählen?',
-            'more_info_text' => 'Ein Studienkredit bietet notwendige finanzielle Unterstützung für Studenten, mit überschaubaren Zinssätzen und flexiblen Rückzahlungsbedingungen, damit Sie sich auf Ihr Studium konzentrieren können, ohne sich finanziell sorgen zu müssen.',
-            'advantage1' => 'Flexible Rückzahlungsoptionen',
-            'advantage2' => 'Wettbewerbsfähige Zinssätze',
-            'advantage3' => 'Deckt verschiedene Ausbildungskosten ab',
-            'advantage4' => 'Schneller und einfacher Antragsprozess',
+            'introduction' => 'Entdecken Sie, wie das Programm Bildung einen Bildungsweg oder ein pädagogisches Projekt unterstützen kann.',
+            'more_info_title' => 'Warum dieses Programm beantragen?',
+            'more_info_text' => 'Dieses Programm bietet eine wesentliche finanzielle Unterstützung für die Bildung, mit einer auf jede Situation abgestimmten Begleitung.',
+            'advantage1' => 'Einfühlsame Begleitung',
+            'advantage2' => 'Sorgfältige Prüfung jedes Antrags',
+            'advantage3' => 'Deckt verschiedene Bildungskosten ab',
+            'advantage4' => 'Offen für Einzelpersonen, Familien und Einrichtungen',
             'faq_title' => 'Häufig gestellte Fragen',
             'faqs' => [
-                'question1' => 'Welche Ausgaben kann ein Studienkredit decken?',
-                'answer1' => 'Ein Studienkredit kann Studiengebühren, Bücher, Materialien, Unterkunft und andere Ausbildungskosten abdecken.',
-                'question2' => 'Wie beantrage ich einen Studienkredit?',
-                'answer2' => 'Sie können sich bewerben, indem Sie unser Online-Bewerbungsformular ausfüllen. Unser Team unterstützt Sie bei jedem Schritt des Prozesses.',
-                'question3' => 'Wann beginne ich mit der Rückzahlung des Studienkredits?',
-                'answer3' => 'Die Rückzahlungsbedingungen variieren, aber viele Studienkredite bieten aufgeschobene Rückzahlungsoptionen, sodass Sie erst nach Abschluss Ihres Studiums mit der Rückzahlung beginnen können.'
+                'question1' => 'Welche Kosten kann das Programm Bildung decken?',
+                'answer1' => 'Es kann Schulgebühren, Lehrmaterial, Studentenunterkünfte oder andere bildungsbezogene Ausgaben decken.',
+                'question2' => 'Wie kann ich einen Antrag einreichen?',
+                'answer2' => 'Sie können Ihren Antrag stellen, indem Sie unser Online-Formular ausfüllen, und unser Team begleitet Sie bei jedem Schritt.',
+                'question3' => 'Wer kann das Programm Bildung beantragen?',
+                'answer3' => 'Einzelpersonen, Familien, Vereine und Einrichtungen, die ein Bildungsprojekt tragen, können dieses Programm beantragen. Kontaktieren Sie uns, um mehr zu erfahren.'
             ]
         ]
     ],

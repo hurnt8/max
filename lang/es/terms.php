@@ -5,19 +5,19 @@ return [
     'sections' => [
         [
             'title' => '1. Introducción',
-            'content' => 'Bienvenido a ' . site_name() . '. Al utilizar nuestro sitio y servicios, usted acepta cumplir y estar sujeto a los siguientes términos y condiciones. Lea estos términos detenidamente antes de utilizar nuestro sitio o solicitar un préstamo con nosotros.',
+            'content' => 'Bienvenido a ' . site_name() . '. Al utilizar nuestro sitio y servicios, usted acepta cumplir y estar sujeto a los siguientes términos y condiciones. Lea estos términos detenidamente antes de utilizar nuestro sitio o presentar una solicitud de ayuda con nosotros.',
         ],
         [
             'title' => '2. Uso del sitio',
             'content' => 'Al acceder a nuestro sitio, usted acepta utilizar nuestros servicios sólo para fines legales y de acuerdo con estas condiciones. Usted acepta no utilizar nuestro sitio de ninguna manera que cause daño, interrupción o interferencia con nuestros servicios o el acceso de otros usuarios.',
         ],
         [
-            'title' => '3. Servicios de préstamo',
-            'content' => site_name() . ' ofrece varios tipos de préstamos para satisfacer sus necesidades financieras. Todos los préstamos están sujetos a aprobación basada en nuestra evaluación de su solvencia y capacidad de pago. Los términos específicos de cada préstamo, incluidas las tasas de interés, los vencimientos y los términos de pago, se detallarán en su contrato de préstamo.',
+            'title' => '3. Programas de ayuda',
+            'content' => site_name() . ' ofrece diversos programas de ayuda y apoyo financiero para responder a sus necesidades. Cada solicitud está sujeta a una evaluación basada en el examen de su situación y en los criterios de elegibilidad del programa correspondiente. Los términos específicos de cada ayuda concedida, incluidos el importe, la duración y las modalidades de pago, se detallarán en su acuerdo de apoyo.',
         ],
         [
-            'title' => '4. Costos de contrato y seguro',
-            'content' => 'Al solicitar un préstamo con ' . site_name() . ', se pueden aplicar tarifas de contrato y seguro. Esta tarifa cubre los costos administrativos asociados con la configuración y administración de su préstamo. Los detalles específicos de estas tarifas estarán claramente establecidos en su contrato de préstamo. Debe pagar estos cargos de acuerdo con los términos especificados.'
+            'title' => '4. Costes de gestión y seguro',
+            'content' => 'Al constituir un expediente con ' . site_name() . ', pueden aplicarse costes de gestión y seguro. Estos costes cubren los gastos administrativos asociados a la tramitación y el seguimiento de su solicitud. Los detalles específicos de estos costes se indicarán claramente en su acuerdo de apoyo. Usted deberá abonar estos importes de acuerdo con las modalidades especificadas.'
         ],
         [
             'title' => '5. Confidencialidad',
@@ -29,7 +29,7 @@ return [
         ],
         [
             'title' => '7. Limitación de responsabilidad',
-            'content' => site_name() . ' no será responsable de ninguna pérdida o daño indirecto, especial o consecuente que surja del uso o la imposibilidad de usar nuestro sitio o servicios, incluida la pérdida de ganancias, la pérdida de datos o la interrupción del negocio, incluso si Se nos ha advertido de la posibilidad de que se produzcan tales daños.'
+            'content' => site_name() . ' no será responsable de ninguna pérdida o daño indirecto, especial o consecuente que surja del uso o la imposibilidad de usar nuestro sitio o servicios, incluida la pérdida de ganancias, la pérdida de datos o la interrupción del negocio, incluso si se nos ha advertido de la posibilidad de que se produzcan tales daños.'
         ],
         [
             'title' => '8. Cambios en los términos',
@@ -37,7 +37,7 @@ return [
         ],
         [
             'title' => '9. Contactar',
-            'content' => 'Si tiene alguna pregunta o inquietud con respecto a estos términos y condiciones, contáctenos en:<br><br>' . site_name() . '<br>Dirección: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: ' . site_email() . '<br>Teléfono: ' . site_phone() . ' ]'
+            'content' => 'Si tiene alguna pregunta o inquietud con respecto a estos términos y condiciones, contáctenos en:<br><br>' . site_name() . '<br>Dirección: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: ' . site_email() . '<br>Teléfono: ' . site_phone() . ' '
         ],
     ],
 ];
