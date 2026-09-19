@@ -4,10 +4,9 @@
 
 @section('content')
 @php
-  $totalBalance  = $clients->sum('balance');
-  $positiveCount = $clients->where('balance', '>', 0)->count();
-  $negativeCount = $clients->where('balance', '<', 0)->count();
-  $defaultCur    = \App\Models\Currency::default();
+  // $totalBalance, $positiveCount, $negativeCount et $totalAccounts sont fournis par
+  // le controleur : calcules sur tous les comptes, pas sur la page affichee.
+  $defaultCur = \App\Models\Currency::default();
 @endphp
 
 {{-- Page header ── --}}
@@ -19,7 +18,7 @@
         <span class="badge-status bs-violet"><i class="fas fa-shield-alt" style="font-size:.6rem"></i> Vue globale</span>
       @endif
     </div>
-    <p>{{ $clients->count() }} compte{{ $clients->count() > 1 ? 's' : '' }} géré{{ $clients->count() > 1 ? 's' : '' }}</p>
+    <p>{{ $totalAccounts }} compte{{ $totalAccounts > 1 ? 's' : '' }} géré{{ $totalAccounts > 1 ? 's' : '' }}</p>
   </div>
 </div>
 
@@ -27,7 +26,7 @@
 <div class="metrics-grid">
   <div class="metric-card">
     <div class="metric-card__icon mi-navy"><i class="fas fa-users"></i></div>
-    <div class="metric-card__val">{{ $clients->count() }}</div>
+    <div class="metric-card__val">{{ $totalAccounts }}</div>
     <div class="metric-card__lbl">Comptes total</div>
     <div class="metric-card__accent" style="background:var(--c-navy)"></div>
   </div>
@@ -51,15 +50,34 @@
   </div>
 </div>
 
-{{-- Search + sort bar ── --}}
-<div class="filter-bar" style="margin-bottom:1.25rem">
+{{-- Recherche + tri : formulaire GET, pour porter sur TOUS les comptes et non sur
+     les seules lignes de la page courante. --}}
+<form method="GET" action="{{ route('admin.accounts.index') }}" class="filter-bar" style="margin-bottom:1.25rem">
   <div style="position:relative;flex:1;min-width:180px">
     <i class="fas fa-search" style="position:absolute;left:.75rem;top:50%;transform:translateY(-50%);color:var(--c-muted);font-size:.75rem;pointer-events:none"></i>
-    <input id="accSearch" type="text" placeholder="Nom, e-mail, IBAN…" class="form-control-pro" style="padding-left:2.25rem">
+    <input type="text" name="q" value="{{ $search }}" placeholder="Nom, e-mail, IBAN…"
+           class="form-control-pro" style="padding-left:2.25rem">
   </div>
-  <button id="sortAlpha" class="btn-ghost btn-sm-pro" onclick="sortTable('name')"><i class="fas fa-arrow-down-a-z"></i> A – Z</button>
-  <button id="sortBal"   class="btn-ghost btn-sm-pro" onclick="sortTable('balance')"><i class="fas fa-arrow-down-9-1"></i> Solde</button>
-</div>
+
+  {{-- Chaque bouton rejoue le tri en inversant le sens sil est deja actif. --}}
+  <input type="hidden" name="sort" value="{{ $sort }}">
+  <input type="hidden" name="dir"  value="{{ $dir }}">
+  <button type="submit" class="btn-ghost btn-sm-pro"><i class="fas fa-search"></i> Rechercher</button>
+
+  @php $flip = fn($k) => ($sort === $k && $dir === 'asc') ? 'desc' : 'asc'; @endphp
+  <a href="{{ request()->fullUrlWithQuery(['sort' => 'name', 'dir' => $flip('name'), 'page' => null]) }}"
+     class="btn-ghost btn-sm-pro" @if($sort === 'name') style="border-color:var(--c-accent)" @endif>
+    <i class="fas fa-arrow-down-a-z"></i> A – Z
+  </a>
+  <a href="{{ request()->fullUrlWithQuery(['sort' => 'balance', 'dir' => $flip('balance'), 'page' => null]) }}"
+     class="btn-ghost btn-sm-pro" @if($sort === 'balance') style="border-color:var(--c-accent)" @endif>
+    <i class="fas fa-arrow-down-9-1"></i> Solde
+  </a>
+
+  @if($search !== '')
+  <a href="{{ route('admin.accounts.index') }}" class="btn-ghost btn-sm-pro"><i class="fas fa-xmark"></i> Effacer</a>
+  @endif
+</form>
 
 {{-- Table ── --}}
 <div class="card-pro">
@@ -129,32 +147,17 @@
       </tbody>
     </table>
   </div>
+
+  @if($clients->hasPages())
+  <div style="padding:1rem 1.25rem;border-top:1px solid var(--c-border)">
+    {{ $clients->links('partials.pagination') }}
+  </div>
+  @endif
   @endif
 </div>
 
-<script>
-document.getElementById('accSearch').addEventListener('input', function () {
-  const q = this.value.toLowerCase();
-  document.querySelectorAll('#accBody tr').forEach(row => {
-    const ok = row.dataset.name.includes(q) || row.dataset.email.includes(q) || row.dataset.iban.includes(q);
-    row.style.display = ok ? '' : 'none';
-  });
-});
-
-let _dir = {};
-function sortTable(key) {
-  const tbody = document.getElementById('accBody');
-  const rows  = [...tbody.querySelectorAll('tr')];
-  _dir[key]   = _dir[key] === 'asc' ? 'desc' : 'asc';
-  rows.sort((a, b) => {
-    const va = key === 'balance' ? parseFloat(a.dataset.balance) : a.dataset.name;
-    const vb = key === 'balance' ? parseFloat(b.dataset.balance) : b.dataset.name;
-    return (va < vb ? -1 : va > vb ? 1 : 0) * (_dir[key] === 'asc' ? 1 : -1);
-  });
-  rows.forEach(r => tbody.appendChild(r));
-  document.querySelectorAll('#sortAlpha,#sortBal').forEach(b => b.style.borderColor = '');
-  document.getElementById(key === 'balance' ? 'sortBal' : 'sortAlpha').style.borderColor = 'var(--c-accent)';
-}
-</script>
+{{-- Le filtrage et le tri JavaScript ont ete retires : ils n operaient que sur les
+     lignes presentes dans le DOM, donc sur la seule page affichee une fois la
+     pagination en place. Tout se fait desormais cote serveur (voir AccountController). --}}
 
 @endsection

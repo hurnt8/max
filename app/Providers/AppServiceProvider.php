@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
@@ -15,6 +16,13 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        // Sans cela, un simple ->links() rend le theme Tailwind livre par defaut avec
+        // Laravel. Le projet n utilise pas Tailwind sur le back-office : la pagination
+        // sortait donc sans aucun style. On impose le partial maison partout, y compris
+        // pour les vues futures qui oublieraient de le preciser.
+        Paginator::defaultView('partials.pagination');
+        Paginator::defaultSimpleView('partials.pagination');
+
         $this->configureResetPasswordMail();
 
         Mail::extend('smtp-no-verify', function (array $config) {

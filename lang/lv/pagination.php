@@ -16,4 +16,11 @@ return [
     'previous' => '&laquo; Iepriekšējā',
     'next' => 'Nākamā &raquo;',
 
+    // Resume affiche par partials/pagination.blade.php :
+    // "Affichage de 1 a 20 sur 25 resultats".
+    'showing' => 'Rāda',
+    'to'      => 'līdz',
+    'of'      => 'no',
+    'results' => 'rezultātiem',
+
 ];

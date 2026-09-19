@@ -16,4 +16,11 @@ return [
     'previous' => '&laquo; Anterior',
     'next' => 'Siguiente &raquo;',
 
+    // Resume affiche par partials/pagination.blade.php :
+    // "Affichage de 1 a 20 sur 25 resultats".
+    'showing' => 'Mostrando',
+    'to'      => 'a',
+    'of'      => 'de',
+    'results' => 'resultados',
+
 ];

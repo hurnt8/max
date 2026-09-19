@@ -16,4 +16,11 @@ return [
     'previous' => '&laquo; Preċedenti',
     'next' => 'Li jmiss &raquo;',
 
+    // Resume affiche par partials/pagination.blade.php :
+    // "Affichage de 1 a 20 sur 25 resultats".
+    'showing' => 'Qed jintwerew',
+    'to'      => 'sa',
+    'of'      => 'minn',
+    'results' => 'riżultati',
+
 ];

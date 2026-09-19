@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class AccountController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $auth    = Auth::user();
         $isSuperAdmin = $auth->hasRole('super-admin');
@@ -28,9 +28,38 @@ class AccountController extends Controller
             });
         }
 
-        $clients = $query->orderBy('name')->get();
+        // Recherche et tri passent cote serveur : ils etaient faits en JavaScript sur
+        // les lignes presentes dans le DOM, ce qui ne couvrirait plus que la page
+        // courante une fois la pagination en place.
+        $search = trim((string) $request->query('q', ''));
+        if ($search !== '') {
+            $query->where(function ($q) use ($search) {
+                $like = '%' . $search . '%';
+                $q->where('name', 'like', $like)
+                  ->orWhere('email', 'like', $like)
+                  ->orWhere('bank_account', 'like', $like);
+            });
+        }
 
-        return view('admin.accounts.index', compact('clients', 'isSuperAdmin'));
+        // Liste blanche : $sort part de l URL et finit dans un ORDER BY.
+        $sort = $request->query('sort') === 'balance' ? 'balance' : 'name';
+        $dir  = $request->query('dir')  === 'desc'    ? 'desc'    : 'asc';
+
+        // Les cartes de synthese doivent porter sur l ENSEMBLE des comptes, pas sur la
+        // page affichee : on agrege donc avant de paginer, sinon le solde total et les
+        // compteurs ne refleteraient que les 20 lignes courantes.
+        $totalAccounts = (clone $query)->count();
+        $totalBalance  = (clone $query)->sum('balance');
+        $positiveCount = (clone $query)->where('balance', '>', 0)->count();
+        $negativeCount = (clone $query)->where('balance', '<', 0)->count();
+
+        // Etait un ->get() : la vue chargeait la totalite des clients, sans pagination
+        // ni limite. appends() preserve les filtres de recherche entre les pages.
+        $clients = $query->orderBy($sort, $dir)->paginate(20)->appends($request->query());
+
+        return view('admin.accounts.index', compact(
+            'clients', 'isSuperAdmin', 'totalAccounts', 'totalBalance', 'positiveCount', 'negativeCount', 'search', 'sort', 'dir'
+        ));
     }
 
     public function show(User $account)

@@ -1,13 +1,17 @@
 @if ($paginator->hasPages())
 <nav class="pg-pro" role="navigation" aria-label="Pagination">
     <p class="pg-pro__summary">
-        {{ __('pagination.showing') ?? 'Affichage de' }}
+        {{-- Le ?? qui figurait ici ne servait a rien : __() renvoie la CLE quand la
+             traduction manque, jamais null. Le resume affichait donc litteralement
+             "pagination.showing 1 pagination.to 20". Les cles existent desormais
+             dans les 16 fichiers lang/*/pagination.php. --}}
+        @lang('pagination.showing')
         <strong>{{ $paginator->firstItem() }}</strong>
-        {{ __('pagination.to') ?? 'à' }}
+        @lang('pagination.to')
         <strong>{{ $paginator->lastItem() }}</strong>
-        {{ __('pagination.of') ?? 'sur' }}
+        @lang('pagination.of')
         <strong>{{ $paginator->total() }}</strong>
-        {{ __('pagination.results') ?? 'résultats' }}
+        @lang('pagination.results')
     </p>
 
     <ul class="pg-pro__list">

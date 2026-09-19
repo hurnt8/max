@@ -16,4 +16,11 @@ return [
     'previous' => '&laquo; Prejšnja',
     'next' => 'Naprej &raquo;',
 
+    // Resume affiche par partials/pagination.blade.php :
+    // "Affichage de 1 a 20 sur 25 resultats".
+    'showing' => 'Prikaz',
+    'to'      => 'do',
+    'of'      => 'od',
+    'results' => 'rezultatov',
+
 ];
