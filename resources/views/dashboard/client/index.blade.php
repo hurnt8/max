@@ -19,14 +19,14 @@
         <span class="cl-hero__currency">{{ Auth::user()->currency ?? \App\Models\Currency::default() }}</span>
       </div>
       <div class="cl-hero__sub">
-        <i class="fas fa-wallet me-1" style="color:var(--cl-gold)"></i>
+        <i class="fas fa-wallet me-1" style="color:var(--cl-accent)"></i>
         {{ __('app.balance') }}
       </div>
     </div>
 
     <div class="d-flex flex-column gap-2 text-end">
       <div style="font-size:.68rem;color:var(--cl-muted);text-transform:uppercase;letter-spacing:.07em">{{ __('app.active_files') }}</div>
-      <div style="font-family:'Inter',sans-serif;font-size:2rem;font-weight:700;color:var(--cl-gold);line-height:1">
+      <div style="font-family:'Inter',sans-serif;font-size:2rem;font-weight:700;color:var(--cl-accent);line-height:1">
         {{ $stats['active'] + $stats['finalized'] }}
       </div>
       <div>
@@ -40,7 +40,7 @@
 
 {{-- ── Stats ────────────────────────────────────────────────── --}}
 <div class="cl-stats">
-  <div class="cl-stat" style="--stat-color:var(--cl-gold);--stat-color-bg:rgba(184,136,62,.12)">
+  <div class="cl-stat" style="--stat-color:var(--cl-accent);--stat-color-bg:rgba(184,136,62,.12)">
     <div class="cl-stat__icon"><i class="fas fa-layer-group"></i></div>
     <div class="cl-stat__val">{{ $stats['total'] }}</div>
     <div class="cl-stat__lbl">{{ __('app.total_files') }}</div>
@@ -64,7 +64,7 @@
 
 {{-- ── Recent loans ─────────────────────────────────────────── --}}
 @if($loans->isNotEmpty())
-<div class="cl-section-title"><i class="fas fa-history me-1" style="color:var(--cl-gold)"></i> {{ __('app.recent_files') }}</div>
+<div class="cl-section-title"><i class="fas fa-history me-1" style="color:var(--cl-accent)"></i> {{ __('app.recent_files') }}</div>
 
 <div class="row g-3 mb-4">
   @foreach($loans->take(6) as $loan)
@@ -84,7 +84,7 @@
     };
     $accentColor = match($loan->status) {
         'rejected'        => 'var(--cl-red)',
-        'finalized'       => 'var(--cl-gold)',
+        'finalized'       => 'var(--cl-accent)',
         'contract_signed' => 'var(--cl-green)',
         'contract_sent'   => 'var(--cl-blue)',
         default           => 'var(--cl-amber)',
@@ -165,7 +165,7 @@
   <div class="cl-empty__body">
     {{ __('app.no_loans_body') }}
   </div>
-  <a href="{{ route('home',['locale'=>app()->getLocale()]) }}" class="cl-btn cl-btn--gold">
+  <a href="{{ route('home',['locale'=>app()->getLocale()]) }}" class="cl-btn cl-btn--accent">
     <i class="fas fa-globe me-1"></i> {{ __('app.back_to_site') }}
   </a>
 </div>

@@ -26,8 +26,8 @@
   --inp:  #141C2E;
   --navy: #032A4F;
   --navy2:#043767;
-  --gold: #81B6E9;
-  --gold2:#2B94F7;
+  --accent: #81B6E9;
+  --accent-2:#2B94F7;
   --text: #FFFFFF;
   --sub:  rgba(255,255,255,.52);
   --muted:rgba(255,255,255,.28);
@@ -54,7 +54,7 @@ html,body{
 #ld.on{opacity:1;pointer-events:all}
 .ld-bar{
   position:absolute;top:0;left:0;width:0;height:3px;
-  background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));
+  background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--accent));
   background-size:200% 100%;border-radius:0 3px 3px 0;
 }
 #ld.on .ld-bar{animation:ldbar 1.8s cubic-bezier(.4,0,.2,1) forwards}
@@ -70,14 +70,14 @@ html,body{
 .ld-logo img{width:56px;height:56px;object-fit:contain;border-radius:10px}
 .ld-ring{
   position:absolute;inset:-8px;border-radius:32px;
-  border:2px solid rgba(3, 42, 79,.15);border-top-color:var(--gold);
+  border:2px solid rgba(3, 42, 79,.15);border-top-color:var(--accent);
   animation:spin .9s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
 .ld-lbl{font-size:.8rem;font-weight:600;color:var(--sub);letter-spacing:.06em;margin-bottom:.875rem}
 .ld-dots{display:flex;gap:.4rem}
 .ld-dot{
-  width:6px;height:6px;border-radius:50%;background:var(--gold);
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
   animation:ldp 1.2s ease-in-out infinite;
 }
 .ld-dot:nth-child(2){animation-delay:.18s}
@@ -149,7 +149,7 @@ html,body{
   margin:0 auto 1.25rem;
   position:relative;
 }
-.otp-icon i{font-size:2rem;color:var(--gold2)}
+.otp-icon i{font-size:2rem;color:var(--accent-2)}
 .otp-icon::after{
   content:'';
   position:absolute;inset:-6px;border-radius:28px;

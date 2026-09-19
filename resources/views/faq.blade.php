@@ -101,7 +101,7 @@
     <div class="container">
         <div class="row align-items-center gutter-y-30">
             <div class="col-lg-8 wow fadeInLeft" data-wow-duration="900ms">
-                <div class="section-label" style="color:var(--gold);">{{ __('home.faq_cta.label') }}</div>
+                <div class="section-label" style="color:var(--accent);">{{ __('home.faq_cta.label') }}</div>
                 <h2 class="section-title section-title--white mb-2">
                     {{ __('home.faq_cta.title') }}
                 </h2>

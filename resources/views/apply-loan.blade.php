@@ -15,7 +15,7 @@
     padding:.5rem .9rem; border-radius:10px; border:2px solid #e5e7eb;
     background:#fff; cursor:pointer; transition:all .18s; user-select:none; white-space:nowrap;
 }
-.currency-btn:hover { border-color:var(--gold); }
+.currency-btn:hover { border-color:var(--accent); }
 .currency-btn.active { background:var(--navy); border-color:var(--navy); color:#fff; box-shadow:0 3px 12px rgba(10,37,76,.2); }
 .currency-btn__flag { font-size:1.1rem; line-height:1; }
 .currency-btn__name { font-size:.79rem; font-weight:700; line-height:1.1; }
@@ -28,7 +28,7 @@
     background:#fff; color:#374151; font-size:.82rem; font-weight:600;
     cursor:pointer; transition:all .18s; white-space:nowrap;
 }
-.chip:hover { border-color:var(--gold); color:var(--gold); }
+.chip:hover { border-color:var(--accent); color:var(--accent); }
 .chip.active { background:var(--navy); color:#fff; border-color:var(--navy); }
 
 /* ── Champ libre montant/durée ── */
@@ -54,7 +54,7 @@
 .quote-result__item { text-align:center; flex:1; min-width:80px; }
 .quote-result__label { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,.5); display:block; margin-bottom:.2rem; }
 .quote-result__value { font-size:1rem; font-weight:800; color:#fff; }
-.quote-result__value.gold { color:var(--gold); font-size:1.25rem; }
+.quote-result__value.accent { color:var(--accent); font-size:1.25rem; }
 .quote-result__sep { width:1px; height:32px; background:rgba(255,255,255,.15); }
 
 /* ── Séparateurs de section ── */
@@ -63,13 +63,13 @@
     font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em;
     color:var(--navy); margin-bottom:.55rem; display:flex; align-items:center; gap:.5rem;
 }
-.form-section-title i { color:var(--gold); }
+.form-section-title i { color:var(--accent); }
 .form-section-title::after { content:''; flex:1; height:1px; background:#eaecf0; }
 
 /* ── Sidebar raisons ── */
 .reason-item { display:flex; gap:.75rem; padding:.8rem 0; }
 .reason-item + .reason-item { border-top:1px solid #f0f0f0; }
-.reason-icon { width:38px; height:38px; border-radius:9px; background:rgba(212,175,55,.1); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
+.reason-icon { width:38px; height:38px; border-radius:9px; background:rgba(212,175,55,.1); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
 .reason-title { font-size:.84rem; font-weight:700; color:var(--navy); margin-bottom:.15rem; }
 .reason-desc  { font-size:.75rem; color:#6b7280; line-height:1.45; margin:0; }
 
@@ -200,7 +200,7 @@ document.addEventListener('alpine:init', () => {
             {{-- ══════════ FORMULAIRE PRINCIPAL ══════════ --}}
             <div class="col-lg-8" x-data="loanForm">
                 <div class="form-card wow fadeInLeft" data-wow-duration="700ms"
-                     style="border-top:4px solid var(--gold);">
+                     style="border-top:4px solid var(--accent);">
 
                     {{-- En-tête --}}
                     <div class="d-flex align-items-start justify-content-between flex-wrap gap-2 mb-4">
@@ -211,7 +211,7 @@ document.addEventListener('alpine:init', () => {
                             </h3>
                             <p style="font-size:.78rem;color:#6b7280;margin:0;">@lang('loan.quote_step_desc')</p>
                         </div>
-                        <div style="display:inline-flex;align-items:center;gap:.4rem;background:var(--navy);color:var(--gold);padding:.35rem .9rem;border-radius:999px;font-weight:800;font-size:.82rem;white-space:nowrap;flex-shrink:0;">
+                        <div style="display:inline-flex;align-items:center;gap:.4rem;background:var(--navy);color:var(--accent);padding:.35rem .9rem;border-radius:999px;font-weight:800;font-size:.82rem;white-space:nowrap;flex-shrink:0;">
                             <i class="fas fa-lock" style="font-size:.68rem;"></i>
                             @lang('loan.label_rate') : {{ number_format((float) $loanSetting->annual_rate, 2) }} %
                         </div>
@@ -285,7 +285,7 @@ document.addEventListener('alpine:init', () => {
                         {{-- Champ libre toujours visible --}}
                         <div class="free-input-row mt-2">
                             <label>
-                                <i class="fas fa-keyboard" style="margin-right:.3rem;color:var(--gold);"></i>
+                                <i class="fas fa-keyboard" style="margin-right:.3rem;color:var(--accent);"></i>
                                 @lang('loan.label_other') :
                             </label>
                             <input type="number" x-model="customAmt" @input="selAmount = null"
@@ -318,7 +318,7 @@ document.addEventListener('alpine:init', () => {
                         {{-- Champ libre toujours visible --}}
                         <div class="free-input-row mt-2">
                             <label>
-                                <i class="fas fa-keyboard" style="margin-right:.3rem;color:var(--gold);"></i>
+                                <i class="fas fa-keyboard" style="margin-right:.3rem;color:var(--accent);"></i>
                                 @lang('loan.label_other') :
                             </label>
                             <input type="number" x-model="customDur" @input="selDuration = null"
@@ -337,7 +337,7 @@ document.addEventListener('alpine:init', () => {
                             <div class="quote-result__row">
                                 <div class="quote-result__item">
                                     <span class="quote-result__label">@lang('loan.quote_monthly')</span>
-                                    <span class="quote-result__value gold" x-text="fmt(monthly)">—</span>
+                                    <span class="quote-result__value accent" x-text="fmt(monthly)">—</span>
                                 </div>
                                 <div class="quote-result__sep d-none d-sm-block"></div>
                                 <div class="quote-result__item">
@@ -374,7 +374,7 @@ document.addEventListener('alpine:init', () => {
                         <div class="row g-3">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label>@lang('loan.label_name') <span style="color:var(--gold);">*</span></label>
+                                    <label>@lang('loan.label_name') <span style="color:var(--accent);">*</span></label>
                                     <input type="text" name="name" class="form-control"
                                            value="{{ old('name') }}"
                                            placeholder="@lang('loan.placeholder_name')" required>
@@ -383,7 +383,7 @@ document.addEventListener('alpine:init', () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>@lang('loan.label_email') <span style="color:var(--gold);">*</span></label>
+                                    <label>@lang('loan.label_email') <span style="color:var(--accent);">*</span></label>
                                     <input type="email" name="email" class="form-control"
                                            value="{{ old('email') }}"
                                            placeholder="@lang('loan.placeholder_email')" required>
@@ -392,7 +392,7 @@ document.addEventListener('alpine:init', () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>@lang('loan.label_phone') <span style="color:var(--gold);">*</span></label>
+                                    <label>@lang('loan.label_phone') <span style="color:var(--accent);">*</span></label>
                                     <input type="text" name="phone" class="form-control"
                                            value="{{ old('phone') }}"
                                            placeholder="@lang('loan.placeholder_phone')" required>
@@ -401,7 +401,7 @@ document.addEventListener('alpine:init', () => {
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label>@lang('contact.subject') <span style="color:var(--gold);">*</span></label>
+                                    <label>@lang('contact.subject') <span style="color:var(--accent);">*</span></label>
                                     <select name="subject" class="form-control" required>
                                         <option value="">— @lang('contact.subject') —</option>
                                         <option value="Prêt personnel"  {{ old('subject')=='Prêt personnel'  ?'selected':'' }}>@lang('menu.personal')</option>
@@ -517,7 +517,7 @@ document.addEventListener('alpine:init', () => {
 }
 .partner-logo:hover {
     filter:grayscale(0); opacity:1;
-    border-color:var(--gold); box-shadow:0 4px 22px rgba(200,169,81,.2);
+    border-color:var(--accent); box-shadow:0 4px 22px rgba(200,169,81,.2);
 }
 .partner-logo--text {
     font-size:.85rem; font-weight:700; color:var(--navy);

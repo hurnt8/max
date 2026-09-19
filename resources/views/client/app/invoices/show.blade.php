@@ -63,7 +63,7 @@
 .invd-total__amount sup {
   font-size: 1rem; font-weight: 600;
   vertical-align: super; margin-right: .25rem;
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
 }
 .invd-total__ref {
   font-size: .72rem; color: rgba(255,255,255,.35);
@@ -136,7 +136,7 @@
   padding-top: .75rem; margin-top: .25rem;
 }
 .invd-totals__row--total .invd-totals__val {
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
   font-family: 'Space Grotesk', sans-serif; font-size: 1rem;
 }
 

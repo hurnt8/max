@@ -18,7 +18,7 @@
 <style>
 :root{
   --navy:#032A4F;--nm:#043767;--nl:#054685;
-  --gold:#81B6E9;--gd:#2B94F7;--gp:#DEEBF7;
+  --accent:#81B6E9;--gd:#2B94F7;--gp:#DEEBF7;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
@@ -54,7 +54,7 @@ a{text-decoration:none;color:inherit}
   display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;
   box-shadow:0 0 28px rgba(129, 182, 233,.15);
 }
-.icon-badge i{font-size:1.75rem;color:var(--gold)}
+.icon-badge i{font-size:1.75rem;color:var(--accent)}
 
 .card-title{font-family:'Inter',sans-serif;font-size:1.625rem;font-weight:800;color:#fff;margin-bottom:.45rem}
 .card-sub{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:1.875rem;max-width:320px;margin-left:auto;margin-right:auto}
@@ -78,8 +78,8 @@ a{text-decoration:none;color:inherit}
   outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
 }
 .finput::placeholder{color:rgba(255,255,255,.25)}
-.finput:focus{border-color:var(--gold);background:rgba(255,255,255,.08);box-shadow:0 0 0 3.5px rgba(129, 182, 233,.15)}
-.finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--gold)}
+.finput:focus{border-color:var(--accent);background:rgba(255,255,255,.08);box-shadow:0 0 0 3.5px rgba(129, 182, 233,.15)}
+.finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--accent)}
 .finput.err{border-color:#ef4444}
 .feye{
   position:absolute;right:.9rem;top:50%;transform:translateY(-50%);
@@ -95,7 +95,7 @@ a{text-decoration:none;color:inherit}
   width:100%;padding:.92rem 1.5rem;border:none;border-radius:10px;
   font-size:.95rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;
   display:flex;align-items:center;justify-content:center;gap:.625rem;
-  background:var(--gold);color:#032A4F;letter-spacing:.01em;
+  background:var(--accent);color:#032A4F;letter-spacing:.01em;
   box-shadow:0 6px 24px rgba(129, 182, 233,.3);
   transition:filter .2s,box-shadow .2s,transform .1s;margin-top:.5rem;
 }
@@ -104,7 +104,7 @@ a{text-decoration:none;color:inherit}
 .fbtn:disabled{opacity:.6;cursor:not-allowed;filter:none}
 
 .back-link{margin-top:1.375rem;font-size:.78rem;color:rgba(255,255,255,.3)}
-.back-link a{color:var(--gold);font-weight:600;transition:opacity .18s}
+.back-link a{color:var(--accent);font-weight:600;transition:opacity .18s}
 .back-link a:hover{opacity:.75}
 
 .pg-foot{

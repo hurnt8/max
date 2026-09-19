@@ -139,7 +139,7 @@
 
 {{-- Actions ── --}}
 <div class="ca-btn-wrap">
-  <button class="ca-btn ca-btn--gold"
+  <button class="ca-btn ca-btn--accent"
           onclick="if(navigator.share){navigator.share({title:'Mes coordonnées ' . site_name(),text:`{{ addslashes($shareText) }}`}).catch(()=>{})}else{copyIban(null,'{{ addslashes($shareText) }}',true)}">
     <i class="fas fa-share-nodes"></i> {{ __('app.share_details') }}
   </button>

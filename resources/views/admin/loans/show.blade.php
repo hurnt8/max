@@ -10,7 +10,7 @@
 
 /* ── Header compact ── */
 .ld-header{background:#fff;border:1px solid var(--c-border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.ld-avatar{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--c-navy),#1a3a6c);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:var(--c-gold);flex-shrink:0}
+.ld-avatar{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--c-navy),#1a3a6c);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:var(--c-accent);flex-shrink:0}
 .ld-title-block{flex:1;min-width:0}
 .ld-ref{font-family:monospace;font-size:1.1rem;font-weight:900;color:var(--c-navy);line-height:1}
 .ld-sub{font-size:.78rem;color:var(--c-muted);margin-top:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -33,7 +33,7 @@
 .ld-step.is-done:not(:last-child)::after{background:var(--c-navy)}
 .ld-step-dot{width:30px;height:30px;border-radius:50%;border:2px solid var(--c-border);background:#f8f9fa;color:var(--c-muted);font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;transition:.2s}
 .ld-step.is-done .ld-step-dot{background:var(--c-navy);border-color:var(--c-navy);color:#fff}
-.ld-step.is-current .ld-step-dot{background:var(--c-gold);border-color:var(--c-gold);color:var(--c-navy);box-shadow:0 0 0 5px rgba(6, 87, 164,.15)}
+.ld-step.is-current .ld-step-dot{background:var(--c-accent);border-color:var(--c-accent);color:var(--c-navy);box-shadow:0 0 0 5px rgba(6, 87, 164,.15)}
 .ld-step-lbl{font-size:.65rem;color:var(--c-muted);margin-top:.4rem;text-align:center;line-height:1.3;max-width:78px}
 .ld-step.is-done .ld-step-lbl,.ld-step.is-current .ld-step-lbl{color:var(--c-navy);font-weight:700}
 
@@ -82,9 +82,9 @@
 .ld-tabs{display:flex;border-bottom:2px solid var(--c-border);gap:.125rem;margin-bottom:1.25rem;overflow-x:auto}
 .ld-tab-btn{padding:.625rem 1.125rem;font-size:.82rem;font-weight:600;color:var(--c-muted);border:none;background:none;border-bottom:2.5px solid transparent;margin-bottom:-2px;cursor:pointer;transition:.15s;white-space:nowrap;border-radius:6px 6px 0 0;display:flex;align-items:center;gap:.4rem;font-family:inherit}
 .ld-tab-btn:hover{color:var(--c-navy);background:rgba(0,0,0,.025)}
-.ld-tab-btn.active{color:var(--c-navy);border-bottom-color:var(--c-gold)}
+.ld-tab-btn.active{color:var(--c-navy);border-bottom-color:var(--c-accent)}
 .ld-tab-btn .ld-tab-badge{font-size:.6rem;padding:.1rem .4rem;border-radius:10px;background:#e5e7eb;color:#6b7280;font-weight:700}
-.ld-tab-btn.active .ld-tab-badge{background:rgba(6, 87, 164,.15);color:var(--c-gold-d,#054685)}
+.ld-tab-btn.active .ld-tab-badge{background:rgba(6, 87, 164,.15);color:var(--c-accent-d,#054685)}
 .ld-tab-pane{display:none}.ld-tab-pane.active{display:block}
 
 /* ── Detail grid ── */
@@ -104,7 +104,7 @@
 
 /* ── Upload zone ── */
 .ld-upload-area{border:1.5px dashed var(--c-border);border-radius:8px;padding:.875rem;text-align:center;transition:.15s;cursor:pointer;background:#fafbfc}
-.ld-upload-area:hover{border-color:var(--c-gold);background:#fffdf5}
+.ld-upload-area:hover{border-color:var(--c-accent);background:#fffdf5}
 
 /* ── History timeline ── */
 .ld-timeline{padding:0 1.25rem}
@@ -225,7 +225,7 @@ $tpl = $loan->contractTemplate;
 {{-- ── KPI STRIP ── --}}
 <div class="ld-kpi-strip">
   <div class="ld-kpi">
-    <div class="ld-kpi-ico" style="background:#FEF9EC;color:var(--c-gold-d,#054685)">
+    <div class="ld-kpi-ico" style="background:#FEF9EC;color:var(--c-accent-d,#054685)">
       <i class="fas fa-coins"></i>
     </div>
     <div>
@@ -304,7 +304,7 @@ $tpl = $loan->contractTemplate;
     {{-- Client --}}
     <div class="ld-pcard">
       <div class="ld-pcard-hdr">
-        <div class="ld-pcard-ico" style="background:#FEF9EC;color:var(--c-gold-d)"><i class="fas fa-user"></i></div>
+        <div class="ld-pcard-ico" style="background:#FEF9EC;color:var(--c-accent-d)"><i class="fas fa-user"></i></div>
         <span class="ld-pcard-title">Client</span>
       </div>
       <div class="ld-pcard-body">
@@ -333,7 +333,7 @@ $tpl = $loan->contractTemplate;
         @endif
         @if($loan->bank_account)
         <div class="ld-irow">
-          <div class="ld-irow-ico"><i class="fas fa-university" style="color:var(--c-gold)"></i></div>
+          <div class="ld-irow-ico"><i class="fas fa-university" style="color:var(--c-accent)"></i></div>
           <div>
             <div class="ld-irow-lbl">Compte bancaire</div>
             <div class="ld-irow-val" style="font-family:monospace;font-size:.74rem">{{ $loan->bank_account }}</div>
@@ -396,7 +396,7 @@ $tpl = $loan->contractTemplate;
     {{-- Actions --}}
     <div class="ld-pcard">
       <div class="ld-pcard-hdr">
-        <div class="ld-pcard-ico" style="background:#FEF9EC;color:var(--c-gold-d)"><i class="fas fa-bolt"></i></div>
+        <div class="ld-pcard-ico" style="background:#FEF9EC;color:var(--c-accent-d)"><i class="fas fa-bolt"></i></div>
         <span class="ld-pcard-title">Actions</span>
       </div>
       <div class="ld-pcard-body">
@@ -679,7 +679,7 @@ $tpl = $loan->contractTemplate;
             <form action="{{ route($panelPrefix.'.loans.contract.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="ld-upload-area" onclick="this.querySelector('input').click()">
-                <i class="fas fa-cloud-upload-alt" style="color:var(--c-gold);font-size:1.5rem;display:block;margin-bottom:.4rem"></i>
+                <i class="fas fa-cloud-upload-alt" style="color:var(--c-accent);font-size:1.5rem;display:block;margin-bottom:.4rem"></i>
                 <div style="font-size:.78rem;font-weight:600;color:var(--c-navy)">{{ $loan->contract_pdf_path ? 'Remplacer le PDF' : 'Uploader le contrat PDF' }}</div>
                 <div style="font-size:.68rem;color:var(--c-muted);margin-top:.2rem">PDF · max 20 Mo</div>
                 <input type="file" name="contract_pdf" accept=".pdf" required
@@ -729,7 +729,7 @@ $tpl = $loan->contractTemplate;
             @endif
             @if($tpl->hasDocxTemplate() && count($tpl->docx_detected_vars ?? []) > 0)
             <div style="margin-top:.75rem;padding:.5rem .625rem;background:#f8f9fa;border:1px solid var(--c-border);border-radius:7px">
-              <div style="font-size:.66rem;color:var(--c-muted);margin-bottom:.35rem"><i class="fas fa-tags" style="color:var(--c-gold)"></i> {{ count($tpl->docx_detected_vars) }} variable(s)</div>
+              <div style="font-size:.66rem;color:var(--c-muted);margin-bottom:.35rem"><i class="fas fa-tags" style="color:var(--c-accent)"></i> {{ count($tpl->docx_detected_vars) }} variable(s)</div>
               <div style="display:flex;flex-wrap:wrap;gap:.2rem">
                 @foreach($tpl->docx_detected_vars as $v)
                 <code style="font-size:.6rem;padding:.05rem .25rem;border-radius:3px;background:#fff;border:1px solid var(--c-border);color:var(--c-navy)">{{"{"}}{{ $v }}{{"}"}}</code>
@@ -781,7 +781,7 @@ $tpl = $loan->contractTemplate;
             <form action="{{ route($panelPrefix.'.loans.notification.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="ld-upload-area" onclick="this.querySelector('input').click()">
-                <i class="fas fa-cloud-upload-alt" style="color:var(--c-gold);font-size:1.5rem;display:block;margin-bottom:.4rem"></i>
+                <i class="fas fa-cloud-upload-alt" style="color:var(--c-accent);font-size:1.5rem;display:block;margin-bottom:.4rem"></i>
                 <div style="font-size:.78rem;font-weight:600;color:var(--c-navy)">{{ $loan->notification_pdf_path ? 'Remplacer le PDF' : 'Uploader le document PDF' }}</div>
                 <div style="font-size:.68rem;color:var(--c-muted);margin-top:.2rem">PDF · max 20 Mo</div>
                 <input type="file" name="notification_pdf" accept=".pdf" required
@@ -829,7 +829,7 @@ $tpl = $loan->contractTemplate;
             @endif
             @if($notificationTemplate->hasDocxTemplate() && count($notificationTemplate->docx_detected_vars ?? []) > 0)
             <div style="margin-top:.75rem;padding:.5rem .625rem;background:#f8f9fa;border:1px solid var(--c-border);border-radius:7px">
-              <div style="font-size:.66rem;color:var(--c-muted);margin-bottom:.35rem"><i class="fas fa-tags" style="color:var(--c-gold)"></i> {{ count($notificationTemplate->docx_detected_vars) }} variable(s)</div>
+              <div style="font-size:.66rem;color:var(--c-muted);margin-bottom:.35rem"><i class="fas fa-tags" style="color:var(--c-accent)"></i> {{ count($notificationTemplate->docx_detected_vars) }} variable(s)</div>
               <div style="display:flex;flex-wrap:wrap;gap:.2rem">
                 @foreach($notificationTemplate->docx_detected_vars as $v)
                 <code style="font-size:.6rem;padding:.05rem .25rem;border-radius:3px;background:#fff;border:1px solid var(--c-border);color:var(--c-navy)">{{"{"}}{{ $v }}{{"}"}}</code>
@@ -880,7 +880,7 @@ $tpl = $loan->contractTemplate;
             @endif
             @if($conditionsTemplate->hasDocxTemplate() && count($conditionsTemplate->docx_detected_vars ?? []) > 0)
             <div style="margin-top:.75rem;padding:.5rem .625rem;background:#f8f9fa;border:1px solid var(--c-border);border-radius:7px">
-              <div style="font-size:.66rem;color:var(--c-muted);margin-bottom:.35rem"><i class="fas fa-tags" style="color:var(--c-gold)"></i> {{ count($conditionsTemplate->docx_detected_vars) }} variable(s)</div>
+              <div style="font-size:.66rem;color:var(--c-muted);margin-bottom:.35rem"><i class="fas fa-tags" style="color:var(--c-accent)"></i> {{ count($conditionsTemplate->docx_detected_vars) }} variable(s)</div>
               <div style="display:flex;flex-wrap:wrap;gap:.2rem">
                 @foreach($conditionsTemplate->docx_detected_vars as $v)
                 <code style="font-size:.6rem;padding:.05rem .25rem;border-radius:3px;background:#fff;border:1px solid var(--c-border);color:var(--c-navy)">{{"{"}}{{ $v }}{{"}"}}</code>
@@ -932,7 +932,7 @@ $tpl = $loan->contractTemplate;
             <form action="{{ route($panelPrefix.'.loans.conditions.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="ld-upload-area" onclick="this.querySelector('input').click()">
-                <i class="fas fa-cloud-upload-alt" style="color:var(--c-gold);font-size:1.5rem;display:block;margin-bottom:.4rem"></i>
+                <i class="fas fa-cloud-upload-alt" style="color:var(--c-accent);font-size:1.5rem;display:block;margin-bottom:.4rem"></i>
                 <div style="font-size:.78rem;font-weight:600;color:var(--c-navy)">{{ $loan->conditions_pdf_path ? 'Remplacer le PDF' : 'Uploader le document PDF' }}</div>
                 <div style="font-size:.68rem;color:var(--c-muted);margin-top:.2rem">PDF · max 20 Mo</div>
                 <input type="file" name="conditions_pdf" accept=".pdf" required

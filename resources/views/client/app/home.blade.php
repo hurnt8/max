@@ -148,7 +148,7 @@
 .h-balance sup{
   font-size:.95rem;font-weight:600;
   vertical-align:super;margin-right:.2rem;
-  color:var(--ca-gold-l);
+  color:var(--ca-accent-l);
 }
 .h-balance--hidden{
   font-size:1.5rem;letter-spacing:.35em;
@@ -176,7 +176,7 @@
   border-radius:999px;
   padding:.28rem .75rem;
   font-size:.65rem;font-weight:700;
-  color:var(--ca-gold-l);letter-spacing:.05em;
+  color:var(--ca-accent-l);letter-spacing:.05em;
   display:flex;align-items:center;gap:.3rem;
 }
 /* Circles decoration (Visa-like) */
@@ -187,8 +187,8 @@
 .h-card__circ{
   width:34px;height:34px;border-radius:50%;opacity:.35;
 }
-.h-card__circ:first-child{ background:var(--ca-gold);margin-right:-14px }
-.h-card__circ:last-child { background:var(--ca-gold-l) }
+.h-card__circ:first-child{ background:var(--ca-accent);margin-right:-14px }
+.h-card__circ:last-child { background:var(--ca-accent-l) }
 
 /* ── Quick actions ── */
 .h-actions{
@@ -207,7 +207,7 @@
   transition:transform .14s,box-shadow .14s;
 }
 .h-action:active .h-action__ico{ transform:scale(.91) }
-.h-action__ico--teal  { background:rgba(129, 182, 233,.2);  border:1px solid rgba(129, 182, 233,.35);  color:var(--ca-gold-l);    box-shadow:0 4px 14px rgba(129, 182, 233,.18) }
+.h-action__ico--teal  { background:rgba(129, 182, 233,.2);  border:1px solid rgba(129, 182, 233,.35);  color:var(--ca-accent-l);    box-shadow:0 4px 14px rgba(129, 182, 233,.18) }
 .h-action__ico--green { background:rgba(0,200,150,.15);  border:1px solid rgba(0,200,150,.3);    color:var(--ca-positive);  box-shadow:0 4px 14px rgba(0,200,150,.16) }
 .h-action__ico--blue  { background:rgba(74,158,255,.15); border:1px solid rgba(74,158,255,.3);   color:var(--ca-blue);      box-shadow:0 4px 14px rgba(74,158,255,.14) }
 .h-action__ico--purple{ background:rgba(139,92,246,.15); border:1px solid rgba(139,92,246,.3);   color:var(--ca-purple);    box-shadow:0 4px 14px rgba(139,92,246,.14) }
@@ -234,7 +234,7 @@
   height:3px;border-radius:16px 16px 0 0;
 }
 .h-stat--def::before { background:linear-gradient(90deg,var(--ca-text-3),var(--ca-bg4)) }
-.h-stat--teal::before{ background:linear-gradient(90deg,var(--ca-gold-l),#2B94F7) }
+.h-stat--teal::before{ background:linear-gradient(90deg,var(--ca-accent-l),#2B94F7) }
 .h-stat--amb::before { background:linear-gradient(90deg,var(--ca-amber),#C87800) }
 .h-stat__num{
   font-family:'Inter',sans-serif;
@@ -242,7 +242,7 @@
   line-height:1;margin-bottom:.3rem;
 }
 .h-stat--def  .h-stat__num{ color:var(--ca-text) }
-.h-stat--teal .h-stat__num{ color:var(--ca-gold-l) }
+.h-stat--teal .h-stat__num{ color:var(--ca-accent-l) }
 .h-stat--amb  .h-stat__num{ color:var(--ca-amber) }
 .h-stat__lbl{
   font-size:.63rem;font-weight:600;
@@ -257,7 +257,7 @@
 }
 .h-section__title{ font-size:.85rem;font-weight:700;color:var(--ca-text) }
 .h-section__link{
-  font-size:.75rem;font-weight:600;color:var(--ca-gold-l);
+  font-size:.75rem;font-weight:600;color:var(--ca-accent-l);
   display:inline-flex;align-items:center;gap:.3rem;
   transition:opacity .18s;
 }
@@ -415,7 +415,7 @@
     <span class="h-action__lbl">{{ __('app.action_analytics') }}</span>
   </a>
   <a href="{{ route('client.app.movements') }}" class="h-action">
-    <div class="h-action__ico" style="background:rgba(129, 182, 233,.15);border:1px solid rgba(129, 182, 233,.3);color:var(--ca-gold-l)">
+    <div class="h-action__ico" style="background:rgba(129, 182, 233,.15);border:1px solid rgba(129, 182, 233,.3);color:var(--ca-accent-l)">
       <i class="fas fa-list-ul"></i>
     </div>
     <span class="h-action__lbl">{{ __('app.movements_title') }}</span>

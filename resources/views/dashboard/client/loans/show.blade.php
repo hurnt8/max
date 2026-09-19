@@ -59,7 +59,7 @@
 <div class="d-flex align-items-start justify-content-between flex-wrap gap-3 mb-4">
   <div>
     <div class="d-flex align-items-center gap-3 mb-1 flex-wrap">
-      <span style="font-family:'Space Grotesk', monospace;font-size:1rem;font-weight:700;color:var(--cl-gold)">
+      <span style="font-family:'Space Grotesk', monospace;font-size:1rem;font-weight:700;color:var(--cl-accent)">
         {{ $loan->reference }}
       </span>
       <span class="cl-badge {{ $badgeClass }}">{{ $loan->statusLabel() }}</span>
@@ -115,7 +115,7 @@
     @php
       $pct = $currentIdx !== false ? round(($currentIdx + 1) / count($stepKeys) * 100) : 0;
     @endphp
-    <span style="font-size:.72rem;color:var(--cl-gold-2);font-weight:700">{{ $pct }}%</span>
+    <span style="font-size:.72rem;color:var(--cl-accent-2);font-weight:700">{{ $pct }}%</span>
   </div>
   <div class="cl-panel__body" style="padding:1.5rem 1.25rem">
     <div class="cl-steps">
@@ -163,7 +163,7 @@
               </div>
               <div style="font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:700;color:var(--cl-text);line-height:1">
                 {{ number_format($loan->amount, 2, ',', ' ') }}
-                <span style="font-size:.8rem;color:var(--cl-gold);font-weight:600">{{ $loan->currency }}</span>
+                <span style="font-size:.8rem;color:var(--cl-accent);font-weight:600">{{ $loan->currency }}</span>
               </div>
             </div>
           </div>
@@ -172,7 +172,7 @@
               <div style="font-size:.65rem;color:var(--cl-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.4rem">
                 {{ __('app.monthly') }}
               </div>
-              <div style="font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:700;color:var(--cl-gold-2);line-height:1">
+              <div style="font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:700;color:var(--cl-accent-2);line-height:1">
                 {{ number_format($loan->monthly_payment, 2, ',', ' ') }}
                 <span style="font-size:.8rem;font-weight:600">{{ $loan->currency }}</span>
               </div>
@@ -239,7 +239,7 @@
           </div>
           <div style="background:rgba(184,136,62,.08);border-radius:9px;padding:.75rem;border:1px solid rgba(184,136,62,.2)">
             <div style="font-size:.65rem;color:var(--cl-muted);margin-bottom:.2rem">{{ __('app.loan_interest') }}</div>
-            <div style="font-weight:700;color:var(--cl-gold-2);font-size:.85rem">
+            <div style="font-weight:700;color:var(--cl-accent-2);font-size:.85rem">
               {{ number_format($interest, 2, ',', ' ') }} {{ $loan->currency }}
             </div>
           </div>

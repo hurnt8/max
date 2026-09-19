@@ -21,7 +21,7 @@
 <style>
 :root{
   --navy:#032A4F;--nm:#043767;--nl:#054685;
-  --gold:#0657A4;--gd:#054685;--gp:#DEEBF7;
+  --accent:#0657A4;--gd:#054685;--gp:#DEEBF7;
 }
 html,body{height:100%;margin:0;padding:0}
 body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:flex;flex-direction:column}
@@ -29,7 +29,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
 /* ════ LEFT PANEL — staff variant ════ */
 .auth-left{
   /* Fond bleu profond : accent eclairci pour rester lisible (AA). */
-  --gold:#81B6E9;--gd:#2B94F7;
+  --accent:#81B6E9;--gd:#2B94F7;
   background:linear-gradient(160deg,#060f1e 0%,#032A4F 45%,#0e2240 100%);
   min-height:100vh; padding:2.5rem 3rem;
   display:flex;flex-direction:column;justify-content:space-between;
@@ -60,16 +60,16 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
   width:32px;height:32px;border-radius:8px;
   background:rgba(6, 87, 164,.12);display:flex;align-items:center;justify-content:center;
 }
-.staff-badge__ico i{color:var(--gold);font-size:.75rem}
+.staff-badge__ico i{color:var(--accent);font-size:.75rem}
 .staff-badge__text{line-height:1.3}
-.staff-badge__label{font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.05em;text-transform:uppercase}
+.staff-badge__label{font-size:.72rem;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase}
 .staff-badge__sub{font-size:.68rem;color:rgba(255,255,255,.35)}
 
 .auth-left__title{
   font-family:'Playfair Display',serif;font-size:2.25rem;font-weight:800;
   color:#fff;line-height:1.2;margin-bottom:.875rem;
 }
-.auth-left__title span{color:var(--gold)}
+.auth-left__title span{color:var(--accent)}
 .auth-left__sub{font-size:.875rem;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:2rem;max-width:340px}
 
 .staff-alert{
@@ -107,7 +107,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
   padding:.4rem .85rem;font-size:.8rem;font-weight:600;color:var(--navy);
   transition:all .18s;
 }
-.ls__btn:hover{border-color:var(--gold);background:var(--gp)}
+.ls__btn:hover{border-color:var(--accent);background:var(--gp)}
 .ls__btn img{width:20px;height:14px;object-fit:cover;border-radius:2px}
 .ls__chevron{font-size:.55rem;transition:transform .2s}
 .ls__menu{
@@ -136,7 +136,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
   font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
   color:var(--gd);display:flex;align-items:center;gap:.5rem;margin-bottom:.625rem;
 }
-.form-eyebrow::before{content:'';width:22px;height:2px;background:var(--gold);border-radius:2px}
+.form-eyebrow::before{content:'';width:22px;height:2px;background:var(--accent);border-radius:2px}
 .form-title{
   font-family:'Playfair Display',serif;font-size:1.875rem;font-weight:800;
   color:var(--navy);line-height:1.15;margin-bottom:.375rem;
@@ -185,7 +185,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
 .f-check input{width:14px;height:14px;accent-color:var(--navy);cursor:pointer;flex-shrink:0}
 .f-check label{font-size:.78rem;color:#6b7280;cursor:pointer;user-select:none}
 .f-forgot{font-size:.78rem;color:var(--navy);font-weight:600;transition:color .15s}
-.f-forgot:hover{color:var(--gold)}
+.f-forgot:hover{color:var(--accent)}
 
 .btn-auth{
   width:100%;padding:.8rem;border:none;border-radius:10px;
@@ -426,7 +426,7 @@ function tglPwd(id, ico) {
     <div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:.1rem">Installer sur votre écran d'accueil</div>
   </div>
   <button id="pwa-install-trigger"
-    style="background:var(--gold);color:#FFFFFF;border:none;border-radius:8px;
+    style="background:var(--accent);color:#FFFFFF;border:none;border-radius:8px;
       padding:.45rem .875rem;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0">
     <i class="fas fa-download"></i> Installer
   </button>
@@ -457,15 +457,15 @@ function tglPwd(id, ico) {
   </div>
   <div style="font-size:.73rem;color:rgba(255,255,255,.65);line-height:1.9">
     <span style="display:inline-flex;align-items:center;gap:.35rem">
-      <b style="background:rgba(6, 87, 164,.2);color:var(--gold);padding:.05rem .35rem;border-radius:4px;font-size:.68rem">1</b>
-      Appuyez sur <strong style="color:#fff">Partager</strong> <i class="fas fa-share-square" style="color:var(--gold)"></i>
+      <b style="background:rgba(6, 87, 164,.2);color:var(--accent);padding:.05rem .35rem;border-radius:4px;font-size:.68rem">1</b>
+      Appuyez sur <strong style="color:#fff">Partager</strong> <i class="fas fa-share-square" style="color:var(--accent)"></i>
     </span><br>
     <span style="display:inline-flex;align-items:center;gap:.35rem">
-      <b style="background:rgba(6, 87, 164,.2);color:var(--gold);padding:.05rem .35rem;border-radius:4px;font-size:.68rem">2</b>
-      Puis <strong style="color:#fff">Sur l'écran d'accueil</strong> <i class="fas fa-plus-square" style="color:var(--gold)"></i>
+      <b style="background:rgba(6, 87, 164,.2);color:var(--accent);padding:.05rem .35rem;border-radius:4px;font-size:.68rem">2</b>
+      Puis <strong style="color:#fff">Sur l'écran d'accueil</strong> <i class="fas fa-plus-square" style="color:var(--accent)"></i>
     </span><br>
     <span style="display:inline-flex;align-items:center;gap:.35rem">
-      <b style="background:rgba(6, 87, 164,.2);color:var(--gold);padding:.05rem .35rem;border-radius:4px;font-size:.68rem">3</b>
+      <b style="background:rgba(6, 87, 164,.2);color:var(--accent);padding:.05rem .35rem;border-radius:4px;font-size:.68rem">3</b>
       Appuyez sur <strong style="color:#fff">Ajouter</strong>
     </span>
   </div>

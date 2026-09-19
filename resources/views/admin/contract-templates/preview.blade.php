@@ -29,7 +29,7 @@
 .vars-hdr { padding:.75rem 1rem; border-bottom:1px solid var(--c-border); font-size:.78rem; font-weight:700; color:var(--c-navy); display:flex; align-items:center; gap:.5rem }
 .vars-body { padding:.75rem 1rem; display:flex; flex-direction:column; gap:.35rem; max-height:340px; overflow-y:auto }
 .var-chip { display:flex; align-items:center; gap:.5rem; padding:.35rem .6rem; border-radius:7px; background:var(--c-bg,#f8f9fa); border:1px solid var(--c-border) }
-.var-chip code { font-size:.68rem; font-weight:700; color:var(--c-gold-d,#b45309) }
+.var-chip code { font-size:.68rem; font-weight:700; color:var(--c-accent-d,#b45309) }
 .var-chip span { font-size:.67rem; color:var(--c-muted); flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
 .var-chip .unknown { color:#ef4444; font-size:.67rem; font-style:italic }
 
@@ -107,7 +107,7 @@
     @if(!empty($detectedBalises))
     <div class="vars-card">
       <div class="vars-hdr">
-        <i class="fas fa-brackets-curly" style="color:var(--c-gold)"></i>
+        <i class="fas fa-brackets-curly" style="color:var(--c-accent)"></i>
         Variables détectées
         <span style="margin-left:auto;background:var(--c-bg);border:1px solid var(--c-border);border-radius:999px;padding:.1rem .5rem;font-size:.68rem;font-weight:600;color:var(--c-muted)">
           {{ count($detectedBalises) }}

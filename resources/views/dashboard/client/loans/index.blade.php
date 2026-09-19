@@ -24,7 +24,7 @@
 
 {{-- ── Stats bar ────────────────────────────────────────────── --}}
 <div class="cl-stats mb-4">
-  <div class="cl-stat" style="--stat-color:var(--cl-gold);--stat-color-bg:rgba(184,136,62,.12)">
+  <div class="cl-stat" style="--stat-color:var(--cl-accent);--stat-color-bg:rgba(184,136,62,.12)">
     <div class="cl-stat__icon"><i class="fas fa-layer-group"></i></div>
     <div class="cl-stat__val">{{ $stats['total'] }}</div>
     <div class="cl-stat__lbl">{{ __('app.stat_total') }}</div>
@@ -54,14 +54,14 @@
   <div class="cl-empty__body">
     {{ __('app.no_loans_body') }}
   </div>
-  <a href="{{ route('home',['locale'=>app()->getLocale()]) }}" class="cl-btn cl-btn--gold">
+  <a href="{{ route('home',['locale'=>app()->getLocale()]) }}" class="cl-btn cl-btn--accent">
     <i class="fas fa-globe me-1"></i> {{ __('app.back_to_site') }}
   </a>
 </div>
 @else
 
 <div class="cl-section-title">
-  <i class="fas fa-file-invoice-dollar me-1" style="color:var(--cl-gold)"></i>
+  <i class="fas fa-file-invoice-dollar me-1" style="color:var(--cl-accent)"></i>
   {{ trans_choice('app.files_total_count', $loans->total(), ['count' => $loans->total()]) }}
 </div>
 
@@ -83,7 +83,7 @@
     };
     $accentColor = match($loan->status) {
         'rejected'        => 'var(--cl-red)',
-        'finalized'       => 'var(--cl-gold)',
+        'finalized'       => 'var(--cl-accent)',
         'contract_signed' => 'var(--cl-green)',
         'contract_sent'   => 'var(--cl-blue)',
         default           => 'var(--cl-amber)',
@@ -128,7 +128,7 @@
 
         @if($loan->objet)
         <div style="font-size:.72rem;color:var(--cl-muted);margin-bottom:.875rem">
-          <i class="fas fa-tag me-1" style="color:var(--cl-gold-d)"></i>
+          <i class="fas fa-tag me-1" style="color:var(--cl-accent-d)"></i>
           {{ Str::limit($loan->objet, 55) }}
         </div>
         @endif

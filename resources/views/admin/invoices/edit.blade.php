@@ -6,7 +6,7 @@
 
 <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 page-hdr">
   <div>
-    <h4>Modifier — <span style="font-family:monospace;color:var(--c-gold)">{{ $invoice->reference }}</span></h4>
+    <h4>Modifier — <span style="font-family:monospace;color:var(--c-accent)">{{ $invoice->reference }}</span></h4>
     <p>Seuls les brouillons peuvent être modifiés.</p>
   </div>
   <a href="{{ route('admin.invoices.show', $invoice) }}" class="btn-ghost btn-sm-pro">

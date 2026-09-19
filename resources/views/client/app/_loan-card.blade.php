@@ -21,15 +21,15 @@ $statusLabel = match($loan->status) {
 @endphp
 <a href="{{ route('client.loans.show', $loan) }}" style="text-decoration:none">
   <div class="app-card" style="margin-bottom:.6rem;transition:border-color .15s"
-       onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+       onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.65rem">
       <div>
-        <div style="font-family:monospace;font-size:.78rem;color:var(--gold);font-weight:700;margin-bottom:.2rem">
+        <div style="font-family:monospace;font-size:.78rem;color:var(--accent);font-weight:700;margin-bottom:.2rem">
           {{ $loan->reference }}
         </div>
         <div class="fw-600" style="font-size:.95rem;color:var(--text)">
           {{ number_format((float)$loan->amount, 2, ',', ' ') }}
-          <span style="font-size:.8rem;color:var(--gold)">{{ $loan->currency }}</span>
+          <span style="font-size:.8rem;color:var(--accent)">{{ $loan->currency }}</span>
         </div>
       </div>
       <span class="status-badge {{ $badgeClass }}">{{ $statusLabel }}</span>

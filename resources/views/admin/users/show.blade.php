@@ -59,7 +59,7 @@
   font-size: .875rem; font-weight: 700; color: var(--c-navy);
   display: flex; align-items: center; gap: .5rem;
 }
-.cu-table-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-gold); }
+.cu-table-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-accent); }
 .cu-link-all {
   font-size: .7rem; font-weight: 700; color: var(--c-muted);
   text-decoration: none; display: flex; align-items: center; gap: .3rem;

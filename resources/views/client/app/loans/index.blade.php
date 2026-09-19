@@ -5,7 +5,7 @@
 @section('back_url', route('client.app.home'))
 
 @section('topbar_action')
-<span style="font-size:.8rem;font-weight:800;color:var(--ca-gold-l);min-width:28px;text-align:center">
+<span style="font-size:.8rem;font-weight:800;color:var(--ca-accent-l);min-width:28px;text-align:center">
   {{ $loans->count() }}
 </span>
 @endsection
@@ -38,7 +38,7 @@
   color:var(--ca-text-3);background:var(--ca-bg2);cursor:pointer;
   transition:.15s;
 }
-.dos-pill.active{background:rgba(129, 182, 233,.12);border-color:rgba(129, 182, 233,.3);color:var(--ca-gold-l)}
+.dos-pill.active{background:rgba(129, 182, 233,.12);border-color:rgba(129, 182, 233,.3);color:var(--ca-accent-l)}
 
 /* ── Loan cards ── */
 .dos-list{display:flex;flex-direction:column;gap:.625rem;padding:0 1.25rem}
@@ -120,11 +120,11 @@
     <div class="dos-chip__lbl">{{ __('app.stat_total') }}</div>
   </div>
   <div class="dos-chip">
-    <div class="dos-chip__val" style="color:var(--ca-gold-l)">{{ $active }}</div>
+    <div class="dos-chip__val" style="color:var(--ca-accent-l)">{{ $active }}</div>
     <div class="dos-chip__lbl">{{ __('app.stat_active') }}</div>
   </div>
   <div class="dos-chip">
-    <div class="dos-chip__val" style="color:var(--ca-gold-l)">{{ $finalized }}</div>
+    <div class="dos-chip__val" style="color:var(--ca-accent-l)">{{ $finalized }}</div>
     <div class="dos-chip__lbl">{{ __('app.stat_finalized') }}</div>
   </div>
   <div class="dos-chip">

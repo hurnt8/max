@@ -10,7 +10,7 @@
 .scard{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius-sm);padding:.875rem}
 .scard h6{font-size:.72rem;font-weight:700;color:var(--c-navy);text-transform:uppercase;letter-spacing:.04em;margin:0 0 .65rem}
 #uploadZone{border:2px dashed var(--c-border);border-radius:var(--radius-sm);padding:1.75rem 1rem;text-align:center;cursor:pointer;transition:border-color .2s,background .2s}
-#uploadZone:hover,.drag-over{border-color:var(--c-gold)!important;background:rgba(202,138,4,.05)!important}
+#uploadZone:hover,.drag-over{border-color:var(--c-accent)!important;background:rgba(202,138,4,.05)!important}
 .tag-pill{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .55rem;border-radius:5px;font-size:.7rem;font-family:monospace;font-weight:700;background:#F0FDF4;border:1px solid #86EFAC;color:#166534;margin:.2rem .1rem}
 .tag-pill.unknown{background:#FFF7ED;border-color:#FED7AA;color:#92400E}
 .step-num{width:22px;height:22px;border-radius:50%;background:var(--c-navy);color:#fff;font-size:.65rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -67,9 +67,9 @@
 
     {{-- Comment ça marche --}}
     <div class="scard">
-      <h6><i class="fas fa-magic me-1" style="color:var(--c-gold)"></i>Comment ça marche</h6>
+      <h6><i class="fas fa-magic me-1" style="color:var(--c-accent)"></i>Comment ça marche</h6>
       <ol style="padding-left:1.1rem;margin:0;font-size:.75rem;color:var(--c-muted);line-height:2">
-        <li>Créez votre PDF avec des <code style="color:var(--c-gold-d)">{balises}</code> dans le texte</li>
+        <li>Créez votre PDF avec des <code style="color:var(--c-accent-d)">{balises}</code> dans le texte</li>
         <li>Uploadez le PDF ci-contre</li>
         <li>Les balises sont détectées <strong>automatiquement</strong></li>
         <li>Au moment du contrat, les valeurs du client remplacent les balises</li>
@@ -96,7 +96,7 @@
       </div>
       <div id="uploadProgress" style="display:none;margin-top:.5rem">
         <div style="height:4px;background:var(--c-bg);border-radius:2px;overflow:hidden">
-          <div id="progressBar" style="height:100%;background:var(--c-gold);width:0%;transition:width .3s"></div>
+          <div id="progressBar" style="height:100%;background:var(--c-accent);width:0%;transition:width .3s"></div>
         </div>
         <div id="uploadStatus" style="font-size:.7rem;color:var(--c-muted);margin-top:.3rem;text-align:center"></div>
       </div>
@@ -105,7 +105,7 @@
     {{-- Balises détectées --}}
     <div class="scard" style="flex:1;overflow:hidden;display:flex;flex-direction:column">
       <h6>
-        <i class="fas fa-tags me-1" style="color:var(--c-gold)"></i>
+        <i class="fas fa-tags me-1" style="color:var(--c-accent)"></i>
         Balises détectées
         @if(!empty($detectedWithDesc))
         <span style="font-weight:400;color:var(--c-muted);text-transform:none;font-size:.68rem;margin-left:.3rem">
@@ -158,7 +158,7 @@
         <div style="display:flex;align-items:center;gap:.4rem;padding:.3rem .4rem;border-radius:4px;cursor:pointer;transition:background .15s"
              onmouseover="this.style.background='var(--c-bg)'" onmouseout="this.style.background=''"
              onclick="copyTag('{{ $var }}')" title="Copier {{ $var }}">
-          <code style="font-size:.65rem;color:var(--c-gold-d);font-weight:700;flex-shrink:0">{{ $var }}</code>
+          <code style="font-size:.65rem;color:var(--c-accent-d);font-weight:700;flex-shrink:0">{{ $var }}</code>
           <span style="font-size:.62rem;color:var(--c-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ $desc }}</span>
         </div>
         @endforeach

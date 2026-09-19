@@ -65,7 +65,7 @@
       <div class="ca-stat-chip__lbl">{{ __('app.total_sent') }}</div>
     </div>
     <div class="ca-stat-chip">
-      <div class="ca-stat-chip__val" style="color:var(--ca-gold-l)">
+      <div class="ca-stat-chip__val" style="color:var(--ca-accent-l)">
         {{ number_format($totalInterest, 0, ',', ' ') }}
       </div>
       <div class="ca-stat-chip__lbl">Intérêts</div>
@@ -124,13 +124,13 @@
     </div>
 
     <div class="ca-category-item">
-      <div class="ca-category-icon" style="background:rgba(129, 182, 233,.15);color:var(--ca-gold-l)">
+      <div class="ca-category-icon" style="background:rgba(129, 182, 233,.15);color:var(--ca-accent-l)">
         <i class="fas fa-percent"></i>
       </div>
       <div class="ca-category-info">
         <div class="ca-category-name">{{ __('app.cat_fees') }}</div>
         <div class="ca-category-bar">
-          <div class="ca-category-fill" style="--cat-color:var(--ca-gold-l);width:{{ min(100, $totalInterest/$maxVal*100) }}%"></div>
+          <div class="ca-category-fill" style="--cat-color:var(--ca-accent-l);width:{{ min(100, $totalInterest/$maxVal*100) }}%"></div>
         </div>
       </div>
       <div class="ca-category-amt">{{ number_format($totalInterest, 0, ',', ' ') }}</div>

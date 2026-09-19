@@ -107,7 +107,7 @@
       <div style="width:40px;height:40px;border-radius:50%;flex-shrink:0;
         background:linear-gradient(135deg,var(--c-navy),var(--c-navy-3));
         display:flex;align-items:center;justify-content:center;
-        color:var(--c-gold);font-weight:800;font-size:.875rem">
+        color:var(--c-accent);font-weight:800;font-size:.875rem">
         {{ strtoupper(substr($trf->user->name, 0, 1)) }}
       </div>
       <div>
@@ -242,7 +242,7 @@
         </div>
       </div>
       <div style="display:flex;gap:.5rem">
-        <button type="submit" class="btn-gold btn-sm-pro">
+        <button type="submit" class="btn-accent btn-sm-pro">
           <i class="fas fa-paper-plane"></i> Créer &amp; envoyer
         </button>
         <button type="button" class="btn-ghost btn-sm-pro"

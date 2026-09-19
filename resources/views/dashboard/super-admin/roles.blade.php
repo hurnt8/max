@@ -75,7 +75,7 @@
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236B7280'/%3E%3C/svg%3E");
   background-repeat:no-repeat; background-position:right .5rem center; padding-right:1.5rem;
 }
-.role-select:focus { outline:none; border-color:var(--c-gold); }
+.role-select:focus { outline:none; border-color:var(--c-accent); }
 
 /* ── User avatar ─────────────────────────────────── */
 .u-avatar {
@@ -165,12 +165,12 @@ $roleConf = [
   ],
   'admin' => [
     'icon'   => 'fa-shield-alt',
-    'color'  => 'var(--c-gold-d)',
+    'color'  => 'var(--c-accent-d)',
     'bg'     => '#FEF9EC',
     'badge'  => 'bs-amber',
     'name'   => 'Administrateur',
     'desc'   => 'Gestion complète des prêts, des utilisateurs et des modèles de contrats.',
-    'accent' => 'var(--c-gold)',
+    'accent' => 'var(--c-accent)',
   ],
   'client' => [
     'icon'   => 'fa-user',
@@ -225,7 +225,7 @@ $roleConf = [
           </th>
           <th>
             <div class="perm-col-head">
-              <div class="perm-col-icon" style="background:#FEF9EC;color:var(--c-gold-d)"><i class="fas fa-shield-alt"></i></div>
+              <div class="perm-col-icon" style="background:#FEF9EC;color:var(--c-accent-d)"><i class="fas fa-shield-alt"></i></div>
               <span>Admin</span>
             </div>
           </th>

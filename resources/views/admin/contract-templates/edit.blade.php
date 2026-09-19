@@ -225,7 +225,7 @@
           <div style="margin-top:.625rem;padding:.5rem .75rem;background:#F8FAFC;
                       border:1px solid var(--c-border);border-radius:6px;font-size:.72rem;
                       color:var(--c-muted);line-height:1.6">
-            <i class="fas fa-lightbulb me-1" style="color:var(--c-gold)"></i>
+            <i class="fas fa-lightbulb me-1" style="color:var(--c-accent)"></i>
             Fichier <code>.docx</code> max 20 Mo · Placeholders au format <code>{variable}</code> (accolades simples) ·
             En-têtes et pieds de page également analysés ·
             @if($template->hasDocxTemplate())

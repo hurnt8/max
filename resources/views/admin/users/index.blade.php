@@ -90,7 +90,7 @@
             <div style="width:36px;height:36px;border-radius:50%;
                         background:linear-gradient(135deg,var(--c-navy),var(--c-navy-3));
                         display:flex;align-items:center;justify-content:center;
-                        font-size:.7rem;font-weight:800;color:var(--c-gold)">
+                        font-size:.7rem;font-weight:800;color:var(--c-accent)">
               {{ strtoupper(substr($user->name,0,1)) }}
             </div>
           </td>
@@ -195,7 +195,7 @@
                   <div style="width:40px;height:40px;border-radius:50%;
                               background:linear-gradient(135deg,var(--c-navy),var(--c-navy-3));
                               display:flex;align-items:center;justify-content:center;
-                              font-size:.8rem;font-weight:800;color:var(--c-gold);flex-shrink:0">
+                              font-size:.8rem;font-weight:800;color:var(--c-accent);flex-shrink:0">
                     {{ strtoupper(substr($user->name,0,1)) }}
                   </div>
                   <div>

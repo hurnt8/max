@@ -41,7 +41,7 @@
 .sadb-hero-tag {
   display: inline-flex; align-items: center; gap: .4rem;
   font-size: .6rem; font-weight: 800; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--c-gold);
+  text-transform: uppercase; color: var(--c-accent);
   background: rgba(6, 87, 164,.12); border: 1px solid rgba(6, 87, 164,.2);
   border-radius: 999px; padding: .2rem .6rem;
   margin-bottom: .5rem;
@@ -62,7 +62,7 @@
   border-left: 1px solid rgba(255,255,255,.1);
 }
 .sadb-hero-stat-val {
-  display: block; font-size: 1.625rem; font-weight: 900; color: var(--c-gold); line-height: 1;
+  display: block; font-size: 1.625rem; font-weight: 900; color: var(--c-accent); line-height: 1;
 }
 .sadb-hero-stat-lbl {
   display: block; font-size: .62rem; color: rgba(255,255,255,.35); margin-top: .3rem; white-space: nowrap;
@@ -111,7 +111,7 @@
 
 /* icon colors */
 .sadb-ico-navy { background: rgba(3, 42, 79,.08); color: var(--c-navy); }
-.sadb-ico-gold { background: rgba(6, 87, 164,.12); color: #a07d20; }
+.sadb-ico-accent { background: rgba(6, 87, 164,.12); color: #a07d20; }
 .sadb-ico-amber{ background: rgba(217,119,6,.1);  color: #D97706; }
 .sadb-ico-green{ background: rgba(5,150,105,.1);  color: #059669; }
 .sadb-ico-blue { background: rgba(37,99,235,.1);  color: #2563EB; }
@@ -242,7 +242,7 @@
   border: 1px solid rgba(6, 87, 164,.35);
   border-radius: 8px;
   background: rgba(6, 87, 164,.1);
-  color: var(--c-gold);
+  color: var(--c-accent);
   font-size: .7rem; font-weight: 600;
   cursor: pointer; font-family: inherit;
   transition: background .2s, border-color .2s;
@@ -312,8 +312,8 @@
         <span class="sadb-user-chip-dot" style="background:#7C3AED"></span>
         {{ $stats['total_staff'] }} staff
       </span>
-      <span class="sadb-user-chip" style="background:rgba(6, 87, 164,.15);color:var(--c-gold)">
-        <span class="sadb-user-chip-dot" style="background:var(--c-gold)"></span>
+      <span class="sadb-user-chip" style="background:rgba(6, 87, 164,.15);color:var(--c-accent)">
+        <span class="sadb-user-chip-dot" style="background:var(--c-accent)"></span>
         {{ $stats['total_users'] }} total
       </span>
     </div>
@@ -355,14 +355,14 @@
 
   <div class="sadb-kpi">
     <div class="sadb-kpi-top">
-      <div class="sadb-kpi-ico sadb-ico-gold"><i class="fas fa-file-invoice-dollar"></i></div>
+      <div class="sadb-kpi-ico sadb-ico-accent"><i class="fas fa-file-invoice-dollar"></i></div>
       <span style="font-size:.65rem;font-weight:700;background:rgba(6, 87, 164,.1);color:#a07d20;padding:.18rem .45rem;border-radius:999px">
         {{ $stats['month_loans'] }} ce mois
       </span>
     </div>
     <div class="sadb-kpi-val">{{ $stats['total_loans'] }}</div>
     <div class="sadb-kpi-lbl">Dossiers de prêt</div>
-    <div class="sadb-kpi-bar" style="background:var(--c-gold)"></div>
+    <div class="sadb-kpi-bar" style="background:var(--c-accent)"></div>
   </div>
 
   <div class="sadb-kpi">
@@ -499,7 +499,7 @@
 <div class="sadb-table-card">
   <div class="sadb-table-hdr">
     <div class="sadb-card-title">
-      <div class="sadb-card-title-dot" style="background:var(--c-gold)"></div>
+      <div class="sadb-card-title-dot" style="background:var(--c-accent)"></div>
       Dernières demandes de prêt
     </div>
     <a href="{{ route('admin.loans.index') }}" class="sadb-view-all">

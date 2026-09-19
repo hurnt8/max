@@ -102,16 +102,16 @@
   background:var(--ca-bg3);border:1.5px solid var(--ca-border);
   color:var(--ca-text-3);
 }
-.ds-step.done .ds-step__dot{background:rgba(129, 182, 233,.15);border-color:var(--ca-gold-l);color:var(--ca-gold-l)}
-.ds-step.current .ds-step__dot{background:var(--ca-gold-l);border-color:var(--ca-gold-l);color:#fff;box-shadow:0 0 12px rgba(129, 182, 233,.35)}
-.ds-step:not(:last-child).done::after{background:var(--ca-gold-l);opacity:.4}
+.ds-step.done .ds-step__dot{background:rgba(129, 182, 233,.15);border-color:var(--ca-accent-l);color:var(--ca-accent-l)}
+.ds-step.current .ds-step__dot{background:var(--ca-accent-l);border-color:var(--ca-accent-l);color:#fff;box-shadow:0 0 12px rgba(129, 182, 233,.35)}
+.ds-step:not(:last-child).done::after{background:var(--ca-accent-l);opacity:.4}
 .ds-step__info{padding-top:.4rem}
 .ds-step__label{font-size:.825rem;font-weight:600;color:var(--ca-text-3)}
 .ds-step.done    .ds-step__label{color:var(--ca-text-2)}
 .ds-step.current .ds-step__label{color:var(--ca-text);font-weight:700}
 .ds-step__tag{display:inline-block;font-size:.6rem;padding:.1rem .5rem;border-radius:999px;margin-top:.25rem;font-weight:700}
-.ds-step__tag--done{background:rgba(129, 182, 233,.12);color:var(--ca-gold-l)}
-.ds-step__tag--cur {background:rgba(129, 182, 233,.2);color:var(--ca-gold-l)}
+.ds-step__tag--done{background:rgba(129, 182, 233,.12);color:var(--ca-accent-l)}
+.ds-step__tag--cur {background:rgba(129, 182, 233,.2);color:var(--ca-accent-l)}
 
 /* ── Detail card ── */
 .ds-detail{background:var(--ca-bg2);border:1px solid var(--ca-border);border-radius:18px;margin:0 1.25rem;overflow:hidden}
@@ -128,7 +128,7 @@
 }
 .ds-row__label{font-size:.78rem;color:var(--ca-text-3)}
 .ds-row__val{font-size:.8rem;font-weight:700;color:var(--ca-text);text-align:right;max-width:55%}
-.ds-row__val--gold{color:var(--ca-gold-l)}
+.ds-row__val--accent{color:var(--ca-accent-l)}
 .ds-row__val--teal{color:var(--ca-teal-l)}
 
 /* ── Amortization table ── */
@@ -258,7 +258,7 @@ table.ds-table td.td-rem{color:var(--ca-text-3)}
   </div>
   <div class="ds-kpi">
     <div class="ds-kpi__lbl">{{ __('app.loan_interest') }}</div>
-    <div class="ds-kpi__val" style="color:var(--ca-gold-l)">{{ number_format($interest, 0, ',', ' ') }}</div>
+    <div class="ds-kpi__val" style="color:var(--ca-accent-l)">{{ number_format($interest, 0, ',', ' ') }}</div>
     <div class="ds-kpi__sub">{{ $loan->currency }} · {{ $loan->interest_rate }}%</div>
   </div>
   <div class="ds-kpi">
@@ -310,7 +310,7 @@ table.ds-table td.td-rem{color:var(--ca-text-3)}
   @foreach([
     ['fa-coins',        __('app.loan_capital'),  number_format($principal,2,',',' ').' '.$loan->currency, 'teal'],
     ['fa-percent',      __('app.rate'),           $loan->interest_rate.' %', ''],
-    ['fa-chart-line',   __('app.loan_interest'),  number_format($interest,2,',',' ').' '.$loan->currency, 'gold'],
+    ['fa-chart-line',   __('app.loan_interest'),  number_format($interest,2,',',' ').' '.$loan->currency, 'accent'],
     ['fa-calculator',   __('app.loan_total'),     number_format($loan->total_with_interest,2,',',' ').' '.$loan->currency, ''],
     ['fa-receipt',      __('app.loan_fees'),      $loan->admin_fees ? number_format($loan->admin_fees,2,',',' ').' '.$loan->currency : '—', ''],
     ['fa-calendar-day', __('app.loan_start'),     $loan->start_date?->format('d/m/Y') ?? '—', ''],
@@ -321,7 +321,7 @@ table.ds-table td.td-rem{color:var(--ca-text-3)}
       <div class="ds-row__ico"><i class="fas {{ $icon }}"></i></div>
       <span class="ds-row__label">{{ $label }}</span>
     </div>
-    <span class="ds-row__val @if($color==='teal') ds-row__val--teal @elseif($color==='gold') ds-row__val--gold @endif">{{ $val }}</span>
+    <span class="ds-row__val @if($color==='teal') ds-row__val--teal @elseif($color==='accent') ds-row__val--accent @endif">{{ $val }}</span>
   </div>
   @endforeach
 </div>

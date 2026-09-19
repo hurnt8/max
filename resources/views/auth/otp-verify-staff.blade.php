@@ -15,14 +15,14 @@
 <style>
 :root{
   --navy:#032A4F;--nm:#043767;--nl:#054685;
-  --gold:#0657A4;--gd:#054685;--gp:#DEEBF7;
+  --accent:#0657A4;--gd:#054685;--gp:#DEEBF7;
 }
 html,body{height:100%;margin:0;padding:0}
 body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:flex;flex-direction:column}
 
 .auth-left{
   /* Fond bleu profond : accent eclairci pour rester lisible (AA). */
-  --gold:#81B6E9;--gd:#2B94F7;
+  --accent:#81B6E9;--gd:#2B94F7;
   background:linear-gradient(160deg,#032A4F 0%,#032A4F 45%,#112237 100%);
   min-height:100vh; padding:2.5rem 3rem;
   display:flex;flex-direction:column;justify-content:space-between;
@@ -53,16 +53,16 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
   width:32px;height:32px;border-radius:8px;
   background:rgba(6, 87, 164,.12);display:flex;align-items:center;justify-content:center;
 }
-.staff-badge__ico i{color:var(--gold);font-size:.75rem}
+.staff-badge__ico i{color:var(--accent);font-size:.75rem}
 .staff-badge__text{line-height:1.3}
-.staff-badge__label{font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.05em;text-transform:uppercase}
+.staff-badge__label{font-size:.72rem;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase}
 .staff-badge__sub{font-size:.68rem;color:rgba(255,255,255,.35)}
 
 .auth-left__title{
   font-family:'Playfair Display',serif;font-size:2.25rem;font-weight:800;
   color:#fff;line-height:1.2;margin-bottom:.875rem;
 }
-.auth-left__title span{color:var(--gold)}
+.auth-left__title span{color:var(--accent)}
 .auth-left__sub{font-size:.875rem;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:2rem;max-width:340px}
 
 .auth-left__copy{font-size:.7rem;color:rgba(255,255,255,.2);position:relative;z-index:1}

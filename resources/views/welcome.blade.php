@@ -66,7 +66,7 @@
                 <h1 class="font-serif text-white mb-3"
                     style="font-size:clamp(2rem,4.5vw,3.375rem);font-weight:800;line-height:1.12;">
                     {{ __('home.slide_1.text1') }}
-                    <span style="color:var(--gold);display:block;margin-top:.15em;">{{ __('home.slide_1.text2') }}</span>
+                    <span style="color:var(--accent);display:block;margin-top:.15em;">{{ __('home.slide_1.text2') }}</span>
                 </h1>
 
                 {{-- Accroche sous-titre --}}
@@ -82,7 +82,7 @@
                         ['fas fa-sync-alt',   __('home.infos.item4')],
                     ] as $pill)
                     <span style="display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:.3rem .85rem;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:500;">
-                        <i class="{{ $pill[0] }}" style="color:var(--gold);font-size:.65rem;"></i>
+                        <i class="{{ $pill[0] }}" style="color:var(--accent);font-size:.65rem;"></i>
                         {{ $pill[1] }}
                     </span>
                     @endforeach
@@ -109,7 +109,7 @@
                         ['fas fa-users',       __('home.member'),                     '8 500+'],
                     ] as $trust)
                     <div class="d-flex align-items-center gap-2">
-                        <div style="width:32px;height:32px;background:rgba(6, 87, 164,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.7rem;flex-shrink:0;">
+                        <div style="width:32px;height:32px;background:rgba(6, 87, 164,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:.7rem;flex-shrink:0;">
                             <i class="{{ $trust[0] }}"></i>
                         </div>
                         <div>
@@ -198,12 +198,12 @@ $serviceNav = [
 .about-engage-card {
     display:flex; gap:1rem; padding:1rem 1.25rem;
     background:var(--cream); border-radius:12px;
-    border-left:3px solid var(--gold); margin-bottom:.75rem;
+    border-left:3px solid var(--accent); margin-bottom:.75rem;
 }
 .about-engage-icon {
     width:42px; height:42px; flex-shrink:0; border-radius:10px;
-    background:var(--gold-pale); display:flex; align-items:center;
-    justify-content:center; color:var(--gold-dark); font-size:1rem;
+    background:var(--accent-pale); display:flex; align-items:center;
+    justify-content:center; color:var(--accent-dark); font-size:1rem;
 }
 .about-engage-title { font-size:.875rem; font-weight:800; color:var(--navy); margin-bottom:.2rem; }
 .about-engage-desc  { font-size:.78rem; color:#6b7280; margin:0; line-height:1.55; }
@@ -216,7 +216,7 @@ $serviceNav = [
     font-size:.82rem; font-weight:600; color:var(--navy); padding:.4rem 0;
     border-bottom:1px solid #f3f4f6;
 }
-.about-loan-item i { color:var(--gold); width:16px; text-align:center; font-size:.8rem; }
+.about-loan-item i { color:var(--accent); width:16px; text-align:center; font-size:.8rem; }
 
 .about-partner-bar {
     display:flex; align-items:center; gap:.55rem;
@@ -241,7 +241,7 @@ $serviceNav = [
     padding:.3rem .8rem; white-space:nowrap; flex-shrink:0;
     transition:border-color .25s ease, box-shadow .25s ease;
 }
-.about-partner-bar__name:hover { border-color:var(--gold); box-shadow:0 2px 10px rgba(6, 87, 164,.18); }
+.about-partner-bar__name:hover { border-color:var(--accent); box-shadow:0 2px 10px rgba(6, 87, 164,.18); }
 @media (prefers-reduced-motion: reduce) {
     .about-partner-bar__track { animation:none; flex-wrap:wrap; width:100%; }
 }
@@ -302,7 +302,7 @@ $serviceNav = [
 
                 {{-- Types de prêts --}}
                 <div style="font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--navy);margin-bottom:.6rem;">
-                    <i class="fas fa-tags" style="color:var(--gold);margin-right:.35rem;"></i>@lang('home.discover_our_loan_services')
+                    <i class="fas fa-tags" style="color:var(--accent);margin-right:.35rem;"></i>@lang('home.discover_our_loan_services')
                 </div>
                 <div class="about-loan-grid">
                     <div class="about-loan-item"><i class="fas fa-user-tie"></i> @lang('home.personal_loan')</div>
@@ -428,13 +428,13 @@ $serviceNav = [
     <div class="container">
         <div class="row gutter-y-50 align-items-center">
             <div class="col-lg-5 wow fadeInLeft" data-wow-duration="900ms">
-                <div class="section-label" style="color:var(--gold);">{{ __('home.works.sectagline') }}</div>
+                <div class="section-label" style="color:var(--accent);">{{ __('home.works.sectagline') }}</div>
                 <h2 class="section-title section-title--white">{{ __('home.loan_reasons.sectitle') }}</h2>
                 <p class="section-sub section-sub--white mb-8">{{ __('home.about.text2') }}</p>
 
                 @foreach ([1,2,3] as $r)
                 <div class="d-flex align-items-start gap-3 mb-4">
-                    <div style="width:36px;height:36px;background:rgba(6, 87, 164,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;">
+                    <div style="width:36px;height:36px;background:rgba(6, 87, 164,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0;">
                         <i class="fas fa-check"></i>
                     </div>
                     <div>
@@ -521,7 +521,7 @@ $serviceNav = [
 }
 .partner-logo:hover {
     filter:grayscale(0); opacity:1;
-    border-color:var(--gold); box-shadow:0 4px 22px rgba(6, 87, 164,.2);
+    border-color:var(--accent); box-shadow:0 4px 22px rgba(6, 87, 164,.2);
 }
 .partner-logo--text {
     font-size:.85rem; font-weight:700; color:var(--navy);
@@ -742,7 +742,7 @@ new Swiper('.testimonials-swiper', {
     <div class="container">
         <div class="row align-items-center gutter-y-30">
             <div class="col-lg-7 wow fadeInLeft" data-wow-duration="900ms">
-                <div class="section-label" style="color:var(--gold);">@lang('menu.newsletter_title')</div>
+                <div class="section-label" style="color:var(--accent);">@lang('menu.newsletter_title')</div>
                 <h2 class="section-title section-title--white mb-0">@lang('home.loan_reasons.sectitle')</h2>
             </div>
             <div class="col-lg-5 text-lg-end wow fadeInRight" data-wow-duration="900ms" data-wow-delay="150ms">

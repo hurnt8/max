@@ -5,7 +5,7 @@
 <style>
 /* ── Top nav ── */
 .acs-back{display:inline-flex;align-items:center;gap:.5rem;font-size:.8125rem;color:var(--c-muted);text-decoration:none;margin-bottom:1.375rem;font-weight:500;transition:.15s}
-.acs-back:hover{color:var(--c-gold)}
+.acs-back:hover{color:var(--c-accent)}
 
 /* ── Hero card ── */
 .acs-hero{background:linear-gradient(135deg,#1B4976 0%,#0D2E52 100%);border-radius:var(--radius-md);padding:2rem 2.25rem;color:#fff;display:grid;grid-template-columns:auto 1fr auto;gap:1.75rem;align-items:center;margin-bottom:1.75rem}
@@ -40,7 +40,7 @@
 .acs-field{margin-bottom:.875rem}
 .acs-field label{display:block;font-size:.72rem;font-weight:700;color:var(--c-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.35rem}
 .acs-field input,.acs-field textarea{width:100%;padding:.55rem .875rem;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:.875rem;background:var(--c-bg);color:var(--c-navy);outline:none;transition:.2s;font-family:inherit}
-.acs-field input:focus,.acs-field textarea:focus{border-color:var(--c-gold);box-shadow:0 0 0 3px rgba(6, 87, 164,.1)}
+.acs-field input:focus,.acs-field textarea:focus{border-color:var(--c-accent);box-shadow:0 0 0 3px rgba(6, 87, 164,.1)}
 
 .btn-credit{width:100%;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.65rem 1.25rem;border-radius:var(--radius-sm);font-size:.8125rem;font-weight:700;border:none;cursor:pointer;background:#16a34a;color:#fff;transition:.15s}
 .btn-credit:hover{background:#15803d}

@@ -12,7 +12,7 @@
     <p>Gestion et suivi de la facturation clients</p>
   </div>
   <div class="page-hdr-actions">
-    <a href="{{ route('admin.invoices.create') }}" class="btn-gold">
+    <a href="{{ route('admin.invoices.create') }}" class="btn-accent">
       <i class="fas fa-plus"></i> Nouvelle facture
     </a>
   </div>
@@ -49,10 +49,10 @@
     <div class="metric-card__accent" style="background:var(--c-green)"></div>
   </div>
   <div class="metric-card">
-    <div class="metric-card__icon mi-gold"><i class="fas fa-coins"></i></div>
+    <div class="metric-card__icon mi-accent"><i class="fas fa-coins"></i></div>
     <div class="metric-card__val" style="font-size:1.25rem">{{ number_format($totalRevenue, 0, ',', ' ') }}</div>
     <div class="metric-card__lbl">Revenu encaissé</div>
-    <div class="metric-card__accent" style="background:var(--c-gold)"></div>
+    <div class="metric-card__accent" style="background:var(--c-accent)"></div>
   </div>
 </div>
 

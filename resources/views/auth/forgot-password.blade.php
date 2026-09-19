@@ -21,8 +21,8 @@
   --inp:  #141C2E;
   --navy: #032A4F;
   --navy2:#043767;
-  --gold: #81B6E9;
-  --gold2:#2B94F7;
+  --accent: #81B6E9;
+  --accent-2:#2B94F7;
   --text: #FFFFFF;
   --sub:  rgba(255,255,255,.52);
   --muted:rgba(255,255,255,.28);
@@ -89,7 +89,7 @@ a{text-decoration:none;color:inherit}
   margin:0 auto 1.5rem;
   box-shadow:0 0 28px rgba(129, 182, 233,.15);
 }
-.icon-badge i{font-size:1.75rem;color:var(--gold)}
+.icon-badge i{font-size:1.75rem;color:var(--accent)}
 
 /* Heading */
 .card-title{font-family:'Inter',sans-serif;font-size:1.625rem;font-weight:800;color:var(--text);margin-bottom:.45rem}
@@ -126,15 +126,15 @@ a{text-decoration:none;color:inherit}
 }
 .finput::placeholder{color:rgba(255,255,255,.2)}
 .finput:focus{border-color:var(--navy);background:#161E30;box-shadow:0 0 0 3.5px rgba(3, 42, 79,.25)}
-.finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--gold)}
+.finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--accent)}
 .finput.err{border-color:#ef4444}
 
-/* Gold pill button */
+/* Bouton pilule accent */
 .fbtn{
   width:100%;padding:.92rem 1.5rem;border:none;border-radius:999px;
   font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;
   display:flex;align-items:center;justify-content:center;gap:.625rem;
-  background:linear-gradient(90deg,var(--gold) 0%,var(--gold2) 100%);
+  background:linear-gradient(90deg,var(--accent) 0%,var(--accent-2) 100%);
   color:var(--navy);letter-spacing:.01em;
   box-shadow:0 6px 28px rgba(129, 182, 233,.35),0 2px 8px rgba(0,0,0,.3);
   transition:filter .2s,box-shadow .2s,transform .1s;margin-top:.25rem;
@@ -145,7 +145,7 @@ a{text-decoration:none;color:inherit}
 
 /* Back to login */
 .back-link{margin-top:1.375rem;font-size:.78rem;color:var(--muted)}
-.back-link a{color:var(--gold);font-weight:600;transition:opacity .18s}
+.back-link a{color:var(--accent);font-weight:600;transition:opacity .18s}
 .back-link a:hover{opacity:.75}
 
 /* Footer */

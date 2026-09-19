@@ -37,12 +37,12 @@
 .adb-hero-left { position: relative; z-index: 1; }
 .adb-hero-tag {
   font-size: .62rem; font-weight: 700; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--c-gold);
+  text-transform: uppercase; color: var(--c-accent);
   display: flex; align-items: center; gap: .4rem; margin-bottom: .4rem;
 }
 .adb-hero-tag::before {
   content: '';
-  width: 18px; height: 2px; border-radius: 1px; background: var(--c-gold);
+  width: 18px; height: 2px; border-radius: 1px; background: var(--c-accent);
 }
 .adb-hero-title { font-size: 1.375rem; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: .25rem; }
 .adb-hero-sub   { font-size: .78rem; color: rgba(255,255,255,.4); }
@@ -60,7 +60,7 @@
 .adb-hero-kpi + .adb-hero-kpi {
   border-left: 1px solid rgba(255,255,255,.1);
 }
-.adb-hero-kpi-val { display: block; font-size: 1.5rem; font-weight: 900; color: var(--c-gold); line-height: 1; }
+.adb-hero-kpi-val { display: block; font-size: 1.5rem; font-weight: 900; color: var(--c-accent); line-height: 1; }
 .adb-hero-kpi-lbl { display: block; font-size: .62rem; color: rgba(255,255,255,.4); margin-top: .3rem; white-space: nowrap; }
 
 /* ── Alert banner ── */
@@ -123,7 +123,7 @@
 
 /* Colors */
 .adb-ico-navy { background: rgba(3, 42, 79,.08); color: var(--c-navy); }
-.adb-ico-gold { background: rgba(6, 87, 164,.12); color: #a07d20; }
+.adb-ico-accent { background: rgba(6, 87, 164,.12); color: #a07d20; }
 .adb-ico-amber{ background: rgba(217,119,6,.1);  color: #D97706; }
 .adb-ico-green{ background: rgba(5,150,105,.1);  color: #059669; }
 .adb-ico-red  { background: rgba(220,38,38,.1);  color: #DC2626; }
@@ -262,7 +262,7 @@
   border: 1px solid rgba(6, 87, 164,.35);
   border-radius: 8px;
   background: rgba(6, 87, 164,.1);
-  color: var(--c-gold);
+  color: var(--c-accent);
   font-size: .7rem; font-weight: 600;
   cursor: pointer; font-family: inherit;
   transition: background .2s, border-color .2s;
@@ -359,14 +359,14 @@
 
   <div class="adb-kpi">
     <div class="adb-kpi-top">
-      <div class="adb-kpi-ico adb-ico-gold"><i class="fas fa-file-invoice-dollar"></i></div>
+      <div class="adb-kpi-ico adb-ico-accent"><i class="fas fa-file-invoice-dollar"></i></div>
       <span class="adb-kpi-change" style="background:rgba(6, 87, 164,.12);color:#a07d20">
         {{ $stats['month_loans'] }} ce mois
       </span>
     </div>
     <div class="adb-kpi-val">{{ $stats['total_loans'] }}</div>
     <div class="adb-kpi-lbl">Mes dossiers</div>
-    <div class="adb-kpi-bar" style="background:var(--c-gold)"></div>
+    <div class="adb-kpi-bar" style="background:var(--c-accent)"></div>
   </div>
 
   <div class="adb-kpi">
@@ -500,7 +500,7 @@
 <div class="adb-table-card">
   <div class="adb-table-hdr">
     <div class="adb-card-title">
-      <div class="adb-card-title-dot" style="background:var(--c-gold)"></div>
+      <div class="adb-card-title-dot" style="background:var(--c-accent)"></div>
       Mes derniers dossiers
     </div>
     <a href="{{ route('admin.loans.index') }}" class="adb-view-all">

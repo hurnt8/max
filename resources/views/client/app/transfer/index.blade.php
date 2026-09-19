@@ -47,7 +47,7 @@
 /* ── Section header ── */
 .trf-section{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.25rem .625rem}
 .trf-section__title{font-size:.85rem;font-weight:700;color:var(--ca-text)}
-.trf-section__link{font-size:.75rem;font-weight:600;color:var(--ca-gold-l);display:inline-flex;align-items:center;gap:.3rem}
+.trf-section__link{font-size:.75rem;font-weight:600;color:var(--ca-accent-l);display:inline-flex;align-items:center;gap:.3rem}
 
 /* ── Transfer list ── */
 .trf-list{padding:0 1.25rem;display:flex;flex-direction:column;gap:.5rem}

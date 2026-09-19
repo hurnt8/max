@@ -74,8 +74,8 @@
 }
 .pm-circles { position:absolute;bottom:1rem;right:4.5rem;display:flex;pointer-events:none }
 .pm-circ {width:30px;height:30px;border-radius:50%;opacity:.3}
-.pm-circ:first-child{background:var(--ca-gold);margin-right:-12px}
-.pm-circ:last-child {background:var(--ca-gold-l)}
+.pm-circ:first-child{background:var(--ca-accent);margin-right:-12px}
+.pm-circ:last-child {background:var(--ca-accent-l)}
 
 /* Actions copier */
 .pm-actions {

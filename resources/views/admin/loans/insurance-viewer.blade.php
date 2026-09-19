@@ -14,8 +14,8 @@
 :root {
   --navy:    #032A4F;
   --navy2:   #043767;
-  --gold:    #81B6E9;
-  --goldd:   #2B94F7;
+  --accent:    #81B6E9;
+  --accent-d:   #2B94F7;
   --green:   #059669;
   --greend:  #047857;
   --red:     #DC2626;
@@ -52,7 +52,7 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; overflow: hidden; b
 }
 .s-logo {
   width: 30px; height: 30px; border-radius: 6px;
-  background: var(--gold);
+  background: var(--accent);
   display: flex; align-items: center; justify-content: center;
   font-size: .62rem; font-weight: 900; color: var(--navy);
   letter-spacing: .01em; flex-shrink: 0;
@@ -92,7 +92,7 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; overflow: hidden; b
 }
 .s-ref {
   font-family: 'Courier New', monospace;
-  font-size: .98rem; font-weight: 800; color: var(--gold);
+  font-size: .98rem; font-weight: 800; color: var(--accent);
   margin-bottom: .35rem; letter-spacing: .02em;
 }
 .s-client-name  { font-size: .8rem; font-weight: 600; color: var(--text); margin-bottom: .14rem; }
@@ -110,7 +110,7 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; overflow: hidden; b
   text-transform: uppercase; letter-spacing: .07em; margin-bottom: .18rem;
 }
 .s-meta-val { font-size: .78rem; font-weight: 700; color: var(--text); }
-.s-meta-val.gold  { color: var(--gold); }
+.s-meta-val.accent  { color: var(--accent); }
 .s-meta-val.green { color: #6EE7B7; }
 .s-meta-val.full  { grid-column: 1 / -1; }
 
@@ -264,7 +264,7 @@ kbd {
   color: var(--text); padding: .35rem .55rem;
   border-radius: 6px; font-size: .8rem; cursor: pointer;
 }
-.pv-mob-ref  { font-family: 'Courier New', monospace; font-size: .82rem; font-weight: 700; color: var(--gold); }
+.pv-mob-ref  { font-family: 'Courier New', monospace; font-size: .82rem; font-weight: 700; color: var(--accent); }
 .pv-mob-name { font-size: .74rem; color: var(--sub); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .pv-overlay {
@@ -287,7 +287,7 @@ kbd {
 .cf-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center;padding:1rem}
 .cf-modal-overlay.open{display:flex}
 .cf-modal{background:var(--navy2);border:1px solid var(--line);border-radius:14px;max-width:400px;width:100%;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.cf-modal-icon{width:40px;height:40px;border-radius:10px;background:rgba(129, 182, 233,.15);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:.75rem}
+.cf-modal-icon{width:40px;height:40px;border-radius:10px;background:rgba(129, 182, 233,.15);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:.75rem}
 .cf-modal-title{font-size:.95rem;font-weight:800;color:var(--text);margin-bottom:.5rem}
 .cf-modal-msg{font-size:.8rem;color:var(--sub);line-height:1.6;margin-bottom:1.25rem;white-space:pre-line}
 .cf-modal-actions{display:flex;gap:.5rem;justify-content:flex-end}
@@ -333,7 +333,7 @@ kbd {
     <div class="s-meta">
       <div>
         <div class="s-meta-lbl">Capital assuré</div>
-        <div class="s-meta-val gold">{{ number_format($loan->amount, 0, ',', ' ') }} {{ $loan->currency }}</div>
+        <div class="s-meta-val accent">{{ number_format($loan->amount, 0, ',', ' ') }} {{ $loan->currency }}</div>
       </div>
       <div>
         <div class="s-meta-lbl">Durée</div>

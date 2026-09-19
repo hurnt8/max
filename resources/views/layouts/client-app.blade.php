@@ -182,7 +182,7 @@
 {{-- ══ BANNIERE PWA ══ --}}
 <div class="ca-install-banner" id="ca-install-banner" role="complementary">
   <div style="width:42px;height:42px;border-radius:14px;background:rgba(129, 182, 233,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-    <i class="fas fa-mobile-screen" style="color:var(--ca-gold-l);font-size:1.25rem"></i>
+    <i class="fas fa-mobile-screen" style="color:var(--ca-accent-l);font-size:1.25rem"></i>
   </div>
   <div style="flex:1;min-width:0">
     <div style="font-size:.875rem;font-weight:700;color:var(--ca-text);margin-bottom:.15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">

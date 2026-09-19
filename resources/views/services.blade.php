@@ -72,7 +72,7 @@
     <div class="container">
         <div class="row align-items-center gutter-y-30">
             <div class="col-lg-7 wow fadeInLeft" data-wow-duration="900ms">
-                <div class="section-label" style="color:var(--gold);">{{ __('home.services.sectagline') }}</div>
+                <div class="section-label" style="color:var(--accent);">{{ __('home.services.sectagline') }}</div>
                 <h2 class="section-title section-title--white mb-2">{{ __('home.services.cta_title') }}</h2>
                 <p class="section-sub section-sub--white">{{ __('home.services.cta_text') }}</p>
             </div>
@@ -89,19 +89,19 @@
                 <div class="d-flex flex-wrap justify-content-lg-end gap-4 mt-5">
                     @if($siteContact->address_1)
                     <div class="d-flex align-items-center gap-2">
-                        <i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.9rem;"></i>
+                        <i class="fas fa-map-marker-alt" style="color:var(--accent);font-size:.9rem;"></i>
                         <span style="color:rgba(255,255,255,.6);font-size:.875rem;">{{ $siteContact->address_1 }}</span>
                     </div>
                     @endif
                     @if($siteContact->phone_1)
                     <div class="d-flex align-items-center gap-2">
-                        <i class="fas fa-phone-alt" style="color:var(--gold);font-size:.9rem;"></i>
+                        <i class="fas fa-phone-alt" style="color:var(--accent);font-size:.9rem;"></i>
                         <a href="tel:{{ preg_replace('/[^\d+]/', '', $siteContact->phone_1) }}" style="color:rgba(255,255,255,.6);font-size:.875rem;">{{ $siteContact->phone_1 }}</a>
                     </div>
                     @endif
                     @if($siteContact->email)
                     <div class="d-flex align-items-center gap-2">
-                        <i class="fas fa-envelope" style="color:var(--gold);font-size:.9rem;"></i>
+                        <i class="fas fa-envelope" style="color:var(--accent);font-size:.9rem;"></i>
                         <a href="mailto:{{ $siteContact->email }}" style="color:rgba(255,255,255,.6);font-size:.875rem;">{{ $siteContact->email }}</a>
                     </div>
                     @endif

@@ -101,7 +101,7 @@
     <div class="container">
         <div class="row g-4 gutter-y-50 align-items-center">
             <div class="col-lg-6 wow fadeInLeft" data-wow-duration="900ms">
-                <div class="section-label" style="color:var(--gold);">Simulation</div>
+                <div class="section-label" style="color:var(--accent);">Simulation</div>
                 <h2 class="section-title section-title--white mb-4">@lang('home.simulate.sectitle')</h2>
                 <p class="section-sub section-sub--white">{{ __('loan.' . $loanKey . '.description') }}</p>
             </div>

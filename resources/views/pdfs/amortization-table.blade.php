@@ -66,7 +66,7 @@ body {
     color: #032A4F;
     font-weight: 700;
 }
-.summary-cell.value-gold { color: #0657A4; font-weight: 700; }
+.summary-cell.value-accent { color: #0657A4; font-weight: 700; }
 
 table.schedule {
     width: 100%;
@@ -155,7 +155,7 @@ table.schedule tfoot td:first-child { text-align: center; }
     </div>
     <div class="summary-row">
         <div class="summary-cell label">{{ $texts['monthly'] }}</div>
-        <div class="summary-cell value-gold">{{ number_format($loan->monthly_payment, 2, ',', ' ') }} {{ $loan->currency }}</div>
+        <div class="summary-cell value-accent">{{ number_format($loan->monthly_payment, 2, ',', ' ') }} {{ $loan->currency }}</div>
         <div class="summary-cell label">{{ $texts['rate'] }}</div>
         <div class="summary-cell value">{{ $loan->interest_rate }} %</div>
     </div>

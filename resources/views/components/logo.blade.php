@@ -24,7 +24,20 @@
         $restWords = null;
     }
 
-    $overrideSrc = $theme === 'dark' ? $dark : $light;
+    // Resolution automatique du logo televerse par l admin.
+    // Avant, seuls le header et le footer publics passaient :light/:dark ; les 13 autres
+    // appels (sidebar admin, espace client, ecrans de connexion, emails) retombaient donc
+    // toujours sur le monogramme. Le composant va desormais le chercher lui-meme.
+    $contact   = site_identity();
+    $lightSrc  = $light ?: ($contact?->logo_light_path ? Storage::url($contact->logo_light_path) : null);
+    $darkSrc   = $dark  ?: ($contact?->logo_dark_path  ? Storage::url($contact->logo_dark_path)  : null);
+
+    // Si une seule variante est configuree, elle sert pour les deux themes.
+    $overrideSrc = ($theme === 'dark' ? $darkSrc : $lightSrc) ?: ($darkSrc ?: $lightSrc);
+
+    // variant="icon" attend une pastille carree : un logotype large y casserait la mise
+    // en page, on garde donc le monogramme pour cette variante.
+    if ($variant === 'icon') { $overrideSrc = null; }
     $box   = ['sm' => 32, 'md' => 44, 'lg' => 64][$size] ?? 44;
     $isDark = $theme === 'dark';
     // Palette derivee du logo Mellenthin Financial : pastille bleue, marque blanche.

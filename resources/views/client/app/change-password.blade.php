@@ -69,7 +69,7 @@
   display:flex;align-items:flex-start;gap:.75rem;
   font-size:.8rem;color:var(--ca-text-2);line-height:1.5;
 }
-.cp-info i { color:var(--ca-gold-l);font-size:1rem;flex-shrink:0;margin-top:.1rem }
+.cp-info i { color:var(--ca-accent-l);font-size:1rem;flex-shrink:0;margin-top:.1rem }
 </style>
 @endpush
 

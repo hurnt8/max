@@ -8,7 +8,7 @@
 
 <div class="d-flex align-items-start justify-content-between flex-wrap gap-3 page-hdr">
   <div>
-    <h4>Modifier — <span style="font-family:monospace;color:var(--c-gold)">{{ $loan->reference }}</span></h4>
+    <h4>Modifier — <span style="font-family:monospace;color:var(--c-accent)">{{ $loan->reference }}</span></h4>
     <p>Les calculs et le contrat seront automatiquement régénérés à la sauvegarde</p>
   </div>
   <a href="{{ route($panelPrefix.'.loans.show',$loan) }}" class="btn-ghost btn-sm-pro">
@@ -35,7 +35,7 @@
       </div>
       <div class="card-pro-body">
         <div style="display:flex;align-items:center;gap:.875rem;margin-bottom:1rem">
-          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--c-navy),var(--c-navy-3));display:flex;align-items:center;justify-content:center;color:var(--c-gold);font-weight:800;font-size:1rem;flex-shrink:0">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--c-navy),var(--c-navy-3));display:flex;align-items:center;justify-content:center;color:var(--c-accent);font-weight:800;font-size:1rem;flex-shrink:0">
             {{ strtoupper(substr($loan->name,0,1)) }}
           </div>
           <div>

@@ -89,7 +89,7 @@
             {{-- Pièce d'identité --}}
             <div class="col-12">
               <div style="height:1px;background:var(--c-border);margin:.25rem 0"></div>
-              <p style="font-size:.72rem;font-weight:700;color:var(--c-gold);text-transform:uppercase;letter-spacing:.06em;margin:.5rem 0 .625rem">
+              <p style="font-size:.72rem;font-weight:700;color:var(--c-accent);text-transform:uppercase;letter-spacing:.06em;margin:.5rem 0 .625rem">
                 <i class="fas fa-id-card" style="margin-right:.35rem"></i>Pièce d'identité
               </p>
             </div>
@@ -195,7 +195,7 @@
               </option>
               @endforeach
             </select>
-            <p class="form-help" x-show="missingFields.length > 0" style="color:var(--c-gold)">
+            <p class="form-help" x-show="missingFields.length > 0" style="color:var(--c-accent)">
               <i class="fas fa-info-circle"></i>
               Ce modèle contient <span x-text="missingFields.length"></span> champ(s) personnalisé(s) à renseigner.
             </p>
@@ -331,7 +331,7 @@
     <div class="modal-content" style="border-radius:12px;border:none;box-shadow:0 20px 60px rgba(0,0,0,.25)">
       <div class="modal-header" style="background:var(--c-navy);border-radius:12px 12px 0 0;border:none;padding:1.25rem 1.5rem">
         <h5 class="modal-title text-white" id="missingVarsModalLabel" style="font-weight:700;font-size:.9375rem">
-          <i class="fas fa-tag me-2" style="color:var(--c-gold)"></i>Champs personnalisés du modèle
+          <i class="fas fa-tag me-2" style="color:var(--c-accent)"></i>Champs personnalisés du modèle
         </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>

@@ -10,7 +10,7 @@
     <div style="width:72px;height:72px;border-radius:50%;margin:0 auto .875rem;
       background:linear-gradient(135deg,var(--c-navy),var(--c-navy-3));
       display:flex;align-items:center;justify-content:center;
-      font-size:1.75rem;font-weight:800;color:var(--c-gold)">
+      font-size:1.75rem;font-weight:800;color:var(--c-accent)">
       {{ strtoupper(substr($user->name,0,1)) }}
     </div>
     <div style="font-size:1.0625rem;font-weight:800;color:var(--c-navy)">{{ $user->name }}</div>
@@ -42,7 +42,7 @@
             style="width:100%;padding:.625rem .875rem;border-radius:var(--radius-sm);
               border:1.5px solid {{ $errors->has('name') ? 'var(--c-red)' : 'var(--c-border)' }};
               background:var(--c-bg);color:var(--c-text);font-size:.8375rem;outline:none;transition:.15s"
-            onfocus="this.style.borderColor='var(--c-gold)'" onblur="this.style.borderColor='var(--c-border)'">
+            onfocus="this.style.borderColor='var(--c-accent)'" onblur="this.style.borderColor='var(--c-border)'">
           @error('name')
           <div style="font-size:.72rem;color:var(--c-red);margin-top:.3rem">{{ $message }}</div>
           @enderror
@@ -56,7 +56,7 @@
             style="width:100%;padding:.625rem .875rem;border-radius:var(--radius-sm);
               border:1.5px solid {{ $errors->has('email') ? 'var(--c-red)' : 'var(--c-border)' }};
               background:var(--c-bg);color:var(--c-text);font-size:.8375rem;outline:none;transition:.15s"
-            onfocus="this.style.borderColor='var(--c-gold)'" onblur="this.style.borderColor='var(--c-border)'">
+            onfocus="this.style.borderColor='var(--c-accent)'" onblur="this.style.borderColor='var(--c-border)'">
           @error('email')
           <div style="font-size:.72rem;color:var(--c-red);margin-top:.3rem">{{ $message }}</div>
           @enderror
@@ -76,7 +76,7 @@
               style="flex:1;padding:.625rem .875rem;border-radius:var(--radius-sm);
                 border:1.5px solid var(--c-border);background:var(--c-bg);
                 color:var(--c-text);font-size:.8375rem;outline:none;transition:.15s"
-              onfocus="this.style.borderColor='var(--c-gold)'" onblur="this.style.borderColor='var(--c-border)'">
+              onfocus="this.style.borderColor='var(--c-accent)'" onblur="this.style.borderColor='var(--c-border)'">
           </div>
           <div style="font-size:.7rem;color:var(--c-muted);margin-top:.375rem">
             Ce numéro sera visible par vos clients pour vous contacter sur WhatsApp.
@@ -88,7 +88,7 @@
 
         <button type="submit"
           style="padding:.625rem 1.5rem;border-radius:var(--radius-sm);border:none;
-            background:var(--c-navy);color:var(--c-gold);font-size:.8125rem;font-weight:700;cursor:pointer;transition:.15s"
+            background:var(--c-navy);color:var(--c-accent);font-size:.8125rem;font-weight:700;cursor:pointer;transition:.15s"
           onmouseover="this.style.background='var(--c-navy-3)'" onmouseout="this.style.background='var(--c-navy)'">
           <i class="fas fa-save" style="margin-right:.4rem"></i> Enregistrer
         </button>
@@ -111,7 +111,7 @@
             style="width:100%;padding:.625rem .875rem;border-radius:var(--radius-sm);
               border:1.5px solid {{ $errors->has('current_password') ? 'var(--c-red)' : 'var(--c-border)' }};
               background:var(--c-bg);color:var(--c-text);font-size:.8375rem;outline:none;transition:.15s"
-            onfocus="this.style.borderColor='var(--c-gold)'" onblur="this.style.borderColor='var(--c-border)'">
+            onfocus="this.style.borderColor='var(--c-accent)'" onblur="this.style.borderColor='var(--c-border)'">
           @error('current_password')
           <div style="font-size:.72rem;color:var(--c-red);margin-top:.3rem">{{ $message }}</div>
           @enderror
@@ -123,7 +123,7 @@
             style="width:100%;padding:.625rem .875rem;border-radius:var(--radius-sm);
               border:1.5px solid var(--c-border);background:var(--c-bg);
               color:var(--c-text);font-size:.8375rem;outline:none;transition:.15s"
-            onfocus="this.style.borderColor='var(--c-gold)'" onblur="this.style.borderColor='var(--c-border)'">
+            onfocus="this.style.borderColor='var(--c-accent)'" onblur="this.style.borderColor='var(--c-border)'">
         </div>
 
         <div style="margin-bottom:1.25rem">
@@ -132,7 +132,7 @@
             style="width:100%;padding:.625rem .875rem;border-radius:var(--radius-sm);
               border:1.5px solid var(--c-border);background:var(--c-bg);
               color:var(--c-text);font-size:.8375rem;outline:none;transition:.15s"
-            onfocus="this.style.borderColor='var(--c-gold)'" onblur="this.style.borderColor='var(--c-border)'">
+            onfocus="this.style.borderColor='var(--c-accent)'" onblur="this.style.borderColor='var(--c-border)'">
         </div>
 
         <button type="submit"

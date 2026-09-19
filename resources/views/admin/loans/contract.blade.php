@@ -11,7 +11,7 @@
 /* ── Header ── */
 .lc-header{background:#fff;border:1px solid var(--c-border);border-radius:14px;padding:1.125rem 1.5rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
 .lc-header-left{display:flex;align-items:center;gap:.875rem;flex:1;min-width:0}
-.lc-header-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,#FEF3C7,#FDE68A);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--c-gold-d,#054685);flex-shrink:0}
+.lc-header-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,#FEF3C7,#FDE68A);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--c-accent-d,#054685);flex-shrink:0}
 .lc-header-ref{font-family:monospace;font-size:1rem;font-weight:900;color:var(--c-navy)}
 .lc-header-sub{font-size:.76rem;color:var(--c-muted);margin-top:.15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lc-header-actions{display:flex;gap:.5rem;flex-wrap:wrap;flex-shrink:0}
@@ -48,7 +48,7 @@
 
 /* ── Upload zone ── */
 .lc-upload-zone{border:1.5px dashed var(--c-border);border-radius:8px;padding:.875rem;text-align:center;cursor:pointer;background:#fafbfc;transition:.15s}
-.lc-upload-zone:hover{border-color:var(--c-gold);background:#fffdf5}
+.lc-upload-zone:hover{border-color:var(--c-accent);background:#fffdf5}
 .lc-pdf-file{display:flex;align-items:center;gap:.625rem;padding:.5rem .75rem;background:#FFF1F2;border:1px solid #FECDD3;border-radius:8px}
 
 /* ── PDF viewer ── */
@@ -64,9 +64,9 @@
 
 /* ── Variable chip ── */
 .lc-var-chip{display:flex;align-items:center;gap:.625rem;padding:.55rem .75rem;background:#f8f9fa;border:1.5px solid var(--c-border);border-radius:8px;transition:.15s;cursor:default}
-.lc-var-chip:hover{border-color:var(--c-gold);background:#fffdf5}
+.lc-var-chip:hover{border-color:var(--c-accent);background:#fffdf5}
 .lc-var-chip-ico{width:28px;height:28px;border-radius:7px;background:#EEF2FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.65rem;color:var(--c-navy)}
-.lc-var-code{font-size:.7rem;color:var(--c-gold-d,#b45309);font-weight:700;font-family:'Courier New',monospace;display:block;line-height:1.2}
+.lc-var-code{font-size:.7rem;color:var(--c-accent-d,#b45309);font-weight:700;font-family:'Courier New',monospace;display:block;line-height:1.2}
 .lc-var-desc{font-size:.64rem;color:var(--c-muted);line-height:1.3;margin-top:.1rem}
 .lc-copy-btn{width:26px;height:26px;border:none;background:none;color:var(--c-muted);cursor:pointer;border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:.15s}
 .lc-copy-btn:hover{background:var(--c-border);color:var(--c-navy)}
@@ -109,7 +109,7 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
     <div class="lc-header-icon"><i class="fas fa-file-contract"></i></div>
     <div style="min-width:0">
       <div class="lc-header-ref">
-        Contrat — <span style="color:var(--c-gold)">{{ $loan->reference }}</span>
+        Contrat — <span style="color:var(--c-accent)">{{ $loan->reference }}</span>
         <span class="lc-lang-badge" style="margin-left:.5rem;vertical-align:middle">
           <i class="fas fa-globe"></i> {{ strtoupper($loan->contract_language ?? 'FR') }}
         </span>
@@ -168,7 +168,7 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
     {{-- Récapitulatif chiffres clés --}}
     <div class="lc-pcard">
       <div class="lc-pcard-hdr">
-        <div class="lc-pcard-ico" style="background:#FEF9EC;color:var(--c-gold-d)"><i class="fas fa-chart-pie"></i></div>
+        <div class="lc-pcard-ico" style="background:#FEF9EC;color:var(--c-accent-d)"><i class="fas fa-chart-pie"></i></div>
         <span class="lc-pcard-title">Récapitulatif</span>
         <span class="badge-status bs-{{ $loan->statusColor() }}" style="margin-left:auto;font-size:.62rem;padding:.2rem .6rem">
           {{ $loan->statusLabel() }}
@@ -195,7 +195,7 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
     {{-- Action contextuelle --}}
     <div class="lc-pcard">
       <div class="lc-pcard-hdr">
-        <div class="lc-pcard-ico" style="background:#FEF9EC;color:var(--c-gold-d)"><i class="fas fa-bolt"></i></div>
+        <div class="lc-pcard-ico" style="background:#FEF9EC;color:var(--c-accent-d)"><i class="fas fa-bolt"></i></div>
         <span class="lc-pcard-title">Action</span>
       </div>
       <div class="lc-pcard-body">
@@ -239,7 +239,7 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
             </button>
           </form>
           <div style="font-size:.68rem;color:var(--c-muted);margin-top:.5rem;display:flex;align-items:flex-start;gap:.35rem">
-            <i class="fas fa-info-circle" style="flex-shrink:0;margin-top:.15rem;color:var(--c-gold)"></i>
+            <i class="fas fa-info-circle" style="flex-shrink:0;margin-top:.15rem;color:var(--c-accent)"></i>
             <span>Une notification in-app est aussi envoyée au client.</span>
           </div>
           @else
@@ -364,7 +364,7 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
         <form action="{{ route($panelPrefix.'.loans.notification.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="lc-upload-zone" onclick="this.querySelector('input').click()">
-            <i class="fas fa-cloud-upload-alt" style="color:var(--c-gold);font-size:1.3rem;display:block;margin-bottom:.35rem"></i>
+            <i class="fas fa-cloud-upload-alt" style="color:var(--c-accent);font-size:1.3rem;display:block;margin-bottom:.35rem"></i>
             <div style="font-size:.76rem;font-weight:600;color:var(--c-navy)">
               {{ $loan->notification_pdf_path ? 'Remplacer le PDF' : 'Uploader le document PDF' }}
             </div>
@@ -422,7 +422,7 @@ $defaultDocTab = $loan->canBeValidated() ? 'notification' : 'contrat';
         <form action="{{ route($panelPrefix.'.loans.contract.pdf.upload',$loan) }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="lc-upload-zone" onclick="this.querySelector('input').click()">
-            <i class="fas fa-cloud-upload-alt" style="color:var(--c-gold);font-size:1.3rem;display:block;margin-bottom:.35rem"></i>
+            <i class="fas fa-cloud-upload-alt" style="color:var(--c-accent);font-size:1.3rem;display:block;margin-bottom:.35rem"></i>
             <div style="font-size:.76rem;font-weight:600;color:var(--c-navy)">
               {{ $loan->contract_pdf_path ? 'Remplacer le PDF' : 'Uploader le contrat signé' }}
             </div>

@@ -44,10 +44,10 @@
     <div class="metric-card__accent" style="background:var(--c-red)"></div>
   </div>
   <div class="metric-card">
-    <div class="metric-card__icon mi-gold"><i class="fas fa-coins"></i></div>
+    <div class="metric-card__icon mi-accent"><i class="fas fa-coins"></i></div>
     <div class="metric-card__val" style="font-size:1.25rem">{{ number_format($totalBalance, 0, ',', ' ') }}</div>
     <div class="metric-card__lbl">Solde consolidé ({{ $defaultCur }})</div>
-    <div class="metric-card__accent" style="background:var(--c-gold)"></div>
+    <div class="metric-card__accent" style="background:var(--c-accent)"></div>
   </div>
 </div>
 
@@ -96,7 +96,7 @@
             <div style="width:38px;height:38px;border-radius:50%;flex-shrink:0;
               background:linear-gradient(135deg,var(--c-navy),var(--c-navy-3));
               display:flex;align-items:center;justify-content:center;
-              color:var(--c-gold);font-size:.875rem;font-weight:800">
+              color:var(--c-accent);font-size:.875rem;font-weight:800">
               {{ strtoupper(substr($client->name, 0, 1)) }}
             </div>
           </td>
@@ -120,7 +120,7 @@
             </span>
           </td>
           <td data-label="Action" style="text-align:right">
-            <a href="{{ route('admin.accounts.show', $client) }}" class="btn-gold btn-sm-pro">
+            <a href="{{ route('admin.accounts.show', $client) }}" class="btn-accent btn-sm-pro">
               <i class="fas fa-arrow-right"></i> Gérer
             </a>
           </td>
@@ -153,7 +153,7 @@ function sortTable(key) {
   });
   rows.forEach(r => tbody.appendChild(r));
   document.querySelectorAll('#sortAlpha,#sortBal').forEach(b => b.style.borderColor = '');
-  document.getElementById(key === 'balance' ? 'sortBal' : 'sortAlpha').style.borderColor = 'var(--c-gold)';
+  document.getElementById(key === 'balance' ? 'sortBal' : 'sortAlpha').style.borderColor = 'var(--c-accent)';
 }
 </script>
 

@@ -14,13 +14,13 @@
   --ca-card:        #07406F;
   --ca-navy:        #032A4F;
   --ca-navy-light:  #054685;
-  --ca-gold:        #81B6E9;
-  --ca-gold-l:      #B5D4F2;
-  /* Compat: le teal a ete retire de l'identite de marque (voir --ca-navy/--ca-gold
+  --ca-accent:        #81B6E9;
+  --ca-accent-l:      #B5D4F2;
+  /* Compat: le teal a ete retire de l'identite de marque (voir --ca-navy/--ca-accent
      ci-dessus) ; ces deux alias evitent de casser les nombreuses vues qui
      referencaient encore var(--ca-teal[-l]) avant l'unification des couleurs. */
   --ca-teal:        var(--ca-navy);
-  --ca-teal-l:      var(--ca-gold-l);
+  --ca-teal-l:      var(--ca-accent-l);
   --ca-positive:    #00C896;
   --ca-negative:    #FF5A5A;
   --ca-amber:       #F59E0B;
@@ -43,16 +43,21 @@
 
 /* ── Light mode overrides ───────────────────────────────────────── */
 [data-theme="light"] {
+  /* Surfaces claires : on repasse a laccent fonce. Le bleu clair du theme sombre
+     ne donne que 2.14:1 sur blanc, donc illisible. */
+  --ca-accent:   #0657A4;
+  --ca-accent-l: #0870D4;
+  --ca-navy:     #032A4F;
   --ca-bg:       #F2F5FB;
   --ca-bg2:      #E8EDF7;
   --ca-bg3:      #FFFFFF;
   --ca-bg4:      #DCE4F2;
   --ca-card:     #EAEFF8;
-  --ca-text:     #0A1628;
+  --ca-text:     #032A4F;
   --ca-text-2:   #1C3A5C;
   --ca-text-3:   #546580;
-  --ca-border:   rgba(10,22,40,.13);
-  --ca-border-2: rgba(10,22,40,.07);
+  --ca-border:   rgba(3, 42, 79,.13);
+  --ca-border-2: rgba(3, 42, 79,.07);
   --ca-outer-bg: #C0CDE0;
   color-scheme: light;
 }
@@ -60,15 +65,15 @@
 /* Topbar: frosted light glass */
 [data-theme="light"] .ca-topbar {
   background: rgba(242,245,251,.92);
-  border-bottom-color: rgba(10,22,40,.1);
+  border-bottom-color: rgba(3, 42, 79,.1);
 }
 [data-theme="light"] .ca-topbar--home {
   background: rgba(242,245,251,.75);
 }
 [data-theme="light"] .ca-topbar__back,
 [data-theme="light"] .ca-topbar__action {
-  background: rgba(10,22,40,.07);
-  border-color: rgba(10,22,40,.1);
+  background: rgba(3, 42, 79,.07);
+  border-color: rgba(3, 42, 79,.1);
   color: var(--ca-text);
 }
 
@@ -90,11 +95,11 @@
 [data-theme="light"] .ca-badge--fee-required { background: rgba(30,120,230,.1); }
 
 /* Period tabs */
-[data-theme="light"] .ca-period-tab.active { background: #FFFFFF; box-shadow: 0 2px 8px rgba(10,22,40,.12); }
+[data-theme="light"] .ca-period-tab.active { background: #FFFFFF; box-shadow: 0 2px 8px rgba(3, 42, 79,.12); }
 
 /* Table */
 [data-theme="light"] .ca-table thead th { background: var(--ca-bg4); }
-[data-theme="light"] .ca-table tbody tr:hover td { background: rgba(10,22,40,.03); }
+[data-theme="light"] .ca-table tbody tr:hover td { background: rgba(3, 42, 79,.03); }
 
 /* Alerts on light */
 [data-theme="light"] .ca-alert--warn    { background: rgba(215,138,0,.1);  border-color: rgba(215,138,0,.25); color: #A16800; }
@@ -104,8 +109,8 @@
 /* Install banner */
 [data-theme="light"] .ca-install-banner {
   background: #FFFFFF;
-  border-color: rgba(10,22,40,.12);
-  box-shadow: 0 8px 32px rgba(10,22,40,.15);
+  border-color: rgba(3, 42, 79,.12);
+  box-shadow: 0 8px 32px rgba(3, 42, 79,.15);
 }
 
 /* Stat chip numbers more visible on light */
@@ -164,7 +169,7 @@ button { font-family: inherit; }
   position: sticky;
   top: 0;
   z-index: 200;
-  background: rgba(10,22,40,.88);
+  background: rgba(3, 42, 79,.88);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--ca-border);
@@ -331,7 +336,7 @@ button { font-family: inherit; }
   font-weight: 600;
   vertical-align: super;
   margin-right: .15rem;
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
 }
 
 .ca-card-footer {
@@ -360,7 +365,7 @@ button { font-family: inherit; }
   padding: .25rem .7rem;
   font-size: .72rem;
   font-weight: 700;
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
 }
 
 /* Toggle pill (masquer/afficher solde) */
@@ -421,7 +426,7 @@ button { font-family: inherit; }
 }
 
 .ca-qa-icon--navy  { background: rgba(3, 42, 79,.18); border-color: rgba(3, 42, 79,.3); color: var(--ca-navy-light); }
-.ca-qa-icon--gold  { background: rgba(129, 182, 233,.15); border-color: rgba(129, 182, 233,.3); color: var(--ca-gold-l); }
+.ca-qa-icon--accent  { background: rgba(129, 182, 233,.15); border-color: rgba(129, 182, 233,.3); color: var(--ca-accent-l); }
 .ca-qa-icon--blue  { background: rgba(74,158,255,.15); border-color: rgba(74,158,255,.3); color: var(--ca-blue); }
 .ca-qa-icon--purple{ background: rgba(139,92,246,.15); border-color: rgba(139,92,246,.3); color: var(--ca-purple); }
 
@@ -451,7 +456,7 @@ button { font-family: inherit; }
 .ca-section__link {
   font-size: .75rem;
   font-weight: 600;
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
 }
 
 /* ── Transaction item ────────────────────────────────────────────── */
@@ -559,7 +564,7 @@ button { font-family: inherit; }
 
 .ca-loan-card__accent {
   height: 3px;
-  background: var(--lc-color, var(--ca-gold));
+  background: var(--lc-color, var(--ca-accent));
 }
 
 .ca-loan-card__body { padding: 1rem 1.1rem; }
@@ -575,7 +580,7 @@ button { font-family: inherit; }
   font-family: 'Space Grotesk', monospace;
   font-size: .78rem;
   font-weight: 700;
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
   letter-spacing: .04em;
 }
 
@@ -611,7 +616,7 @@ button { font-family: inherit; }
 
 .ca-loan-card__progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--ca-navy), var(--ca-gold));
+  background: linear-gradient(90deg, var(--ca-navy), var(--ca-accent));
   border-radius: 99px;
   transition: width .8s ease;
 }
@@ -656,7 +661,7 @@ button { font-family: inherit; }
   background: var(--ca-bg4);
   display: flex; align-items: center; justify-content: center;
   font-size: .8rem;
-  color: var(--ca-gold);
+  color: var(--ca-accent);
   flex-shrink: 0;
   margin-right: .75rem;
 }
@@ -676,7 +681,7 @@ button { font-family: inherit; }
   flex-shrink: 0;
 }
 
-.ca-detail-row__val.accent { color: var(--ca-gold-l); }
+.ca-detail-row__val.accent { color: var(--ca-accent-l); }
 
 /* ── Card controls (loan detail page) ───────────────────────────── */
 .ca-controls {
@@ -770,14 +775,14 @@ button { font-family: inherit; }
 }
 
 .ca-step.done .ca-step__dot {
-  background: var(--ca-gold);
-  border-color: var(--ca-gold-l);
+  background: var(--ca-accent);
+  border-color: var(--ca-accent-l);
   color: #fff;
 }
 
 .ca-step.current .ca-step__dot {
-  background: linear-gradient(135deg, var(--ca-gold), #a8722a);
-  border-color: var(--ca-gold-l);
+  background: linear-gradient(135deg, var(--ca-accent), #a8722a);
+  border-color: var(--ca-accent-l);
   color: var(--ca-bg);
   box-shadow: 0 0 0 4px rgba(129, 182, 233,.2);
 }
@@ -996,7 +1001,7 @@ button { font-family: inherit; }
   padding: .45rem .9rem;
   font-size: .78rem;
   font-weight: 600;
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
   cursor: pointer;
   transition: var(--ca-transition);
 }
@@ -1091,7 +1096,7 @@ button { font-family: inherit; }
   align-items: center;
   justify-content: center;
   gap: .5rem;
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
   font-size: .82rem;
   font-weight: 600;
   padding: .75rem;
@@ -1195,7 +1200,7 @@ button { font-family: inherit; }
 .ca-category-info { flex: 1; min-width: 0; }
 .ca-category-name  { font-size: .85rem; font-weight: 600; color: var(--ca-text); margin-bottom: .3rem; }
 .ca-category-bar   { height: 4px; background: var(--ca-border); border-radius: 99px; overflow: hidden; }
-.ca-category-fill  { height: 100%; border-radius: 99px; background: var(--cat-color, var(--ca-gold)); }
+.ca-category-fill  { height: 100%; border-radius: 99px; background: var(--cat-color, var(--ca-accent)); }
 .ca-category-amt   { font-size: .82rem; font-weight: 700; color: var(--ca-text-2); flex-shrink: 0; }
 
 /* ── Profile ─────────────────────────────────────────────────────── */
@@ -1235,7 +1240,7 @@ button { font-family: inherit; }
   padding: .2rem .65rem;
   font-size: .7rem;
   font-weight: 700;
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
   margin-bottom: .35rem;
 }
 
@@ -1314,7 +1319,7 @@ button { font-family: inherit; }
   transition: var(--ca-transition);
 }
 
-.ca-toggle input:checked + .ca-toggle__track { background: var(--ca-gold); border-color: var(--ca-gold-l); }
+.ca-toggle input:checked + .ca-toggle__track { background: var(--ca-accent); border-color: var(--ca-accent-l); }
 
 .ca-toggle__thumb {
   position: absolute;
@@ -1350,11 +1355,11 @@ button { font-family: inherit; }
   letter-spacing: .01em;
 }
 
-.ca-btn--gold {
-  background: linear-gradient(135deg, var(--ca-gold), #a8722a);
+.ca-btn--accent {
+  background: linear-gradient(135deg, var(--ca-accent), #a8722a);
   color: var(--ca-bg);
 }
-.ca-btn--gold:hover { filter: brightness(1.08); }
+.ca-btn--accent:hover { filter: brightness(1.08); }
 
 .ca-btn--ghost {
   background: var(--ca-bg3);
@@ -1395,7 +1400,7 @@ button { font-family: inherit; }
 .ca-badge--valid    { background: rgba(74,158,255,.12);  color: var(--ca-blue); }
 .ca-badge--sent     { background: rgba(139,92,246,.12);  color: var(--ca-purple); }
 .ca-badge--signed   { background: rgba(0,200,150,.12);   color: var(--ca-positive); }
-.ca-badge--final    { background: rgba(129, 182, 233,.15);  color: var(--ca-gold-l); }
+.ca-badge--final    { background: rgba(129, 182, 233,.15);  color: var(--ca-accent-l); }
 .ca-badge--rejected { background: rgba(255,90,90,.12);   color: var(--ca-negative); }
 .ca-badge--paid      { background: rgba(0,200,150,.12);   color: var(--ca-positive); }
 .ca-badge--cancelled { background: rgba(122,144,170,.12); color: var(--ca-text-3); }
@@ -1522,7 +1527,7 @@ button { font-family: inherit; }
 
 /* Etat actif */
 .ca-nav-item.active {
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
 }
 
 .ca-nav-item.active i {
@@ -1538,7 +1543,7 @@ button { font-family: inherit; }
   right: 25%;
   height: 2.5px;
   border-radius: 0 0 6px 6px;
-  background: linear-gradient(90deg, var(--ca-gold-l), var(--ca-gold));
+  background: linear-gradient(90deg, var(--ca-accent-l), var(--ca-accent));
   box-shadow: 0 0 10px rgba(129, 182, 233,.5);
 }
 
@@ -1568,7 +1573,7 @@ button { font-family: inherit; }
 }
 
 .ca-nav-item--center.active > span {
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
 }
 
 /* Le cercle FAB lui-meme */
@@ -1680,7 +1685,7 @@ button { font-family: inherit; }
 /* Desktop — cadre "phone-in-browser" */
 @media (min-width: 768px) {
   html, body {
-    background: var(--ca-outer-bg, #03080F);
+    background: var(--ca-outer-bg, #01101F);
   }
   body {
     min-height: 100vh;

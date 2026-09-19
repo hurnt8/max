@@ -38,7 +38,7 @@
 
 @if(!$templates->count())
 <div class="card-pro" style="text-align:center;padding:4rem 2rem">
-  <i class="fas fa-bell" style="font-size:3rem;color:var(--c-gold);opacity:.35;display:block;margin-bottom:1rem"></i>
+  <i class="fas fa-bell" style="font-size:3rem;color:var(--c-accent);opacity:.35;display:block;margin-bottom:1rem"></i>
   <p style="font-weight:600;color:var(--c-navy);font-size:1rem;margin-bottom:.35rem">Aucun modèle disponible</p>
   <p style="color:var(--c-muted);font-size:.8375rem;margin-bottom:1.25rem">
     Créez au moins un modèle en français (utilisé en repli pour les langues non configurées) avant de valider un dossier.

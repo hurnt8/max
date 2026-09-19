@@ -47,7 +47,7 @@
   font-weight: 900;
   padding: .15rem .5rem;
   border-radius: 999px;
-  background: var(--c-gold);
+  background: var(--c-accent);
   color: var(--c-navy);
 }
 .adsp-search { position: relative; }
@@ -71,7 +71,7 @@
   font-family: inherit;
   transition: border-color .15s;
 }
-.adsp-search input:focus { border-color: var(--c-gold); }
+.adsp-search input:focus { border-color: var(--c-accent); }
 .adsp-search input::placeholder { color: var(--c-muted); }
 
 .adsp-filters {
@@ -128,7 +128,7 @@
   width: 40px; height: 40px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--c-navy), #1a3a6c);
-  color: var(--c-gold);
+  color: var(--c-accent);
   font-weight: 900; font-size: .875rem;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; position: relative;
@@ -137,7 +137,7 @@
   position: absolute; bottom: 1px; right: 1px;
   width: 10px; height: 10px;
   border-radius: 50%;
-  background: var(--c-gold);
+  background: var(--c-accent);
   border: 2px solid var(--c-surface);
 }
 .adsp-conv-body { flex: 1; min-width: 0; }
@@ -157,7 +157,7 @@
 .adsp-conv-badge {
   min-width: 18px; height: 18px; padding: 0 5px;
   border-radius: 999px;
-  background: var(--c-gold); color: var(--c-navy);
+  background: var(--c-accent); color: var(--c-navy);
   font-size: .6rem; font-weight: 900;
   display: flex; align-items: center; justify-content: center;
 }
@@ -184,7 +184,7 @@
 .adsp-hdr-av {
   width: 42px; height: 42px; border-radius: 50%;
   background: linear-gradient(135deg, var(--c-navy), #1a3a6c);
-  color: var(--c-gold); font-weight: 900; font-size: .9rem;
+  color: var(--c-accent); font-weight: 900; font-size: .9rem;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .adsp-hdr-info { flex: 1; }
@@ -238,7 +238,7 @@
 .adsp-bav {
   width: 28px; height: 28px; border-radius: 50%;
   background: linear-gradient(135deg, var(--c-navy), #1a3a6c);
-  color: var(--c-gold); font-weight: 900; font-size: .6rem;
+  color: var(--c-accent); font-weight: 900; font-size: .6rem;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .adsp-bav.bot { background: linear-gradient(135deg, #7c3aed, #5b21b6); color: #fff; font-size: .65rem; }
@@ -291,7 +291,7 @@
   display: none;
   align-items: center; gap: .5rem;
   padding: .4rem .875rem;
-  background: rgba(6, 87, 164,.08); border-top: 1px solid var(--c-gold);
+  background: rgba(6, 87, 164,.08); border-top: 1px solid var(--c-accent);
   font-size: .72rem; color: var(--c-navy);
   flex-shrink: 0;
 }
@@ -316,7 +316,7 @@
   display: flex; align-items: center; justify-content: center;
   font-size: .75rem; cursor: pointer; transition: .15s; flex-shrink: 0;
 }
-.adsp-bar-act:hover { border-color: var(--c-gold); color: var(--c-gold); }
+.adsp-bar-act:hover { border-color: var(--c-accent); color: var(--c-accent); }
 
 #adspInput {
   flex: 1;
@@ -327,7 +327,7 @@
   outline: none; resize: none; max-height: 100px;
   line-height: 1.45; transition: border-color .15s;
 }
-#adspInput:focus { border-color: var(--c-gold); }
+#adspInput:focus { border-color: var(--c-accent); }
 #adspInput::placeholder { color: var(--c-muted); }
 
 .adsp-send {
@@ -395,7 +395,7 @@
     <div class="adsp-filters">
       <button class="adsp-filter-btn active" id="adspFilterAll" onclick="adspFilter('all')">Tous</button>
       <button class="adsp-filter-btn" id="adspFilterUnread" onclick="adspFilter('unread')">
-        <i class="fas fa-circle" style="font-size:.45rem;color:var(--c-gold)"></i>
+        <i class="fas fa-circle" style="font-size:.45rem;color:var(--c-accent)"></i>
         Non lus @if($totalUnread > 0)({{ $totalUnread }})@endif
       </button>
     </div>
@@ -423,7 +423,7 @@
           <div class="adsp-conv-name">{{ $c->name }}</div>
           <div class="adsp-conv-preview">
             @if($last && $last->sender_type === 'admin' && !$last->is_bot)
-              <span style="color:var(--c-gold-d,#054685);font-weight:600">Vous : </span>
+              <span style="color:var(--c-accent-d,#054685);font-weight:600">Vous : </span>
             @elseif($last && $last->is_bot)
               <span style="color:#7c3aed;font-weight:600">IA : </span>
             @endif

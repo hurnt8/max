@@ -9,12 +9,12 @@
 .about-engage-card {
     display:flex; gap:1rem; padding:1rem 1.25rem;
     background:var(--cream); border-radius:12px;
-    border-left:3px solid var(--gold); margin-bottom:.75rem;
+    border-left:3px solid var(--accent); margin-bottom:.75rem;
 }
 .about-engage-icon {
     width:42px; height:42px; flex-shrink:0; border-radius:10px;
-    background:var(--gold-pale); display:flex; align-items:center;
-    justify-content:center; color:var(--gold-dark); font-size:1rem;
+    background:var(--accent-pale); display:flex; align-items:center;
+    justify-content:center; color:var(--accent-dark); font-size:1rem;
 }
 .about-engage-title { font-size:.875rem; font-weight:800; color:var(--navy); margin-bottom:.2rem; }
 .about-engage-desc  { font-size:.78rem; color:#6b7280; margin:0; line-height:1.55; }
@@ -104,7 +104,7 @@
 
                 {{-- Types de prêts proposés --}}
                 <div style="margin-bottom:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--navy);">
-                    <i class="fas fa-tags" style="color:var(--gold);margin-right:.35rem;"></i>@lang('home.discover_our_loan_services')
+                    <i class="fas fa-tags" style="color:var(--accent);margin-right:.35rem;"></i>@lang('home.discover_our_loan_services')
                 </div>
                 <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem;">
                     @foreach([
@@ -116,7 +116,7 @@
                         ['fas fa-credit-card',    'home.microcredit'],
                     ] as $t)
                     <span style="display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .75rem;border-radius:999px;background:var(--cream);border:1px solid #e2ddd0;font-size:.75rem;font-weight:700;color:var(--navy);">
-                        <i class="{{ $t[0] }}" style="color:var(--gold-dark);font-size:.7rem;"></i> @lang($t[1])
+                        <i class="{{ $t[0] }}" style="color:var(--accent-dark);font-size:.7rem;"></i> @lang($t[1])
                     </span>
                     @endforeach
                 </div>
@@ -183,7 +183,7 @@
             @foreach ([1,2,3] as $r)
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="800ms" data-wow-delay="{{ ($r-1)*80 }}ms">
                 <div class="card-glass p-8" style="padding:2rem;">
-                    <div style="width:52px;height:52px;background:var(--gold-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--gold-dark);font-size:1.25rem;margin-bottom:1.25rem;">
+                    <div style="width:52px;height:52px;background:var(--accent-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--accent-dark);font-size:1.25rem;margin-bottom:1.25rem;">
                         <i class="fas fa-{{ $r===1 ? 'shield-alt' : ($r===2 ? 'bolt' : 'headset') }}"></i>
                     </div>
                     <h3 style="font-family:'Playfair Display',serif;font-size:1.125rem;font-weight:700;color:var(--navy);margin-bottom:.625rem;">

@@ -11,9 +11,9 @@
   --cl-navy-2:    #043767;
   --cl-navy-3:    #054685;
   --cl-navy-4:    #0656A2;
-  --cl-gold:      #81B6E9;
-  --cl-gold-2:    #B5D4F2;
-  --cl-gold-d:    #2B94F7;
+  --cl-accent:      #81B6E9;
+  --cl-accent-2:    #B5D4F2;
+  --cl-accent-d:    #2B94F7;
   --cl-green:     #10B981;
   --cl-green-bg:  rgba(16,185,129,.12);
   --cl-amber:     #F59E0B;
@@ -93,7 +93,7 @@
   padding: .25rem .75rem;
   font-size: .7rem;
   font-weight: 600;
-  color: var(--cl-gold-2);
+  color: var(--cl-accent-2);
   letter-spacing: .05em;
   text-transform: uppercase;
   margin-bottom: .875rem;
@@ -116,7 +116,7 @@
 }
 .cl-hero__currency {
   font-size: 1.1rem;
-  color: var(--cl-gold);
+  color: var(--cl-accent);
   font-weight: 600;
   vertical-align: middle;
   margin-left: .35rem;
@@ -160,7 +160,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: var(--stat-color, var(--cl-gold));
+  background: var(--stat-color, var(--cl-accent));
   border-radius: var(--cl-radius) var(--cl-radius) 0 0;
 }
 .cl-stat__icon {
@@ -168,7 +168,7 @@
   border-radius: 9px;
   background: var(--stat-color-bg, rgba(129, 182, 233,.12));
   display: flex; align-items: center; justify-content: center;
-  color: var(--stat-color, var(--cl-gold));
+  color: var(--stat-color, var(--cl-accent));
   font-size: .875rem;
   margin-bottom: .875rem;
 }
@@ -224,7 +224,7 @@
 }
 .cl-loan-card__top {
   height: 4px;
-  background: var(--card-accent, var(--cl-gold));
+  background: var(--card-accent, var(--cl-accent));
 }
 .cl-loan-card__head {
   padding: 1.1rem 1.25rem .875rem;
@@ -237,7 +237,7 @@
   font-family: 'Space Grotesk', monospace;
   font-size: .8rem;
   font-weight: 700;
-  color: var(--cl-gold-d);
+  color: var(--cl-accent-d);
   letter-spacing: .05em;
 }
 .cl-loan-card__body { padding: 1.25rem; flex: 1; }
@@ -258,7 +258,7 @@
 }
 .cl-loan-card__amount span {
   font-size: .85rem;
-  color: var(--cl-gold-d);
+  color: var(--cl-accent-d);
   font-weight: 600;
   margin-left: .25rem;
 }
@@ -280,7 +280,7 @@
   font-weight: 700;
   color: var(--cl-text-2);
 }
-.cl-loan-card__metric-val.accent { color: var(--cl-gold-d); }
+.cl-loan-card__metric-val.accent { color: var(--cl-accent-d); }
 
 /* Barre de progression */
 .cl-progress {
@@ -302,7 +302,7 @@
 .cl-progress__fill  {
   height: 100%;
   border-radius: 99px;
-  background: linear-gradient(90deg, var(--cl-navy-4), var(--cl-gold));
+  background: linear-gradient(90deg, var(--cl-navy-4), var(--cl-accent));
   transition: width .8s cubic-bezier(.4,0,.2,1);
 }
 .cl-loan-card__foot {
@@ -335,7 +335,7 @@
 .cl-badge--validated{ background: var(--cl-blue-bg);    color: var(--cl-blue); }
 .cl-badge--sent     { background: rgba(139,92,246,.12); color: var(--cl-purple); }
 .cl-badge--signed   { background: var(--cl-green-bg);   color: var(--cl-green); }
-.cl-badge--finalized{ background: rgba(129, 182, 233,.15); color: var(--cl-gold-d); }
+.cl-badge--finalized{ background: rgba(129, 182, 233,.15); color: var(--cl-accent-d); }
 .cl-badge--rejected { background: var(--cl-red-bg);     color: var(--cl-red); }
 
 /* ── Boutons client ────────────────────────────────────────── */
@@ -360,16 +360,16 @@
   color: #FFFFFF;
 }
 .cl-btn--primary:hover {
-  border-color: var(--cl-gold);
-  color: var(--cl-gold-2);
+  border-color: var(--cl-accent);
+  color: var(--cl-accent-2);
   box-shadow: 0 0 0 1px rgba(129, 182, 233,.25);
 }
-.cl-btn--gold {
-  background: linear-gradient(135deg, var(--cl-gold), var(--cl-gold-d));
+.cl-btn--accent {
+  background: linear-gradient(135deg, var(--cl-accent), var(--cl-accent-d));
   color: #FFFFFF;
   font-weight: 700;
 }
-.cl-btn--gold:hover {
+.cl-btn--accent:hover {
   filter: brightness(1.08);
   box-shadow: 0 4px 16px rgba(129, 182, 233,.3);
 }
@@ -409,7 +409,7 @@
 .cl-panel__dot {
   width: 7px; height: 7px;
   border-radius: 50%;
-  background: var(--cl-gold);
+  background: var(--cl-accent);
   flex-shrink: 0;
 }
 .cl-panel__body { padding: 1.25rem; }
@@ -426,7 +426,7 @@
 .cl-data-row:last-child { border-bottom: none; padding-bottom: 0; }
 .cl-data-row__label { font-size: .78rem; color: var(--cl-muted); }
 .cl-data-row__val   { font-size: .82rem; font-weight: 600; color: var(--cl-text-2); text-align: right; }
-.cl-data-row__val.accent { color: var(--cl-gold-d); }
+.cl-data-row__val.accent { color: var(--cl-accent-d); }
 
 /* ── Suivi dossier ─────────────────────────────────────────── */
 .cl-track-item {
@@ -442,7 +442,7 @@
   border-radius: 9px;
   background: var(--cl-surface-2);
   display: flex; align-items: center; justify-content: center;
-  color: var(--cl-gold-d);
+  color: var(--cl-accent-d);
   font-size: .75rem;
   flex-shrink: 0;
 }
@@ -489,16 +489,16 @@
 }
 .cl-step.done .cl-step__dot  {
   background: linear-gradient(135deg, var(--cl-navy-3), var(--cl-navy-4));
-  border-color: var(--cl-gold);
-  color: var(--cl-gold-2);
+  border-color: var(--cl-accent);
+  color: var(--cl-accent-2);
 }
 .cl-step.current .cl-step__dot {
-  background: linear-gradient(135deg, var(--cl-gold-d), var(--cl-gold));
-  border-color: var(--cl-gold);
+  background: linear-gradient(135deg, var(--cl-accent-d), var(--cl-accent));
+  border-color: var(--cl-accent);
   color: #FFFFFF;
   box-shadow: 0 0 0 4px rgba(129, 182, 233,.2);
 }
-.cl-step.done::before { background: var(--cl-gold); opacity: .4; }
+.cl-step.done::before { background: var(--cl-accent); opacity: .4; }
 .cl-step__label {
   font-size: .62rem;
   font-weight: 600;
@@ -597,7 +597,7 @@
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 1.25rem;
   font-size: 1.75rem;
-  color: var(--cl-gold-d);
+  color: var(--cl-accent-d);
 }
 .cl-empty__title { font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--cl-text); margin-bottom: .4rem; }
 .cl-empty__body  { font-size: .82rem; color: var(--cl-muted); max-width: 360px; margin: 0 auto 1.5rem; }

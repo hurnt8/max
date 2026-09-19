@@ -5,7 +5,7 @@
 @section('back_url', route('client.app.home'))
 
 @section('topbar_action')
-<span style="font-size:.8rem;font-weight:800;color:var(--ca-gold-l);min-width:28px;text-align:center">
+<span style="font-size:.8rem;font-weight:800;color:var(--ca-accent-l);min-width:28px;text-align:center">
   {{ $invoices->count() }}
 </span>
 @endsection
@@ -57,7 +57,7 @@
 .inv-pill.active {
   background: rgba(129, 182, 233,.12);
   border-color: rgba(129, 182, 233,.3);
-  color: var(--ca-gold-l);
+  color: var(--ca-accent-l);
 }
 .inv-pill--paid.active   { background: rgba(74,222,128,.1); border-color: rgba(74,222,128,.3); color: #4ade80 }
 .inv-pill--sent.active   { background: rgba(96,165,250,.1); border-color: rgba(96,165,250,.3); color: #60a5fa }

@@ -16,7 +16,7 @@
 
 @if($links->isEmpty())
 <div class="card-pro" style="text-align:center;padding:4rem 2rem">
-  <i class="fas fa-share-alt" style="font-size:3rem;color:var(--c-gold);opacity:.35;display:block;margin-bottom:1rem"></i>
+  <i class="fas fa-share-alt" style="font-size:3rem;color:var(--c-accent);opacity:.35;display:block;margin-bottom:1rem"></i>
   <p style="font-weight:600;color:var(--c-navy);font-size:1rem;margin-bottom:.35rem">Aucun réseau social configuré</p>
   <p style="color:var(--c-muted);font-size:.8375rem;margin-bottom:1.25rem">
     Ajoutez un lien pour qu'il apparaisse dans le pied de page et sur la page contact.
@@ -43,7 +43,7 @@
         @foreach($links as $link)
         <tr>
           <td data-label="">
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--c-navy),var(--c-navy-3));color:var(--c-gold);font-size:.9rem">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--c-navy),var(--c-navy-3));color:var(--c-accent);font-size:.9rem">
               <i class="{{ $link->icon_class }}"></i>
             </span>
           </td>

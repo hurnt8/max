@@ -20,7 +20,7 @@
 
 @if(!$templates->count())
 <div class="card-pro" style="text-align:center;padding:4rem 2rem">
-  <i class="fas fa-file-signature" style="font-size:3rem;color:var(--c-gold);opacity:.35;display:block;margin-bottom:1rem"></i>
+  <i class="fas fa-file-signature" style="font-size:3rem;color:var(--c-accent);opacity:.35;display:block;margin-bottom:1rem"></i>
   <p style="font-weight:600;color:var(--c-navy);font-size:1rem;margin-bottom:.35rem">Aucun modèle disponible</p>
   <p style="color:var(--c-muted);font-size:.8375rem;margin-bottom:1.25rem">
     Créez votre premier template pour personnaliser les contrats générés.
@@ -38,12 +38,12 @@
   @endphp
   <div class="col-md-6 col-xl-4">
     <div class="card-pro h-100 d-flex flex-column"
-         style="{{ $t->is_default ? 'border-color:var(--c-gold);box-shadow:0 0 0 1px var(--c-gold)' : '' }}">
+         style="{{ $t->is_default ? 'border-color:var(--c-accent);box-shadow:0 0 0 1px var(--c-accent)' : '' }}">
 
       {{-- En-tête --}}
       <div class="card-pro-hdr" style="flex-shrink:0">
         <div style="display:flex;align-items:center;gap:.75rem;min-width:0;flex:1">
-          <div style="width:38px;height:38px;border-radius:9px;background:{{ $t->is_default?'var(--c-gold)':'#EEF2FF' }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <div style="width:38px;height:38px;border-radius:9px;background:{{ $t->is_default?'var(--c-accent)':'#EEF2FF' }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
             <i class="fas fa-file-contract" style="color:var(--c-navy);font-size:.875rem"></i>
           </div>
           <div style="min-width:0;flex:1">

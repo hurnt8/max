@@ -100,8 +100,8 @@ $salutationName = ($gender === 'N') ? explode(' ', $user->name)[0] : $user->name
   --inp:  #141C2E;
   --navy: #032A4F;
   --navy2:#043767;
-  --gold: #81B6E9;
-  --gold2:#2B94F7;
+  --accent: #81B6E9;
+  --accent-2:#2B94F7;
   --text: #FFFFFF;
   --sub:  rgba(255,255,255,.52);
   --muted:rgba(255,255,255,.28);
@@ -162,7 +162,7 @@ a{text-decoration:none;color:inherit}
   background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;
-  color:var(--gold);margin:0 auto 1rem;
+  color:var(--accent);margin:0 auto 1rem;
   box-shadow:0 0 24px rgba(3, 42, 79,.3);
 }
 
@@ -181,9 +181,9 @@ a{text-decoration:none;color:inherit}
   border:1px solid rgba(129, 182, 233,.18);
   border-radius:12px;padding:.875rem 1rem;margin-bottom:1.5rem;
 }
-.info-box i{color:var(--gold);font-size:.88rem;flex-shrink:0;margin-top:.15rem}
+.info-box i{color:var(--accent);font-size:.88rem;flex-shrink:0;margin-top:.15rem}
 .info-box p{font-size:.77rem;color:rgba(255,255,255,.65);line-height:1.6}
-.info-box strong{color:var(--gold);font-weight:600}
+.info-box strong{color:var(--accent);font-weight:600}
 
 /* Error */
 .ferr{
@@ -210,7 +210,7 @@ a{text-decoration:none;color:inherit}
 }
 .finput::placeholder{color:rgba(255,255,255,.2)}
 .finput:focus{border-color:var(--navy);background:#161E30;box-shadow:0 0 0 3.5px rgba(3, 42, 79,.25)}
-.finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--gold)}
+.finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--accent)}
 .finput.err{border-color:#ef4444}
 .finput[readonly]{
   color:rgba(255,255,255,.4);cursor:not-allowed;
@@ -228,12 +228,12 @@ a{text-decoration:none;color:inherit}
 .strength-fill{height:100%;border-radius:2px;transition:width .3s,background .3s;width:0}
 .strength-txt{font-size:.68rem;color:var(--muted);margin-top:.3rem;min-height:1em;transition:color .2s}
 
-/* Gold pill button */
+/* Bouton pilule accent */
 .fbtn{
   width:100%;padding:.92rem 1.5rem;border:none;border-radius:999px;
   font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.625rem;
-  background:linear-gradient(90deg,var(--gold) 0%,var(--gold2) 100%);
+  background:linear-gradient(90deg,var(--accent) 0%,var(--accent-2) 100%);
   color:var(--navy);letter-spacing:.01em;
   box-shadow:0 6px 28px rgba(129, 182, 233,.35),0 2px 8px rgba(0,0,0,.3);
   transition:filter .2s,box-shadow .2s,transform .1s;margin-top:1.25rem;
@@ -244,7 +244,7 @@ a{text-decoration:none;color:inherit}
 
 /* Footer link */
 .foot{text-align:center;font-size:.76rem;color:var(--muted);margin-top:1.25rem}
-.foot a{color:var(--gold);font-weight:600;transition:opacity .18s}
+.foot a{color:var(--accent);font-weight:600;transition:opacity .18s}
 .foot a:hover{opacity:.75}
 
 /* Copyright */

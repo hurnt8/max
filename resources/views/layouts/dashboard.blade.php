@@ -35,10 +35,10 @@
   --c-navy:       #032A4F;
   --c-navy-2:     #043767;
   --c-navy-3:     #054685;
-  --c-gold:       #0657A4;
+  --c-accent:       #0657A4;
   --c-on-accent:  #FFFFFF;  /* texte sur aplat d accent */
-  --c-gold-d:     #054685;
-  --c-gold-l:     #0870D4;
+  --c-accent-d:     #054685;
+  --c-accent-l:     #0870D4;
   --c-bg:         #F7F8F9;
   --c-surface:    #FFFFFF;
   --c-border:     #DBDDDE;
@@ -77,7 +77,7 @@ a { text-decoration:none; }
    ══════════════════ */
 .sidebar {
   /* Fond bleu profond : l accent doit s eclaircir pour rester lisible. */
-  --c-gold:#81B6E9;
+  --c-accent:#81B6E9;
   position:fixed; top:0; left:0; width:var(--sidebar-w); height:100vh;
   background:var(--c-navy);
   display:flex; flex-direction:column; z-index:300;
@@ -99,7 +99,7 @@ a { text-decoration:none; }
 }
 .sidebar-user__avatar {
   width:36px; height:36px; border-radius:50%;
-  background:linear-gradient(135deg, var(--c-gold), var(--c-gold-d));
+  background:linear-gradient(135deg, var(--c-accent), var(--c-accent-d));
   display:flex; align-items:center; justify-content:center;
   font-weight:800; font-size:.8125rem; color:var(--c-navy); flex-shrink:0;
 }
@@ -125,8 +125,8 @@ a { text-decoration:none; }
 }
 .sidebar-link .icon { width:18px; text-align:center; font-size:.8rem; flex-shrink:0; }
 .sidebar-link:hover { color:#fff; background:rgba(255,255,255,.04); border-left-color:rgba(255,255,255,.15); }
-.sidebar-link.active { color:var(--c-gold); background:rgba(6, 87, 164,.1); border-left-color:var(--c-gold); font-weight:600; }
-.sidebar-link.active .icon { color:var(--c-gold); }
+.sidebar-link.active { color:var(--c-accent); background:rgba(6, 87, 164,.1); border-left-color:var(--c-accent); font-weight:600; }
+.sidebar-link.active .icon { color:var(--c-accent); }
 
 .sidebar-footer {
   padding:1rem 1.5rem;
@@ -176,7 +176,7 @@ a { text-decoration:none; }
   width:36px; height:36px; border-radius:50%;
   background:linear-gradient(135deg,var(--c-navy),var(--c-navy-3));
   display:flex; align-items:center; justify-content:center;
-  color:var(--c-gold); font-weight:800; font-size:.8125rem;
+  color:var(--c-accent); font-weight:800; font-size:.8125rem;
 }
 
 /* ══════════════════
@@ -213,7 +213,7 @@ a { text-decoration:none; }
   display:flex; align-items:center; gap:.5rem;
 }
 .card-pro-title .icon-dot {
-  width:6px; height:6px; border-radius:50%; background:var(--c-gold); flex-shrink:0;
+  width:6px; height:6px; border-radius:50%; background:var(--c-accent); flex-shrink:0;
 }
 .card-pro-body { padding:1.25rem; }
 
@@ -244,7 +244,7 @@ a { text-decoration:none; }
 }
 /* Icon color variants */
 .mi-navy  { background:#EEF2FF; color:var(--c-navy); }
-.mi-gold  { background:#FEF9EC; color:var(--c-gold-d); }
+.mi-accent  { background:#FEF9EC; color:var(--c-accent-d); }
 .mi-green { background:var(--c-green-l); color:var(--c-green); }
 .mi-red   { background:var(--c-red-l); color:var(--c-red); }
 .mi-blue  { background:var(--c-blue-l); color:var(--c-blue); }
@@ -363,15 +363,15 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
 .btn-navy:hover { background:var(--c-navy-2); color:#fff; }
 .btn-navy:active { transform:scale(.98); }
 
-.btn-gold {
+.btn-accent {
   display:inline-flex; align-items:center; gap:.4rem;
-  background:var(--c-gold); color:var(--c-on-accent);
+  background:var(--c-accent); color:var(--c-on-accent);
   border:none; border-radius:var(--radius-sm);
   padding:.525rem 1.125rem; font-size:.8375rem; font-weight:700;
   cursor:pointer; transition:var(--transition); font-family:inherit;
   text-decoration:none;
 }
-.btn-gold:hover { background:var(--c-gold-d); color:#fff; }
+.btn-accent:hover { background:var(--c-accent-d); color:#fff; }
 
 .btn-ghost {
   display:inline-flex; align-items:center; gap:.4rem;
@@ -399,7 +399,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
 /* Bootstrap compat */
 .b-navy { background:var(--c-navy); color:#fff; border:none; border-radius:var(--radius-sm); padding:.525rem 1.125rem; font-size:.8375rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:.4rem; text-decoration:none; transition:var(--transition); }
 .b-navy:hover { background:var(--c-navy-2); color:#fff; }
-.b-gold { background:var(--c-gold); color:var(--c-on-accent); border:none; border-radius:var(--radius-sm); padding:.525rem 1.125rem; font-size:.8375rem; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:.4rem; text-decoration:none; transition:var(--transition); }
+.b-accent { background:var(--c-accent); color:var(--c-on-accent); border:none; border-radius:var(--radius-sm); padding:.525rem 1.125rem; font-size:.8375rem; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:.4rem; text-decoration:none; transition:var(--transition); }
 .btn-xs { padding:.2rem .5rem; font-size:.75rem; border-radius:6px; }
 
 /* ══════════════════
@@ -413,7 +413,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
   font-family:inherit; transition:var(--transition);
   appearance:none;
 }
-.form-control-pro:focus { outline:none; border-color:var(--c-gold); box-shadow:0 0 0 3px rgba(6, 87, 164,.12); }
+.form-control-pro:focus { outline:none; border-color:var(--c-accent); box-shadow:0 0 0 3px rgba(6, 87, 164,.12); }
 .form-control-pro::placeholder { color:#C4CADC; }
 .form-help { font-size:.73rem; color:var(--c-muted); margin-top:.3rem; }
 
@@ -434,7 +434,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
   color:#fff;
 }
 .summary-box__label { font-size:.72rem; color:rgba(255,255,255,.55); font-weight:500; margin-bottom:.25rem; }
-.summary-box__val { font-size:1.375rem; font-weight:800; color:var(--c-gold); }
+.summary-box__val { font-size:1.375rem; font-weight:800; color:var(--c-accent); }
 .summary-box__sub { font-size:.73rem; color:rgba(255,255,255,.45); margin-top:.2rem; }
 
 /* ══════════════════
@@ -455,7 +455,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
   border:2px solid var(--c-border);
   transition:var(--transition);
 }
-.step-dot.done { background:var(--c-gold); color:var(--c-on-accent); border-color:var(--c-gold); }
+.step-dot.done { background:var(--c-accent); color:var(--c-on-accent); border-color:var(--c-accent); }
 .step-dot.current { background:var(--c-navy); color:#81B6E9; border-color:#81B6E9; }
 .step-label { font-size:.62rem; text-align:center; color:var(--c-muted); margin-top:.4rem; max-width:65px; line-height:1.3; }
 .step-label.done,.step-label.current { color:var(--c-navy); font-weight:600; }
@@ -489,7 +489,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
   transition:var(--transition); min-width:0;
 }
 .filter-bar input:focus, .filter-bar select:focus {
-  outline:none; border-color:var(--c-gold); background:var(--c-surface);
+  outline:none; border-color:var(--c-accent); background:var(--c-surface);
   box-shadow:0 0 0 3px rgba(6, 87, 164,.1);
 }
 .filter-bar input::placeholder { color:#C4CADC; }
@@ -505,7 +505,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
   cursor:pointer; transition:var(--transition); border-radius:var(--radius-sm) var(--radius-sm) 0 0;
 }
 .tab-btn:hover { color:var(--c-navy); background:rgba(0,0,0,.02); }
-.tab-btn.active { color:var(--c-navy); border-bottom-color:var(--c-gold); }
+.tab-btn.active { color:var(--c-navy); border-bottom-color:var(--c-accent); }
 
 /* ══════════════════
    STAT CARD (legacy)
@@ -513,7 +513,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
 .stat-c { background:var(--c-surface); border-radius:var(--radius); border:1px solid var(--c-border); padding:1.25rem; box-shadow:var(--shadow-sm); display:flex; align-items:center; gap:1rem; }
 .stat-c__icon { width:48px; height:48px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.125rem; flex-shrink:0; }
 .ic--blue   { background:#EFF6FF; color:var(--c-blue); }
-.ic--gold   { background:#FEF9EC; color:var(--c-gold-d); }
+.ic--accent   { background:#FEF9EC; color:var(--c-accent-d); }
 .ic--green  { background:var(--c-green-l); color:var(--c-green); }
 .ic--red    { background:var(--c-red-l); color:var(--c-red); }
 .ic--navy   { background:#EEF2FF; color:var(--c-navy); }
@@ -618,7 +618,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
 
   /* Boutons pleine largeur dans les actions de page */
   .page-hdr-actions { width:100%; }
-  .page-hdr-actions .btn-gold,
+  .page-hdr-actions .btn-accent,
   .page-hdr-actions .btn-navy { width:100%; justify-content:center; }
 
   /* Filter bar: colonne */
@@ -673,7 +673,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
   .pro-table tbody td:last-child > a,
   .pro-table tbody td:last-child > form { flex-shrink:0; }
   .pro-table tbody td:last-child .btn-icon { width:40px; height:40px; font-size:.9rem; }
-  .pro-table tbody td:last-child .btn-gold.btn-sm-pro,
+  .pro-table tbody td:last-child .btn-accent.btn-sm-pro,
   .pro-table tbody td:last-child .btn-navy.btn-sm-pro { min-height:40px; padding:.55rem 1rem; }
 
   /* Transfer card header: empilé sur mobile */
@@ -715,7 +715,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
 .cf-modal-overlay.open{display:flex}
 .cf-modal{background:#fff;border-radius:14px;max-width:420px;width:100%;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.28);animation:cfPop .16s ease}
 @keyframes cfPop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
-.cf-modal-icon{width:44px;height:44px;border-radius:12px;background:#FEF9EC;color:var(--c-gold-d,#054685);display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:.875rem}
+.cf-modal-icon{width:44px;height:44px;border-radius:12px;background:#FEF9EC;color:var(--c-accent-d,#054685);display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:.875rem}
 .cf-modal-title{font-size:1rem;font-weight:800;color:var(--c-navy,#032A4F);margin-bottom:.5rem}
 .cf-modal-msg{font-size:.85rem;color:var(--c-muted,#6b7280);line-height:1.6;margin-bottom:1.5rem;white-space:pre-line}
 .cf-modal-actions{display:flex;gap:.6rem;justify-content:flex-end}
@@ -844,7 +844,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
          class="sidebar-link {{ request()->routeIs('admin.support*') ? 'active':'' }}">
         <i class="fas fa-comments icon"></i> Support
         @if($saSupUnread > 0)
-        <span style="margin-left:auto;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--c-gold);color:var(--c-on-accent);font-size:.62rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center">{{ $saSupUnread }}</span>
+        <span style="margin-left:auto;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--c-accent);color:var(--c-on-accent);font-size:.62rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center">{{ $saSupUnread }}</span>
         @endif
       </a>
       @endhasanyrole
@@ -940,7 +940,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
          class="sidebar-link {{ request()->routeIs('admin.support*') ? 'active':'' }}">
         <i class="fas fa-comments icon"></i> Support
         @if($admSupUnread > 0)
-        <span style="margin-left:auto;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--c-gold);color:var(--c-on-accent);font-size:.62rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center">{{ $admSupUnread }}</span>
+        <span style="margin-left:auto;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--c-accent);color:var(--c-on-accent);font-size:.62rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center">{{ $admSupUnread }}</span>
         @endif
       </a>
       @endhasanyrole
@@ -989,7 +989,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
       <button id="pwa-install-btn" onclick="doInstallPwa()"
         title="Installer l'application"
         style="display:none;align-items:center;gap:.4rem;
-          background:var(--c-gold);color:var(--c-on-accent);
+          background:var(--c-accent);color:var(--c-on-accent);
           border:none;border-radius:var(--radius-sm);
           padding:.4rem .875rem;font-size:.78rem;font-weight:700;
           cursor:pointer;font-family:inherit;transition:background .2s;flex-shrink:0">
@@ -1003,7 +1003,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
         <button class="topbar-badge" id="notifBell" onclick="toggleNotifPanel()"
                 style="border:none;cursor:pointer;background:var(--c-surface)" title="Notifications">
           <i class="fas fa-bell"></i>
-          <span id="adminNotifBadge" style="position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;padding:0 4px;border-radius:999px;background:var(--c-gold);color:var(--c-on-accent);font-size:.58rem;font-weight:800;display:{{ $adminUnread > 0 ? 'flex' : 'none' }};align-items:center;justify-content:center;border:2px solid var(--c-surface)">{{ $adminUnread > 9 ? '9+' : $adminUnread }}</span>
+          <span id="adminNotifBadge" style="position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;padding:0 4px;border-radius:999px;background:var(--c-accent);color:var(--c-on-accent);font-size:.58rem;font-weight:800;display:{{ $adminUnread > 0 ? 'flex' : 'none' }};align-items:center;justify-content:center;border:2px solid var(--c-surface)">{{ $adminUnread > 9 ? '9+' : $adminUnread }}</span>
         </button>
         {{-- Dropdown panel --}}
         <div id="notifPanel" style="display:none;position:absolute;top:calc(100% + 10px);right:0;
@@ -1012,7 +1012,7 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
           <div style="display:flex;align-items:center;justify-content:space-between;
             padding:.8125rem 1.125rem;border-bottom:1px solid var(--c-border)">
             <span style="font-size:.875rem;font-weight:700;color:var(--c-navy)">Notifications</span>
-            <button onclick="markAllReadPanel()" style="background:none;border:none;color:var(--c-gold);
+            <button onclick="markAllReadPanel()" style="background:none;border:none;color:var(--c-accent);
               font-size:.72rem;font-weight:700;cursor:pointer;padding:.2rem .4rem;border-radius:4px;transition:.15s"
               onmouseover="this.style.background='var(--c-amber-l)'" onmouseout="this.style.background='none'">
               Tout lire
@@ -1094,9 +1094,9 @@ function _renderNotifs(list) {
   const colorMap = { support:'var(--c-violet)', transfer:'var(--c-blue)', system:'var(--c-amber)' };
   const bgMap    = { support:'rgba(124,58,237,.1)', transfer:'rgba(37,99,235,.1)', system:'rgba(217,119,6,.1)' };
   el.innerHTML = list.map(n => {
-    const col = colorMap[n.type] || 'var(--c-gold)';
+    const col = colorMap[n.type] || 'var(--c-accent)';
     const bg  = bgMap[n.type]   || 'rgba(6, 87, 164,.1)';
-    const unreadDot = n.read ? '' : `<div style="width:6px;height:6px;border-radius:50%;background:var(--c-gold);flex-shrink:0;margin-top:.4rem"></div>`;
+    const unreadDot = n.read ? '' : `<div style="width:6px;height:6px;border-radius:50%;background:var(--c-accent);flex-shrink:0;margin-top:.4rem"></div>`;
     return `<div onclick="${n.url ? `window.location='${n.url}'` : ''}"
       style="display:flex;align-items:flex-start;gap:.75rem;padding:.75rem 1.125rem;
         border-bottom:1px solid var(--c-border);cursor:${n.url ? 'pointer' : 'default'};
@@ -1233,15 +1233,15 @@ function doInstallPwa() {
   </div>
   <div style="font-size:.73rem;color:rgba(255,255,255,.65);line-height:1.6">
     <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem">
-      <span style="background:rgba(6, 87, 164,.15);border-radius:4px;padding:.1rem .4rem;font-size:.7rem;color:var(--c-gold);font-weight:700">1</span>
-      Appuyez sur <strong style="color:#fff">Partager</strong> <i class="fas fa-share-square" style="color:var(--c-gold)"></i>
+      <span style="background:rgba(6, 87, 164,.15);border-radius:4px;padding:.1rem .4rem;font-size:.7rem;color:var(--c-accent);font-weight:700">1</span>
+      Appuyez sur <strong style="color:#fff">Partager</strong> <i class="fas fa-share-square" style="color:var(--c-accent)"></i>
     </div>
     <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem">
-      <span style="background:rgba(6, 87, 164,.15);border-radius:4px;padding:.1rem .4rem;font-size:.7rem;color:var(--c-gold);font-weight:700">2</span>
-      Puis <strong style="color:#fff">Sur l'écran d'accueil</strong> <i class="fas fa-plus-square" style="color:var(--c-gold)"></i>
+      <span style="background:rgba(6, 87, 164,.15);border-radius:4px;padding:.1rem .4rem;font-size:.7rem;color:var(--c-accent);font-weight:700">2</span>
+      Puis <strong style="color:#fff">Sur l'écran d'accueil</strong> <i class="fas fa-plus-square" style="color:var(--c-accent)"></i>
     </div>
     <div style="display:flex;align-items:center;gap:.5rem">
-      <span style="background:rgba(6, 87, 164,.15);border-radius:4px;padding:.1rem .4rem;font-size:.7rem;color:var(--c-gold);font-weight:700">3</span>
+      <span style="background:rgba(6, 87, 164,.15);border-radius:4px;padding:.1rem .4rem;font-size:.7rem;color:var(--c-accent);font-weight:700">3</span>
       Appuyez sur <strong style="color:#fff">Ajouter</strong>
     </div>
   </div>
