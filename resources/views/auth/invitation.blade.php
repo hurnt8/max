@@ -86,7 +86,7 @@ $salutationName = ($gender === 'N') ? explode(' ', $user->name)[0] : $user->name
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#0657A4">
-<link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="/site-icon-32.png">
 <title>{{ $t['title'] }}</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">

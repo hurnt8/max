@@ -272,6 +272,12 @@ Route::middleware(['auth', 'role:client', 'client.locale'])->prefix('app')->name
         return back();
     })->name('locale');
 });
+// /favicon.ico etait un fichier vide (0 octet) : les navigateurs qui le demandent
+// directement affichaient une icone cassee. On le sert desormais depuis la meme
+// source que le reste, donc toujours synchronise avec le logo configure.
+Route::get('/favicon.ico', fn () => app(ClientAppController::class)->siteIcon(32))
+    ->name('favicon');
+
 // Icone PWA generee depuis le logo televerse en admin (repli sur /images/icon-*.png).
 Route::get('/site-icon-{size}.png', [ClientAppController::class, 'siteIcon'])
     ->whereNumber('size')->name('site.icon');

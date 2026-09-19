@@ -9,7 +9,13 @@
     @foreach (\App\Models\Language::enabledCodes() as $l)
     <link rel="alternate" hreflang="{{ $l }}" href="{{ url($l) }}">
     @endforeach
-    <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
+    {{-- Favicons generes depuis le logo configure en admin (route /site-icon-*.png),
+         et non plus un PNG fige dans assets/. --}}
+    <link rel="icon" type="image/png" sizes="32x32" href="/site-icon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/site-icon-16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/site-icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/site-icon-180.png">
+    <link rel="shortcut icon" type="image/png" href="/site-icon-32.png">
 
     <!-- Fonts: Inter + Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
