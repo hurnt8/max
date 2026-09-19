@@ -11,6 +11,22 @@
 |
 */
 
+/*
+|--------------------------------------------------------------------------
+| Helpers applicatifs
+|--------------------------------------------------------------------------
+|
+| app/helpers.php est deja declare dans composer.json (autoload.files), mais
+| cette map n'est regeneree que par `composer dump-autoload`. Sur un deploiement
+| ou un clone ou elle est perimee, site_name() devient introuvable et toute
+| traduction qui l'appelle provoque un fatal. Ce require_once garantit que les
+| helpers sont charges avant les providers et avant tout chargement de langue.
+| Les gardes function_exists() rendent le double chargement inoffensif.
+|
+*/
+
+require_once __DIR__ . '/../app/helpers.php';
+
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
