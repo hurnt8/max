@@ -17,14 +17,14 @@
 
 <style>
 :root{
-  --bg:   #080C18;
-  --inp:  #141C2E;
-  --cyan: #0DCFDC;
-  --cyan2:#09B5C8;
+  --bg:   #02182E;
+  --inp:  #06304F;
+  --cyan: #2B94F7;
+  --cyan2:#0870D4;
   --text: #FFFFFF;
   --sub:  rgba(255,255,255,.52);
   --muted:rgba(255,255,255,.28);
-  --bdr:  rgba(255,255,255,.09);
+  --bdr:  rgba(129,182,233,.16);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
@@ -114,7 +114,7 @@ a{text-decoration:none;color:inherit}
   width:100%;padding:.92rem 1.5rem;border:none;border-radius:999px;
   font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;
   display:flex;align-items:center;justify-content:center;gap:.625rem;
-  background:linear-gradient(90deg,var(--cyan) 0%,var(--cyan2) 100%);
+  background:linear-gradient(135deg,#0870D4 0%,#0657A4 100%);
   color:#080C18;letter-spacing:.01em;
   box-shadow:0 6px 28px rgba(13,207,220,.35),0 2px 8px rgba(0,0,0,.3);
   transition:filter .2s,box-shadow .2s,transform .1s;margin-top:.5rem;

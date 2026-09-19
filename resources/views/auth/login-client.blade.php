@@ -23,10 +23,10 @@
 
 <style>
 :root{
-  --bg:   #080C18;
-  --bg2:  #0C1120;
-  --card: #0E1626;
-  --inp:  #141C2E;
+  --bg:   #02182E;
+  --bg2:  #04203C;
+  --card: #05243F;
+  --inp:  #06304F;
   --navy: #032A4F;
   --navy2:#043767;
   --accent: #81B6E9;
@@ -34,10 +34,10 @@
   --text: #FFFFFF;
   --sub:  rgba(255,255,255,.52);
   --muted:rgba(255,255,255,.28);
-  --bdr:  rgba(255,255,255,.09);
+  --bdr:  rgba(129,182,233,.16);
   /* Compat: le reste de la feuille référence encore --cyan/--cyan2 pour ses accents ponctuels */
-  --cyan: #0DCFDC;
-  --cyan2:#09B5C8;
+  --cyan: #2B94F7;
+  --cyan2:#0870D4;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
@@ -67,12 +67,14 @@ a{text-decoration:none;color:inherit}
   100%{width:92%;background-position:0 0}
 }
 .ld-logo{
-  width:76px;height:76px;border-radius:22px;
-  background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
+  border-radius:20px;overflow:hidden;
+  background:linear-gradient(135deg,var(--navy2),var(--navy));
+  border:1px solid rgba(129,182,233,.18);
   margin-bottom:1.5rem;position:relative;
-  box-shadow:0 0 40px rgba(3, 42, 79,.25);
+  box-shadow:0 0 40px rgba(6,87,164,.25);
 }
+.ld-logo img{height:auto !important;max-height:80px;max-width:220px;width:auto;object-fit:contain;display:block}
 .ld-logo span{
   font-family:'Space Grotesk',sans-serif;font-size:2rem;
   font-weight:800;color:#fff;
@@ -98,12 +100,12 @@ a{text-decoration:none;color:inherit}
 .orb{position:absolute;border-radius:50%;filter:blur(90px)}
 .orb-1{
   width:480px;height:480px;top:-10%;right:-8%;
-  background:radial-gradient(circle,rgba(129, 182, 233,.09) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(43,148,247,.16) 0%,transparent 65%);
   animation:orbf 10s ease-in-out infinite alternate;
 }
 .orb-2{
   width:360px;height:360px;bottom:-15%;left:-8%;
-  background:radial-gradient(circle,rgba(3, 42, 79,.05) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(6,87,164,.20) 0%,transparent 65%);
   animation:orbf 14s ease-in-out infinite alternate-reverse;
 }
 @keyframes orbf{from{transform:scale(1)}to{transform:scale(1.1) translate(2%,3%)}}
@@ -169,13 +171,18 @@ a{text-decoration:none;color:inherit}
 
 /* Logo */
 .logo-box{
-  width:74px;height:74px;border-radius:22px;
-  background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
-  margin:0 auto 1.5rem;
-  box-shadow:0 0 36px rgba(3, 42, 79,.22);
+  width:fit-content;max-width:100%;
+  border-radius:20px;overflow:hidden;
+  background:linear-gradient(135deg,var(--navy2),var(--navy));
+  border:1px solid rgba(129,182,233,.18);
+  margin:0 auto 1.6rem;
+  box-shadow:0 12px 34px rgba(2,24,46,.55),0 0 44px rgba(6,87,164,.22);
 }
-.logo-box img{height:40px;object-fit:contain}
+/* Sans rembourrage : un logo carre opaque remplit la tuile, un PNG transparent
+   laisse apparaitre le degrade. Le !important neutralise la hauteur que le
+   composant pose en style inline. */
+.logo-box img{height:auto !important;max-height:88px;max-width:248px;width:auto;object-fit:contain;display:block}
 .logo-box span{
   font-family:'Space Grotesk',sans-serif;font-size:2rem;
   font-weight:800;color:#fff;line-height:1;
@@ -254,9 +261,9 @@ a{text-decoration:none;color:inherit}
   width:100%;padding:.95rem 1.5rem;border:none;border-radius:999px;
   font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.625rem;
-  background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 100%);
+  background:linear-gradient(135deg,#0870D4 0%,#0657A4 100%);
   color:#fff;letter-spacing:.01em;
-  box-shadow:0 6px 28px rgba(3, 42, 79,.28),0 2px 8px rgba(3, 42, 79,.15);
+  box-shadow:0 6px 28px rgba(6,87,164,.45),0 2px 8px rgba(2,24,46,.35);
   transition:filter .2s,box-shadow .2s,transform .1s;
 }
 .fbtn:hover{
@@ -381,7 +388,7 @@ a{text-decoration:none;color:inherit}
 <div id="ld" role="status" aria-label="Connexion en cours">
   <div class="ld-bar"></div>
   <div class="ld-logo">
-    <x-logo variant="icon" theme="dark" size="md" />
+    <x-logo variant="full" theme="dark" size="md" />
     <div class="ld-ring"></div>
   </div>
   <p class="ld-lbl">Connexion en cours…</p>
@@ -439,7 +446,7 @@ a{text-decoration:none;color:inherit}
 
       {{-- Logo --}}
       <div class="logo-box">
-        <x-logo variant="icon" theme="dark" size="md" />
+        <x-logo variant="full" theme="dark" size="md" />
       </div>
 
       {{-- Heading --}}

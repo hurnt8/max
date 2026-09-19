@@ -1195,7 +1195,7 @@ select.form-control { cursor: pointer; }
 .service-nav-strip__item:last-child { border-right: none; }
 .service-nav-strip__item:hover { background: var(--cream); }
 .service-nav-strip__icon { width: 52px; height: 52px; background: var(--accent-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: var(--accent-dark); transition: all .2s ease; }
-.service-nav-strip__item:hover .service-nav-strip__icon { background: var(--navy); color: var(--accent); }
+.service-nav-strip__item:hover .service-nav-strip__icon { background: var(--navy); color: #FFFFFF; }
 .service-nav-strip__label { font-size: .6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--navy); text-align: center; line-height: 1.4; }
 
 /* ================================================================
@@ -1576,4 +1576,31 @@ select.form-control { cursor: pointer; }
     --accent-light: #B5D4F2;
     --accent-dark:  #2B94F7;
     --on-accent:  #021D36;
+}
+
+/* --------------------------------------------------------------------------
+   Boutons outline sur fonds bleus profonds
+   .btn-outline force color:var(--navy), donc du bleu profond sur du bleu
+   profond : le libelle devenait invisible, seule la bordure restait visible.
+   -------------------------------------------------------------------------- */
+.page-hero .btn-outline,
+.calc-section .btn-outline,
+.contact-widget .btn-outline,
+.simulate-summary__card .btn-outline,
+.cta-banner .btn-outline,
+.contact-info-bar .btn-outline,
+.site-footer .btn-outline {
+    color: #FFFFFF !important;
+    border-color: rgba(255,255,255,.38);
+}
+.page-hero .btn-outline:hover,
+.calc-section .btn-outline:hover,
+.contact-widget .btn-outline:hover,
+.simulate-summary__card .btn-outline:hover,
+.cta-banner .btn-outline:hover,
+.contact-info-bar .btn-outline:hover,
+.site-footer .btn-outline:hover {
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #032A4F !important;
 }

@@ -211,7 +211,7 @@ document.addEventListener('alpine:init', () => {
                             </h3>
                             <p style="font-size:.78rem;color:#6b7280;margin:0;">@lang('loan.quote_step_desc')</p>
                         </div>
-                        <div style="display:inline-flex;align-items:center;gap:.4rem;background:var(--navy);color:var(--accent);padding:.35rem .9rem;border-radius:999px;font-weight:800;font-size:.82rem;white-space:nowrap;flex-shrink:0;">
+                        <div style="display:inline-flex;align-items:center;gap:.4rem;background:var(--navy);color:#FFFFFF;padding:.35rem .9rem;border-radius:999px;font-weight:800;font-size:.82rem;white-space:nowrap;flex-shrink:0;">
                             <i class="fas fa-lock" style="font-size:.68rem;"></i>
                             @lang('loan.label_rate') : {{ number_format((float) $loanSetting->annual_rate, 2) }} %
                         </div>

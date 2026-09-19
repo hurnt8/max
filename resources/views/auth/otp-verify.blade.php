@@ -21,9 +21,9 @@
 
 <style>
 :root{
-  --bg:   #080C18;
-  --card: #0E1626;
-  --inp:  #141C2E;
+  --bg:   #02182E;
+  --card: #05243F;
+  --inp:  #06304F;
   --navy: #032A4F;
   --navy2:#043767;
   --accent: #81B6E9;
@@ -31,10 +31,10 @@
   --text: #FFFFFF;
   --sub:  rgba(255,255,255,.52);
   --muted:rgba(255,255,255,.28);
-  --bdr:  rgba(255,255,255,.09);
+  --bdr:  rgba(129,182,233,.16);
   /* Compat: le reste de la feuille référence encore --cyan/--cyan2 pour ses accents ponctuels */
-  --cyan: #0DCFDC;
-  --cyan2:#09B5C8;
+  --cyan: #2B94F7;
+  --cyan2:#0870D4;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
@@ -67,7 +67,7 @@ html,body{
   box-shadow:0 0 40px rgba(3, 42, 79,.25);
   overflow:hidden;
 }
-.ld-logo img{width:56px;height:56px;object-fit:contain;border-radius:10px}
+.ld-logo img{width:auto;height:auto !important;max-width:220px;max-height:80px;object-fit:contain;display:block}
 .ld-ring{
   position:absolute;inset:-8px;border-radius:32px;
   border:2px solid rgba(3, 42, 79,.15);border-top-color:var(--accent);
@@ -337,7 +337,7 @@ html,body{
 <div id="ld" role="status">
   <div class="ld-bar"></div>
   <div class="ld-logo">
-    <x-logo variant="icon" theme="dark" size="md" />
+    <x-logo variant="full" theme="dark" size="md" />
     <div class="ld-ring"></div>
   </div>
   <p class="ld-lbl">{{ __('auth.otp_verifying') ?? 'Vérification…' }}</p>
@@ -362,7 +362,7 @@ html,body{
     <a href="{{ $backUrl ?? '/login' }}" class="topbar__back">
       <i class="fas fa-chevron-left"></i> {{ __('auth.otp_back') }}
     </a>
-    <x-logo variant="icon" theme="light" size="sm" href="{{ url('/') }}" class="topbar__logo" />
+    <x-logo variant="full" theme="light" size="sm" href="{{ url('/') }}" class="topbar__logo" />
   </div>
 
   {{-- Scrollable content --}}

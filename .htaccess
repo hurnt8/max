@@ -29,7 +29,13 @@
     # internes, qui contiennent les logs, le cache et les fichiers prives.
     RewriteRule ^\.git(/|$) - [F,L]
     RewriteRule ^storage/(app|framework|logs)(/|$) - [F,L]
-    RewriteRule ^(app|bootstrap|config|database|resources|routes|tests|vendor)(/|$) - [F,L]
+    # app/ est A LA FOIS le dossier source Laravel ET l URL de l espace client
+    # (/app, /app/loans, /app/support...). Le bloquer en entier renvoyait un 403 sur
+    # tout l espace client. Aucune des 31 routes /app n a d extension de fichier :
+    # on ne bloque donc que les requetes visant un fichier, ce qui couvre le code
+    # source (/app/Models/User.php) sans toucher aux URL applicatives.
+    RewriteRule ^app/.+\.[A-Za-z0-9]+$ - [F,L]
+    RewriteRule ^(bootstrap|config|database|resources|routes|tests|vendor)(/|$) - [F,L]
 
     <IfModule mod_negotiation.c>
         Options -MultiViews
