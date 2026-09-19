@@ -152,7 +152,7 @@
   <div class="inv-parties">
     <div>
       <div class="inv-party-lbl">Émetteur</div>
-      <div class="inv-party-name">SOLBERG GRUPO</div>
+      <div class="inv-party-name">{{ site_name() }}</div>
       <div class="inv-party-info">Agent : {{ $invoice->admin->name }}</div>
     </div>
     <div>

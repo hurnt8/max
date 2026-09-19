@@ -4,7 +4,7 @@
 $texts = [
     'fr' => [
         'greeting'     => 'Madame / Monsieur ' . $loan->name . ',',
-        'intro'        => 'Nous avons bien enregistré votre dossier de financement auprès de **SOLBERG GRUPO**. Vous trouverez ci-joint votre contrat de prêt ainsi que le tableau d\'amortissement détaillant vos remboursements.',
+        'intro'        => 'Nous avons bien enregistré votre dossier de financement auprès de **' . site_name() . '**. Vous trouverez ci-joint votre contrat de prêt ainsi que le tableau d\'amortissement détaillant vos remboursements.',
         'summary'      => 'RÉSUMÉ DE VOTRE FINANCEMENT',
         'ref'          => 'Référence dossier',
         'amount'       => 'Montant accordé',
@@ -26,7 +26,7 @@ $texts = [
     ],
     'pl' => [
         'greeting'     => 'Szanowny/a ' . $loan->name . ',',
-        'intro'        => 'Zarejestrowaliśmy Państwa wniosek o finansowanie w **SOLBERG GRUPO**. W załączeniu przesyłamy umowę pożyczki oraz harmonogram spłat.',
+        'intro'        => 'Zarejestrowaliśmy Państwa wniosek o finansowanie w **' . site_name() . '**. W załączeniu przesyłamy umowę pożyczki oraz harmonogram spłat.',
         'summary'      => 'PODSUMOWANIE FINANSOWANIA',
         'ref'          => 'Numer referencyjny',
         'amount'       => 'Przyznana kwota',
@@ -48,7 +48,7 @@ $texts = [
     ],
     'en' => [
         'greeting'     => 'Dear ' . $loan->name . ',',
-        'intro'        => 'Your financing file has been registered with **SOLBERG GRUPO**. Please find attached your loan agreement and the amortization schedule detailing your monthly repayments.',
+        'intro'        => 'Your financing file has been registered with **' . site_name() . '**. Please find attached your loan agreement and the amortization schedule detailing your monthly repayments.',
         'summary'      => 'YOUR FINANCING SUMMARY',
         'ref'          => 'File reference',
         'amount'       => 'Amount granted',
@@ -70,7 +70,7 @@ $texts = [
     ],
     'es' => [
         'greeting'     => 'Estimado/a ' . $loan->name . ',',
-        'intro'        => 'Hemos registrado su expediente de financiación en **SOLBERG GRUPO**. Adjuntamos su contrato de préstamo y el cuadro de amortización con el detalle de sus pagos mensuales.',
+        'intro'        => 'Hemos registrado su expediente de financiación en **' . site_name() . '**. Adjuntamos su contrato de préstamo y el cuadro de amortización con el detalle de sus pagos mensuales.',
         'summary'      => 'RESUMEN DE SU FINANCIAMIENTO',
         'ref'          => 'Referencia del expediente',
         'amount'       => 'Importe concedido',
@@ -92,7 +92,7 @@ $texts = [
     ],
     'bg' => [
         'greeting'     => 'Уважаеми/а ' . $loan->name . ',',
-        'intro'        => 'Успешно регистрирахме вашето досие за финансиране в **SOLBERG GRUPO**. Ще намерите приложени вашия договор за заем, както и погасителния план, детайлизиращ вашите вноски.',
+        'intro'        => 'Успешно регистрирахме вашето досие за финансиране в **' . site_name() . '**. Ще намерите приложени вашия договор за заем, както и погасителния план, детайлизиращ вашите вноски.',
         'summary'      => 'ОБОБЩЕНИЕ НА ВАШЕТО ФИНАНСИРАНЕ',
         'ref'          => 'Референция на досието',
         'amount'       => 'Отпусната сума',
@@ -114,7 +114,7 @@ $texts = [
     ],
     'hu' => [
         'greeting'     => 'Tisztelt ' . $loan->name . '!',
-        'intro'        => 'Finanszírozási ügyét sikeresen rögzítettük a **SOLBERG GRUPO**-nál. Mellékelten megtalálja kölcsönszerződését, valamint a havi törlesztéseit részletező törlesztési ütemtervet.',
+        'intro'        => 'Finanszírozási ügyét sikeresen rögzítettük a **' . site_name() . '**-nál. Mellékelten megtalálja kölcsönszerződését, valamint a havi törlesztéseit részletező törlesztési ütemtervet.',
         'summary'      => 'FINANSZÍROZÁSÁNAK ÖSSZEFOGLALÓJA',
         'ref'          => 'Ügy referenciaszáma',
         'amount'       => 'Jóváhagyott összeg',
@@ -136,7 +136,7 @@ $texts = [
     ],
     'it' => [
         'greeting'     => 'Gentile ' . $loan->name . ',',
-        'intro'        => 'Abbiamo registrato con successo la tua pratica di finanziamento presso **SOLBERG GRUPO**. In allegato trovi il tuo contratto di prestito e il piano di ammortamento con il dettaglio dei tuoi rimborsi mensili.',
+        'intro'        => 'Abbiamo registrato con successo la tua pratica di finanziamento presso **' . site_name() . '**. In allegato trovi il tuo contratto di prestito e il piano di ammortamento con il dettaglio dei tuoi rimborsi mensili.',
         'summary'      => 'RIEPILOGO DEL TUO FINANZIAMENTO',
         'ref'          => 'Riferimento pratica',
         'amount'       => 'Importo concesso',
@@ -158,7 +158,7 @@ $texts = [
     ],
     'de' => [
         'greeting'     => 'Sehr geehrte Damen und Herren ' . $loan->name . ',',
-        'intro'        => 'Wir haben Ihre Finanzierungsakte bei **SOLBERG GRUPO** erfasst. Anbei finden Sie Ihren Kreditvertrag sowie den Tilgungsplan mit den Einzelheiten zu Ihren Rückzahlungen.',
+        'intro'        => 'Wir haben Ihre Finanzierungsakte bei **' . site_name() . '** erfasst. Anbei finden Sie Ihren Kreditvertrag sowie den Tilgungsplan mit den Einzelheiten zu Ihren Rückzahlungen.',
         'summary'      => 'ZUSAMMENFASSUNG IHRER FINANZIERUNG',
         'ref'          => 'Aktenreferenz',
         'amount'       => 'Genehmigter Betrag',
@@ -180,7 +180,7 @@ $texts = [
     ],
     'lt' => [
         'greeting'     => 'Gerbiamas (-a) ' . $loan->name . ',',
-        'intro'        => 'Jūsų finansavimo byla sėkmingai užregistruota **SOLBERG GRUPO**. Pridedame jūsų paskolos sutartį bei mokėjimų grafiką, kuriame nurodyti jūsų mėnesiniai mokėjimai.',
+        'intro'        => 'Jūsų finansavimo byla sėkmingai užregistruota **' . site_name() . '**. Pridedame jūsų paskolos sutartį bei mokėjimų grafiką, kuriame nurodyti jūsų mėnesiniai mokėjimai.',
         'summary'      => 'JŪSŲ FINANSAVIMO SANTRAUKA',
         'ref'          => 'Bylos numeris',
         'amount'       => 'Patvirtinta suma',
@@ -202,7 +202,7 @@ $texts = [
     ],
     'ro' => [
         'greeting'     => 'Stimate/Stimată ' . $loan->name . ',',
-        'intro'        => 'Am înregistrat cu succes dosarul dumneavoastră de finanțare la **SOLBERG GRUPO**. Veți găsi atașat contractul de împrumut, precum și graficul de rambursare cu detalierea plăților dumneavoastră.',
+        'intro'        => 'Am înregistrat cu succes dosarul dumneavoastră de finanțare la **' . site_name() . '**. Veți găsi atașat contractul de împrumut, precum și graficul de rambursare cu detalierea plăților dumneavoastră.',
         'summary'      => 'REZUMATUL FINANȚĂRII DUMNEAVOASTRĂ',
         'ref'          => 'Referință dosar',
         'amount'       => 'Sumă acordată',
@@ -224,7 +224,7 @@ $texts = [
     ],
     'lv' => [
         'greeting'     => 'Godātais/Godātā ' . $loan->name . ',',
-        'intro'        => 'Mēs esam veiksmīgi reģistrējuši jūsu finansējuma lietu **SOLBERG GRUPO**. Pielikumā atradīsiet savu aizdevuma līgumu, kā arī atmaksas grafiku ar jūsu ikmēneša maksājumu detaļām.',
+        'intro'        => 'Mēs esam veiksmīgi reģistrējuši jūsu finansējuma lietu **' . site_name() . '**. Pielikumā atradīsiet savu aizdevuma līgumu, kā arī atmaksas grafiku ar jūsu ikmēneša maksājumu detaļām.',
         'summary'      => 'JŪSU FINANSĒJUMA KOPSAVILKUMS',
         'ref'          => 'Lietas atsauce',
         'amount'       => 'Piešķirtā summa',
@@ -246,7 +246,7 @@ $texts = [
     ],
     'nl' => [
         'greeting'     => 'Geachte heer/mevrouw ' . $loan->name . ',',
-        'intro'        => 'Wij hebben uw financieringsdossier bij **SOLBERG GRUPO** succesvol geregistreerd. Bijgevoegd vindt u uw leningsovereenkomst en het aflossingsschema met de details van uw maandelijkse terugbetalingen.',
+        'intro'        => 'Wij hebben uw financieringsdossier bij **' . site_name() . '** succesvol geregistreerd. Bijgevoegd vindt u uw leningsovereenkomst en het aflossingsschema met de details van uw maandelijkse terugbetalingen.',
         'summary'      => 'SAMENVATTING VAN UW FINANCIERING',
         'ref'          => 'Dossierreferentie',
         'amount'       => 'Toegekend bedrag',

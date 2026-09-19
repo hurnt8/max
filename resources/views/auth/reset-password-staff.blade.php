@@ -167,7 +167,11 @@ a{text-decoration:none;color:inherit}
             <input type="email" id="email" name="email"
                    class="finput {{ $errors->has('email') ? 'err' : '' }}"
                    value="{{ old('email', $email) }}"
-                   placeholder="admin@solberggrupo.com"
+                   @php
+                       // Domaine issu de l'email du site configure en admin (pas de marque figee).
+                       $phAdmin = 'admin@' . (\Illuminate\Support\Str::after(site_email(), '@') ?: request()->getHost());
+                   @endphp
+                   placeholder="{{ $phAdmin }}"
                    autocomplete="email" required>
           </div>
         </div>

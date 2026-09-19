@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0B1A2E">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
-<title>{{ __('auth.otp_title') }} | Solberg Admin</title>
+<title>{{ __('auth.otp_title') }} | {{ site_name() }} Admin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -159,7 +159,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
           <div class="staff-badge__ico"><i class="fas fa-shield-halved"></i></div>
           <div class="staff-badge__text">
             <div class="staff-badge__label">{{ __('auth.staff_restricted') }}</div>
-            <div class="staff-badge__sub">solberggrupo.site &mdash; secure access</div>
+            <div class="staff-badge__sub">{{ request()->getHost() }} &mdash; secure access</div>
           </div>
         </div>
         <h2 class="auth-left__title">{{ __('auth.otp_heading') }}</h2>

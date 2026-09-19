@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#0B1A2E">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Solberg Admin">
+<meta name="apple-mobile-web-app-title" content="{{ site_name() }} Admin">
 <meta name="mobile-web-app-capable" content="yes">
 @auth
   @if(Auth::user()->hasAnyRole(['admin','super-admin']))

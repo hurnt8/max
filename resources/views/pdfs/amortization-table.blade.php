@@ -127,7 +127,12 @@ table.schedule tfoot td:first-child { text-align: center; }
         @if(!empty($logoBase64))
         <img src="{{ $logoBase64 }}" style="height:42px;max-width:190px;object-fit:contain;display:block">
     @else
-        <div class="header-brand">SOLBERG <span>GRUPO</span></div>
+        @php
+            $brandWords = preg_split('/\s+/', trim(site_name())) ?: [];
+            $brandFirst = array_shift($brandWords);
+            $brandRest  = implode(' ', $brandWords);
+        @endphp
+        <div class="header-brand">{{ $brandFirst }}@if($brandRest) <span>{{ $brandRest }}</span>@endif</div>
     @endif
         <div style="font-size:7.5pt;color:#888;margin-top:3px">{{ $texts['header_sub'] }}</div>
     </div>

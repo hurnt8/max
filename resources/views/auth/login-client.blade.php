@@ -249,7 +249,7 @@ a{text-decoration:none;color:inherit}
 .fforgot{font-size:.78rem;font-weight:600;color:var(--gold2);transition:opacity .18s}
 .fforgot:hover{opacity:.75}
 
-/* Bouton primaire — marine (charte Solberg Grupo) */
+/* Bouton primaire — marine (charte graphique du site) */
 .fbtn{
   width:100%;padding:.95rem 1.5rem;border:none;border-radius:999px;
   font-size:.97rem;font-weight:700;font-family:'Inter',sans-serif;

@@ -6,7 +6,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Solberg Admin">
+<meta name="apple-mobile-web-app-title" content="{{ site_name() }} Admin">
 <meta name="theme-color" content="#0B1A2E">
 <link rel="manifest" href="/admin-manifest.json">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -234,7 +234,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
           <div class="staff-badge__ico"><i class="fas fa-shield-alt"></i></div>
           <div class="staff-badge__text">
             <div class="staff-badge__label">{{ __('auth.staff_restricted') }}</div>
-            <div class="staff-badge__sub">solberggrupo.site &mdash; secure access</div>
+            <div class="staff-badge__sub">{{ request()->getHost() }} &mdash; secure access</div>
           </div>
         </div>
 
@@ -322,7 +322,14 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
                 <input type="email" id="email" name="email"
                        class="f-input {{ $errors->has('email') ? 'is-err' : '' }}"
                        value="{{ old('email') }}"
-                       placeholder="{{ __('auth.email_ph_staff') }}"
+                       @php
+                           // La partie locale reste traduite ; le domaine suit l'email du site
+                           // configure en admin, pour ne pas figer l'ancienne marque.
+                           $phLocal  = \Illuminate\Support\Str::before(__('auth.email_ph_staff'), '@');
+                           $phDomain = \Illuminate\Support\Str::after(site_email(), '@') ?: request()->getHost();
+                           $phStaff  = $phLocal . '@' . $phDomain;
+                       @endphp
+                       placeholder="{{ $phStaff }}"
                        autocomplete="email" required>
               </div>
             </div>
