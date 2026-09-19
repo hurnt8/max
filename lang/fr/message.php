@@ -55,4 +55,7 @@ return [
 
     'docs_upload_hint'  => 'Glissez-déposez ou cliquez pour choisir un fichier',
     'docs_single_photo' => 'Pour ce type de document, une seule photo suffit.',
+    // Affiche quand le total televerse depasse post_max_size (voir Exceptions/Handler).
+    'upload_too_large' => 'Les fichiers envoyés sont trop volumineux. Merci de les compresser ou de les envoyer un par un.',
+
 ];

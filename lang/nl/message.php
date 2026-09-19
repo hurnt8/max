@@ -55,4 +55,7 @@ return [
 
     'docs_upload_hint'  => 'Sleep en zet neer, of klik om een bestand te kiezen',
     'docs_single_photo' => 'Voor dit type document volstaat één foto.',
+    // Affiche quand le total televerse depasse post_max_size (voir Exceptions/Handler).
+    'upload_too_large' => 'De geüploade bestanden zijn te groot. Comprimeer ze of stuur ze één voor één.',
+
 ];

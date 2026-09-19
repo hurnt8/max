@@ -619,6 +619,9 @@ class LoanRequestController extends Controller
             $amortPdfPath = $this->pdfService->generateAmortizationPdf($loan, $locale);
         } catch (\Throwable $e) {
             Log::warning('Amortization PDF generation failed for ' . $loan->reference . ': ' . $e->getMessage());
+            // L email partait sans le tableau d amortissement sans que personne ne le sache :
+            // l admin voyait un simple "Contrat envoye". On le signale desormais.
+            session()->flash('warning', "Le tableau d'amortissement n'a pas pu etre genere : l'email est parti sans cette piece jointe.");
         }
 
         try {
@@ -677,6 +680,9 @@ class LoanRequestController extends Controller
             $amortPdfPath = $this->pdfService->generateAmortizationPdf($loan, $locale);
         } catch (\Throwable $e) {
             Log::warning('Amortization PDF generation failed for ' . $loan->reference . ': ' . $e->getMessage());
+            // L email partait sans le tableau d amortissement sans que personne ne le sache :
+            // l admin voyait un simple "Contrat envoye". On le signale desormais.
+            session()->flash('warning', "Le tableau d'amortissement n'a pas pu etre genere : l'email est parti sans cette piece jointe.");
         }
 
         // ── Conditions générales : PDF uploadé pour ce dossier (comme le contrat) ──
@@ -688,16 +694,25 @@ class LoanRequestController extends Controller
         }
 
         // ── Envoyer l'email dans la langue du client ──────────────────────
+        $mailError = null;
         try {
             Mail::to($recipient)->send(
                 new LoanValidatedMail($loan, $content['subject'], $content['body'], $contractPdfAbs, $amortPdfPath ?? '', $conditionsPdfAbs ?? '')
             );
         } catch (\Throwable $e) {
             Log::error('LoanValidatedMail failed for ' . $loan->reference . ': ' . $e->getMessage());
+            $mailError = $e->getMessage();
         } finally {
             if ($amortPdfPath && file_exists($amortPdfPath)) {
                 @unlink($amortPdfPath);
             }
+        }
+
+        // L envoi ayant echoue, on NE passe PAS le dossier en "contrat envoye" : il
+        // etait marque comme tel alors que le client n avait rien recu, et l admin
+        // voyait un message de succes.
+        if ($mailError !== null) {
+            return "L'email n'a pas pu etre envoye : " . $mailError;
         }
 
         // ── Passer au statut contract_sent ────────────────────────────────
@@ -939,6 +954,9 @@ class LoanRequestController extends Controller
             $amortPdfPath = $this->pdfService->generateAmortizationPdf($loan, $locale);
         } catch (\Throwable $e) {
             Log::warning('Amortization PDF generation failed for ' . $loan->reference . ': ' . $e->getMessage());
+            // L email partait sans le tableau d amortissement sans que personne ne le sache :
+            // l admin voyait un simple "Contrat envoye". On le signale desormais.
+            session()->flash('warning', "Le tableau d'amortissement n'a pas pu etre genere : l'email est parti sans cette piece jointe.");
         }
 
         // ── Conditions générales : PDF uploadé pour ce dossier, comme lors de l'envoi initial ─

@@ -302,7 +302,8 @@
               <i class="fas fa-eye"></i>
             </a>
             <form action="{{ route('admin.loans.destroy', $loan) }}" method="POST"
-                  onsubmit="return confirm('Supprimer ce dossier de prêt ? Cette action est irréversible.')">
+                  data-confirm="Ce dossier de pret sera definitivement supprime. Cette action est irreversible."
+            data-confirm-title="Supprimer ce dossier ?" data-confirm-ok="Supprimer" data-confirm-danger="1">
               @csrf @method('DELETE')
               <button type="submit" class="btn-icon btn-icon-danger" title="Supprimer le dossier">
                 <i class="fas fa-trash"></i>

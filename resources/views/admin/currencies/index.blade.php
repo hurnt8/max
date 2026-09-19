@@ -81,7 +81,8 @@
           <td data-label="" style="text-align:right">
             @unless($currency->is_default)
             <button type="submit" form="delete-currency-{{ $currency->id }}"
-                    onclick="return confirm('Supprimer la devise {{ $currency->code }} ?')"
+                    data-confirm="La devise {{ $currency->code }} sera definitivement supprimee."
+                    data-confirm-title="Supprimer cette devise ?" data-confirm-ok="Supprimer" data-confirm-danger="1"
                     class="btn-icon btn-icon-danger" title="Supprimer">
               <i class="fas fa-trash"></i>
             </button>

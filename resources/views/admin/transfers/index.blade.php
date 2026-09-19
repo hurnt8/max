@@ -191,7 +191,11 @@
 
   {{-- Approve form ── --}}
   <div class="trf-form" id="approve-{{ $trf->id }}" style="display:none;padding:1rem 1.25rem;border-top:1px solid var(--c-border);background:rgba(5,150,105,.03)">
-    <form method="POST" action="{{ route('admin.transfers.approve', $trf) }}">
+    {{-- Validation d un virement : mouvement d argent irreversible, le rejet etait
+         confirme mais pas l approbation. --}}
+    <form method="POST" action="{{ route('admin.transfers.approve', $trf) }}"
+          data-confirm="Le virement sera valide et le montant debite du compte client."
+          data-confirm-title="Valider ce virement ?" data-confirm-ok="Valider">
       @csrf
       <label class="form-label-pro">Note de validation (optionnel)</label>
       <input type="text" name="admin_note" class="form-control-pro" style="margin-bottom:.875rem"

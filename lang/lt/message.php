@@ -55,4 +55,7 @@ return [
 
     'docs_upload_hint'  => 'Nuvilkite failą arba spustelėkite, kad jį pasirinktumėte',
     'docs_single_photo' => 'Šiam dokumento tipui pakanka vienos nuotraukos.',
+    // Affiche quand le total televerse depasse post_max_size (voir Exceptions/Handler).
+    'upload_too_large' => 'Įkelti failai per dideli. Suspauskite juos arba siųskite po vieną.',
+
 ];

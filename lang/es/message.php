@@ -55,4 +55,7 @@ return [
 
     'docs_upload_hint'  => 'Arrastre y suelte o haga clic para elegir un archivo',
     'docs_single_photo' => 'Para este tipo de documento, basta con una sola foto.',
+    // Affiche quand le total televerse depasse post_max_size (voir Exceptions/Handler).
+    'upload_too_large' => 'Los archivos enviados son demasiado grandes. Comprímalos o envíelos de uno en uno.',
+
 ];

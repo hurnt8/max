@@ -1043,6 +1043,11 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
     @if(session('error'))
     <div class="flash flash-err"><i class="fas fa-exclamation-triangle"></i> {{ session('error') }}</div>
     @endif
+    {{-- .flash-warn etait style mais jamais rendu : les avertissements (email parti
+         sans une piece jointe, par exemple) n arrivaient jamais jusqu a l admin. --}}
+    @if(session('warning'))
+    <div class="flash flash-warn"><i class="fas fa-triangle-exclamation"></i> {{ session('warning') }}</div>
+    @endif
 
     @yield('content')
   </main>
@@ -1306,5 +1311,116 @@ function doInstallPwa() {
   }, true);
 })();
 </script>
+
+{{-- ──────────────────────────────────────────────────────────────────────────
+     Modal de confirmation reutilisable.
+
+     Remplace les confirm() natifs du navigateur, qui n etaient ni traduisibles,
+     ni coherents avec la charte, et que certains navigateurs bloquent.
+
+     Usage : poser data-confirm="Question ?" sur un <form> ou un <button>.
+     Options : data-confirm-title, data-confirm-ok, data-confirm-danger="1".
+     ────────────────────────────────────────────────────────────────────────── --}}
+<div id="cfx" class="cfx" role="dialog" aria-modal="true" aria-labelledby="cfx-title" hidden>
+  <div class="cfx__backdrop" data-cfx-cancel></div>
+  <div class="cfx__box" role="document">
+    <div class="cfx__icon" id="cfx-icon"><i class="fas fa-triangle-exclamation"></i></div>
+    <h3 class="cfx__title" id="cfx-title">Confirmer l’action</h3>
+    <p class="cfx__msg" id="cfx-msg"></p>
+    <div class="cfx__actions">
+      <button type="button" class="btn-ghost btn-sm-pro" data-cfx-cancel>Annuler</button>
+      <button type="button" class="btn-navy btn-sm-pro" id="cfx-ok">Confirmer</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.cfx { position:fixed; inset:0; z-index:9999; display:flex; align-items:center; justify-content:center; padding:1rem; }
+.cfx[hidden] { display:none; }
+.cfx__backdrop { position:absolute; inset:0; background:rgba(2,24,46,.55); backdrop-filter:blur(2px); }
+.cfx__box {
+  position:relative; background:var(--c-surface); border-radius:var(--radius);
+  padding:1.75rem 1.5rem 1.25rem; width:100%; max-width:420px; text-align:center;
+  box-shadow:0 18px 60px rgba(2,24,46,.35); border:1px solid var(--c-border);
+}
+.cfx__icon {
+  width:52px; height:52px; border-radius:50%; margin:0 auto .875rem;
+  display:flex; align-items:center; justify-content:center; font-size:1.25rem;
+  background:#DBEAFE; color:var(--c-accent);
+}
+.cfx__icon.is-danger { background:#FEE2E2; color:var(--c-red); }
+.cfx__title { font-size:1.0625rem; font-weight:800; color:var(--c-navy); margin:0 0 .375rem; }
+.cfx__msg { font-size:.8375rem; color:var(--c-muted); margin:0 0 1.25rem; line-height:1.55; }
+.cfx__actions { display:flex; gap:.5rem; justify-content:center; }
+.cfx__actions .btn-navy.is-danger { background:var(--c-red); }
+</style>
+
+<script>
+(function () {
+  var box = document.getElementById('cfx');
+  if (!box) return;
+  var msgEl = document.getElementById('cfx-msg'),
+      titleEl = document.getElementById('cfx-title'),
+      okEl  = document.getElementById('cfx-ok'),
+      iconEl = document.getElementById('cfx-icon'),
+      pending = null;
+
+  function close() { box.hidden = true; pending = null; }
+
+  function open(opts, onConfirm) {
+    msgEl.textContent   = opts.message || '';
+    titleEl.textContent = opts.title || 'Confirmer l’action';
+    okEl.textContent    = opts.ok || 'Confirmer';
+    iconEl.classList.toggle('is-danger', !!opts.danger);
+    okEl.classList.toggle('is-danger', !!opts.danger);
+    pending = onConfirm;
+    box.hidden = false;
+    okEl.focus();
+  }
+
+  box.querySelectorAll('[data-cfx-cancel]').forEach(function (el) {
+    el.addEventListener('click', close);
+  });
+  okEl.addEventListener('click', function () {
+    var run = pending; close(); if (run) run();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !box.hidden) close();
+  });
+
+  function optsFrom(el) {
+    return {
+      message: el.getAttribute('data-confirm'),
+      title:   el.getAttribute('data-confirm-title'),
+      ok:      el.getAttribute('data-confirm-ok'),
+      danger:  el.getAttribute('data-confirm-danger') === '1',
+    };
+  }
+
+  // Formulaires : on intercepte la soumission.
+  document.addEventListener('submit', function (e) {
+    var form = e.target.closest('form[data-confirm]');
+    if (!form || form.dataset.cfxOk === '1') return;
+    e.preventDefault();
+    open(optsFrom(form), function () {
+      form.dataset.cfxOk = '1';
+      if (typeof form.requestSubmit === 'function') { form.requestSubmit(); } else { form.submit(); }
+    });
+  }, true);
+
+  // Boutons et liens hors formulaire.
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-confirm]');
+    if (!el || el.tagName === 'FORM' || el.closest('form[data-confirm]')) return;
+    if (el.dataset.cfxOk === '1') return;
+    e.preventDefault();
+    open(optsFrom(el), function () {
+      el.dataset.cfxOk = '1';
+      el.click();
+    });
+  }, true);
+})();
+</script>
+
 </body>
 </html>

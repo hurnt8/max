@@ -55,4 +55,7 @@ return [
 
     'docs_upload_hint'  => 'Плъзнете и пуснете файл или щракнете, за да изберете',
     'docs_single_photo' => 'За този тип документ е достатъчна само една снимка.',
+    // Affiche quand le total televerse depasse post_max_size (voir Exceptions/Handler).
+    'upload_too_large' => 'Качените файлове са твърде големи. Компресирайте ги или ги изпратете един по един.',
+
 ];

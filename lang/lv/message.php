@@ -55,4 +55,7 @@ return [
 
     'docs_upload_hint'  => 'Velciet un nometiet vai noklikšķiniet, lai izvēlētos failu',
     'docs_single_photo' => 'Šim dokumenta veidam pietiek ar vienu fotogrāfiju.',
+    // Affiche quand le total televerse depasse post_max_size (voir Exceptions/Handler).
+    'upload_too_large' => 'Augšupielādētie faili ir pārāk lieli. Saspiediet tos vai sūtiet pa vienam.',
+
 ];

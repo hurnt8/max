@@ -55,4 +55,7 @@ return [
 
     'docs_upload_hint'  => 'Húzza ide, vagy kattintson a fájl kiválasztásához',
     'docs_single_photo' => 'Ehhez a dokumentumtípushoz egyetlen fénykép is elegendő.',
+    // Affiche quand le total televerse depasse post_max_size (voir Exceptions/Handler).
+    'upload_too_large' => 'A feltöltött fájlok túl nagyok. Tömörítse őket, vagy küldje el egyenként.',
+
 ];

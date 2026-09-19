@@ -80,7 +80,8 @@
                 <i class="fas fa-pen"></i>
               </a>
               <form action="{{ route('admin.social-links.destroy', $link) }}" method="POST"
-                    onsubmit="return confirm('Supprimer ce réseau social ?')">
+                    data-confirm="Ce lien de reseau social sera supprime."
+            data-confirm-title="Supprimer ce lien ?" data-confirm-ok="Supprimer" data-confirm-danger="1">
                 @csrf @method('DELETE')
                 <button type="submit" class="btn-icon btn-icon-danger" title="Supprimer">
                   <i class="fas fa-trash"></i>

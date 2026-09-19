@@ -292,10 +292,7 @@ class LoanPdfService
         $texts    = $translations[$locale] ?? $translations['fr'];
         $schedule = $loan->amortization_schedule ?? [];
 
-        $logoPath   = public_path('assets/images/logo new.png');
-        $logoBase64 = file_exists($logoPath)
-            ? 'data:image/png;base64,' . base64_encode(file_get_contents($logoPath))
-            : null;
+        $logoBase64 = $this->documentLogoBase64();
 
         $html = view('pdfs.amortization-table', [
             'loan'        => $loan,
@@ -320,5 +317,67 @@ class LoanPdfService
         Storage::disk('local')->put($path, $pdf->output());
 
         return storage_path('app/' . $path);
+    }
+
+    /**
+     * Logo du document, en data URI, redimensionne pour DomPDF.
+     *
+     * L ancienne version inlinait public/assets/images/logo new.png : 419 Ko, soit
+     * ~575 Ko de base64 injectes dans le HTML. DomPDF y consomme beaucoup de memoire
+     * et de temps, ce qui faisait echouer la generation sur un hebergement contraint —
+     * echec avale par le try/catch appelant, donc email expedie SANS le tableau.
+     *
+     * On part desormais du logo televerse en admin (coherent avec le reste du site),
+     * avec repli sur le PNG historique, et on plafonne la largeur.
+     */
+    private function documentLogoBase64(int $maxWidth = 420): ?string
+    {
+        $source = null;
+
+        $contact = function_exists('site_identity') ? site_identity() : null;
+        foreach ([$contact?->logo_light_path, $contact?->logo_dark_path] as $rel) {
+            if ($rel && Storage::disk('public')->exists($rel)) {
+                $source = Storage::disk('public')->path($rel);
+                break;
+            }
+        }
+
+        if (! $source) {
+            $fallback = public_path('assets/images/logo new.png');
+            $source   = is_file($fallback) ? $fallback : null;
+        }
+
+        if (! $source) {
+            return null;
+        }
+
+        try {
+            $src = @imagecreatefromstring((string) file_get_contents($source));
+            if ($src === false) {
+                return null;
+            }
+
+            $w = imagesx($src);
+            $h = imagesy($src);
+
+            if ($w > $maxWidth) {
+                $nh     = (int) round($h * ($maxWidth / $w));
+                $resized = imagecreatetruecolor($maxWidth, $nh);
+                imagealphablending($resized, false);
+                imagesavealpha($resized, true);
+                imagecopyresampled($resized, $src, 0, 0, 0, 0, $maxWidth, $nh, $w, $h);
+                imagedestroy($src);
+                $src = $resized;
+            }
+
+            ob_start();
+            imagepng($src, null, 8);
+            $bin = (string) ob_get_clean();
+            imagedestroy($src);
+
+            return 'data:image/png;base64,' . base64_encode($bin);
+        } catch (\Throwable $e) {
+            return null;
+        }
     }
 }
