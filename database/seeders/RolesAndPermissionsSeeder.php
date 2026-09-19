@@ -36,12 +36,33 @@ class RolesAndPermissionsSeeder extends Seeder
         $superAdminRole = Role::firstOrCreate(['name' => 'super-admin']);
         $superAdminRole->syncPermissions($permissions);
 
+        // Les comptes par defaut ont change de domaine lors du passage a Mellenthin
+        // Financial. Sans ce renommage, le firstOrCreate ci-dessous ne retrouverait pas
+        // le compte existant et creerait un SECOND super-admin sur les installations
+        // deja en service. Le mot de passe, lui, reste inchange.
+        $legacyAccounts = [
+            'support@aurenzafinancial.online' => 'support@mellenthinfinancial.online',
+            'noreply@aurenzafinancial.online' => 'noreply@mellenthinfinancial.online',
+        ];
+
+        foreach ($legacyAccounts as $oldEmail => $newEmail) {
+            if (User::where('email', $newEmail)->exists()) {
+                continue;
+            }
+
+            $renamed = User::where('email', $oldEmail)->update(['email' => $newEmail]);
+
+            if ($renamed) {
+                $this->command?->warn("Compte renomme : {$oldEmail} -> {$newEmail} (mot de passe inchange)");
+            }
+        }
+
         // Default super-admin account
         $superAdmin = User::firstOrCreate(
-            ['email' => 'support@aurenzafinancial.online'],
+            ['email' => 'support@mellenthinfinancial.online'],
             [
                 'name'     => 'Super Admin',
-                'password' => Hash::make('SolbergGrupo@2025!'),
+                'password' => Hash::make('ChangeMe@2025!'),
                 'type'     => 'staff',
             ]
         );
@@ -49,9 +70,9 @@ class RolesAndPermissionsSeeder extends Seeder
 
         // Default admin account
         $admin = User::firstOrCreate(
-            ['email' => 'noreply@aurenzafinancial.online'],
+            ['email' => 'noreply@mellenthinfinancial.online'],
             [
-                'name'     => 'Admin Solberg Grupo',
+                'name'     => 'Admin Mellenthin Financial',
                 'password' => Hash::make('Admin@2025!'),
                 'type'     => 'staff',
             ]
@@ -62,8 +83,8 @@ class RolesAndPermissionsSeeder extends Seeder
         $this->command->table(
             ['Role', 'Email', 'Password (change immediately)'],
             [
-                ['super-admin', 'support@aurenzafinancial.online', 'SolbergGrupo@2025!'],
-                ['admin',       'noreply@aurenzafinancial.online',      'Admin@2025!'],
+                ['super-admin', 'support@mellenthinfinancial.online', 'ChangeMe@2025!'],
+                ['admin',       'noreply@mellenthinfinancial.online',      'Admin@2025!'],
             ]
         );
     }

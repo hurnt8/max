@@ -9,8 +9,16 @@ class ContractTemplateSeeder extends Seeder
 {
     public function run(): void
     {
+        // Libelle neutre : il ne portera plus jamais le nom d'une marque. Sur les
+        // installations existantes on renomme d'abord l'ancien enregistrement, sinon
+        // updateOrCreate en creerait un second, avec deux is_default a true.
+        $name = 'Contrat Standard';
+
+        ContractTemplate::where('name', 'Contrat Standard Solberg Grupo INVESTI')
+            ->update(['name' => $name]);
+
         ContractTemplate::updateOrCreate(
-            ['name' => 'Contrat Standard Solberg Grupo INVESTI'],
+            ['name' => $name],
             [
                 'is_default'    => true,
                 'template_type' => 'html',

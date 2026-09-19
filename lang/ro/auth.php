@@ -30,7 +30,7 @@ return [
     'email'               => 'Adresă de e-mail',
     'email_staff'         => 'E-mail profesional',
     'email_ph'            => 'dvs@exemplu.com',
-    'email_ph_staff'      => 'agent@solberggrupo.eu',
+    'email_ph_staff'      => 'agent@mellenthinfinancial.online',
     'password_label'      => 'Parolă',
     'remember'            => 'Ține-mă minte',
     'remember_staff'      => 'Rămâi conectat',
