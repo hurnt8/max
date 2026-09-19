@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class AppController extends Controller
 {
@@ -400,6 +401,83 @@ class AppController extends Controller
 
     // ── PWA ─────────────────────────────────────────────────────────────────
 
+    /**
+     * Icone PWA carree derivee du logo televerse par l administrateur.
+     *
+     * Les manifests pointaient vers /images/icon-*.png, des fichiers statiques : le logo
+     * configure en admin n apparaissait donc jamais sur l ecran d accueil. On genere ici
+     * l icone a la volee, sur un aplat bleu de marque, avec une marge de securite pour
+     * l affichage "maskable" (Android rogne les bords en cercle).
+     *
+     * Le rendu est mis en cache sur disque ; la cle integre la date du fichier source,
+     * donc un nouveau televersement invalide automatiquement l ancienne icone.
+     */
+    public function siteIcon(int $size)
+    {
+        $size    = max(48, min(1024, $size));
+        $contact = site_identity();
+        $disk    = Storage::disk('public');
+
+        // On retient la premiere variante dont le FICHIER existe reellement : un chemin
+        // peut rester en base alors que l image a disparu du disque.
+        $rel = null;
+        foreach (array_filter([$contact?->logo_light_path, $contact?->logo_dark_path]) as $candidate) {
+            if ($disk->exists($candidate)) {
+                $rel = $candidate;
+                break;
+            }
+        }
+
+        if (! $rel) {
+            // Aucun logo configure : on sert l icone statique historique.
+            $fallback = public_path('images/icon-' . ($size > 192 ? 512 : 192) . '.png');
+            abort_unless(is_file($fallback), 404);
+
+            return response()->file($fallback, ['Cache-Control' => 'public, max-age=3600']);
+        }
+
+        $cacheFile = storage_path(
+            'app/site-icons/' . md5($rel . '|' . $disk->lastModified($rel)) . "-{$size}.png"
+        );
+
+        if (! is_file($cacheFile)) {
+            @mkdir(dirname($cacheFile), 0775, true);
+
+            $src = @imagecreatefromstring($disk->get($rel));
+            abort_unless($src !== false, 404);
+
+            $canvas = imagecreatetruecolor($size, $size);
+            imagefill($canvas, 0, 0, imagecolorallocate($canvas, 0x06, 0x57, 0xA4));
+
+            $sw = imagesx($src);
+            $sh = imagesy($src);
+
+            // Un logo deja carre est presque toujours une icone concue comme telle,
+            // avec sa propre marge : on remplit le cadre. Un logotype large, lui, est
+            // encastre a 80% pour survivre au rognage circulaire d Android (maskable).
+            $isSquare = $sh > 0 && abs(($sw / $sh) - 1) < 0.1;
+            $box      = (int) round($size * ($isSquare ? 1.0 : 0.80));
+            $ratio = min($box / $sw, $box / $sh);
+            $dw    = (int) round($sw * $ratio);
+            $dh    = (int) round($sh * $ratio);
+
+            imagecopyresampled(
+                $canvas, $src,
+                (int) (($size - $dw) / 2), (int) (($size - $dh) / 2),
+                0, 0, $dw, $dh, $sw, $sh
+            );
+
+            imagepng($canvas, $cacheFile, 9);
+            imagedestroy($canvas);
+            imagedestroy($src);
+        }
+
+        return response()->file($cacheFile, [
+            'Content-Type'  => 'image/png',
+            'Cache-Control' => 'public, max-age=86400',
+        ]);
+    }
+
     public function manifest()
     {
         $data = [
@@ -410,16 +488,16 @@ class AppController extends Controller
             'scope'            => '/app',
             'display'          => 'standalone',
             'orientation'      => 'any',
-            'background_color' => '#0B1A2E',
-            'theme_color'      => '#0B1A2E',
+            'background_color' => '#0657A4',
+            'theme_color'      => '#0657A4',
             'lang'             => app()->getLocale(),
             'categories'       => ['finance', 'business'],
             'icons'            => [
-                ['src' => '/images/apple-touch-icon.png', 'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
-                ['src' => '/images/icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => '/site-icon-180.png', 'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => '/site-icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => '/site-icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => '/site-icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => '/site-icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
             ],
             'shortcuts' => [
                 [
@@ -427,21 +505,21 @@ class AppController extends Controller
                     'short_name' => 'Dossiers',
                     'url'        => '/app/loans',
                     'description'=> 'Consulter mes demandes de prêt',
-                    'icons'      => [['src' => '/images/icon-192.png', 'sizes' => '192x192']],
+                    'icons'      => [['src' => '/site-icon-192.png', 'sizes' => '192x192']],
                 ],
                 [
                     'name'       => 'Virements',
                     'short_name' => 'Virements',
                     'url'        => '/app/transfers',
                     'description'=> 'Effectuer ou suivre mes virements',
-                    'icons'      => [['src' => '/images/icon-192.png', 'sizes' => '192x192']],
+                    'icons'      => [['src' => '/site-icon-192.png', 'sizes' => '192x192']],
                 ],
                 [
                     'name'       => 'Support',
                     'short_name' => 'Support',
                     'url'        => '/app/support',
                     'description'=> 'Contacter le support client',
-                    'icons'      => [['src' => '/images/icon-192.png', 'sizes' => '192x192']],
+                    'icons'      => [['src' => '/site-icon-192.png', 'sizes' => '192x192']],
                 ],
             ],
         ];
@@ -462,16 +540,16 @@ class AppController extends Controller
             'scope'            => '/',
             'display'          => 'standalone',
             'orientation'      => 'any',
-            'background_color' => '#0B1A2E',
-            'theme_color'      => '#0B1A2E',
+            'background_color' => '#0657A4',
+            'theme_color'      => '#0657A4',
             'lang'             => app()->getLocale(),
             'categories'       => ['finance', 'business'],
             'icons'            => [
-                ['src' => '/images/apple-touch-icon.png', 'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
-                ['src' => '/images/icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
-                ['src' => '/images/icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => '/site-icon-180.png', 'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => '/site-icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => '/site-icon-192.png',         'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'maskable'],
+                ['src' => '/site-icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
+                ['src' => '/site-icon-512.png',         'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
             ],
             'shortcuts' => [
                 [
@@ -479,14 +557,14 @@ class AppController extends Controller
                     'short_name'  => 'Dashboard',
                     'url'         => '/admin',
                     'description' => 'Vue d\'ensemble admin',
-                    'icons'       => [['src' => '/images/icon-192.png', 'sizes' => '192x192']],
+                    'icons'       => [['src' => '/site-icon-192.png', 'sizes' => '192x192']],
                 ],
                 [
                     'name'        => 'Demandes de prêt',
                     'short_name'  => 'Prêts',
                     'url'         => '/admin/loans',
                     'description' => 'Gérer les demandes de prêt',
-                    'icons'       => [['src' => '/images/icon-192.png', 'sizes' => '192x192']],
+                    'icons'       => [['src' => '/site-icon-192.png', 'sizes' => '192x192']],
                 ],
             ],
         ];
@@ -500,8 +578,10 @@ class AppController extends Controller
     public function serviceWorker()
     {
         $js = <<<'JS'
-const CACHE = 'solberg-v8';
-const ICON  = '/images/icon-192.png';
+// Nom de cache versionne : le changer force les appareils deja installes a recharger
+// les fichiers. Sans bump, ils gardent lancienne charte et lancienne icone.
+const CACHE = 'mf-v9';
+const ICON  = '/site-icon-192.png';
 const BADGE = '/images/icon-badge.png';
 const SHELL = ['/app', '/login'];
 
@@ -577,7 +657,7 @@ self.addEventListener('push', e => {
             icon:    ICON,
             badge:   BADGE,
             vibrate: [200, 100, 200],
-            tag:     data.tag || 'solberg-notif',
+            tag:     data.tag || 'mf-notif',
             renotify: true,
             data:    { url: data.url || '/app/notifications' },
         })

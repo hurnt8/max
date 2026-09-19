@@ -292,7 +292,7 @@ class ContractService
             '{frais_admin}'     => 'Frais administratifs',
             '{compte_bancaire}' => 'Coordonnées bancaires',
             '{date}'            => 'Date de validation',
-            '{societe}'         => 'Nom de la société (SOLBERG GRUPO)',
+            '{societe}'         => 'Nom de la société (' . site_name() . ')',
         ];
     }
 
@@ -368,7 +368,7 @@ class ContractService
             '{objet}'           => $loan->objet ?? '',
             '{montant_lettres}' => NumberToWordsConverter::convert((float) $loan->amount, $locale),
             '{typefinance}'     => $financingTypeLabel,
-            '{agent_suivi}'     => $loan->agent_suivi ?: ($admin?->name ?? 'SOLBERG GRUPO'),
+            '{agent_suivi}'     => $loan->agent_suivi ?: ($admin?->name ?? site_name()),
             '{directeur}'       => $loan->directeur ?? '',
             '{notaire}'         => $loan->notaire ?? '',
             '{montant}'         => number_format((float)$loan->amount, 2, ',', ' '),
@@ -391,7 +391,7 @@ class ContractService
             '{date}'            => $loan->validated_at
                                     ? $loan->validated_at->format('d/m/Y')
                                     : now()->format('d/m/Y'),
-            '{societe}'         => 'SOLBERG GRUPO',
+            '{societe}'         => site_name(),
         ], $genderVars, $extraVars);
     }
 

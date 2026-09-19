@@ -272,6 +272,9 @@ Route::middleware(['auth', 'role:client', 'client.locale'])->prefix('app')->name
         return back();
     })->name('locale');
 });
+// Icone PWA generee depuis le logo televerse en admin (repli sur /images/icon-*.png).
+Route::get('/site-icon-{size}.png', [ClientAppController::class, 'siteIcon'])
+    ->whereNumber('size')->name('site.icon');
 Route::get('/manifest.json',       [ClientAppController::class, 'manifest'])->name('pwa.manifest');
 Route::get('/admin-manifest.json', [ClientAppController::class, 'adminManifest'])->name('pwa.admin-manifest');
 Route::get('/sw.js',               [ClientAppController::class, 'serviceWorker'])->name('pwa.sw');

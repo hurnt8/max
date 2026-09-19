@@ -18,8 +18,8 @@
 @else
 <link rel="manifest" href="/admin-manifest.json">
 @endauth
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/site-icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/site-icon-192.png">
 <title>@yield('title','Dashboard') — {{ site_name() }}</title>
 <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="{{ asset('assets/vendors/fontawesome/css/all.min.css') }}">
 <style>
 /* ═══════════════════════════════════════════════
-  Solberg Grupo INVEST — DESIGN SYSTEM v2
+  Mellenthin Financial — DESIGN SYSTEM v2
    ═══════════════════════════════════════════════ */
 :root {
   --c-navy:       #032A4F;
@@ -1220,7 +1220,7 @@ function doInstallPwa() {
     border:1px solid rgba(6, 87, 164,.3)">
   <div style="display:flex;align-items:center;justify-content:space-between">
     <div style="display:flex;align-items:center;gap:.625rem">
-      <img src="/images/icon-192.png" style="width:36px;height:36px;border-radius:8px" alt="">
+      <img src="/site-icon-192.png" style="width:36px;height:36px;border-radius:8px" alt="">
       <div>
         <div style="font-size:.8rem;font-weight:700;color:#fff">' . site_name() . ' Admin</div>
         <div style="font-size:.68rem;color:rgba(255,255,255,.5)">Installer comme application</div>

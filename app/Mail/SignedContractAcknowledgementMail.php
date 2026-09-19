@@ -25,19 +25,19 @@ class SignedContractAcknowledgementMail extends Mailable
     public function envelope(): Envelope
     {
         $subjects = [
-            'fr' => 'Réception de votre contrat signé N°' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'fr' => 'Réception de votre contrat signé N°' . $this->loan->reference . ' — ' . site_name(),
             'pl' => 'Potwierdzenie otrzymania podpisanej umowy nr ' . $this->loan->reference,
-            'en' => 'Receipt of your signed contract N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'es' => 'Recepción de su contrato firmado N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'bg' => 'Получаване на вашия подписан договор №' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'hu' => 'Aláírt szerződésének beérkezése sz. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'it' => 'Ricezione del tuo contratto firmato N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'de' => 'Eingang Ihres unterschriebenen Vertrags Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'lt' => 'Jūsų pasirašytos sutarties Nr. ' . $this->loan->reference . ' gavimas — SOLBERG GRUPO',
-            'ro' => 'Primirea contractului dumneavoastră semnat nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'lv' => 'Jūsu parakstītā līguma Nr. ' . $this->loan->reference . ' saņemšana — SOLBERG GRUPO',
-            'nl' => 'Ontvangst van uw ondertekend contract nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'pt' => 'Receção do seu contrato assinado N.º' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'en' => 'Receipt of your signed contract N°' . $this->loan->reference . ' — ' . site_name(),
+            'es' => 'Recepción de su contrato firmado N°' . $this->loan->reference . ' — ' . site_name(),
+            'bg' => 'Получаване на вашия подписан договор №' . $this->loan->reference . ' — ' . site_name(),
+            'hu' => 'Aláírt szerződésének beérkezése sz. ' . $this->loan->reference . ' — ' . site_name(),
+            'it' => 'Ricezione del tuo contratto firmato N°' . $this->loan->reference . ' — ' . site_name(),
+            'de' => 'Eingang Ihres unterschriebenen Vertrags Nr. ' . $this->loan->reference . ' — ' . site_name(),
+            'lt' => 'Jūsų pasirašytos sutarties Nr. ' . $this->loan->reference . ' gavimas — ' . site_name(),
+            'ro' => 'Primirea contractului dumneavoastră semnat nr. ' . $this->loan->reference . ' — ' . site_name(),
+            'lv' => 'Jūsu parakstītā līguma Nr. ' . $this->loan->reference . ' saņemšana — ' . site_name(),
+            'nl' => 'Ontvangst van uw ondertekend contract nr. ' . $this->loan->reference . ' — ' . site_name(),
+            'pt' => 'Receção do seu contrato assinado N.º' . $this->loan->reference . ' — ' . site_name(),
         ];
 
         return new Envelope(subject: $subjects[$this->mailLocale] ?? $subjects['fr']);

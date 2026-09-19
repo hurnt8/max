@@ -9,8 +9,8 @@
 <meta name="apple-mobile-web-app-title" content="{{ site_name() }} Admin">
 <meta name="theme-color" content="#0657A4">
 <link rel="manifest" href="/admin-manifest.json">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/site-icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/site-icon-192.png">
 <title>{{ __('auth.staff_login_title') }} | {{ site_name() }}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -420,7 +420,7 @@ function tglPwd(id, ico) {
   border-radius:14px;padding:.875rem 1.125rem;
   box-shadow:0 8px 32px rgba(0,0,0,.3);z-index:9999;
   align-items:center;gap:.75rem">
-  <img src="/images/icon-192.png" style="width:40px;height:40px;border-radius:10px;flex-shrink:0" alt="">
+  <img src="/site-icon-192.png" style="width:40px;height:40px;border-radius:10px;flex-shrink:0" alt="">
   <div style="flex:1;min-width:0">
     <div style="font-size:.825rem;font-weight:700;color:#fff">{{ site_name() }} Admin</div>
     <div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:.1rem">Installer sur votre écran d'accueil</div>
@@ -444,7 +444,7 @@ function tglPwd(id, ico) {
   box-shadow:0 8px 32px rgba(0,0,0,.3);z-index:9999;flex-direction:column;gap:.75rem">
   <div style="display:flex;align-items:center;justify-content:space-between">
     <div style="display:flex;align-items:center;gap:.625rem">
-      <img src="/images/icon-192.png" style="width:36px;height:36px;border-radius:8px" alt="">
+      <img src="/site-icon-192.png" style="width:36px;height:36px;border-radius:8px" alt="">
       <div>
         <div style="font-size:.8rem;font-weight:700;color:#fff">{{ site_name() }} Admin</div>
         <div style="font-size:.68rem;color:rgba(255,255,255,.45)">Installer l'application</div>

@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#0657A4">
-<link rel="icon" type="image/svg+xml" href="/images/icon-192.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/site-icon-192.png">
 <title>Mot de passe oublié — {{ site_name() }}</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">

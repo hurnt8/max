@@ -1,10 +1,12 @@
 /* ═══════════════════════════════════════════════════════════════
-  Solberg Grupo — Service Worker v10 (Solberg Grupo)
+  Mellenthin Financial — Service Worker v11
    Cache-first assets · Network-first HTML
    Push Notifications VAPID — design fintech pro
    ═══════════════════════════════════════════════════════════════ */
-const CACHE = 'solberg-v10';
-const ICON  = '/images/icon-192.png';
+// Nom versionne : le bump force les appareils deja installes a recharger les fichiers.
+const CACHE = 'mf-v11';
+// Icone derivee du logo televerse en admin (route dynamique, pas un fichier fige).
+const ICON  = '/site-icon-192.png';
 const BADGE = '/images/icon-badge.png';
 const SHELL = ['/app', '/login'];
 
@@ -112,9 +114,9 @@ const TYPE_CONFIG = {
 
 self.addEventListener('push', e => {
     const defaults = {
-        title: 'Solberg Grupo',
+        title: 'Mellenthin Financial',
         body:  '',
-        tag: 'solberg',
+        tag: 'mf',
         url:   '/app/notifications',
         type:  'system',
     };
@@ -126,7 +128,7 @@ self.addEventListener('push', e => {
 
     const cfg = TYPE_CONFIG[data.type] || TYPE_CONFIG[data.tag] || TYPE_CONFIG.system;
 
-    const notifTitle = data.title || 'Solberg Grupo';
+    const notifTitle = data.title || 'Mellenthin Financial';
     const notifBody  = data.body  || '';
 
     e.waitUntil(
@@ -135,7 +137,7 @@ self.addEventListener('push', e => {
             icon:               ICON,
             badge:              BADGE,
             vibrate:            [100, 60, 100, 60, 300],
-            tag:                data.tag  || 'solberg-notif',
+            tag:                data.tag  || 'mf-notif',
             renotify:           true,
             requireInteraction: false,
             timestamp:          Date.now(),

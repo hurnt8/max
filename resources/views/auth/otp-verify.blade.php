@@ -9,8 +9,8 @@
 <meta name="apple-mobile-web-app-title" content="{{ site_name() }}">
 <meta name="theme-color" content="#0657A4">
 <link rel="manifest" href="{{ route('pwa.manifest') }}">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/site-icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/site-icon-192.png">
 <title>{{ __('auth.otp_title') }} — {{ site_name() }}</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
