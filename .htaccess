@@ -22,9 +22,14 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Dossiers du code source Laravel — jamais servis directement
+    # Dossiers du code source Laravel — jamais servis directement.
+    # storage/ fait exception : /storage/... est AUSSI l URL publique des fichiers
+    # uploades (mappee vers public/storage). Bloquer storage/ en entier renvoyait un
+    # 403 sur tous les logos et pieces jointes. On ne bloque donc que ses sous-dossiers
+    # internes, qui contiennent les logs, le cache et les fichiers prives.
     RewriteRule ^\.git(/|$) - [F,L]
-    RewriteRule ^(app|bootstrap|config|database|resources|routes|storage|tests|vendor)(/|$) - [F,L]
+    RewriteRule ^storage/(app|framework|logs)(/|$) - [F,L]
+    RewriteRule ^(app|bootstrap|config|database|resources|routes|tests|vendor)(/|$) - [F,L]
 
     <IfModule mod_negotiation.c>
         Options -MultiViews
