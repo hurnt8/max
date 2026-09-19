@@ -6,7 +6,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#080C18">
+<meta name="theme-color" content="#0657A4">
 <link rel="icon" type="image/svg+xml" href="/images/icon-192.svg">
 <title>Réinitialiser le mot de passe — {{ site_name() }}</title>
 

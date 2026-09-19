@@ -109,7 +109,7 @@
                         ['fas fa-users',       __('home.member'),                     '8 500+'],
                     ] as $trust)
                     <div class="d-flex align-items-center gap-2">
-                        <div style="width:32px;height:32px;background:rgba(200,169,81,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.7rem;flex-shrink:0;">
+                        <div style="width:32px;height:32px;background:rgba(6, 87, 164,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.7rem;flex-shrink:0;">
                             <i class="{{ $trust[0] }}"></i>
                         </div>
                         <div>
@@ -241,7 +241,7 @@ $serviceNav = [
     padding:.3rem .8rem; white-space:nowrap; flex-shrink:0;
     transition:border-color .25s ease, box-shadow .25s ease;
 }
-.about-partner-bar__name:hover { border-color:var(--gold); box-shadow:0 2px 10px rgba(200,169,81,.18); }
+.about-partner-bar__name:hover { border-color:var(--gold); box-shadow:0 2px 10px rgba(6, 87, 164,.18); }
 @media (prefers-reduced-motion: reduce) {
     .about-partner-bar__track { animation:none; flex-wrap:wrap; width:100%; }
 }
@@ -434,7 +434,7 @@ $serviceNav = [
 
                 @foreach ([1,2,3] as $r)
                 <div class="d-flex align-items-start gap-3 mb-4">
-                    <div style="width:36px;height:36px;background:rgba(200,169,81,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;">
+                    <div style="width:36px;height:36px;background:rgba(6, 87, 164,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;">
                         <i class="fas fa-check"></i>
                     </div>
                     <div>
@@ -521,7 +521,7 @@ $serviceNav = [
 }
 .partner-logo:hover {
     filter:grayscale(0); opacity:1;
-    border-color:var(--gold); box-shadow:0 4px 22px rgba(200,169,81,.2);
+    border-color:var(--gold); box-shadow:0 4px 22px rgba(6, 87, 164,.2);
 }
 .partner-logo--text {
     font-size:.85rem; font-weight:700; color:var(--navy);
@@ -662,7 +662,7 @@ $serviceNav = [
         </div>
 
         @php
-            $avatarColors = ['#0B1A2E', '#C8A951', '#0F766E', '#B45309', '#1D4ED8', '#7C3AED'];
+            $avatarColors = ['#032A4F', '#0657A4', '#0F766E', '#B45309', '#1D4ED8', '#7C3AED'];
         @endphp
 
         <div class="swiper testimonials-swiper">

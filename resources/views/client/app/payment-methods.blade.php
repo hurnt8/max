@@ -25,7 +25,7 @@
 .pm-card::after {
   content:'';position:absolute;bottom:-70px;left:-40px;
   width:180px;height:180px;border-radius:50%;
-  background:radial-gradient(circle,rgba(200,169,81,.08) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(129, 182, 233,.08) 0%,transparent 65%);
   pointer-events:none;
 }
 .pm-card__top {
@@ -39,7 +39,7 @@
 }
 .pm-card__chip {
   width:32px;height:24px;border-radius:4px;
-  background:linear-gradient(135deg,#D4B96A,#C8A951,#A8893A);
+  background:linear-gradient(135deg,#B5D4F2,#81B6E9,#2B94F7);
   box-shadow:0 2px 6px rgba(0,0,0,.35);position:relative;overflow:hidden;
 }
 .pm-card__chip::before {

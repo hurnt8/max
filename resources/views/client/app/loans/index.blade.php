@@ -38,7 +38,7 @@
   color:var(--ca-text-3);background:var(--ca-bg2);cursor:pointer;
   transition:.15s;
 }
-.dos-pill.active{background:rgba(200,169,81,.12);border-color:rgba(200,169,81,.3);color:var(--ca-gold-l)}
+.dos-pill.active{background:rgba(129, 182, 233,.12);border-color:rgba(129, 182, 233,.3);color:var(--ca-gold-l)}
 
 /* ── Loan cards ── */
 .dos-list{display:flex;flex-direction:column;gap:.625rem;padding:0 1.25rem}

@@ -12,10 +12,10 @@
 <link rel="stylesheet" href="{{ asset('assets/vendors/fontawesome/css/all.min.css') }}">
 <style>
 :root {
-  --navy:    #0B1A2E;
-  --navy2:   #112237;
-  --gold:    #C8A951;
-  --goldd:   #A8893A;
+  --navy:    #032A4F;
+  --navy2:   #043767;
+  --gold:    #81B6E9;
+  --goldd:   #2B94F7;
   --red:     #DC2626;
   --redd:    #B91C1C;
   --green:   #059669;

@@ -6,7 +6,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#080C18">
+<meta name="theme-color" content="#0657A4">
 <link rel="icon" type="image/svg+xml" href="/images/icon-192.svg">
 <title>Mot de passe oublié — {{ site_name() }}</title>
 
@@ -19,10 +19,10 @@
 :root{
   --bg:   #080C18;
   --inp:  #141C2E;
-  --navy: #0B1A2E;
-  --navy2:#112237;
-  --gold: #C8A951;
-  --gold2:#A8893A;
+  --navy: #032A4F;
+  --navy2:#043767;
+  --gold: #81B6E9;
+  --gold2:#2B94F7;
   --text: #FFFFFF;
   --sub:  rgba(255,255,255,.52);
   --muted:rgba(255,255,255,.28);
@@ -43,8 +43,8 @@ a{text-decoration:none;color:inherit}
 /* Background orbs */
 .bg-orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .orb{position:absolute;border-radius:50%;filter:blur(90px)}
-.orb-1{width:480px;height:480px;top:-10%;right:-8%;background:radial-gradient(circle,rgba(200,169,81,.1) 0%,transparent 65%);animation:orbf 10s ease-in-out infinite alternate}
-.orb-2{width:360px;height:360px;bottom:-15%;left:-8%;background:radial-gradient(circle,rgba(200,169,81,.06) 0%,transparent 65%);animation:orbf 14s ease-in-out infinite alternate-reverse}
+.orb-1{width:480px;height:480px;top:-10%;right:-8%;background:radial-gradient(circle,rgba(129, 182, 233,.1) 0%,transparent 65%);animation:orbf 10s ease-in-out infinite alternate}
+.orb-2{width:360px;height:360px;bottom:-15%;left:-8%;background:radial-gradient(circle,rgba(129, 182, 233,.06) 0%,transparent 65%);animation:orbf 14s ease-in-out infinite alternate-reverse}
 @keyframes orbf{from{transform:scale(1)}to{transform:scale(1.1) translate(2%,3%)}}
 
 /* Top bar */
@@ -78,16 +78,16 @@ a{text-decoration:none;color:inherit}
   background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.5rem;
-  box-shadow:0 0 36px rgba(11,26,46,.3);
+  box-shadow:0 0 36px rgba(3, 42, 79,.3);
 }
 
 /* Icon badge */
 .icon-badge{
   width:72px;height:72px;border-radius:50%;
-  background:rgba(200,169,81,.1);border:1.5px solid rgba(200,169,81,.25);
+  background:rgba(129, 182, 233,.1);border:1.5px solid rgba(129, 182, 233,.25);
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.5rem;
-  box-shadow:0 0 28px rgba(200,169,81,.15);
+  box-shadow:0 0 28px rgba(129, 182, 233,.15);
 }
 .icon-badge i{font-size:1.75rem;color:var(--gold)}
 
@@ -125,7 +125,7 @@ a{text-decoration:none;color:inherit}
   outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
 }
 .finput::placeholder{color:rgba(255,255,255,.2)}
-.finput:focus{border-color:var(--navy);background:#161E30;box-shadow:0 0 0 3.5px rgba(11,26,46,.25)}
+.finput:focus{border-color:var(--navy);background:#161E30;box-shadow:0 0 0 3.5px rgba(3, 42, 79,.25)}
 .finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--gold)}
 .finput.err{border-color:#ef4444}
 
@@ -136,10 +136,10 @@ a{text-decoration:none;color:inherit}
   display:flex;align-items:center;justify-content:center;gap:.625rem;
   background:linear-gradient(90deg,var(--gold) 0%,var(--gold2) 100%);
   color:var(--navy);letter-spacing:.01em;
-  box-shadow:0 6px 28px rgba(200,169,81,.35),0 2px 8px rgba(0,0,0,.3);
+  box-shadow:0 6px 28px rgba(129, 182, 233,.35),0 2px 8px rgba(0,0,0,.3);
   transition:filter .2s,box-shadow .2s,transform .1s;margin-top:.25rem;
 }
-.fbtn:hover{filter:brightness(1.08);box-shadow:0 8px 36px rgba(200,169,81,.5)}
+.fbtn:hover{filter:brightness(1.08);box-shadow:0 8px 36px rgba(129, 182, 233,.5)}
 .fbtn:active{transform:scale(.975)}
 .fbtn:disabled{opacity:.6;cursor:not-allowed;filter:none}
 

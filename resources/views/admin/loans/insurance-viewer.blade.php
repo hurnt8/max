@@ -12,10 +12,10 @@
 <link rel="stylesheet" href="{{ asset('assets/vendors/fontawesome/css/all.min.css') }}">
 <style>
 :root {
-  --navy:    #0B1A2E;
-  --navy2:   #112237;
-  --gold:    #C8A951;
-  --goldd:   #A8893A;
+  --navy:    #032A4F;
+  --navy2:   #043767;
+  --gold:    #81B6E9;
+  --goldd:   #2B94F7;
   --green:   #059669;
   --greend:  #047857;
   --red:     #DC2626;
@@ -287,7 +287,7 @@ kbd {
 .cf-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center;padding:1rem}
 .cf-modal-overlay.open{display:flex}
 .cf-modal{background:var(--navy2);border:1px solid var(--line);border-radius:14px;max-width:400px;width:100%;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.cf-modal-icon{width:40px;height:40px;border-radius:10px;background:rgba(200,169,81,.15);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:.75rem}
+.cf-modal-icon{width:40px;height:40px;border-radius:10px;background:rgba(129, 182, 233,.15);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:.75rem}
 .cf-modal-title{font-size:.95rem;font-weight:800;color:var(--text);margin-bottom:.5rem}
 .cf-modal-msg{font-size:.8rem;color:var(--sub);line-height:1.6;margin-bottom:1.25rem;white-space:pre-line}
 .cf-modal-actions{display:flex;gap:.5rem;justify-content:flex-end}

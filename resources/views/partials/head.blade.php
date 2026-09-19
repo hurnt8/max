@@ -23,9 +23,9 @@
         theme: {
             extend: {
                 colors: {
-                    navy:      { DEFAULT:'#0B1A2E', mid:'#162540', light:'#1E3A5F', deep:'#060E1C' },
-                    gold:      { DEFAULT:'#C8A951', light:'#E8CB72', pale:'#F5E9C8', dark:'#A88830' },
-                    cream:     { DEFAULT:'#F7F3EC', light:'#FDFBF8' },
+                    navy:      { DEFAULT:'#032A4F', mid:'#043767', light:'#054685', deep:'#021D36' },
+                    gold:      { DEFAULT:'#0657A4', light:'#0870D4', pale:'#DEEBF7', dark:'#054685' },
+                    cream:     { DEFAULT:'#F3F7FC', light:'#F9FBFE' },
                 },
                 fontFamily: {
                     sans:  ['Inter','ui-sans-serif','system-ui','sans-serif'],

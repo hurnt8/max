@@ -222,11 +222,11 @@ window.buildDoughnutChart = function (canvasId, data, colors, labels) {
             plugins: {
                 legend: { display: false },
                 tooltip: {
-                    backgroundColor: '#0B1A2E',
-                    borderColor: 'rgba(200,169,81,.3)',
+                    backgroundColor: '#032A4F',
+                    borderColor: 'rgba(129, 182, 233,.3)',
                     borderWidth: 1,
                     titleColor: '#FFFFFF',
-                    bodyColor: '#D4B96A',
+                    bodyColor: '#B5D4F2',
                     padding: 10,
                     callbacks: {
                         label: (ctx) => ' ' + ctx.parsed.toLocaleString(document.documentElement.lang || 'fr', {
@@ -249,11 +249,11 @@ window.buildLineChart = function (canvasId, labels, values, currency) {
             labels,
             datasets: [{
                 data: values,
-                borderColor: '#C8A951',
-                backgroundColor: 'rgba(200,169,81,.1)',
+                borderColor: '#81B6E9',
+                backgroundColor: 'rgba(129, 182, 233,.1)',
                 borderWidth: 2,
                 pointRadius: 3,
-                pointBackgroundColor: '#C8A951',
+                pointBackgroundColor: '#81B6E9',
                 fill: true,
                 tension: .4,
             }],
@@ -264,11 +264,11 @@ window.buildLineChart = function (canvasId, labels, values, currency) {
             plugins: {
                 legend: { display: false },
                 tooltip: {
-                    backgroundColor: '#0B1A2E',
-                    borderColor: 'rgba(200,169,81,.3)',
+                    backgroundColor: '#032A4F',
+                    borderColor: 'rgba(129, 182, 233,.3)',
                     borderWidth: 1,
                     titleColor: '#FFFFFF',
-                    bodyColor: '#D4B96A',
+                    bodyColor: '#B5D4F2',
                     padding: 10,
                     callbacks: {
                         label: (ctx) => ' ' + ctx.parsed.y.toLocaleString() + ' ' + (currency || ''),
@@ -277,11 +277,11 @@ window.buildLineChart = function (canvasId, labels, values, currency) {
             },
             scales: {
                 x: {
-                    grid: { color: 'rgba(11,26,46,.06)' },
+                    grid: { color: 'rgba(3, 42, 79,.06)' },
                     ticks: { color: '#95A3B1', font: { size: 10 } },
                 },
                 y: {
-                    grid: { color: 'rgba(11,26,46,.06)' },
+                    grid: { color: 'rgba(3, 42, 79,.06)' },
                     ticks: { color: '#95A3B1', font: { size: 10 } },
                     beginAtZero: true,
                 },

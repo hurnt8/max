@@ -85,7 +85,7 @@ $salutationName = ($gender === 'N') ? explode(' ', $user->name)[0] : $user->name
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#080C18">
+<meta name="theme-color" content="#0657A4">
 <link rel="icon" href="{{ asset('assets/images/favicons/favicon.png') }}">
 <title>{{ $t['title'] }}</title>
 
@@ -98,10 +98,10 @@ $salutationName = ($gender === 'N') ? explode(' ', $user->name)[0] : $user->name
 :root{
   --bg:   #080C18;
   --inp:  #141C2E;
-  --navy: #0B1A2E;
-  --navy2:#112237;
-  --gold: #C8A951;
-  --gold2:#A8893A;
+  --navy: #032A4F;
+  --navy2:#043767;
+  --gold: #81B6E9;
+  --gold2:#2B94F7;
   --text: #FFFFFF;
   --sub:  rgba(255,255,255,.52);
   --muted:rgba(255,255,255,.28);
@@ -130,12 +130,12 @@ a{text-decoration:none;color:inherit}
 .orb{position:absolute;border-radius:50%;filter:blur(90px)}
 .orb-1{
   width:520px;height:520px;top:-15%;right:-10%;
-  background:radial-gradient(circle,rgba(200,169,81,.11) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(129, 182, 233,.11) 0%,transparent 65%);
   animation:orbf 10s ease-in-out infinite alternate;
 }
 .orb-2{
   width:380px;height:380px;bottom:-15%;left:-8%;
-  background:radial-gradient(circle,rgba(200,169,81,.06) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(129, 182, 233,.06) 0%,transparent 65%);
   animation:orbf 14s ease-in-out infinite alternate-reverse;
 }
 @keyframes orbf{from{transform:scale(1)}to{transform:scale(1.1) translate(2%,3%)}}
@@ -153,7 +153,7 @@ a{text-decoration:none;color:inherit}
   background:linear-gradient(135deg,var(--navy2),var(--navy));
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.375rem;
-  box-shadow:0 0 36px rgba(11,26,46,.3);
+  box-shadow:0 0 36px rgba(3, 42, 79,.3);
 }
 
 /* Avatar */
@@ -163,7 +163,7 @@ a{text-decoration:none;color:inherit}
   display:flex;align-items:center;justify-content:center;
   font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;
   color:var(--gold);margin:0 auto 1rem;
-  box-shadow:0 0 24px rgba(11,26,46,.3);
+  box-shadow:0 0 24px rgba(3, 42, 79,.3);
 }
 
 /* Heading */
@@ -177,8 +177,8 @@ a{text-decoration:none;color:inherit}
 /* Info box */
 .info-box{
   display:flex;gap:.75rem;align-items:flex-start;
-  background:rgba(200,169,81,.07);
-  border:1px solid rgba(200,169,81,.18);
+  background:rgba(129, 182, 233,.07);
+  border:1px solid rgba(129, 182, 233,.18);
   border-radius:12px;padding:.875rem 1rem;margin-bottom:1.5rem;
 }
 .info-box i{color:var(--gold);font-size:.88rem;flex-shrink:0;margin-top:.15rem}
@@ -209,7 +209,7 @@ a{text-decoration:none;color:inherit}
   outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
 }
 .finput::placeholder{color:rgba(255,255,255,.2)}
-.finput:focus{border-color:var(--navy);background:#161E30;box-shadow:0 0 0 3.5px rgba(11,26,46,.25)}
+.finput:focus{border-color:var(--navy);background:#161E30;box-shadow:0 0 0 3.5px rgba(3, 42, 79,.25)}
 .finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--gold)}
 .finput.err{border-color:#ef4444}
 .finput[readonly]{
@@ -235,10 +235,10 @@ a{text-decoration:none;color:inherit}
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.625rem;
   background:linear-gradient(90deg,var(--gold) 0%,var(--gold2) 100%);
   color:var(--navy);letter-spacing:.01em;
-  box-shadow:0 6px 28px rgba(200,169,81,.35),0 2px 8px rgba(0,0,0,.3);
+  box-shadow:0 6px 28px rgba(129, 182, 233,.35),0 2px 8px rgba(0,0,0,.3);
   transition:filter .2s,box-shadow .2s,transform .1s;margin-top:1.25rem;
 }
-.fbtn:hover{filter:brightness(1.08);box-shadow:0 8px 36px rgba(200,169,81,.5)}
+.fbtn:hover{filter:brightness(1.08);box-shadow:0 8px 36px rgba(129, 182, 233,.5)}
 .fbtn:active{transform:scale(.975)}
 .fbtn:disabled{opacity:.6;cursor:not-allowed;filter:none}
 
@@ -361,7 +361,7 @@ a{text-decoration:none;color:inherit}
 <script>
 const strengths = @json($t['strengths']);
 const strPh     = @json($t['str_ph']);
-const colors    = ['','#ef4444','#f97316','#eab308','#22c55e','#C8A951'];
+const colors    = ['','#ef4444','#f97316','#eab308','#22c55e','#81B6E9'];
 const widths    = ['0%','25%','50%','75%','90%','100%'];
 
 function tglPwd(id, btn) {

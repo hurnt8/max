@@ -6,7 +6,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#0B1A2E">
+<meta name="theme-color" content="#0657A4">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
 <title>Réinitialiser le mot de passe — {{ site_name() }} Admin</title>
 
@@ -17,8 +17,8 @@
 
 <style>
 :root{
-  --navy:#0B1A2E;--nm:#162D47;--nl:#1D3A5C;
-  --gold:#C8A951;--gd:#A8893A;--gp:#F3E8D6;
+  --navy:#032A4F;--nm:#043767;--nl:#054685;
+  --gold:#81B6E9;--gd:#2B94F7;--gp:#DEEBF7;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{
@@ -35,7 +35,7 @@ a{text-decoration:none;color:inherit}
   background-size:40px 40px;
 }
 .bg-orb{position:fixed;top:-100px;right:-100px;width:380px;height:380px;border-radius:50%;
-  background:radial-gradient(circle,rgba(200,169,81,.08) 0%,transparent 70%);pointer-events:none;z-index:0}
+  background:radial-gradient(circle,rgba(129, 182, 233,.08) 0%,transparent 70%);pointer-events:none;z-index:0}
 
 .topbar{position:relative;z-index:10;display:flex;align-items:center;
   padding:.9rem 1.5rem;padding-top:calc(.9rem + env(safe-area-inset-top,0px));}
@@ -50,9 +50,9 @@ a{text-decoration:none;color:inherit}
 
 .icon-badge{
   width:72px;height:72px;border-radius:50%;
-  background:rgba(200,169,81,.1);border:1.5px solid rgba(200,169,81,.28);
+  background:rgba(129, 182, 233,.1);border:1.5px solid rgba(129, 182, 233,.28);
   display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;
-  box-shadow:0 0 28px rgba(200,169,81,.15);
+  box-shadow:0 0 28px rgba(129, 182, 233,.15);
 }
 .icon-badge i{font-size:1.75rem;color:var(--gold)}
 
@@ -78,7 +78,7 @@ a{text-decoration:none;color:inherit}
   outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
 }
 .finput::placeholder{color:rgba(255,255,255,.25)}
-.finput:focus{border-color:var(--gold);background:rgba(255,255,255,.08);box-shadow:0 0 0 3.5px rgba(200,169,81,.15)}
+.finput:focus{border-color:var(--gold);background:rgba(255,255,255,.08);box-shadow:0 0 0 3.5px rgba(129, 182, 233,.15)}
 .finput:focus ~ .ficon,.frel:focus-within .ficon{color:var(--gold)}
 .finput.err{border-color:#ef4444}
 .feye{
@@ -95,8 +95,8 @@ a{text-decoration:none;color:inherit}
   width:100%;padding:.92rem 1.5rem;border:none;border-radius:10px;
   font-size:.95rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;
   display:flex;align-items:center;justify-content:center;gap:.625rem;
-  background:var(--gold);color:#0B1A2E;letter-spacing:.01em;
-  box-shadow:0 6px 24px rgba(200,169,81,.3);
+  background:var(--gold);color:#032A4F;letter-spacing:.01em;
+  box-shadow:0 6px 24px rgba(129, 182, 233,.3);
   transition:filter .2s,box-shadow .2s,transform .1s;margin-top:.5rem;
 }
 .fbtn:hover{filter:brightness(1.08)}
@@ -250,7 +250,7 @@ function updateStrength(val) {
   if (/[A-Z]/.test(val)) score++;
   if (/[0-9]/.test(val)) score++;
   if (/[^A-Za-z0-9]/.test(val)) score++;
-  var colors = ['#ef4444','#f97316','#eab308','#22c55e','#C8A951'];
+  var colors = ['#ef4444','#f97316','#eab308','#22c55e','#81B6E9'];
   var widths  = ['20%','40%','60%','80%','100%'];
   fill.style.width      = widths[Math.max(score-1,0)] || '0';
   fill.style.background = colors[Math.max(score-1,0)] || 'transparent';

@@ -7,15 +7,15 @@
 
 /* ── Variables ─────────────────────────────────────────────────── */
 :root {
-  --ca-bg:          #0A1628;
-  --ca-bg2:         #0D1F35;
-  --ca-bg3:         #112237;
-  --ca-bg4:         #162D47;
-  --ca-card:        #1A3A5C;
-  --ca-navy:        #0B1A2E;
-  --ca-navy-light:  #1E3A5F;
-  --ca-gold:        #C8A951;
-  --ca-gold-l:      #D4B96A;
+  --ca-bg:          #03192F;
+  --ca-bg2:         #04203C;
+  --ca-bg3:         #05294B;
+  --ca-bg4:         #06345E;
+  --ca-card:        #07406F;
+  --ca-navy:        #032A4F;
+  --ca-navy-light:  #054685;
+  --ca-gold:        #81B6E9;
+  --ca-gold-l:      #B5D4F2;
   /* Compat: le teal a ete retire de l'identite de marque (voir --ca-navy/--ca-gold
      ci-dessus) ; ces deux alias evitent de casser les nombreuses vues qui
      referencaient encore var(--ca-teal[-l]) avant l'unification des couleurs. */
@@ -38,7 +38,7 @@
   --ca-radius-sm:   10px;
   --ca-nav-h:       62px;
   --ca-transition:  .2s cubic-bezier(.4,0,.2,1);
-  --ca-outer-bg:    #03080F;
+  --ca-outer-bg:    #01101F;
 }
 
 /* ── Light mode overrides ───────────────────────────────────────── */
@@ -277,7 +277,7 @@ button { font-family: inherit; }
   top: -60px; right: -60px;
   width: 220px; height: 220px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,169,81,.18) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(129, 182, 233,.18) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -354,8 +354,8 @@ button { font-family: inherit; }
   display: inline-flex;
   align-items: center;
   gap: .35rem;
-  background: rgba(200,169,81,.2);
-  border: 1px solid rgba(200,169,81,.35);
+  background: rgba(129, 182, 233,.2);
+  border: 1px solid rgba(129, 182, 233,.35);
   border-radius: 99px;
   padding: .25rem .7rem;
   font-size: .72rem;
@@ -420,8 +420,8 @@ button { font-family: inherit; }
   position: relative;
 }
 
-.ca-qa-icon--navy  { background: rgba(11,26,46,.18); border-color: rgba(11,26,46,.3); color: var(--ca-navy-light); }
-.ca-qa-icon--gold  { background: rgba(200,169,81,.15); border-color: rgba(200,169,81,.3); color: var(--ca-gold-l); }
+.ca-qa-icon--navy  { background: rgba(3, 42, 79,.18); border-color: rgba(3, 42, 79,.3); color: var(--ca-navy-light); }
+.ca-qa-icon--gold  { background: rgba(129, 182, 233,.15); border-color: rgba(129, 182, 233,.3); color: var(--ca-gold-l); }
 .ca-qa-icon--blue  { background: rgba(74,158,255,.15); border-color: rgba(74,158,255,.3); color: var(--ca-blue); }
 .ca-qa-icon--purple{ background: rgba(139,92,246,.15); border-color: rgba(139,92,246,.3); color: var(--ca-purple); }
 
@@ -555,7 +555,7 @@ button { font-family: inherit; }
   display: block;
 }
 
-.ca-loan-card:hover { border-color: rgba(200,169,81,.3); transform: translateY(-1px); }
+.ca-loan-card:hover { border-color: rgba(129, 182, 233,.3); transform: translateY(-1px); }
 
 .ca-loan-card__accent {
   height: 3px;
@@ -700,7 +700,7 @@ button { font-family: inherit; }
   text-decoration: none;
 }
 
-.ca-control-btn:hover { background: var(--ca-bg4); border-color: rgba(200,169,81,.3); }
+.ca-control-btn:hover { background: var(--ca-bg4); border-color: rgba(129, 182, 233,.3); }
 
 .ca-control-btn__icon {
   width: 40px; height: 40px;
@@ -779,7 +779,7 @@ button { font-family: inherit; }
   background: linear-gradient(135deg, var(--ca-gold), #a8722a);
   border-color: var(--ca-gold-l);
   color: var(--ca-bg);
-  box-shadow: 0 0 0 4px rgba(200,169,81,.2);
+  box-shadow: 0 0 0 4px rgba(129, 182, 233,.2);
 }
 
 .ca-step__label {
@@ -990,8 +990,8 @@ button { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: .5rem;
-  background: rgba(200,169,81,.15);
-  border: 1px solid rgba(200,169,81,.3);
+  background: rgba(129, 182, 233,.15);
+  border: 1px solid rgba(129, 182, 233,.3);
   border-radius: 99px;
   padding: .45rem .9rem;
   font-size: .78rem;
@@ -1213,8 +1213,8 @@ button { font-family: inherit; }
   font-size: 1.75rem;
   color: #fff;
   margin: 0 auto .875rem;
-  border: 3px solid rgba(200,169,81,.35);
-  box-shadow: 0 0 0 6px rgba(200,169,81,.08);
+  border: 3px solid rgba(129, 182, 233,.35);
+  box-shadow: 0 0 0 6px rgba(129, 182, 233,.08);
 }
 
 .ca-profile-name {
@@ -1229,8 +1229,8 @@ button { font-family: inherit; }
   display: inline-flex;
   align-items: center;
   gap: .35rem;
-  background: rgba(200,169,81,.15);
-  border: 1px solid rgba(200,169,81,.3);
+  background: rgba(129, 182, 233,.15);
+  border: 1px solid rgba(129, 182, 233,.3);
   border-radius: 99px;
   padding: .2rem .65rem;
   font-size: .7rem;
@@ -1395,7 +1395,7 @@ button { font-family: inherit; }
 .ca-badge--valid    { background: rgba(74,158,255,.12);  color: var(--ca-blue); }
 .ca-badge--sent     { background: rgba(139,92,246,.12);  color: var(--ca-purple); }
 .ca-badge--signed   { background: rgba(0,200,150,.12);   color: var(--ca-positive); }
-.ca-badge--final    { background: rgba(200,169,81,.15);  color: var(--ca-gold-l); }
+.ca-badge--final    { background: rgba(129, 182, 233,.15);  color: var(--ca-gold-l); }
 .ca-badge--rejected { background: rgba(255,90,90,.12);   color: var(--ca-negative); }
 .ca-badge--paid      { background: rgba(0,200,150,.12);   color: var(--ca-positive); }
 .ca-badge--cancelled { background: rgba(122,144,170,.12); color: var(--ca-text-3); }
@@ -1539,7 +1539,7 @@ button { font-family: inherit; }
   height: 2.5px;
   border-radius: 0 0 6px 6px;
   background: linear-gradient(90deg, var(--ca-gold-l), var(--ca-gold));
-  box-shadow: 0 0 10px rgba(200,169,81,.5);
+  box-shadow: 0 0 10px rgba(129, 182, 233,.5);
 }
 
 /* ── Onglet central — FAB ───────────────────────────────────────── */
@@ -1690,9 +1690,9 @@ button { font-family: inherit; }
   }
   .ca-shell {
     min-height: 100vh;
-    box-shadow: 0 0 100px rgba(0,0,0,.7), 0 0 0 1px rgba(200,169,81,.07);
-    border-left:  1px solid rgba(200,169,81,.06);
-    border-right: 1px solid rgba(200,169,81,.06);
+    box-shadow: 0 0 100px rgba(0,0,0,.7), 0 0 0 1px rgba(129, 182, 233,.07);
+    border-left:  1px solid rgba(129, 182, 233,.06);
+    border-right: 1px solid rgba(129, 182, 233,.06);
     position: relative;
   }
   /* Topbar epingle reste dans la coque */

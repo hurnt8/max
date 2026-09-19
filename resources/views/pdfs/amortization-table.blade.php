@@ -15,17 +15,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 2.5px solid #0B1A2E;
+    border-bottom: 2.5px solid #032A4F;
     padding-bottom: 14px;
     margin-bottom: 20px;
 }
 .header-brand {
     font-size: 15pt;
     font-weight: 700;
-    color: #0B1A2E;
+    color: #032A4F;
     letter-spacing: .02em;
 }
-.header-brand span { color: #C8A951; }
+.header-brand span { color: #0657A4; }
 .header-meta {
     text-align: right;
     font-size: 8pt;
@@ -35,7 +35,7 @@ body {
 .doc-title {
     font-size: 13pt;
     font-weight: 700;
-    color: #0B1A2E;
+    color: #032A4F;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: .08em;
@@ -63,10 +63,10 @@ body {
     font-weight: 600;
 }
 .summary-cell.value {
-    color: #0B1A2E;
+    color: #032A4F;
     font-weight: 700;
 }
-.summary-cell.value-gold { color: #C8A951; font-weight: 700; }
+.summary-cell.value-gold { color: #0657A4; font-weight: 700; }
 
 table.schedule {
     width: 100%;
@@ -74,7 +74,7 @@ table.schedule {
     font-size: 8.5pt;
 }
 table.schedule thead tr {
-    background: #0B1A2E;
+    background: #032A4F;
     color: #fff;
 }
 table.schedule thead th {
@@ -98,9 +98,9 @@ table.schedule tbody tr td:first-child {
     font-weight: 600;
 }
 table.schedule tbody tr td.interest { color: #c0392b; }
-table.schedule tbody tr td.balance  { color: #0B1A2E; font-weight: 600; }
+table.schedule tbody tr td.balance  { color: #032A4F; font-weight: 600; }
 table.schedule tfoot tr {
-    background: #0B1A2E;
+    background: #032A4F;
     color: #fff;
 }
 table.schedule tfoot td {

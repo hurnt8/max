@@ -55,8 +55,8 @@
   transition: .15s; text-decoration: none;
 }
 .inv-pill.active {
-  background: rgba(200,169,81,.12);
-  border-color: rgba(200,169,81,.3);
+  background: rgba(129, 182, 233,.12);
+  border-color: rgba(129, 182, 233,.3);
   color: var(--ca-gold-l);
 }
 .inv-pill--paid.active   { background: rgba(74,222,128,.1); border-color: rgba(74,222,128,.3); color: #4ade80 }
