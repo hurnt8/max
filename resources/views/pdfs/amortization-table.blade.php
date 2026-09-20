@@ -200,7 +200,9 @@ table.schedule tfoot td:first-child { text-align: center; }
     </tfoot>
 </table>
 
-<div class="footer">{{ $texts['footer'] }} — ' . site_name() . ' INVESTI © {{ now()->format('Y') }}</div>
+{{-- La concatenation PHP etait restee telle quelle dans le HTML : le pied de
+     page affichait litteralement « — ' . site_name() . ' INVESTI © ». --}}
+<div class="footer">{{ $texts['footer'] }} — {{ site_name() }} © {{ now()->format('Y') }}</div>
 
 </body>
 </html>

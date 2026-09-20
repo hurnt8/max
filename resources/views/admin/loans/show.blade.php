@@ -1192,6 +1192,12 @@ $tpl = $loan->contractTemplate;
               · Intérêts totaux : {{ number_format($loan->total_cost,2,',',' ') }} {{ $loan->currency }}
             </span>
           </div>
+          {{-- Le meme PDF que celui joint aux emails de contrat, telechargeable
+               directement : l admin devait sinon renvoyer un email pour l obtenir. --}}
+          <a href="{{ route($panelPrefix.'.loans.amortization.pdf',$loan) }}" class="btn-navy btn-sm-pro"
+             style="margin-left:auto;white-space:nowrap">
+            <i class="fas fa-file-pdf"></i> Télécharger le PDF
+          </a>
         </div>
         <div class="ld-amort-wrap">
           <table class="pro-table" style="width:100%">

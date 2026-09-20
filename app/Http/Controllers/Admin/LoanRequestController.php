@@ -905,6 +905,43 @@ class LoanRequestController extends Controller
         return back()->with('success', 'Document de notification uploadé avec succès. Il débloque le bouton "Valider".');
     }
 
+    /**
+     * Telecharge le tableau d'amortissement en PDF.
+     *
+     * Le document etait jusqu'ici uniquement genere pour etre joint aux emails
+     * (envoi du contrat, relance). L'admin n'avait aucun moyen de le recuperer
+     * depuis le dossier : il devait renvoyer un email pour le voir.
+     */
+    public function downloadAmortizationPdf(LoanRequest $loan)
+    {
+        $this->authorizeAccess($loan);
+
+        if (empty($loan->amortization_schedule)) {
+            return back()->with('error', "Ce dossier n'a pas de tableau d'amortissement calcule.");
+        }
+
+        $locale = $loan->contract_language ?? 'fr';
+
+        // Meme budget de temps que lors de l'envoi du contrat : un echeancier de
+        // 120 lignes prend quelques secondes a rendre.
+        set_time_limit(180);
+
+        try {
+            $absPath = $this->pdfService->generateAmortizationPdf($loan, $locale);
+        } catch (\Throwable $e) {
+            Log::error('Amortization PDF download failed for ' . $loan->reference . ': ' . $e->getMessage());
+            return back()->with('error', "Le tableau d'amortissement n'a pas pu etre genere.");
+        }
+
+        if (!file_exists($absPath)) {
+            return back()->with('error', 'Fichier PDF introuvable sur le serveur.');
+        }
+
+        return response()->download($absPath, $loan->documentFileName('amortization'), [
+            'Content-Type' => 'application/pdf',
+        ]);
+    }
+
     public function previewNotificationPdf(LoanRequest $loan)
     {
         $this->authorizeAccess($loan);

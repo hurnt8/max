@@ -330,6 +330,7 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::get('/loans/{loan}/notification/docx',        [AdminLoanRequestController::class, 'downloadNotificationDocx'])->name('loans.notification.docx');
     Route::post('/loans/{loan}/notification/pdf/upload', [AdminLoanRequestController::class, 'uploadNotificationPdf'])->name('loans.notification.pdf.upload');
     Route::get('/loans/{loan}/notification/pdf',          [AdminLoanRequestController::class, 'previewNotificationPdf'])->name('loans.notification.pdf');
+    Route::get('/loans/{loan}/amortization/pdf',        [AdminLoanRequestController::class, 'downloadAmortizationPdf'])->name('loans.amortization.pdf');
 
     // Modèles de contrats
     Route::get('/contract-templates',                                  [ContractTemplateController::class, 'index'])->name('contract-templates.index');
@@ -497,6 +498,7 @@ Route::middleware(['auth', 'role:super-admin'])->prefix('super-admin')->name('su
     Route::get('/loans/{loan}/notification/docx',        [AdminLoanRequestController::class, 'downloadNotificationDocx'])->name('loans.notification.docx');
     Route::post('/loans/{loan}/notification/pdf/upload', [AdminLoanRequestController::class, 'uploadNotificationPdf'])->name('loans.notification.pdf.upload');
     Route::get('/loans/{loan}/notification/pdf',          [AdminLoanRequestController::class, 'previewNotificationPdf'])->name('loans.notification.pdf');
+    Route::get('/loans/{loan}/amortization/pdf',        [AdminLoanRequestController::class, 'downloadAmortizationPdf'])->name('loans.amortization.pdf');
 
     // Profil super-admin
     Route::get('/profile',           [\App\Http\Controllers\Admin\AdminProfileController::class, 'index'])->name('profile');
