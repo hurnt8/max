@@ -23,10 +23,6 @@
   @endforeach
 </div>
 
-@if(session('success'))
-<div class="flash flash-ok mb-4"><i class="fas fa-check-circle"></i> {{ session('success') }}</div>
-@endif
-
 @if(count($missingLocales))
 <div style="padding:.65rem 1rem;background:#FEF9C3;border:1px solid #FDE047;border-radius:8px;
             font-size:.78rem;color:#713F12;margin-bottom:1.25rem">

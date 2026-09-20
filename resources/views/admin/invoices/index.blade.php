@@ -18,10 +18,6 @@
   </div>
 </div>
 
-@if(session('success'))
-<div class="flash flash-ok" style="margin-bottom:1.25rem"><i class="fas fa-check-circle"></i> {{ session('success') }}</div>
-@endif
-
 {{-- KPI ── --}}
 <div class="metrics-grid">
   <div class="metric-card">

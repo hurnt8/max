@@ -122,13 +122,6 @@
 </div>
 @endif
 
-{{-- Flash success --}}
-@if(session('success'))
-<div style="background:rgba(27,138,122,.1);border:1px solid rgba(27,138,122,.28);border-radius:12px;padding:.75rem 1rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--ca-teal-l)">
-  <i class="fas fa-check-circle"></i> {{ session('success') }}
-</div>
-@endif
-
 {{-- ── Informations du compte (lecture seule) ── --}}
 <div class="ep-sep">
   <div class="ep-sep-line"></div>

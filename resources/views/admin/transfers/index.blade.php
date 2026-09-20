@@ -71,10 +71,6 @@
   </div>
 </div>
 
-@if(session('success'))
-<div class="flash flash-ok" style="margin-bottom:1.25rem"><i class="fas fa-check-circle"></i> {{ session('success') }}</div>
-@endif
-
 {{-- Transfer list ── --}}
 @if($transfers->isEmpty())
 <div class="card-pro" style="text-align:center;padding:5rem 2rem">

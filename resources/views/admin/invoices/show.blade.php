@@ -114,10 +114,6 @@
   </div>
 </div>
 
-@if(session('success'))
-<div class="alert alert-success no-print" style="margin-bottom:1.375rem">{{ session('success') }}</div>
-@endif
-
 {{-- Invoice sheet --}}
 <div class="inv-sheet">
 

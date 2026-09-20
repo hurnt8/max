@@ -710,15 +710,6 @@ a.pg-pro__link:hover { background:var(--c-bg); border-color:#94A3B8; color:var(-
   .content-area { padding:.75rem; }
 }
 
-/* ═══════════════ MODAL DE CONFIRMATION (global) ═══════════════ */
-.cf-modal-overlay{display:none;position:fixed;inset:0;background:rgba(3, 42, 79,.55);z-index:99999;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(2px)}
-.cf-modal-overlay.open{display:flex}
-.cf-modal{background:#fff;border-radius:14px;max-width:420px;width:100%;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.28);animation:cfPop .16s ease}
-@keyframes cfPop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
-.cf-modal-icon{width:44px;height:44px;border-radius:12px;background:#FEF9EC;color:var(--c-accent-d,#054685);display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:.875rem}
-.cf-modal-title{font-size:1rem;font-weight:800;color:var(--c-navy,#032A4F);margin-bottom:.5rem}
-.cf-modal-msg{font-size:.85rem;color:var(--c-muted,#6b7280);line-height:1.6;margin-bottom:1.5rem;white-space:pre-line}
-.cf-modal-actions{display:flex;gap:.6rem;justify-content:flex-end}
 </style>
 @auth
   @if(Auth::user()->hasRole('client'))
@@ -1254,64 +1245,6 @@ function doInstallPwa() {
 @endif
 @endauth
 
-{{-- ═══════════════ MODAL DE CONFIRMATION (global) ═══════════════ --}}
-<div class="cf-modal-overlay" id="cfModalOverlay">
-  <div class="cf-modal">
-    <div class="cf-modal-icon"><i class="fas fa-question-circle" id="cfModalIcon"></i></div>
-    <div class="cf-modal-title" id="cfModalTitle">Confirmation</div>
-    <div class="cf-modal-msg" id="cfModalMsg"></div>
-    <div class="cf-modal-actions">
-      <button type="button" class="btn-ghost" id="cfModalCancel">Annuler</button>
-      <button type="button" class="btn-navy" id="cfModalConfirm">Confirmer</button>
-    </div>
-  </div>
-</div>
-<script>
-(function () {
-  var overlay  = document.getElementById('cfModalOverlay');
-  var titleEl  = document.getElementById('cfModalTitle');
-  var msgEl    = document.getElementById('cfModalMsg');
-  var btnOk    = document.getElementById('cfModalConfirm');
-  var btnCancel = document.getElementById('cfModalCancel');
-  var pendingResolve = null;
-
-  function close(result) {
-    overlay.classList.remove('open');
-    document.removeEventListener('keydown', onKeydown);
-    if (pendingResolve) { var r = pendingResolve; pendingResolve = null; r(result); }
-  }
-  function onKeydown(e) {
-    if (e.key === 'Escape') close(false);
-  }
-
-  // window.confirmModal(message, { title, confirmLabel }) → Promise<boolean>
-  window.confirmModal = function (message, opts) {
-    opts = opts || {};
-    titleEl.textContent = opts.title || 'Confirmation';
-    msgEl.textContent = message;
-    btnOk.textContent = opts.confirmLabel || 'Confirmer';
-    overlay.classList.add('open');
-    document.addEventListener('keydown', onKeydown);
-    return new Promise(function (resolve) { pendingResolve = resolve; });
-  };
-
-  btnOk.addEventListener('click', function () { close(true); });
-  btnCancel.addEventListener('click', function () { close(false); });
-  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(false); });
-
-  // Auto-wire : tout <form data-confirm="message"> passe par le modal avant soumission.
-  document.addEventListener('submit', function (e) {
-    var form = e.target;
-    if (form && form.dataset && form.dataset.confirm) {
-      e.preventDefault();
-      confirmModal(form.dataset.confirm, { title: form.dataset.confirmTitle }).then(function (ok) {
-        if (ok) form.submit();
-      });
-    }
-  }, true);
-})();
-</script>
-
 {{-- ──────────────────────────────────────────────────────────────────────────
      Modal de confirmation reutilisable.
 
@@ -1320,6 +1253,12 @@ function doInstallPwa() {
 
      Usage : poser data-confirm="Question ?" sur un <form> ou un <button>.
      Options : data-confirm-title, data-confirm-ok, data-confirm-danger="1".
+
+     UNIQUE boite de confirmation du layout. Il en existait une seconde
+     (#cfModalOverlay) qui s auto-cablait elle aussi sur form[data-confirm] :
+     les deux s ouvraient l une sur l autre et fermer celle du dessus laissait
+     l autre a l ecran. Ne pas en reintroduire une : passer par ce bloc, ou par
+     window.confirmModal(message, { title, confirmLabel }) -> Promise<boolean>.
      ────────────────────────────────────────────────────────────────────────── --}}
 <div id="cfx" class="cfx" role="dialog" aria-modal="true" aria-labelledby="cfx-title" hidden>
   <div class="cfx__backdrop" data-cfx-cancel></div>
@@ -1368,21 +1307,28 @@ function doInstallPwa() {
       titleEl = document.getElementById('cfx-title'),
       okEl  = document.getElementById('cfx-ok'),
       iconEl = document.getElementById('cfx-icon'),
-      pending = null;
+      pending = null,
+      onCancel = null;
 
-  function close() { box.hidden = true; pending = null; }
+  function close() {
+    box.hidden = true;
+    var abandon = onCancel;
+    pending = null; onCancel = null;
+    if (abandon) abandon();
+  }
 
-  function open(opts, onConfirm) {
+  function open(opts, onConfirm, onAbandon) {
     // Un modal est deja ouvert : on ignore, sinon deux boites se superposeraient
     // et la seconde ecraserait le callback de la premiere.
-    if (!box.hidden) return;
+    if (!box.hidden) { if (onAbandon) onAbandon(); return; }
 
     msgEl.textContent   = opts.message || '';
     titleEl.textContent = opts.title || 'Confirmer l’action';
     okEl.textContent    = opts.ok || 'Confirmer';
     iconEl.classList.toggle('is-danger', !!opts.danger);
     okEl.classList.toggle('is-danger', !!opts.danger);
-    pending = onConfirm;
+    pending  = onConfirm;
+    onCancel = onAbandon || null;
     box.hidden = false;
     okEl.focus();
   }
@@ -1391,8 +1337,21 @@ function doInstallPwa() {
     el.addEventListener('click', close);
   });
   okEl.addEventListener('click', function () {
-    var run = pending; close(); if (run) run();
+    var run = pending;
+    onCancel = null;          // confirmation : ce n est pas un abandon
+    close();
+    if (run) run();
   });
+
+  // API a promesse, pour le code qui declenche une confirmation lui-meme.
+  window.confirmModal = function (message, opts) {
+    opts = opts || {};
+    return new Promise(function (resolve) {
+      open({ message: message, title: opts.title, ok: opts.confirmLabel, danger: opts.danger },
+           function () { resolve(true); },
+           function () { resolve(false); });
+    });
+  };
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !box.hidden) close();
   });

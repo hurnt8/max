@@ -230,13 +230,6 @@ $stepMap = [
 ];
 @endphp
 
-@if(session('success'))
-<div class="flash flash-ok"><i class="fas fa-check-circle"></i> {{ session('success') }}</div>
-@endif
-@if(session('error'))
-<div class="flash flash-err"><i class="fas fa-exclamation-triangle"></i> {{ session('error') }}</div>
-@endif
-
 {{-- ── HEADER ── --}}
 <div class="li-header">
   <div>

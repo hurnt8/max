@@ -47,10 +47,6 @@
 @if($errors->any())
 <div class="flash flash-err mb-4"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first() }}</div>
 @endif
-@if(session('success'))
-<div class="flash flash-ok mb-4"><i class="fas fa-check-circle"></i> {{ session('success') }}</div>
-@endif
-
 <div class="row g-4">
 
   {{-- ── Colonne principale ── --}}

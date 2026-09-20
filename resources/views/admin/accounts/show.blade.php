@@ -101,10 +101,6 @@
   </div>
 </div>
 
-{{-- Flash messages --}}
-@if(session('success'))
-<div class="acs-flash acs-flash--ok"><i class="fas fa-check-circle"></i> {{ session('success') }}</div>
-@endif
 @if($errors->any())
 <div class="acs-flash acs-flash--err"><i class="fas fa-exclamation-circle"></i> {{ $errors->first() }}</div>
 @endif

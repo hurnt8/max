@@ -125,12 +125,6 @@
   </div>
 </div>
 
-@if(session('success'))
-<div class="flash" style="background:#ECFDF5;border:1px solid #A7F3D0;color:#065F46;padding:.875rem 1.125rem;border-radius:10px;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem">
-  <i class="fas fa-check-circle"></i> {{ session('success') }}
-</div>
-@endif
-
 {{-- ── Profil ── --}}
 <div class="cu-profile">
   <div class="cu-avatar" style="background:{{ $avatarBg }}">

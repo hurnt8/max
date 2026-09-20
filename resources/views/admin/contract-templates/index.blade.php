@@ -14,10 +14,6 @@
   </a>
 </div>
 
-@if(session('success'))
-<div class="flash flash-ok mb-4"><i class="fas fa-check-circle"></i> {{ session('success') }}</div>
-@endif
-
 {{-- $totalTemplates (controleur) et non $templates->count() : ce dernier ne
      compterait que la page affichee. --}}
 @if(!$totalTemplates)

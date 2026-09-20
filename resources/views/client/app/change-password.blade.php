@@ -90,12 +90,6 @@
 </div>
 @endif
 
-@if(session('success'))
-<div style="background:rgba(27,138,122,.12);border:1px solid rgba(27,138,122,.3);border-radius:12px;padding:.75rem 1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--ca-teal-l)">
-  <i class="fas fa-check-circle"></i> {{ session('success') }}
-</div>
-@endif
-
 <form method="POST" action="{{ route('client.app.profile.password.save') }}" x-data="cpForm()">
   @csrf
 
