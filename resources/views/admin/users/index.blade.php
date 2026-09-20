@@ -185,6 +185,53 @@
           </td>
         </tr>
 
+        @empty
+        <tr>
+          <td colspan="7">
+            <div style="text-align:center;padding:4rem 2rem">
+              <div style="width:72px;height:72px;border-radius:50%;
+                          background:var(--c-bg);border:2px dashed var(--c-border);
+                          margin:0 auto 1.125rem;
+                          display:flex;align-items:center;justify-content:center">
+                <i class="fas fa-users" style="font-size:1.5rem;color:var(--c-border)"></i>
+              </div>
+              <div style="font-weight:700;font-size:.9375rem;color:var(--c-navy);margin-bottom:.375rem">
+                Aucun client trouvé
+              </div>
+              <div style="font-size:.8125rem;color:var(--c-muted);max-width:340px;margin:0 auto 1.25rem">
+                @if(request()->anyFilled(['search','type']))
+                  Aucun résultat pour ces critères de recherche.
+                @else
+                  Vous n'avez pas encore créé de client. Cliquez sur <strong>Nouveau client</strong> pour commencer.
+                @endif
+              </div>
+              @if(! request()->anyFilled(['search','type']))
+              <button class="btn-navy" data-bs-toggle="modal" data-bs-target="#createUserModal">
+                <i class="fas fa-user-plus"></i> Créer le premier client
+              </button>
+              @endif
+            </div>
+          </td>
+        </tr>
+        @endforelse
+      </tbody>
+    </table>
+  </div>
+
+  @if($users->hasPages())
+  <div style="padding:.875rem 1.25rem;border-top:1px solid var(--c-border)">
+    {{ $users->links() }}
+  </div>
+  @endif
+</div>
+
+{{-- ═════════════════════════════════════════════════════════════════════
+     Modals par utilisateur — places ICI, hors du <table>.
+     Un <div> ne peut pas etre enfant de <tbody> : le navigateur les sortait
+     lui-meme du tableau, avec un ordre imprevisible, ce qui pouvait laisser
+     un modal visible apres la fermeture d'un autre.
+     ══════════════════════════════════════════════════════════════════════ --}}
+@foreach($users as $user)
         {{-- ── Modal Édition ── --}}
         <div class="modal fade" id="editModal{{ $user->id }}" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -385,45 +432,7 @@
         @endif
         {{-- /Modal Affectation --}}
 
-        @empty
-        <tr>
-          <td colspan="7">
-            <div style="text-align:center;padding:4rem 2rem">
-              <div style="width:72px;height:72px;border-radius:50%;
-                          background:var(--c-bg);border:2px dashed var(--c-border);
-                          margin:0 auto 1.125rem;
-                          display:flex;align-items:center;justify-content:center">
-                <i class="fas fa-users" style="font-size:1.5rem;color:var(--c-border)"></i>
-              </div>
-              <div style="font-weight:700;font-size:.9375rem;color:var(--c-navy);margin-bottom:.375rem">
-                Aucun client trouvé
-              </div>
-              <div style="font-size:.8125rem;color:var(--c-muted);max-width:340px;margin:0 auto 1.25rem">
-                @if(request()->anyFilled(['search','type']))
-                  Aucun résultat pour ces critères de recherche.
-                @else
-                  Vous n'avez pas encore créé de client. Cliquez sur <strong>Nouveau client</strong> pour commencer.
-                @endif
-              </div>
-              @if(! request()->anyFilled(['search','type']))
-              <button class="btn-navy" data-bs-toggle="modal" data-bs-target="#createUserModal">
-                <i class="fas fa-user-plus"></i> Créer le premier client
-              </button>
-              @endif
-            </div>
-          </td>
-        </tr>
-        @endforelse
-      </tbody>
-    </table>
-  </div>
-
-  @if($users->hasPages())
-  <div style="padding:.875rem 1.25rem;border-top:1px solid var(--c-border)">
-    {{ $users->links() }}
-  </div>
-  @endif
-</div>
+@endforeach
 
 {{-- ══════════════════════════════════════
      Modal Création — invitation par email

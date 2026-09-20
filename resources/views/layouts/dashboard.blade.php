@@ -1357,7 +1357,12 @@ function doInstallPwa() {
 
 <script>
 (function () {
-  var box = document.getElementById('cfx');
+  var boxes = document.querySelectorAll('#cfx, .cfx');
+  // Si un doublon de balisage existe (layout inclus deux fois, injection tierce),
+  // on ne garde que le premier et on retire les autres du DOM.
+  for (var i = 1; i < boxes.length; i++) { boxes[i].remove(); }
+
+  var box = boxes[0];
   if (!box) return;
   var msgEl = document.getElementById('cfx-msg'),
       titleEl = document.getElementById('cfx-title'),
@@ -1368,6 +1373,10 @@ function doInstallPwa() {
   function close() { box.hidden = true; pending = null; }
 
   function open(opts, onConfirm) {
+    // Un modal est deja ouvert : on ignore, sinon deux boites se superposeraient
+    // et la seconde ecraserait le callback de la premiere.
+    if (!box.hidden) return;
+
     msgEl.textContent   = opts.message || '';
     titleEl.textContent = opts.title || 'Confirmer l’action';
     okEl.textContent    = opts.ok || 'Confirmer';
