@@ -23,16 +23,21 @@ class ContractTemplateController extends Controller
         private ContractDocxRenderer $docxRenderer,
     ) {}
 
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
         if ($user->hasRole('super-admin')) {
-            $templates = ContractTemplate::with('creator', 'assignedAdmins')->latest()->get();
+            $query = ContractTemplate::with('creator', 'assignedAdmins')->latest();
         } else {
-            $templates = $user->assignedTemplates()->with('creator')->latest()->get();
+            $query = $user->assignedTemplates()->with('creator')->latest();
         }
 
-        return view('admin.contract-templates.index', compact('templates'));
+        // Le compteur affiche en tete doit porter sur TOUS les modeles, pas sur la
+        // page courante : on le calcule avant de paginer.
+        $totalTemplates = (clone $query)->count();
+        $templates      = $query->paginate(15)->appends($request->query());
+
+        return view('admin.contract-templates.index', compact('templates', 'totalTemplates'));
     }
 
     public function create()

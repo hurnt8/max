@@ -16,9 +16,9 @@ class CurrencyController extends Controller
         'users', 'loan_requests', 'transfers', 'invoices', 'account_movements',
     ];
 
-    public function index()
+    public function index(Request $request)
     {
-        $currencies = Currency::orderBy('sort_order')->get();
+        $currencies = Currency::orderBy('sort_order')->paginate(20)->appends($request->query());
 
         return view('admin.currencies.index', compact('currencies'));
     }

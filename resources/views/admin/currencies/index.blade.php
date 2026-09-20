@@ -113,6 +113,13 @@
 @endunless
 @endforeach
 
+{{-- Pagination --}}
+@if($currencies->hasPages())
+<div class="card-pro" style="padding:1rem 1.25rem;margin-top:1rem">
+  {{ $currencies->links('partials.pagination') }}
+</div>
+@endif
+
 <div class="card-pro mt-4" style="padding:1.5rem">
   <h5 style="margin-bottom:1rem">Ajouter une devise</h5>
   <form action="{{ route('admin.currencies.store') }}" method="POST">
@@ -144,5 +151,6 @@
     </div>
   </form>
 </div>
+
 
 @endsection

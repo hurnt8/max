@@ -97,4 +97,12 @@
 </div>
 @endif
 
+
+{{-- Pagination --}}
+@if($links->hasPages())
+<div class="card-pro" style="padding:1rem 1.25rem;margin-top:1rem">
+  {{ $links->links('partials.pagination') }}
+</div>
+@endif
+
 @endsection

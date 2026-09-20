@@ -21,12 +21,19 @@ class NotificationTemplateController extends Controller
     public function index(Request $request)
     {
         $type           = $request->get('type', NotificationTemplate::TYPE_VALIDATION);
-        $templates      = NotificationTemplate::with('creator')->where('type', $type)->orderBy('locale')->get();
+        $query          = NotificationTemplate::with('creator')->where('type', $type)->orderBy('locale');
         $localeLabels   = $this->localeLabels();
-        $configured     = $templates->pluck('locale')->all();
-        $missingLocales = array_diff(array_keys($localeLabels), $configured);
 
-        return view('admin.notification-templates.index', compact('templates', 'missingLocales', 'localeLabels', 'type'));
+        // $configured doit lister les langues deja configurees sur l ENSEMBLE des
+        // modeles. Le deduire de la page affichee ferait apparaitre comme manquantes
+        // des langues presentes en page suivante.
+        $configured     = (clone $query)->pluck('locale')->all();
+        $missingLocales = array_diff(array_keys($localeLabels), $configured);
+        $totalTemplates = count($configured);
+
+        $templates      = $query->paginate(15)->appends($request->query());
+
+        return view('admin.notification-templates.index', compact('templates', 'missingLocales', 'localeLabels', 'type', 'totalTemplates'));
     }
 
     public function create()

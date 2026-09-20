@@ -58,7 +58,7 @@ return [
     'gt' => [
         'array' => 'The :attribute field must have more than :value items.',
         'file' => 'The :attribute field must be greater than :value kilobytes.',
-        'numeric' => 'The :attribute field must be greater than :value.',
+        'numeric' => 'Le champ :attribute doit être supérieur à :value.',
         'string' => 'The :attribute field must be greater than :value characters.',
     ],
     'gte' => [
@@ -134,7 +134,7 @@ return [
     'regex' => 'Le format du champ :attribute est invalide.',
     'required' => 'Le champ :attribute est obligatoire.',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
-    'required_if' => 'The :attribute field is required when :other is :value.',
+    'required_if' => 'Le champ :attribute est obligatoire lorsque :other vaut :value.',
     'required_if_accepted' => 'The :attribute field is required when :other is accepted.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
     'required_with' => 'The :attribute field is required when :values is present.',

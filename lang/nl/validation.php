@@ -186,6 +186,21 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        // Sans ces libelles, les messages affichaient le nom technique du champ.
+        'name'             => 'volledige naam',
+        'email'            => 'e-mailadres',
+        'address'          => 'adres',
+        'phone'            => 'telefoonnummer',
+        'tax_number'       => 'fiscaal nummer',
+        'activity'         => 'activiteit',
+        'doc_type'         => 'documenttype',
+        'id_photo_recto'   => 'identiteitsbewijs (voorzijde)',
+        'id_photo_verso'   => 'identiteitsbewijs (achterzijde)',
+        'message'          => 'bericht',
+        'password'         => 'wachtwoord',
+        'amount'           => 'bedrag',
+        'duration'         => 'looptijd',
+    ],
 
 ];

@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class SocialLinkController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $links = SocialLink::orderBy('sort_order')->get();
+        $links = SocialLink::orderBy('sort_order')->paginate(20)->appends($request->query());
 
         return view('admin.social-links.index', compact('links'));
     }

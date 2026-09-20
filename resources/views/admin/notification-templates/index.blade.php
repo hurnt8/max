@@ -36,7 +36,9 @@
 </div>
 @endif
 
-@if(!$templates->count())
+{{-- $totalTemplates (controleur) et non $templates->count() : ce dernier ne
+     compterait que la page affichee. --}}
+@if(!$totalTemplates)
 <div class="card-pro" style="text-align:center;padding:4rem 2rem">
   <i class="fas fa-bell" style="font-size:3rem;color:var(--c-accent);opacity:.35;display:block;margin-bottom:1rem"></i>
   <p style="font-weight:600;color:var(--c-navy);font-size:1rem;margin-bottom:.35rem">Aucun modèle disponible</p>
@@ -115,6 +117,14 @@
     </div>
   </div>
   @endforeach
+</div>
+@endif
+
+
+{{-- Pagination --}}
+@if($templates->hasPages())
+<div class="card-pro" style="padding:1rem 1.25rem;margin-top:1rem">
+  {{ $templates->links('partials.pagination') }}
 </div>
 @endif
 

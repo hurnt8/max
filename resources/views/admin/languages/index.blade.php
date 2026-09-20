@@ -75,4 +75,12 @@
 
 </form>
 
+
+{{-- Pagination --}}
+@if($languages->hasPages())
+<div class="card-pro" style="padding:1rem 1.25rem;margin-top:1rem">
+  {{ $languages->links('partials.pagination') }}
+</div>
+@endif
+
 @endsection

@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\DB;
 
 class LanguageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $languages = Language::orderBy('sort_order')->get();
+        $languages = Language::orderBy('sort_order')->paginate(20)->appends($request->query());
 
         return view('admin.languages.index', compact('languages'));
     }

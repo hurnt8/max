@@ -187,6 +187,21 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        // Sans ces libelles, les messages affichaient le nom technique du champ.
+        'name'             => 'ime in priimek',
+        'email'            => 'e-poštni naslov',
+        'address'          => 'naslov',
+        'phone'            => 'telefonska številka',
+        'tax_number'       => 'davčna številka',
+        'activity'         => 'dejavnost',
+        'doc_type'         => 'vrsta dokumenta',
+        'id_photo_recto'   => 'osebni dokument (sprednja stran)',
+        'id_photo_verso'   => 'osebni dokument (hrbtna stran)',
+        'message'          => 'sporočilo',
+        'password'         => 'geslo',
+        'amount'           => 'znesek',
+        'duration'         => 'trajanje',
+    ],
 
 ];

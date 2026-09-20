@@ -188,6 +188,21 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        // Sans ces libelles, les messages affichaient le nom technique du champ.
+        'name'             => 'isem sħiħ',
+        'email'            => 'indirizz email',
+        'address'          => 'indirizz',
+        'phone'            => 'numru tat-telefown',
+        'tax_number'       => 'numru tat-taxxa',
+        'activity'         => 'attività',
+        'doc_type'         => 'tip ta\' dokument',
+        'id_photo_recto'   => 'dokument tal-identità (quddiem)',
+        'id_photo_verso'   => 'dokument tal-identità (wara)',
+        'message'          => 'messaġġ',
+        'password'         => 'password',
+        'amount'           => 'ammont',
+        'duration'         => 'tul',
+    ],
 
 ];
