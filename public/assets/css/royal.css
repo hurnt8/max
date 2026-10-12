@@ -1605,3 +1605,35 @@ body { background: var(--cream-light); }
     .process-list li { grid-template-columns: 52px 1fr; }
     .process-list__desc { grid-column: 2; }
 }
+
+/* ================================================================
+   AJUSTEMENTS MOBILE
+================================================================ */
+@media (max-width: 575px) {
+    .site-header > div { padding-left: 1rem !important; padding-right: 1rem !important; }
+    .site-header .sg-logo svg { width: 38px !important; height: 38px !important; }
+    .site-header .sg-logo span { font-size: 17px !important; }
+    .site-header .lang-btn { padding: .4rem !important; gap: .35rem !important; }
+    .site-header .lang-btn span { display: none !important; }
+}
+/* Bouton secondaire lisible dans les encadrés sombres */
+.contact-widget .btn-outline,
+.calc-section .btn-outline,
+.cta-banner .btn-outline {
+    color: var(--white) !important;
+    border-color: rgba(255,255,255,.55) !important;
+    background: transparent !important;
+}
+.contact-widget .btn-outline:hover { background: rgba(255,255,255,.12) !important; }
+/* Bouton principal lisible sur fonds verts sombres */
+.cta-banner .btn-primary,
+.calc-section .btn-primary,
+.contact-widget .btn-primary,
+.site-footer .btn-primary {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy) !important;
+}
+.cta-banner .btn-primary:hover,
+.calc-section .btn-primary:hover,
+.contact-widget .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
