@@ -31,16 +31,15 @@
 
         @php
         $services = [
-            ['route' => 'services.personal', 'img' => 'service-3-1.jpg', 'label' => 'menu.personal',  'type' => 'personal_loan', 'icon' => 'fas fa-hands-holding-circle'],
+            ['route' => 'services.personal', 'img' => 'service-3-1.jpg', 'label' => 'menu.personal',  'type' => 'personal_loan', 'icon' => 'fas fa-user-tie'],
             ['route' => 'services.home',     'img' => 'service-3-3.jpg', 'label' => 'menu.home_loan', 'type' => 'home_loan',     'icon' => 'fas fa-city'],
             ['route' => 'services.auto',     'img' => 'service-3-5.jpg', 'label' => 'menu.auto',      'type' => 'auto_loan',     'icon' => 'fas fa-seedling'],
             ['route' => 'services.business', 'img' => 'service-3-4.jpg', 'label' => 'menu.business',  'type' => 'business_loan', 'icon' => 'fas fa-briefcase'],
             ['route' => 'services.study',    'img' => 'service-3-2.jpg', 'label' => 'menu.study',     'type' => 'study_loan',    'icon' => 'fas fa-graduation-cap'],
-            ['route' => 'services.bike',     'img' => 'service-3-6.jpg', 'label' => 'menu.bike',      'type' => 'bike_loan',     'icon' => 'fas fa-handshake'],
         ];
         @endphp
 
-        <div class="row g-4 gutter-y-30">
+        <div class="row g-4 gutter-y-30 justify-content-center">
             @foreach ($services as $i => $svc)
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="800ms" data-wow-delay="{{ $i * 80 }}ms">
                 <div class="service-card">
@@ -54,7 +53,7 @@
                             <a href="{{ route($svc['route'], ['locale' => $locale]) }}">@lang($svc['label'])</a>
                         </h3>
                         <p class="service-card__desc">
-                            {{ Str::limit(__('loan.' . $svc['type'] . '.description'), 120) }}
+                            {{ Str::before(Str::before(__('loan.' . $svc['type'] . '.description'), ' Chaque'), ' Each') }}
                         </p>
                         <a href="{{ route($svc['route'], ['locale' => $locale]) }}" class="service-card__link">
                             @lang('menu.read_more') <i class="fas fa-arrow-right"></i>

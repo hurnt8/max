@@ -1,47 +1,37 @@
 <?php
 
 return [
-    'banner_title' => 'Discover ' . site_name(),
-    'banner_subtitle' => 'About Us',
-    'banner_description' => 'Receive support more simply thanks to flexible aid programs tailored to your situation.',
-
-    'section1_title' => 'Why choose ' . site_name(),
-    'section1_p1' => 'At ' . site_name() . ', we firmly believe that everyone deserves a chance to overcome their financial difficulties. Since our founding, we have been committed to offering flexible and accessible aid programs to meet the diverse needs of those we support. Whether you are looking to fund a personal project, secure your housing, or grow your business, we have the support program you need.',
-    'section1_p2' => 'Our programs are designed to offer a human, hassle-free experience, with a simple and quick process. We understand that every situation is unique, which is why we offer personalized aid that adapts to your specific needs. What\'s more, our dedicated advisors are always there to guide you at every step, ensuring you receive complete support from start to finish.',
-    'proposed' => 'We offer:',
-    'check1' => 'Personalized aid tailored to your specific needs.',
-    'check2' => 'Dedicated advisors to support you every step of the way.',
-    'check3' => 'Flexible disbursement terms to fit your situation',
-    'check4' => 'Accessible aid, with no proof of salary required.',
-    'section1_p3' => 'At ' . site_name() . ', our mission is to help you achieve greater peace of mind through tailor-made support solutions. Join us today and discover how we can help you bring your projects to life.',
-    'btn' => 'Find Your Ideal Program',
-
-    'faq_title' => 'Frequently Asked Questions',
-    'faq_description' => 'Find answers to the most common questions about our aid programs.',
-    'acc_1' => ' What types of aid do you offer?',
-    'acc_1_desc' => 'We offer a variety of aid programs, including personal
-    aid, housing aid, mobility aid and aid for small business projects. Each
-    program is designed to meet specific needs and offers
-    flexible terms.',
-    'acc_2' => 'How can I submit a donation request?',
-    'acc_2_desc' => 'You can submit a request directly on our website by
-    filling out the online form. We will ask you for
-    basic information such as your name, contact details, and the
-    desired amount. Our advisors will contact you to finalize the request and
-    guide you through the process.',
-    'acc_3' => 'What are the eligibility criteria for aid?',
-    'acc_3_desc' => 'Eligibility criteria vary depending on the program, but in general, you
-    must be of legal age and able to present your situation. We
-    review every file with care and compassion, taking your personal
-    circumstances into account.',
-    'acc_4' => 'What is the processing time for an aid request?',
-    'acc_4_desc' => '  Processing time varies depending on the program and the complexity of your
-    request. In general, personal aid requests are processed within 24 to 48
-    hours, while housing aid may take several days due
-    to the more thorough checks required.',
-    'acc_5' => 'Can I close my aid program early?',
-    'acc_5_desc' => ' Yes, you can settle your aid program early with no penalty. We
-    encourage you to do so if possible, as it allows us to support more
-    beneficiaries in need.',
-
+    'banner_title' => 'About us',
+    'banner_description' => 'An online financing request service: each request is reviewed individually.',
+    'who_label' => 'Who we are',
+    'who_title' => 'An online service to submit and follow a financing request',
+    'who_text1' => ':name receives financing requests from individuals and project leaders, reviews them one by one and informs each applicant of the outcome.',
+    'who_text2' => 'We present our services, conditions and processing steps clearly, so that you know what to expect before sending a request.',
+    'services_label' => 'Our services',
+    'services_title' => 'What we handle',
+    'services_text' => 'Requests may concern one of the following services. The conditions that apply to each one are detailed on its page.',
+    'steps_label' => 'The process',
+    'steps_title' => 'How a request is handled',
+    'steps' => [
+        ['Submitting the request', 'You fill in the online form. Your request is recorded and a reference is given to you.'],
+        ['Review of the file', 'Our team reviews your request against the conditions of the service concerned.'],
+        ['Contact if needed', 'We contact you only if a clarification is useful to review your file.'],
+        ['Decision', 'You are informed of the outcome of your request, whether accepted or not.'],
+        ['Conditions in writing', 'If the request is accepted, the conditions (amount, repayment, any interest, fees) are given to you in writing before any commitment.'],
+    ],
+    'commit_label' => 'Our commitments',
+    'commit_title' => 'What you can count on',
+    'commits' => [
+        ['Individual review', 'Each request is assessed case by case. Sending a request is not an approval.'],
+        ['Clear conditions', 'Repayment terms, any interest and fees are stated in writing before any commitment.'],
+        ['No sensitive data requested', 'We will never ask for your banking password, PIN or one-time validation code.'],
+        ['Data used for your request', 'The information you enter is used to review your request, in accordance with our privacy policy.'],
+    ],
+    'eligibility_title' => 'Eligibility conditions',
+    'eligibility_text' => 'To submit a request you must be of legal age and able to present your situation. Additional criteria may apply depending on the service chosen; they are stated on each service page.',
+    'contact_title' => 'Contact us',
+    'contact_text' => 'A question before submitting a request? Write to us or call us.',
+    'cta_title' => 'Start a request',
+    'cta_text' => 'The form takes a few minutes. Sending a request is not an agreement.',
+    'disclaimer' => 'The organisation\'s legal information (name, legal form, registration, address) must appear in the site\'s legal notice.',
 ];

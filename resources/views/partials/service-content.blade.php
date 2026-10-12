@@ -107,7 +107,7 @@
             </div>
             <div class="col-lg-6 wow fadeInRight" data-wow-duration="900ms" data-wow-delay="150ms">
                 <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:2.5rem 2.25rem;text-align:center;">
-                    <div style="width:56px;height:56px;border-radius:50%;background:rgba(31,122,199,.15);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+                    <div style="width:56px;height:56px;border-radius:50%;background:rgba(184,150,79,.15);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
                         <i class="fas fa-hand-holding-heart" style="font-size:1.4rem;color:var(--gold);"></i>
                     </div>
                     <h3 style="font-family:'Playfair Display',serif;color:#fff;font-size:1.4rem;font-weight:700;margin-bottom:.75rem;">

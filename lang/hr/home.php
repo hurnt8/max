@@ -344,9 +344,6 @@ return [
     'years_experience'          => 'Godina predanosti',
     'day' => 'Dana',
 
-    'partners_label' => 'Sigurne isplate',
-    'partners_title' => 'Vaše donacije prolaze kroz licencirane institucije',
-    'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
     'cta_title2' => 'Brzo primite potporu koja vam je potrebna.',
     'cta_text2' => 'Brzo iskoristite poduzetničku pomoć',

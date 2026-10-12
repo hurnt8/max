@@ -1,47 +1,37 @@
 <?php
 
 return [
-    'banner_title' => 'Découvrez ' . site_name(),
-    'banner_subtitle' => 'À propos de nous',
-    'banner_description' => 'Recevez un soutien plus simplement grâce à des programmes d\'aide flexibles et adaptés à votre situation.',
-
-    'section1_title' => 'Pourquoi choisir ' . site_name(),
-    'section1_p1' => 'Chez ' . site_name() . ', nous croyons fermement que chacun mérite une chance de surmonter ses difficultés financières. Depuis notre création, nous nous sommes engagés à offrir des programmes d\'aide flexibles et accessibles pour répondre aux besoins divers de ceux que nous accompagnons. Que vous cherchiez à financer un projet personnel, sécuriser votre logement, ou développer votre activité, nous avons le programme de soutien qu\'il vous faut.',
-    'section1_p2' => 'Nos programmes sont conçus pour offrir une expérience humaine et sans tracas, avec une démarche simple et rapide. Nous comprenons que chaque situation est unique, c\'est pourquoi nous proposons des aides personnalisées qui s\'adaptent à vos besoins spécifiques. De plus, nos conseillers dédiés sont toujours là pour vous guider à chaque étape, vous assurant ainsi un accompagnement complet du début à la fin.',
-    'proposed' => 'Nous proposons :',
-    'check1' => 'Des aides personnalisées selon vos besoins spécifiques.',
-    'check2' => 'Des conseillers dédiés pour vous accompagner à chaque étape.',
-    'check3' => 'Des conditions de versement flexibles pour s\'adapter à votre situation',
-    'check4' => 'Des aides accessibles, sans justificatif de salaire exigé.',
-    'section1_p3' => 'Chez ' . site_name() . ', notre mission est de vous accompagner vers plus de sérénité grâce à des solutions de soutien sur mesure. Rejoignez-nous dès aujourd\'hui et découvrez comment nous pouvons vous aider à concrétiser vos projets.',
-    'btn' => 'Trouvez Votre Programme Idéal',
-
-    'faq_title' => 'Questions Fréquemment Posées',
-    'faq_description' => 'Trouvez des réponses aux questions les plus courantes concernant nos programmes d\'aide.',
-    'acc_1' => ' Quels types d\'aide proposez-vous ?',
-    'acc_1_desc' => 'Nous proposons une variété de programmes d\'aide, y compris des aides personnelles, des
-    aides au logement, des aides mobilité et des aides pour les petits projets entrepreneuriaux. Chaque
-    programme est conçu pour répondre à des besoins spécifiques et offre des
-    conditions flexibles.',
-    'acc_2' => 'Comment puis-je faire une demande de don ?',
-    'acc_2_desc' => 'Vous pouvez faire une demande directement sur notre site web en
-    remplissant le formulaire en ligne. Nous vous demanderons des
-    informations de base telles que votre nom, vos coordonnées, et le montant
-    souhaité. Nos conseillers vous contacteront pour finaliser la demande et
-    vous guider à travers le processus.',
-    'acc_3' => 'Quels sont les critères d\'éligibilité pour une aide ?',
-    'acc_3_desc' => 'Les critères d\'éligibilité varient selon le programme, mais en général, vous
-    devez être majeur et pouvoir présenter votre situation. Nous
-    examinons chaque dossier avec attention et bienveillance, en tenant compte de votre
-    contexte personnel.',
-    'acc_4' => 'Quel est le délai de traitement d\'une demande d\'aide ?',
-    'acc_4_desc' => '  Le délai de traitement varie selon le programme et la complexité de votre
-    demande. En général, les demandes d\'aide personnelle sont traitées sous 24 à 48
-    heures, tandis que les aides au logement peuvent prendre plusieurs jours en
-    raison des vérifications plus approfondies nécessaires.',
-    'acc_5' => 'Puis-je clôturer mon programme d\'aide par anticipation ?',
-    'acc_5_desc' => ' Oui, vous pouvez solder votre programme d\'aide par anticipation sans pénalité. Nous vous
-    encourageons à le faire si possible, cela nous permet de soutenir davantage
-    de bénéficiaires dans le besoin.',
-
+    'banner_title' => 'À propos',
+    'banner_description' => 'Un service de demande de financement en ligne : chaque demande est examinée individuellement.',
+    'who_label' => 'Qui sommes-nous',
+    'who_title' => 'Un service en ligne pour déposer et suivre une demande de financement',
+    'who_text1' => ':name reçoit des demandes de financement de particuliers et de porteurs de projets, les examine une à une et informe chaque demandeur de la suite donnée.',
+    'who_text2' => 'Nous présentons nos services, les conditions et les étapes de traitement de manière claire, afin que vous sachiez à quoi vous attendre avant d\'envoyer une demande.',
+    'services_label' => 'Nos services',
+    'services_title' => 'Ce que nous traitons',
+    'services_text' => 'Les demandes peuvent concerner l\'un des services suivants. Les conditions applicables à chacun sont détaillées sur sa page.',
+    'steps_label' => 'Le déroulement',
+    'steps_title' => 'Comment une demande est traitée',
+    'steps' => [
+        ['Dépôt de la demande', 'Vous remplissez le formulaire en ligne. Votre demande est enregistrée et une référence vous est communiquée.'],
+        ['Examen du dossier', 'Notre équipe examine votre demande au regard des conditions du service concerné.'],
+        ['Échange si nécessaire', 'Nous vous contactons uniquement si une précision est utile à l\'examen de votre dossier.'],
+        ['Décision', 'Vous êtes informé de la suite donnée à votre demande, qu\'elle soit acceptée ou non.'],
+        ['Conditions par écrit', 'Si la demande est acceptée, les conditions (montant, remboursement, intérêts éventuels, frais) vous sont communiquées par écrit avant tout engagement.'],
+    ],
+    'commit_label' => 'Nos engagements',
+    'commit_title' => 'Ce sur quoi vous pouvez compter',
+    'commits' => [
+        ['Un examen individuel', 'Chaque demande est étudiée au cas par cas. L\'envoi d\'une demande ne constitue pas une approbation.'],
+        ['Des conditions claires', 'Les modalités de remboursement, les intérêts éventuels et les frais sont indiqués par écrit avant tout engagement.'],
+        ['Aucune donnée sensible demandée', 'Nous ne vous demanderons jamais de mot de passe bancaire, de code PIN ni de code de validation à usage unique.'],
+        ['Des données utilisées pour votre demande', 'Les informations que vous saisissez servent à étudier votre demande, conformément à notre politique de confidentialité.'],
+    ],
+    'eligibility_title' => 'Conditions d\'éligibilité',
+    'eligibility_text' => 'Pour déposer une demande, il faut être majeur et pouvoir présenter sa situation. Des critères supplémentaires peuvent s\'appliquer selon le service choisi ; ils sont précisés sur la page de chaque service.',
+    'contact_title' => 'Nous contacter',
+    'contact_text' => 'Une question avant de déposer une demande ? Écrivez-nous ou appelez-nous.',
+    'cta_title' => 'Commencer une demande',
+    'cta_text' => 'Le formulaire prend quelques minutes. L\'envoi d\'une demande ne vaut pas accord.',
+    'disclaimer' => 'Les informations légales de l\'organisme (dénomination, forme juridique, immatriculation, adresse) doivent figurer dans les mentions légales du site.',
 ];

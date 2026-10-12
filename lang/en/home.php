@@ -2,38 +2,37 @@
 
 return [
     'general_title' => site_name() . ' - Donation and Financial Aid Foundation in Europe',
-    'banner_title' => 'Get the support you need, simply.',
-    'banner_text' => 'Thousands of people trust ' . site_name() . ' to bring their projects to life.',
-    'get_loan_now' => 'Submit a Donation Request',
-    'popular_loans' => 'Our most requested aid programs:',
-
+    'banner_title' => 'Your financing request, reviewed with care.',
+    'banner_text' => 'Submit a request online: it is reviewed individually and you are informed of the outcome.',
+    'get_loan_now' => 'Start a request',
+    'popular_loans' => 'Our services:',
     // Aid programs
-    'discover_our_loan_services' => 'Discover Our Aid Programs',
-    'find_the_right_loan' => 'Find the support program suited to your situation among our different options',
-    'personal_loan' => 'Solidarity & Health',
-    'personal_loan_description' => 'For social and health initiatives',
-    'personal_loan_details' => 'Support for social, community and health initiatives.',
-    'mortgage_loan' => 'Local Development',
-    'mortgage_loan_description' => 'For local development projects',
-    'mortgage_loan_details' => 'Support for initiatives that bring local areas to life.',
-    'auto_loan' => 'Agriculture',
-    'auto_loan_description' => 'For agricultural projects',
-    'auto_loan_details' => 'Support for agricultural and rural development initiatives.',
-    'student_loan' => 'Education',
-    'student_loan_description' => 'For access to knowledge',
-    'student_loan_details' => 'Support designed to help education and training.',
-    'business_loan' => 'Entrepreneurship',
-    'business_loan_description' => 'To launch your business',
-    'business_loan_details' => 'Financial support to start and grow a business.',
-    'consumer_loan' => 'Professional Integration',
-    'consumer_loan_description' => 'To get back into employment',
-    'consumer_loan_details' => 'Technical and methodological support toward employment.',
-    'bridge_loan' => 'Transitional Aid',
-    'bridge_loan_description' => 'Between two stages of life',
-    'bridge_loan_details' => 'Support to help you through a transition period with peace of mind.',
-    'microcredit' => 'Micro-Donation',
-    'microcredit_description' => 'Small-scale aid',
-    'microcredit_details' => 'Small-scale support for urgent, immediate needs.',
+    'discover_our_loan_services' => 'Discover our services',
+    'find_the_right_loan' => 'Find the service that fits your need',
+    'personal_loan' => 'Personal financing',
+    'personal_loan_description' => 'For a specific need',
+    'personal_loan_details' => 'It is intended for individuals with a specific need: household equipment, an unexpected expense or a personal project.',
+    'mortgage_loan' => 'Property project',
+    'mortgage_loan_description' => 'To buy or renovate',
+    'mortgage_loan_details' => 'It covers the purchase, renovation or fitting-out of a home, for individuals carrying out this type of project.',
+    'auto_loan' => 'Mobility and equipment',
+    'auto_loan_description' => 'For a vehicle or equipment',
+    'auto_loan_details' => 'It covers the purchase of a vehicle or of equipment useful for your travel or your activity.',
+    'student_loan' => 'Studies and training',
+    'student_loan_description' => 'For your studies or training',
+    'student_loan_details' => 'It covers tuition, training or career-change costs for students and working people.',
+    'business_loan' => 'Business financing',
+    'business_loan_description' => 'For your business',
+    'business_loan_details' => 'It is intended for self-employed people, entrepreneurs and small organisations financing the start-up or growth of an activity.',
+    'consumer_loan' => 'Debt consolidation',
+    'consumer_loan_description' => 'To combine your credits',
+    'consumer_loan_details' => 'It allows existing credits to be reviewed for consolidation into a single operation, where your situation allows.',
+    'bridge_loan' => 'Bridging loan',
+    'bridge_loan_description' => 'Between two property transactions',
+    'bridge_loan_details' => 'It covers the gap between buying one property and selling another.',
+    'microcredit' => 'Small projects',
+    'microcredit_description' => 'For small amounts',
+    'microcredit_details' => 'It concerns needs of moderate amounts, reviewed case by case.',
     'loan' => 'Donation',
 
     'notice' => 'reviews',
@@ -124,10 +123,9 @@ return [
         '3' => 'Access flexible support programs tailored to your needs',
     ],
 
-    'cta_title' => 'Get the support you need, quickly.',
-    'cta_text' => 'Submit a donation request online today. Our foundation supports you with fast, secure support solutions.',
-    'cta_button' => 'Get Started',
-
+    'cta_title' => 'A project or a financing need?',
+    'cta_text' => 'Submit your request online. It will be reviewed before any decision; sending a request is not an agreement.',
+    'cta_button' => 'Start a request',
     'terms' => 'General Terms',
     'privacy_policy' => 'Privacy Policy',
     'site_map' => 'Site Map',
@@ -163,8 +161,7 @@ return [
     'sl' => 'Slovenian',
 
     // Hero subtitle
-    'hero_subtitle' => 'A clear process, with no hidden fees. For 15 years, ' . site_name() . ' has been supporting individuals, associations and project leaders with strong social, educational, economic or community impact, with transparency and humanity. Supporting today, building tomorrow.',
-
+    'hero_subtitle' => 'Submit your request online: it is reviewed individually and you are informed of the outcome. The conditions are given to you in writing before any commitment.',
     // Slide
     'slide_1' => [
         'title' => ' 15 Years of Service · Accredited Foundation · Personalized Review',
@@ -257,16 +254,16 @@ return [
     // Programs
     'services' => [
         'sectagline' => 'what we offer',
-        'sectitle' => 'We provide the best support for your aid request',
-        'cta_title' => 'Ready to bring your project to life?',
-        'cta_text' => 'Our team is available to support you through your donation request.',
+        'sectitle' => 'Services to support your financing request',
+        'cta_title' => 'A project to finance?',
+        'cta_text' => 'Our team reviews each request individually. Submit yours online or contact us with a question.',
     ],
 
     // FAQ page CTA
     'faq_cta' => [
         'label' => 'Support',
         'title' => 'Didn\'t find your answer?',
-        'text' => 'Our team is available Monday through Saturday to help you.',
+        'text' => 'Write to us: we answer questions about your request.',
     ],
 
     // Simulate
@@ -344,9 +341,6 @@ return [
     'years_experience'          => 'Years of Commitment',
     'day' => 'Days',
 
-    'partners_label' => 'Secure Payments',
-    'partners_title' => 'Your donations are processed through accredited institutions',
-    'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
     'cta_title2' => 'Get the support you need, quickly.',
     'cta_text2' => 'Get entrepreneurship aid quickly',
@@ -354,5 +348,11 @@ return [
 
     'about_text' => 'We offer tailored aid programs to support you on your way to your goals. Fast, secure and flexible solutions designed to meet your unique needs.',
     'get' => 'Contact Us',
-
+    'hero_badge' => 'Online financing request',
+    'hero_title1' => 'Financing for your projects,',
+    'hero_title2' => 'reviewed with care.',
+    'hero_pill1' => 'Individual review',
+    'hero_pill2' => 'Online request',
+    'hero_pill3' => 'Conditions in writing before commitment',
+    'step_word' => 'Step',
 ];

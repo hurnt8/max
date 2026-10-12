@@ -12,7 +12,6 @@
                 ['route' => 'services.auto',     'label' => 'menu.auto'],
                 ['route' => 'services.business', 'label' => 'menu.business'],
                 ['route' => 'services.study',    'label' => 'menu.study'],
-                ['route' => 'services.bike',     'label' => 'menu.bike'],
             ] as $svc)
             <li class="service-nav-list__item">
                 <a href="{{ route($svc['route'], ['locale' => $locale]) }}"

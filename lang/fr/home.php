@@ -2,38 +2,37 @@
 
 return [
     'general_title' => site_name() . ' - Fondation de dons et d\'aide financière en Europe',
-    'banner_title' => 'Recevez le soutien qu\'il vous faut, simplement.',
-    'banner_text' => 'Des milliers de personnes font confiance à ' . site_name() . ' pour concrétiser leurs projets.',
-    'get_loan_now' => 'Déposer une demande de don',
-    'popular_loans' => 'Nos programmes d\'aide les plus demandés :',
-
+    'banner_title' => 'Votre demande de financement, étudiée avec soin.',
+    'banner_text' => 'Déposez une demande en ligne : elle est examinée individuellement et vous êtes informé de la suite donnée.',
+    'get_loan_now' => 'Commencer une demande',
+    'popular_loans' => 'Nos services :',
     // Aid programs
-    'discover_our_loan_services' => 'Découvrez nos programmes d\'aide',
-    'find_the_right_loan' => 'Trouvez le programme de soutien adapté à votre situation parmi nos différentes options',
-    'personal_loan' => 'Solidarité & Santé',
-    'personal_loan_description' => 'Pour les initiatives sociales et de santé',
-    'personal_loan_details' => 'Un soutien pour les initiatives sociales, communautaires et de santé.',
-    'mortgage_loan' => 'Développement local',
-    'mortgage_loan_description' => 'Pour les projets de territoire',
-    'mortgage_loan_details' => 'Un accompagnement pour les initiatives qui font vivre les territoires.',
-    'auto_loan' => 'Agriculture',
-    'auto_loan_description' => 'Pour les projets agricoles',
-    'auto_loan_details' => 'Un appui aux initiatives agricoles et de développement rural.',
-    'student_loan' => 'Éducation',
-    'student_loan_description' => 'Pour l\'accès au savoir',
-    'student_loan_details' => 'Des appuis conçus pour soutenir l\'éducation et la formation.',
-    'business_loan' => 'Entrepreneuriat',
-    'business_loan_description' => 'Pour lancer votre activité',
-    'business_loan_details' => 'Un appui financier au démarrage et au développement d\'une activité.',
-    'consumer_loan' => 'Insertion professionnelle',
-    'consumer_loan_description' => 'Pour retrouver un emploi',
-    'consumer_loan_details' => 'Un accompagnement technique et méthodologique vers l\'emploi.',
-    'bridge_loan' => 'Aide transitoire',
-    'bridge_loan_description' => 'Entre deux étapes de vie',
-    'bridge_loan_details' => 'Un soutien pour traverser sereinement une période de transition.',
-    'microcredit' => 'Micro-don',
-    'microcredit_description' => 'Petites aides',
-    'microcredit_details' => 'Des soutiens de petite envergure pour des besoins urgents et immédiats.',
+    'discover_our_loan_services' => 'Découvrir nos services',
+    'find_the_right_loan' => 'Trouvez le service adapté à votre besoin',
+    'personal_loan' => 'Financement personnel',
+    'personal_loan_description' => 'Pour un besoin ponctuel',
+    'personal_loan_details' => 'Il s\'adresse aux particuliers ayant un besoin ponctuel : équipement du foyer, dépense imprévue ou projet personnel.',
+    'mortgage_loan' => 'Projet immobilier',
+    'mortgage_loan_description' => 'Pour acheter ou rénover',
+    'mortgage_loan_details' => 'Il concerne l\'achat, la rénovation ou l\'aménagement d\'un logement, pour les particuliers qui portent ce type de projet.',
+    'auto_loan' => 'Mobilité et équipement',
+    'auto_loan_description' => 'Pour un véhicule ou un équipement',
+    'auto_loan_details' => 'Il concerne l\'acquisition d\'un véhicule ou d\'un équipement utile à vos déplacements ou à votre activité.',
+    'student_loan' => 'Études et formation',
+    'student_loan_description' => 'Pour vos études ou une formation',
+    'student_loan_details' => 'Il concerne les frais de scolarité, de formation ou de reconversion professionnelle des étudiants et des actifs.',
+    'business_loan' => 'Financement professionnel',
+    'business_loan_description' => 'Pour votre activité',
+    'business_loan_details' => 'Il s\'adresse aux indépendants, entrepreneurs et petites structures qui financent le démarrage ou le développement d\'une activité.',
+    'consumer_loan' => 'Rachat de crédit',
+    'consumer_loan_description' => 'Pour regrouper vos crédits',
+    'consumer_loan_details' => 'Il permet d\'étudier le regroupement de crédits existants en une seule opération, lorsque votre situation s\'y prête.',
+    'bridge_loan' => 'Crédit relais',
+    'bridge_loan_description' => 'Entre deux opérations immobilières',
+    'bridge_loan_details' => 'Il couvre l\'intervalle entre l\'achat d\'un bien et la vente d\'un autre.',
+    'microcredit' => 'Petits projets',
+    'microcredit_description' => 'Pour de petits montants',
+    'microcredit_details' => 'Il concerne des besoins de montant modéré, étudiés au cas par cas.',
     'loan' => 'Don',
 
     'notice' => 'avis',
@@ -124,10 +123,9 @@ return [
         '3' => 'Accédez à des programmes de soutien flexibles adaptés à vos besoins',
     ],
 
-    'cta_title' => 'Recevez rapidement le soutien dont vous avez besoin.',
-    'cta_text' => 'Déposez une demande de don en ligne dès aujourd\'hui. Notre fondation vous accompagne avec des solutions de soutien rapides et sûres.',
-    'cta_button' => 'Commencez maintenant',
-
+    'cta_title' => 'Un projet ou un besoin de financement ?',
+    'cta_text' => 'Déposez votre demande en ligne. Elle sera examinée avant toute décision ; l\'envoi d\'une demande ne vaut pas accord.',
+    'cta_button' => 'Commencer une demande',
     'terms' => 'Conditions générales',
     'privacy_policy' => 'Politique de confidentialité',
     'site_map' => 'Plan du site',
@@ -163,8 +161,7 @@ return [
     'sl' => 'Slovène',
 
     // Hero subtitle
-    'hero_subtitle' => 'Une démarche claire, sans frais cachés. Depuis 15 ans, ' . site_name() . ' soutient des personnes, associations et porteurs de projets à fort impact social, éducatif, économique ou communautaire, avec transparence et humanité. Soutenir aujourd\'hui, construire demain.',
-
+    'hero_subtitle' => 'Déposez votre demande en ligne : elle est examinée individuellement et vous êtes informé de la suite donnée. Les conditions vous sont communiquées par écrit avant tout engagement.',
     // Slide
     'slide_1' => [
         'title' => ' Depuis 15 ans · Fondation agréée · Étude personnalisée',
@@ -256,17 +253,17 @@ return [
 
     // Programmes
     'services' => [
-        'sectagline' => 'ce que nous offrons',
-        'sectitle' => 'Nous proposons le meilleur accompagnement pour votre demande d\'aide',
-        'cta_title' => 'Prêt à donner vie à votre projet ?',
-        'cta_text' => 'Notre équipe est disponible pour vous accompagner dans votre demande de don.',
+        'sectagline' => 'ce que nous proposons',
+        'sectitle' => 'Des services pour accompagner votre demande de financement',
+        'cta_title' => 'Un projet à financer ?',
+        'cta_text' => 'Notre équipe examine chaque demande individuellement. Déposez la vôtre en ligne ou contactez-nous pour une question.',
     ],
 
     // FAQ page CTA
     'faq_cta' => [
         'label' => 'Support',
         'title' => 'Vous n\'avez pas trouvé votre réponse ?',
-        'text' => 'Notre équipe est disponible du lundi au samedi pour vous accompagner.',
+        'text' => 'Écrivez-nous : nous répondons aux questions relatives à votre demande.',
     ],
 
     // Simulate
@@ -344,9 +341,6 @@ return [
     'years_experience'          => 'Années d\'engagement',
     'day' => 'Jours',
 
-    'partners_label' => 'Versements sécurisés',
-    'partners_title' => 'Vos dons transitent via des établissements agréés',
-    'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
     'cta_title2' => 'Recevez le soutien dont vous avez besoin rapidement.',
     'cta_text2' => 'Bénéficiez d\'une aide entrepreneuriat rapidement',
@@ -354,5 +348,11 @@ return [
 
     'about_text' => 'Nous offrons des programmes d\'aide adaptés pour vous accompagner vers vos objectifs. Des solutions rapides, sécurisées et flexibles conçues pour répondre à vos besoins uniques.',
     'get' => 'Contactez-nous',
-
+    'hero_badge' => 'Demande de financement en ligne',
+    'hero_title1' => 'Un financement pour vos projets,',
+    'hero_title2' => 'étudié avec soin.',
+    'hero_pill1' => 'Examen individuel',
+    'hero_pill2' => 'Demande en ligne',
+    'hero_pill3' => 'Conditions écrites avant engagement',
+    'step_word' => 'Étape',
 ];

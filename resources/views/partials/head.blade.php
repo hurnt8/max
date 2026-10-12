@@ -23,8 +23,8 @@
         theme: {
             extend: {
                 colors: {
-                    navy:      { DEFAULT:'#0B1A2E', mid:'#162540', light:'#1E3A5F', deep:'#060E1C' },
-                    gold:      { DEFAULT:'#1F7AC7', light:'#4FA8E0', pale:'#EAF4FC', dark:'#145A94' },
+                    navy:      { DEFAULT:'#12372A', mid:'#1A4A38', light:'#245C46', deep:'#0B2219' },
+                    gold:      { DEFAULT:'#B8964F', light:'#D4B572', pale:'#F6EFDD', dark:'#8F7338' },
                     cream:     { DEFAULT:'#F7F3EC', light:'#FDFBF8' },
                 },
                 fontFamily: {
@@ -32,10 +32,10 @@
                     serif: ['Playfair Display','Georgia','serif'],
                 },
                 boxShadow: {
-                    'card':  '0 1px 3px rgba(11,26,46,.06), 0 4px 16px rgba(11,26,46,.08)',
-                    'card-hover': '0 4px 8px rgba(11,26,46,.08), 0 16px 40px rgba(11,26,46,.12)',
-                    'gold':  '0 4px 24px rgba(31,122,199,.22)',
-                    'nav':   '0 1px 0 rgba(11,26,46,.08)',
+                    'card':  '0 1px 3px rgba(18,55,42,.06), 0 4px 16px rgba(18,55,42,.08)',
+                    'card-hover': '0 4px 8px rgba(18,55,42,.08), 0 16px 40px rgba(18,55,42,.12)',
+                    'gold':  '0 4px 24px rgba(184,150,79,.22)',
+                    'nav':   '0 1px 0 rgba(18,55,42,.08)',
                 },
                 animation: {
                     'fade-in-up': 'fadeInUp .6s ease forwards',

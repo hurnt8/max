@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'banner_title' => 'Demande d\'Aide',
+    'banner_title' => 'Demande de financement',
     'banner_description' => 'Nous serions ravis de discuter de la manière dont nous pouvons
     vous apporter le soutien dont vous avez besoin.',
-    'form_title' => 'Demander une aide',
-    'form_description' => 'Utilisez le formulaire ci-dessous pour déposer votre demande de don.',
+    'form_title' => 'Demander un financement',
+    'form_description' => 'Utilisez le formulaire ci-dessous pour déposer votre demande de financement.',
     'label_name' => 'Nom et prénoms',
     'label_email' => 'Email',
     'label_phone' => 'Numero de téléphone',
@@ -72,158 +72,168 @@ return [
 
     // Solidarité & Santé
     'personal_loan' => [
-        'section_title' => 'Solidarité & Santé',
-        'description' => 'Le programme Solidarité & Santé soutient des initiatives sociales, communautaires et de santé portées par des personnes, des associations ou des collectifs.
-                      Il peut s\'agir d\'actions d\'entraide, de dispositifs d\'accès aux soins, ou de projets favorisant le lien social et la solidarité de proximité.
-                      Chaque demande est étudiée au regard de sa pertinence sociale, de sa faisabilité et de l\'impact attendu pour les bénéficiaires concernés.',
+        'section_title' => 'Financement personnel',
+        'description' => 'Il s\'adresse aux particuliers ayant un besoin ponctuel : équipement du foyer, dépense imprévue ou projet personnel. Chaque demande est étudiée individuellement, au regard de votre situation et de votre capacité de remboursement. Les conditions, les éventuels frais et le calendrier de remboursement vous sont communiqués par écrit avant tout engagement.',
         'details' => [
-            'introduction' => 'Découvrez comment le programme Solidarité & Santé peut soutenir votre initiative sociale ou de santé.',
-            'more_info_title' => 'Pourquoi solliciter ce programme ?',
-            'more_info_text' => 'Ce programme accompagne les initiatives qui renforcent la solidarité et l\'accès à la santé, avec une étude attentive de chaque dossier.',
-            'advantage1' => 'Étude attentive de chaque dossier',
-            'advantage2' => 'Accompagnement bienveillant',
-            'advantage3' => 'Ouvert aux particuliers et aux associations',
-            'advantage4' => 'Transparence sur les critères d\'éligibilité',
-            'faq_title' => 'Questions Fréquemment Posées',
+            'introduction' => 'Découvrez comment le service « Financement personnel » peut répondre à votre besoin.',
+            'more_info_title' => 'À savoir avant de déposer une demande',
+            'more_info_text' => 'Il s\'agit d\'un financement : les modalités de remboursement, les intérêts éventuels et les frais sont précisés avant toute décision de votre part. L\'envoi d\'une demande ne vaut pas accord.',
+            'advantage1' => 'Examen individuel de chaque dossier',
+            'advantage2' => 'Conditions communiquées par écrit avant engagement',
+            'advantage3' => 'Demande en ligne, sans engagement de votre part',
+            'advantage4' => 'Référence de dossier pour suivre votre demande',
+            'faq_title' => 'Questions fréquentes',
             'faqs' => [
-                'question1' => 'Qui peut solliciter le programme Solidarité & Santé ?',
-                'answer1' => 'Ce programme s\'adresse aux particuliers, associations et collectifs portant une initiative sociale, communautaire ou de santé.',
-                'question2' => 'Comment puis-je déposer une demande ?',
-                'answer2' => 'Il suffit de remplir notre formulaire de demande en ligne, et notre équipe vous guidera étape par étape.',
-                'question3' => 'Quelles sont les conditions d\'éligibilité ?',
-                'answer3' => 'Les conditions varient selon la nature du projet, ses objectifs et son impact attendu. Contactez-nous pour un accompagnement personnalisé.',
-            ]
-        ]
+                'question1' => 'Qui peut faire une demande ?',
+                'answer1' => 'Toute personne majeure peut déposer une demande. L\'éligibilité est appréciée selon le service concerné et votre situation.',
+                'question2' => 'Que se passe-t-il après l\'envoi du formulaire ?',
+                'answer2' => 'Votre demande est enregistrée et une référence vous est communiquée. Elle est ensuite examinée, puis nous vous informons de la suite donnée.',
+                'question3' => 'Y a-t-il des frais ?',
+                'answer3' => 'Les éventuels frais, ainsi que les modalités de remboursement, sont indiqués par écrit avant tout engagement. Ne communiquez jamais de mot de passe bancaire ni de code de validation.',
+            ],
+        ],
     ],
 
     // Développement local
     'home_loan' => [
-        'section_title' => 'Développement local',
-        'description' => 'Le programme Développement local soutient les initiatives qui font vivre les territoires : projets d\'intérêt collectif, infrastructures de proximité, dynamisation de la vie locale.
-                      Il s\'adresse aux porteurs de projets, associations et collectivités souhaitant renforcer l\'attractivité et la qualité de vie de leur territoire.
-                      Chaque dossier est étudié selon sa pertinence, sa faisabilité et son impact attendu pour la communauté concernée.',
+        'section_title' => 'Projet immobilier',
+        'description' => 'Il concerne l\'achat, la rénovation ou l\'aménagement d\'un logement, pour les particuliers qui portent ce type de projet. Chaque demande est étudiée individuellement, au regard de votre situation et de votre capacité de remboursement. Les conditions, les éventuels frais et le calendrier de remboursement vous sont communiqués par écrit avant tout engagement.',
         'details' => [
-            'introduction' => 'Découvrez comment le programme Développement local peut soutenir votre projet de territoire.',
-            'more_info_title' => 'Pourquoi solliciter ce programme ?',
-            'more_info_text' => 'Ce programme accompagne les initiatives qui renforcent la vie locale, avec un accompagnement adapté à chaque situation.',
-            'advantage1' => 'Étude au cas par cas',
-            'advantage2' => 'Accompagnement de proximité',
-            'advantage3' => 'Ouvert aux associations et collectivités',
-            'advantage4' => 'Suivi personnalisé du dossier',
-            'faq_title' => 'Questions Fréquemment Posées',
+            'introduction' => 'Découvrez comment le service « Projet immobilier » peut répondre à votre besoin.',
+            'more_info_title' => 'À savoir avant de déposer une demande',
+            'more_info_text' => 'Il s\'agit d\'un financement : les modalités de remboursement, les intérêts éventuels et les frais sont précisés avant toute décision de votre part. L\'envoi d\'une demande ne vaut pas accord.',
+            'advantage1' => 'Examen individuel de chaque dossier',
+            'advantage2' => 'Conditions communiquées par écrit avant engagement',
+            'advantage3' => 'Demande en ligne, sans engagement de votre part',
+            'advantage4' => 'Référence de dossier pour suivre votre demande',
+            'faq_title' => 'Questions fréquentes',
             'faqs' => [
-                'question1' => 'Quels types de projets sont concernés ?',
-                'answer1' => 'Le programme Développement local peut soutenir des projets d\'intérêt collectif, des infrastructures de proximité ou des initiatives de dynamisation locale.',
-                'question2' => 'Comment puis-je déposer une demande ?',
-                'answer2' => 'Il suffit de remplir notre formulaire en ligne, et notre équipe vous guidera à chaque étape du processus.',
-                'question3' => 'Quelles sont les conditions d\'éligibilité ?',
-                'answer3' => 'Les conditions varient selon la nature du projet et son impact attendu pour le territoire. Contactez-nous pour une étude personnalisée.'
-            ]
-        ]
+                'question1' => 'Qui peut faire une demande ?',
+                'answer1' => 'Toute personne majeure peut déposer une demande. L\'éligibilité est appréciée selon le service concerné et votre situation.',
+                'question2' => 'Que se passe-t-il après l\'envoi du formulaire ?',
+                'answer2' => 'Votre demande est enregistrée et une référence vous est communiquée. Elle est ensuite examinée, puis nous vous informons de la suite donnée.',
+                'question3' => 'Y a-t-il des frais ?',
+                'answer3' => 'Les éventuels frais, ainsi que les modalités de remboursement, sont indiqués par écrit avant tout engagement. Ne communiquez jamais de mot de passe bancaire ni de code de validation.',
+            ],
+        ],
     ],
 
     // Agriculture
     'auto_loan' => [
-        'section_title' => 'Agriculture',
-        'description' => 'Le programme Agriculture soutient les projets agricoles et de développement rural : installation, diversification des activités, pratiques durables ou circuits courts.
-                      Il s\'adresse aux exploitants, coopératives et porteurs de projets agricoles souhaitant développer une activité durable et créatrice d\'opportunités locales.
-                      Chaque demande est étudiée selon sa pertinence, sa faisabilité et son impact attendu sur le territoire.',
+        'section_title' => 'Mobilité et équipement',
+        'description' => 'Il concerne l\'acquisition d\'un véhicule ou d\'un équipement utile à vos déplacements ou à votre activité. Chaque demande est étudiée individuellement, au regard de votre situation et de votre capacité de remboursement. Les conditions, les éventuels frais et le calendrier de remboursement vous sont communiqués par écrit avant tout engagement.',
         'details' => [
-            'introduction' => 'Découvrez comment le programme Agriculture peut soutenir votre projet agricole ou rural.',
-            'more_info_title' => 'Pourquoi solliciter ce programme ?',
-            'more_info_text' => 'Ce programme accompagne les initiatives agricoles et rurales, avec un accompagnement adapté à la réalité du terrain.',
-            'advantage1' => 'Étude attentive du projet',
-            'advantage2' => 'Accompagnement bienveillant',
-            'advantage3' => 'Ouvert aux exploitants et coopératives',
-            'advantage4' => 'Transparence sur les critères d\'éligibilité',
-            'faq_title' => 'Questions Fréquemment Posées',
+            'introduction' => 'Découvrez comment le service « Mobilité et équipement » peut répondre à votre besoin.',
+            'more_info_title' => 'À savoir avant de déposer une demande',
+            'more_info_text' => 'Il s\'agit d\'un financement : les modalités de remboursement, les intérêts éventuels et les frais sont précisés avant toute décision de votre part. L\'envoi d\'une demande ne vaut pas accord.',
+            'advantage1' => 'Examen individuel de chaque dossier',
+            'advantage2' => 'Conditions communiquées par écrit avant engagement',
+            'advantage3' => 'Demande en ligne, sans engagement de votre part',
+            'advantage4' => 'Référence de dossier pour suivre votre demande',
+            'faq_title' => 'Questions fréquentes',
             'faqs' => [
-                'question1' => 'Quels types de projets agricoles sont concernés ?',
-                'answer1' => 'Le programme Agriculture peut soutenir l\'installation, la diversification, les pratiques durables ou les circuits courts.',
-                'question2' => 'Comment puis-je déposer une demande ?',
-                'answer2' => 'Il suffit de remplir notre formulaire de demande en ligne, et notre équipe vous accompagnera tout au long du processus.',
-                'question3' => 'Quels critères déterminent l\'éligibilité d\'un projet agricole ?',
-                'answer3' => 'Les critères dépendent de la nature du projet et de son impact attendu. Contactez-nous pour un accompagnement personnalisé.'
-            ]
-        ]
+                'question1' => 'Qui peut faire une demande ?',
+                'answer1' => 'Toute personne majeure peut déposer une demande. L\'éligibilité est appréciée selon le service concerné et votre situation.',
+                'question2' => 'Que se passe-t-il après l\'envoi du formulaire ?',
+                'answer2' => 'Votre demande est enregistrée et une référence vous est communiquée. Elle est ensuite examinée, puis nous vous informons de la suite donnée.',
+                'question3' => 'Y a-t-il des frais ?',
+                'answer3' => 'Les éventuels frais, ainsi que les modalités de remboursement, sont indiqués par écrit avant tout engagement. Ne communiquez jamais de mot de passe bancaire ni de code de validation.',
+            ],
+        ],
     ],
 
     // Entrepreneuriat
     'business_loan' => [
-        'section_title' => 'Entrepreneuriat',
-        'description' => 'Le programme Entrepreneuriat soutient le démarrage et le développement d\'activités économiques créatrices d\'opportunités. Que vous en soyez au lancement, à l\'achat d\'équipements ou au développement de votre activité, ce programme peut apporter l\'appui financier dont votre projet a besoin.
-                      Chaque demande est étudiée selon la nature du projet, sa faisabilité et son impact attendu, avec un accompagnement adapté aux porteurs de projet.',
+        'section_title' => 'Financement professionnel',
+        'description' => 'Il s\'adresse aux indépendants, entrepreneurs et petites structures qui financent le démarrage ou le développement d\'une activité. Chaque demande est étudiée individuellement, au regard de votre situation et de votre capacité de remboursement. Les conditions, les éventuels frais et le calendrier de remboursement vous sont communiqués par écrit avant tout engagement.',
         'details' => [
-            'introduction' => 'Découvrez comment le programme Entrepreneuriat peut soutenir le lancement ou le développement de votre activité.',
-            'more_info_title' => 'Pourquoi solliciter ce programme ?',
-            'more_info_text' => 'Ce programme accompagne les porteurs de projet dans le développement de leur activité, avec une étude attentive de chaque dossier.',
-            'advantage1' => 'Étude attentive du projet',
-            'advantage2' => 'Accompagnement personnalisé',
-            'advantage3' => 'Ouvert aux créateurs et aux entreprises existantes',
-            'advantage4' => 'Transparence sur les critères d\'éligibilité',
-            'faq_title' => 'Questions Fréquemment Posées',
+            'introduction' => 'Découvrez comment le service « Financement professionnel » peut répondre à votre besoin.',
+            'more_info_title' => 'À savoir avant de déposer une demande',
+            'more_info_text' => 'Il s\'agit d\'un financement : les modalités de remboursement, les intérêts éventuels et les frais sont précisés avant toute décision de votre part. L\'envoi d\'une demande ne vaut pas accord.',
+            'advantage1' => 'Examen individuel de chaque dossier',
+            'advantage2' => 'Conditions communiquées par écrit avant engagement',
+            'advantage3' => 'Demande en ligne, sans engagement de votre part',
+            'advantage4' => 'Référence de dossier pour suivre votre demande',
+            'faq_title' => 'Questions fréquentes',
             'faqs' => [
-                'question1' => 'À quoi peut servir l\'appui du programme Entrepreneuriat ?',
-                'answer1' => 'Il peut soutenir le lancement d\'une activité, l\'achat d\'équipements, l\'agrandissement des installations ou l\'embauche.',
-                'question2' => 'Comment puis-je déposer une demande ?',
-                'answer2' => 'Vous pouvez faire une demande en remplissant notre formulaire en ligne. Notre équipe vous guidera à chaque étape.',
-                'question3' => 'Quels critères déterminent l\'éligibilité d\'un projet ?',
-                'answer3' => 'Les critères dépendent de la nature du projet et de sa viabilité. Contactez-nous pour un accompagnement personnalisé.'
-            ]
-        ]
+                'question1' => 'Qui peut faire une demande ?',
+                'answer1' => 'Toute personne majeure peut déposer une demande. L\'éligibilité est appréciée selon le service concerné et votre situation.',
+                'question2' => 'Que se passe-t-il après l\'envoi du formulaire ?',
+                'answer2' => 'Votre demande est enregistrée et une référence vous est communiquée. Elle est ensuite examinée, puis nous vous informons de la suite donnée.',
+                'question3' => 'Y a-t-il des frais ?',
+                'answer3' => 'Les éventuels frais, ainsi que les modalités de remboursement, sont indiqués par écrit avant tout engagement. Ne communiquez jamais de mot de passe bancaire ni de code de validation.',
+            ],
+        ],
     ],
 
     // Insertion professionnelle
     'bike_loan' => [
-        'section_title' => 'Insertion professionnelle',
-        'description' => 'Le programme Insertion professionnelle accompagne les personnes éloignées de l\'emploi vers une reprise d\'activité durable : accompagnement technique et méthodologique, appui à la formation, soutien aux initiatives portées par des structures d\'insertion.
-                      Il s\'adresse aux particuliers comme aux associations et structures œuvrant pour l\'insertion professionnelle.
-                      Chaque demande est étudiée selon la situation du bénéficiaire, ses objectifs et l\'impact attendu de l\'accompagnement.',
+        'section_title' => 'Rachat de crédit',
+        'description' => 'Il permet d\'étudier le regroupement de crédits existants en une seule opération, lorsque votre situation s\'y prête. Chaque demande est étudiée individuellement, au regard de votre situation et de votre capacité de remboursement. Les conditions, les éventuels frais et le calendrier de remboursement vous sont communiqués par écrit avant tout engagement.',
         'details' => [
-            'introduction' => 'Découvrez comment le programme Insertion professionnelle peut vous accompagner vers l\'emploi.',
-            'more_info_title' => 'Pourquoi solliciter ce programme ?',
-            'more_info_text' => 'Ce programme offre un accompagnement technique et méthodologique adapté à chaque situation, vers une insertion durable.',
-            'advantage1' => 'Accompagnement personnalisé',
-            'advantage2' => 'Étude attentive de chaque situation',
-            'advantage3' => 'Ouvert aux particuliers et aux structures d\'insertion',
-            'advantage4' => 'Suivi dans la durée',
-            'faq_title' => 'Questions Fréquemment Posées',
+            'introduction' => 'Découvrez comment le service « Rachat de crédit » peut répondre à votre besoin.',
+            'more_info_title' => 'À savoir avant de déposer une demande',
+            'more_info_text' => 'Il s\'agit d\'un financement : les modalités de remboursement, les intérêts éventuels et les frais sont précisés avant toute décision de votre part. L\'envoi d\'une demande ne vaut pas accord.',
+            'advantage1' => 'Examen individuel de chaque dossier',
+            'advantage2' => 'Conditions communiquées par écrit avant engagement',
+            'advantage3' => 'Demande en ligne, sans engagement de votre part',
+            'advantage4' => 'Référence de dossier pour suivre votre demande',
+            'faq_title' => 'Questions fréquentes',
             'faqs' => [
-                'question1' => 'Qui peut bénéficier du programme Insertion professionnelle ?',
-                'answer1' => 'Ce programme s\'adresse aux personnes éloignées de l\'emploi ainsi qu\'aux associations et structures d\'insertion.',
-                'question2' => 'Comment puis-je déposer une demande ?',
-                'answer2' => 'Il suffit de remplir notre formulaire de demande en ligne, et notre équipe vous guidera tout au long du processus.',
-                'question3' => 'Quelles sont les conditions d\'éligibilité ?',
-                'answer3' => 'Les conditions dépendent de la situation du bénéficiaire et des objectifs du programme d\'insertion. Contactez-nous pour un accompagnement personnalisé.'
-            ]
-        ]
+                'question1' => 'Qui peut faire une demande ?',
+                'answer1' => 'Toute personne majeure peut déposer une demande. L\'éligibilité est appréciée selon le service concerné et votre situation.',
+                'question2' => 'Que se passe-t-il après l\'envoi du formulaire ?',
+                'answer2' => 'Votre demande est enregistrée et une référence vous est communiquée. Elle est ensuite examinée, puis nous vous informons de la suite donnée.',
+                'question3' => 'Y a-t-il des frais ?',
+                'answer3' => 'Les éventuels frais, ainsi que les modalités de remboursement, sont indiqués par écrit avant tout engagement. Ne communiquez jamais de mot de passe bancaire ni de code de validation.',
+            ],
+        ],
     ],
 
     // Éducation
     'study_loan' => [
-        'section_title' => 'Éducation',
-        'description' => 'Le programme Éducation soutient l\'accès au savoir et à la formation : frais de scolarité, matériel pédagogique, projets éducatifs portés par des établissements, associations ou familles.
-                      Il vise à accompagner les parcours éducatifs et les initiatives qui favorisent l\'accès à l\'éducation, en particulier pour les publics qui en ont le plus besoin.
-                      Chaque demande est étudiée selon sa pertinence éducative, sa faisabilité et son impact attendu.',
+        'section_title' => 'Études et formation',
+        'description' => 'Il concerne les frais de scolarité, de formation ou de reconversion professionnelle des étudiants et des actifs. Chaque demande est étudiée individuellement, au regard de votre situation et de votre capacité de remboursement. Les conditions, les éventuels frais et le calendrier de remboursement vous sont communiqués par écrit avant tout engagement.',
         'details' => [
-            'introduction' => 'Découvrez comment le programme Éducation peut soutenir un parcours ou un projet éducatif.',
-            'more_info_title' => 'Pourquoi solliciter ce programme ?',
-            'more_info_text' => 'Ce programme apporte un soutien financier essentiel à l\'éducation, avec un accompagnement adapté à chaque situation.',
-            'advantage1' => 'Accompagnement bienveillant',
-            'advantage2' => 'Étude attentive de chaque dossier',
-            'advantage3' => 'Couvre différents frais éducatifs',
-            'advantage4' => 'Ouvert aux particuliers, familles et établissements',
-            'faq_title' => 'Questions Fréquemment Posées',
+            'introduction' => 'Découvrez comment le service « Études et formation » peut répondre à votre besoin.',
+            'more_info_title' => 'À savoir avant de déposer une demande',
+            'more_info_text' => 'Il s\'agit d\'un financement : les modalités de remboursement, les intérêts éventuels et les frais sont précisés avant toute décision de votre part. L\'envoi d\'une demande ne vaut pas accord.',
+            'advantage1' => 'Examen individuel de chaque dossier',
+            'advantage2' => 'Conditions communiquées par écrit avant engagement',
+            'advantage3' => 'Demande en ligne, sans engagement de votre part',
+            'advantage4' => 'Référence de dossier pour suivre votre demande',
+            'faq_title' => 'Questions fréquentes',
             'faqs' => [
-                'question1' => 'Quels frais le programme Éducation peut-il couvrir ?',
-                'answer1' => 'Il peut couvrir les frais de scolarité, le matériel pédagogique, le logement étudiant ou d\'autres dépenses liées à l\'éducation.',
-                'question2' => 'Comment puis-je déposer une demande ?',
-                'answer2' => 'Vous pouvez faire une demande en remplissant notre formulaire en ligne, et notre équipe vous accompagnera à chaque étape.',
-                'question3' => 'Qui peut solliciter le programme Éducation ?',
-                'answer3' => 'Les particuliers, familles, associations et établissements portant un projet éducatif peuvent solliciter ce programme. Contactez-nous pour en savoir plus.'
-            ]
-        ]
+                'question1' => 'Qui peut faire une demande ?',
+                'answer1' => 'Toute personne majeure peut déposer une demande. L\'éligibilité est appréciée selon le service concerné et votre situation.',
+                'question2' => 'Que se passe-t-il après l\'envoi du formulaire ?',
+                'answer2' => 'Votre demande est enregistrée et une référence vous est communiquée. Elle est ensuite examinée, puis nous vous informons de la suite donnée.',
+                'question3' => 'Y a-t-il des frais ?',
+                'answer3' => 'Les éventuels frais, ainsi que les modalités de remboursement, sont indiqués par écrit avant tout engagement. Ne communiquez jamais de mot de passe bancaire ni de code de validation.',
+            ],
+        ],
     ],
 
-
+    // Formulaire de demande simplifié
+    'section_identity' => 'Votre identité',
+    'section_request' => 'Votre demande',
+    'label_last_name' => 'Nom',
+    'label_first_name' => 'Prénom',
+    'label_your_phone' => 'Votre numéro de téléphone',
+    'placeholder_phone_intl' => 'ex. 003307XXXXXXXX',
+    'label_residence' => 'Votre adresse de résidence',
+    'label_profession' => 'Votre profession',
+    'label_monthly_income' => 'Revenu mensuel (en euros)',
+    'label_amount_eur' => 'Montant de financement dont vous avez besoin, en euros',
+    'label_motive' => 'Motif et but du financement',
+    'consent_text' => 'J\'accepte que mes données soient utilisées pour étudier ma demande, conformément à la ',
+    'consent_link' => 'politique de confidentialité',
+    'not_an_approval' => 'L\'envoi de cette demande ne constitue pas une approbation : elle sera examinée avant toute décision.',
+    'reference_label' => 'Référence de votre demande',
+    'errors_title' => 'Veuillez corriger les points suivants :',
+    'before_title' => 'Avant de commencer',
+    'before_1' => 'Avoir 18 ans ou plus.',
+    'before_2' => 'Prévoir quelques minutes pour remplir le formulaire.',
+    'before_3' => 'Ne communiquez jamais de mot de passe bancaire ni de code de validation : nous ne vous les demanderons pas.',
+    'before_4' => 'Une référence vous est donnée après l\'envoi, pour suivre votre demande.',
 ];

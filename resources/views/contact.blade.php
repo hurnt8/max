@@ -159,12 +159,11 @@
                                     <label>{{ __('contact.subject') }} *</label>
                                     <select name="subject" class="form-control" required>
                                         <option value="">— {{ __('contact.subject') }} —</option>
-                                        <option value="Aide personnelle"    {{ old('subject')=='Aide personnelle'    ?'selected':'' }}>@lang('menu.personal')</option>
-                                        <option value="Aide au logement"    {{ old('subject')=='Aide au logement'    ?'selected':'' }}>@lang('menu.home_loan')</option>
-                                        <option value="Aide entrepreneuriat"{{ old('subject')=='Aide entrepreneuriat'?'selected':'' }}>@lang('menu.business')</option>
-                                        <option value="Aide aux études"     {{ old('subject')=='Aide aux études'     ?'selected':'' }}>@lang('menu.study')</option>
-                                        <option value="Aide mobilité"       {{ old('subject')=='Aide mobilité'       ?'selected':'' }}>@lang('menu.auto')</option>
-                                        <option value="Prêt moto"       {{ old('subject')=='Prêt moto'       ?'selected':'' }}>@lang('menu.bike')</option>
+                                        <option value="Financement personnel"    {{ old('subject')=='Financement personnel'    ?'selected':'' }}>@lang('menu.personal')</option>
+                                        <option value="Projet immobilier"    {{ old('subject')=='Projet immobilier'    ?'selected':'' }}>@lang('menu.home_loan')</option>
+                                        <option value="Financement professionnel"{{ old('subject')=='Financement professionnel'?'selected':'' }}>@lang('menu.business')</option>
+                                        <option value="Études et formation"     {{ old('subject')=='Études et formation'     ?'selected':'' }}>@lang('menu.study')</option>
+                                        <option value="Mobilité et équipement"       {{ old('subject')=='Mobilité et équipement'       ?'selected':'' }}>@lang('menu.auto')</option>
                                         <option value="Autre"           {{ old('subject')=='Autre'           ?'selected':'' }}>Autre</option>
                                     </select>
                                     @error('subject')<span class="form-error">{{ $message }}</span>@enderror

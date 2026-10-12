@@ -13,9 +13,21 @@
 
 **{{ __('loan.label_amount') }} :** {{ number_format($data['amount'], 0, ',', ' ') }} {{ $data['currency'] ?? \App\Models\Currency::default() }}
 
-**{{ __('loan.label_darly') }} :** {{ $data['darly'] }} {{ __('message.months') }}
+@if (!empty($data['address']))
+**{{ __('loan.label_residence') }} :** {{ $data['address'] }}
 
-**{{ __('contact.subject') }} :** {{ $data['subject'] }}
+@endif
+@if (!empty($data['profession']))
+**{{ __('loan.label_profession') }} :** {{ $data['profession'] }}
+
+@endif
+@if (isset($data['monthly_income']))
+**{{ __('loan.label_monthly_income') }} :** {{ number_format($data['monthly_income'], 0, ',', ' ') }} EUR
+
+@endif
+@if (!empty($data['reference']))
+**Réf. :** {{ $data['reference'] }}
+@endif
 
 @if (!empty($data['objet']))
 ---

@@ -1,43 +1,43 @@
 <?php
 
 return [
-    'title' => 'Termes et conditions',
+    'title' => 'Conditions d\'utilisation',
     'sections' => [
         [
-            'title' => '1. Introduction',
-            'content' => 'Bienvenue sur ' . site_name() . '. En utilisant notre site et nos services, vous acceptez de vous conformer et d\'être lié par les termes et conditions suivants. Veuillez lire attentivement ces termes avant d\'utiliser notre site ou de déposer une demande d\'aide auprès de nous.'
+            'title' => '1. Objet',
+            'content' => 'Les présentes conditions encadrent l\'utilisation du site de ' . site_name() . ' et le dépôt d\'une demande de financement en ligne. En utilisant le site, vous déclarez les avoir lues.',
         ],
         [
             'title' => '2. Utilisation du site',
-            'content' => 'En accédant à notre site, vous vous engagez à utiliser nos services uniquement à des fins légales et conformes aux présentes conditions. Vous vous engagez à ne pas utiliser notre site de manière à causer des dommages, des interruptions ou des interférences avec nos services ou à l\'accès d\'autres utilisateurs.'
+            'content' => 'Vous vous engagez à utiliser le site de manière licite, à ne pas en perturber le fonctionnement et à ne pas usurper l\'identité d\'une autre personne.',
         ],
         [
-            'title' => '3. Programmes d\'aide',
-            'content' => site_name() . ' propose divers programmes d\'aide et de soutien financier pour répondre à vos besoins. Chaque demande est soumise à une évaluation basée sur l\'examen de votre situation et des critères d\'éligibilité du programme concerné. Les termes spécifiques de chaque aide accordée, y compris le montant, la durée et les modalités de versement, seront détaillés dans votre accord de soutien.'
+            'title' => '3. Demande de financement',
+            'content' => 'Le dépôt d\'une demande est ouvert aux personnes majeures. Chaque demande est examinée individuellement. L\'envoi d\'une demande ne constitue ni une offre, ni un accord, ni une promesse de financement.',
         ],
         [
-            'title' => '4. Frais de dossier et d\'assurance',
-            'content' => 'Lors de la constitution d\'un dossier auprès de ' . site_name() . ', des frais de dossier et d\'assurance peuvent être appliqués. Ces frais couvrent les coûts administratifs associés à l\'instruction et au suivi de votre demande. Les détails spécifiques de ces frais seront clairement indiqués dans votre accord de soutien. Vous êtes tenu de vous acquitter de ces frais conformément aux modalités précisées.'
+            'title' => '4. Exactitude des informations',
+            'content' => 'Vous garantissez que les informations transmises sont exactes et complètes. Des informations inexactes peuvent entraîner le rejet de la demande.',
         ],
         [
-            'title' => '5. Confidentialité',
-            'content' => 'Nous prenons la confidentialité de vos informations personnelles très au sérieux. Veuillez consulter notre <a href="#">politique de confidentialité</a> pour plus de détails sur la manière dont nous collectons, utilisons et protégeons vos informations personnelles.'
+            'title' => '5. Frais et conditions',
+            'content' => 'Le dépôt d\'une demande en ligne est sans frais de notre part. Si une demande est acceptée, les conditions (montant, durée, remboursement, intérêts éventuels, frais) vous sont communiquées par écrit avant tout engagement, et vous restez libre de les refuser.',
         ],
         [
-            'title' => '6. Résiliation',
-            'content' => 'Nous nous réservons le droit de résilier ou de suspendre votre accès à notre site et à nos services sans préavis si nous estimons que vous avez violé les présentes conditions ou si nous le jugeons nécessaire pour protéger nos intérêts ou ceux de nos utilisateurs.'
+            'title' => '6. Données personnelles',
+            'content' => 'Les données transmises sont traitées pour étudier votre demande, conformément à notre <a href="/fr/privacy">politique de confidentialité</a>.',
         ],
         [
-            'title' => '7. Limitation de responsabilité',
-            'content' => site_name() . ' ne pourra être tenu responsable des pertes ou dommages indirects, spéciaux ou consécutifs résultant de l\'utilisation ou de l\'incapacité à utiliser notre site ou nos services, y compris la perte de profits, la perte de données ou l\'interruption des activités, même si nous avons été informés de la possibilité de tels dommages.'
+            'title' => '7. Sécurité et vigilance',
+            'content' => 'Nous ne vous demanderons jamais de mot de passe bancaire, de code PIN ni de code de validation à usage unique. Ne communiquez jamais ces informations à un tiers se réclamant de ' . site_name() . '.',
         ],
         [
-            'title' => '8. Modifications des termes',
-            'content' => 'Nous pouvons modifier ces termes et conditions de temps à autre pour refléter les changements dans nos pratiques ou dans les lois applicables. Nous vous informerons de toute modification importante en publiant les nouvelles conditions sur notre site. Votre utilisation continue de notre site après de telles modifications constitue votre acceptation des nouvelles conditions.'
+            'title' => '8. Responsabilité',
+            'content' => 'Nous mettons en œuvre les moyens raisonnables pour assurer le bon fonctionnement du site, sans garantir l\'absence d\'interruption. Cette limitation ne s\'applique pas lorsque la loi l\'interdit.',
         ],
         [
-            'title' => '9. Contact',
-            'content' => 'Si vous avez des questions ou des préoccupations concernant ces termes et conditions, veuillez nous contacter à :<br><br>' . site_name() . '<br>Adresse : Rua de Santo António 33, 7200-175, Portugal<br>E-mail : ' . site_email() . '<br>Téléphone : ' . site_phone() . ' '
+            'title' => '9. Modification des conditions',
+            'content' => 'Les présentes conditions peuvent être modifiées ; la version en vigueur est celle publiée sur le site.',
         ],
     ],
 ];

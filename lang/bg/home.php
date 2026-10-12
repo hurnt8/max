@@ -344,9 +344,6 @@ return [
     'years_experience'          => 'Години отдаденост',
     'day' => 'Дни',
 
-    'partners_label' => 'Сигурни плащания',
-    'partners_title' => 'Вашите дарения преминават през лицензирани институции',
-    'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
     'cta_title2' => 'Получете бързо подкрепата, от която се нуждаете.',
     'cta_text2' => 'Възползвайте се бързо от помощ за предприемачество',

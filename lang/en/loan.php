@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'banner_title' => 'Aid Request',
+    'banner_title' => 'Financing request',
     'banner_description' => 'We would be delighted to discuss how we can
     bring you the support you need.',
-    'form_title' => 'Request Aid',
-    'form_description' => 'Use the form below to submit your donation request.',
+    'form_title' => 'Request financing',
+    'form_description' => 'Use the form below to submit your financing request.',
     'label_name' => 'Full name',
     'label_email' => 'Email',
     'label_phone' => 'Phone number',
@@ -72,158 +72,168 @@ return [
 
     // Solidarity & Health
     'personal_loan' => [
-        'section_title' => 'Solidarity & Health',
-        'description' => 'The Solidarity & Health program supports social, community and health initiatives led by individuals, associations or groups.
-                      This can include mutual aid actions, healthcare access initiatives, or projects that strengthen social ties and local solidarity.
-                      Each application is reviewed based on its social relevance, its feasibility and the expected impact for the beneficiaries concerned.',
+        'section_title' => 'Personal financing',
+        'description' => 'It is intended for individuals with a specific need: household equipment, an unexpected expense or a personal project. Each request is reviewed individually, based on your situation and your ability to repay. The conditions, any fees and the repayment schedule are given to you in writing before any commitment.',
         'details' => [
-            'introduction' => 'Discover how the Solidarity & Health program can support your social or health initiative.',
-            'more_info_title' => 'Why apply for this program?',
-            'more_info_text' => 'This program supports initiatives that strengthen solidarity and access to healthcare, with a careful review of every application.',
-            'advantage1' => 'Careful review of every application',
-            'advantage2' => 'Compassionate support',
-            'advantage3' => 'Open to individuals and associations',
-            'advantage4' => 'Transparency on eligibility criteria',
-            'faq_title' => 'Frequently Asked Questions',
+            'introduction' => 'Find out how the "Personal financing" service can meet your need.',
+            'more_info_title' => 'Good to know before applying',
+            'more_info_text' => 'This is financing: repayment terms, any interest and fees are set out before you make any decision. Sending a request is not an agreement.',
+            'advantage1' => 'Individual review of every request',
+            'advantage2' => 'Conditions provided in writing before any commitment',
+            'advantage3' => 'Online request, with no commitment on your part',
+            'advantage4' => 'Request reference to follow your application',
+            'faq_title' => 'Frequently asked questions',
             'faqs' => [
-                'question1' => 'Who can apply for the Solidarity & Health program?',
-                'answer1' => 'This program is aimed at individuals, associations and groups carrying out a social, community or health initiative.',
-                'question2' => 'How can I submit an application?',
-                'answer2' => 'Simply fill out our online application form, and our team will guide you step by step.',
-                'question3' => 'What are the eligibility conditions?',
-                'answer3' => 'Conditions vary depending on the nature of the project, its objectives and its expected impact. Contact us for personalized guidance.',
-            ]
-        ]
+                'question1' => 'Who can apply?',
+                'answer1' => 'Any adult can submit a request. Eligibility is assessed according to the service concerned and your situation.',
+                'question2' => 'What happens after I send the form?',
+                'answer2' => 'Your request is recorded and a reference is given to you. It is then reviewed, and we inform you of the outcome.',
+                'question3' => 'Are there any fees?',
+                'answer3' => 'Any fees, as well as repayment terms, are stated in writing before any commitment. Never share a banking password or a validation code.',
+            ],
+        ],
     ],
 
     // Local Development
     'home_loan' => [
-        'section_title' => 'Local Development',
-        'description' => 'The Local Development program supports initiatives that bring local areas to life: projects of collective interest, local infrastructure, and the revitalization of community life.
-                      It is aimed at project leaders, associations and local authorities wishing to strengthen the appeal and quality of life of their area.
-                      Each application is reviewed based on its relevance, its feasibility and its expected impact for the community concerned.',
+        'section_title' => 'Property project',
+        'description' => 'It covers the purchase, renovation or fitting-out of a home, for individuals carrying out this type of project. Each request is reviewed individually, based on your situation and your ability to repay. The conditions, any fees and the repayment schedule are given to you in writing before any commitment.',
         'details' => [
-            'introduction' => 'Discover how the Local Development program can support your local project.',
-            'more_info_title' => 'Why apply for this program?',
-            'more_info_text' => 'This program supports initiatives that strengthen local life, with guidance tailored to each situation.',
-            'advantage1' => 'Case-by-case review',
-            'advantage2' => 'Local, hands-on support',
-            'advantage3' => 'Open to associations and local authorities',
-            'advantage4' => 'Personalized follow-up of the application',
-            'faq_title' => 'Frequently Asked Questions',
+            'introduction' => 'Find out how the "Property project" service can meet your need.',
+            'more_info_title' => 'Good to know before applying',
+            'more_info_text' => 'This is financing: repayment terms, any interest and fees are set out before you make any decision. Sending a request is not an agreement.',
+            'advantage1' => 'Individual review of every request',
+            'advantage2' => 'Conditions provided in writing before any commitment',
+            'advantage3' => 'Online request, with no commitment on your part',
+            'advantage4' => 'Request reference to follow your application',
+            'faq_title' => 'Frequently asked questions',
             'faqs' => [
-                'question1' => 'What types of projects are eligible?',
-                'answer1' => 'The Local Development program can support projects of collective interest, local infrastructure, or initiatives that revitalize community life.',
-                'question2' => 'How can I submit an application?',
-                'answer2' => 'Simply fill out our online form, and our team will guide you through every step of the process.',
-                'question3' => 'What are the eligibility conditions?',
-                'answer3' => 'Conditions vary depending on the nature of the project and its expected impact for the local area. Contact us for a personalized review.'
-            ]
-        ]
+                'question1' => 'Who can apply?',
+                'answer1' => 'Any adult can submit a request. Eligibility is assessed according to the service concerned and your situation.',
+                'question2' => 'What happens after I send the form?',
+                'answer2' => 'Your request is recorded and a reference is given to you. It is then reviewed, and we inform you of the outcome.',
+                'question3' => 'Are there any fees?',
+                'answer3' => 'Any fees, as well as repayment terms, are stated in writing before any commitment. Never share a banking password or a validation code.',
+            ],
+        ],
     ],
 
     // Agriculture
     'auto_loan' => [
-        'section_title' => 'Agriculture',
-        'description' => 'The Agriculture program supports agricultural and rural development projects: setting up a farm, diversifying activities, sustainable practices or short supply chains.
-                      It is aimed at farmers, cooperatives and agricultural project leaders wishing to develop a sustainable activity that creates local opportunities.
-                      Each application is reviewed based on its relevance, its feasibility and its expected impact on the local area.',
+        'section_title' => 'Mobility and equipment',
+        'description' => 'It covers the purchase of a vehicle or of equipment useful for your travel or your activity. Each request is reviewed individually, based on your situation and your ability to repay. The conditions, any fees and the repayment schedule are given to you in writing before any commitment.',
         'details' => [
-            'introduction' => 'Discover how the Agriculture program can support your agricultural or rural project.',
-            'more_info_title' => 'Why apply for this program?',
-            'more_info_text' => 'This program supports agricultural and rural initiatives, with guidance adapted to on-the-ground realities.',
-            'advantage1' => 'Careful review of the project',
-            'advantage2' => 'Compassionate support',
-            'advantage3' => 'Open to farmers and cooperatives',
-            'advantage4' => 'Transparency on eligibility criteria',
-            'faq_title' => 'Frequently Asked Questions',
+            'introduction' => 'Find out how the "Mobility and equipment" service can meet your need.',
+            'more_info_title' => 'Good to know before applying',
+            'more_info_text' => 'This is financing: repayment terms, any interest and fees are set out before you make any decision. Sending a request is not an agreement.',
+            'advantage1' => 'Individual review of every request',
+            'advantage2' => 'Conditions provided in writing before any commitment',
+            'advantage3' => 'Online request, with no commitment on your part',
+            'advantage4' => 'Request reference to follow your application',
+            'faq_title' => 'Frequently asked questions',
             'faqs' => [
-                'question1' => 'What types of agricultural projects are eligible?',
-                'answer1' => 'The Agriculture program can support setting up a farm, diversification, sustainable practices or short supply chains.',
-                'question2' => 'How can I submit an application?',
-                'answer2' => 'Simply fill out our online application form, and our team will support you throughout the process.',
-                'question3' => 'What criteria determine the eligibility of an agricultural project?',
-                'answer3' => 'The criteria depend on the nature of the project and its expected impact. Contact us for personalized guidance.'
-            ]
-        ]
+                'question1' => 'Who can apply?',
+                'answer1' => 'Any adult can submit a request. Eligibility is assessed according to the service concerned and your situation.',
+                'question2' => 'What happens after I send the form?',
+                'answer2' => 'Your request is recorded and a reference is given to you. It is then reviewed, and we inform you of the outcome.',
+                'question3' => 'Are there any fees?',
+                'answer3' => 'Any fees, as well as repayment terms, are stated in writing before any commitment. Never share a banking password or a validation code.',
+            ],
+        ],
     ],
 
     // Entrepreneurship
     'business_loan' => [
-        'section_title' => 'Entrepreneurship',
-        'description' => 'The Entrepreneurship program supports the launch and growth of economic activities that create opportunities. Whether you are just starting out, purchasing equipment, or growing your business, this program can provide the financial support your project needs.
-                      Each application is reviewed based on the nature of the project, its feasibility and its expected impact, with guidance tailored to project leaders.',
+        'section_title' => 'Business financing',
+        'description' => 'It is intended for self-employed people, entrepreneurs and small organisations financing the start-up or growth of an activity. Each request is reviewed individually, based on your situation and your ability to repay. The conditions, any fees and the repayment schedule are given to you in writing before any commitment.',
         'details' => [
-            'introduction' => 'Discover how the Entrepreneurship program can support the launch or growth of your business.',
-            'more_info_title' => 'Why apply for this program?',
-            'more_info_text' => 'This program supports project leaders in growing their business, with a careful review of every application.',
-            'advantage1' => 'Careful review of the project',
-            'advantage2' => 'Personalized guidance',
-            'advantage3' => 'Open to new founders and existing businesses',
-            'advantage4' => 'Transparency on eligibility criteria',
-            'faq_title' => 'Frequently Asked Questions',
+            'introduction' => 'Find out how the "Business financing" service can meet your need.',
+            'more_info_title' => 'Good to know before applying',
+            'more_info_text' => 'This is financing: repayment terms, any interest and fees are set out before you make any decision. Sending a request is not an agreement.',
+            'advantage1' => 'Individual review of every request',
+            'advantage2' => 'Conditions provided in writing before any commitment',
+            'advantage3' => 'Online request, with no commitment on your part',
+            'advantage4' => 'Request reference to follow your application',
+            'faq_title' => 'Frequently asked questions',
             'faqs' => [
-                'question1' => 'What can the Entrepreneurship program\'s support be used for?',
-                'answer1' => 'It can support launching a business, purchasing equipment, expanding facilities or hiring staff.',
-                'question2' => 'How can I submit an application?',
-                'answer2' => 'You can apply by filling out our online form. Our team will guide you at every step.',
-                'question3' => 'What criteria determine a project\'s eligibility?',
-                'answer3' => 'The criteria depend on the nature of the project and its viability. Contact us for personalized guidance.'
-            ]
-        ]
+                'question1' => 'Who can apply?',
+                'answer1' => 'Any adult can submit a request. Eligibility is assessed according to the service concerned and your situation.',
+                'question2' => 'What happens after I send the form?',
+                'answer2' => 'Your request is recorded and a reference is given to you. It is then reviewed, and we inform you of the outcome.',
+                'question3' => 'Are there any fees?',
+                'answer3' => 'Any fees, as well as repayment terms, are stated in writing before any commitment. Never share a banking password or a validation code.',
+            ],
+        ],
     ],
 
     // Professional Integration
     'bike_loan' => [
-        'section_title' => 'Professional Integration',
-        'description' => 'The Professional Integration program supports people who are far from employment toward a lasting return to work: technical and methodological guidance, support for training, and backing for initiatives led by integration organizations.
-                      It is aimed at both individuals and associations and organizations working on professional integration.
-                      Each application is reviewed based on the beneficiary\'s situation, their objectives and the expected impact of the support.',
+        'section_title' => 'Debt consolidation',
+        'description' => 'It allows existing credits to be reviewed for consolidation into a single operation, where your situation allows. Each request is reviewed individually, based on your situation and your ability to repay. The conditions, any fees and the repayment schedule are given to you in writing before any commitment.',
         'details' => [
-            'introduction' => 'Discover how the Professional Integration program can support you toward employment.',
-            'more_info_title' => 'Why apply for this program?',
-            'more_info_text' => 'This program offers technical and methodological guidance tailored to each situation, toward a lasting return to work.',
-            'advantage1' => 'Personalized guidance',
-            'advantage2' => 'Careful review of every situation',
-            'advantage3' => 'Open to individuals and integration organizations',
-            'advantage4' => 'Long-term follow-up',
-            'faq_title' => 'Frequently Asked Questions',
+            'introduction' => 'Find out how the "Debt consolidation" service can meet your need.',
+            'more_info_title' => 'Good to know before applying',
+            'more_info_text' => 'This is financing: repayment terms, any interest and fees are set out before you make any decision. Sending a request is not an agreement.',
+            'advantage1' => 'Individual review of every request',
+            'advantage2' => 'Conditions provided in writing before any commitment',
+            'advantage3' => 'Online request, with no commitment on your part',
+            'advantage4' => 'Request reference to follow your application',
+            'faq_title' => 'Frequently asked questions',
             'faqs' => [
-                'question1' => 'Who can benefit from the Professional Integration program?',
-                'answer1' => 'This program is aimed at people who are far from employment as well as associations and integration organizations.',
-                'question2' => 'How can I submit an application?',
-                'answer2' => 'Simply fill out our online application form, and our team will guide you throughout the process.',
-                'question3' => 'What are the eligibility conditions?',
-                'answer3' => 'Conditions depend on the beneficiary\'s situation and the objectives of the integration program. Contact us for personalized guidance.'
-            ]
-        ]
+                'question1' => 'Who can apply?',
+                'answer1' => 'Any adult can submit a request. Eligibility is assessed according to the service concerned and your situation.',
+                'question2' => 'What happens after I send the form?',
+                'answer2' => 'Your request is recorded and a reference is given to you. It is then reviewed, and we inform you of the outcome.',
+                'question3' => 'Are there any fees?',
+                'answer3' => 'Any fees, as well as repayment terms, are stated in writing before any commitment. Never share a banking password or a validation code.',
+            ],
+        ],
     ],
 
     // Education
     'study_loan' => [
-        'section_title' => 'Education',
-        'description' => 'The Education program supports access to knowledge and training: tuition fees, educational materials, and educational projects led by institutions, associations or families.
-                      It aims to support educational paths and initiatives that promote access to education, particularly for those who need it most.
-                      Each application is reviewed based on its educational relevance, its feasibility and its expected impact.',
+        'section_title' => 'Studies and training',
+        'description' => 'It covers tuition, training or career-change costs for students and working people. Each request is reviewed individually, based on your situation and your ability to repay. The conditions, any fees and the repayment schedule are given to you in writing before any commitment.',
         'details' => [
-            'introduction' => 'Discover how the Education program can support an educational path or project.',
-            'more_info_title' => 'Why apply for this program?',
-            'more_info_text' => 'This program provides essential financial support for education, with guidance tailored to each situation.',
-            'advantage1' => 'Compassionate support',
-            'advantage2' => 'Careful review of every application',
-            'advantage3' => 'Covers various education-related expenses',
-            'advantage4' => 'Open to individuals, families and institutions',
-            'faq_title' => 'Frequently Asked Questions',
+            'introduction' => 'Find out how the "Studies and training" service can meet your need.',
+            'more_info_title' => 'Good to know before applying',
+            'more_info_text' => 'This is financing: repayment terms, any interest and fees are set out before you make any decision. Sending a request is not an agreement.',
+            'advantage1' => 'Individual review of every request',
+            'advantage2' => 'Conditions provided in writing before any commitment',
+            'advantage3' => 'Online request, with no commitment on your part',
+            'advantage4' => 'Request reference to follow your application',
+            'faq_title' => 'Frequently asked questions',
             'faqs' => [
-                'question1' => 'What expenses can the Education program cover?',
-                'answer1' => 'It can cover tuition fees, educational materials, student housing or other education-related expenses.',
-                'question2' => 'How can I submit an application?',
-                'answer2' => 'You can apply by filling out our online form, and our team will support you at every step.',
-                'question3' => 'Who can apply for the Education program?',
-                'answer3' => 'Individuals, families, associations and institutions carrying out an educational project can apply for this program. Contact us to learn more.'
-            ]
-        ]
+                'question1' => 'Who can apply?',
+                'answer1' => 'Any adult can submit a request. Eligibility is assessed according to the service concerned and your situation.',
+                'question2' => 'What happens after I send the form?',
+                'answer2' => 'Your request is recorded and a reference is given to you. It is then reviewed, and we inform you of the outcome.',
+                'question3' => 'Are there any fees?',
+                'answer3' => 'Any fees, as well as repayment terms, are stated in writing before any commitment. Never share a banking password or a validation code.',
+            ],
+        ],
     ],
 
-
+    // Formulaire de demande simplifié
+    'section_identity' => 'Your identity',
+    'section_request' => 'Your request',
+    'label_last_name' => 'Last name',
+    'label_first_name' => 'First name',
+    'label_your_phone' => 'Your phone number',
+    'placeholder_phone_intl' => 'e.g. 003307XXXXXXXX',
+    'label_residence' => 'Your home address',
+    'label_profession' => 'Your occupation',
+    'label_monthly_income' => 'Monthly income (in euros)',
+    'label_amount_eur' => 'Amount of funding you need, in euros',
+    'label_motive' => 'Reason and purpose of the funding',
+    'consent_text' => 'I agree that my data may be used to review my request, in accordance with the ',
+    'consent_link' => 'privacy policy',
+    'not_an_approval' => 'Sending this request is not an approval: it will be reviewed before any decision is made.',
+    'reference_label' => 'Your request reference',
+    'errors_title' => 'Please correct the following:',
+    'before_title' => 'Before you start',
+    'before_1' => 'Be 18 years old or over.',
+    'before_2' => 'Allow a few minutes to fill in the form.',
+    'before_3' => 'Never share a banking password or validation code: we will not ask for them.',
+    'before_4' => 'A reference is given to you after sending, so you can follow your request.',
 ];

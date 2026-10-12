@@ -103,7 +103,6 @@ Route::group([
         return view('apply-loan');
     })->name('loan');
 
-    Route::get('/loan/complete', [LoanController::class, 'showDocuments'])->name('loan.complete');
 
     Route::get('/terms', function () {
         return view('terms');
@@ -141,16 +140,12 @@ Route::group([
         return view('service-d-business-loan');
     })->name('services.business');
 
-    Route::get('/services/bike-loan', function () {
-        return view('service-d-bike-loan');
-    })->name('services.bike');
 
 });
 Route::post('/loan/simulate', [LoanController::class, 'simulate'])->name('loan.simulate');
 Route::post('/contact/send', [ContactController::class, 'sendMail'])->name('contact.send');
 Route::post('/subscribe/send', [ContactController::class, 'subscribeMail'])->name('subscribe.send');
-Route::post('/loan/request', [LoanController::class, 'sendMail'])->name('loan.request');
-Route::post('/loan/documents', [LoanController::class, 'sendDocuments'])->name('loan.documents');
+Route::post('/loan/request', [LoanController::class, 'sendMail'])->name('loan.request')->middleware('throttle:5,1');
 
 // ── Page "prochaines étapes" (lien signé envoyé par email, sans connexion) ──
 Route::get('/loan-outcome/{loan}/approved', [LoanOutcomeController::class, 'approved'])

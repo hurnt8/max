@@ -1,43 +1,43 @@
 <?php
 
 return [
-    'title' => 'Terms and conditions',
+    'title' => 'Terms of use',
     'sections' => [
         [
-            'title' => '1. Introduction',
-            'content' => 'Welcome to ' . site_name() . '. By using our site and services, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our site or submitting an aid request to us.'
+            'title' => '1. Purpose',
+            'content' => 'These terms govern the use of the ' . site_name() . ' website and the submission of an online financing request. By using the site, you confirm you have read them.',
         ],
         [
             'title' => '2. Use of the site',
-            'content' => 'By accessing our site, you agree to use our services only for legal purposes and in accordance with these conditions. You agree not to use our site in any way that causes damage, interruption or interference with our services or the access of other users.'
+            'content' => 'You agree to use the site lawfully, not to disrupt its operation and not to impersonate another person.',
         ],
         [
-            'title' => '3. Aid programmes',
-            'content' => site_name() . ' offers various aid and financial support programmes to meet your needs. Each request is subject to an assessment based on a review of your situation and the eligibility criteria of the relevant programme. The specific terms of each aid granted, including the amount, duration and payment terms, will be detailed in your support agreement.'
+            'title' => '3. Financing request',
+            'content' => 'Requests may be submitted by adults. Each request is reviewed individually. Sending a request is neither an offer, nor an agreement, nor a promise of financing.',
         ],
         [
-            'title' => '4. Case file and insurance fees',
-            'content' => 'When setting up a case file with ' . site_name() . ', case file and insurance fees may apply. These fees cover the administrative costs associated with processing and following up your request. The specific details of these fees will be clearly stated in your support agreement. You are required to pay these fees in accordance with the terms specified.'
+            'title' => '4. Accuracy of information',
+            'content' => 'You guarantee that the information you provide is accurate and complete. Inaccurate information may lead to the request being rejected.',
         ],
         [
-            'title' => '5. Confidentiality',
-            'content' => 'We take the privacy of your personal information very seriously. Please see our <a href="#">privacy policy</a> for more details on how we collect, use and protect your personal information.'
+            'title' => '5. Fees and conditions',
+            'content' => 'Submitting an online request is free of charge on our side. If a request is accepted, the conditions (amount, term, repayment, any interest, fees) are given to you in writing before any commitment, and you remain free to refuse them.',
         ],
         [
-            'title' => '6. Termination',
-            'content' => 'We reserve the right to terminate or suspend your access to our site and our services without notice if we believe that you have violated these conditions or if we consider it necessary to protect our interests or those of our users.'
+            'title' => '6. Personal data',
+            'content' => 'The data you send is processed to review your request, in accordance with our <a href="/en/privacy">privacy policy</a>.',
         ],
         [
-            'title' => '7. Limitation of liability',
-            'content' => site_name() . ' will not be liable for any indirect, special or consequential loss or damage arising out of the use of or inability to use our site or services, including loss of profits, loss of data or business interruption, even if we have been advised of the possibility of such damage.'
+            'title' => '7. Security and vigilance',
+            'content' => 'We will never ask for your banking password, PIN or one-time validation code. Never share this information with anyone claiming to represent ' . site_name() . '.',
         ],
         [
-            'title' => '8. Changes to terms',
-            'content' => 'We may change these terms and conditions from time to time to reflect changes in our practices or in applicable laws. We will notify you of any material changes by posting the new terms on our site. Your continued use of our site after any such changes constitutes your acceptance of the new terms.'
+            'title' => '8. Liability',
+            'content' => 'We use reasonable means to keep the site running, without guaranteeing the absence of interruptions. This limitation does not apply where the law prohibits it.',
         ],
         [
-            'title' => '9. Contact',
-            'content' => 'If you have any questions or concerns regarding these terms and conditions, please contact us at:<br><br>' . site_name() . '<br>Address: Rua de Santo António 33, 7200-175, Portugal<br>E-mail: ' . site_email() . '<br>Phone: ' . site_phone() . ' '
+            'title' => '9. Changes to the terms',
+            'content' => 'These terms may be changed; the version in force is the one published on the site.',
         ],
     ],
 ];

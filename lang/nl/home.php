@@ -344,9 +344,6 @@ return [
     'years_experience'          => 'Jaar toewijding',
     'day' => 'Dagen',
 
-    'partners_label' => 'Beveiligde uitbetalingen',
-    'partners_title' => 'Uw giften lopen via erkende instellingen',
-    'partners_list' => ['BNP Paribas', 'Santander', 'PKO Bank Polski', 'Revolut', 'BBVA', 'UniCredit', 'Intesa Sanpaolo', 'Banco BPM', 'BPER Banca', 'Banca Monte dei Paschi di Siena', 'Mediobanca', 'Swedbank Lietuvoje', 'SEB bankas', 'Revolut Bank UAB', 'Luminor Bank', 'Šiaulių bankas', 'Deutsche Bank', 'Commerzbank', 'DZ Bank', 'HypoVereinsbank', 'KfW Bank', 'DSK Bank', 'UniCredit Bulbank', 'United Bulgarian Bank', 'First Investment Bank', 'Postbank Bulgaria', 'TBI Bank', 'Banca Transilvania', 'Banca Comercială Română (BCR)', 'CEC Bank', 'BRD – Groupe Société Générale', 'Raiffeisen Bank Romania', 'UniCredit Bank Romania', 'Swedbank Latvia', 'SEB banka', 'Citadele Banka', 'Luminor Bank Latvia', 'BlueOrange Bank'],
 
     'cta_title2' => 'Ontvang snel de steun die u nodig heeft.',
     'cta_text2' => 'Profiteer snel van ondernemershulp',

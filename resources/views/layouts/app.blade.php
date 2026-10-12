@@ -37,7 +37,6 @@
       header.classList.remove('header--transparent');
     } else {
       header.classList.remove('header--scrolled');
-      if (isHome) header.classList.add('header--transparent');
     }
   };
   window.addEventListener('scroll', updateHeader, { passive: true });

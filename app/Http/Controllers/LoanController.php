@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Mail\LoanMail;
 use App\Mail\LoanConfirmationMail;
-use App\Mail\LoanDocumentsMail;
-use App\Mail\LoanDocumentsConfirmationMail;
 use App\Models\Currency;
+use App\Models\LoanRequest;
 use App\Models\LoanSetting;
 use App\Services\LoanService;
 use Illuminate\Http\Request;
@@ -48,122 +47,83 @@ class LoanController extends Controller
 
     public function sendMail(Request $request)
     {
-        $data = $request->validate([
-            'name'     => 'required|string|max:255',
-            'email'    => 'required|email',
-            'phone'    => 'required|string|max:50',
-            'amount'   => 'required|numeric|min:1',
-            'darly'    => 'required|numeric|min:1',
-            'subject'  => 'required|string',
-            'objet'    => 'nullable|string|max:2000',
-            'currency' => 'nullable|string|in:' . implode(',', Currency::codes()),
-        ]);
-        $data['currency'] = $data['currency'] ?? Currency::default();
-
-        $locale = $request->input('locale', 'fr');
-        if (!in_array($locale, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'hr'])) {
-            $locale = 'fr';
+        // Piège à robots : le champ "website" est invisible pour les humains.
+        if (filled($request->input('website'))) {
+            return back()->with('success', __('message.success_loan'));
         }
-        App::setLocale($locale);
 
-        $data['complete_url'] = url($locale . '/loan/complete')
-            . '?name='  . urlencode($data['name'])
-            . '&email=' . urlencode($data['email']);
+        $setting = LoanSetting::current();
 
-        // Email 1 : nouvelle demande → adresse de notification configurée
-        Mail::to(LoanSetting::current()->notification_email)->send(new LoanMail($data, $locale));
-
-        // Email 2 : confirmation → demandeur
-        Mail::to($data['email'])->send(new LoanConfirmationMail($data, $locale));
-
-        return back()->with('success', __('message.success_loan'));
-    }
-
-    public function showDocuments(Request $request)
-    {
-        // Nouveau jeton à chaque affichage du formulaire
-        $token = Str::uuid()->toString();
-        session(['doc_submission_token' => $token]);
-
-        return view('loan-documents', [
-            'prefillName'     => $request->query('name'),
-            'prefillEmail'    => $request->query('email'),
-            'submissionToken' => $token,
+        $validated = $request->validate([
+            'last_name'      => ['required', 'string', 'max:120'],
+            'first_name'     => ['required', 'string', 'max:120'],
+            'phone'          => ['required', 'string', 'max:30', 'regex:/^\+?[0-9\s().-]{6,30}$/'],
+            'email'          => ['required', 'email:rfc', 'max:190'],
+            'address'        => ['required', 'string', 'max:500'],
+            'profession'     => ['required', 'string', 'max:150'],
+            'monthly_income' => ['required', 'numeric', 'min:0', 'max:1000000'],
+            'amount'         => ['required', 'numeric', 'min:' . (float) $setting->min_amount, 'max:' . (float) $setting->max_amount],
+            'objet'          => ['required', 'string', 'min:10', 'max:2000'],
+            'consent'        => ['accepted'],
         ]);
-    }
 
-    public function sendDocuments(Request $request)
-    {
         $locale = $request->input('locale', 'fr');
         if (!in_array($locale, ['fr', 'en', 'pl', 'es', 'bg', 'hu', 'it', 'de', 'lt', 'ro', 'lv', 'nl', 'pt', 'hr'], true)) {
             $locale = 'fr';
         }
         App::setLocale($locale);
 
-        // ── Protection anti-doublon ──────────────────────────────────────────
-        $submitted    = $request->input('submission_token', '');
-        $sessionToken = session('doc_submission_token');
+        $fullName = trim($validated['first_name'] . ' ' . $validated['last_name']);
 
-        if (!$submitted || !$sessionToken || !hash_equals($sessionToken, $submitted)) {
-            return redirect()->route('loan.complete', ['locale' => $locale])
-                ->with('docs_already_sent', true);
-        }
-
-        // Consommer le jeton AVANT tout envoi
-        session()->forget('doc_submission_token');
-
-        // ── Validation ───────────────────────────────────────────────────────
-        $needsVerso = in_array($request->input('doc_type'), ['id_card', 'license', 'residence'], true);
-        $fileRules  = ['file', 'mimes:jpg,jpeg,png,pdf', 'max:5120'];
-
-        $data = $request->validate([
-            'name'           => ['required', 'string', 'max:255'],
-            'email'          => ['required', 'email'],
-            'address'        => ['required', 'string', 'max:1000'],
-            'tax_number'     => ['nullable', 'string', 'max:60'],
-            'activity'       => ['nullable', 'string', 'max:255'],
-            'doc_type'       => ['required', 'string', 'in:id_card,passport,license,residence,other'],
-            'id_photo_recto' => array_merge(['required'], $fileRules),
-            'id_photo_verso' => array_merge($needsVerso ? ['required'] : ['nullable'], $fileRules),
+        // Enregistrement effectif de la demande AVANT toute notification.
+        $loan = LoanRequest::create([
+            'reference'    => LoanRequest::generateReference(),
+            'name'         => $fullName,
+            'email'        => $validated['email'],
+            'phone'        => $validated['phone'],
+            'address'      => $validated['address'],
+            'amount'       => $validated['amount'],
+            'currency'     => 'EUR',
+            'darly'        => 24,
+            'objet'        => Str::limit($validated['objet'], 250, ''),
+            'subject'      => null,
+            'status'       => LoanRequest::STATUS_PENDING,
+            'contract_language' => $locale,
+            'extra_fields' => [
+                'last_name'      => $validated['last_name'],
+                'first_name'     => $validated['first_name'],
+                'profession'     => $validated['profession'],
+                'monthly_income' => $validated['monthly_income'],
+                'motive'         => $validated['objet'],
+                'consent_at'     => now()->toIso8601String(),
+            ],
         ]);
 
-        // ── Stockage temporaire des fichiers ─────────────────────────────────
-        $tempFiles   = [];
-        $attachments = [];
+        $data = [
+            'name'           => $fullName,
+            'email'          => $validated['email'],
+            'phone'          => $validated['phone'],
+            'address'        => $validated['address'],
+            'profession'     => $validated['profession'],
+            'monthly_income' => $validated['monthly_income'],
+            'amount'         => $validated['amount'],
+            'currency'       => 'EUR',
+            'darly'          => 24,
+            'subject'        => null,
+            'objet'          => $validated['objet'],
+            'reference'      => $loan->reference,
+        ];
 
-        $recto = $request->file('id_photo_recto');
-        if ($recto instanceof \Illuminate\Http\UploadedFile) {
-            $stored = $recto->store('temp-docs', 'local');
-            if ($stored !== false) {
-                $path          = storage_path('app/' . $stored);
-                $attachments[] = ['path' => $path, 'name' => 'recto_' . $recto->getClientOriginalName(), 'mime' => $recto->getMimeType()];
-                $tempFiles[]   = $path;
-            }
-        }
-
-        $verso = $request->file('id_photo_verso');
-        if ($verso instanceof \Illuminate\Http\UploadedFile) {
-            $stored = $verso->store('temp-docs', 'local');
-            if ($stored !== false) {
-                $path          = storage_path('app/' . $stored);
-                $attachments[] = ['path' => $path, 'name' => 'verso_' . $verso->getClientOriginalName(), 'mime' => $verso->getMimeType()];
-                $tempFiles[]   = $path;
-            }
-        }
-
-        // ── Envoi des emails ─────────────────────────────────────────────────
+        // La demande est enregistrée : un échec d'e-mail ne doit pas la faire perdre.
         try {
-            Mail::to(LoanSetting::current()->notification_email)->send(new LoanDocumentsMail($data, $attachments, $locale));
-            Mail::to($data['email'])->send(new LoanDocumentsConfirmationMail($data, $locale));
-        } finally {
-            foreach ($tempFiles as $p) {
-                if (file_exists($p)) {
-                    @unlink($p);
-                }
-            }
+            Mail::to($setting->notification_email)->send(new LoanMail($data, $locale));
+            Mail::to($data['email'])->send(new LoanConfirmationMail($data, $locale));
+        } catch (\Throwable $e) {
+            report($e);
         }
 
-        return redirect()->route('loan.complete', ['locale' => $locale])
-            ->with('success', __('message.docs_success'));
+        return back()
+            ->with('success', __('message.success_loan'))
+            ->with('loan_reference', $loan->reference);
     }
 }

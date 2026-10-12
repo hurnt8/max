@@ -4,23 +4,18 @@ return [
 
     'menu' => 'Menu',
     'home' => 'Accueil',
-    'about' => 'À propos de nous',
-    'services' => 'Nos programmes',
-    'simulate' => 'Simuler une aide',
+    'about' => 'À propos',
+    'services' => 'Nos services',
+    'simulate' => 'Simuler un financement',
     'contact' => 'Nous contacter',
-    'loan' => 'Demander une aide',
-
-    'personal' => 'Solidarité & Santé',
-    'auto' => 'Agriculture',
-    'home_loan' => 'Développement local',
-    'study' => 'Éducation',
-    'business' => 'Entrepreneuriat',
-    'bike' => 'Insertion professionnelle',
-
-    'arlert' => 'Déposez votre demande de soutien en quelques minutes seulement',
-
-
-
+    'loan' => 'Demander un financement',
+    'personal' => 'Financement personnel',
+    'auto' => 'Mobilité et équipement',
+    'home_loan' => 'Projet immobilier',
+    'study' => 'Études et formation',
+    'business' => 'Financement professionnel',
+    'bike' => 'Rachat de crédit',
+    'arlert' => 'Déposez votre demande de financement en quelques minutes',
     'faq'              => 'FAQ',
     'terms'            => "Conditions d'utilisation",
     'privacy'          => 'Politique de confidentialité',
@@ -28,8 +23,8 @@ return [
     'addresses'        => 'Adresses',
     'rights_reserved'  => 'Tous droits réservés.',
     'email_placeholder'=> 'Votre adresse email',
-    'newsletter_title' => 'Restez informé de nos actions',
+    'newsletter_title' => 'Restez informé de nos actualités',
     'subscribe'        => "S'abonner",
     'read_more'        => 'En savoir plus',
-    'footer_desc'      => site_name() . " soutient des personnes, associations et porteurs de projets à travers l'Europe grâce à des programmes d'appui financier transparents, responsables et humains.",
+    'footer_desc' => 'Service de demande de financement en ligne : chaque demande est examinée individuellement et les conditions sont communiquées par écrit avant tout engagement.',
 ];

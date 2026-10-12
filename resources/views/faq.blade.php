@@ -27,12 +27,12 @@
             <div class="col-lg-4 d-none d-lg-block wow fadeInLeft" data-wow-duration="900ms">
                 <div style="position:sticky;top:110px;">
                     <img src="{{ asset('assets/images/resources/why-choose-1-1.jpg') }}"
-                         alt="FAQ"
+                         alt=""
                          style="width:100%;border-radius:var(--radius-xl);height:360px;object-fit:cover;box-shadow:var(--shadow-hover);">
                     <div class="contact-widget mt-4">
                         <div class="contact-widget__icon"><i class="fas fa-headset"></i></div>
-                        <h4>Besoin d'aide ?</h4>
-                        <p>Notre équipe répond à toutes vos questions, du lundi au samedi.</p>
+                        <h4>{{ __('faq.help_title') }}</h4>
+                        <p>{{ __('faq.help_text') }}</p>
                         <a href="tel:{{ site_phone_href() }}" class="contact-widget__phone">{{ site_phone() }}</a>
                         <a href="{{ route('contact', ['locale' => $locale]) }}"
                            class="btn-primary w-100 justify-content-center">
@@ -45,51 +45,26 @@
             {{-- FAQ accordions (Alpine.js) --}}
             <div class="col-lg-8 wow fadeInRight" data-wow-duration="900ms" data-wow-delay="100ms">
                 <div class="section-label mb-2">@lang('menu.faq')</div>
-                <h2 class="section-title mb-8">Questions fréquentes</h2>
+                <h2 class="section-title mb-8">{{ __('faq.title') }}</h2>
 
-                @php
-                $types = ['personal_loan','home_loan','auto_loan','business_loan','study_loan','bike_loan'];
-                @endphp
-
-                @foreach ($types as $type)
-                @php $faqs = __('loan.' . $type . '.details.faqs'); @endphp
-                @if (is_array($faqs) && isset($faqs['question1']))
-
-                <div class="faq-category-title">{{ __('loan.' . $type . '.section_title') }}</div>
-
-                {{-- Alpine scope: one open item per category, default first open --}}
                 <div x-data="{ open: 1 }" class="mb-6">
-                    @for ($q = 1; $q <= 3; $q++)
-                    @if (isset($faqs['question' . $q]))
-                    @php $qn = $q; @endphp
+                    @foreach (__('faq.items') as $i => $item)
+                    @php $qn = $i + 1; @endphp
                     <div class="accordion-item mb-1" style="border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card);">
                         <button type="button"
                                 class="faq-btn"
                                 :class="open === {{ $qn }} ? 'is-open' : ''"
-                                @click="open = (open === {{ $qn }}) ? null : {{ $qn }}">
-                            <span>{{ $faqs['question' . $q] }}</span>
-                            <span class="faq-btn__icon">
-                                <i class="fas fa-chevron-down"></i>
-                            </span>
+                                @click="open = (open === {{ $qn }}) ? null : {{ $qn }}"
+                                :aria-expanded="open === {{ $qn }} ? 'true' : 'false'">
+                            <span>{{ $item[0] }}</span>
+                            <span class="faq-btn__icon"><i class="fas fa-chevron-down"></i></span>
                         </button>
-                        <div class="faq-body"
-                             x-show="open === {{ $qn }}"
-                             x-transition:enter="transition ease-out duration-250"
-                             x-transition:enter-start="opacity-0 -translate-y-2"
-                             x-transition:enter-end="opacity-100 translate-y-0"
-                             x-transition:leave="transition ease-in duration-150"
-                             x-transition:leave-start="opacity-100 translate-y-0"
-                             x-transition:leave-end="opacity-0 -translate-y-2"
-                             style="{{ $q !== 1 ? 'display:none' : '' }}">
-                            {{ $faqs['answer' . $q] }}
+                        <div class="faq-body" x-show="open === {{ $qn }}" style="{{ $qn !== 1 ? 'display:none' : '' }}">
+                            {{ $item[1] }}
                         </div>
                     </div>
-                    @endif
-                    @endfor
+                    @endforeach
                 </div>
-
-                @endif
-                @endforeach
             </div>
 
         </div>
