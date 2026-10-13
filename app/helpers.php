@@ -12,7 +12,7 @@ if (! function_exists('site_name')) {
         static $name = null;
 
         if ($name === null) {
-            $name = SiteContact::current()->name ?: 'SOLIDARIS FOUNDATION';
+            $name = SiteContact::current()->name ?: 'Mellenthin Foundation';
         }
 
         return $name;

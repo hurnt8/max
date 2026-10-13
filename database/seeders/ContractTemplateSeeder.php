@@ -10,7 +10,7 @@ class ContractTemplateSeeder extends Seeder
     public function run(): void
     {
         ContractTemplate::updateOrCreate(
-            ['name' => 'Contrat Standard Solberg Grupo INVESTI'],
+            ['name' => 'Contrat Standard Mellenthin Foundation'],
             [
                 'is_default'    => true,
                 'template_type' => 'html',
