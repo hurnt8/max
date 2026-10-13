@@ -15,7 +15,9 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Mellenthin Foundation'),
+
+    'company_name' => env('COMPANY_NAME', 'MELLENTHIN FOUNDATION'),
 
     /*
     |--------------------------------------------------------------------------

@@ -4,7 +4,7 @@
 $texts = [
     'fr' => [
         'greeting'     => 'Madame / Monsieur ' . $loan->name . ',',
-        'intro'        => 'Nous avons bien enregistré votre dossier auprès de **SOLIDARIS FOUNDATION**. Vous trouverez ci-joint votre accord de soutien ainsi que le tableau détaillant vos versements.',
+        'intro'        => 'Nous avons bien enregistré votre dossier auprès de **MELLENTHIN FOUNDATION**. Vous trouverez ci-joint votre accord de soutien ainsi que le tableau détaillant vos versements.',
         'summary'      => 'RÉSUMÉ DE VOTRE AIDE',
         'ref'          => 'Référence dossier',
         'amount'       => 'Montant accordé',
@@ -26,7 +26,7 @@ $texts = [
     ],
     'pl' => [
         'greeting'     => 'Szanowny/a ' . $loan->name . ',',
-        'intro'        => 'Zarejestrowaliśmy Państwa wniosek w **SOLIDARIS FOUNDATION**. W załączeniu przesyłamy umowę wsparcia oraz harmonogram Państwa wpłat.',
+        'intro'        => 'Zarejestrowaliśmy Państwa wniosek w **MELLENTHIN FOUNDATION**. W załączeniu przesyłamy umowę wsparcia oraz harmonogram Państwa wpłat.',
         'summary'      => 'PODSUMOWANIE PAŃSTWA POMOCY',
         'ref'          => 'Numer referencyjny',
         'amount'       => 'Przyznana kwota',
@@ -48,7 +48,7 @@ $texts = [
     ],
     'en' => [
         'greeting'     => 'Dear ' . $loan->name . ',',
-        'intro'        => 'Your file has been registered with **SOLIDARIS FOUNDATION**. Please find attached your support agreement and the schedule detailing your payments.',
+        'intro'        => 'Your file has been registered with **MELLENTHIN FOUNDATION**. Please find attached your support agreement and the schedule detailing your payments.',
         'summary'      => 'SUMMARY OF YOUR AID',
         'ref'          => 'File reference',
         'amount'       => 'Amount granted',
@@ -70,7 +70,7 @@ $texts = [
     ],
     'es' => [
         'greeting'     => 'Estimado/a ' . $loan->name . ',',
-        'intro'        => 'Hemos registrado su expediente en **SOLIDARIS FOUNDATION**. Adjuntamos su acuerdo de apoyo y el cuadro con el detalle de sus pagos.',
+        'intro'        => 'Hemos registrado su expediente en **MELLENTHIN FOUNDATION**. Adjuntamos su acuerdo de apoyo y el cuadro con el detalle de sus pagos.',
         'summary'      => 'RESUMEN DE SU AYUDA',
         'ref'          => 'Referencia del expediente',
         'amount'       => 'Importe concedido',
@@ -92,7 +92,7 @@ $texts = [
     ],
     'bg' => [
         'greeting'     => 'Уважаеми/а ' . $loan->name . ',',
-        'intro'        => 'Успешно регистрирахме вашето досие в **SOLIDARIS FOUNDATION**. Ще намерите приложени вашето споразумение за подкрепа, както и графика, детайлизиращ вашите вноски.',
+        'intro'        => 'Успешно регистрирахме вашето досие в **MELLENTHIN FOUNDATION**. Ще намерите приложени вашето споразумение за подкрепа, както и графика, детайлизиращ вашите вноски.',
         'summary'      => 'ОБОБЩЕНИЕ НА ВАШАТА ПОМОЩ',
         'ref'          => 'Референция на досието',
         'amount'       => 'Отпусната сума',
@@ -114,7 +114,7 @@ $texts = [
     ],
     'hu' => [
         'greeting'     => 'Tisztelt ' . $loan->name . '!',
-        'intro'        => 'Ügyét sikeresen rögzítettük a **SOLIDARIS FOUNDATION**-nál. Mellékelten megtalálja támogatási megállapodását, valamint a havi befizetéseit részletező táblázatot.',
+        'intro'        => 'Ügyét sikeresen rögzítettük a **MELLENTHIN FOUNDATION**-nál. Mellékelten megtalálja támogatási megállapodását, valamint a havi befizetéseit részletező táblázatot.',
         'summary'      => 'TÁMOGATÁSÁNAK ÖSSZEFOGLALÓJA',
         'ref'          => 'Ügy referenciaszáma',
         'amount'       => 'Jóváhagyott összeg',
@@ -136,7 +136,7 @@ $texts = [
     ],
     'it' => [
         'greeting'     => 'Gentile ' . $loan->name . ',',
-        'intro'        => 'Abbiamo registrato con successo la tua pratica presso **SOLIDARIS FOUNDATION**. In allegato trovi il tuo accordo di sostegno e il piano con il dettaglio dei tuoi versamenti.',
+        'intro'        => 'Abbiamo registrato con successo la tua pratica presso **MELLENTHIN FOUNDATION**. In allegato trovi il tuo accordo di sostegno e il piano con il dettaglio dei tuoi versamenti.',
         'summary'      => 'RIEPILOGO DEL TUO AIUTO',
         'ref'          => 'Riferimento pratica',
         'amount'       => 'Importo concesso',
@@ -158,7 +158,7 @@ $texts = [
     ],
     'de' => [
         'greeting'     => 'Sehr geehrte Damen und Herren ' . $loan->name . ',',
-        'intro'        => 'Wir haben Ihre Akte bei **SOLIDARIS FOUNDATION** erfasst. Anbei finden Sie Ihre Unterstützungsvereinbarung sowie den Zahlungsplan mit den Einzelheiten zu Ihren Zahlungen.',
+        'intro'        => 'Wir haben Ihre Akte bei **MELLENTHIN FOUNDATION** erfasst. Anbei finden Sie Ihre Unterstützungsvereinbarung sowie den Zahlungsplan mit den Einzelheiten zu Ihren Zahlungen.',
         'summary'      => 'ZUSAMMENFASSUNG IHRER UNTERSTÜTZUNG',
         'ref'          => 'Aktenreferenz',
         'amount'       => 'Genehmigter Betrag',
@@ -180,7 +180,7 @@ $texts = [
     ],
     'lt' => [
         'greeting'     => 'Gerbiamas (-a) ' . $loan->name . ',',
-        'intro'        => 'Jūsų byla sėkmingai užregistruota **SOLIDARIS FOUNDATION**. Pridedame jūsų paramos sutartį bei mokėjimų grafiką, kuriame nurodyti jūsų mėnesiniai mokėjimai.',
+        'intro'        => 'Jūsų byla sėkmingai užregistruota **MELLENTHIN FOUNDATION**. Pridedame jūsų paramos sutartį bei mokėjimų grafiką, kuriame nurodyti jūsų mėnesiniai mokėjimai.',
         'summary'      => 'JŪSŲ PARAMOS SANTRAUKA',
         'ref'          => 'Bylos numeris',
         'amount'       => 'Patvirtinta suma',
@@ -202,7 +202,7 @@ $texts = [
     ],
     'ro' => [
         'greeting'     => 'Stimate/Stimată ' . $loan->name . ',',
-        'intro'        => 'Am înregistrat cu succes dosarul dumneavoastră la **SOLIDARIS FOUNDATION**. Veți găsi atașat acordul dumneavoastră de sprijin, precum și graficul de plăți cu detalierea sumelor dumneavoastră.',
+        'intro'        => 'Am înregistrat cu succes dosarul dumneavoastră la **MELLENTHIN FOUNDATION**. Veți găsi atașat acordul dumneavoastră de sprijin, precum și graficul de plăți cu detalierea sumelor dumneavoastră.',
         'summary'      => 'REZUMATUL AJUTORULUI DUMNEAVOASTRĂ',
         'ref'          => 'Referință dosar',
         'amount'       => 'Sumă acordată',
@@ -224,7 +224,7 @@ $texts = [
     ],
     'lv' => [
         'greeting'     => 'Godātais/Godātā ' . $loan->name . ',',
-        'intro'        => 'Mēs esam veiksmīgi reģistrējuši jūsu lietu **SOLIDARIS FOUNDATION**. Pielikumā atradīsiet savu atbalsta līgumu, kā arī maksājumu grafiku ar jūsu ikmēneša maksājumu detaļām.',
+        'intro'        => 'Mēs esam veiksmīgi reģistrējuši jūsu lietu **MELLENTHIN FOUNDATION**. Pielikumā atradīsiet savu atbalsta līgumu, kā arī maksājumu grafiku ar jūsu ikmēneša maksājumu detaļām.',
         'summary'      => 'JŪSU ATBALSTA KOPSAVILKUMS',
         'ref'          => 'Lietas atsauce',
         'amount'       => 'Piešķirtā summa',
@@ -246,7 +246,7 @@ $texts = [
     ],
     'nl' => [
         'greeting'     => 'Geachte heer/mevrouw ' . $loan->name . ',',
-        'intro'        => 'Wij hebben uw dossier bij **SOLIDARIS FOUNDATION** succesvol geregistreerd. Bijgevoegd vindt u uw steunovereenkomst en het overzicht met de details van uw maandelijkse betalingen.',
+        'intro'        => 'Wij hebben uw dossier bij **MELLENTHIN FOUNDATION** succesvol geregistreerd. Bijgevoegd vindt u uw steunovereenkomst en het overzicht met de details van uw maandelijkse betalingen.',
         'summary'      => 'SAMENVATTING VAN UW STEUN',
         'ref'          => 'Dossierreferentie',
         'amount'       => 'Toegekend bedrag',

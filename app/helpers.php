@@ -28,7 +28,7 @@ if (! function_exists('site_email')) {
         static $email = null;
 
         if ($email === null) {
-            $email = SiteContact::current()->email ?: 'contact@solidarisfoundation.org';
+            $email = SiteContact::current()->email ?: 'contact@exemple.com';
         }
 
         return $email;

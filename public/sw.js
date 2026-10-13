@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-  Solberg Grupo — Service Worker v10 (Solberg Grupo)
+  Mellenthin Foundation — Service Worker v10 (Mellenthin Foundation)
    Cache-first assets · Network-first HTML
    Push Notifications VAPID — design fintech pro
    ═══════════════════════════════════════════════════════════════ */
@@ -112,7 +112,7 @@ const TYPE_CONFIG = {
 
 self.addEventListener('push', e => {
     const defaults = {
-        title: 'Solberg Grupo',
+        title: 'Mellenthin Foundation',
         body:  '',
         tag: 'solberg',
         url:   '/app/notifications',
@@ -126,7 +126,7 @@ self.addEventListener('push', e => {
 
     const cfg = TYPE_CONFIG[data.type] || TYPE_CONFIG[data.tag] || TYPE_CONFIG.system;
 
-    const notifTitle = data.title || 'Solberg Grupo';
+    const notifTitle = data.title || 'Mellenthin Foundation';
     const notifBody  = data.body  || '';
 
     e.waitUntil(

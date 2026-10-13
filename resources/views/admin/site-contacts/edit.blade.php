@@ -126,7 +126,7 @@
         <div class="row g-3">
           <div class="col-12">
             <label class="form-label-pro">Adresse e-mail</label>
-            <input type="email" name="email" class="form-control-pro" value="{{ old('email', $contact->email) }}" placeholder="contact@solberggrupo.eu">
+            <input type="email" name="email" class="form-control-pro" value="{{ old('email', $contact->email) }}" placeholder="contact@exemple.com">
           </div>
         </div>
       </div>

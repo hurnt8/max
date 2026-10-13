@@ -30,7 +30,7 @@ return [
     'email'               => 'E-Mail-Adresse',
     'email_staff'         => 'Berufliche E-Mail',
     'email_ph'            => 'sie@beispiel.de',
-    'email_ph_staff'      => 'agent@solberggrupo.eu',
+    'email_ph_staff'      => 'agent@exemple.com',
     'password_label'      => 'Passwort',
     'remember'            => 'Angemeldet bleiben',
     'remember_staff'      => 'Angemeldet bleiben',

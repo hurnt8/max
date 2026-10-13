@@ -24,19 +24,19 @@ class LoanCreatedMail extends Mailable
     public function envelope(): Envelope
     {
         $subjects = [
-            'fr' => 'Votre dossier de financement N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'pl' => 'Twój wniosek o finansowanie nr ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'en' => 'Your financing file N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'es' => 'Su expediente de financiación N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'bg' => 'Вашето досие за финансиране №' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'hu' => 'Finanszírozási ügye sz. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'it' => 'La tua pratica di finanziamento N°' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'de' => 'Ihre Finanzierungsakte Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'lt' => 'Jūsų finansavimo byla Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'ro' => 'Dosarul dumneavoastră de finanțare nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'lv' => 'Jūsu finansējuma lieta Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'nl' => 'Uw financieringsdossier Nr. ' . $this->loan->reference . ' — SOLBERG GRUPO',
-            'pt' => 'O seu processo de financiamento N.º' . $this->loan->reference . ' — SOLBERG GRUPO',
+            'fr' => 'Votre dossier de financement N°' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'pl' => 'Twój wniosek o finansowanie nr ' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'en' => 'Your financing file N°' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'es' => 'Su expediente de financiación N°' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'bg' => 'Вашето досие за финансиране №' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'hu' => 'Finanszírozási ügye sz. ' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'it' => 'La tua pratica di finanziamento N°' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'de' => 'Ihre Finanzierungsakte Nr. ' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'lt' => 'Jūsų finansavimo byla Nr. ' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'ro' => 'Dosarul dumneavoastră de finanțare nr. ' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'lv' => 'Jūsu finansējuma lieta Nr. ' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'nl' => 'Uw financieringsdossier Nr. ' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
+            'pt' => 'O seu processo de financiamento N.º' . $this->loan->reference . ' — MELLENTHIN FOUNDATION',
         ];
 
         return new Envelope(subject: $subjects[$this->locale] ?? $subjects['fr']);

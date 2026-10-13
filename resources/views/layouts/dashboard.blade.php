@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#0B1A2E">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Solberg Admin">
+<meta name="apple-mobile-web-app-title" content="Mellenthin Admin">
 <meta name="mobile-web-app-capable" content="yes">
 @auth
   @if(Auth::user()->hasAnyRole(['admin','super-admin']))
@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="{{ asset('assets/vendors/fontawesome/css/all.min.css') }}">
 <style>
 /* ═══════════════════════════════════════════════
-  Solberg Grupo INVEST — DESIGN SYSTEM v2
+  Mellenthin Foundation — DESIGN SYSTEM v2
    ═══════════════════════════════════════════════ */
 :root {
   --c-navy:       #0B1A2E;

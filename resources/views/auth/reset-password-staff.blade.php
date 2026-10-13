@@ -167,7 +167,7 @@ a{text-decoration:none;color:inherit}
             <input type="email" id="email" name="email"
                    class="finput {{ $errors->has('email') ? 'err' : '' }}"
                    value="{{ old('email', $email) }}"
-                   placeholder="admin@solberggrupo.com"
+                   placeholder="admin@exemple.com"
                    autocomplete="email" required>
           </div>
         </div>

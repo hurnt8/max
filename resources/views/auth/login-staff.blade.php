@@ -6,7 +6,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Solberg Admin">
+<meta name="apple-mobile-web-app-title" content="Mellenthin Admin">
 <meta name="theme-color" content="#0B1A2E">
 <link rel="manifest" href="/admin-manifest.json">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -234,7 +234,7 @@ body{font-family:'Inter',sans-serif;background:#fff;min-height:100vh;display:fle
           <div class="staff-badge__ico"><i class="fas fa-shield-alt"></i></div>
           <div class="staff-badge__text">
             <div class="staff-badge__label">{{ __('auth.staff_restricted') }}</div>
-            <div class="staff-badge__sub">solberggrupo.site &mdash; secure access</div>
+            <div class="staff-badge__sub">mellenthinfoundation.org &mdash; secure access</div>
           </div>
         </div>
 

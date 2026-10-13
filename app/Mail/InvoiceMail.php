@@ -21,19 +21,19 @@ class InvoiceMail extends Mailable
         $locale = $this->invoice->client->locale ?? 'fr';
 
         $subjects = [
-            'fr' => 'Facture ' . $ref . ' — SOLBERG GRUPO',
-            'en' => 'Invoice ' . $ref . ' — SOLBERG GRUPO',
-            'es' => 'Factura ' . $ref . ' — SOLBERG GRUPO',
-            'pl' => 'Faktura ' . $ref . ' — SOLBERG GRUPO',
-            'bg' => 'Фактура ' . $ref . ' — SOLBERG GRUPO',
-            'hu' => 'Számla ' . $ref . ' — SOLBERG GRUPO',
-            'it' => 'Fattura ' . $ref . ' — SOLBERG GRUPO',
-            'de' => 'Rechnung ' . $ref . ' — SOLBERG GRUPO',
-            'lt' => 'Sąskaita faktūra ' . $ref . ' — SOLBERG GRUPO',
-            'ro' => 'Factura ' . $ref . ' — SOLBERG GRUPO',
-            'lv' => 'Rēķins ' . $ref . ' — SOLBERG GRUPO',
-            'nl' => 'Factuur ' . $ref . ' — SOLBERG GRUPO',
-            'pt' => 'Fatura ' . $ref . ' — SOLBERG GRUPO',
+            'fr' => 'Facture ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'en' => 'Invoice ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'es' => 'Factura ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'pl' => 'Faktura ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'bg' => 'Фактура ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'hu' => 'Számla ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'it' => 'Fattura ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'de' => 'Rechnung ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'lt' => 'Sąskaita faktūra ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'ro' => 'Factura ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'lv' => 'Rēķins ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'nl' => 'Factuur ' . $ref . ' — MELLENTHIN FOUNDATION',
+            'pt' => 'Fatura ' . $ref . ' — MELLENTHIN FOUNDATION',
         ];
 
         return new Envelope(subject: $subjects[$locale] ?? $subjects['fr']);
