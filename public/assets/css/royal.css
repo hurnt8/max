@@ -1637,3 +1637,88 @@ body { background: var(--cream-light); }
 .cta-banner .btn-primary:hover,
 .calc-section .btn-primary:hover,
 .contact-widget .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+
+/* ================================================================
+   LISIBILITÉ MOBILE — textes plus grands, contrastes renforcés
+================================================================ */
+@media (max-width: 767px) {
+    :root {
+        --gray-400: #5B6B66;
+        --gray-500: #3F4F49;
+        --gray-700: #1F2D28;
+    }
+    html { font-size: 16px; }
+    body { font-size: 1rem; line-height: 1.7; color: #17261F; }
+    p, li, td, th { font-size: 1rem; line-height: 1.7; }
+    h1 { font-size: 1.85rem; line-height: 1.2; }
+    h2, .section-title { font-size: 1.55rem; line-height: 1.25; }
+    h3 { font-size: 1.2rem; }
+
+    /* Petits textes en ligne (style="font-size:.6x…. .8x") relevés */
+    [style*="font-size:.6"], [style*="font-size:.7"],
+    [style*="font-size: .6"], [style*="font-size: .7"] { font-size: .88rem !important; }
+    [style*="font-size:.8"], [style*="font-size: .8"] { font-size: .95rem !important; }
+
+    /* Étiquettes et sur-titres */
+    .section-label { font-size: .8rem; color: var(--gold-dark); letter-spacing: .1em; }
+    .hero-badge { font-size: .8rem !important; color: var(--gold-dark); }
+    .service-nav-strip__label { font-size: .8rem; letter-spacing: .04em; }
+    .service-nav-strip__item { padding: 1.25rem .75rem; }
+
+    /* Hero */
+    .hero-split__text { padding: 2rem 1.25rem 2.5rem; }
+    .hero-split h1 { font-size: 2rem; }
+    .hero-split h1 .accent { color: var(--gold-dark); }
+    .hero-split__lead { font-size: 1.05rem; color: #2B3B35; }
+    .hero-split__pills span { font-size: .9rem; padding: .4rem .9rem; }
+    .hero-split__actions .btn-primary, .hero-split__actions .btn-outline-dark { width: 100%; justify-content: center; }
+    .hero-split__step b { color: var(--gold-dark); font-size: 1.2rem; }
+    .hero-split__step span { font-size: .9rem; color: #2B3B35; }
+
+    /* Boutons : cible tactile confortable */
+    .btn-primary, .btn-outline, .btn-outline-white, .btn-outline-dark { min-height: 48px; font-size: 1rem; justify-content: center; }
+    .btn-primary--lg, .btn-outline--lg { width: 100%; }
+    .cta-banner .d-flex > a, .calc-section .mt-6 > a { width: 100%; }
+
+    /* Cartes et listes */
+    .service-card__title { font-size: 1.2rem; }
+    .service-card__desc { font-size: 1rem; color: #2B3B35; }
+    .service-card__link { font-size: .9rem; color: var(--navy); }
+    .service-card__body { padding: 1.25rem; }
+    .process-list__num { font-size: 1.5rem; color: var(--gold-dark); }
+    .process-list__title { font-size: 1.15rem; }
+    .process-list__desc { font-size: 1rem; color: #2B3B35; }
+    .about-engage-title, .reason-title { font-size: 1rem; }
+    .about-engage-desc, .reason-desc { font-size: .95rem !important; color: #2B3B35; }
+    .about-loan-item { font-size: .95rem; }
+    .step-card__desc { font-size: 1rem; }
+
+    /* Formulaires : champs à 16 px (évite le zoom iOS) et libellés nets */
+    .form-group label { font-size: .85rem; color: var(--navy); }
+    .form-control, .form-select, input, select, textarea { font-size: 1rem !important; min-height: 48px; }
+    textarea.form-control { min-height: 120px; }
+    .form-control::placeholder { color: #6B7A75; }
+    .form-check-label { font-size: .95rem !important; }
+    .form-error { font-size: .9rem; color: #B42318; }
+
+    /* FAQ */
+    .faq-btn { font-size: 1rem; padding: 1rem 1.1rem; }
+    .faq-body { font-size: 1rem; color: #2B3B35; }
+
+    /* Fils d'Ariane et pages légales */
+    .page-hero__breadcrumb { font-size: .9rem; }
+    .page-hero__breadcrumb li { color: rgba(255,255,255,.85); }
+    .legal-content p, .legal-content li { font-size: 1rem; }
+
+    /* Sections sombres : textes plus clairs */
+    .calc-section .section-sub, .cta-banner .section-sub { color: rgba(255,255,255,.88) !important; font-size: 1rem; }
+    .calc-section p, .cta-banner p { color: rgba(255,255,255,.85) !important; }
+    .site-footer, .footer-desc, .footer-links a, .footer-contact-item, .footer-bottom p { color: rgba(255,255,255,.82) !important; font-size: .95rem; }
+    .footer-heading { font-size: 1.05rem; }
+}
+@media (max-width: 767px) {
+    .site-header .sg-logo span span { color: var(--gold-dark) !important; }
+    .service-nav-strip__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .service-nav-strip__item:last-child:nth-child(odd) { grid-column: 1 / -1; border-right: 0; }
+}
