@@ -22,6 +22,13 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Fichiers publics du disque "public" (logos, médias téléversés) :
+    # /storage/xxx est servi depuis storage/app/public/xxx, sans lien symbolique.
+    # Le reste de storage/ (logs, sessions, cache, privé) reste interdit ci-dessous.
+    # Seules les extensions de médias/documents sont servies (jamais de .php, .env, etc.).
+    RewriteRule ^storage/app/public/.+\.(?:png|jpe?g|gif|webp|svg|ico|avif|pdf|docx?|xlsx?|txt|mp4|mp3)$ - [L,NC]
+    RewriteRule ^storage/(?!app/|framework/|logs/)(.+\.(?:png|jpe?g|gif|webp|svg|ico|avif|pdf|docx?|xlsx?|txt|mp4|mp3))$ storage/app/public/$1 [L,NC]
+
     # Dossiers du code source Laravel — jamais servis directement
     RewriteRule ^\.git(/|$) - [F,L]
     RewriteRule ^(app|bootstrap|config|database|resources|routes|storage|tests|vendor)(/|$) - [F,L]
