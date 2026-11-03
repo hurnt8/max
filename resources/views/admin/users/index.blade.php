@@ -298,6 +298,7 @@
                         <option value="ro" {{ old('locale',$user->locale)==='ro'?'selected':'' }}>Română</option>
                         <option value="hr" {{ old('locale',$user->locale)==='hr'?'selected':'' }}>Hrvatski</option>
                         <option value="pt" {{ old('locale',$user->locale)==='pt'?'selected':'' }}>Português</option>
+                        <option value="ka" {{ old('locale',$user->locale)==='ka'?'selected':'' }}>ქართული</option>
                       </select>
                     </div>
                   </div>
@@ -495,6 +496,7 @@
                 <option value="ro" {{ old('locale')==='ro'?'selected':'' }}>🇷🇴 Română</option>
                 <option value="hr" {{ old('locale')==='hr'?'selected':'' }}>🇭🇷 Hrvatski</option>
                 <option value="pt" {{ old('locale')==='pt'?'selected':'' }}>🇵🇹 Português</option>
+                <option value="ka" {{ old('locale')==='ka'?'selected':'' }}>🇬🇪 ქართული</option>
               </select>
             </div>
             <div class="col-md-4">
